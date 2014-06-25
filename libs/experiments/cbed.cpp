@@ -28,6 +28,8 @@ CExperimentCBED::CExperimentCBED(const ConfigReaderPtr &configReader) : CExperim
 {
   m_mode="CBED";
   configReader->ReadSourceRadius(m_sourceRadius);
+  m_wave = CWaveFactory::Get()->GetWave("Convergent", configReader);
+  m_wave->FormProbe();
 }
 
 void CExperimentCBED::DisplayParams()

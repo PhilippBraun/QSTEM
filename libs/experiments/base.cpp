@@ -33,6 +33,10 @@ CExperimentBase::CExperimentBase(const ConfigReaderPtr &configReader) : IExperim
 
   // Read potential parameters and initialize a pot object
   //m_potential = CPotFactory::Get()->GetPotential(configReader);
+  configReader->ReadMode(m_mode);
+  configReader->ReadOutputName(m_outputLocation);
+  configReader->ReadNSubSlabs(m_cellDiv);
+  configReader->ReadPotentialOutputInterval(m_outputInterval);
   DisplayParams();
 }
 
@@ -65,7 +69,7 @@ void CExperimentBase::DisplayParams() {
   strftime( Date, 12, "%Y:%m:%d", mytime );
   strftime( Time, 9, "%H:%M:%S", mytime );
   
-  printf("\n*****************************************************\n");
+  printf("\n*****************************************************************************************\n");
   printf("* Running program STEM3 (version %s) in %s mode\n",VERSION, m_mode.c_str());
   printf("* Date: %s, Time: %s\n",Date,Time);
   
@@ -89,7 +93,7 @@ void CExperimentBase::DisplayParams() {
   
   printf("* TDS:                  %d runs)\n",m_avgRuns);
 
-  printf("*\n*****************************************************\n");
+  printf("*\n*****************************************************************************************\n");
 }
 
 void CExperimentBase::DisplayProgress(int flag)

@@ -22,7 +22,7 @@
 #include "config_reader_factory.hpp"
 
 #include "read_qsc.hpp"
-
+using namespace std;
 namespace QSTEM
 {
 
@@ -40,6 +40,7 @@ ConfigReaderPtr CConfigReaderFactory::GetReader(const std::string &filename)
 {
   boost::filesystem::path filepath( filename );
   std::string extension = filepath.extension().string();
+  cout << extension << endl;
   boost::algorithm::to_lower(extension);
   FactoryMap::iterator it = m_FactoryMap.find(extension);
   if( it != m_FactoryMap.end() )
