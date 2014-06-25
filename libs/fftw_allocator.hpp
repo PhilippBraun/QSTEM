@@ -688,5 +688,11 @@ inline bool operator==(FFTWAllocator<T> const& lhs, FFTWAllocator<T> const& rhs)
      //                  static_cast<T&>(rhs)); 
 }
 
+template<typename T>
+inline bool operator!=(FFTWAllocator<T> const& lhs, FFTWAllocator<T> const& rhs) {
+	return !operator==(lhs,rhs);
+    //return operator==(static_cast<T&>(lhs),
+     //                  static_cast<T&>(rhs));
+}
 
 #endif /* FFTW_ALLOCATOR_H_ */
