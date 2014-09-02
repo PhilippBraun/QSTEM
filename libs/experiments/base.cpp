@@ -36,8 +36,17 @@ CExperimentBase::CExperimentBase(const ConfigReaderPtr &configReader) : IExperim
   configReader->ReadMode(m_mode);
   configReader->ReadOutputName(m_outputLocation);
   configReader->ReadNSubSlabs(m_cellDiv);
+  m_equalDivs = true;
   configReader->ReadPotentialOutputInterval(m_outputInterval);
+  bool tmp;
+  configReader->ReadAverageParameters(m_avgRuns,tmp);
+  configReader->ReadSaveLevel(m_saveLevel);
+  configReader->ReadPrintLevel(m_printLevel);
+  float_tt tds;
+  boost::filesystem::path p;
+  configReader->ReadTemperatureData(m_tds,tds,p,tmp);
   DisplayParams();
+
 }
 
 void CExperimentBase::DisplayParams() {
@@ -205,7 +214,7 @@ void CExperimentBase::InterimWave(int slice) {
 * waver, wavei are expected to contain incident wave function 
 * they will be updated at return
 *****************************************************************/
-int CExperimentBase::RunMuls(WavePtr wave) 
+int CExperimentBase::RunMultislice(WavePtr wave) 
 {
   int printFlag = 0; 
   int showEverySlice=1;
@@ -383,17 +392,17 @@ void CExperimentBase::Propagate(WavePtr wave, float_tt dz)
       iya=i/nx;
       if( wave->GetKX2(ixa) < wave->GetK2Max() ) {
         if( (wave->GetKX2(ixa) + wave->GetKY2(iya)) < wave->GetK2Max() ) {
-          wr = w[i][0];
-          wi = w[i][1];
+          wr = w[i].real();
+          wi = w[i].imag();
           tr = wr*m_propyr[iya] - wi*m_propyi[iya];
           ti = wr*m_propyi[iya] + wi*m_propyr[iya];
-          w[i][0] = tr*m_propxr[ixa] - ti*m_propxi[ixa];
-          w[i][1] = tr*m_propxi[ixa] + ti*m_propxr[ixa];
+          w[i] = complex_tt( tr*m_propxr[ixa] - ti*m_propxi[ixa], tr*m_propxi[ixa] + ti*m_propxr[ixa]);
+
         } else
-          w[i][0] = w[i][1] = 0.0F;
+          w[i] = 0.0F;
       } /* end for(iy..) */
       
-      else w[i][0] = w[i][1] = 0.0F;
+      else w[i] = 0.0F;
     } /* end for(ix..) */
 } /* end propagate */
 
@@ -425,12 +434,12 @@ void CExperimentBase::Transmit(WavePtr wave, unsigned sliceIdx) {
       unsigned offset=ix+nx*iy;
       complex_tt t = m_potential->GetSlicePixel(sliceIdx, ix+m_iPosX, iy+m_iPosY);
 
-      wr = w[offset][0];
-      wi = w[offset][1];
-      tr = t[0];
-      ti = t[1];
-      w[offset][0] = wr*tr - wi*ti;
-      w[offset][1] = wr*ti + wi*tr;
+      wr = w[offset].real();
+      wi = w[offset].imag();
+      tr = t.real();
+      ti = t.imag();
+      w[offset] = complex_tt(wr*tr - wi*ti,wr*ti + wi*tr);
+
     } /* end for(iy.. ix .) */
 } /* end transmit() */
 
@@ -491,8 +500,7 @@ void CExperimentBase::fft_normalize(WavePtr wave)
   float_tt fftScale = 1.0/px;
   for (unsigned i=0; i<px; i++)
     {
-      w[i][0] *= fftScale;
-      w[i][1] *= fftScale;
+      w[i] = complex_tt(w[i].real()*fftScale,w[i].imag() * fftScale);
     }
 }
 

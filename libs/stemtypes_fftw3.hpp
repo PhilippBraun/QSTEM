@@ -26,8 +26,12 @@ QSTEM - image simulation for TEM/STEM/CBED
 
 #include "elTable.hpp"
 
+#include "boost/multi_array.hpp"
+#include <complex>
 namespace QSTEM
 {
+
+
 
 ////////////////////////////////////////////////////////////////////////
 // define whether to use single or double precision
@@ -38,9 +42,9 @@ namespace QSTEM
 #define BW (2.0F/3.0F)	/* bandwidth limit */
 
 // Mode definitions
-#define STEM    1
-#define CBED    2
-#define TEM     3
+//#define STEM    1
+//#define CBED    2
+//#define TEM     3
 #define REFINE  4
 #define MSCBED  5
 #define TOMO    6
@@ -70,12 +74,14 @@ namespace QSTEM
 
 ////////////////////////////////////////////////////////////////
 #if FLOAT_PRECISION == 1
-typedef FFTWComplex<float> complex_tt;
 typedef float float_tt;
+
 #else  // FLOAT_PRECISION
-typedef FFTWComplex<double> complex_tt;
-typedef double float_tt;
+typedef float float_tt;
+
 #endif  // FLOAT_PRECISION
+
+typedef std::complex<float_tt> complex_tt;
 typedef std::vector<float_tt, FFTWAllocator<float_tt> > RealVector;
 typedef std::vector<complex_tt, FFTWAllocator<complex_tt > > ComplexVector;
 ////////////////////////////////////////////////////////////////
@@ -182,6 +188,13 @@ typedef struct atomBoxStruct {
 
 typedef boost::shared_ptr<atomBox> atomBoxPtr;
 
+typedef boost::multi_array<std::complex<float_tt>, 3> ComplexArray3D;
+typedef boost::multi_array<std::complex<float_tt>, 2> ComplexArray2D;
+typedef ComplexArray3D::index ComplexArray3DIndex;
+typedef boost::multi_array_types::index_range range;
+typedef ComplexArray3D::array_view<2>::type ComplexArray2DView;
+typedef boost::multi_array_ref<std::complex<float_tt>,3> ComplexArray3DPtr;
+typedef boost::multi_array_ref<std::complex<float_tt>,2> ComplexArray2DPtr;
 
 // Generic helper definitions for shared library support
 #if defined _WIN32 || defined __CYGWIN__

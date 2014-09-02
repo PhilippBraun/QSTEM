@@ -34,7 +34,7 @@ class QSTEM_HELPER_DLL_EXPORT CCrystal
 {
 public:
   CCrystal();  // default constructor: does nothing, so you have to add stuff to it after constructing.
-  CCrystal(ConfigReaderPtr &configReader);
+  CCrystal(const ConfigReaderPtr &configReader);
   CCrystal(unsigned ncx, unsigned ncy, unsigned ncz,    // ncells in any given direction
 	  float_tt tx, float_tt ty, float_tt tz				// Tilts in any given direction
 	  );
@@ -61,6 +61,7 @@ public:
   bool GetTDS(){return m_tds;}
   void GetCellAngles(float_tt &alpha, float_tt &beta, float_tt &gamma);
   void GetCellParameters(float_tt &ax, float_tt &by, float_tt &cz);
+
   //inline unsigned GetZnum(unsigned idx){return m_Znums[idx];}
   //inline std::vector<unsigned> GetAtomTypes(){return m_Znums;}
   inline unsigned GetNumberOfAtomTypes(){return m_u2.size();}
@@ -70,13 +71,15 @@ public:
   inline void GetAtom(unsigned idx, atom &_atom){_atom=m_atoms[idx];}
   inline unsigned GetNumberOfCellAtoms(){return m_baseAtoms.size();}
   inline unsigned GetNumberOfAtoms(){return m_atoms.size();}
+
   void CalculateCrystalBoundaries();
   void GetCrystalBoundaries(float_tt &min_x, float_tt &max_x, float_tt &min_y, float_tt &max_y);
-  
+
+  std::vector<atom> m_atoms; // The atoms after duplication, tilt, and phonon shaking
 protected:
   boost::filesystem::path m_structureFile;
 
-  std::vector<atom> m_atoms; // The atoms after duplication, tilt, and phonon shaking
+
   std::vector<atom> m_baseAtoms; // The atoms read directly from the input file (no alteration)
   float_tt **m_Mm;                     /* metric matrix Mm(ax,by,cz,alpha,beta,gamma).  Used to go from fractional
                                           coordinates to physical cartesian coordinates.  */
@@ -124,6 +127,7 @@ protected:
 
   static int AtomCompareZnum(const void *atPtr1,const void *atPtr2);
   static int AtomCompareZYX(const void *atPtr1,const void *atPtr2);
+  
 };
 
 typedef boost::shared_ptr<CCrystal> StructurePtr;

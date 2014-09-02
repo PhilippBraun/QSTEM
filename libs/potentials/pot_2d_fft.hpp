@@ -32,7 +32,7 @@ public:
   virtual void DisplayParams();
 
 
-  virtual void MakeSlices(int nlayer, char *fileName, atom *center);
+  virtual void MakeSlices(int nlayer,StructurePtr crystal);
   virtual void AddAtomToSlices(std::vector<atom>::iterator &atom, 
                                float_tt atomX, float_tt atomY, float_tt atomZ);
 protected:

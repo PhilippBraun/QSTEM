@@ -33,10 +33,12 @@ C2DPotential::C2DPotential(const ConfigReaderPtr &configReader) : CPotential(con
 
 void C2DPotential::Initialize()
 {
+  CPotential::Initialize();
 }
 
 void C2DPotential::Initialize(const ConfigReaderPtr &configReader)
 {
+  CPotential::Initialize(configReader);
 }
 
 
@@ -57,8 +59,8 @@ void C2DPotential::AtomBoxLookUp(complex_tt &sum, int Znum, float_tt x, float_tt
   /***************************************************************
    * Do the trilinear interpolation
    */
-  sum[0] = 0.0;
-  sum[1] = 0.0;
+  sum = 0.0;
+//  sum[1] = 0.0;
   if (x*x+y*y+z*z > m_atomRadius2) {
     return;
   }
@@ -77,17 +79,18 @@ void C2DPotential::AtomBoxLookUp(complex_tt &sum, int Znum, float_tt x, float_tt
   }
   
   if (m_atomBoxes[Znum]->B > 0) {
-    sum[0] = (1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->potential[0][ix][iy][0]+
-                       dx*m_atomBoxes[Znum]->potential[0][ix+1][iy][0])+
-                       dy*((1.0-dx)*m_atomBoxes[Znum]->potential[0][ix][iy+1][0]+
-                       dx*m_atomBoxes[Znum]->potential[0][ix+1][iy+1][0]);
-    sum[1] = (1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->potential[0][ix][iy][1]+
-                       dx*m_atomBoxes[Znum]->potential[0][ix+1][iy][1])+
-                       dy*((1.0-dx)*m_atomBoxes[Znum]->potential[0][ix][iy+1][1]+
-                       dx*m_atomBoxes[Znum]->potential[0][ix+1][iy+1][1]);
+    float_tt real = (1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->potential[0][ix][iy].real()+
+                       dx*m_atomBoxes[Znum]->potential[0][ix+1][iy].real())+
+                       dy*((1.0-dx)*m_atomBoxes[Znum]->potential[0][ix][iy+1].real()+
+                       dx*m_atomBoxes[Znum]->potential[0][ix+1][iy+1].real());
+    float_tt imag = (1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->potential[0][ix][iy].imag()+
+                       dx*m_atomBoxes[Znum]->potential[0][ix+1][iy].imag())+
+                       dy*((1.0-dx)*m_atomBoxes[Znum]->potential[0][ix][iy+1].imag()+
+                       dx*m_atomBoxes[Znum]->potential[0][ix+1][iy+1].imag());
+    sum = complex_tt(real,imag);
   }
   else {
-    sum[0] = (1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->rpotential[0][ix][iy]+
+    sum = (1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->rpotential[0][ix][iy]+
                        dx*m_atomBoxes[Znum]->rpotential[0][ix+1][iy])+
                        dy*((1.0-dx)*m_atomBoxes[Znum]->rpotential[0][ix][iy+1]+
 		       dx*m_atomBoxes[Znum]->rpotential[0][ix+1][iy+1]);
@@ -137,20 +140,20 @@ void C2DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
   iz = (iAtomZ+32*m_nslices) % m_nslices;         /* shift into the positive range */
   // x, y are the coordinates in the space of the atom box
   AtomBoxLookUp(dPot,atom->Znum,atomBoxX,atomBoxY,0, m_tds ? 0 : atom->dw);
-  float_tt atomBoxZ = (double)(iAtomZ+1)*m_cz[0]-atomZ;
+  float_tt atomBoxZ = (double)(iAtomZ+1)*m_sliceThicknesses[0]-atomZ;
 
   unsigned idx=ix*m_ny+iy;
 
   /* split the atom if it is close to the top edge of the slice */
-  if ((atomBoxZ<0.15*m_cz[0]) && (iz >0)) {
-    m_trans[iz][idx] += 0.5*dPot;
-    m_trans[iz-1][idx] += 0.5*dPot;
+  if ((atomBoxZ<0.15*m_sliceThicknesses[0]) && (iz >0)) {
+    m_trans[iz][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
+    m_trans[iz-1][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
   }
   /* split the atom if it is close to the bottom edge of the slice */
   else {
-    if ((atomBoxZ>0.85*m_cz[0]) && (iz < m_nslices-1)) {
-      m_trans[iz][idx] += 0.5*dPot;
-      m_trans[iz+1][idx] += 0.5*dPot;
+    if ((atomBoxZ>0.85*m_sliceThicknesses[0]) && (iz < m_nslices-1)) {
+      m_trans[iz][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
+      m_trans[iz+1][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
     }
     else {
       m_trans[iz][idx] += dPot;

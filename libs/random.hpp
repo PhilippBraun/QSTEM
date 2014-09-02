@@ -29,7 +29,9 @@ namespace QSTEM
 
 static boost::random::mt11213b _rng;         // produces randomness out of thin air.  This is the algorithm.  To get numbers,
 //  use ran1(_rng) for uniform values, or 
-static boost::random::uniform_01<float_tt> _ran1;    // This returns uniform random values between 0 and 1
+// This returns uniform random values between 0 and 1
+static boost::random::uniform_01<float_tt> _ran1;
+//returns a uniform random deviate between 0.0 and 1.0 exclusive of the endpoint values.
 inline float_tt ran1(){return _ran1(_rng);}
 static boost::random::normal_distribution<float_tt> _gasdev(0,1); // This returns uniform random values with a Gaussian normal distribution
 inline float_tt gasdev(){return _gasdev(_rng);}

@@ -58,8 +58,8 @@ void CPlaneWave::FormProbe()
     unsigned px=m_nx*m_ny;
     for (unsigned i=0; i<px; i++)
       {
-        m_wave[i][0] = 1; 
-        m_wave[i][1] = 0;
+        m_wave[i]=std::complex<float_tt>(1,0);
+
       }
     }
     else {
@@ -84,8 +84,9 @@ void CPlaneWave::TiltBeam(bool tiltBack)
           unsigned iy=i/m_ny;
           float_tt x = m_dx*(ix-m_nx/2);
           float_tt y = m_dy*(iy-m_ny/2);
-          m_wave[i][0] = (float)cos(ktx*x+kty*y);	
-          m_wave[i][1] = (float)sin(ktx*x+kty*y);
+          m_wave[i]=std::complex<float_tt>((float_tt)cos(ktx*x+kty*y),(float_tt)sin(ktx*x+kty*y));
+//          m_wave[i].real() = (float)cos(ktx*x+kty*y);
+//          m_wave[i].imag() = (float)sin(ktx*x+kty*y);
         }
     }
 }

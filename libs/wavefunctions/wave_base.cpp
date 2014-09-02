@@ -215,7 +215,7 @@ float_tt CBaseWave::GetIntegratedIntensity() const
   float_tt intIntensity=0;
   for (unsigned i=0; i<px; i++)
     {
-      intIntensity+=m_wave[i][0]*m_wave[i][0] + m_wave[i][1]*m_wave[i][1];
+      intIntensity+=m_wave[i].real()*m_wave[i].real() + m_wave[i].imag()*m_wave[i].imag();
     }
   // TODO: divide by px or not?
   return intIntensity/px;
@@ -241,8 +241,7 @@ void CBaseWave::ApplyTransferFunction(boost::shared_array<complex_tt> &wave)
       //ix=i%m_nx;
       //iy=i/m_ny;
 
-      wave[i][0] = m_wave[i][0];
-      wave[i][1] = m_wave[i][1];
+      wave[i] = m_wave[i];
     }
   ToRealSpace();
 }

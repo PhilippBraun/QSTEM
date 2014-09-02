@@ -239,15 +239,17 @@ void CConvergentWave::FormProbe()
 
       if ( ( m_ismoth != 0) && 
            ( fabs(k2-k2max) <= pixel)) {
-        m_wave[ix+m_nx*iy][0]= (float) ( 0.5*scale * cos(chi));
-        m_wave[ix+m_nx*iy][1]= (float) (-0.5*scale* sin(chi));
+    	m_wave[ix+m_nx*iy] = complex_tt((float) ( 0.5*scale * cos(chi)),(float) (-0.5*scale* sin(chi)));
+//        m_wave[ix+m_nx*iy][0]= (float) ( 0.5*scale * cos(chi));
+//        m_wave[ix+m_nx*iy][1]= (float) (-0.5*scale* sin(chi));
       } 
       else if ( k2 <= k2max ) {
-        m_wave[ix+m_nx*iy][0]= (float)  scale * cos(chi);
-        m_wave[ix+m_nx*iy][1]= (float) -scale * sin(chi);
+    	  m_wave[ix+m_nx*iy] = complex_tt((float) ( scale * cos(chi)),(float) (scale* sin(chi)));
+//        m_wave[ix+m_nx*iy][0]= (float)  scale * cos(chi);
+//        m_wave[ix+m_nx*iy][1]= (float) -scale * sin(chi);
       } 
       else {
-        m_wave[ix+m_nx*iy][0] = m_wave[ix+m_nx*iy][1] = 0.0f;
+    	  m_wave[ix+m_nx*iy] =complex_tt(0,0);
       }
     }
   }
@@ -262,8 +264,9 @@ void CConvergentWave::FormProbe()
     for( ix=0; ix<m_nx; ix++) {
       for( iy=0; iy<m_ny; iy++) {
         r = exp(-((ix-m_nx/2)*(ix-m_nx/2)+(iy-m_ny/2)*(iy-m_ny/2))/(m_nx*m_nx*m_gaussScale));
-        m_wave[ix+m_nx*iy][0] *= (float)r;
-        m_wave[ix+m_nx*iy][1] *= (float)r;
+        m_wave[ix+m_nx*iy] = complex_tt(m_wave[ix+m_nx*iy].real()*r,m_wave[ix+m_nx*iy].imag()*r);
+//        m_wave[ix+m_nx*iy][0] *= (float)r;
+//        m_wave[ix+m_nx*iy][1] *= (float)r;
       }
     }  
   }
@@ -278,13 +281,13 @@ void CConvergentWave::FormProbe()
         r = sqrt(x*x+y*y);
         delta = r-0.5*m_aAIS+edge;
         if (delta > 0) {
-          m_wave[ix+m_nx*iy][0] = 0;
-          m_wave[ix+m_nx*iy][1] = 0;
+          m_wave[ix+m_nx*iy] = 0;
         }
         else if (delta >= -edge) {
           scale = 0.5*(1-cos(M_PI*delta/edge));
-          m_wave[ix+m_nx*iy][0] = scale*m_wave[ix+m_nx*iy][0];
-          m_wave[ix+m_nx*iy][1] = scale*m_wave[ix+m_nx*iy][1];
+          m_wave[ix+m_nx*iy] = complex_tt(scale*m_wave[ix+m_nx*iy].real(),scale*m_wave[ix+m_nx*iy].imag());
+//          m_wave[ix+m_nx*iy][0] = scale*m_wave[ix+m_nx*iy][0];
+//          m_wave[ix+m_nx*iy][1] = scale*m_wave[ix+m_nx*iy][1];
         }
       }
     }
@@ -315,16 +318,16 @@ void CConvergentWave::FormProbe()
       order for compatability
   */
 
-  rmin = m_wave[0][0];
+  rmin = m_wave[0].real();
   rmax = rmin;
-  aimin = m_wave[0][1];
+  aimin = m_wave[0].imag();
   aimax = aimin;
   for( iy=0; iy<m_ny; iy++) {
     for( ix=0; ix<m_nx; ix++) {
-      if( m_wave[ix+m_nx*iy][0] < rmin ) rmin = m_wave[ix+m_nx*iy][0];
-      if( m_wave[ix+m_nx*iy][0] > rmax ) rmax = m_wave[ix+m_nx*iy][0];
-      if( m_wave[ix+m_nx*iy][1] < aimin ) aimin = m_wave[ix+m_nx*iy][1];
-      if( m_wave[ix+m_nx*iy][1] > aimax ) aimax = m_wave[ix+m_nx*iy][1];
+      if( m_wave[ix+m_nx*iy].real() < rmin ) rmin = m_wave[ix+m_nx*iy].real();
+      if( m_wave[ix+m_nx*iy].real() > rmax ) rmax = m_wave[ix+m_nx*iy].real();
+      if( m_wave[ix+m_nx*iy].imag() < aimin ) aimin = m_wave[ix+m_nx*iy].imag();
+      if( m_wave[ix+m_nx*iy].imag() > aimax ) aimax = m_wave[ix+m_nx*iy].imag();
     }
   }
   m_rmin = rmin;

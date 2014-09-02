@@ -25,6 +25,10 @@
 #include "scatfactsRez.hpp"
 #include <map>
 
+
+
+
+
 #include "pot_interface.hpp"
 
 #ifndef POTENTIAL_BASE_H
@@ -36,56 +40,49 @@
 namespace QSTEM
 {
 
+
 class CPotential : public IPotential
 {
 public:
   CPotential();
   CPotential(unsigned nx, unsigned ny, unsigned nz, float_tt dx, float_tt dy, float_tt dz, float_tt atomRadius, float_tt v0);
   CPotential(const ConfigReaderPtr &configReader);
-  //~CPotential();
-
-  virtual void DisplayParams();
+  virtual ~CPotential();
 
   void AtomBoxLookUp(complex_tt &val, int Znum, float_tt x, float_tt y, float_tt z, float_tt B);
-  virtual void MakeSlices(int nlayer,char *fileName,atom *center);
-  //virtual void initSTEMSlices();
-  // encapsulates make slices and initSTEMslices - used to refresh the potential with a new structure (after a random
-  //    shake)
-  virtual void Refresh();
-  // TODO: need abstracted structure reader
-  //virtual void ReadAtoms();
-  virtual void ReadPotential(std::string &fileName, unsigned subSlabIdx);
+  void AddAtomRealSpace(std::vector<atom>::iterator &atom, float_tt atomX, float_tt atomY, float_tt atomZ);
   virtual void CenterAtomZ(std::vector<atom>::iterator &atom, float_tt &z);
   virtual void AddAtomToSlices(std::vector<atom>::iterator &atom, float_tt atomX, float_tt atomY, float_tt atomZ)=0;
-  void AddAtomRealSpace(std::vector<atom>::iterator &atom, float_tt atomX, float_tt atomY, float_tt atomZ);
   
-  // *************************  Getters  ********************** 
+  // *************************  IPotential  implementation **********************
+  virtual void DisplayParams();
+  virtual void MakeSlices(int nlayer,StructurePtr crystal);
+  virtual void Refresh();
+  virtual void ReadPotential(std::string &fileName, unsigned subSlabIdx);
+  virtual void SetStructure(StructurePtr structure);
   unsigned GetNSlices() const {return m_nslices;}
   float_tt GetSliceThickness() const {return m_sliceThickness;}
-  float_tt GetSliceThickness(unsigned idx) const {return m_cz[idx];}
+  float_tt GetSliceThickness(unsigned idx) const {return m_sliceThicknesses[idx];}
   void GetSizePixels(unsigned &nx, unsigned &ny) const;
+  void WriteSlice(unsigned idx);
+  void WriteProjectedPotential();
+  ComplexArray2DView GetSlice(unsigned idx){return m_trans1[boost::indices[idx][range(0,m_nx)][range(0,m_ny)]];}
+  complex_tt GetSlicePixel(unsigned iz, unsigned ix, unsigned iy);
 
 
   // *************************** Setters **********************
   //  For all of these, the potential needs to be recalculated after calling them.
-  //    Each of them set a flag on this class indicating that, such that getting a slice will either recompute the potential for you,
-  //       or raise an error (TODO!)
+  //  Each of them set a flag on this class indicating that, such that getting a slice will
+  //  either recompute the potential for you, or raise an error (TODO!)
+
   // Set m_thickness, the uniform slice thickness.  Overrides m_cz.  Implicitly sets number of slices.
   void SetSliceThickness(float_tt thickness_Angstroms);
-  // Set m_cz, the vector of thicknesses.  Implicitly also sets number of slices!
   void SetSliceThickness(std::vector<float_tt> thickness_Angstroms);
   // Set number of slices.  Implicitly sets m_thickness to the sub-slab height divided by nslices, and empties m_cz.
   void SetNSlices(unsigned slices);
-  // Sets the structure being used to calculate the potential.
-  void SetStructure(StructurePtr structure);
 
 
-  void WriteSlice(unsigned idx);
-  void WriteProjectedPotential();
-  void GetSlice(unsigned idx, ComplexVector &vec){vec=m_trans[idx];}
-  complex_tt GetSlicePixel(unsigned iz, unsigned ix, unsigned iy);
-
-  atom GetAtom(unsigned idx){return m_atoms[idx];}
+  atom GetAtom(unsigned idx){return m_crystal->m_atoms[idx];}
 
   // public members (should be moved to protected, and given getters/setters...
   bool m_potential3D;
@@ -93,9 +90,10 @@ public:
 
 protected:
   void Initialize();
+  void Initialize(const ConfigReaderPtr &configReader);
   void SliceSetup();
   void ResizeSlices();
-  void ReadSlice(const std::string &fileName, ComplexVector &slice, unsigned idx);
+  void ReadSlice(const std::string &fileName, ComplexArray2DView slice, unsigned idx);
   virtual void _AddAtomRealSpace(std::vector<atom>::iterator &atom, 
                                  float_tt atomX, unsigned int ix, 
                                  float_tt atomY, unsigned int iy, 
@@ -105,6 +103,7 @@ protected:
   ImageIOPtr m_imageIO;
   StructurePtr m_crystal;
   std::vector<ComplexVector> m_trans; //  The 3D specimen potential array as a vector of 1D vectors
+  ComplexArray3D m_trans1;
   //complex_tt ***m_trans;    //  The 3D specimen potential array
   bool m_currentPotential;  // Indicates whether computed potential matches current parameters.  
                             //    Set to true after computing potential.  Reset to false when parameters change.
@@ -115,7 +114,7 @@ protected:
   int m_boxNx, m_boxNy, m_boxNz;
   float_tt m_v0;   // voltage
   std::map<unsigned, atomBoxPtr> m_atomBoxes;
-  std::vector<atom> m_atoms;
+  std::vector<atom> *m_atoms;
 
   // *********** Slice parameters **********
   bool m_centerSlices;
@@ -124,7 +123,7 @@ protected:
   unsigned m_nslices;   // nslices is the number of slices PER SUB-SLAB!  Not the total.
   unsigned m_outputInterval;
   // vector of slice thicknesses.  Only really relevant when slice thickness is not uniform.
-  std::vector<float_tt> m_cz;
+  std::vector<float_tt> m_sliceThicknesses;
   // vector of slice positions
   std::vector<float_tt> m_slicePos;
 

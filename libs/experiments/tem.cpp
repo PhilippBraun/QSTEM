@@ -122,7 +122,7 @@ void CExperimentTEM::Run()
           m_potential->Refresh();
         }
 
-        RunMuls(m_wave); 
+        RunMultislice(m_wave); 
         m_totalSliceCount += m_potential->GetNSlices();
 
         if (m_printLevel > 0) {
@@ -228,7 +228,7 @@ void CExperimentTEM::Run()
       unsigned px=nx*ny;
       for (unsigned i=0;i<px;i++){
         t = ((float_tt)m_avgCount*m_wave->GetDiffPatPixel(i)+
-               imageWave[i][0]*imageWave[i][0]+imageWave[i][1]*imageWave[i][1])/(float_tt)(m_avgCount+1);
+               imageWave[i].real()*imageWave[i].real()+imageWave[i].imag()*imageWave[i].imag())/(float_tt)(m_avgCount+1);
           m_wave->SetDiffPatPixel(i,t);
         }
       m_wave->WriteImage();

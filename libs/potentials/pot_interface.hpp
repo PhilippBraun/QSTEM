@@ -19,6 +19,7 @@
 
 #include "stemtypes_fftw3.hpp"
 #include "config_IO/read_interface.hpp"
+#include "crystal.hpp"
 
 #ifndef POTENTIAL_INTERFACE_H
 #define POTENTIAL_INTERFACE_H
@@ -30,6 +31,8 @@ class IPotential;
 typedef boost::shared_ptr<IPotential> PotPtr;
 typedef PotPtr (*CreatePotentialFn)(void); 
 
+
+
 class IPotential
 {
 public:
@@ -39,7 +42,7 @@ public:
   // Resizes memory arrays, computes initial parameters based on start state
   virtual void Initialize()=0;
   // Same as Initialize, but before running Initialize(), it loads appropriate parameters from configReader
-  virtual void Initialize(const ConfigReaderPtr &configReader){};
+  virtual void Initialize(const ConfigReaderPtr &configReader)=0;
 
 
   virtual void DisplayParams(){};
@@ -50,7 +53,7 @@ public:
   // You must provide a way of getting  slices somehow.  You must implement (at least) one of the following two
   //   functions in order for your Potential to be useful at all.
   // MakeSlices is called when you want to build the potential from atomic positions
-  virtual void MakeSlices(int nlayer,char *fileName,atom *center){};
+  virtual void MakeSlices(int nlayer,StructurePtr crystal){};
   // ReadPotential is used when you want to load the potential slices from some data files
   virtual void ReadPotential(std::string &fileName, unsigned subSlabIdx){};
   
@@ -61,8 +64,10 @@ public:
 
   virtual void WriteSlice(unsigned idx)=0;
   virtual void WriteProjectedPotential()=0;
-  virtual void GetSlice(unsigned idx, ComplexVector &vec)=0;
+  virtual ComplexArray2DView GetSlice(unsigned idx)=0;
   virtual complex_tt GetSlicePixel(unsigned iz, unsigned ix, unsigned iy)=0;
+  // Sets the structure being used to calculate the potential.
+  virtual void SetStructure(StructurePtr structure)=0;
 };
 
 }

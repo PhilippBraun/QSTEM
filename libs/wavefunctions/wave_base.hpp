@@ -77,7 +77,7 @@ public:
   inline float_tt GetVoltage()  const {return m_v0;}
   inline float_tt GetWavelength()  const {return m_wavlen;}
 
-  inline float_tt GetPixelIntensity(unsigned i) const {return m_wave[i][0]*m_wave[i][0] + m_wave[i][1]*m_wave[i][1];}
+  inline float_tt GetPixelIntensity(unsigned i) const {return m_wave[i].real()*m_wave[i].real() + m_wave[i].imag()*m_wave[i].imag();}
   inline float_tt GetPixelIntensity(unsigned x, unsigned y) const  {return GetPixelIntensity(x+m_nx*y);}
   inline float_tt GetDiffPatPixel(unsigned i)  const {return m_diffpat[i];}
   inline float_tt GetDiffPatPixel(unsigned x, unsigned y) const  { return m_diffpat[x+m_nx*y];}

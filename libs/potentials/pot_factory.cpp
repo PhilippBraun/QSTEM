@@ -43,6 +43,7 @@ void CPotFactory::Register(const std::string &potName, CreatePotentialFn pfnCrea
 
 PotPtr CPotFactory::GetPotential(const std::string &name)
 {
+	std::cout << name << std::endl;
 	FactoryMap::iterator it = m_FactoryMap.find(name);
 	if( it != m_FactoryMap.end() )
 		return it->second();
@@ -52,9 +53,9 @@ PotPtr CPotFactory::GetPotential(const std::string &name)
 PotPtr CPotFactory::GetPotential(bool _3D, bool fft)
 {
 	std::stringstream str;
-	str << _3D ? "3D" : "2D";
-	str << fft ? "FFT" : "";
-	str << std::ends;
+	str << (_3D ? "3D" : "2D");
+	str << (fft ? "FFT" : "");
+//	str << std::ends;
 	return GetPotential(str.str());
 }
 

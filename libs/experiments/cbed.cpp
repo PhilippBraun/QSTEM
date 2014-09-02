@@ -30,6 +30,18 @@ CExperimentCBED::CExperimentCBED(const ConfigReaderPtr &configReader) : CExperim
   configReader->ReadSourceRadius(m_sourceRadius);
   m_wave = CWaveFactory::Get()->GetWave("Convergent", configReader);
   m_wave->FormProbe();
+  m_potential = CPotFactory::Get()->GetPotential(configReader);
+  m_crystal = StructurePtr(new CCrystal(configReader));
+  unsigned int nslices,outputInterval;
+  bool centerSlices;
+  float_tt sliceThickness, zOffset;
+  configReader->ReadSliceParameters(centerSlices,sliceThickness,m_nslices,outputInterval,zOffset);
+
+
+//  if(sliceThickness != 0) nslices =
+
+
+
 }
 
 void CExperimentCBED::DisplayParams()
@@ -67,6 +79,10 @@ void CExperimentCBED::Run()
 
   timerTot = 0; /* cputim();*/
   DisplayProgress(-1);
+  
+  m_crystal->ReadUnitCell(true);
+  m_potential->SetStructure(m_crystal);
+  m_potential->MakeSlices(m_nslices,m_crystal);
 
   for (m_avgCount = 0;m_avgCount < m_avgRuns;m_avgCount++) {
     m_totalSliceCount = 0;
@@ -83,6 +99,8 @@ void CExperimentCBED::Run()
     m_scanXStart = probeCenterX+probeOffsetX;
     m_scanYStart = probeCenterY+probeOffsetY;
     m_wave->FormProbe();
+
+
     //probe(&muls, wave,m_scanXStart-m_potOffsetX,m_scanYStart-m_potOffsetY);
     if (m_saveLevel > 2) {
       m_wave->WriteProbe();
@@ -133,7 +151,7 @@ void CExperimentCBED::Run()
         m_potential->Refresh();
         
         // what probe should runMulsSTEM use here?
-        RunMuls(m_wave); 
+        RunMultislice(m_wave); 
         
         //printf("Thickness: %gA, int.=%g\n",
         //       m_wave->thickness,m_wave->intIntensity);

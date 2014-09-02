@@ -50,8 +50,7 @@ void C3DPotential::AtomBoxLookUp(complex_tt &val, int Znum, float_tt x, float_tt
   /***************************************************************
    * Do the trilinear interpolation
    */
-  val[0] = 0.0;
-  val[1] = 0.0;
+  val = complex_tt(0,0);
   if (x*x+y*y+z*z > m_atomRadius2) {
     return;
   }
@@ -73,25 +72,26 @@ void C3DPotential::AtomBoxLookUp(complex_tt &val, int Znum, float_tt x, float_tt
   }
 	
   if (m_atomBoxes[Znum]->B > 0) {
-    val[0] = (1.0-dz)*((1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->potential[iz][ix][iy][0]+
-			dx*m_atomBoxes[Znum]->potential[iz][ix+1][iy][0])+
-			dy*((1.0-dx)*m_atomBoxes[Znum]->potential[iz][ix][iy+1][0]+
-			dx*m_atomBoxes[Znum]->potential[iz][ix+1][iy+1][0]))+
-			dz*((1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->potential[iz+1][ix][iy][0]+
-			dx*m_atomBoxes[Znum]->potential[iz+1][ix+1][iy][0])+
-			dy*((1.0-dx)*m_atomBoxes[Znum]->potential[iz+1][ix][iy+1][0]+
-			dx*m_atomBoxes[Znum]->potential[iz+1][ix+1][iy+1][0]));
-			val[1] = (1.0-dz)*((1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->potential[iz][ix][iy][1]+
-			dx*m_atomBoxes[Znum]->potential[iz][ix+1][iy][1])+
-			dy*((1.0-dx)*m_atomBoxes[Znum]->potential[iz][ix][iy+1][1]+
-			dx*m_atomBoxes[Znum]->potential[iz][ix+1][iy+1][1]))+
-			dz*((1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->potential[iz+1][ix][iy][1]+
-			dx*m_atomBoxes[Znum]->potential[iz+1][ix+1][iy][1])+
-			dy*((1.0-dx)*m_atomBoxes[Znum]->potential[iz+1][ix][iy+1][1]+
-			dx*m_atomBoxes[Znum]->potential[iz+1][ix+1][iy+1][1]));
+    float_tt real = (1.0-dz)*((1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->potential[iz][ix][iy].real()+
+			dx*m_atomBoxes[Znum]->potential[iz][ix+1][iy].real())+
+			dy*((1.0-dx)*m_atomBoxes[Znum]->potential[iz][ix][iy+1].real()+
+			dx*m_atomBoxes[Znum]->potential[iz][ix+1][iy+1].real()))+
+			dz*((1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->potential[iz+1][ix][iy].real()+
+			dx*m_atomBoxes[Znum]->potential[iz+1][ix+1][iy].real())+
+			dy*((1.0-dx)*m_atomBoxes[Znum]->potential[iz+1][ix][iy+1].real()+
+			dx*m_atomBoxes[Znum]->potential[iz+1][ix+1][iy+1].real()));
+	float_tt imag = (1.0-dz)*((1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->potential[iz][ix][iy].imag()+
+			dx*m_atomBoxes[Znum]->potential[iz][ix+1][iy].imag())+
+			dy*((1.0-dx)*m_atomBoxes[Znum]->potential[iz][ix][iy+1].imag()+
+			dx*m_atomBoxes[Znum]->potential[iz][ix+1][iy+1].imag()))+
+			dz*((1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->potential[iz+1][ix][iy].imag()+
+			dx*m_atomBoxes[Znum]->potential[iz+1][ix+1][iy].imag())+
+			dy*((1.0-dx)*m_atomBoxes[Znum]->potential[iz+1][ix][iy+1].imag()+
+			dx*m_atomBoxes[Znum]->potential[iz+1][ix+1][iy+1].imag()));
+	val = complex_tt(real,imag);
 	}
 	else {
-		val[0] = (1.0-dz)*((1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->rpotential[iz][ix][iy]+
+		val = (1.0-dz)*((1.0-dy)*((1.0-dx)*m_atomBoxes[Znum]->rpotential[iz][ix][iy]+
 			dx*m_atomBoxes[Znum]->rpotential[iz][ix+1][iy])+
 			dy*((1.0-dx)*m_atomBoxes[Znum]->rpotential[iz][ix][iy+1]+
 			dx*m_atomBoxes[Znum]->rpotential[iz][ix+1][iy+1]))+
@@ -136,7 +136,7 @@ void C3DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
    */
   float_tt r2sqr = atomBoxX*atomBoxX + atomBoxY*atomBoxY;
   // TODO: iRadZ is also calculated in the base class, one level up.  Which is correct?
-  unsigned iRadZ = (unsigned)(sqrt(m_atomRadius2-r2sqr)/m_cz[0]+1.0);
+  unsigned iRadZ = (unsigned)(sqrt(m_atomRadius2-r2sqr)/m_sliceThicknesses[0]+1.0);
   /* loop through the slices that this atoms contributes to */
   for (int iaz=-m_iRadZ;iaz <=m_iRadZ;iaz++) {
     if (!m_periodicZ) {
@@ -147,7 +147,7 @@ void C3DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
       }
       if (iaz+iAtomZ >= m_nslices)        break;
     }
-    atomBoxZ = (double)(iAtomZ+iaz+0.5)*m_cz[0]-atomBoxZ;
+    atomBoxZ = (double)(iAtomZ+iaz+0.5)*m_sliceThicknesses[0]-atomBoxZ;
     /* shift into the positive range */
     iz = (iaz+iAtomZ+32*m_nslices) % m_nslices;        
     /* x,y,z is the true vector from the atom center
@@ -157,8 +157,9 @@ void C3DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
     AtomBoxLookUp(dPot,atom->Znum,atomBoxX,atomBoxY,atomBoxZ,
                   m_tds ? 0 : atom->dw);
     // printf("access: %d %d %d\n",iz,ix,iy);
-    unsigned idx=ix*m_ny+iy;
-    m_trans[iz][idx]+=dPot;
+//    unsigned idx=ix*m_ny+iy;
+    m_trans1[iz][iy][ix] += dPot;
+//    m_trans[iz][idx]+=dPot;
     //m_trans[iz][ix][iy][0] += dPot[0];
     //m_trans[iz][ix][iy][1] += dPot[1];         
   } /* end of for iaz=-iRadZ .. iRadZ */
@@ -167,8 +168,7 @@ void C3DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
 
 void C3DPotential::CenterAtomZ(std::vector<atom>::iterator &atom, float_tt &z)
 {
-  CPotential::CenterAtomZ(atom, z);
-  z -= m_sliceThickness;
+  z = atom->z + m_zOffset;
 }
 
 
