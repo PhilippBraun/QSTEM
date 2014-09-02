@@ -1,0 +1,14 @@
+<map id="QSTEM::CQscReader::IsBufferYes" name="QSTEM::CQscReader::IsBufferYes">
+<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#a1a34d1ac56dd007c22071912c8ab6b56" title="QSTEM::CQscReader::\lReadBeamTilt" alt="" coords="254,5,415,46"/>
+<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#a91cd548461696a863bc2beb62cc2fd60" title="QSTEM::CQscReader::\lReadCrystalCubeAndTilt" alt="" coords="251,70,418,111"/>
+<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#a24f9663652a3073fb1a868dd2283f524" title="QSTEM::CQscReader::\lReadTemperatureData" alt="" coords="254,135,415,177"/>
+<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#a4fbc9045d52f49eba75059244e6a8751" title="QSTEM::CQscReader::\lReadSliceParameters" alt="" coords="254,201,415,242"/>
+<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#a1d166483e4b8db8751870980e76d32eb" title="QSTEM::CQscReader::\lReadPeriodicParameters" alt="" coords="251,266,418,307"/>
+<area shape="rect" id="node7" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#a653f8191e9fd1db611cab4de89e37f08" title="QSTEM::CQscReader::\lReadBandLimitTrans" alt="" coords="254,331,415,373"/>
+<area shape="rect" id="node8" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#a26f065d4a796640d0b622bf95e8506ba" title="QSTEM::CQscReader::\lReadLoadPotential" alt="" coords="254,397,415,438"/>
+<area shape="rect" id="node9" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#ac965f7fe42af8bbca9627e52c29fdbdd" title="QSTEM::CQscReader::\lReadPotentialOutputParameters" alt="" coords="229,462,440,503"/>
+<area shape="rect" id="node10" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#a7d7ef1d88e418cb903d24d2ef6afd19f" title="QSTEM::CQscReader::\lReadPotentialCalculationParameters" alt="" coords="217,527,453,569"/>
+<area shape="rect" id="node11" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#ae4ea43676e9ac3ce232ad74e793c282a" title="QSTEM::CQscReader::\lReadAverageParameters" alt="" coords="251,593,419,634"/>
+<area shape="rect" id="node12" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#a31d8169148e61ae506648149527036ae" title="QSTEM::CQscReader::\lReadPendelloesungParameters" alt="" coords="232,658,437,699"/>
+<area shape="rect" id="node13" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#a7ba3963c769e2c790b96bb50d7b02478" title="QSTEM::CQscReader::\lReadSmoothingParameters" alt="" coords="243,723,426,765"/>
+</map>

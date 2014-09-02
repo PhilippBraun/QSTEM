@@ -1,0 +1,182 @@
+\hypertarget{antlr3commontoken_8h}{\section{libs/structure\-\_\-\-I\-O/ucif/antlr3/include/antlr3commontoken.h File Reference}
+\label{antlr3commontoken_8h}\index{libs/structure\-\_\-\-I\-O/ucif/antlr3/include/antlr3commontoken.\-h@{libs/structure\-\_\-\-I\-O/ucif/antlr3/include/antlr3commontoken.\-h}}
+}
+
+
+Defines the interface for a common token.  
+
+
+{\ttfamily \#include $<$antlr3defs.\-h$>$}\\*
+Include dependency graph for antlr3commontoken.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3commontoken_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3commontoken_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_n_t_l_r3___c_o_m_m_o_n___t_o_k_e_n__struct}{A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-struct}
+\item 
+struct \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}
+\begin{DoxyCompactList}\small\item\em A\-N\-T\-L\-R3 Token factory interface to create lots of tokens efficiently rather than creating and freeing lots of little bits of memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{antlr3commontoken_8h_ad3289834d75e3f178c70dd789feecf65}{A\-N\-T\-L\-R3\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E}~1024
+\item 
+\#define \hyperlink{antlr3commontoken_8h_ae6add32e4a00e4a514491188b60196e0}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D}~0
+\item 
+\#define \hyperlink{antlr3commontoken_8h_a6769d1690b4e65d57efcea32754f1e79}{A\-N\-T\-L\-R3\-\_\-\-E\-O\-R\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E}~1
+\item 
+\#define \hyperlink{antlr3commontoken_8h_a603c0885903dbf262788c91f26101ae2}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-O\-W\-N}~2
+\item 
+\#define \hyperlink{antlr3commontoken_8h_a0fe56e2df2fa8c65e2fba3a79b8af043}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-U\-P}~3
+\item 
+\#define \hyperlink{antlr3commontoken_8h_a24abe14d00c052444bfeae9ee89633dd}{A\-N\-T\-L\-R3\-\_\-\-M\-I\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E}~\hyperlink{antlr3commontoken_8h_a0fe56e2df2fa8c65e2fba3a79b8af043}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-U\-P} + 1
+\item 
+\#define \hyperlink{antlr3commontoken_8h_a1c8f8ac4a421a4adcad0c827fb4f91cd}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-F}~(\hyperlink{antlr3errors_8h_acfaa7f0b23bf1c4e2210366ed0c5e0ad}{A\-N\-T\-L\-R3\-\_\-\-C\-H\-A\-R\-S\-T\-R\-E\-A\-M\-\_\-\-E\-O\-F} \& 0x\-F\-F\-F\-F\-F\-F\-F\-F)
+\item 
+\#define \hyperlink{antlr3commontoken_8h_a9c3c0f56aca416d3c5b5334bb2f5857c}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-H\-A\-N\-N\-E\-L}~0
+\item 
+\#define \hyperlink{antlr3commontoken_8h_ab42ef41116f8f2fe447484e2844cf0df}{H\-I\-D\-D\-E\-N}~99
+\item 
+\#define \hyperlink{antlr3commontoken_8h_a12483b449f9b0bc7f58559ca2c49f5f1}{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-N\-O\-N\-E}~0
+\item 
+\#define \hyperlink{antlr3commontoken_8h_a18e96db5f2e36738c75cf8b7f7f4b9b5}{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-C\-H\-A\-R\-P}~1
+\item 
+\#define \hyperlink{antlr3commontoken_8h_a3ab0ac4c534deda43606fa1161f4452e}{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-S\-T\-R\-I\-N\-G}~2
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \\*
+\hyperlink{struct_a_n_t_l_r3___c_o_m_m_o_n___t_o_k_e_n__struct}{A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-struct} \hyperlink{antlr3commontoken_8h_ab35c5fc3921ac6bfa1dbb31681aa9a0f}{A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N}
+\item 
+typedef struct \\*
+\hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct} \hyperlink{antlr3commontoken_8h_ae1962da0aae7400046a52818b5e7374d}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y}
+\begin{DoxyCompactList}\small\item\em A\-N\-T\-L\-R3 Token factory interface to create lots of tokens efficiently rather than creating and freeing lots of little bits of memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the interface for a common token. All token streams should provide their tokens using an instance of this common token. A custom pointer is provided, wher you may attach a further structure to enhance the common token if you feel the need to do so. The C runtime will assume that a token provides implementations of the interface functions, but all of them may be rplaced by your own implementation if you require it. 
+
+Definition in file \hyperlink{antlr3commontoken_8h_source}{antlr3commontoken.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{antlr3commontoken_8h_a6769d1690b4e65d57efcea32754f1e79}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-E\-O\-R\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E@{A\-N\-T\-L\-R3\-\_\-\-E\-O\-R\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E}}
+\index{A\-N\-T\-L\-R3\-\_\-\-E\-O\-R\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E@{A\-N\-T\-L\-R3\-\_\-\-E\-O\-R\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-E\-O\-R\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-T\-L\-R3\-\_\-\-E\-O\-R\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E~1}}\label{antlr3commontoken_8h_a6769d1690b4e65d57efcea32754f1e79}
+
+
+Definition at line 56 of file antlr3commontoken.\-h.
+
+\hypertarget{antlr3commontoken_8h_ad3289834d75e3f178c70dd789feecf65}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E@{A\-N\-T\-L\-R3\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E}}
+\index{A\-N\-T\-L\-R3\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E@{A\-N\-T\-L\-R3\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-T\-L\-R3\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E~1024}}\label{antlr3commontoken_8h_ad3289834d75e3f178c70dd789feecf65}
+How many tokens to allocate at once in the token factory 
+
+Definition at line 47 of file antlr3commontoken.\-h.
+
+\hypertarget{antlr3commontoken_8h_a24abe14d00c052444bfeae9ee89633dd}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-M\-I\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E@{A\-N\-T\-L\-R3\-\_\-\-M\-I\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E}}
+\index{A\-N\-T\-L\-R3\-\_\-\-M\-I\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E@{A\-N\-T\-L\-R3\-\_\-\-M\-I\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-M\-I\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-T\-L\-R3\-\_\-\-M\-I\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-T\-Y\-P\-E~{\bf A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-U\-P} + 1}}\label{antlr3commontoken_8h_a24abe14d00c052444bfeae9ee89633dd}
+First token that can be used by users/generated code 
+
+Definition at line 69 of file antlr3commontoken.\-h.
+
+\hypertarget{antlr3commontoken_8h_a18e96db5f2e36738c75cf8b7f7f4b9b5}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-C\-H\-A\-R\-P@{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-C\-H\-A\-R\-P}}
+\index{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-C\-H\-A\-R\-P@{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-C\-H\-A\-R\-P}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-C\-H\-A\-R\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-C\-H\-A\-R\-P~1}}\label{antlr3commontoken_8h_a18e96db5f2e36738c75cf8b7f7f4b9b5}
+
+
+Definition at line 97 of file antlr3commontoken.\-h.
+
+\hypertarget{antlr3commontoken_8h_a12483b449f9b0bc7f58559ca2c49f5f1}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-N\-O\-N\-E@{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-N\-O\-N\-E}}
+\index{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-N\-O\-N\-E@{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-N\-O\-N\-E}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-N\-O\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-N\-O\-N\-E~0}}\label{antlr3commontoken_8h_a12483b449f9b0bc7f58559ca2c49f5f1}
+
+
+Definition at line 96 of file antlr3commontoken.\-h.
+
+\hypertarget{antlr3commontoken_8h_a3ab0ac4c534deda43606fa1161f4452e}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-S\-T\-R\-I\-N\-G@{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-S\-T\-R\-I\-N\-G}}
+\index{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-S\-T\-R\-I\-N\-G@{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-S\-T\-R\-I\-N\-G}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-S\-T\-R\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-T\-L\-R3\-\_\-\-T\-E\-X\-T\-\_\-\-S\-T\-R\-I\-N\-G~2}}\label{antlr3commontoken_8h_a3ab0ac4c534deda43606fa1161f4452e}
+
+
+Definition at line 98 of file antlr3commontoken.\-h.
+
+\hypertarget{antlr3commontoken_8h_a9c3c0f56aca416d3c5b5334bb2f5857c}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-H\-A\-N\-N\-E\-L@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-H\-A\-N\-N\-E\-L}}
+\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-H\-A\-N\-N\-E\-L@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-H\-A\-N\-N\-E\-L}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-H\-A\-N\-N\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-H\-A\-N\-N\-E\-L~0}}\label{antlr3commontoken_8h_a9c3c0f56aca416d3c5b5334bb2f5857c}
+Default channel for a token 
+
+Definition at line 77 of file antlr3commontoken.\-h.
+
+\hypertarget{antlr3commontoken_8h_a603c0885903dbf262788c91f26101ae2}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-O\-W\-N@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-O\-W\-N}}
+\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-O\-W\-N@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-O\-W\-N}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-O\-W\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-O\-W\-N~2}}\label{antlr3commontoken_8h_a603c0885903dbf262788c91f26101ae2}
+Imaginary token type to cause a traversal of child nodes in a tree parser 
+
+Definition at line 60 of file antlr3commontoken.\-h.
+
+\hypertarget{antlr3commontoken_8h_a1c8f8ac4a421a4adcad0c827fb4f91cd}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-F@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-F}}
+\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-F@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-F}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-F~({\bf A\-N\-T\-L\-R3\-\_\-\-C\-H\-A\-R\-S\-T\-R\-E\-A\-M\-\_\-\-E\-O\-F} \& 0x\-F\-F\-F\-F\-F\-F\-F\-F)}}\label{antlr3commontoken_8h_a1c8f8ac4a421a4adcad0c827fb4f91cd}
+End of file token 
+
+Definition at line 73 of file antlr3commontoken.\-h.
+
+\hypertarget{antlr3commontoken_8h_ae6add32e4a00e4a514491188b60196e0}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D}}
+\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D~0}}\label{antlr3commontoken_8h_ae6add32e4a00e4a514491188b60196e0}
+Indicator of an invalid token 
+
+Definition at line 54 of file antlr3commontoken.\-h.
+
+\hypertarget{antlr3commontoken_8h_a0fe56e2df2fa8c65e2fba3a79b8af043}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-U\-P@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-U\-P}}
+\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-U\-P@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-U\-P}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-U\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-U\-P~3}}\label{antlr3commontoken_8h_a0fe56e2df2fa8c65e2fba3a79b8af043}
+Imaginary token type to signal the end of a stream of child nodes. 
+
+Definition at line 64 of file antlr3commontoken.\-h.
+
+\hypertarget{antlr3commontoken_8h_ab42ef41116f8f2fe447484e2844cf0df}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!H\-I\-D\-D\-E\-N@{H\-I\-D\-D\-E\-N}}
+\index{H\-I\-D\-D\-E\-N@{H\-I\-D\-D\-E\-N}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{H\-I\-D\-D\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-I\-D\-D\-E\-N~99}}\label{antlr3commontoken_8h_ab42ef41116f8f2fe447484e2844cf0df}
+Reserved channel number for a H\-I\-D\-D\-E\-N token -\/ a token that is hidden from the parser. 
+
+Definition at line 82 of file antlr3commontoken.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{antlr3commontoken_8h_ab35c5fc3921ac6bfa1dbb31681aa9a0f}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N@{A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N}}
+\index{A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N@{A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-struct}
+     {\bf A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N}}}\label{antlr3commontoken_8h_ab35c5fc3921ac6bfa1dbb31681aa9a0f}
+The definition of an A\-N\-T\-L\-R3 common token structure, which all implementations of a token stream should provide, installing any further structures in the custom pointer element of this structure.
+
+\begin{DoxyRemark}{Remarks}
+Token streams are in essence provided by lexers or other programs that serve as lexers. 
+\end{DoxyRemark}
+\hypertarget{antlr3commontoken_8h_ae1962da0aae7400046a52818b5e7374d}{\index{antlr3commontoken.\-h@{antlr3commontoken.\-h}!A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y}}
+\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y}!antlr3commontoken.h@{antlr3commontoken.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}
+     {\bf A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y}}}\label{antlr3commontoken_8h_ae1962da0aae7400046a52818b5e7374d}
+
+
+A\-N\-T\-L\-R3 Token factory interface to create lots of tokens efficiently rather than creating and freeing lots of little bits of memory. 
+

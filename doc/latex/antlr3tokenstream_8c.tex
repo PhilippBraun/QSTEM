@@ -1,0 +1,168 @@
+\hypertarget{antlr3tokenstream_8c}{\section{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3tokenstream.c File Reference}
+\label{antlr3tokenstream_8c}\index{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3tokenstream.\-c@{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3tokenstream.\-c}}
+}
+{\ttfamily \#include $<$antlr3tokenstream.\-h$>$}\\*
+Include dependency graph for antlr3tokenstream.\-c\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3tokenstream_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{antlr3interfaces_8h_a9daa2d452cf7fb0c1f4b5e153266070c}{p\-A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M} \hyperlink{antlr3tokenstream_8c_ae626fd40b41f59b8081b8c475b75381e}{antlr3\-Token\-Stream\-New} ()
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \\*
+\hyperlink{antlr3interfaces_8h_aafca8bc0b0137df3149e9a589f83e09a}{p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M} \hyperlink{antlr3tokenstream_8c_ada21cf0d75ef83806a60990556d86fe0}{antlr3\-Common\-Token\-Debug\-Stream\-Source\-New} (\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} hint, \hyperlink{antlr3interfaces_8h_a4b8bc42f86b752cba4de49f0d1f53cba}{p\-A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-O\-U\-R\-C\-E} source, \hyperlink{antlr3interfaces_8h_ab226a624395fcc0b8fe2b29ae60b6116}{p\-A\-N\-T\-L\-R3\-\_\-\-D\-E\-B\-U\-G\-\_\-\-E\-V\-E\-N\-T\-\_\-\-L\-I\-S\-T\-E\-N\-E\-R} debugger)
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \\*
+\hyperlink{antlr3interfaces_8h_aafca8bc0b0137df3149e9a589f83e09a}{p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M} \hyperlink{antlr3tokenstream_8c_ad4ef5baa73e1fdd0f0c2fc4cce4277cb}{antlr3\-Common\-Token\-Stream\-Source\-New} (\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} hint, \hyperlink{antlr3interfaces_8h_a4b8bc42f86b752cba4de49f0d1f53cba}{p\-A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-O\-U\-R\-C\-E} source)
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \\*
+\hyperlink{antlr3interfaces_8h_aafca8bc0b0137df3149e9a589f83e09a}{p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M} \hyperlink{antlr3tokenstream_8c_ab8426bed8df754240d19d2ee37edee70}{antlr3\-Common\-Token\-Stream\-New} (\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} hint)
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} void \hyperlink{antlr3tokenstream_8c_a295959de1a6ec5ff69adff8b7e74155f}{fill\-Buffer\-Ext} (\hyperlink{antlr3interfaces_8h_aafca8bc0b0137df3149e9a589f83e09a}{p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M} token\-Stream)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Default implementation of Common\-Token\-Stream 
+
+Definition in file \hyperlink{antlr3tokenstream_8c_source}{antlr3tokenstream.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{antlr3tokenstream_8c_ada21cf0d75ef83806a60990556d86fe0}{\index{antlr3tokenstream.\-c@{antlr3tokenstream.\-c}!antlr3\-Common\-Token\-Debug\-Stream\-Source\-New@{antlr3\-Common\-Token\-Debug\-Stream\-Source\-New}}
+\index{antlr3\-Common\-Token\-Debug\-Stream\-Source\-New@{antlr3\-Common\-Token\-Debug\-Stream\-Source\-New}!antlr3tokenstream.c@{antlr3tokenstream.\-c}}
+\subsubsection[{antlr3\-Common\-Token\-Debug\-Stream\-Source\-New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M} antlr3\-Common\-Token\-Debug\-Stream\-Source\-New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32}}]{hint, }
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-O\-U\-R\-C\-E}}]{source, }
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-D\-E\-B\-U\-G\-\_\-\-E\-V\-E\-N\-T\-\_\-\-L\-I\-S\-T\-E\-N\-E\-R}}]{debugger}
+\end{DoxyParamCaption}
+)}}\label{antlr3tokenstream_8c_ada21cf0d75ef83806a60990556d86fe0}
+
+
+Definition at line 206 of file antlr3tokenstream.\-c.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3tokenstream_8c_ada21cf0d75ef83806a60990556d86fe0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3tokenstream_8c_ab8426bed8df754240d19d2ee37edee70}{\index{antlr3tokenstream.\-c@{antlr3tokenstream.\-c}!antlr3\-Common\-Token\-Stream\-New@{antlr3\-Common\-Token\-Stream\-New}}
+\index{antlr3\-Common\-Token\-Stream\-New@{antlr3\-Common\-Token\-Stream\-New}!antlr3tokenstream.c@{antlr3tokenstream.\-c}}
+\subsubsection[{antlr3\-Common\-Token\-Stream\-New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M} antlr3\-Common\-Token\-Stream\-New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32}}]{hint}
+\end{DoxyParamCaption}
+)}}\label{antlr3tokenstream_8c_ab8426bed8df754240d19d2ee37edee70}
+
+
+Definition at line 254 of file antlr3tokenstream.\-c.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3tokenstream_8c_ab8426bed8df754240d19d2ee37edee70_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3tokenstream_8c_ab8426bed8df754240d19d2ee37edee70_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3tokenstream_8c_ad4ef5baa73e1fdd0f0c2fc4cce4277cb}{\index{antlr3tokenstream.\-c@{antlr3tokenstream.\-c}!antlr3\-Common\-Token\-Stream\-Source\-New@{antlr3\-Common\-Token\-Stream\-Source\-New}}
+\index{antlr3\-Common\-Token\-Stream\-Source\-New@{antlr3\-Common\-Token\-Stream\-Source\-New}!antlr3tokenstream.c@{antlr3tokenstream.\-c}}
+\subsubsection[{antlr3\-Common\-Token\-Stream\-Source\-New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M} antlr3\-Common\-Token\-Stream\-Source\-New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32}}]{hint, }
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-O\-U\-R\-C\-E}}]{source}
+\end{DoxyParamCaption}
+)}}\label{antlr3tokenstream_8c_ad4ef5baa73e1fdd0f0c2fc4cce4277cb}
+
+
+Definition at line 235 of file antlr3tokenstream.\-c.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3tokenstream_8c_ad4ef5baa73e1fdd0f0c2fc4cce4277cb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3tokenstream_8c_ad4ef5baa73e1fdd0f0c2fc4cce4277cb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3tokenstream_8c_ae626fd40b41f59b8081b8c475b75381e}{\index{antlr3tokenstream.\-c@{antlr3tokenstream.\-c}!antlr3\-Token\-Stream\-New@{antlr3\-Token\-Stream\-New}}
+\index{antlr3\-Token\-Stream\-New@{antlr3\-Token\-Stream\-New}!antlr3tokenstream.c@{antlr3tokenstream.\-c}}
+\subsubsection[{antlr3\-Token\-Stream\-New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf p\-A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M} antlr3\-Token\-Stream\-New (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{antlr3tokenstream_8c_ae626fd40b41f59b8081b8c475b75381e}
+
+
+Definition at line 93 of file antlr3tokenstream.\-c.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3tokenstream_8c_ae626fd40b41f59b8081b8c475b75381e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3tokenstream_8c_a295959de1a6ec5ff69adff8b7e74155f}{\index{antlr3tokenstream.\-c@{antlr3tokenstream.\-c}!fill\-Buffer\-Ext@{fill\-Buffer\-Ext}}
+\index{fill\-Buffer\-Ext@{fill\-Buffer\-Ext}!antlr3tokenstream.c@{antlr3tokenstream.\-c}}
+\subsubsection[{fill\-Buffer\-Ext}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} void fill\-Buffer\-Ext (
+\begin{DoxyParamCaption}
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M}}]{token\-Stream}
+\end{DoxyParamCaption}
+)}}\label{antlr3tokenstream_8c_a295959de1a6ec5ff69adff8b7e74155f}
+
+
+Definition at line 945 of file antlr3tokenstream.\-c.
+

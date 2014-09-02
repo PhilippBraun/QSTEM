@@ -1,0 +1,103 @@
+\hypertarget{read_c_f_g__qstem_8m}{\section{G\-U\-I\-\_\-\-Matlab/read\-C\-F\-G\-\_\-qstem.m File Reference}
+\label{read_c_f_g__qstem_8m}\index{G\-U\-I\-\_\-\-Matlab/read\-C\-F\-G\-\_\-qstem.\-m@{G\-U\-I\-\_\-\-Matlab/read\-C\-F\-G\-\_\-qstem.\-m}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{xyz2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}{nargin}$<$ 3 \hyperlink{xyz2cfg_8m_aeb02c2817edf619fabdf1972b000db18}{mode}=1;endcoords=\mbox{[}$\,$\mbox{]};\hyperlink{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}{a\-Type}=\mbox{[}$\,$\mbox{]};\hyperlink{write_c_f_g_8m_a75175ae123d011b5deabab133d940a44}{D\-W}=\mbox{[}$\,$\mbox{]};\hyperlink{_display_model_properties_8m_a14685678a932a690bb677ca0be6b191a}{occ}=\mbox{[}$\,$\mbox{]};\hyperlink{_display_model_properties_8m_a9f9b7255ba6680c145f9c08ebf2bc024}{charge}=\mbox{[}$\,$\mbox{]};\hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}=eye(3);\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if}(1) \\*
+clear read\-C\-F\-G\-\_\-mex\mbox{[}\hyperlink{_read_d_m3___matlab_8m_a3453fec604ce3fd43cb779ff533e4f21}{pathname}, \\*
+filen, ext\mbox{]}=\hyperlink{qmb_8m_a3f5148a2cb27e0bbf68da5bed91b82e0}{fileparts}(\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name});filename2=\mbox{[}filen, \\*
+ext\mbox{]};\hyperlink{read_config_file_8m_ab4171a1cd001f6152db76555a7e11abf}{old\-Path}=pwd();\hyperlink{read_config_file_8m_ab976f0895f4fefa5bbedb3076c4f5774}{cd}(\hyperlink{_read_d_m3___matlab_8m_a3453fec604ce3fd43cb779ff533e4f21}{pathname});\mbox{[}\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, \\*
+\hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}\mbox{]}=read\-C\-F\-G\-\_\-mex(filename2);\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \\*
+sum(sum(isnan(\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}))) $>$ \hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum} (sum(isnan(\hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}))) $>$ 0 clear read\-C\-F\-G\-\_\-mex \hyperlink{write_fields2_file_8m_a659f44d5663a2bb4581f2749601e2c1c}{fprintf}('reading \hyperlink{write_fields2_file_8m_a75658b9c899229893bf0bc9d90e97d93}{file} \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} second time!\textbackslash{}n')
+\item 
+\hyperlink{read_c_f_g__qstem_8m_a70ef039ed594610c3eb98e0909bc772a}{cd} (\hyperlink{read_config_file_8m_ab4171a1cd001f6152db76555a7e11abf}{old\-Path})
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{read_c_f_g__qstem_8m_a0e449fa3bec1a9c581f9174baf647616}{prod} (\hyperlink{qmb_8m_a34efcbeb95e7c3e7e0050034d30c01cd}{size}(\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}))
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{read_c_f_g__qstem_8m_aa75c83c23b4a23a8e96f8224570386aa}{function} \mbox{[}\hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords}, \hyperlink{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}{a\-Type}, \hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}, \hyperlink{write_c_f_g_8m_a75175ae123d011b5deabab133d940a44}{D\-W}, \hyperlink{_display_model_properties_8m_a9f9b7255ba6680c145f9c08ebf2bc024}{charge}\mbox{]}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{read_c_f_g__qstem_8m_a8810a9f257be5fd0f542ddd212b436f8}{Mm} = Mm.'
+\item 
+\hyperlink{read_c_f_g__qstem_8m_a9717e7bbecb906637e86cef6da3d83c2}{return}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{read_c_f_g__qstem_8m_a552eedb796e4ec274fe617b434bf69b2}{box} = \mbox{[}0 0 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{read_c_f_g__qstem_8m_a70ef039ed594610c3eb98e0909bc772a}{\index{read\-C\-F\-G\-\_\-qstem.\-m@{read\-C\-F\-G\-\_\-qstem.\-m}!cd@{cd}}
+\index{cd@{cd}!readCFG_qstem.m@{read\-C\-F\-G\-\_\-qstem.\-m}}
+\subsubsection[{cd}]{\setlength{\rightskip}{0pt plus 5cm}cd (
+\begin{DoxyParamCaption}
+\item[{{\bf old\-Path}}]{}
+\end{DoxyParamCaption}
+)}}\label{read_c_f_g__qstem_8m_a70ef039ed594610c3eb98e0909bc772a}
+\hypertarget{read_c_f_g__qstem_8m_a0e449fa3bec1a9c581f9174baf647616}{\index{read\-C\-F\-G\-\_\-qstem.\-m@{read\-C\-F\-G\-\_\-qstem.\-m}!prod@{prod}}
+\index{prod@{prod}!readCFG_qstem.m@{read\-C\-F\-G\-\_\-qstem.\-m}}
+\subsubsection[{prod}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} prod (
+\begin{DoxyParamCaption}
+\item[{{\bf size}({\bf a})}]{}
+\end{DoxyParamCaption}
+)}}\label{read_c_f_g__qstem_8m_a0e449fa3bec1a9c581f9174baf647616}
+\hypertarget{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{\index{read\-C\-F\-G\-\_\-qstem.\-m@{read\-C\-F\-G\-\_\-qstem.\-m}!sum@{sum}}
+\index{sum@{sum}!readCFG_qstem.m@{read\-C\-F\-G\-\_\-qstem.\-m}}
+\subsubsection[{sum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} {\bf nargin}$<$ 3 {\bf mode} = 1;endcoords = \mbox{[}$\,$\mbox{]};{\bf a\-Type} = \mbox{[}$\,$\mbox{]};{\bf D\-W} = \mbox{[}$\,$\mbox{]};{\bf occ} = \mbox{[}$\,$\mbox{]};{\bf charge} = \mbox{[}$\,$\mbox{]};{\bf Mm} = eye(3);{\bf if} (1) clear read\-C\-F\-G\-\_\-mex \mbox{[}{\bf pathname},filen,ext\mbox{]} = {\bf fileparts}({\bf file\-Name}); filename2 = \mbox{[}filen,ext\mbox{]}; {\bf old\-Path} = pwd(); {\bf cd}({\bf pathname}); \mbox{[}{\bf a},{\bf Mm}\mbox{]} = read\-C\-F\-G\-\_\-mex(filename2); {\bf if} sum(sum(isnan({\bf a}))) $>$ sum (
+\begin{DoxyParamCaption}
+\item[{sum(isnan({\bf Mm}))}]{}
+\end{DoxyParamCaption}
+)}}\label{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{read_c_f_g__qstem_8m_a552eedb796e4ec274fe617b434bf69b2}{\index{read\-C\-F\-G\-\_\-qstem.\-m@{read\-C\-F\-G\-\_\-qstem.\-m}!box@{box}}
+\index{box@{box}!readCFG_qstem.m@{read\-C\-F\-G\-\_\-qstem.\-m}}
+\subsubsection[{box}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} box = \mbox{[}0 0 0}}\label{read_c_f_g__qstem_8m_a552eedb796e4ec274fe617b434bf69b2}
+
+
+Definition at line 45 of file read\-C\-F\-G\-\_\-qstem.\-m.
+
+\hypertarget{read_c_f_g__qstem_8m_aa75c83c23b4a23a8e96f8224570386aa}{\index{read\-C\-F\-G\-\_\-qstem.\-m@{read\-C\-F\-G\-\_\-qstem.\-m}!function@{function}}
+\index{function@{function}!readCFG_qstem.m@{read\-C\-F\-G\-\_\-qstem.\-m}}
+\subsubsection[{function}]{\setlength{\rightskip}{0pt plus 5cm}function\mbox{[}{\bf coords}, {\bf a\-Type}, {\bf Mm}, {\bf D\-W}, {\bf charge}\mbox{]}}}\label{read_c_f_g__qstem_8m_aa75c83c23b4a23a8e96f8224570386aa}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= readCFG(\hyperlink{binwrite2_d_8m_a7a230f02bdffebd1357e3c0b49e01271}{fileName})
+%
+% \hyperlink{binwrite2_d_8m_a7a230f02bdffebd1357e3c0b49e01271}{fileName}: \hyperlink{convert2cfg_8m_ab74e6bf80237ddc4109968cedc58c151}{name} of input \hyperlink{qmb_8m_a0afda3603b043ac6b7362fdee225631e}{file}
+% \hyperlink{write_c_f_g_8m_ac16738663da61b835844f663e221d53c}{shift}:    \hyperlink{qmb_8m_a4dd6f73f98b7876577fd0d041b94d968}{offset} to atomic \hyperlink{convert2cfg_8m_a923d61728dac7c6dff07427a901c9ba9}{positions}
+% \hyperlink{_display_model_properties_8m_aabea1a308e18fee00cc3a9031f079ba6}{mode}:     1=cartesian coordinates
+\end{DoxyCode}
+
+
+Definition at line 1 of file read\-C\-F\-G\-\_\-qstem.\-m.
+
+\hypertarget{read_c_f_g__qstem_8m_a8810a9f257be5fd0f542ddd212b436f8}{\index{read\-C\-F\-G\-\_\-qstem.\-m@{read\-C\-F\-G\-\_\-qstem.\-m}!Mm@{Mm}}
+\index{Mm@{Mm}!readCFG_qstem.m@{read\-C\-F\-G\-\_\-qstem.\-m}}
+\subsubsection[{Mm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Mm = Mm.'}}\label{read_c_f_g__qstem_8m_a8810a9f257be5fd0f542ddd212b436f8}
+
+
+Definition at line 35 of file read\-C\-F\-G\-\_\-qstem.\-m.
+
+\hypertarget{read_c_f_g__qstem_8m_a9717e7bbecb906637e86cef6da3d83c2}{\index{read\-C\-F\-G\-\_\-qstem.\-m@{read\-C\-F\-G\-\_\-qstem.\-m}!return@{return}}
+\index{return@{return}!readCFG_qstem.m@{read\-C\-F\-G\-\_\-qstem.\-m}}
+\subsubsection[{return}]{\setlength{\rightskip}{0pt plus 5cm}return}}\label{read_c_f_g__qstem_8m_a9717e7bbecb906637e86cef6da3d83c2}
+
+
+Definition at line 40 of file read\-C\-F\-G\-\_\-qstem.\-m.
+

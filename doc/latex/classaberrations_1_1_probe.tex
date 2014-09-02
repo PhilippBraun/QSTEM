@@ -1,0 +1,147 @@
+\hypertarget{classaberrations_1_1_probe}{\section{aberrations.\-Probe Class Reference}
+\label{classaberrations_1_1_probe}\index{aberrations.\-Probe@{aberrations.\-Probe}}
+}
+
+
+Inheritance diagram for aberrations.\-Probe\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classaberrations_1_1_probe__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for aberrations.\-Probe\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classaberrations_1_1_probe__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{classaberrations_1_1_probe_a5f0a8b8760e38015d065d3faab514642}{H\-T} = Range(low=40,high=3000.\-0,\hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value}=200.\-0)
+\item 
+tuple \hyperlink{classaberrations_1_1_probe_a4c41bbc5180131ebfb0bf219a3580fc8}{alpha} = Range(low=0.\-0,high=80.\-0,\hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value}=15.\-0)
+\item 
+tuple \hyperlink{classaberrations_1_1_probe_adb91a6ae085cbb9a4c3199fb5cba63f0}{wl} = Property(Float, depends\-\_\-on=\mbox{[}'\hyperlink{classaberrations_1_1_probe_a5f0a8b8760e38015d065d3faab514642}{H\-T}'\mbox{]})
+\item 
+tuple \hyperlink{classaberrations_1_1_probe_afca5c76ee4c97f65813d19157db396b3}{nomenclature} = Enum('Krivanek', 'Rose', 'Number3')
+\item 
+tuple \hyperlink{classaberrations_1_1_probe_aab105182dd5e2cc48962cc536c000ac3}{ab} = Instance(\hyperlink{classaberrations_1_1_aberrations}{Aberrations})
+\item 
+tuple \hyperlink{classaberrations_1_1_probe_a2f6137c882c5bc472db425ef945bf937}{gen\-\_\-group}
+\item 
+tuple \hyperlink{classaberrations_1_1_probe_a5bb14f69d46f84ec516fd540431c2d91}{ab\-\_\-group}
+\item 
+tuple \hyperlink{classaberrations_1_1_probe_a321f4dd1122df9da6e42a190d93d2883}{view}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 519 of file aberrations.\-py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classaberrations_1_1_probe_aab105182dd5e2cc48962cc536c000ac3}{\index{aberrations\-::\-Probe@{aberrations\-::\-Probe}!ab@{ab}}
+\index{ab@{ab}!aberrations::Probe@{aberrations\-::\-Probe}}
+\subsubsection[{ab}]{\setlength{\rightskip}{0pt plus 5cm}tuple aberrations.\-Probe.\-ab = Instance({\bf Aberrations})\hspace{0.3cm}{\ttfamily [static]}}}\label{classaberrations_1_1_probe_aab105182dd5e2cc48962cc536c000ac3}
+
+
+Definition at line 524 of file aberrations.\-py.
+
+\hypertarget{classaberrations_1_1_probe_a5bb14f69d46f84ec516fd540431c2d91}{\index{aberrations\-::\-Probe@{aberrations\-::\-Probe}!ab\-\_\-group@{ab\-\_\-group}}
+\index{ab\-\_\-group@{ab\-\_\-group}!aberrations::Probe@{aberrations\-::\-Probe}}
+\subsubsection[{ab\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}tuple aberrations.\-Probe.\-ab\-\_\-group\hspace{0.3cm}{\ttfamily [static]}}}\label{classaberrations_1_1_probe_a5bb14f69d46f84ec516fd540431c2d91}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+1 = Group(
+2         Group(
+3             Item(name=\textcolor{stringliteral}{'ab'},style=\textcolor{stringliteral}{'custom'}),
+4             show\_labels=\textcolor{keyword}{False}
+5         ),
+6         show\_border = \textcolor{keyword}{True}
+7         )
+\end{DoxyCode}
+
+
+Definition at line 544 of file aberrations.\-py.
+
+\hypertarget{classaberrations_1_1_probe_a4c41bbc5180131ebfb0bf219a3580fc8}{\index{aberrations\-::\-Probe@{aberrations\-::\-Probe}!alpha@{alpha}}
+\index{alpha@{alpha}!aberrations::Probe@{aberrations\-::\-Probe}}
+\subsubsection[{alpha}]{\setlength{\rightskip}{0pt plus 5cm}tuple aberrations.\-Probe.\-alpha = Range(low=0.\-0,high=80.\-0,{\bf value}=15.\-0)\hspace{0.3cm}{\ttfamily [static]}}}\label{classaberrations_1_1_probe_a4c41bbc5180131ebfb0bf219a3580fc8}
+
+
+Definition at line 521 of file aberrations.\-py.
+
+\hypertarget{classaberrations_1_1_probe_a2f6137c882c5bc472db425ef945bf937}{\index{aberrations\-::\-Probe@{aberrations\-::\-Probe}!gen\-\_\-group@{gen\-\_\-group}}
+\index{gen\-\_\-group@{gen\-\_\-group}!aberrations::Probe@{aberrations\-::\-Probe}}
+\subsubsection[{gen\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}tuple aberrations.\-Probe.\-gen\-\_\-group\hspace{0.3cm}{\ttfamily [static]}}}\label{classaberrations_1_1_probe_a2f6137c882c5bc472db425ef945bf937}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+1 = Group(
+2         HGroup(
+3         Item(name=\textcolor{stringliteral}{'nomenclature'}, label=\textcolor{stringliteral}{'Nomenclature'}),
+4         spring,
+5         Item(name=\textcolor{stringliteral}{'HT'},label=\textcolor{stringliteral}{"High Tension, kV"},
+6              help=\textcolor{stringliteral}{'The microscope accelerating voltage'}),
+7         Item(\textcolor{stringliteral}{'wl'}, label=\textcolor{stringliteral}{"Wavelength, pm "},style = \textcolor{stringliteral}{'readonly'},
+8              editor=TextEditor(format\_str=\textcolor{stringliteral}{'%3.2f'})),
+9         spring,
+10         Item(\textcolor{stringliteral}{'alpha'}, label=\textcolor{stringliteral}{"Conv. Angle"})),
+11         )
+\end{DoxyCode}
+
+
+Definition at line 533 of file aberrations.\-py.
+
+\hypertarget{classaberrations_1_1_probe_a5f0a8b8760e38015d065d3faab514642}{\index{aberrations\-::\-Probe@{aberrations\-::\-Probe}!H\-T@{H\-T}}
+\index{H\-T@{H\-T}!aberrations::Probe@{aberrations\-::\-Probe}}
+\subsubsection[{H\-T}]{\setlength{\rightskip}{0pt plus 5cm}tuple aberrations.\-Probe.\-H\-T = Range(low=40,high=3000.\-0,{\bf value}=200.\-0)\hspace{0.3cm}{\ttfamily [static]}}}\label{classaberrations_1_1_probe_a5f0a8b8760e38015d065d3faab514642}
+
+
+Definition at line 520 of file aberrations.\-py.
+
+\hypertarget{classaberrations_1_1_probe_afca5c76ee4c97f65813d19157db396b3}{\index{aberrations\-::\-Probe@{aberrations\-::\-Probe}!nomenclature@{nomenclature}}
+\index{nomenclature@{nomenclature}!aberrations::Probe@{aberrations\-::\-Probe}}
+\subsubsection[{nomenclature}]{\setlength{\rightskip}{0pt plus 5cm}tuple aberrations.\-Probe.\-nomenclature = Enum('Krivanek', 'Rose', 'Number3')\hspace{0.3cm}{\ttfamily [static]}}}\label{classaberrations_1_1_probe_afca5c76ee4c97f65813d19157db396b3}
+
+
+Definition at line 523 of file aberrations.\-py.
+
+\hypertarget{classaberrations_1_1_probe_a321f4dd1122df9da6e42a190d93d2883}{\index{aberrations\-::\-Probe@{aberrations\-::\-Probe}!view@{view}}
+\index{view@{view}!aberrations::Probe@{aberrations\-::\-Probe}}
+\subsubsection[{view}]{\setlength{\rightskip}{0pt plus 5cm}tuple aberrations.\-Probe.\-view\hspace{0.3cm}{\ttfamily [static]}}}\label{classaberrations_1_1_probe_a321f4dd1122df9da6e42a190d93d2883}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+1 = View(
+2         Group(gen\_group,ab\_group),
+3         title     = \textcolor{stringliteral}{'Higher-order Aberrations'},
+4         buttons   = [ \textcolor{stringliteral}{'OK'}, \textcolor{stringliteral}{'Cancel'} ],
+5         resizable = \textcolor{keyword}{True},
+6         handler   = ProbeHandler()
+7         )
+\end{DoxyCode}
+
+
+Definition at line 552 of file aberrations.\-py.
+
+\hypertarget{classaberrations_1_1_probe_adb91a6ae085cbb9a4c3199fb5cba63f0}{\index{aberrations\-::\-Probe@{aberrations\-::\-Probe}!wl@{wl}}
+\index{wl@{wl}!aberrations::Probe@{aberrations\-::\-Probe}}
+\subsubsection[{wl}]{\setlength{\rightskip}{0pt plus 5cm}tuple aberrations.\-Probe.\-wl = Property(Float, depends\-\_\-on=\mbox{[}'{\bf H\-T}'\mbox{]})\hspace{0.3cm}{\ttfamily [static]}}}\label{classaberrations_1_1_probe_adb91a6ae085cbb9a4c3199fb5cba63f0}
+
+
+Definition at line 522 of file aberrations.\-py.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Q\-S\-T\-E\-M\-\_\-\-G\-U\-I\-\_\-\-Traits/\hyperlink{aberrations_8py}{aberrations.\-py}\end{DoxyCompactItemize}

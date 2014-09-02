@@ -1,0 +1,5 @@
+<map id="QSTEM::C3DFFTPotential::GetAtomPotential3D" name="QSTEM::C3DFFTPotential::GetAtomPotential3D">
+<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c3_d_f_f_t_potential.html#aac2d934bd221256296571d09eaa0fc8a" title="QSTEM::C3DFFTPotential\l::AddAtomNonPeriodic" alt="" coords="232,5,411,46"/>
+<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c3_d_f_f_t_potential.html#a28ac6f74aceb3fb6b2870a54536595a5" title="QSTEM::C3DFFTPotential\l::AddAtomPeriodic" alt="" coords="232,70,411,111"/>
+<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c3_d_f_f_t_potential.html#ae123c91e40c74b33f812b85796a690b1" title="QSTEM::C3DFFTPotential\l::AddAtomToSlices" alt="" coords="459,38,637,79"/>
+</map>

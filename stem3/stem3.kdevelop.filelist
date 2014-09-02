@@ -1,0 +1,17 @@
+libs/crystal.hpp
+libs/detectors.hpp
+libs/elTable.hpp
+libs/experiments.hpp
+libs/fftw_allocator.hpp
+libs/fileio_fftw3.hpp
+libs/filename_utilities.hpp
+libs/floatdef.hpp
+libs/imagelib_fftw3.hpp
+libs/matrixlib.hpp
+libs/memory_fftw3.hpp
+libs/random.hpp
+libs/readparams.hpp
+libs/stemtypes_fftw3.hpp
+libs/structure_readers.hpp
+stem3/CMakeLists.txt
+stem3/stem3.cpp

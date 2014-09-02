@@ -1,0 +1,199 @@
+\hypertarget{readparams_8hpp}{\section{libs/readparams.hpp File Reference}
+\label{readparams_8hpp}\index{libs/readparams.\-hpp@{libs/readparams.\-hpp}}
+}
+{\ttfamily \#include $<$string$>$}\\*
+Include dependency graph for readparams.\-hpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{readparams_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{readparams_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{readparams_8hpp_a0dd0df99b6376eef45ff68801e4e2b79}{N\-C\-M\-A\-X}~132	/$\ast$ characters per line to read $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{readparams_8hpp_aa19d752c0c50eecc254a76d56cda6d3a}{set\-Comment} (char new\-Comment)
+\item 
+int \hyperlink{readparams_8hpp_ac7dc68cb434a719b026b67c8600e4c6f}{readparam} (F\-I\-L\-E $\ast$fp, const char $\ast$\hyperlink{sim_image_from_wave_8m_a44bef1002aae03ce551200278fa06223}{title}, std\-::string \&par\-String, int wrap\-Flag)
+\item 
+int \hyperlink{readparams_8hpp_ad54b7a4a9fac59643574896e3f6cb42d}{read\-Next\-Param} (F\-I\-L\-E $\ast$fp, char $\ast$\hyperlink{sim_image_from_wave_8m_a44bef1002aae03ce551200278fa06223}{title}, char $\ast$par\-String)
+\item 
+int \hyperlink{readparams_8hpp_ae67e1db2a989b4c6b2cfe91ef135a736}{read\-Next\-Line} (F\-I\-L\-E $\ast$fp, char $\ast$\hyperlink{convert2cfg_8m_af30278de8dab4c8bc6e28657bdf50d14}{buf}, int buf\-Len)
+\item 
+void \hyperlink{readparams_8hpp_a051b029d2504155914957592805d8350}{reset\-Param\-File} (F\-I\-L\-E $\ast$fp)
+\item 
+char $\ast$ \hyperlink{readparams_8hpp_ac6708dd943a4864c9a5bf0bfc5ec5b44}{strnext} (char $\ast$str, char $\ast$delim)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{readparams_8hpp_a0dd0df99b6376eef45ff68801e4e2b79}{\index{readparams.\-hpp@{readparams.\-hpp}!N\-C\-M\-A\-X@{N\-C\-M\-A\-X}}
+\index{N\-C\-M\-A\-X@{N\-C\-M\-A\-X}!readparams.hpp@{readparams.\-hpp}}
+\subsubsection[{N\-C\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-C\-M\-A\-X~132	/$\ast$ characters per line to read $\ast$/}}\label{readparams_8hpp_a0dd0df99b6376eef45ff68801e4e2b79}
+
+
+Definition at line 33 of file readparams.\-hpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{readparams_8hpp_ae67e1db2a989b4c6b2cfe91ef135a736}{\index{readparams.\-hpp@{readparams.\-hpp}!read\-Next\-Line@{read\-Next\-Line}}
+\index{read\-Next\-Line@{read\-Next\-Line}!readparams.hpp@{readparams.\-hpp}}
+\subsubsection[{read\-Next\-Line}]{\setlength{\rightskip}{0pt plus 5cm}int read\-Next\-Line (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp, }
+\item[{char $\ast$}]{buf, }
+\item[{int}]{buf\-Len}
+\end{DoxyParamCaption}
+)}}\label{readparams_8hpp_ae67e1db2a989b4c6b2cfe91ef135a736}
+
+
+Definition at line 200 of file readparams.\-cpp.
+
+\hypertarget{readparams_8hpp_ad54b7a4a9fac59643574896e3f6cb42d}{\index{readparams.\-hpp@{readparams.\-hpp}!read\-Next\-Param@{read\-Next\-Param}}
+\index{read\-Next\-Param@{read\-Next\-Param}!readparams.hpp@{readparams.\-hpp}}
+\subsubsection[{read\-Next\-Param}]{\setlength{\rightskip}{0pt plus 5cm}int read\-Next\-Param (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp, }
+\item[{char $\ast$}]{title, }
+\item[{char $\ast$}]{par\-String}
+\end{DoxyParamCaption}
+)}}\label{readparams_8hpp_ad54b7a4a9fac59643574896e3f6cb42d}
+
+
+Definition at line 161 of file readparams.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{readparams_8hpp_ad54b7a4a9fac59643574896e3f6cb42d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{readparams_8hpp_ad54b7a4a9fac59643574896e3f6cb42d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{readparams_8hpp_ac7dc68cb434a719b026b67c8600e4c6f}{\index{readparams.\-hpp@{readparams.\-hpp}!readparam@{readparam}}
+\index{readparam@{readparam}!readparams.hpp@{readparams.\-hpp}}
+\subsubsection[{readparam}]{\setlength{\rightskip}{0pt plus 5cm}int readparam (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp, }
+\item[{const char $\ast$}]{title, }
+\item[{std\-::string \&}]{par\-String, }
+\item[{int}]{wrap\-Flag}
+\end{DoxyParamCaption}
+)}}\label{readparams_8hpp_ac7dc68cb434a719b026b67c8600e4c6f}
+
+
+Definition at line 69 of file readparams.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{readparams_8hpp_ac7dc68cb434a719b026b67c8600e4c6f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{readparams_8hpp_a051b029d2504155914957592805d8350}{\index{readparams.\-hpp@{readparams.\-hpp}!reset\-Param\-File@{reset\-Param\-File}}
+\index{reset\-Param\-File@{reset\-Param\-File}!readparams.hpp@{readparams.\-hpp}}
+\subsubsection[{reset\-Param\-File}]{\setlength{\rightskip}{0pt plus 5cm}void reset\-Param\-File (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)}}\label{readparams_8hpp_a051b029d2504155914957592805d8350}
+
+
+Definition at line 121 of file readparams.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{readparams_8hpp_a051b029d2504155914957592805d8350_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{readparams_8hpp_aa19d752c0c50eecc254a76d56cda6d3a}{\index{readparams.\-hpp@{readparams.\-hpp}!set\-Comment@{set\-Comment}}
+\index{set\-Comment@{set\-Comment}!readparams.hpp@{readparams.\-hpp}}
+\subsubsection[{set\-Comment}]{\setlength{\rightskip}{0pt plus 5cm}void set\-Comment (
+\begin{DoxyParamCaption}
+\item[{char}]{new\-Comment}
+\end{DoxyParamCaption}
+)}}\label{readparams_8hpp_aa19d752c0c50eecc254a76d56cda6d3a}
+
+
+Definition at line 51 of file readparams.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{readparams_8hpp_aa19d752c0c50eecc254a76d56cda6d3a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{readparams_8hpp_ac6708dd943a4864c9a5bf0bfc5ec5b44}{\index{readparams.\-hpp@{readparams.\-hpp}!strnext@{strnext}}
+\index{strnext@{strnext}!readparams.hpp@{readparams.\-hpp}}
+\subsubsection[{strnext}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ strnext (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char $\ast$}]{delim}
+\end{DoxyParamCaption}
+)}}\label{readparams_8hpp_ac6708dd943a4864c9a5bf0bfc5ec5b44}
+
+
+Definition at line 131 of file readparams.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{readparams_8hpp_ac6708dd943a4864c9a5bf0bfc5ec5b44_icgraph}
+\end{center}
+\end{figure}
+
+

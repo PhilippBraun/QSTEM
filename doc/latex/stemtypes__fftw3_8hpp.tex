@@ -1,0 +1,274 @@
+\hypertarget{stemtypes__fftw3_8hpp}{\section{libs/stemtypes\-\_\-fftw3.hpp File Reference}
+\label{stemtypes__fftw3_8hpp}\index{libs/stemtypes\-\_\-fftw3.\-hpp@{libs/stemtypes\-\_\-fftw3.\-hpp}}
+}
+{\ttfamily \#include $<$boost/shared\-\_\-ptr.\-hpp$>$}\\*
+{\ttfamily \#include \char`\"{}fftw\-\_\-allocator.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}el\-Table.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fftw3.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+Include dependency graph for stemtypes\-\_\-fftw3.\-hpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stemtypes__fftw3_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stemtypes__fftw3_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_q_s_t_e_m_1_1atom_struct}{Q\-S\-T\-E\-M\-::atom\-Struct}
+\item 
+struct \hyperlink{struct_q_s_t_e_m_1_1plane_struct}{Q\-S\-T\-E\-M\-::plane\-Struct}
+\item 
+struct \hyperlink{struct_q_s_t_e_m_1_1grain_box_struct}{Q\-S\-T\-E\-M\-::grain\-Box\-Struct}
+\item 
+struct \hyperlink{struct_q_s_t_e_m_1_1super_cell_box_struct}{Q\-S\-T\-E\-M\-::super\-Cell\-Box\-Struct}
+\item 
+struct \hyperlink{struct_q_s_t_e_m_1_1atom_box_struct}{Q\-S\-T\-E\-M\-::atom\-Box\-Struct}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_q_s_t_e_m}{Q\-S\-T\-E\-M}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_ac4d09f4bc1ab5e0292782974b8c5b4b5}{F\-L\-O\-A\-T\-\_\-\-P\-R\-E\-C\-I\-S\-I\-O\-N}~1
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_a84909b16209480034c40276c4f84f975}{B\-W}~(2.\-0\-F/3.\-0\-F)	/$\ast$ bandwidth limit $\ast$/
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_ae37055f0823281ce47997ab6602bb607}{S\-T\-E\-M}~1
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_a26fa01bb4b36ffed75910f878e99cadc}{C\-B\-E\-D}~2
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_a5abef251d47456e7981e8f1ae7ba2a9a}{T\-E\-M}~3
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_aea493f0c799d538daa00c068f6e3d7e8}{R\-E\-F\-I\-N\-E}~4
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_aa82d2469ab473fc26178731c84333d0b}{M\-S\-C\-B\-E\-D}~5
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_a52054c821e96dc0e3b23dadef738d89d}{T\-O\-M\-O}~6
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_ac5a945020d3528355cda82d383676736}{R\-A\-D2\-D\-E\-G}~57.\-2958
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_abc63ab2a8e7782de38a5dbdfc33da717}{S\-Q\-R\-T\-\_\-2}~1.\-4142135
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_ae71449b1cc6e6250b91f539153a7a0d3}{M\-\_\-\-P\-I}~3.\-14159265358979323846264338327
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_a547c421b569f7bc0f7bacd37ed92a454}{D\-O\-Y\-L\-E\-\_\-\-T\-U\-R\-N\-E\-R}~0
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_aa33915a2f44644ebb7c4d25759e6f3eb}{W\-E\-I\-C\-K\-\_\-\-K\-O\-H\-L}~1
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_a686dea444026cbf1236c24e7edb3a96d}{C\-U\-S\-T\-O\-M}~2
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_a8625d1c803c2ffc12071aa60f0c292e0}{E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E}~(1.\-6021773e-\/19)
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_af9cc33de78e188cf7374e88a90fefeaa}{P\-I\-C\-O\-\_\-\-A\-M\-P\-E\-R\-E}~(1e-\/12/\-E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E)
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_a1320d959ad247f73474b60423f756b60}{M\-I\-L\-L\-I\-S\-E\-C\-\_\-\-P\-I\-C\-O\-A\-M\-P}~(1e-\/3$\ast$\-P\-I\-C\-O\-\_\-\-A\-M\-P\-E\-R\-E)
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_af60b926a797ea49e75f63d2cf14d20b7}{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-I\-M\-P\-O\-R\-T}
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_a7d5885a170b5ca8cd7f195d41769c3dd}{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-E\-X\-P\-O\-R\-T}
+\item 
+\#define \hyperlink{stemtypes__fftw3_8hpp_ab6f369bbc234f3551e048f2b2347aa71}{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-L\-O\-C\-A\-L}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{class_f_f_t_w_complex}{F\-F\-T\-W\-Complex}$<$ float $>$ \hyperlink{namespace_q_s_t_e_m_afa320ea3cd2f5ff080c422f81b803a32}{Q\-S\-T\-E\-M\-::complex\-\_\-tt}
+\item 
+typedef float \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{Q\-S\-T\-E\-M\-::float\-\_\-tt}
+\item 
+typedef \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ float\-\_\-tt, \\*
+\hyperlink{class_f_f_t_w_allocator}{F\-F\-T\-W\-Allocator}$<$ float\-\_\-tt $>$ $>$ \hyperlink{namespace_q_s_t_e_m_a8dfe9e1dbecce3838cb082d96e991ba7}{Q\-S\-T\-E\-M\-::\-Real\-Vector}
+\item 
+typedef \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}\\*
+$<$ complex\-\_\-tt, \hyperlink{class_f_f_t_w_allocator}{F\-F\-T\-W\-Allocator}\\*
+$<$ complex\-\_\-tt $>$ $>$ \hyperlink{namespace_q_s_t_e_m_af210a2c1f9afae1deed746dcd9276221}{Q\-S\-T\-E\-M\-::\-Complex\-Vector}
+\item 
+typedef struct \hyperlink{struct_q_s_t_e_m_1_1atom_struct}{Q\-S\-T\-E\-M\-::atom\-Struct} \hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{Q\-S\-T\-E\-M\-::atom}
+\item 
+typedef boost\-::shared\-\_\-ptr$<$ \hyperlink{qmb_8m_ad5a54bc5a2abedf790cf00f7c63f6235}{atom} $>$ \hyperlink{namespace_q_s_t_e_m_aab1af41d80d466190a68f7b9da5740bc}{Q\-S\-T\-E\-M\-::atom\-Ptr}
+\item 
+typedef struct \hyperlink{struct_q_s_t_e_m_1_1plane_struct}{Q\-S\-T\-E\-M\-::plane\-Struct} \hyperlink{namespace_q_s_t_e_m_a3fcdd3743dc6202901c46d6c22f3fd1c}{Q\-S\-T\-E\-M\-::plane}
+\item 
+typedef boost\-::shared\-\_\-ptr$<$ plane $>$ \hyperlink{namespace_q_s_t_e_m_ad1e29d7e576e38eb5e76380847534c9c}{Q\-S\-T\-E\-M\-::plane\-Ptr}
+\item 
+typedef struct \\*
+\hyperlink{struct_q_s_t_e_m_1_1grain_box_struct}{Q\-S\-T\-E\-M\-::grain\-Box\-Struct} \hyperlink{namespace_q_s_t_e_m_afc13846814505527653b1f6a2377b926}{Q\-S\-T\-E\-M\-::grain\-Box}
+\item 
+typedef boost\-::shared\-\_\-ptr\\*
+$<$ grain\-Box $>$ \hyperlink{namespace_q_s_t_e_m_adf02490820ebdc3eb2b77754a5235eac}{Q\-S\-T\-E\-M\-::grain\-Box\-Ptr}
+\item 
+typedef struct \\*
+\hyperlink{struct_q_s_t_e_m_1_1super_cell_box_struct}{Q\-S\-T\-E\-M\-::super\-Cell\-Box\-Struct} \hyperlink{namespace_q_s_t_e_m_a95dba085aec372efb54903125453c0c1}{Q\-S\-T\-E\-M\-::super\-Cell\-Box}
+\item 
+typedef boost\-::shared\-\_\-ptr\\*
+$<$ super\-Cell\-Box $>$ \hyperlink{namespace_q_s_t_e_m_a4c41158ec44b9a0121ef647bfa3bf4b0}{Q\-S\-T\-E\-M\-::super\-Cell\-Box\-Ptr}
+\item 
+typedef struct \hyperlink{struct_q_s_t_e_m_1_1atom_box_struct}{Q\-S\-T\-E\-M\-::atom\-Box\-Struct} \hyperlink{namespace_q_s_t_e_m_a01d849e4884ae956a16b24c2286e3494}{Q\-S\-T\-E\-M\-::atom\-Box}
+\item 
+typedef boost\-::shared\-\_\-ptr\\*
+$<$ atom\-Box $>$ \hyperlink{namespace_q_s_t_e_m_a834093bc53d08abeb557de742e38541e}{Q\-S\-T\-E\-M\-::atom\-Box\-Ptr}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const float\-\_\-tt \hyperlink{namespace_q_s_t_e_m_a78cee406c660e4fe36e7ab36e34f1dec}{Q\-S\-T\-E\-M\-::\-P\-I} = 2$\ast$acos(0.\-0)
+\item 
+const int \hyperlink{namespace_q_s_t_e_m_a0032f41cd55b94be17d3c9dda2fc9012}{Q\-S\-T\-E\-M\-::k\-\_\-fft\-Measure\-Flag} = \hyperlink{_g_u_i___matlab_2fftw3_8h_afb7257abc054cd5874b3c011437cc801}{F\-F\-T\-W\-\_\-\-E\-S\-T\-I\-M\-A\-T\-E}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{stemtypes__fftw3_8hpp_a84909b16209480034c40276c4f84f975}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!B\-W@{B\-W}}
+\index{B\-W@{B\-W}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{B\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-W~(2.\-0\-F/3.\-0\-F)	/$\ast$ bandwidth limit $\ast$/}}\label{stemtypes__fftw3_8hpp_a84909b16209480034c40276c4f84f975}
+
+
+Definition at line 38 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_a26fa01bb4b36ffed75910f878e99cadc}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!C\-B\-E\-D@{C\-B\-E\-D}}
+\index{C\-B\-E\-D@{C\-B\-E\-D}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{C\-B\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-B\-E\-D~2}}\label{stemtypes__fftw3_8hpp_a26fa01bb4b36ffed75910f878e99cadc}
+
+
+Definition at line 42 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_a686dea444026cbf1236c24e7edb3a96d}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!C\-U\-S\-T\-O\-M@{C\-U\-S\-T\-O\-M}}
+\index{C\-U\-S\-T\-O\-M@{C\-U\-S\-T\-O\-M}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{C\-U\-S\-T\-O\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-U\-S\-T\-O\-M~2}}\label{stemtypes__fftw3_8hpp_a686dea444026cbf1236c24e7edb3a96d}
+
+
+Definition at line 58 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_a547c421b569f7bc0f7bacd37ed92a454}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!D\-O\-Y\-L\-E\-\_\-\-T\-U\-R\-N\-E\-R@{D\-O\-Y\-L\-E\-\_\-\-T\-U\-R\-N\-E\-R}}
+\index{D\-O\-Y\-L\-E\-\_\-\-T\-U\-R\-N\-E\-R@{D\-O\-Y\-L\-E\-\_\-\-T\-U\-R\-N\-E\-R}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{D\-O\-Y\-L\-E\-\_\-\-T\-U\-R\-N\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-O\-Y\-L\-E\-\_\-\-T\-U\-R\-N\-E\-R~0}}\label{stemtypes__fftw3_8hpp_a547c421b569f7bc0f7bacd37ed92a454}
+
+
+Definition at line 56 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_a8625d1c803c2ffc12071aa60f0c292e0}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E@{E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E}}
+\index{E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E@{E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E~(1.\-6021773e-\/19)}}\label{stemtypes__fftw3_8hpp_a8625d1c803c2ffc12071aa60f0c292e0}
+
+
+Definition at line 63 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_ac4d09f4bc1ab5e0292782974b8c5b4b5}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!F\-L\-O\-A\-T\-\_\-\-P\-R\-E\-C\-I\-S\-I\-O\-N@{F\-L\-O\-A\-T\-\_\-\-P\-R\-E\-C\-I\-S\-I\-O\-N}}
+\index{F\-L\-O\-A\-T\-\_\-\-P\-R\-E\-C\-I\-S\-I\-O\-N@{F\-L\-O\-A\-T\-\_\-\-P\-R\-E\-C\-I\-S\-I\-O\-N}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{F\-L\-O\-A\-T\-\_\-\-P\-R\-E\-C\-I\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-L\-O\-A\-T\-\_\-\-P\-R\-E\-C\-I\-S\-I\-O\-N~1}}\label{stemtypes__fftw3_8hpp_ac4d09f4bc1ab5e0292782974b8c5b4b5}
+
+
+Definition at line 35 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_ae71449b1cc6e6250b91f539153a7a0d3}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!M\-\_\-\-P\-I@{M\-\_\-\-P\-I}}
+\index{M\-\_\-\-P\-I@{M\-\_\-\-P\-I}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{M\-\_\-\-P\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-\_\-\-P\-I~3.\-14159265358979323846264338327}}\label{stemtypes__fftw3_8hpp_ae71449b1cc6e6250b91f539153a7a0d3}
+
+
+Definition at line 52 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_a1320d959ad247f73474b60423f756b60}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!M\-I\-L\-L\-I\-S\-E\-C\-\_\-\-P\-I\-C\-O\-A\-M\-P@{M\-I\-L\-L\-I\-S\-E\-C\-\_\-\-P\-I\-C\-O\-A\-M\-P}}
+\index{M\-I\-L\-L\-I\-S\-E\-C\-\_\-\-P\-I\-C\-O\-A\-M\-P@{M\-I\-L\-L\-I\-S\-E\-C\-\_\-\-P\-I\-C\-O\-A\-M\-P}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{M\-I\-L\-L\-I\-S\-E\-C\-\_\-\-P\-I\-C\-O\-A\-M\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-L\-L\-I\-S\-E\-C\-\_\-\-P\-I\-C\-O\-A\-M\-P~(1e-\/3$\ast$\-P\-I\-C\-O\-\_\-\-A\-M\-P\-E\-R\-E)}}\label{stemtypes__fftw3_8hpp_a1320d959ad247f73474b60423f756b60}
+
+
+Definition at line 65 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_aa82d2469ab473fc26178731c84333d0b}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!M\-S\-C\-B\-E\-D@{M\-S\-C\-B\-E\-D}}
+\index{M\-S\-C\-B\-E\-D@{M\-S\-C\-B\-E\-D}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{M\-S\-C\-B\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-S\-C\-B\-E\-D~5}}\label{stemtypes__fftw3_8hpp_aa82d2469ab473fc26178731c84333d0b}
+
+
+Definition at line 45 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_af9cc33de78e188cf7374e88a90fefeaa}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!P\-I\-C\-O\-\_\-\-A\-M\-P\-E\-R\-E@{P\-I\-C\-O\-\_\-\-A\-M\-P\-E\-R\-E}}
+\index{P\-I\-C\-O\-\_\-\-A\-M\-P\-E\-R\-E@{P\-I\-C\-O\-\_\-\-A\-M\-P\-E\-R\-E}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{P\-I\-C\-O\-\_\-\-A\-M\-P\-E\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-I\-C\-O\-\_\-\-A\-M\-P\-E\-R\-E~(1e-\/12/\-E\-L\-E\-C\-T\-R\-O\-N\-\_\-\-C\-H\-A\-R\-G\-E)}}\label{stemtypes__fftw3_8hpp_af9cc33de78e188cf7374e88a90fefeaa}
+
+
+Definition at line 64 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_a7d5885a170b5ca8cd7f195d41769c3dd}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-E\-X\-P\-O\-R\-T@{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-E\-X\-P\-O\-R\-T}}
+\index{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-E\-X\-P\-O\-R\-T@{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-E\-X\-P\-O\-R\-T}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-E\-X\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-E\-X\-P\-O\-R\-T}}\label{stemtypes__fftw3_8hpp_a7d5885a170b5ca8cd7f195d41769c3dd}
+
+
+Definition at line 198 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_af60b926a797ea49e75f63d2cf14d20b7}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-I\-M\-P\-O\-R\-T@{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-I\-M\-P\-O\-R\-T}}
+\index{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-I\-M\-P\-O\-R\-T@{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-I\-M\-P\-O\-R\-T}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-I\-M\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-I\-M\-P\-O\-R\-T}}\label{stemtypes__fftw3_8hpp_af60b926a797ea49e75f63d2cf14d20b7}
+
+
+Definition at line 197 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_ab6f369bbc234f3551e048f2b2347aa71}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-L\-O\-C\-A\-L@{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-L\-O\-C\-A\-L}}
+\index{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-L\-O\-C\-A\-L@{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-L\-O\-C\-A\-L}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-L\-O\-C\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define Q\-S\-T\-E\-M\-\_\-\-H\-E\-L\-P\-E\-R\-\_\-\-D\-L\-L\-\_\-\-L\-O\-C\-A\-L}}\label{stemtypes__fftw3_8hpp_ab6f369bbc234f3551e048f2b2347aa71}
+
+
+Definition at line 199 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_ac5a945020d3528355cda82d383676736}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!R\-A\-D2\-D\-E\-G@{R\-A\-D2\-D\-E\-G}}
+\index{R\-A\-D2\-D\-E\-G@{R\-A\-D2\-D\-E\-G}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{R\-A\-D2\-D\-E\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-A\-D2\-D\-E\-G~57.\-2958}}\label{stemtypes__fftw3_8hpp_ac5a945020d3528355cda82d383676736}
+
+
+Definition at line 49 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_aea493f0c799d538daa00c068f6e3d7e8}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!R\-E\-F\-I\-N\-E@{R\-E\-F\-I\-N\-E}}
+\index{R\-E\-F\-I\-N\-E@{R\-E\-F\-I\-N\-E}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{R\-E\-F\-I\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-F\-I\-N\-E~4}}\label{stemtypes__fftw3_8hpp_aea493f0c799d538daa00c068f6e3d7e8}
+
+
+Definition at line 44 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_abc63ab2a8e7782de38a5dbdfc33da717}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!S\-Q\-R\-T\-\_\-2@{S\-Q\-R\-T\-\_\-2}}
+\index{S\-Q\-R\-T\-\_\-2@{S\-Q\-R\-T\-\_\-2}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{S\-Q\-R\-T\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-Q\-R\-T\-\_\-2~1.\-4142135}}\label{stemtypes__fftw3_8hpp_abc63ab2a8e7782de38a5dbdfc33da717}
+
+
+Definition at line 50 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_ae37055f0823281ce47997ab6602bb607}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!S\-T\-E\-M@{S\-T\-E\-M}}
+\index{S\-T\-E\-M@{S\-T\-E\-M}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{S\-T\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-E\-M~1}}\label{stemtypes__fftw3_8hpp_ae37055f0823281ce47997ab6602bb607}
+
+
+Definition at line 41 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_a5abef251d47456e7981e8f1ae7ba2a9a}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!T\-E\-M@{T\-E\-M}}
+\index{T\-E\-M@{T\-E\-M}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{T\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-E\-M~3}}\label{stemtypes__fftw3_8hpp_a5abef251d47456e7981e8f1ae7ba2a9a}
+
+
+Definition at line 43 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_a52054c821e96dc0e3b23dadef738d89d}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!T\-O\-M\-O@{T\-O\-M\-O}}
+\index{T\-O\-M\-O@{T\-O\-M\-O}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{T\-O\-M\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-M\-O~6}}\label{stemtypes__fftw3_8hpp_a52054c821e96dc0e3b23dadef738d89d}
+
+
+Definition at line 46 of file stemtypes\-\_\-fftw3.\-hpp.
+
+\hypertarget{stemtypes__fftw3_8hpp_aa33915a2f44644ebb7c4d25759e6f3eb}{\index{stemtypes\-\_\-fftw3.\-hpp@{stemtypes\-\_\-fftw3.\-hpp}!W\-E\-I\-C\-K\-\_\-\-K\-O\-H\-L@{W\-E\-I\-C\-K\-\_\-\-K\-O\-H\-L}}
+\index{W\-E\-I\-C\-K\-\_\-\-K\-O\-H\-L@{W\-E\-I\-C\-K\-\_\-\-K\-O\-H\-L}!stemtypes_fftw3.hpp@{stemtypes\-\_\-fftw3.\-hpp}}
+\subsubsection[{W\-E\-I\-C\-K\-\_\-\-K\-O\-H\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-E\-I\-C\-K\-\_\-\-K\-O\-H\-L~1}}\label{stemtypes__fftw3_8hpp_aa33915a2f44644ebb7c4d25759e6f3eb}
+
+
+Definition at line 57 of file stemtypes\-\_\-fftw3.\-hpp.
+

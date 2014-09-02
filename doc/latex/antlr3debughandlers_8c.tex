@@ -1,0 +1,154 @@
+\hypertarget{antlr3debughandlers_8c}{\section{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3debughandlers.c File Reference}
+\label{antlr3debughandlers_8c}\index{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3debughandlers.\-c@{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3debughandlers.\-c}}
+}
+{\ttfamily \#include $<$antlr3.\-h$>$}\\*
+Include dependency graph for antlr3debughandlers.\-c\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3debughandlers_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \\*
+\hyperlink{antlr3interfaces_8h_ab226a624395fcc0b8fe2b29ae60b6116}{p\-A\-N\-T\-L\-R3\-\_\-\-D\-E\-B\-U\-G\-\_\-\-E\-V\-E\-N\-T\-\_\-\-L\-I\-S\-T\-E\-N\-E\-R} \hyperlink{antlr3debughandlers_8c_a5d023697cc6fae0f33a329b9a787303a}{antlr3\-Debug\-Listener\-New} ()
+\item 
+\hyperlink{antlr3interfaces_8h_ab226a624395fcc0b8fe2b29ae60b6116}{p\-A\-N\-T\-L\-R3\-\_\-\-D\-E\-B\-U\-G\-\_\-\-E\-V\-E\-N\-T\-\_\-\-L\-I\-S\-T\-E\-N\-E\-R} \hyperlink{antlr3debughandlers_8c_a15dd87baf368c6b3bfbafba79f2fa120}{antlr3\-Debug\-Listener\-New\-Port} (\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} port)
+\item 
+void \hyperlink{antlr3debughandlers_8c_a3eef8b77024d49f20b36d1221045dc11}{serialize\-Text} (\hyperlink{antlr3interfaces_8h_a36bbe7362079348864db4b4dbdcce56b}{p\-A\-N\-T\-L\-R3\-\_\-\-S\-T\-R\-I\-N\-G} buffer, \hyperlink{antlr3interfaces_8h_a36bbe7362079348864db4b4dbdcce56b}{p\-A\-N\-T\-L\-R3\-\_\-\-S\-T\-R\-I\-N\-G} text)
+\item 
+\hyperlink{antlr3interfaces_8h_a36bbe7362079348864db4b4dbdcce56b}{p\-A\-N\-T\-L\-R3\-\_\-\-S\-T\-R\-I\-N\-G} \hyperlink{antlr3debughandlers_8c_a98582e5bfbfe53c50aa729f8798af780}{serialize\-Token} (\hyperlink{antlr3interfaces_8h_ab226a624395fcc0b8fe2b29ae60b6116}{p\-A\-N\-T\-L\-R3\-\_\-\-D\-E\-B\-U\-G\-\_\-\-E\-V\-E\-N\-T\-\_\-\-L\-I\-S\-T\-E\-N\-E\-R} delboy, \hyperlink{antlr3interfaces_8h_adaa6df9cbf0cd7ab37fd545520ff299b}{p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N} \hyperlink{showimage_8m_ad941f6ef920fbfb3d75b60ddbedbdd39}{t})
+\item 
+\hyperlink{antlr3interfaces_8h_a36bbe7362079348864db4b4dbdcce56b}{p\-A\-N\-T\-L\-R3\-\_\-\-S\-T\-R\-I\-N\-G} \hyperlink{antlr3debughandlers_8c_aee1d806d31e1c357681c53b51474c94c}{serialize\-Node} (\hyperlink{antlr3interfaces_8h_ab226a624395fcc0b8fe2b29ae60b6116}{p\-A\-N\-T\-L\-R3\-\_\-\-D\-E\-B\-U\-G\-\_\-\-E\-V\-E\-N\-T\-\_\-\-L\-I\-S\-T\-E\-N\-E\-R} delboy, \hyperlink{antlr3interfaces_8h_a6313a8a3e8f044398a393bd10c083852}{p\-A\-N\-T\-L\-R3\-\_\-\-B\-A\-S\-E\-\_\-\-T\-R\-E\-E} \hyperlink{qmb_8m_aea98b4000aeea8c16bea4f9cb8b2733a}{node})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides the debugging functions invoked by a recognizer built using the debug generator mode of the antlr tool. See antlr3debugeventlistener.\-h for documentation. 
+
+Definition in file \hyperlink{antlr3debughandlers_8c_source}{antlr3debughandlers.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{antlr3debughandlers_8c_a5d023697cc6fae0f33a329b9a787303a}{\index{antlr3debughandlers.\-c@{antlr3debughandlers.\-c}!antlr3\-Debug\-Listener\-New@{antlr3\-Debug\-Listener\-New}}
+\index{antlr3\-Debug\-Listener\-New@{antlr3\-Debug\-Listener\-New}!antlr3debughandlers.c@{antlr3debughandlers.\-c}}
+\subsubsection[{antlr3\-Debug\-Listener\-New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf p\-A\-N\-T\-L\-R3\-\_\-\-D\-E\-B\-U\-G\-\_\-\-E\-V\-E\-N\-T\-\_\-\-L\-I\-S\-T\-E\-N\-E\-R} antlr3\-Debug\-Listener\-New (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{antlr3debughandlers_8c_a5d023697cc6fae0f33a329b9a787303a}
+Create and initialize a new debug event listener that can be connected to by A\-N\-T\-L\-R\-Works and any other debugger via a socket. 
+
+Definition at line 93 of file antlr3debughandlers.\-c.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3debughandlers_8c_a5d023697cc6fae0f33a329b9a787303a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3debughandlers_8c_a15dd87baf368c6b3bfbafba79f2fa120}{\index{antlr3debughandlers.\-c@{antlr3debughandlers.\-c}!antlr3\-Debug\-Listener\-New\-Port@{antlr3\-Debug\-Listener\-New\-Port}}
+\index{antlr3\-Debug\-Listener\-New\-Port@{antlr3\-Debug\-Listener\-New\-Port}!antlr3debughandlers.c@{antlr3debughandlers.\-c}}
+\subsubsection[{antlr3\-Debug\-Listener\-New\-Port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-A\-N\-T\-L\-R3\-\_\-\-D\-E\-B\-U\-G\-\_\-\-E\-V\-E\-N\-T\-\_\-\-L\-I\-S\-T\-E\-N\-E\-R} antlr3\-Debug\-Listener\-New\-Port (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32}}]{port}
+\end{DoxyParamCaption}
+)}}\label{antlr3debughandlers_8c_a15dd87baf368c6b3bfbafba79f2fa120}
+
+
+Definition at line 147 of file antlr3debughandlers.\-c.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3debughandlers_8c_a15dd87baf368c6b3bfbafba79f2fa120_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3debughandlers_8c_aee1d806d31e1c357681c53b51474c94c}{\index{antlr3debughandlers.\-c@{antlr3debughandlers.\-c}!serialize\-Node@{serialize\-Node}}
+\index{serialize\-Node@{serialize\-Node}!antlr3debughandlers.c@{antlr3debughandlers.\-c}}
+\subsubsection[{serialize\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-A\-N\-T\-L\-R3\-\_\-\-S\-T\-R\-I\-N\-G} serialize\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-D\-E\-B\-U\-G\-\_\-\-E\-V\-E\-N\-T\-\_\-\-L\-I\-S\-T\-E\-N\-E\-R}}]{delboy, }
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-B\-A\-S\-E\-\_\-\-T\-R\-E\-E}}]{node}
+\end{DoxyParamCaption}
+)}}\label{antlr3debughandlers_8c_aee1d806d31e1c357681c53b51474c94c}
+
+
+Definition at line 464 of file antlr3debughandlers.\-c.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{antlr3debughandlers_8c_aee1d806d31e1c357681c53b51474c94c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3debughandlers_8c_a3eef8b77024d49f20b36d1221045dc11}{\index{antlr3debughandlers.\-c@{antlr3debughandlers.\-c}!serialize\-Text@{serialize\-Text}}
+\index{serialize\-Text@{serialize\-Text}!antlr3debughandlers.c@{antlr3debughandlers.\-c}}
+\subsubsection[{serialize\-Text}]{\setlength{\rightskip}{0pt plus 5cm}void serialize\-Text (
+\begin{DoxyParamCaption}
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-S\-T\-R\-I\-N\-G}}]{buffer, }
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-S\-T\-R\-I\-N\-G}}]{text}
+\end{DoxyParamCaption}
+)}}\label{antlr3debughandlers_8c_a3eef8b77024d49f20b36d1221045dc11}
+
+
+Definition at line 365 of file antlr3debughandlers.\-c.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{antlr3debughandlers_8c_a3eef8b77024d49f20b36d1221045dc11_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3debughandlers_8c_a98582e5bfbfe53c50aa729f8798af780}{\index{antlr3debughandlers.\-c@{antlr3debughandlers.\-c}!serialize\-Token@{serialize\-Token}}
+\index{serialize\-Token@{serialize\-Token}!antlr3debughandlers.c@{antlr3debughandlers.\-c}}
+\subsubsection[{serialize\-Token}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-A\-N\-T\-L\-R3\-\_\-\-S\-T\-R\-I\-N\-G} serialize\-Token (
+\begin{DoxyParamCaption}
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-D\-E\-B\-U\-G\-\_\-\-E\-V\-E\-N\-T\-\_\-\-L\-I\-S\-T\-E\-N\-E\-R}}]{delboy, }
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N}}]{t}
+\end{DoxyParamCaption}
+)}}\label{antlr3debughandlers_8c_a98582e5bfbfe53c50aa729f8798af780}
+
+
+Definition at line 418 of file antlr3debughandlers.\-c.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{antlr3debughandlers_8c_a98582e5bfbfe53c50aa729f8798af780_cgraph}
+\end{center}
+\end{figure}
+
+

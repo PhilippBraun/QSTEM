@@ -1,0 +1,1282 @@
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader}{\section{Q\-S\-T\-E\-M\-:\-:C\-Qsc\-Reader Class Reference}
+\label{class_q_s_t_e_m_1_1_c_qsc_reader}\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+}
+
+
+{\ttfamily \#include $<$read\-\_\-qsc.\-hpp$>$}
+
+
+
+Inheritance diagram for Q\-S\-T\-E\-M\-:\-:C\-Qsc\-Reader\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class_q_s_t_e_m_1_1_c_qsc_reader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Q\-S\-T\-E\-M\-:\-:C\-Qsc\-Reader\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class_q_s_t_e_m_1_1_c_qsc_reader__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a3f8bb8f2633e30baf0559825f53e3282}{C\-Qsc\-Reader} (boost\-::filesystem\-::path \&\hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename})
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a76c60285ba9f8c00ecc634a9fc574a96}{$\sim$\-C\-Qsc\-Reader} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a8577ad2cc00a1e78c1f596d839877d7e}{Read\-Mode} (std\-::string \&\hyperlink{xyz2cfg_8m_aeb02c2817edf619fabdf1972b000db18}{mode})
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_abbeb1c6e4c446c481859e1fa0db5dd40}{Read\-Print\-Level} (unsigned \&\hyperlink{qstem_8m_a24e096d96b8b76611e893ddd6c372ae5}{print\-Level})
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a046ae2b74b84d5ae531c0d72e2af1396}{Read\-Save\-Level} (unsigned \&\hyperlink{qstem_8m_a5a7a04041b8d36231b865f8c9b07cd40}{save\-Level})
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a6bbc839aabeaff43bdb9e7b40e72e38c}{Read\-Potential\-Output\-Interval} (unsigned \&display\-Pot\-Calc\-Interval)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a91237125435a92e4d4aa7b6fd48ea5f8}{Read\-S\-T\-E\-M\-Progress\-Interval} (unsigned \&display\-Prog\-Interval)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_aff5065b07e5399b21b8233fd4b6c1e33}{Read\-Output\-Name} (boost\-::filesystem\-::path \&file\-Or\-Folder\-Name)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a3a249959908506a26df9204e8d4f0ac5}{Read\-N\-Cells} (unsigned \&n\-Cell\-X, unsigned \&n\-Cell\-Y, unsigned \&n\-Cell\-Z)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a84b7a0b7cbecd8fc0f986b95f76253ae}{Read\-N\-Sub\-Slabs} (unsigned \&cell\-Div)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a1a34d1ac56dd007c22071912c8ab6b56}{Read\-Beam\-Tilt} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&btiltx, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&btilty, bool \&tilt\-Back)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a91cd548461696a863bc2beb62cc2fd60}{Read\-Crystal\-Cube\-And\-Tilt} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&tiltx, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&tilty, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&tiltz, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&cubex, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&cubey, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&cubez, bool \&adjust\-Cube\-Size)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a24f9663652a3073fb1a868dd2283f524}{Read\-Temperature\-Data} (bool \&do\-T\-D\-S, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&tds\-Temperature, boost\-::filesystem\-::path \&phonon\-File, bool \&use\-Einstein)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a1231326a7921d5c693d64583579d3c30}{Read\-Slice\-Offset} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&x\-Offset, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&y\-Offset)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_ae64a81adacbc48788478d736a956e7f4}{Read\-Probe\-Array\-Size} (unsigned \&nx, unsigned \&ny)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a6288bc50c1ff3a23bd0f694ef224ed5c}{Read\-Resolution} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&resolution\-X, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&resolution\-Y)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a03054f8fdac8f9f7260b545b2a56be77}{Read\-Voltage} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&voltage)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a4fbc9045d52f49eba75059244e6a8751}{Read\-Slice\-Parameters} (bool \&center\-Slices, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&slice\-Thickness, unsigned \&nslices, unsigned \&output\-Interval, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&z\-Offset)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a1d166483e4b8db8751870980e76d32eb}{Read\-Periodic\-Parameters} (bool \&periodic\-X\-Y, bool \&periodic\-Z)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a653f8191e9fd1db611cab4de89e37f08}{Read\-Band\-Limit\-Trans} (bool \&limit)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a26f065d4a796640d0b622bf95e8506ba}{Read\-Load\-Potential} (bool \&load\-Potential, boost\-::filesystem\-::path \&\hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename})
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_ac965f7fe42af8bbca9627e52c29fdbdd}{Read\-Potential\-Output\-Parameters} (bool \&\hyperlink{qstem_8m_a2627b1fe484f7e86e38deba8dabb27ed}{save\-Potential}, bool \&save\-Projected\-Potential, bool \&plot\-Potential)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a7d7ef1d88e418cb903d24d2ef6afd19f}{Read\-Potential\-Calculation\-Parameters} (bool \&fft\-Potential, bool \&potential3\-D)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_ae4ea43676e9ac3ce232ad74e793c282a}{Read\-Average\-Parameters} (unsigned \&avg\-Runs, bool \&store\-Series)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a8b0fc37c9340d20ebaf2bbc00fa2e216}{Read\-Scan\-Parameters} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&scan\-X\-Start, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&scan\-X\-Stop, unsigned \&scan\-X\-N, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&scan\-Y\-Start, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&scan\-Y\-Stop, unsigned \&scan\-Y\-N)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a9cfebcfd44975a80a7081a4a6bf2465e}{Read\-Atom\-Radius} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&\hyperlink{_displacement_params_8m_acc620a89e606f875661525fd6365a421}{radius})
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_aa859a85a0a2a6b955d1de9cc9b1cdc6d}{Read\-Structure\-Factor\-Type} (std\-::string \&\hyperlink{convert2cfg_8m_a2902a7a983ab04c79cae2162ad553481}{type})
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a31d8169148e61ae506648149527036ae}{Read\-Pendelloesung\-Parameters} (\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ int $>$ \&hbeams, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ int $>$ \&kbeams, bool \&lbeams, unsigned \&nbout)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a3c10c95facdb29868c18b2cbd4fd74d5}{Read\-Structure\-File\-Name} (boost\-::filesystem\-::path \&structure\-\_\-file)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a2f15b6f5f0b40a3e68d4bf10e0ebbc22}{Read\-Number\-Of\-Detectors} (int \&num\-Detectors)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_ab66425a8d6d08c5c1fca652112a9d930}{Read\-Detector\-Parameters} (int det\-\_\-idx, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&r\-Inside, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&r\-Outside, std\-::string \&\hyperlink{qmb_8m_abdc1dcc6fed70c14f9b5ae237e486f4e}{name}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&shift\-X, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&shift\-Y)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a1b110ca82c74cc5fbda5cc0bd69c7631}{Read\-Dose\-Parameters} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&beam\-Current, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&dwell\-Time\-Ms)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a38fe35a44afac71b8eb1e0457d369eae}{Read\-Probe\-Parameters} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&d\-E\-\_\-\-E, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&d\-I\-\_\-\-I, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&d\-V\-\_\-\-V, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&\hyperlink{virtual_goniometer_8m_a62197192f0fbf4e0675eb37be1c4c175}{alpha}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&a\-A\-I\-S)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_ae9adc105be0a0d6a27e10fc8e68512e9}{Read\-Source\-Radius} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&source\-Radius)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a7ba3963c769e2c790b96bb50d7b02478}{Read\-Smoothing\-Parameters} (bool \&ismoth, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&gauss\-Scale, bool \&gauss\-Flag)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_ae83d8b8c88b04feea2d4e0d66a146f6f}{Read\-Tomo\-Parameters} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&tomo\-Tilt, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&tomo\-Start, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&tomo\-Step, int \&tomo\-Count, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&zoom\-Factor)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a516e54efa0372bce2ef80963d426584f}{Read\-Aberration\-Amplitudes} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&\hyperlink{image_sim_8m_a6e1ec50d40620688cd6376e335851fa5}{Cs}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&C5, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&Cc, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&df0, std\-::string \&Scherzer, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&astig, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&a33, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&a31, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&a44, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&a42, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&a55, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&a53, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&a51, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&a66, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&a64, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&a62)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a981f35afbbfaa46a5f5e6b6fc15cc9fc}{Read\-Aberration\-Angles} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&astig, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&phi33, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&phi31, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&phi44, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&phi42, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&phi55, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&phi53, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&phi51, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&phi66, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&phi64, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&phi62)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a4bc85c76ea39a73397f84042a2094109}{Is\-Buffer\-Yes} (std\-::string \&\hyperlink{convert2cfg_8m_af30278de8dab4c8bc6e28657bdf50d14}{buf})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_aee58b38f0aadff3f09329f01a6ffc4e8}{m\-\_\-buf}
+\item 
+char \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_aa8612dec4b28cbb4f1d028dc62397292}{answer} \mbox{[}256\mbox{]}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_ae723878e62e41b20aedda4f0c284cf48}{m\-\_\-fp}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_q_s_t_e_m_1_1_c_qsc_reader_a53627488fcd0d72fc5234d310842490b}{C\-Config\-Reader\-Factory}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file read\-\_\-qsc.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a3f8bb8f2633e30baf0559825f53e3282}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!C\-Qsc\-Reader@{C\-Qsc\-Reader}}
+\index{C\-Qsc\-Reader@{C\-Qsc\-Reader}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{C\-Qsc\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-C\-Qsc\-Reader (
+\begin{DoxyParamCaption}
+\item[{boost\-::filesystem\-::path \&}]{filename}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a3f8bb8f2633e30baf0559825f53e3282}
+
+
+Definition at line 31 of file read\-\_\-qsc.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a76c60285ba9f8c00ecc634a9fc574a96}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!$\sim$\-C\-Qsc\-Reader@{$\sim$\-C\-Qsc\-Reader}}
+\index{$\sim$\-C\-Qsc\-Reader@{$\sim$\-C\-Qsc\-Reader}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{$\sim$\-C\-Qsc\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::$\sim$\-C\-Qsc\-Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a76c60285ba9f8c00ecc634a9fc574a96}
+
+
+Definition at line 44 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a76c60285ba9f8c00ecc634a9fc574a96_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a4bc85c76ea39a73397f84042a2094109}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Is\-Buffer\-Yes@{Is\-Buffer\-Yes}}
+\index{Is\-Buffer\-Yes@{Is\-Buffer\-Yes}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Is\-Buffer\-Yes}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Is\-Buffer\-Yes (
+\begin{DoxyParamCaption}
+\item[{std\-::string \&}]{buf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a4bc85c76ea39a73397f84042a2094109}
+
+
+Definition at line 562 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a4bc85c76ea39a73397f84042a2094109_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a516e54efa0372bce2ef80963d426584f}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Aberration\-Amplitudes@{Read\-Aberration\-Amplitudes}}
+\index{Read\-Aberration\-Amplitudes@{Read\-Aberration\-Amplitudes}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Aberration\-Amplitudes}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Aberration\-Amplitudes (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{Cs, }
+\item[{{\bf float\-\_\-tt} \&}]{C5, }
+\item[{{\bf float\-\_\-tt} \&}]{Cc, }
+\item[{{\bf float\-\_\-tt} \&}]{df0, }
+\item[{std\-::string \&}]{Scherzer, }
+\item[{{\bf float\-\_\-tt} \&}]{astig, }
+\item[{{\bf float\-\_\-tt} \&}]{a33, }
+\item[{{\bf float\-\_\-tt} \&}]{a31, }
+\item[{{\bf float\-\_\-tt} \&}]{a44, }
+\item[{{\bf float\-\_\-tt} \&}]{a42, }
+\item[{{\bf float\-\_\-tt} \&}]{a55, }
+\item[{{\bf float\-\_\-tt} \&}]{a53, }
+\item[{{\bf float\-\_\-tt} \&}]{a51, }
+\item[{{\bf float\-\_\-tt} \&}]{a66, }
+\item[{{\bf float\-\_\-tt} \&}]{a64, }
+\item[{{\bf float\-\_\-tt} \&}]{a62}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a516e54efa0372bce2ef80963d426584f}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_aca4adcbd3aaaa97bddf09f875a245e77}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 502 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a516e54efa0372bce2ef80963d426584f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a981f35afbbfaa46a5f5e6b6fc15cc9fc}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Aberration\-Angles@{Read\-Aberration\-Angles}}
+\index{Read\-Aberration\-Angles@{Read\-Aberration\-Angles}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Aberration\-Angles}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Aberration\-Angles (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{astig, }
+\item[{{\bf float\-\_\-tt} \&}]{phi33, }
+\item[{{\bf float\-\_\-tt} \&}]{phi31, }
+\item[{{\bf float\-\_\-tt} \&}]{phi44, }
+\item[{{\bf float\-\_\-tt} \&}]{phi42, }
+\item[{{\bf float\-\_\-tt} \&}]{phi55, }
+\item[{{\bf float\-\_\-tt} \&}]{phi53, }
+\item[{{\bf float\-\_\-tt} \&}]{phi51, }
+\item[{{\bf float\-\_\-tt} \&}]{phi66, }
+\item[{{\bf float\-\_\-tt} \&}]{phi64, }
+\item[{{\bf float\-\_\-tt} \&}]{phi62}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a981f35afbbfaa46a5f5e6b6fc15cc9fc}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_ac1b5198d7d3e537776a4d7b193d17932}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 542 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a981f35afbbfaa46a5f5e6b6fc15cc9fc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a9cfebcfd44975a80a7081a4a6bf2465e}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Atom\-Radius@{Read\-Atom\-Radius}}
+\index{Read\-Atom\-Radius@{Read\-Atom\-Radius}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Atom\-Radius}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Atom\-Radius (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{radius}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a9cfebcfd44975a80a7081a4a6bf2465e}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a07733a8fe05551a8cbd9cc08beb8cea1}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 347 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a9cfebcfd44975a80a7081a4a6bf2465e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_ae4ea43676e9ac3ce232ad74e793c282a}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Average\-Parameters@{Read\-Average\-Parameters}}
+\index{Read\-Average\-Parameters@{Read\-Average\-Parameters}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Average\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Average\-Parameters (
+\begin{DoxyParamCaption}
+\item[{unsigned \&}]{avg\-Runs, }
+\item[{bool \&}]{store\-Series}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_ae4ea43676e9ac3ce232ad74e793c282a}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_aba41ea1e00e4f39a849ae495fceddeed}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 312 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_ae4ea43676e9ac3ce232ad74e793c282a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a653f8191e9fd1db611cab4de89e37f08}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Band\-Limit\-Trans@{Read\-Band\-Limit\-Trans}}
+\index{Read\-Band\-Limit\-Trans@{Read\-Band\-Limit\-Trans}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Band\-Limit\-Trans}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Band\-Limit\-Trans (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{limit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a653f8191e9fd1db611cab4de89e37f08}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_ab45a70913716642c9e1e957eca4fe2b8}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 270 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a653f8191e9fd1db611cab4de89e37f08_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a1a34d1ac56dd007c22071912c8ab6b56}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Beam\-Tilt@{Read\-Beam\-Tilt}}
+\index{Read\-Beam\-Tilt@{Read\-Beam\-Tilt}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Beam\-Tilt}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Beam\-Tilt (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{btiltx, }
+\item[{{\bf float\-\_\-tt} \&}]{btilty, }
+\item[{bool \&}]{tilt\-Back}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a1a34d1ac56dd007c22071912c8ab6b56}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_add3ae967927006367b02c2cb628d0dcc}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 128 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a1a34d1ac56dd007c22071912c8ab6b56_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a91cd548461696a863bc2beb62cc2fd60}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Crystal\-Cube\-And\-Tilt@{Read\-Crystal\-Cube\-And\-Tilt}}
+\index{Read\-Crystal\-Cube\-And\-Tilt@{Read\-Crystal\-Cube\-And\-Tilt}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Crystal\-Cube\-And\-Tilt}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Crystal\-Cube\-And\-Tilt (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{tiltx, }
+\item[{{\bf float\-\_\-tt} \&}]{tilty, }
+\item[{{\bf float\-\_\-tt} \&}]{tiltz, }
+\item[{{\bf float\-\_\-tt} \&}]{cubex, }
+\item[{{\bf float\-\_\-tt} \&}]{cubey, }
+\item[{{\bf float\-\_\-tt} \&}]{cubez, }
+\item[{bool \&}]{adjust\-Cube\-Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a91cd548461696a863bc2beb62cc2fd60}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_abcaf0bf16fc67a5a9d5ff2e8a1cb1aeb}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 149 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a91cd548461696a863bc2beb62cc2fd60_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_ab66425a8d6d08c5c1fca652112a9d930}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Detector\-Parameters@{Read\-Detector\-Parameters}}
+\index{Read\-Detector\-Parameters@{Read\-Detector\-Parameters}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Detector\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Detector\-Parameters (
+\begin{DoxyParamCaption}
+\item[{int}]{det\-\_\-idx, }
+\item[{{\bf float\-\_\-tt} \&}]{r\-Inside, }
+\item[{{\bf float\-\_\-tt} \&}]{r\-Outside, }
+\item[{std\-::string \&}]{name, }
+\item[{{\bf float\-\_\-tt} \&}]{shift\-X, }
+\item[{{\bf float\-\_\-tt} \&}]{shift\-Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_ab66425a8d6d08c5c1fca652112a9d930}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_ae47930447b319fd3b7029b7da484b73c}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 399 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_q_s_t_e_m_1_1_c_qsc_reader_ab66425a8d6d08c5c1fca652112a9d930_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a1b110ca82c74cc5fbda5cc0bd69c7631}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Dose\-Parameters@{Read\-Dose\-Parameters}}
+\index{Read\-Dose\-Parameters@{Read\-Dose\-Parameters}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Dose\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Dose\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{beam\-Current, }
+\item[{{\bf float\-\_\-tt} \&}]{dwell\-Time\-Ms}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a1b110ca82c74cc5fbda5cc0bd69c7631}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_abf819320fea57158d7fb758457b79bcd}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 421 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a1b110ca82c74cc5fbda5cc0bd69c7631_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a26f065d4a796640d0b622bf95e8506ba}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Load\-Potential@{Read\-Load\-Potential}}
+\index{Read\-Load\-Potential@{Read\-Load\-Potential}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Load\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Load\-Potential (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{load\-Potential, }
+\item[{boost\-::filesystem\-::path \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a26f065d4a796640d0b622bf95e8506ba}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a3303380663fa527c56f11b710a36f4c6}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 277 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a26f065d4a796640d0b622bf95e8506ba_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a8577ad2cc00a1e78c1f596d839877d7e}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Mode@{Read\-Mode}}
+\index{Read\-Mode@{Read\-Mode}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Mode (
+\begin{DoxyParamCaption}
+\item[{std\-::string \&}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a8577ad2cc00a1e78c1f596d839877d7e}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_afb5e25a11a4729f6ad9ce861f147b9bc}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 51 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a8577ad2cc00a1e78c1f596d839877d7e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a3a249959908506a26df9204e8d4f0ac5}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-N\-Cells@{Read\-N\-Cells}}
+\index{Read\-N\-Cells@{Read\-N\-Cells}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-N\-Cells}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-N\-Cells (
+\begin{DoxyParamCaption}
+\item[{unsigned \&}]{n\-Cell\-X, }
+\item[{unsigned \&}]{n\-Cell\-Y, }
+\item[{unsigned \&}]{n\-Cell\-Z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a3a249959908506a26df9204e8d4f0ac5}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_ae235ba0e8d62f88ba6ff8efc7dd47997}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 88 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a3a249959908506a26df9204e8d4f0ac5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a84b7a0b7cbecd8fc0f986b95f76253ae}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-N\-Sub\-Slabs@{Read\-N\-Sub\-Slabs}}
+\index{Read\-N\-Sub\-Slabs@{Read\-N\-Sub\-Slabs}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-N\-Sub\-Slabs}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-N\-Sub\-Slabs (
+\begin{DoxyParamCaption}
+\item[{unsigned \&}]{cell\-Div}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a84b7a0b7cbecd8fc0f986b95f76253ae}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a4879ae8fd49356bbcaa43ca87fa8f2e3}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 104 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a84b7a0b7cbecd8fc0f986b95f76253ae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a2f15b6f5f0b40a3e68d4bf10e0ebbc22}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Number\-Of\-Detectors@{Read\-Number\-Of\-Detectors}}
+\index{Read\-Number\-Of\-Detectors@{Read\-Number\-Of\-Detectors}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Number\-Of\-Detectors}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Number\-Of\-Detectors (
+\begin{DoxyParamCaption}
+\item[{int \&}]{num\-Detectors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a2f15b6f5f0b40a3e68d4bf10e0ebbc22}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a0acaa9f8dcde9ceee37c376d9cfc55d7}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 392 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a2f15b6f5f0b40a3e68d4bf10e0ebbc22_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_aff5065b07e5399b21b8233fd4b6c1e33}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Output\-Name@{Read\-Output\-Name}}
+\index{Read\-Output\-Name@{Read\-Output\-Name}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Output\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Output\-Name (
+\begin{DoxyParamCaption}
+\item[{boost\-::filesystem\-::path \&}]{file\-Or\-Folder\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_aff5065b07e5399b21b8233fd4b6c1e33}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a43ff69abd1947865e31d0c44a005a006}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 334 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_aff5065b07e5399b21b8233fd4b6c1e33_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a31d8169148e61ae506648149527036ae}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Pendelloesung\-Parameters@{Read\-Pendelloesung\-Parameters}}
+\index{Read\-Pendelloesung\-Parameters@{Read\-Pendelloesung\-Parameters}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Pendelloesung\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Pendelloesung\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf std\-::vector}$<$ int $>$ \&}]{hbeams, }
+\item[{{\bf std\-::vector}$<$ int $>$ \&}]{kbeams, }
+\item[{bool \&}]{lbeams, }
+\item[{unsigned \&}]{nbout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a31d8169148e61ae506648149527036ae}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a308c5177acd0ae6e9019817ad52a8f0e}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 362 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a31d8169148e61ae506648149527036ae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a1d166483e4b8db8751870980e76d32eb}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Periodic\-Parameters@{Read\-Periodic\-Parameters}}
+\index{Read\-Periodic\-Parameters@{Read\-Periodic\-Parameters}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Periodic\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Periodic\-Parameters (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{periodic\-X\-Y, }
+\item[{bool \&}]{periodic\-Z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a1d166483e4b8db8751870980e76d32eb}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a0141524736558ac9b1ae60d773908b1c}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 260 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a1d166483e4b8db8751870980e76d32eb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a7d7ef1d88e418cb903d24d2ef6afd19f}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Potential\-Calculation\-Parameters@{Read\-Potential\-Calculation\-Parameters}}
+\index{Read\-Potential\-Calculation\-Parameters@{Read\-Potential\-Calculation\-Parameters}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Potential\-Calculation\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Potential\-Calculation\-Parameters (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{fft\-Potential, }
+\item[{bool \&}]{potential3\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a7d7ef1d88e418cb903d24d2ef6afd19f}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_aa7740a3cee3ae2e2df50b2162e93567f}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 302 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a7d7ef1d88e418cb903d24d2ef6afd19f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a6bbc839aabeaff43bdb9e7b40e72e38c}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Potential\-Output\-Interval@{Read\-Potential\-Output\-Interval}}
+\index{Read\-Potential\-Output\-Interval@{Read\-Potential\-Output\-Interval}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Potential\-Output\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Potential\-Output\-Interval (
+\begin{DoxyParamCaption}
+\item[{unsigned \&}]{display\-Pot\-Calc\-Interval}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a6bbc839aabeaff43bdb9e7b40e72e38c}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_aaeb20d22ab7dc63b8d08e3e639f0b70c}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 69 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a6bbc839aabeaff43bdb9e7b40e72e38c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_ac965f7fe42af8bbca9627e52c29fdbdd}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Potential\-Output\-Parameters@{Read\-Potential\-Output\-Parameters}}
+\index{Read\-Potential\-Output\-Parameters@{Read\-Potential\-Output\-Parameters}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Potential\-Output\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Potential\-Output\-Parameters (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{save\-Potential, }
+\item[{bool \&}]{save\-Projected\-Potential, }
+\item[{bool \&}]{plot\-Potential}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_ac965f7fe42af8bbca9627e52c29fdbdd}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_af73b298ec0ecb42d4941fa018afe5913}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 288 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_ac965f7fe42af8bbca9627e52c29fdbdd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_abbeb1c6e4c446c481859e1fa0db5dd40}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Print\-Level@{Read\-Print\-Level}}
+\index{Read\-Print\-Level@{Read\-Print\-Level}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Print\-Level}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Print\-Level (
+\begin{DoxyParamCaption}
+\item[{unsigned \&}]{print\-Level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_abbeb1c6e4c446c481859e1fa0db5dd40}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a9875e11314ede437d3f43f6945cec2b9}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 56 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_abbeb1c6e4c446c481859e1fa0db5dd40_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_ae64a81adacbc48788478d736a956e7f4}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Probe\-Array\-Size@{Read\-Probe\-Array\-Size}}
+\index{Read\-Probe\-Array\-Size@{Read\-Probe\-Array\-Size}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Probe\-Array\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Probe\-Array\-Size (
+\begin{DoxyParamCaption}
+\item[{unsigned \&}]{nx, }
+\item[{unsigned \&}]{ny}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_ae64a81adacbc48788478d736a956e7f4}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a8fb7b3253bd5cc8feb973a675379436e}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 221 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_ae64a81adacbc48788478d736a956e7f4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a38fe35a44afac71b8eb1e0457d369eae}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Probe\-Parameters@{Read\-Probe\-Parameters}}
+\index{Read\-Probe\-Parameters@{Read\-Probe\-Parameters}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Probe\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Probe\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{d\-E\-\_\-\-E, }
+\item[{{\bf float\-\_\-tt} \&}]{d\-I\-\_\-\-I, }
+\item[{{\bf float\-\_\-tt} \&}]{d\-V\-\_\-\-V, }
+\item[{{\bf float\-\_\-tt} \&}]{alpha, }
+\item[{{\bf float\-\_\-tt} \&}]{a\-A\-I\-S}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a38fe35a44afac71b8eb1e0457d369eae}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a64daf87fe1ea9623e1bd3b7a814f371c}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 432 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a38fe35a44afac71b8eb1e0457d369eae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a6288bc50c1ff3a23bd0f694ef224ed5c}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Resolution@{Read\-Resolution}}
+\index{Read\-Resolution@{Read\-Resolution}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Resolution}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Resolution (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{resolution\-X, }
+\item[{{\bf float\-\_\-tt} \&}]{resolution\-Y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a6288bc50c1ff3a23bd0f694ef224ed5c}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_abcca29c3d4a70b602f61d37e89cea84d}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 230 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a6288bc50c1ff3a23bd0f694ef224ed5c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a046ae2b74b84d5ae531c0d72e2af1396}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Save\-Level@{Read\-Save\-Level}}
+\index{Read\-Save\-Level@{Read\-Save\-Level}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Save\-Level}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Save\-Level (
+\begin{DoxyParamCaption}
+\item[{unsigned \&}]{save\-Level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a046ae2b74b84d5ae531c0d72e2af1396}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_af302e4f3dfd02f4f91beb8b2fbf9a377}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 62 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a046ae2b74b84d5ae531c0d72e2af1396_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a8b0fc37c9340d20ebaf2bbc00fa2e216}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Scan\-Parameters@{Read\-Scan\-Parameters}}
+\index{Read\-Scan\-Parameters@{Read\-Scan\-Parameters}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Scan\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Scan\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{scan\-X\-Start, }
+\item[{{\bf float\-\_\-tt} \&}]{scan\-X\-Stop, }
+\item[{unsigned \&}]{scan\-X\-N, }
+\item[{{\bf float\-\_\-tt} \&}]{scan\-Y\-Start, }
+\item[{{\bf float\-\_\-tt} \&}]{scan\-Y\-Stop, }
+\item[{unsigned \&}]{scan\-Y\-N}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a8b0fc37c9340d20ebaf2bbc00fa2e216}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_ab6ea24d0f2d47f1dce8a82e2668e2e75}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 322 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a8b0fc37c9340d20ebaf2bbc00fa2e216_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a1231326a7921d5c693d64583579d3c30}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Slice\-Offset@{Read\-Slice\-Offset}}
+\index{Read\-Slice\-Offset@{Read\-Slice\-Offset}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Slice\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Slice\-Offset (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{x\-Offset, }
+\item[{{\bf float\-\_\-tt} \&}]{y\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a1231326a7921d5c693d64583579d3c30}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a6031e46b925738b47cc8e4c5e97c98c9}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 212 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a1231326a7921d5c693d64583579d3c30_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a4fbc9045d52f49eba75059244e6a8751}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Slice\-Parameters@{Read\-Slice\-Parameters}}
+\index{Read\-Slice\-Parameters@{Read\-Slice\-Parameters}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Slice\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Slice\-Parameters (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{center\-Slices, }
+\item[{{\bf float\-\_\-tt} \&}]{slice\-Thickness, }
+\item[{unsigned \&}]{nslices, }
+\item[{unsigned \&}]{output\-Interval, }
+\item[{{\bf float\-\_\-tt} \&}]{z\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a4fbc9045d52f49eba75059244e6a8751}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_abf18acda27bd8a5bf9ec60cfcca03d49}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 242 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a4fbc9045d52f49eba75059244e6a8751_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a7ba3963c769e2c790b96bb50d7b02478}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Smoothing\-Parameters@{Read\-Smoothing\-Parameters}}
+\index{Read\-Smoothing\-Parameters@{Read\-Smoothing\-Parameters}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Smoothing\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Smoothing\-Parameters (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{ismoth, }
+\item[{{\bf float\-\_\-tt} \&}]{gauss\-Scale, }
+\item[{bool \&}]{gauss\-Flag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a7ba3963c769e2c790b96bb50d7b02478}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a6c5cc6da68dd058b0c4fd8cebd8781c2}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 457 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a7ba3963c769e2c790b96bb50d7b02478_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_ae9adc105be0a0d6a27e10fc8e68512e9}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Source\-Radius@{Read\-Source\-Radius}}
+\index{Read\-Source\-Radius@{Read\-Source\-Radius}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Source\-Radius}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Source\-Radius (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{source\-Radius}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_ae9adc105be0a0d6a27e10fc8e68512e9}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a159055d6123e918d70d4faa0e2fe2948}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 451 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_ae9adc105be0a0d6a27e10fc8e68512e9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a91237125435a92e4d4aa7b6fd48ea5f8}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-S\-T\-E\-M\-Progress\-Interval@{Read\-S\-T\-E\-M\-Progress\-Interval}}
+\index{Read\-S\-T\-E\-M\-Progress\-Interval@{Read\-S\-T\-E\-M\-Progress\-Interval}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-S\-T\-E\-M\-Progress\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-S\-T\-E\-M\-Progress\-Interval (
+\begin{DoxyParamCaption}
+\item[{unsigned \&}]{display\-Prog\-Interval}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a91237125435a92e4d4aa7b6fd48ea5f8}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_ad0e81932ac1f0558aded8504a0c92163}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 75 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a91237125435a92e4d4aa7b6fd48ea5f8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_aa859a85a0a2a6b955d1de9cc9b1cdc6d}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Structure\-Factor\-Type@{Read\-Structure\-Factor\-Type}}
+\index{Read\-Structure\-Factor\-Type@{Read\-Structure\-Factor\-Type}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Structure\-Factor\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Structure\-Factor\-Type (
+\begin{DoxyParamCaption}
+\item[{std\-::string \&}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_aa859a85a0a2a6b955d1de9cc9b1cdc6d}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a18729ce6b5998ce15d4d1f5cce0f5fc0}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 357 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{class_q_s_t_e_m_1_1_c_qsc_reader_aa859a85a0a2a6b955d1de9cc9b1cdc6d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a3c10c95facdb29868c18b2cbd4fd74d5}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Structure\-File\-Name@{Read\-Structure\-File\-Name}}
+\index{Read\-Structure\-File\-Name@{Read\-Structure\-File\-Name}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Structure\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Structure\-File\-Name (
+\begin{DoxyParamCaption}
+\item[{boost\-::filesystem\-::path \&}]{structure\-\_\-file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a3c10c95facdb29868c18b2cbd4fd74d5}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_ab8e06ef8edcf8f87219c91f9fce4ee2a}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 82 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a3c10c95facdb29868c18b2cbd4fd74d5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a24f9663652a3073fb1a868dd2283f524}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Temperature\-Data@{Read\-Temperature\-Data}}
+\index{Read\-Temperature\-Data@{Read\-Temperature\-Data}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Temperature\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Temperature\-Data (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{do\-T\-D\-S, }
+\item[{{\bf float\-\_\-tt} \&}]{tds\-Temperature, }
+\item[{boost\-::filesystem\-::path \&}]{phonon\-File, }
+\item[{bool \&}]{use\-Einstein}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a24f9663652a3073fb1a868dd2283f524}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a2d5f0a97bb386bed28e52038c46b3100}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 192 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a24f9663652a3073fb1a868dd2283f524_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_ae83d8b8c88b04feea2d4e0d66a146f6f}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Tomo\-Parameters@{Read\-Tomo\-Parameters}}
+\index{Read\-Tomo\-Parameters@{Read\-Tomo\-Parameters}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Tomo\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Tomo\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{tomo\-Tilt, }
+\item[{{\bf float\-\_\-tt} \&}]{tomo\-Start, }
+\item[{{\bf float\-\_\-tt} \&}]{tomo\-Step, }
+\item[{int \&}]{tomo\-Count, }
+\item[{{\bf float\-\_\-tt} \&}]{zoom\-Factor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_ae83d8b8c88b04feea2d4e0d66a146f6f}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_af2e270fb0330a407afac8e37b539dae8}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 469 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_ae83d8b8c88b04feea2d4e0d66a146f6f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a03054f8fdac8f9f7260b545b2a56be77}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!Read\-Voltage@{Read\-Voltage}}
+\index{Read\-Voltage@{Read\-Voltage}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{Read\-Voltage}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::\-Read\-Voltage (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} \&}]{voltage}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a03054f8fdac8f9f7260b545b2a56be77}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_config_reader_a5a3960e3d696b36f142c4292515b9c0a}{Q\-S\-T\-E\-M\-::\-I\-Config\-Reader}.
+
+
+
+Definition at line 236 of file read\-\_\-qsc.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_q_s_t_e_m_1_1_c_qsc_reader_a03054f8fdac8f9f7260b545b2a56be77_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_a53627488fcd0d72fc5234d310842490b}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!C\-Config\-Reader\-Factory@{C\-Config\-Reader\-Factory}}
+\index{C\-Config\-Reader\-Factory@{C\-Config\-Reader\-Factory}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{C\-Config\-Reader\-Factory}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf C\-Config\-Reader\-Factory}\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_a53627488fcd0d72fc5234d310842490b}
+
+
+Definition at line 100 of file read\-\_\-qsc.\-hpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_aa8612dec4b28cbb4f1d028dc62397292}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!answer@{answer}}
+\index{answer@{answer}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{answer}]{\setlength{\rightskip}{0pt plus 5cm}char Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::answer\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_aa8612dec4b28cbb4f1d028dc62397292}
+
+
+Definition at line 95 of file read\-\_\-qsc.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_aee58b38f0aadff3f09329f01a6ffc4e8}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!m\-\_\-buf@{m\-\_\-buf}}
+\index{m\-\_\-buf@{m\-\_\-buf}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{m\-\_\-buf}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::m\-\_\-buf\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_aee58b38f0aadff3f09329f01a6ffc4e8}
+
+
+Definition at line 94 of file read\-\_\-qsc.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_qsc_reader_ae723878e62e41b20aedda4f0c284cf48}{\index{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}!m\-\_\-fp@{m\-\_\-fp}}
+\index{m\-\_\-fp@{m\-\_\-fp}!QSTEM::CQscReader@{Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader}}
+\subsubsection[{m\-\_\-fp}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ Q\-S\-T\-E\-M\-::\-C\-Qsc\-Reader\-::m\-\_\-fp\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_qsc_reader_ae723878e62e41b20aedda4f0c284cf48}
+
+
+Definition at line 96 of file read\-\_\-qsc.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+libs/config\-\_\-\-I\-O/\hyperlink{read__qsc_8hpp}{read\-\_\-qsc.\-hpp}\item 
+libs/config\-\_\-\-I\-O/\hyperlink{read__qsc_8cpp}{read\-\_\-qsc.\-cpp}\end{DoxyCompactItemize}

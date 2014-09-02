@@ -1,0 +1,103 @@
+<?xml version = '1.0'?>
+<kdevelop>
+  <general>
+  <author></author>
+  <email></email>
+  <version>$VERSION$</version>
+  <projectmanagement>KDevCustomProject</projectmanagement>
+  <primarylanguage>C++</primarylanguage>
+  <ignoreparts/>
+  <projectdirectory>/home/philipp/QSTEM</projectdirectory>
+  <absoluteprojectpath>true</absoluteprojectpath>
+  <secondaryLanguages>
+     <language>C</language>
+  </secondaryLanguages>
+  </general>
+  <kdevcustomproject>
+    <filelistdirectory>/home/philipp/QSTEM/tests/libs/structure_IO</filelistdirectory>
+    <run>
+      <mainprogram>/home/philipp/QSTEM/bin/test_structure_cfg</mainprogram>
+      <directoryradio>custom</directoryradio>
+      <customdirectory>/home/philipp/QSTEM/tests/libs/structure_IO</customdirectory>
+      <programargs></programargs>
+      <terminal>false</terminal>
+      <autocompile>true</autocompile>
+      <envvars/>
+    </run>
+    <build>
+      <buildtool>make</buildtool>
+      <builddir>/home/philipp/QSTEM/tests/libs/structure_IO</builddir>
+    </build>
+    <make>
+      <abortonerror>false</abortonerror>
+      <numberofjobs>1</numberofjobs>
+      <dontact>false</dontact>
+      <makebin>/usr/bin/make </makebin>
+      <selectedenvironment>default</selectedenvironment>
+      <environments>
+        <default>
+          <envvar value="1" name="VERBOSE" />
+          <envvar value="1" name="CMAKE_NO_VERBOSE" />
+        </default>
+      </environments>
+    </make>
+    <blacklist>
+      <path>bin</path>
+      <path>CMakeFiles</path>
+    </blacklist>
+  </kdevcustomproject>
+  <kdevfilecreate>
+    <filetypes/>
+    <useglobaltypes>
+      <type ext="ui" />
+      <type ext="cpp" />
+      <type ext="h" />
+    </useglobaltypes>
+  </kdevfilecreate>
+  <kdevdoctreeview>
+    <projectdoc>
+      <userdocDir>html/</userdocDir>
+      <apidocDir>html/</apidocDir>
+    </projectdoc>
+    <ignoreqt_xml/>
+    <ignoredoxygen/>
+    <ignorekdocs/>
+    <ignoretocs/>
+    <ignoredevhelp/>
+  </kdevdoctreeview>
+  <cppsupportpart>
+    <filetemplates>
+      <interfacesuffix>.h</interfacesuffix>
+      <implementationsuffix>.cpp</implementationsuffix>
+    </filetemplates>
+  </cppsupportpart>
+  <kdevcppsupport>
+    <codecompletion>
+      <includeGlobalFunctions>true</includeGlobalFunctions>
+      <includeTypes>true</includeTypes>
+      <includeEnums>true</includeEnums>
+      <includeTypedefs>false</includeTypedefs>
+      <automaticCodeCompletion>true</automaticCodeCompletion>
+      <automaticArgumentsHint>true</automaticArgumentsHint>
+      <automaticHeaderCompletion>true</automaticHeaderCompletion>
+      <codeCompletionDelay>250</codeCompletionDelay>
+      <argumentsHintDelay>400</argumentsHintDelay>
+      <headerCompletionDelay>250</headerCompletionDelay>
+    </codecompletion>
+    <references/>
+  </kdevcppsupport>
+  <kdevfileview>
+    <groups>
+      <group pattern="CMakeLists.txt;*.cmake;" name="CMake" />
+      <group pattern="*.h;*.hxx;*.hpp" name="Header" />
+      <group pattern="*.c" name="C Sources" />
+      <group pattern="*.cpp;*.C;*.cxx;*.cc" name="C++ Sources"/>
+      <group pattern="*.ui" name="Qt Designer files" />
+      <hidenonprojectfiles>true</hidenonprojectfiles>
+    </groups>
+    <tree>
+      <hidepatterns>*.o,*.lo,CVS,*~,cmake*</hidepatterns>
+      <hidenonprojectfiles>true</hidenonprojectfiles>
+    </tree>
+  </kdevfileview>
+</kdevelop>

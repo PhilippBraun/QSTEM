@@ -1,0 +1,95 @@
+\hypertarget{test__structure__cfg_8cpp}{\section{tests/libs/structure\-\_\-\-I\-O/test\-\_\-structure\-\_\-cfg.cpp File Reference}
+\label{test__structure__cfg_8cpp}\index{tests/libs/structure\-\_\-\-I\-O/test\-\_\-structure\-\_\-cfg.\-cpp@{tests/libs/structure\-\_\-\-I\-O/test\-\_\-structure\-\_\-cfg.\-cpp}}
+}
+{\ttfamily \#include $<$boost/test/unit\-\_\-test.\-hpp$>$}\\*
+{\ttfamily \#include $<$boost/filesystem.\-hpp$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}memory\-\_\-fftw3.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}structure\-\_\-\-I\-O/structure\-\_\-factories.\-hpp\char`\"{}}\\*
+Include dependency graph for test\-\_\-structure\-\_\-cfg.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__structure__cfg_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcfg_reader_fixture}{cfg\-Reader\-Fixture}
+\item 
+struct \hyperlink{structcfg_writer_fixture}{cfg\-Writer\-Fixture}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{test__structure__cfg_8cpp_a6b2a3852db8bb19ab6909bac01859985}{B\-O\-O\-S\-T\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-U\-L\-E}~Test\-Cfg\-Structure
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{test__structure__cfg_8cpp_afb3dbe551942ba2df1aff88b9fd1bdec}{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E} (test\-Read\-Mm)
+\item 
+\hyperlink{test__structure__cfg_8cpp_a7614a76251eb7b1efb98ab5943b4f5cc}{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E} (test\-Read\-Atoms)
+\item 
+\hyperlink{test__structure__cfg_8cpp_a2505d21d40cbb48f003a88794ecad84d}{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E} (test\-Write\-Cfg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{test__structure__cfg_8cpp_a6b2a3852db8bb19ab6909bac01859985}{\index{test\-\_\-structure\-\_\-cfg.\-cpp@{test\-\_\-structure\-\_\-cfg.\-cpp}!B\-O\-O\-S\-T\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-U\-L\-E@{B\-O\-O\-S\-T\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-U\-L\-E}}
+\index{B\-O\-O\-S\-T\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-U\-L\-E@{B\-O\-O\-S\-T\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-U\-L\-E}!test_structure_cfg.cpp@{test\-\_\-structure\-\_\-cfg.\-cpp}}
+\subsubsection[{B\-O\-O\-S\-T\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-U\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-O\-O\-S\-T\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-U\-L\-E~Test\-Cfg\-Structure}}\label{test__structure__cfg_8cpp_a6b2a3852db8bb19ab6909bac01859985}
+
+
+Definition at line 19 of file test\-\_\-structure\-\_\-cfg.\-cpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{test__structure__cfg_8cpp_afb3dbe551942ba2df1aff88b9fd1bdec}{\index{test\-\_\-structure\-\_\-cfg.\-cpp@{test\-\_\-structure\-\_\-cfg.\-cpp}!B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E@{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E}}
+\index{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E@{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E}!test_structure_cfg.cpp@{test\-\_\-structure\-\_\-cfg.\-cpp}}
+\subsubsection[{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E (
+\begin{DoxyParamCaption}
+\item[{test\-Read\-Mm}]{}
+\end{DoxyParamCaption}
+)}}\label{test__structure__cfg_8cpp_afb3dbe551942ba2df1aff88b9fd1bdec}
+
+
+Definition at line 44 of file test\-\_\-structure\-\_\-cfg.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__structure__cfg_8cpp_afb3dbe551942ba2df1aff88b9fd1bdec_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{test__structure__cfg_8cpp_a7614a76251eb7b1efb98ab5943b4f5cc}{\index{test\-\_\-structure\-\_\-cfg.\-cpp@{test\-\_\-structure\-\_\-cfg.\-cpp}!B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E@{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E}}
+\index{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E@{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E}!test_structure_cfg.cpp@{test\-\_\-structure\-\_\-cfg.\-cpp}}
+\subsubsection[{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E (
+\begin{DoxyParamCaption}
+\item[{test\-Read\-Atoms}]{}
+\end{DoxyParamCaption}
+)}}\label{test__structure__cfg_8cpp_a7614a76251eb7b1efb98ab5943b4f5cc}
+
+
+Definition at line 53 of file test\-\_\-structure\-\_\-cfg.\-cpp.
+
+\hypertarget{test__structure__cfg_8cpp_a2505d21d40cbb48f003a88794ecad84d}{\index{test\-\_\-structure\-\_\-cfg.\-cpp@{test\-\_\-structure\-\_\-cfg.\-cpp}!B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E@{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E}}
+\index{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E@{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E}!test_structure_cfg.cpp@{test\-\_\-structure\-\_\-cfg.\-cpp}}
+\subsubsection[{B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-\_\-\-A\-U\-T\-O\-\_\-\-T\-E\-S\-T\-\_\-\-C\-A\-S\-E (
+\begin{DoxyParamCaption}
+\item[{test\-Write\-Cfg}]{}
+\end{DoxyParamCaption}
+)}}\label{test__structure__cfg_8cpp_a2505d21d40cbb48f003a88794ecad84d}
+
+
+Definition at line 100 of file test\-\_\-structure\-\_\-cfg.\-cpp.
+

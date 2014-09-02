@@ -1,0 +1,838 @@
+\hypertarget{cif_lexer_8cpp}{\section{libs/structure\-\_\-\-I\-O/ucif/cif\-Lexer.cpp File Reference}
+\label{cif_lexer_8cpp}\index{libs/structure\-\_\-\-I\-O/ucif/cif\-Lexer.\-cpp@{libs/structure\-\_\-\-I\-O/ucif/cif\-Lexer.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}cif\-Lexer.\-h\char`\"{}}\\*
+Include dependency graph for cif\-Lexer.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cif_lexer_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a5bde6d2a1cd4fa3f21d8754ba58ccc8d}{C\-T\-X}~ctx
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a9e39291e12ef9cc726ca47f80b5729da}{S\-C\-O\-P\-E\-\_\-\-T\-Y\-P\-E}(scope)~pcif\-Lexer\-\_\-\#\#scope\#\#\-\_\-\-S\-C\-O\-P\-E
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a944514c8a3498b5780633993da658c1d}{S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-C\-K}(scope)~pcif\-Lexer\-\_\-\#\#scope\#\#Stack
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a2d5a2720b189740be032b1a054ef7d82}{S\-C\-O\-P\-E\-\_\-\-T\-O\-P}(scope)~ctx-\/$>$pcif\-Lexer\-\_\-\#\#scope\#\#Top
+\item 
+\#define \hyperlink{cif_lexer_8cpp_aeba24c45640aee2cf54e81f7869d2e83}{S\-C\-O\-P\-E\-\_\-\-S\-I\-Z\-E}(scope)~ctx-\/$>$pcif\-Lexer\-\_\-\#\#scope\#\#Stack\-\_\-limit
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a63bd65b7f006a536d1cb6f91e0ca6b67}{S\-C\-O\-P\-E\-\_\-\-I\-N\-S\-T\-A\-N\-C\-E}(scope, \hyperlink{_read_d_m3___matlab_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i})~(ctx-\/$>$\hyperlink{cif_parser_8cpp_a944514c8a3498b5780633993da658c1d}{S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-C\-K}(scope)-\/$>$\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(ctx-\/$>$\hyperlink{cif_parser_8cpp_a944514c8a3498b5780633993da658c1d}{S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-C\-K}(scope),\hyperlink{_read_d_m3___matlab_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}))
+\item 
+\#define \hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}~ctx-\/$>$p\-Lexer
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a3d0eb27b891820eee718d8238562a281}{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$rec
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}~\hyperlink{cif_parser_8cpp_a3d0eb27b891820eee718d8238562a281}{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}-\/$>$state
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a40977141c610f0a9bf6cfec99210ba6f}{T\-O\-K\-S\-O\-U\-R\-C\-E}~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$tok\-Source
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a7c43ec63919819f31697f10e6efdd9ce}{G\-E\-T\-C\-H\-A\-R\-I\-N\-D\-E\-X}()~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$get\-Char\-Index(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a2c510575e33a05102f77014ec88a4259}{G\-E\-T\-L\-I\-N\-E}()~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$get\-Line(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_ae04f7aa3411a48c17a73b665c39cca57}{G\-E\-T\-T\-E\-X\-T}()~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$get\-Text(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a28ff2855b5119e9575db4a1fc9e7360c}{G\-E\-T\-C\-H\-A\-R\-P\-O\-S\-I\-T\-I\-O\-N\-I\-N\-L\-I\-N\-E}()~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$get\-Char\-Position\-In\-Line(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a876c7af0f0fd18fcbf4e51dd81ba9f29}{E\-M\-I\-T}()~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$\hyperlink{convert2cfg_8m_a2902a7a983ab04c79cae2162ad553481}{type} = \-\_\-type; \hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$emit(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_aa7f132993888e66b563566ae2034c474}{E\-M\-I\-T\-N\-E\-W}(\hyperlink{showimage_8m_ad941f6ef920fbfb3d75b60ddbedbdd39}{t})~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$emit\-New(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}, \hyperlink{showimage_8m_ad941f6ef920fbfb3d75b60ddbedbdd39}{t})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_ae51e73be47874786b874c80901e981aa}{M\-A\-T\-C\-H\-C}(\hyperlink{image_sim_8m_a463b16ca2bfa2f0cbab0e62fcb263d8e}{c})~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$matchc(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}, \hyperlink{image_sim_8m_a463b16ca2bfa2f0cbab0e62fcb263d8e}{c})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a87faff8dd5f2bb3a98db48e37d340768}{M\-A\-T\-C\-H\-S}(\hyperlink{aberrations___t_e_m_8m_aef29541a06b7f933d32a804307db13af}{s})~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$matchs(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}, \hyperlink{aberrations___t_e_m_8m_aef29541a06b7f933d32a804307db13af}{s})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a99446f44c312929ec5b05a8bf5ac2768}{M\-A\-T\-C\-H\-R\-A\-N\-G\-E}(c1, c2)~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$match\-Range(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}, c1, c2)
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a3f9ee64aa933c6682c615fb8c62899f0}{M\-A\-T\-C\-H\-A\-N\-Y}()~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$match\-Any(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a33724659859cc53f8fdb06e1b1bb211d}{L\-T\-O\-K\-E\-N}~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$token
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a83db8ef82ead47b1eb67d3be5a04a881}{H\-A\-S\-F\-A\-I\-L\-E\-D}()~(\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$failed == \hyperlink{antlr3errors_8h_a8cfcfbce03f3039eb35d87f97105dc1b}{A\-N\-T\-L\-R3\-\_\-\-T\-R\-U\-E})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a91ceca595c33b49f6fa732ec5722a785}{B\-A\-C\-K\-T\-R\-A\-C\-K\-I\-N\-G}~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$backtracking
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a16ea64431247767c1ae97bb948151fc5}{F\-A\-I\-L\-E\-D\-F\-L\-A\-G}~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$failed
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a1bb283bd7893b9855e2f23013891fc82}{I\-N\-P\-U\-T}~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$input
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a3445ff65d5582c03f31c462d33a05bef}{S\-T\-R\-S\-T\-R\-E\-A\-M}~\hyperlink{cif_parser_8cpp_a1bb283bd7893b9855e2f23013891fc82}{I\-N\-P\-U\-T}
+\item 
+\#define \hyperlink{cif_lexer_8cpp_ac62ed320208829eaac81505ebf12cd38}{I\-S\-T\-R\-E\-A\-M}~\hyperlink{cif_parser_8cpp_a1bb283bd7893b9855e2f23013891fc82}{I\-N\-P\-U\-T}-\/$>$istream
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a09d04490eb627026a8d2935247f9494f}{I\-N\-D\-E\-X}()~\hyperlink{cif_parser_8cpp_ac62ed320208829eaac81505ebf12cd38}{I\-S\-T\-R\-E\-A\-M}-\/$>$\hyperlink{xyz2cfg_8m_ab8735b00764542f758cab8113c52b8ec}{index}(\hyperlink{cif_parser_8cpp_ac62ed320208829eaac81505ebf12cd38}{I\-S\-T\-R\-E\-A\-M})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_ab524ce465549a7aed557f4ce1095aa6c}{S\-E\-E\-K}(n)~\hyperlink{cif_parser_8cpp_ac62ed320208829eaac81505ebf12cd38}{I\-S\-T\-R\-E\-A\-M}-\/$>$seek(\hyperlink{cif_parser_8cpp_ac62ed320208829eaac81505ebf12cd38}{I\-S\-T\-R\-E\-A\-M}, n)
+\item 
+\#define \hyperlink{cif_lexer_8cpp_ad6e6e0759cbf5a9d16d15798b778b14d}{E\-O\-F\-\_\-\-T\-O\-K\-E\-N}~\&(\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$tok\-Source-\/$>$eof\-Token)
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a1e5e4d045e6a846bdd9396cd2ceb5398}{H\-A\-S\-E\-X\-C\-E\-P\-T\-I\-O\-N}()~(\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$\hyperlink{xyz2cfg_8m_a85727b4c27bae9d34bee79da53a07660}{error} == \hyperlink{antlr3errors_8h_a8cfcfbce03f3039eb35d87f97105dc1b}{A\-N\-T\-L\-R3\-\_\-\-T\-R\-U\-E})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a8e5fdcdfe948aeed8558f0d81392e941}{E\-X\-C\-E\-P\-T\-I\-O\-N}~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$exception
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a68f7a6262b92bfc7dc99dba3935ecfc2}{C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-X}()~\hyperlink{cif_parser_8cpp_a3d0eb27b891820eee718d8238562a281}{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}-\/$>$ex\-Construct(\hyperlink{cif_parser_8cpp_a3d0eb27b891820eee718d8238562a281}{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a53717542898d74774046d9ad9bcb1946}{L\-R\-E\-C\-O\-V\-E\-R}()~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$recover(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_ac7ae17784db038e5769b9417c2cafdfa}{M\-A\-R\-K}()~\hyperlink{cif_parser_8cpp_ac62ed320208829eaac81505ebf12cd38}{I\-S\-T\-R\-E\-A\-M}-\/$>$mark(\hyperlink{cif_parser_8cpp_ac62ed320208829eaac81505ebf12cd38}{I\-S\-T\-R\-E\-A\-M})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a84e5f94f2d96b03a9ada64f395896abe}{R\-E\-W\-I\-N\-D}(\hyperlink{_read_d_m3___matlab_8m_a690da4f71682a3ad61fd1af8024eb5d3}{m})~\hyperlink{cif_parser_8cpp_ac62ed320208829eaac81505ebf12cd38}{I\-S\-T\-R\-E\-A\-M}-\/$>$rewind(\hyperlink{cif_parser_8cpp_ac62ed320208829eaac81505ebf12cd38}{I\-S\-T\-R\-E\-A\-M}, \hyperlink{_read_d_m3___matlab_8m_a690da4f71682a3ad61fd1af8024eb5d3}{m})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a763a2ee6b5a62e9436bf6a85f1590cc1}{R\-E\-W\-I\-N\-D\-L\-A\-S\-T}()~\hyperlink{cif_parser_8cpp_ac62ed320208829eaac81505ebf12cd38}{I\-S\-T\-R\-E\-A\-M}-\/$>$rewind\-Last(\hyperlink{cif_parser_8cpp_ac62ed320208829eaac81505ebf12cd38}{I\-S\-T\-R\-E\-A\-M})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_abafd193135fa185119be4ba6e54dc879}{M\-E\-M\-O\-I\-Z\-E}(ri, si)~\hyperlink{cif_parser_8cpp_a3d0eb27b891820eee718d8238562a281}{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}-\/$>$memoize(\hyperlink{cif_parser_8cpp_a3d0eb27b891820eee718d8238562a281}{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}, ri, si)
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a10c31e65fb52676370fe26eaf8bee565}{H\-A\-V\-E\-P\-A\-R\-S\-E\-D\-R\-U\-L\-E}(\hyperlink{_read_d_m3___matlab_8m_a514f1b439f404f86f77090fa9edc96ce}{r})~\hyperlink{cif_parser_8cpp_a3d0eb27b891820eee718d8238562a281}{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}-\/$>$already\-Parsed\-Rule(\hyperlink{cif_parser_8cpp_a3d0eb27b891820eee718d8238562a281}{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}, \hyperlink{_read_d_m3___matlab_8m_a514f1b439f404f86f77090fa9edc96ce}{r})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a603172014b82719edeb4defd05c39417}{P\-U\-S\-H\-S\-T\-R\-E\-A\-M}(str)~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$push\-Char\-Stream(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}, str)
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a567c746bf6bcbaf696193fc1a08eebd9}{P\-O\-P\-S\-T\-R\-E\-A\-M}()~\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R}-\/$>$pop\-Char\-Stream(\hyperlink{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{L\-E\-X\-E\-R})
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a481c85399e38469a2114e6fa3d7ebcb0}{S\-E\-T\-T\-E\-X\-T}(str)~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$text = str
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a76d5244b498df3281b386d116caf0c11}{S\-K\-I\-P}()~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$token = \&(\hyperlink{cif_lexer_8cpp_a40977141c610f0a9bf6cfec99210ba6f}{T\-O\-K\-S\-O\-U\-R\-C\-E}-\/$>$skip\-Token)
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a17bc39fc649b20234737a25ead9737df}{U\-S\-E\-R1}~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$user1
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a7f174600ff3c059d71cd5d8d30a60bce}{U\-S\-E\-R2}~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$user2
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a5d065a077f4bcb410bdb312606b78b49}{U\-S\-E\-R3}~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$user3
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a686dea444026cbf1236c24e7edb3a96d}{C\-U\-S\-T\-O\-M}~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$custom
+\item 
+\#define \hyperlink{cif_lexer_8cpp_aff40c73eefec17d7ad9406a7b40e1d20}{R\-U\-L\-E\-M\-E\-M\-O}~\hyperlink{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{L\-E\-X\-S\-T\-A\-T\-E}-\/$>$rule\-Memo
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a49606be7356624568932ec81c0d429f4}{D\-B\-G}~\hyperlink{cif_parser_8cpp_a3d0eb27b891820eee718d8238562a281}{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}-\/$>$debugger
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a35410eae027527ab0289a206d7b5611e}{C\-O\-N\-S\-U\-M\-E}()~\hyperlink{cif_parser_8cpp_a1bb283bd7893b9855e2f23013891fc82}{I\-N\-P\-U\-T}-\/$>$istream-\/$>$consume(\hyperlink{cif_parser_8cpp_a1bb283bd7893b9855e2f23013891fc82}{I\-N\-P\-U\-T}-\/$>$istream)
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a04f118c7e17dd264e56efa7f7a3b6b6f}{L\-A}(n)~\hyperlink{cif_parser_8cpp_a1bb283bd7893b9855e2f23013891fc82}{I\-N\-P\-U\-T}-\/$>$istream-\/$>$\-\_\-\-L\-A(\hyperlink{cif_parser_8cpp_a1bb283bd7893b9855e2f23013891fc82}{I\-N\-P\-U\-T}-\/$>$istream, n)
+\item 
+\#define \hyperlink{cif_lexer_8cpp_ab156329a045fcadcd204126960f25d76}{T\-O\-K\-T\-E\-X\-T}(tok, txt)~tok, (\hyperlink{antlr3defs_8h_a95c800abcac5d607fd9e3e775ace78c5}{p\-A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T8})txt
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a1965eaca47dbf3f87acdafc2208f04eb}{U\-P}~\hyperlink{antlr3commontoken_8h_a0fe56e2df2fa8c65e2fba3a79b8af043}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-U\-P}
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a4193cd1c8c2e6ebd0e056fa2364a663f}{D\-O\-W\-N}~\hyperlink{antlr3commontoken_8h_a603c0885903dbf262788c91f26101ae2}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-O\-W\-N}
+\item 
+\#define \hyperlink{cif_lexer_8cpp_aefa7a41dc28e5afd4aa0881c7c9ab73f}{E\-O\-R}~A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-R
+\item 
+\#define \hyperlink{cif_lexer_8cpp_adf770fe2eec438e3758ffe905dbae208}{I\-N\-V\-A\-L\-I\-D}~\hyperlink{antlr3commontoken_8h_ae6add32e4a00e4a514491188b60196e0}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D}
+\item 
+\#define \hyperlink{cif_lexer_8cpp_aa092f8f3d7f24b17a4c54c8ffe2a90ea}{dfa15\-\_\-\-T\-\_\-empty}~N\-U\-L\-L
+\item 
+\#define \hyperlink{cif_lexer_8cpp_aed38c4015434a63b9ce7740b9faea0aa}{dfa13\-\_\-\-T\-\_\-empty}~N\-U\-L\-L
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a2b23d40570e8267b2554d10c85f0d030}{dfa17\-\_\-\-T\-\_\-empty}~N\-U\-L\-L
+\item 
+\#define \hyperlink{cif_lexer_8cpp_a1a575fcf64c2e9984dcad0999b563f97}{dfa19\-\_\-\-T\-\_\-empty}~N\-U\-L\-L
+\item 
+\#define \hyperlink{cif_lexer_8cpp_afc25623e1bdf44e1b12a443d9d0fc542}{dfa33\-\_\-\-T\-\_\-empty}~N\-U\-L\-L
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{cif_lexer_8h_a24536aac4e7a694acef52544113d35c1}{pcif\-Lexer} \hyperlink{cif_lexer_8cpp_a38553a530136591242351a3db661cf69}{cif\-Lexer\-New} (\hyperlink{antlr3interfaces_8h_a30a8f71f3e04066360723d538fd67f16}{p\-A\-N\-T\-L\-R3\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-T\-R\-E\-A\-M} instream)
+\begin{DoxyCompactList}\small\item\em Create a new lexer called cif\-Lexer. \end{DoxyCompactList}\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{cif_lexer_8h_a24536aac4e7a694acef52544113d35c1}{pcif\-Lexer} \hyperlink{cif_lexer_8cpp_a73b0d4cc3e5ea3dcf37b901e7e88ab2d}{cif\-Lexer\-New\-S\-S\-D} (\hyperlink{antlr3interfaces_8h_a30a8f71f3e04066360723d538fd67f16}{p\-A\-N\-T\-L\-R3\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-T\-R\-E\-A\-M} instream, \hyperlink{antlr3interfaces_8h_a180526531b2c6da5cafe825ae7596bf1}{p\-A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E} state)
+\begin{DoxyCompactList}\small\item\em Create a new lexer called cif\-Lexer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This C source file was generated by \$\-A\-N\-T\-L\-R version 3.\-4
+
+
+\begin{DoxyItemize}
+\item From the grammar source file \-: cif.\-g
+\item On \-: 2013-\/04-\/16 18\-:47\-:22
+\item for the lexer \-: cif\-Lexer\-Lexer
+\end{DoxyItemize}
+
+Editing it, at least manually, is not wise.
+
+C language generator and runtime by Jim Idle, jimi$\vert$hereisanat$\vert$idle$\vert$dotgoeshere$\vert$ws. 
+
+Definition in file \hyperlink{cif_lexer_8cpp_source}{cif\-Lexer.\-cpp}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{cif_lexer_8cpp_a91ceca595c33b49f6fa732ec5722a785}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!B\-A\-C\-K\-T\-R\-A\-C\-K\-I\-N\-G@{B\-A\-C\-K\-T\-R\-A\-C\-K\-I\-N\-G}}
+\index{B\-A\-C\-K\-T\-R\-A\-C\-K\-I\-N\-G@{B\-A\-C\-K\-T\-R\-A\-C\-K\-I\-N\-G}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{B\-A\-C\-K\-T\-R\-A\-C\-K\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-A\-C\-K\-T\-R\-A\-C\-K\-I\-N\-G~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$backtracking}}\label{cif_lexer_8cpp_a91ceca595c33b49f6fa732ec5722a785}
+
+
+Definition at line 144 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a68f7a6262b92bfc7dc99dba3935ecfc2}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-X@{C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-X}}
+\index{C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-X@{C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-X}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-S\-T\-R\-U\-C\-T\-E\-X(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}-\/$>$ex\-Construct({\bf R\-E\-C\-O\-G\-N\-I\-Z\-E\-R})}}\label{cif_lexer_8cpp_a68f7a6262b92bfc7dc99dba3935ecfc2}
+
+
+Definition at line 154 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a35410eae027527ab0289a206d7b5611e}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!C\-O\-N\-S\-U\-M\-E@{C\-O\-N\-S\-U\-M\-E}}
+\index{C\-O\-N\-S\-U\-M\-E@{C\-O\-N\-S\-U\-M\-E}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{C\-O\-N\-S\-U\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-S\-U\-M\-E(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf I\-N\-P\-U\-T}-\/$>$istream-\/$>$consume({\bf I\-N\-P\-U\-T}-\/$>$istream)}}\label{cif_lexer_8cpp_a35410eae027527ab0289a206d7b5611e}
+
+
+Definition at line 215 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a5bde6d2a1cd4fa3f21d8754ba58ccc8d}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!C\-T\-X@{C\-T\-X}}
+\index{C\-T\-X@{C\-T\-X}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{C\-T\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-T\-X~ctx}}\label{cif_lexer_8cpp_a5bde6d2a1cd4fa3f21d8754ba58ccc8d}
+
+
+Definition at line 75 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a686dea444026cbf1236c24e7edb3a96d}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!C\-U\-S\-T\-O\-M@{C\-U\-S\-T\-O\-M}}
+\index{C\-U\-S\-T\-O\-M@{C\-U\-S\-T\-O\-M}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{C\-U\-S\-T\-O\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-U\-S\-T\-O\-M~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$custom}}\label{cif_lexer_8cpp_a686dea444026cbf1236c24e7edb3a96d}
+
+
+Definition at line 168 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a49606be7356624568932ec81c0d429f4}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!D\-B\-G@{D\-B\-G}}
+\index{D\-B\-G@{D\-B\-G}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{D\-B\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-G~{\bf R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}-\/$>$debugger}}\label{cif_lexer_8cpp_a49606be7356624568932ec81c0d429f4}
+
+
+Definition at line 170 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_aed38c4015434a63b9ce7740b9faea0aa}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!dfa13\-\_\-\-T\-\_\-empty@{dfa13\-\_\-\-T\-\_\-empty}}
+\index{dfa13\-\_\-\-T\-\_\-empty@{dfa13\-\_\-\-T\-\_\-empty}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{dfa13\-\_\-\-T\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}\#define dfa13\-\_\-\-T\-\_\-empty~N\-U\-L\-L}}\label{cif_lexer_8cpp_aed38c4015434a63b9ce7740b9faea0aa}
+Used when there is no transition table entry for a particular state 
+
+Definition at line 634 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_aa092f8f3d7f24b17a4c54c8ffe2a90ea}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!dfa15\-\_\-\-T\-\_\-empty@{dfa15\-\_\-\-T\-\_\-empty}}
+\index{dfa15\-\_\-\-T\-\_\-empty@{dfa15\-\_\-\-T\-\_\-empty}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{dfa15\-\_\-\-T\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}\#define dfa15\-\_\-\-T\-\_\-empty~N\-U\-L\-L}}\label{cif_lexer_8cpp_aa092f8f3d7f24b17a4c54c8ffe2a90ea}
+Used when there is no transition table entry for a particular state 
+
+Definition at line 549 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a2b23d40570e8267b2554d10c85f0d030}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!dfa17\-\_\-\-T\-\_\-empty@{dfa17\-\_\-\-T\-\_\-empty}}
+\index{dfa17\-\_\-\-T\-\_\-empty@{dfa17\-\_\-\-T\-\_\-empty}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{dfa17\-\_\-\-T\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}\#define dfa17\-\_\-\-T\-\_\-empty~N\-U\-L\-L}}\label{cif_lexer_8cpp_a2b23d40570e8267b2554d10c85f0d030}
+Used when there is no transition table entry for a particular state 
+
+Definition at line 711 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a1a575fcf64c2e9984dcad0999b563f97}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!dfa19\-\_\-\-T\-\_\-empty@{dfa19\-\_\-\-T\-\_\-empty}}
+\index{dfa19\-\_\-\-T\-\_\-empty@{dfa19\-\_\-\-T\-\_\-empty}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{dfa19\-\_\-\-T\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}\#define dfa19\-\_\-\-T\-\_\-empty~N\-U\-L\-L}}\label{cif_lexer_8cpp_a1a575fcf64c2e9984dcad0999b563f97}
+Used when there is no transition table entry for a particular state 
+
+Definition at line 796 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_afc25623e1bdf44e1b12a443d9d0fc542}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!dfa33\-\_\-\-T\-\_\-empty@{dfa33\-\_\-\-T\-\_\-empty}}
+\index{dfa33\-\_\-\-T\-\_\-empty@{dfa33\-\_\-\-T\-\_\-empty}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{dfa33\-\_\-\-T\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}\#define dfa33\-\_\-\-T\-\_\-empty~N\-U\-L\-L}}\label{cif_lexer_8cpp_afc25623e1bdf44e1b12a443d9d0fc542}
+Used when there is no transition table entry for a particular state 
+
+Definition at line 941 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a4193cd1c8c2e6ebd0e056fa2364a663f}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!D\-O\-W\-N@{D\-O\-W\-N}}
+\index{D\-O\-W\-N@{D\-O\-W\-N}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{D\-O\-W\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-O\-W\-N~{\bf A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-D\-O\-W\-N}}}\label{cif_lexer_8cpp_a4193cd1c8c2e6ebd0e056fa2364a663f}
+
+
+Definition at line 229 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a876c7af0f0fd18fcbf4e51dd81ba9f29}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!E\-M\-I\-T@{E\-M\-I\-T}}
+\index{E\-M\-I\-T@{E\-M\-I\-T}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{E\-M\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-M\-I\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>${\bf type} = \-\_\-type; {\bf L\-E\-X\-E\-R}-\/$>$emit({\bf L\-E\-X\-E\-R})}}\label{cif_lexer_8cpp_a876c7af0f0fd18fcbf4e51dd81ba9f29}
+
+
+Definition at line 136 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_aa7f132993888e66b563566ae2034c474}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!E\-M\-I\-T\-N\-E\-W@{E\-M\-I\-T\-N\-E\-W}}
+\index{E\-M\-I\-T\-N\-E\-W@{E\-M\-I\-T\-N\-E\-W}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{E\-M\-I\-T\-N\-E\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-M\-I\-T\-N\-E\-W(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf t}}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-E\-R}-\/$>$emit\-New({\bf L\-E\-X\-E\-R}, {\bf t})}}\label{cif_lexer_8cpp_aa7f132993888e66b563566ae2034c474}
+
+
+Definition at line 137 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_ad6e6e0759cbf5a9d16d15798b778b14d}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!E\-O\-F\-\_\-\-T\-O\-K\-E\-N@{E\-O\-F\-\_\-\-T\-O\-K\-E\-N}}
+\index{E\-O\-F\-\_\-\-T\-O\-K\-E\-N@{E\-O\-F\-\_\-\-T\-O\-K\-E\-N}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{E\-O\-F\-\_\-\-T\-O\-K\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-O\-F\-\_\-\-T\-O\-K\-E\-N~\&({\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$tok\-Source-\/$>$eof\-Token)}}\label{cif_lexer_8cpp_ad6e6e0759cbf5a9d16d15798b778b14d}
+
+
+Definition at line 151 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_aefa7a41dc28e5afd4aa0881c7c9ab73f}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!E\-O\-R@{E\-O\-R}}
+\index{E\-O\-R@{E\-O\-R}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{E\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-O\-R~A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-R}}\label{cif_lexer_8cpp_aefa7a41dc28e5afd4aa0881c7c9ab73f}
+
+
+Definition at line 230 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a8e5fdcdfe948aeed8558f0d81392e941}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!E\-X\-C\-E\-P\-T\-I\-O\-N@{E\-X\-C\-E\-P\-T\-I\-O\-N}}
+\index{E\-X\-C\-E\-P\-T\-I\-O\-N@{E\-X\-C\-E\-P\-T\-I\-O\-N}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{E\-X\-C\-E\-P\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-C\-E\-P\-T\-I\-O\-N~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$exception}}\label{cif_lexer_8cpp_a8e5fdcdfe948aeed8558f0d81392e941}
+
+
+Definition at line 153 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a16ea64431247767c1ae97bb948151fc5}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!F\-A\-I\-L\-E\-D\-F\-L\-A\-G@{F\-A\-I\-L\-E\-D\-F\-L\-A\-G}}
+\index{F\-A\-I\-L\-E\-D\-F\-L\-A\-G@{F\-A\-I\-L\-E\-D\-F\-L\-A\-G}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{F\-A\-I\-L\-E\-D\-F\-L\-A\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-A\-I\-L\-E\-D\-F\-L\-A\-G~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$failed}}\label{cif_lexer_8cpp_a16ea64431247767c1ae97bb948151fc5}
+
+
+Definition at line 145 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a7c43ec63919819f31697f10e6efdd9ce}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!G\-E\-T\-C\-H\-A\-R\-I\-N\-D\-E\-X@{G\-E\-T\-C\-H\-A\-R\-I\-N\-D\-E\-X}}
+\index{G\-E\-T\-C\-H\-A\-R\-I\-N\-D\-E\-X@{G\-E\-T\-C\-H\-A\-R\-I\-N\-D\-E\-X}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{G\-E\-T\-C\-H\-A\-R\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-E\-T\-C\-H\-A\-R\-I\-N\-D\-E\-X(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-E\-R}-\/$>$get\-Char\-Index({\bf L\-E\-X\-E\-R})}}\label{cif_lexer_8cpp_a7c43ec63919819f31697f10e6efdd9ce}
+
+
+Definition at line 132 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a28ff2855b5119e9575db4a1fc9e7360c}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!G\-E\-T\-C\-H\-A\-R\-P\-O\-S\-I\-T\-I\-O\-N\-I\-N\-L\-I\-N\-E@{G\-E\-T\-C\-H\-A\-R\-P\-O\-S\-I\-T\-I\-O\-N\-I\-N\-L\-I\-N\-E}}
+\index{G\-E\-T\-C\-H\-A\-R\-P\-O\-S\-I\-T\-I\-O\-N\-I\-N\-L\-I\-N\-E@{G\-E\-T\-C\-H\-A\-R\-P\-O\-S\-I\-T\-I\-O\-N\-I\-N\-L\-I\-N\-E}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{G\-E\-T\-C\-H\-A\-R\-P\-O\-S\-I\-T\-I\-O\-N\-I\-N\-L\-I\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-E\-T\-C\-H\-A\-R\-P\-O\-S\-I\-T\-I\-O\-N\-I\-N\-L\-I\-N\-E(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-E\-R}-\/$>$get\-Char\-Position\-In\-Line({\bf L\-E\-X\-E\-R})}}\label{cif_lexer_8cpp_a28ff2855b5119e9575db4a1fc9e7360c}
+
+
+Definition at line 135 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a2c510575e33a05102f77014ec88a4259}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!G\-E\-T\-L\-I\-N\-E@{G\-E\-T\-L\-I\-N\-E}}
+\index{G\-E\-T\-L\-I\-N\-E@{G\-E\-T\-L\-I\-N\-E}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{G\-E\-T\-L\-I\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-E\-T\-L\-I\-N\-E(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-E\-R}-\/$>$get\-Line({\bf L\-E\-X\-E\-R})}}\label{cif_lexer_8cpp_a2c510575e33a05102f77014ec88a4259}
+
+
+Definition at line 133 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_ae04f7aa3411a48c17a73b665c39cca57}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!G\-E\-T\-T\-E\-X\-T@{G\-E\-T\-T\-E\-X\-T}}
+\index{G\-E\-T\-T\-E\-X\-T@{G\-E\-T\-T\-E\-X\-T}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{G\-E\-T\-T\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-E\-T\-T\-E\-X\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-E\-R}-\/$>$get\-Text({\bf L\-E\-X\-E\-R})}}\label{cif_lexer_8cpp_ae04f7aa3411a48c17a73b665c39cca57}
+
+
+Definition at line 134 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a1e5e4d045e6a846bdd9396cd2ceb5398}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!H\-A\-S\-E\-X\-C\-E\-P\-T\-I\-O\-N@{H\-A\-S\-E\-X\-C\-E\-P\-T\-I\-O\-N}}
+\index{H\-A\-S\-E\-X\-C\-E\-P\-T\-I\-O\-N@{H\-A\-S\-E\-X\-C\-E\-P\-T\-I\-O\-N}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{H\-A\-S\-E\-X\-C\-E\-P\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-A\-S\-E\-X\-C\-E\-P\-T\-I\-O\-N(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~({\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>${\bf error} == {\bf A\-N\-T\-L\-R3\-\_\-\-T\-R\-U\-E})}}\label{cif_lexer_8cpp_a1e5e4d045e6a846bdd9396cd2ceb5398}
+
+
+Definition at line 152 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a83db8ef82ead47b1eb67d3be5a04a881}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!H\-A\-S\-F\-A\-I\-L\-E\-D@{H\-A\-S\-F\-A\-I\-L\-E\-D}}
+\index{H\-A\-S\-F\-A\-I\-L\-E\-D@{H\-A\-S\-F\-A\-I\-L\-E\-D}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{H\-A\-S\-F\-A\-I\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-A\-S\-F\-A\-I\-L\-E\-D(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~({\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$failed == {\bf A\-N\-T\-L\-R3\-\_\-\-T\-R\-U\-E})}}\label{cif_lexer_8cpp_a83db8ef82ead47b1eb67d3be5a04a881}
+
+
+Definition at line 143 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a10c31e65fb52676370fe26eaf8bee565}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!H\-A\-V\-E\-P\-A\-R\-S\-E\-D\-R\-U\-L\-E@{H\-A\-V\-E\-P\-A\-R\-S\-E\-D\-R\-U\-L\-E}}
+\index{H\-A\-V\-E\-P\-A\-R\-S\-E\-D\-R\-U\-L\-E@{H\-A\-V\-E\-P\-A\-R\-S\-E\-D\-R\-U\-L\-E}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{H\-A\-V\-E\-P\-A\-R\-S\-E\-D\-R\-U\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-A\-V\-E\-P\-A\-R\-S\-E\-D\-R\-U\-L\-E(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf r}}
+\end{DoxyParamCaption}
+)~{\bf R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}-\/$>$already\-Parsed\-Rule({\bf R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}, {\bf r})}}\label{cif_lexer_8cpp_a10c31e65fb52676370fe26eaf8bee565}
+
+
+Definition at line 160 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a09d04490eb627026a8d2935247f9494f}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!I\-N\-D\-E\-X@{I\-N\-D\-E\-X}}
+\index{I\-N\-D\-E\-X@{I\-N\-D\-E\-X}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-D\-E\-X(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf I\-S\-T\-R\-E\-A\-M}-\/$>${\bf index}({\bf I\-S\-T\-R\-E\-A\-M})}}\label{cif_lexer_8cpp_a09d04490eb627026a8d2935247f9494f}
+
+
+Definition at line 149 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a1bb283bd7893b9855e2f23013891fc82}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!I\-N\-P\-U\-T@{I\-N\-P\-U\-T}}
+\index{I\-N\-P\-U\-T@{I\-N\-P\-U\-T}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{I\-N\-P\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-P\-U\-T~{\bf L\-E\-X\-E\-R}-\/$>$input}}\label{cif_lexer_8cpp_a1bb283bd7893b9855e2f23013891fc82}
+
+
+Definition at line 146 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_adf770fe2eec438e3758ffe905dbae208}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!I\-N\-V\-A\-L\-I\-D@{I\-N\-V\-A\-L\-I\-D}}
+\index{I\-N\-V\-A\-L\-I\-D@{I\-N\-V\-A\-L\-I\-D}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{I\-N\-V\-A\-L\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-V\-A\-L\-I\-D~{\bf A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D}}}\label{cif_lexer_8cpp_adf770fe2eec438e3758ffe905dbae208}
+
+
+Definition at line 231 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_ac62ed320208829eaac81505ebf12cd38}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!I\-S\-T\-R\-E\-A\-M@{I\-S\-T\-R\-E\-A\-M}}
+\index{I\-S\-T\-R\-E\-A\-M@{I\-S\-T\-R\-E\-A\-M}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{I\-S\-T\-R\-E\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-T\-R\-E\-A\-M~{\bf I\-N\-P\-U\-T}-\/$>$istream}}\label{cif_lexer_8cpp_ac62ed320208829eaac81505ebf12cd38}
+
+
+Definition at line 148 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a04f118c7e17dd264e56efa7f7a3b6b6f}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!L\-A@{L\-A}}
+\index{L\-A@{L\-A}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{L\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-A(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~{\bf I\-N\-P\-U\-T}-\/$>$istream-\/$>$\-\_\-\-L\-A({\bf I\-N\-P\-U\-T}-\/$>$istream, n)}}\label{cif_lexer_8cpp_a04f118c7e17dd264e56efa7f7a3b6b6f}
+
+
+Definition at line 216 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!L\-E\-X\-E\-R@{L\-E\-X\-E\-R}}
+\index{L\-E\-X\-E\-R@{L\-E\-X\-E\-R}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{L\-E\-X\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-E\-X\-E\-R~ctx-\/$>$p\-Lexer}}\label{cif_lexer_8cpp_af8ebf0b47eb71fa0587705d59f5d7dbf}
+
+
+Definition at line 128 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!L\-E\-X\-S\-T\-A\-T\-E@{L\-E\-X\-S\-T\-A\-T\-E}}
+\index{L\-E\-X\-S\-T\-A\-T\-E@{L\-E\-X\-S\-T\-A\-T\-E}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{L\-E\-X\-S\-T\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-E\-X\-S\-T\-A\-T\-E~{\bf R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}-\/$>$state}}\label{cif_lexer_8cpp_a769c9e6bb83915ba789c29f394a48d53}
+
+
+Definition at line 130 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a53717542898d74774046d9ad9bcb1946}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!L\-R\-E\-C\-O\-V\-E\-R@{L\-R\-E\-C\-O\-V\-E\-R}}
+\index{L\-R\-E\-C\-O\-V\-E\-R@{L\-R\-E\-C\-O\-V\-E\-R}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{L\-R\-E\-C\-O\-V\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-R\-E\-C\-O\-V\-E\-R(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-E\-R}-\/$>$recover({\bf L\-E\-X\-E\-R})}}\label{cif_lexer_8cpp_a53717542898d74774046d9ad9bcb1946}
+
+
+Definition at line 155 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a33724659859cc53f8fdb06e1b1bb211d}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!L\-T\-O\-K\-E\-N@{L\-T\-O\-K\-E\-N}}
+\index{L\-T\-O\-K\-E\-N@{L\-T\-O\-K\-E\-N}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{L\-T\-O\-K\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-T\-O\-K\-E\-N~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$token}}\label{cif_lexer_8cpp_a33724659859cc53f8fdb06e1b1bb211d}
+
+
+Definition at line 142 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_ac7ae17784db038e5769b9417c2cafdfa}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!M\-A\-R\-K@{M\-A\-R\-K}}
+\index{M\-A\-R\-K@{M\-A\-R\-K}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{M\-A\-R\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-R\-K(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf I\-S\-T\-R\-E\-A\-M}-\/$>$mark({\bf I\-S\-T\-R\-E\-A\-M})}}\label{cif_lexer_8cpp_ac7ae17784db038e5769b9417c2cafdfa}
+
+
+Definition at line 156 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a3f9ee64aa933c6682c615fb8c62899f0}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!M\-A\-T\-C\-H\-A\-N\-Y@{M\-A\-T\-C\-H\-A\-N\-Y}}
+\index{M\-A\-T\-C\-H\-A\-N\-Y@{M\-A\-T\-C\-H\-A\-N\-Y}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{M\-A\-T\-C\-H\-A\-N\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-T\-C\-H\-A\-N\-Y(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-E\-R}-\/$>$match\-Any({\bf L\-E\-X\-E\-R})}}\label{cif_lexer_8cpp_a3f9ee64aa933c6682c615fb8c62899f0}
+
+
+Definition at line 141 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_ae51e73be47874786b874c80901e981aa}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!M\-A\-T\-C\-H\-C@{M\-A\-T\-C\-H\-C}}
+\index{M\-A\-T\-C\-H\-C@{M\-A\-T\-C\-H\-C}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{M\-A\-T\-C\-H\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-T\-C\-H\-C(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf c}}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-E\-R}-\/$>$matchc({\bf L\-E\-X\-E\-R}, {\bf c})}}\label{cif_lexer_8cpp_ae51e73be47874786b874c80901e981aa}
+
+
+Definition at line 138 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a99446f44c312929ec5b05a8bf5ac2768}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!M\-A\-T\-C\-H\-R\-A\-N\-G\-E@{M\-A\-T\-C\-H\-R\-A\-N\-G\-E}}
+\index{M\-A\-T\-C\-H\-R\-A\-N\-G\-E@{M\-A\-T\-C\-H\-R\-A\-N\-G\-E}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{M\-A\-T\-C\-H\-R\-A\-N\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-T\-C\-H\-R\-A\-N\-G\-E(
+\begin{DoxyParamCaption}
+\item[{}]{c1, }
+\item[{}]{c2}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-E\-R}-\/$>$match\-Range({\bf L\-E\-X\-E\-R}, c1, c2)}}\label{cif_lexer_8cpp_a99446f44c312929ec5b05a8bf5ac2768}
+
+
+Definition at line 140 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a87faff8dd5f2bb3a98db48e37d340768}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!M\-A\-T\-C\-H\-S@{M\-A\-T\-C\-H\-S}}
+\index{M\-A\-T\-C\-H\-S@{M\-A\-T\-C\-H\-S}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{M\-A\-T\-C\-H\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-T\-C\-H\-S(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf s}}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-E\-R}-\/$>$matchs({\bf L\-E\-X\-E\-R}, {\bf s})}}\label{cif_lexer_8cpp_a87faff8dd5f2bb3a98db48e37d340768}
+
+
+Definition at line 139 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_abafd193135fa185119be4ba6e54dc879}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!M\-E\-M\-O\-I\-Z\-E@{M\-E\-M\-O\-I\-Z\-E}}
+\index{M\-E\-M\-O\-I\-Z\-E@{M\-E\-M\-O\-I\-Z\-E}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{M\-E\-M\-O\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-E\-M\-O\-I\-Z\-E(
+\begin{DoxyParamCaption}
+\item[{}]{ri, }
+\item[{}]{si}
+\end{DoxyParamCaption}
+)~{\bf R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}-\/$>$memoize({\bf R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}, ri, si)}}\label{cif_lexer_8cpp_abafd193135fa185119be4ba6e54dc879}
+
+
+Definition at line 159 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a567c746bf6bcbaf696193fc1a08eebd9}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!P\-O\-P\-S\-T\-R\-E\-A\-M@{P\-O\-P\-S\-T\-R\-E\-A\-M}}
+\index{P\-O\-P\-S\-T\-R\-E\-A\-M@{P\-O\-P\-S\-T\-R\-E\-A\-M}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{P\-O\-P\-S\-T\-R\-E\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-P\-S\-T\-R\-E\-A\-M(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-E\-R}-\/$>$pop\-Char\-Stream({\bf L\-E\-X\-E\-R})}}\label{cif_lexer_8cpp_a567c746bf6bcbaf696193fc1a08eebd9}
+
+
+Definition at line 162 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a603172014b82719edeb4defd05c39417}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!P\-U\-S\-H\-S\-T\-R\-E\-A\-M@{P\-U\-S\-H\-S\-T\-R\-E\-A\-M}}
+\index{P\-U\-S\-H\-S\-T\-R\-E\-A\-M@{P\-U\-S\-H\-S\-T\-R\-E\-A\-M}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{P\-U\-S\-H\-S\-T\-R\-E\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-U\-S\-H\-S\-T\-R\-E\-A\-M(
+\begin{DoxyParamCaption}
+\item[{}]{str}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-E\-R}-\/$>$push\-Char\-Stream({\bf L\-E\-X\-E\-R}, str)}}\label{cif_lexer_8cpp_a603172014b82719edeb4defd05c39417}
+
+
+Definition at line 161 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a3d0eb27b891820eee718d8238562a281}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!R\-E\-C\-O\-G\-N\-I\-Z\-E\-R@{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}}
+\index{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R@{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{R\-E\-C\-O\-G\-N\-I\-Z\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-C\-O\-G\-N\-I\-Z\-E\-R~{\bf L\-E\-X\-E\-R}-\/$>$rec}}\label{cif_lexer_8cpp_a3d0eb27b891820eee718d8238562a281}
+
+
+Definition at line 129 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a84e5f94f2d96b03a9ada64f395896abe}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!R\-E\-W\-I\-N\-D@{R\-E\-W\-I\-N\-D}}
+\index{R\-E\-W\-I\-N\-D@{R\-E\-W\-I\-N\-D}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{R\-E\-W\-I\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-W\-I\-N\-D(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf m}}
+\end{DoxyParamCaption}
+)~{\bf I\-S\-T\-R\-E\-A\-M}-\/$>$rewind({\bf I\-S\-T\-R\-E\-A\-M}, {\bf m})}}\label{cif_lexer_8cpp_a84e5f94f2d96b03a9ada64f395896abe}
+
+
+Definition at line 157 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a763a2ee6b5a62e9436bf6a85f1590cc1}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!R\-E\-W\-I\-N\-D\-L\-A\-S\-T@{R\-E\-W\-I\-N\-D\-L\-A\-S\-T}}
+\index{R\-E\-W\-I\-N\-D\-L\-A\-S\-T@{R\-E\-W\-I\-N\-D\-L\-A\-S\-T}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{R\-E\-W\-I\-N\-D\-L\-A\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-W\-I\-N\-D\-L\-A\-S\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf I\-S\-T\-R\-E\-A\-M}-\/$>$rewind\-Last({\bf I\-S\-T\-R\-E\-A\-M})}}\label{cif_lexer_8cpp_a763a2ee6b5a62e9436bf6a85f1590cc1}
+
+
+Definition at line 158 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_aff40c73eefec17d7ad9406a7b40e1d20}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!R\-U\-L\-E\-M\-E\-M\-O@{R\-U\-L\-E\-M\-E\-M\-O}}
+\index{R\-U\-L\-E\-M\-E\-M\-O@{R\-U\-L\-E\-M\-E\-M\-O}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{R\-U\-L\-E\-M\-E\-M\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-U\-L\-E\-M\-E\-M\-O~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$rule\-Memo}}\label{cif_lexer_8cpp_aff40c73eefec17d7ad9406a7b40e1d20}
+
+
+Definition at line 169 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a63bd65b7f006a536d1cb6f91e0ca6b67}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!S\-C\-O\-P\-E\-\_\-\-I\-N\-S\-T\-A\-N\-C\-E@{S\-C\-O\-P\-E\-\_\-\-I\-N\-S\-T\-A\-N\-C\-E}}
+\index{S\-C\-O\-P\-E\-\_\-\-I\-N\-S\-T\-A\-N\-C\-E@{S\-C\-O\-P\-E\-\_\-\-I\-N\-S\-T\-A\-N\-C\-E}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{S\-C\-O\-P\-E\-\_\-\-I\-N\-S\-T\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-O\-P\-E\-\_\-\-I\-N\-S\-T\-A\-N\-C\-E(
+\begin{DoxyParamCaption}
+\item[{}]{scope, }
+\item[{}]{{\bf i}}
+\end{DoxyParamCaption}
+)~(ctx-\/$>${\bf S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-C\-K}(scope)-\/$>${\bf get}(ctx-\/$>${\bf S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-C\-K}(scope),{\bf i}))}}\label{cif_lexer_8cpp_a63bd65b7f006a536d1cb6f91e0ca6b67}
+
+
+Definition at line 86 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_aeba24c45640aee2cf54e81f7869d2e83}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!S\-C\-O\-P\-E\-\_\-\-S\-I\-Z\-E@{S\-C\-O\-P\-E\-\_\-\-S\-I\-Z\-E}}
+\index{S\-C\-O\-P\-E\-\_\-\-S\-I\-Z\-E@{S\-C\-O\-P\-E\-\_\-\-S\-I\-Z\-E}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{S\-C\-O\-P\-E\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-O\-P\-E\-\_\-\-S\-I\-Z\-E(
+\begin{DoxyParamCaption}
+\item[{}]{scope}
+\end{DoxyParamCaption}
+)~ctx-\/$>$pcif\-Lexer\-\_\-\#\#scope\#\#Stack\-\_\-limit}}\label{cif_lexer_8cpp_aeba24c45640aee2cf54e81f7869d2e83}
+
+
+Definition at line 85 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a944514c8a3498b5780633993da658c1d}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-C\-K@{S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-C\-K}}
+\index{S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-C\-K@{S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-C\-K}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-O\-P\-E\-\_\-\-S\-T\-A\-C\-K(
+\begin{DoxyParamCaption}
+\item[{}]{scope}
+\end{DoxyParamCaption}
+)~pcif\-Lexer\-\_\-\#\#scope\#\#Stack}}\label{cif_lexer_8cpp_a944514c8a3498b5780633993da658c1d}
+
+
+Definition at line 83 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a2d5a2720b189740be032b1a054ef7d82}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!S\-C\-O\-P\-E\-\_\-\-T\-O\-P@{S\-C\-O\-P\-E\-\_\-\-T\-O\-P}}
+\index{S\-C\-O\-P\-E\-\_\-\-T\-O\-P@{S\-C\-O\-P\-E\-\_\-\-T\-O\-P}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{S\-C\-O\-P\-E\-\_\-\-T\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-O\-P\-E\-\_\-\-T\-O\-P(
+\begin{DoxyParamCaption}
+\item[{}]{scope}
+\end{DoxyParamCaption}
+)~ctx-\/$>$pcif\-Lexer\-\_\-\#\#scope\#\#Top}}\label{cif_lexer_8cpp_a2d5a2720b189740be032b1a054ef7d82}
+
+
+Definition at line 84 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a9e39291e12ef9cc726ca47f80b5729da}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!S\-C\-O\-P\-E\-\_\-\-T\-Y\-P\-E@{S\-C\-O\-P\-E\-\_\-\-T\-Y\-P\-E}}
+\index{S\-C\-O\-P\-E\-\_\-\-T\-Y\-P\-E@{S\-C\-O\-P\-E\-\_\-\-T\-Y\-P\-E}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{S\-C\-O\-P\-E\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-C\-O\-P\-E\-\_\-\-T\-Y\-P\-E(
+\begin{DoxyParamCaption}
+\item[{}]{scope}
+\end{DoxyParamCaption}
+)~pcif\-Lexer\-\_\-\#\#scope\#\#\-\_\-\-S\-C\-O\-P\-E}}\label{cif_lexer_8cpp_a9e39291e12ef9cc726ca47f80b5729da}
+
+
+Definition at line 82 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_ab524ce465549a7aed557f4ce1095aa6c}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!S\-E\-E\-K@{S\-E\-E\-K}}
+\index{S\-E\-E\-K@{S\-E\-E\-K}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{S\-E\-E\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-E\-E\-K(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~{\bf I\-S\-T\-R\-E\-A\-M}-\/$>$seek({\bf I\-S\-T\-R\-E\-A\-M}, n)}}\label{cif_lexer_8cpp_ab524ce465549a7aed557f4ce1095aa6c}
+
+
+Definition at line 150 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a481c85399e38469a2114e6fa3d7ebcb0}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!S\-E\-T\-T\-E\-X\-T@{S\-E\-T\-T\-E\-X\-T}}
+\index{S\-E\-T\-T\-E\-X\-T@{S\-E\-T\-T\-E\-X\-T}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{S\-E\-T\-T\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-E\-T\-T\-E\-X\-T(
+\begin{DoxyParamCaption}
+\item[{}]{str}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$text = str}}\label{cif_lexer_8cpp_a481c85399e38469a2114e6fa3d7ebcb0}
+
+
+Definition at line 163 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a76d5244b498df3281b386d116caf0c11}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!S\-K\-I\-P@{S\-K\-I\-P}}
+\index{S\-K\-I\-P@{S\-K\-I\-P}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{S\-K\-I\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-K\-I\-P(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$token = \&({\bf T\-O\-K\-S\-O\-U\-R\-C\-E}-\/$>$skip\-Token)}}\label{cif_lexer_8cpp_a76d5244b498df3281b386d116caf0c11}
+
+
+Definition at line 164 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a3445ff65d5582c03f31c462d33a05bef}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!S\-T\-R\-S\-T\-R\-E\-A\-M@{S\-T\-R\-S\-T\-R\-E\-A\-M}}
+\index{S\-T\-R\-S\-T\-R\-E\-A\-M@{S\-T\-R\-S\-T\-R\-E\-A\-M}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{S\-T\-R\-S\-T\-R\-E\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-R\-S\-T\-R\-E\-A\-M~{\bf I\-N\-P\-U\-T}}}\label{cif_lexer_8cpp_a3445ff65d5582c03f31c462d33a05bef}
+
+
+Definition at line 147 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a40977141c610f0a9bf6cfec99210ba6f}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!T\-O\-K\-S\-O\-U\-R\-C\-E@{T\-O\-K\-S\-O\-U\-R\-C\-E}}
+\index{T\-O\-K\-S\-O\-U\-R\-C\-E@{T\-O\-K\-S\-O\-U\-R\-C\-E}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{T\-O\-K\-S\-O\-U\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-K\-S\-O\-U\-R\-C\-E~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$tok\-Source}}\label{cif_lexer_8cpp_a40977141c610f0a9bf6cfec99210ba6f}
+
+
+Definition at line 131 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_ab156329a045fcadcd204126960f25d76}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!T\-O\-K\-T\-E\-X\-T@{T\-O\-K\-T\-E\-X\-T}}
+\index{T\-O\-K\-T\-E\-X\-T@{T\-O\-K\-T\-E\-X\-T}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{T\-O\-K\-T\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-K\-T\-E\-X\-T(
+\begin{DoxyParamCaption}
+\item[{}]{tok, }
+\item[{}]{txt}
+\end{DoxyParamCaption}
+)~tok, ({\bf p\-A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T8})txt}}\label{cif_lexer_8cpp_ab156329a045fcadcd204126960f25d76}
+
+
+Definition at line 220 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a1965eaca47dbf3f87acdafc2208f04eb}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!U\-P@{U\-P}}
+\index{U\-P@{U\-P}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{U\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-P~{\bf A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-U\-P}}}\label{cif_lexer_8cpp_a1965eaca47dbf3f87acdafc2208f04eb}
+
+
+Definition at line 228 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a17bc39fc649b20234737a25ead9737df}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!U\-S\-E\-R1@{U\-S\-E\-R1}}
+\index{U\-S\-E\-R1@{U\-S\-E\-R1}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{U\-S\-E\-R1}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-S\-E\-R1~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$user1}}\label{cif_lexer_8cpp_a17bc39fc649b20234737a25ead9737df}
+
+
+Definition at line 165 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a7f174600ff3c059d71cd5d8d30a60bce}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!U\-S\-E\-R2@{U\-S\-E\-R2}}
+\index{U\-S\-E\-R2@{U\-S\-E\-R2}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{U\-S\-E\-R2}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-S\-E\-R2~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$user2}}\label{cif_lexer_8cpp_a7f174600ff3c059d71cd5d8d30a60bce}
+
+
+Definition at line 166 of file cif\-Lexer.\-cpp.
+
+\hypertarget{cif_lexer_8cpp_a5d065a077f4bcb410bdb312606b78b49}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!U\-S\-E\-R3@{U\-S\-E\-R3}}
+\index{U\-S\-E\-R3@{U\-S\-E\-R3}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{U\-S\-E\-R3}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-S\-E\-R3~{\bf L\-E\-X\-S\-T\-A\-T\-E}-\/$>$user3}}\label{cif_lexer_8cpp_a5d065a077f4bcb410bdb312606b78b49}
+
+
+Definition at line 167 of file cif\-Lexer.\-cpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{cif_lexer_8cpp_a38553a530136591242351a3db661cf69}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!cif\-Lexer\-New@{cif\-Lexer\-New}}
+\index{cif\-Lexer\-New@{cif\-Lexer\-New}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{cif\-Lexer\-New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf pcif\-Lexer} cif\-Lexer\-New (
+\begin{DoxyParamCaption}
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-T\-R\-E\-A\-M}}]{instream}
+\end{DoxyParamCaption}
+)}}\label{cif_lexer_8cpp_a38553a530136591242351a3db661cf69}
+
+
+Create a new lexer called cif\-Lexer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em instream} & Pointer to an initialized input stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item Success pcif\-Lexer initialized for the lex start
+\item Fail N\-U\-L\-L 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definition at line 402 of file cif\-Lexer.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cif_lexer_8cpp_a38553a530136591242351a3db661cf69_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{cif_lexer_8cpp_a38553a530136591242351a3db661cf69_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cif_lexer_8cpp_a73b0d4cc3e5ea3dcf37b901e7e88ab2d}{\index{cif\-Lexer.\-cpp@{cif\-Lexer.\-cpp}!cif\-Lexer\-New\-S\-S\-D@{cif\-Lexer\-New\-S\-S\-D}}
+\index{cif\-Lexer\-New\-S\-S\-D@{cif\-Lexer\-New\-S\-S\-D}!cifLexer.cpp@{cif\-Lexer.\-cpp}}
+\subsubsection[{cif\-Lexer\-New\-S\-S\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf pcif\-Lexer} cif\-Lexer\-New\-S\-S\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-T\-R\-E\-A\-M}}]{instream, }
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E}}]{state}
+\end{DoxyParamCaption}
+)}}\label{cif_lexer_8cpp_a73b0d4cc3e5ea3dcf37b901e7e88ab2d}
+
+
+Create a new lexer called cif\-Lexer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em instream} & Pointer to an initialized input stream \\
+\hline
+ & {\em state\mbox{]}} & state Previously created shared recognizer stat \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item Success pcif\-Lexer initialized for the lex start
+\item Fail N\-U\-L\-L 
+\end{DoxyItemize}
+\end{DoxyReturn}
+When the next\-Token() call is made to this lexer's p\-A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-O\-U\-R\-C\-E it will call m\-Tokens() in this generated code, and will pass it the ctx pointer of this lexer, not the context of the base lexer, so store that now.
+
+Install the token matching function
+
+Definition at line 420 of file cif\-Lexer.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cif_lexer_8cpp_a73b0d4cc3e5ea3dcf37b901e7e88ab2d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cif_lexer_8cpp_a73b0d4cc3e5ea3dcf37b901e7e88ab2d_icgraph}
+\end{center}
+\end{figure}
+
+

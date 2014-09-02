@@ -1,0 +1,329 @@
+\hypertarget{fileio__fftw3_8cpp}{\section{libs/fileio\-\_\-fftw3.cpp File Reference}
+\label{fileio__fftw3_8cpp}\index{libs/fileio\-\_\-fftw3.\-cpp@{libs/fileio\-\_\-fftw3.\-cpp}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}stemtypes\-\_\-fftw3.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory\-\_\-fftw3.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}matrixlib.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}readparams.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fileio\-\_\-fftw3.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}el\-Table.\-hpp\char`\"{}}\\*
+Include dependency graph for fileio\-\_\-fftw3.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fileio__fftw3_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_q_s_t_e_m}{Q\-S\-T\-E\-M}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_afc30e481f763a8d68a861dba91be7316}{\-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C}
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a7ecab608a0fb5fe988868b5d6bde67a8}{N\-C\-I\-N\-M\-A\-X}~500	/$\ast$ \hyperlink{qmb_8m_ae0de5dca4233645eb4e50562ab6242cf}{max} number of characers \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} stacking spec $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a7680ee639d945124a4731b60361751c3}{N\-R\-M\-A\-X}~50	/$\ast$ number of values \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} look-\/up-\/table \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} vzatom\-L\-U\-T $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a35d6c59c6aacffaa26090ebf2a004788}{R\-M\-I\-N}~0.\-01	/$\ast$ min \hyperlink{_read_d_m3___matlab_8m_a514f1b439f404f86f77090fa9edc96ce}{r} (\hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} Ang) range of L\-U\-T for vzatom\-L\-U\-T() $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a66d21d4cc0d35bfe93b68f7a5089eb8b}{R\-M\-A\-X}~5
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a2ce4d4e467c11ca0b3cf17f20b5e17d1}{N\-P\-D\-T\-M\-A\-X}~8       /$\ast$ number of \hyperlink{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{parameters} for doyle turner sfacts $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a1c4e0689af2309aa28650350b3f6d0e9}{N\-P\-M\-A\-X}~12	/$\ast$ number of \hyperlink{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{parameters} for each \hyperlink{_displacement_params_8m_accc427d493facd9d795029ff42af0392}{Z} $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_aabf043541def49c57b2917ddd07f3cd9}{N\-Z\-M\-I\-N}~1	/$\ast$ min \hyperlink{_displacement_params_8m_accc427d493facd9d795029ff42af0392}{Z} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} featom.\-tab $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a8aaffa324eeccd0fdea8fb036c3673a9}{N\-P\-A\-R\-A\-M}~64	/$\ast$ number of \hyperlink{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{parameters} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} tiff files $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a1db2da50e48d48d6cc41e3ff41071113}{N\-\_\-\-A}~6.\-022e+23
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a73bafe212f4c3da58fea7ffdf1a69d73}{K\-\_\-\-B}~1.\-38062e-\/23      /$\ast$ Boltzman constant $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a1230649f2e178a83485c5b5465ff8260}{P\-I\-D}~3.\-14159265358979 /$\ast$ pi $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a204175c725ee19858dedec2865d490b8}{S\-Q\-R\-T\-\_\-\-P\-I}~1.\-77245385090552 /$\ast$ sqrt(pi) $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a32c64516e5ad4b3ec65b54deb3f27457}{H\-P\-L\-A\-N\-C\-K}~6.\-6262e-\/34   /$\ast$ planck's constant $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_ae72e484b3bba78248e0f70f47d11cb43}{A\-M\-U}~1.\-66053e-\/27      /$\ast$ atomic mass unit $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a1c5f808e369022d3d093cd8d007d0ff7}{T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-P\-I\-\_\-\-H\-B\-A\-R}~0.\-05012012918415 /$\ast$  A°$^\wedge$2$\ast$T\-Hz$\ast$amu/(pi$\ast$hbar) $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a37bce46dfb867aa38b8de51ff638b775}{T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-H\-B\-A\-R}~0.\-15745702964189    /$\ast$   A°$^\wedge$2$\ast$T\-Hz$\ast$amu/(hbar)   $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_aa7213321d6250ba70f17a0d7f393d3b5}{T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-2\-K\-B}~3.\-81927135604119     /$\ast$ T\-Hz$\ast$hbar/(2$\ast$k\-B) $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_af063e04b4897a34eb821b3e74cb2efba}{T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-\-K\-B}~1.\-90963567802059     /$\ast$ T\-Hz$\ast$hbar/k\-B $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a2a72b89d06c88870c4a83f0e2dcf3599}{A\-M\-U\-\_\-\-T\-H\-Z2\-\_\-\-A2\-\_\-\-K\-B}~1.\-20274224623720     /$\ast$ \hyperlink{fileio__fftw3_8cpp_ae72e484b3bba78248e0f70f47d11cb43}{A\-M\-U}$\ast$T\-Hz$^\wedge$2$\ast$\hyperlink{sim_image_from_wave_8m_a74335ae40bc4ffab9fc80d95fee97208}{A}$^\wedge$2/k\-B $\ast$/
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a170c67676661b7d37e9c282dbdce6d00}{M\-A\-X\-\_\-\-M\-A\-S\-S\-\_\-\-I\-N\-D\-E\-X}~59
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a16cdf08eafbd529171c64d69a0ec02b3}{C\-H\-A\-R\-G\-E}~0.\-0
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a955f504eccf76b4eb2489c0adab03121}{A}~0.\-0
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_a111da81ae5883147168bbb8366377b10}{B}~43684.\-0
+\item 
+\#define \hyperlink{fileio__fftw3_8cpp_ac4cf4b2ab929bd23951a8676eeac086b}{C}~3.\-4483
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespace_q_s_t_e_m_a91f650de6c17fd6a4ce5674204047bee}{Q\-S\-T\-E\-M\-::write\-Frame\-Work} (F\-I\-L\-E $\ast$fp, super\-Cell\-Box \hyperlink{gbmaker_8cpp_ad0c1687ea19d548901a58ba8f0818b1f}{super\-Cell})
+\item 
+void \hyperlink{namespace_q_s_t_e_m_a7749ff6124f5ab0a9c20933545a14179}{Q\-S\-T\-E\-M\-::write\-Amorphous} (F\-I\-L\-E $\ast$fp, super\-Cell\-Box \hyperlink{gbmaker_8cpp_ad0c1687ea19d548901a58ba8f0818b1f}{super\-Cell}, int nstart, int nstop)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{fileio__fftw3_8cpp_a8eab30394a601b17acc86d413dc9d142}{id\-Array\-Size} =0
+\item 
+int $\ast$ \hyperlink{fileio__fftw3_8cpp_a0c04cbfef60374a6f7dfe7905c7476aa}{id\-Array} = N\-U\-L\-L
+\item 
+int \hyperlink{fileio__fftw3_8cpp_a4949f0a8f0078835470f4450837b8d5a}{id\-Array\-Ptr} = 0
+\item 
+double \hyperlink{fileio__fftw3_8cpp_a9dc8255f3a751a4d61fb328e8a96d649}{mass\-Array} \mbox{[}\hyperlink{fileio__fftw3_8cpp_a170c67676661b7d37e9c282dbdce6d00}{M\-A\-X\-\_\-\-M\-A\-S\-S\-\_\-\-I\-N\-D\-E\-X}\mbox{]}
+\item 
+double \hyperlink{fileio__fftw3_8cpp_a3b58838c17438d6d6018c965026bb475}{charge\-Table} \mbox{[}\hyperlink{fileio__fftw3_8cpp_a170c67676661b7d37e9c282dbdce6d00}{M\-A\-X\-\_\-\-M\-A\-S\-S\-\_\-\-I\-N\-D\-E\-X}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{fileio__fftw3_8cpp_afc30e481f763a8d68a861dba91be7316}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!\-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C@{\-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C}}
+\index{\-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C@{\-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{\-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C}}\label{fileio__fftw3_8cpp_afc30e481f763a8d68a861dba91be7316}
+
+
+Definition at line 42 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a955f504eccf76b4eb2489c0adab03121}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!A@{A}}
+\index{A@{A}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{A}]{\setlength{\rightskip}{0pt plus 5cm}\#define A~0.\-0}}\label{fileio__fftw3_8cpp_a955f504eccf76b4eb2489c0adab03121}
+
+
+Definition at line 222 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_ae72e484b3bba78248e0f70f47d11cb43}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!A\-M\-U@{A\-M\-U}}
+\index{A\-M\-U@{A\-M\-U}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{A\-M\-U}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-M\-U~1.\-66053e-\/27      /$\ast$ atomic mass unit $\ast$/}}\label{fileio__fftw3_8cpp_ae72e484b3bba78248e0f70f47d11cb43}
+
+
+Definition at line 67 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a2a72b89d06c88870c4a83f0e2dcf3599}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!A\-M\-U\-\_\-\-T\-H\-Z2\-\_\-\-A2\-\_\-\-K\-B@{A\-M\-U\-\_\-\-T\-H\-Z2\-\_\-\-A2\-\_\-\-K\-B}}
+\index{A\-M\-U\-\_\-\-T\-H\-Z2\-\_\-\-A2\-\_\-\-K\-B@{A\-M\-U\-\_\-\-T\-H\-Z2\-\_\-\-A2\-\_\-\-K\-B}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{A\-M\-U\-\_\-\-T\-H\-Z2\-\_\-\-A2\-\_\-\-K\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-M\-U\-\_\-\-T\-H\-Z2\-\_\-\-A2\-\_\-\-K\-B~1.\-20274224623720     /$\ast$ {\bf A\-M\-U}$\ast$T\-Hz$^\wedge$2$\ast${\bf A}$^\wedge$2/k\-B $\ast$/}}\label{fileio__fftw3_8cpp_a2a72b89d06c88870c4a83f0e2dcf3599}
+
+
+Definition at line 73 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a111da81ae5883147168bbb8366377b10}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!B@{B}}
+\index{B@{B}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{B}]{\setlength{\rightskip}{0pt plus 5cm}\#define B~43684.\-0}}\label{fileio__fftw3_8cpp_a111da81ae5883147168bbb8366377b10}
+
+
+Definition at line 223 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_ac4cf4b2ab929bd23951a8676eeac086b}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!C@{C}}
+\index{C@{C}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{C}]{\setlength{\rightskip}{0pt plus 5cm}\#define C~3.\-4483}}\label{fileio__fftw3_8cpp_ac4cf4b2ab929bd23951a8676eeac086b}
+
+
+Definition at line 224 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a16cdf08eafbd529171c64d69a0ec02b3}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!C\-H\-A\-R\-G\-E@{C\-H\-A\-R\-G\-E}}
+\index{C\-H\-A\-R\-G\-E@{C\-H\-A\-R\-G\-E}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{C\-H\-A\-R\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-A\-R\-G\-E~0.\-0}}\label{fileio__fftw3_8cpp_a16cdf08eafbd529171c64d69a0ec02b3}
+
+
+Definition at line 153 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a32c64516e5ad4b3ec65b54deb3f27457}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!H\-P\-L\-A\-N\-C\-K@{H\-P\-L\-A\-N\-C\-K}}
+\index{H\-P\-L\-A\-N\-C\-K@{H\-P\-L\-A\-N\-C\-K}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{H\-P\-L\-A\-N\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-P\-L\-A\-N\-C\-K~6.\-6262e-\/34   /$\ast$ planck's constant $\ast$/}}\label{fileio__fftw3_8cpp_a32c64516e5ad4b3ec65b54deb3f27457}
+
+
+Definition at line 66 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a73bafe212f4c3da58fea7ffdf1a69d73}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!K\-\_\-\-B@{K\-\_\-\-B}}
+\index{K\-\_\-\-B@{K\-\_\-\-B}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{K\-\_\-\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-\_\-\-B~1.\-38062e-\/23      /$\ast$ Boltzman constant $\ast$/}}\label{fileio__fftw3_8cpp_a73bafe212f4c3da58fea7ffdf1a69d73}
+
+
+Definition at line 63 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a170c67676661b7d37e9c282dbdce6d00}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!M\-A\-X\-\_\-\-M\-A\-S\-S\-\_\-\-I\-N\-D\-E\-X@{M\-A\-X\-\_\-\-M\-A\-S\-S\-\_\-\-I\-N\-D\-E\-X}}
+\index{M\-A\-X\-\_\-\-M\-A\-S\-S\-\_\-\-I\-N\-D\-E\-X@{M\-A\-X\-\_\-\-M\-A\-S\-S\-\_\-\-I\-N\-D\-E\-X}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-M\-A\-S\-S\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-M\-A\-S\-S\-\_\-\-I\-N\-D\-E\-X~59}}\label{fileio__fftw3_8cpp_a170c67676661b7d37e9c282dbdce6d00}
+
+
+Definition at line 75 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a1db2da50e48d48d6cc41e3ff41071113}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!N\-\_\-\-A@{N\-\_\-\-A}}
+\index{N\-\_\-\-A@{N\-\_\-\-A}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{N\-\_\-\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-\_\-\-A~6.\-022e+23}}\label{fileio__fftw3_8cpp_a1db2da50e48d48d6cc41e3ff41071113}
+
+
+Definition at line 62 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a7ecab608a0fb5fe988868b5d6bde67a8}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!N\-C\-I\-N\-M\-A\-X@{N\-C\-I\-N\-M\-A\-X}}
+\index{N\-C\-I\-N\-M\-A\-X@{N\-C\-I\-N\-M\-A\-X}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{N\-C\-I\-N\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-C\-I\-N\-M\-A\-X~500	/$\ast$ {\bf max} number of characers {\bf in} stacking spec $\ast$/}}\label{fileio__fftw3_8cpp_a7ecab608a0fb5fe988868b5d6bde67a8}
+
+
+Definition at line 51 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a8aaffa324eeccd0fdea8fb036c3673a9}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!N\-P\-A\-R\-A\-M@{N\-P\-A\-R\-A\-M}}
+\index{N\-P\-A\-R\-A\-M@{N\-P\-A\-R\-A\-M}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{N\-P\-A\-R\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-P\-A\-R\-A\-M~64	/$\ast$ number of {\bf parameters} {\bf in} tiff files $\ast$/}}\label{fileio__fftw3_8cpp_a8aaffa324eeccd0fdea8fb036c3673a9}
+
+
+Definition at line 60 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a2ce4d4e467c11ca0b3cf17f20b5e17d1}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!N\-P\-D\-T\-M\-A\-X@{N\-P\-D\-T\-M\-A\-X}}
+\index{N\-P\-D\-T\-M\-A\-X@{N\-P\-D\-T\-M\-A\-X}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{N\-P\-D\-T\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-P\-D\-T\-M\-A\-X~8       /$\ast$ number of {\bf parameters} for doyle turner sfacts $\ast$/}}\label{fileio__fftw3_8cpp_a2ce4d4e467c11ca0b3cf17f20b5e17d1}
+
+
+Definition at line 56 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a1c4e0689af2309aa28650350b3f6d0e9}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!N\-P\-M\-A\-X@{N\-P\-M\-A\-X}}
+\index{N\-P\-M\-A\-X@{N\-P\-M\-A\-X}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{N\-P\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-P\-M\-A\-X~12	/$\ast$ number of {\bf parameters} for each {\bf Z} $\ast$/}}\label{fileio__fftw3_8cpp_a1c4e0689af2309aa28650350b3f6d0e9}
+
+
+Definition at line 57 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a7680ee639d945124a4731b60361751c3}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!N\-R\-M\-A\-X@{N\-R\-M\-A\-X}}
+\index{N\-R\-M\-A\-X@{N\-R\-M\-A\-X}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{N\-R\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-R\-M\-A\-X~50	/$\ast$ number of values {\bf in} look-\/up-\/table {\bf in} vzatom\-L\-U\-T $\ast$/}}\label{fileio__fftw3_8cpp_a7680ee639d945124a4731b60361751c3}
+
+
+Definition at line 52 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_aabf043541def49c57b2917ddd07f3cd9}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!N\-Z\-M\-I\-N@{N\-Z\-M\-I\-N}}
+\index{N\-Z\-M\-I\-N@{N\-Z\-M\-I\-N}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{N\-Z\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-Z\-M\-I\-N~1	/$\ast$ min {\bf Z} {\bf in} featom.\-tab $\ast$/}}\label{fileio__fftw3_8cpp_aabf043541def49c57b2917ddd07f3cd9}
+
+
+Definition at line 58 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a1230649f2e178a83485c5b5465ff8260}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!P\-I\-D@{P\-I\-D}}
+\index{P\-I\-D@{P\-I\-D}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{P\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-I\-D~3.\-14159265358979 /$\ast$ pi $\ast$/}}\label{fileio__fftw3_8cpp_a1230649f2e178a83485c5b5465ff8260}
+
+
+Definition at line 64 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a66d21d4cc0d35bfe93b68f7a5089eb8b}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!R\-M\-A\-X@{R\-M\-A\-X}}
+\index{R\-M\-A\-X@{R\-M\-A\-X}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{R\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-M\-A\-X~5}}\label{fileio__fftw3_8cpp_a66d21d4cc0d35bfe93b68f7a5089eb8b}
+
+
+Definition at line 54 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a35d6c59c6aacffaa26090ebf2a004788}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!R\-M\-I\-N@{R\-M\-I\-N}}
+\index{R\-M\-I\-N@{R\-M\-I\-N}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{R\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-M\-I\-N~0.\-01	/$\ast$ min {\bf r} ({\bf in} Ang) range of L\-U\-T for vzatom\-L\-U\-T() $\ast$/}}\label{fileio__fftw3_8cpp_a35d6c59c6aacffaa26090ebf2a004788}
+
+
+Definition at line 53 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a204175c725ee19858dedec2865d490b8}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!S\-Q\-R\-T\-\_\-\-P\-I@{S\-Q\-R\-T\-\_\-\-P\-I}}
+\index{S\-Q\-R\-T\-\_\-\-P\-I@{S\-Q\-R\-T\-\_\-\-P\-I}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{S\-Q\-R\-T\-\_\-\-P\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-Q\-R\-T\-\_\-\-P\-I~1.\-77245385090552 /$\ast$ sqrt(pi) $\ast$/}}\label{fileio__fftw3_8cpp_a204175c725ee19858dedec2865d490b8}
+
+
+Definition at line 65 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a37bce46dfb867aa38b8de51ff638b775}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-H\-B\-A\-R@{T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-H\-B\-A\-R}}
+\index{T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-H\-B\-A\-R@{T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-H\-B\-A\-R}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-H\-B\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-H\-B\-A\-R~0.\-15745702964189    /$\ast$   A°$^\wedge$2$\ast$T\-Hz$\ast$amu/(hbar)   $\ast$/}}\label{fileio__fftw3_8cpp_a37bce46dfb867aa38b8de51ff638b775}
+
+
+Definition at line 69 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a1c5f808e369022d3d093cd8d007d0ff7}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-P\-I\-\_\-\-H\-B\-A\-R@{T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-P\-I\-\_\-\-H\-B\-A\-R}}
+\index{T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-P\-I\-\_\-\-H\-B\-A\-R@{T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-P\-I\-\_\-\-H\-B\-A\-R}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-P\-I\-\_\-\-H\-B\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-H\-Z\-\_\-\-A\-M\-U\-\_\-\-P\-I\-\_\-\-H\-B\-A\-R~0.\-05012012918415 /$\ast$  A°$^\wedge$2$\ast$T\-Hz$\ast$amu/(pi$\ast$hbar) $\ast$/}}\label{fileio__fftw3_8cpp_a1c5f808e369022d3d093cd8d007d0ff7}
+
+
+Definition at line 68 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_aa7213321d6250ba70f17a0d7f393d3b5}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-2\-K\-B@{T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-2\-K\-B}}
+\index{T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-2\-K\-B@{T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-2\-K\-B}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-2\-K\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-2\-K\-B~3.\-81927135604119     /$\ast$ T\-Hz$\ast$hbar/(2$\ast$k\-B) $\ast$/}}\label{fileio__fftw3_8cpp_aa7213321d6250ba70f17a0d7f393d3b5}
+
+
+Definition at line 71 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_af063e04b4897a34eb821b3e74cb2efba}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-\-K\-B@{T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-\-K\-B}}
+\index{T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-\-K\-B@{T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-\-K\-B}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-\-K\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-H\-Z\-\_\-\-H\-B\-A\-R\-\_\-\-K\-B~1.\-90963567802059     /$\ast$ T\-Hz$\ast$hbar/k\-B $\ast$/}}\label{fileio__fftw3_8cpp_af063e04b4897a34eb821b3e74cb2efba}
+
+
+Definition at line 72 of file fileio\-\_\-fftw3.\-cpp.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{fileio__fftw3_8cpp_a3b58838c17438d6d6018c965026bb475}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!charge\-Table@{charge\-Table}}
+\index{charge\-Table@{charge\-Table}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{charge\-Table}]{\setlength{\rightskip}{0pt plus 5cm}double charge\-Table\mbox{[}{\bf M\-A\-X\-\_\-\-M\-A\-S\-S\-\_\-\-I\-N\-D\-E\-X}\mbox{]}}}\label{fileio__fftw3_8cpp_a3b58838c17438d6d6018c965026bb475}
+
+
+Definition at line 89 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a0c04cbfef60374a6f7dfe7905c7476aa}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!id\-Array@{id\-Array}}
+\index{id\-Array@{id\-Array}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{id\-Array}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ id\-Array = N\-U\-L\-L}}\label{fileio__fftw3_8cpp_a0c04cbfef60374a6f7dfe7905c7476aa}
+
+
+Definition at line 77 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a4949f0a8f0078835470f4450837b8d5a}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!id\-Array\-Ptr@{id\-Array\-Ptr}}
+\index{id\-Array\-Ptr@{id\-Array\-Ptr}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{id\-Array\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}int id\-Array\-Ptr = 0}}\label{fileio__fftw3_8cpp_a4949f0a8f0078835470f4450837b8d5a}
+
+
+Definition at line 78 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a8eab30394a601b17acc86d413dc9d142}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!id\-Array\-Size@{id\-Array\-Size}}
+\index{id\-Array\-Size@{id\-Array\-Size}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{id\-Array\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int id\-Array\-Size =0}}\label{fileio__fftw3_8cpp_a8eab30394a601b17acc86d413dc9d142}
+
+
+Definition at line 76 of file fileio\-\_\-fftw3.\-cpp.
+
+\hypertarget{fileio__fftw3_8cpp_a9dc8255f3a751a4d61fb328e8a96d649}{\index{fileio\-\_\-fftw3.\-cpp@{fileio\-\_\-fftw3.\-cpp}!mass\-Array@{mass\-Array}}
+\index{mass\-Array@{mass\-Array}!fileio_fftw3.cpp@{fileio\-\_\-fftw3.\-cpp}}
+\subsubsection[{mass\-Array}]{\setlength{\rightskip}{0pt plus 5cm}double mass\-Array\mbox{[}{\bf M\-A\-X\-\_\-\-M\-A\-S\-S\-\_\-\-I\-N\-D\-E\-X}\mbox{]}}}\label{fileio__fftw3_8cpp_a9dc8255f3a751a4d61fb328e8a96d649}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=\{1.008,                                         4.0026,
+6.939,9.012,      10.81,12.01,14.01,16.00,19.00,20.18,
+23.00,24.31,      26.98,28.09,30.97,32.06,35.45,39.95,
+39.10,40.08,
+44.96,47.90,50.94,52.00,54.94,55.85,58.93,58.71,63.55,65.38,
+69.72,72.59,74.92,78.96,79.90,83.80,
+85.47,87.62,88.91,91.22,92.91,95.94,98.91,10.07,102.9,106.4,107.9,112.4,
+114.8,118.7,121.8,127.6,126.9,131.3,
+132.9054,137.33,138.9055,178.49,180.9479\}
+\end{DoxyCode}
+
+
+Definition at line 79 of file fileio\-\_\-fftw3.\-cpp.
+

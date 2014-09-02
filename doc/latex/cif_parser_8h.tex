@@ -1,0 +1,605 @@
+\hypertarget{cif_parser_8h}{\section{libs/structure\-\_\-\-I\-O/ucif/cif\-Parser.h File Reference}
+\label{cif_parser_8h}\index{libs/structure\-\_\-\-I\-O/ucif/cif\-Parser.\-h@{libs/structure\-\_\-\-I\-O/ucif/cif\-Parser.\-h}}
+}
+{\ttfamily \#include $<$antlr3.\-h$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$ucif/builder.\-h$>$}\\*
+Include dependency graph for cif\-Parser.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cif_parser_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cif_parser_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcif_parser__value__return__struct}{cif\-Parser\-\_\-value\-\_\-return\-\_\-struct}
+\item 
+struct \hyperlink{structcif_parser__parse___s_c_o_p_e__struct}{cif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E\-\_\-struct}
+\item 
+struct \hyperlink{structcif_parser__loop__body___s_c_o_p_e__struct}{cif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E\-\_\-struct}
+\item 
+struct \hyperlink{structcif_parser__data__items___s_c_o_p_e__struct}{cif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E\-\_\-struct}
+\item 
+struct \hyperlink{structcif_parser___ctx__struct}{cif\-Parser\-\_\-\-Ctx\-\_\-struct}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+{\bf }\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cif_parser_8h_a59adc4c82490d23754cd39c2fb99b0da}{E\-O\-F}~-\/1
+\item 
+\#define \hyperlink{cif_parser_8h_aa6510040cbbc0d01e4b6c298b4e83c99}{T\-\_\-\-\_\-37}~37
+\item 
+\#define \hyperlink{cif_parser_8h_ac636cbce9a1f19c2edd5add3cad23703}{A\-N\-Y\-\_\-\-P\-R\-I\-N\-T\-\_\-\-C\-H\-A\-R}~4
+\item 
+\#define \hyperlink{cif_parser_8h_a7704a002b7b055d16e76821b88692dde}{C\-H\-A\-R\-\_\-\-S\-T\-R\-I\-N\-G}~5
+\item 
+\#define \hyperlink{cif_parser_8h_a6d526c56d1c2ea2e7c4a42856220f146}{C\-O\-M\-M\-E\-N\-T\-S}~6
+\item 
+\#define \hyperlink{cif_parser_8h_a01ff920a7e2c89c2a01addb1419a7e59}{D\-A\-T\-A\-\_\-}~7
+\item 
+\#define \hyperlink{cif_parser_8h_abbb5169b4bfbddb87d96a183370b0338}{D\-A\-T\-A\-\_\-\-B\-L\-O\-C\-K\-\_\-\-H\-E\-A\-D\-I\-N\-G}~8
+\item 
+\#define \hyperlink{cif_parser_8h_a75405d0fa11f1bf15346f61ed092f448}{D\-I\-G\-I\-T}~9
+\item 
+\#define \hyperlink{cif_parser_8h_adb22f0b0ec36e6831071d3e93de03082}{D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E}~10
+\item 
+\#define \hyperlink{cif_parser_8h_ac0d0af2b14e943d0184f2f89a478d419}{D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G}~11
+\item 
+\#define \hyperlink{cif_parser_8h_a4e67e9429d48a2ba8f833ee3b1dceb5d}{E\-O\-L}~12
+\item 
+\#define \hyperlink{cif_parser_8h_a2cf61105dfa8020d1a5f286ca7e97b00}{E\-X\-P\-O\-N\-E\-N\-T}~13
+\item 
+\#define \hyperlink{cif_parser_8h_ae8690abbffa85934d64d545920e2b108}{F\-L\-O\-A\-T}~14
+\item 
+\#define \hyperlink{cif_parser_8h_a1b22400eb48b469f7b91c58c0ce5c0c5}{G\-L\-O\-B\-A\-L\-\_\-}~15
+\item 
+\#define \hyperlink{cif_parser_8h_a0eaa99a18510a16914b2fc07a2d1696e}{I\-N\-A\-P\-P\-L\-I\-C\-A\-B\-L\-E}~16
+\item 
+\#define \hyperlink{cif_parser_8h_a91d43eadec33c80149f92e5abf5df58c}{I\-N\-T\-E\-G\-E\-R}~17
+\item 
+\#define \hyperlink{cif_parser_8h_a1a7445f894d9b3dd4b55a8328cf319ac}{L\-O\-O\-P\-\_\-}~18
+\item 
+\#define \hyperlink{cif_parser_8h_a182bbf92a4db7dbaa1bebd0c923be985}{N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R}~19
+\item 
+\#define \hyperlink{cif_parser_8h_adf5df76c1a88880fe03cd9988d8a9ef1}{N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R\-\_\-}~20
+\item 
+\#define \hyperlink{cif_parser_8h_abc544a4ed22112e62773c113652c5063}{N\-U\-M\-B\-E\-R}~21
+\item 
+\#define \hyperlink{cif_parser_8h_a1046572de30f68fa0b1d2ed02124f876}{N\-U\-M\-E\-R\-I\-C}~22
+\item 
+\#define \hyperlink{cif_parser_8h_a5f32699d41605daaba4418c3e359afcd}{O\-R\-D\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R}~23
+\item 
+\#define \hyperlink{cif_parser_8h_ab2868d85c8a74e3ee08bdc44580e2235}{S\-A\-V\-E}~24
+\item 
+\#define \hyperlink{cif_parser_8h_ab67d2e9f95466c33a7788c8a8f04b5df}{S\-A\-V\-E\-\_\-}~25
+\item 
+\#define \hyperlink{cif_parser_8h_ad6ed1ff873587f2ab46ae0bac5056f29}{S\-A\-V\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-I\-N\-G}~26
+\item 
+\#define \hyperlink{cif_parser_8h_a127753bfd01e80b02582a5682d797e2c}{S\-E\-M\-I\-\_\-\-C\-O\-L\-O\-N\-\_\-\-T\-E\-X\-T\-\_\-\-F\-I\-E\-L\-D}~27
+\item 
+\#define \hyperlink{cif_parser_8h_a7edb129e47f67beda1312b054794b43a}{S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E}~28
+\item 
+\#define \hyperlink{cif_parser_8h_aba38c8673d52f8febeb84b858bf0c5bd}{S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G}~29
+\item 
+\#define \hyperlink{cif_parser_8h_a897b222c02a1c2449d0f18c79fb2b910}{S\-T\-O\-P\-\_\-}~30
+\item 
+\#define \hyperlink{cif_parser_8h_afc3d101f633a076cc1ca84b85b6224b2}{T\-A\-G}~31
+\item 
+\#define \hyperlink{cif_parser_8h_aa4eb2ce1d963c6f6b3be6a7036f6e3d4}{T\-E\-X\-T\-\_\-\-L\-E\-A\-D\-\_\-\-C\-H\-A\-R}~32
+\item 
+\#define \hyperlink{cif_parser_8h_ac1ae4add974b9cfc6b5aaf8a578f01ab}{U\-N\-K\-N\-O\-W\-N}~33
+\item 
+\#define \hyperlink{cif_parser_8h_a2dbe1f33e11ba460e803b10fb1afe453}{U\-N\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G}~34
+\item 
+\#define \hyperlink{cif_parser_8h_a5db7dd271d72571fb5e5ce987f515df4}{U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-I\-N\-T\-E\-G\-E\-R}~35
+\item 
+\#define \hyperlink{cif_parser_8h_abfa0d183e035eb9705b5faec98294d0f}{W\-H\-I\-T\-E\-S\-P\-A\-C\-E}~36
+\item 
+\#define \hyperlink{cif_parser_8h_a59adc4c82490d23754cd39c2fb99b0da}{E\-O\-F}~\hyperlink{antlr3commontoken_8h_a1c8f8ac4a421a4adcad0c827fb4f91cd}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-F}
+\item 
+\#define \hyperlink{cif_parser_8h_a6de1bda88a7449dbd84a84f146fc64ca}{T\-O\-K\-E\-N\-S\-O\-U\-R\-C\-E}(lxr)~lxr-\/$>$p\-Lexer-\/$>$rec-\/$>$state-\/$>$tok\-Source
+\end{DoxyCompactItemize}
+
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structcif_parser___ctx__struct}{cif\-Parser\-\_\-\-Ctx\-\_\-struct} \hyperlink{cif_parser_8h_a233f85f30841d02b609f6058a6f5579f}{cif\-Parser}
+\item 
+typedef struct \\*
+\hyperlink{structcif_parser___ctx__struct}{cif\-Parser\-\_\-\-Ctx\-\_\-struct} $\ast$ \hyperlink{cif_parser_8h_a2c4077303fc91acabafb1e288c8fba3b}{pcif\-Parser}
+\item 
+typedef struct \\*
+\hyperlink{structcif_parser__value__return__struct}{cif\-Parser\-\_\-value\-\_\-return\-\_\-struct} \hyperlink{cif_parser_8h_a0858fbea130868e3c9f21bcf216a9709}{cif\-Parser\-\_\-value\-\_\-return}
+\item 
+typedef struct \\*
+\hyperlink{structcif_parser__parse___s_c_o_p_e__struct}{cif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E\-\_\-struct} \hyperlink{cif_parser_8h_acc631cd364ee212f64e559a7f1ceef87}{cif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E}
+\item 
+typedef struct \\*
+\hyperlink{structcif_parser__parse___s_c_o_p_e__struct}{cif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E\-\_\-struct} $\ast$ \hyperlink{cif_parser_8h_a80a5a0ef2513748710a2b15a7fbc3a9c}{pcif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E}
+\item 
+typedef struct \\*
+\hyperlink{structcif_parser__loop__body___s_c_o_p_e__struct}{cif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E\-\_\-struct} \hyperlink{cif_parser_8h_a3046090fb26d3e0ce0e14a29526e72dc}{cif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E}
+\item 
+typedef struct \\*
+\hyperlink{structcif_parser__loop__body___s_c_o_p_e__struct}{cif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E\-\_\-struct} $\ast$ \hyperlink{cif_parser_8h_aea2d24aee164ae2f6ee1f5c8e4e3f17f}{pcif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E}
+\item 
+typedef struct \\*
+\hyperlink{structcif_parser__data__items___s_c_o_p_e__struct}{cif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E\-\_\-struct} \hyperlink{cif_parser_8h_a2cc76ab5c5efb2f12826a759880638af}{cif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E}
+\item 
+typedef struct \\*
+\hyperlink{structcif_parser__data__items___s_c_o_p_e__struct}{cif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E\-\_\-struct} $\ast$ \hyperlink{cif_parser_8h_a9034c1386c9145b1a39af50401219026}{pcif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{cif_parser_8h_a2c4077303fc91acabafb1e288c8fba3b}{pcif\-Parser} \hyperlink{cif_parser_8h_a2bb3fa49c82e4a00be07b61fb601c34c}{cif\-Parser\-New} (\hyperlink{antlr3interfaces_8h_aafca8bc0b0137df3149e9a589f83e09a}{p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M} instream)
+\begin{DoxyCompactList}\small\item\em Create a new cif\-Parser parser and return a context for it. \end{DoxyCompactList}\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{cif_parser_8h_a2c4077303fc91acabafb1e288c8fba3b}{pcif\-Parser} \hyperlink{cif_parser_8h_ac5cc07e01ff3c44244770c3a4974e6da}{cif\-Parser\-New\-S\-S\-D} (\hyperlink{antlr3interfaces_8h_aafca8bc0b0137df3149e9a589f83e09a}{p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M} instream, \hyperlink{antlr3interfaces_8h_a180526531b2c6da5cafe825ae7596bf1}{p\-A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E} state)
+\begin{DoxyCompactList}\small\item\em Create a new cif\-Parser parser and return a context for it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This C header file was generated by \$\-A\-N\-T\-L\-R version 3.\-4
+
+
+\begin{DoxyItemize}
+\item From the grammar source file \-: cif.\-g
+\item On \-: 2013-\/04-\/16 18\-:47\-:22
+\item for the parser \-: cif\-Parser\-Parser
+\end{DoxyItemize}
+
+Editing it, at least manually, is not wise.
+
+C language generator and runtime by Jim Idle, jimi$\vert$hereisanat$\vert$idle$\vert$dotgoeshere$\vert$ws.
+
+The parser cif\-Parser
+
+has the callable functions (rules) shown below, which will invoke the code for the associated rule in the source grammar assuming that the input stream is pointing to a token/text stream that could begin this rule.
+
+For instance if you call the first (topmost) rule in a parser grammar, you will get the results of a full parse, but calling a rule half way through the grammar will allow you to pass part of a full token stream to the parser, such as for syntax checking in editors and so on.
+
+The parser entry points are called indirectly (by function pointer to function) via a parser context typedef pcif\-Parser, which is returned from a call to \hyperlink{cif_parser_8h_a2bb3fa49c82e4a00be07b61fb601c34c}{cif\-Parser\-New()}.
+
+The methods in pcif\-Parser are as follows\-:
+
+
+\begin{DoxyItemize}
+\item void pcif\-Parser-\/$>$parse(pcif\-Parser)
+\item void pcif\-Parser-\/$>$cif(pcif\-Parser)
+\item void pcif\-Parser-\/$>$loop\-\_\-body(pcif\-Parser)
+\item void pcif\-Parser-\/$>$save\-\_\-frame(pcif\-Parser)
+\item void pcif\-Parser-\/$>$data\-\_\-items(pcif\-Parser)
+\item void pcif\-Parser-\/$>$data\-\_\-block(pcif\-Parser)
+\item void pcif\-Parser-\/$>$loop\-\_\-header(pcif\-Parser)
+\item cif\-Parser\-\_\-value\-\_\-return pcif\-Parser-\/$>$value(pcif\-Parser)
+\item void pcif\-Parser-\/$>$char\-\_\-string(pcif\-Parser)
+\item void pcif\-Parser-\/$>$text\-\_\-field(pcif\-Parser)
+\end{DoxyItemize}
+
+The return type for any particular rule is of course determined by the source grammar file. 
+
+Definition in file \hyperlink{cif_parser_8h_source}{cif\-Parser.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{cif_parser_8h_ac636cbce9a1f19c2edd5add3cad23703}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!A\-N\-Y\-\_\-\-P\-R\-I\-N\-T\-\_\-\-C\-H\-A\-R@{A\-N\-Y\-\_\-\-P\-R\-I\-N\-T\-\_\-\-C\-H\-A\-R}}
+\index{A\-N\-Y\-\_\-\-P\-R\-I\-N\-T\-\_\-\-C\-H\-A\-R@{A\-N\-Y\-\_\-\-P\-R\-I\-N\-T\-\_\-\-C\-H\-A\-R}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{A\-N\-Y\-\_\-\-P\-R\-I\-N\-T\-\_\-\-C\-H\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-Y\-\_\-\-P\-R\-I\-N\-T\-\_\-\-C\-H\-A\-R~4}}\label{cif_parser_8h_ac636cbce9a1f19c2edd5add3cad23703}
+
+
+Definition at line 357 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a7704a002b7b055d16e76821b88692dde}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!C\-H\-A\-R\-\_\-\-S\-T\-R\-I\-N\-G@{C\-H\-A\-R\-\_\-\-S\-T\-R\-I\-N\-G}}
+\index{C\-H\-A\-R\-\_\-\-S\-T\-R\-I\-N\-G@{C\-H\-A\-R\-\_\-\-S\-T\-R\-I\-N\-G}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{C\-H\-A\-R\-\_\-\-S\-T\-R\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-A\-R\-\_\-\-S\-T\-R\-I\-N\-G~5}}\label{cif_parser_8h_a7704a002b7b055d16e76821b88692dde}
+
+
+Definition at line 358 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a6d526c56d1c2ea2e7c4a42856220f146}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!C\-O\-M\-M\-E\-N\-T\-S@{C\-O\-M\-M\-E\-N\-T\-S}}
+\index{C\-O\-M\-M\-E\-N\-T\-S@{C\-O\-M\-M\-E\-N\-T\-S}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{C\-O\-M\-M\-E\-N\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-M\-M\-E\-N\-T\-S~6}}\label{cif_parser_8h_a6d526c56d1c2ea2e7c4a42856220f146}
+
+
+Definition at line 359 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a01ff920a7e2c89c2a01addb1419a7e59}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!D\-A\-T\-A\-\_\-@{D\-A\-T\-A\-\_\-}}
+\index{D\-A\-T\-A\-\_\-@{D\-A\-T\-A\-\_\-}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{D\-A\-T\-A\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-A\-T\-A\-\_\-~7}}\label{cif_parser_8h_a01ff920a7e2c89c2a01addb1419a7e59}
+
+
+Definition at line 360 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_abbb5169b4bfbddb87d96a183370b0338}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!D\-A\-T\-A\-\_\-\-B\-L\-O\-C\-K\-\_\-\-H\-E\-A\-D\-I\-N\-G@{D\-A\-T\-A\-\_\-\-B\-L\-O\-C\-K\-\_\-\-H\-E\-A\-D\-I\-N\-G}}
+\index{D\-A\-T\-A\-\_\-\-B\-L\-O\-C\-K\-\_\-\-H\-E\-A\-D\-I\-N\-G@{D\-A\-T\-A\-\_\-\-B\-L\-O\-C\-K\-\_\-\-H\-E\-A\-D\-I\-N\-G}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{D\-A\-T\-A\-\_\-\-B\-L\-O\-C\-K\-\_\-\-H\-E\-A\-D\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-A\-T\-A\-\_\-\-B\-L\-O\-C\-K\-\_\-\-H\-E\-A\-D\-I\-N\-G~8}}\label{cif_parser_8h_abbb5169b4bfbddb87d96a183370b0338}
+
+
+Definition at line 361 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a75405d0fa11f1bf15346f61ed092f448}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!D\-I\-G\-I\-T@{D\-I\-G\-I\-T}}
+\index{D\-I\-G\-I\-T@{D\-I\-G\-I\-T}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{D\-I\-G\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-I\-G\-I\-T~9}}\label{cif_parser_8h_a75405d0fa11f1bf15346f61ed092f448}
+
+
+Definition at line 362 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_adb22f0b0ec36e6831071d3e93de03082}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E@{D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E}}
+\index{D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E@{D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E~10}}\label{cif_parser_8h_adb22f0b0ec36e6831071d3e93de03082}
+
+
+Definition at line 363 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_ac0d0af2b14e943d0184f2f89a478d419}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G@{D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G}}
+\index{D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G@{D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-O\-U\-B\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G~11}}\label{cif_parser_8h_ac0d0af2b14e943d0184f2f89a478d419}
+
+
+Definition at line 364 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a59adc4c82490d23754cd39c2fb99b0da}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!E\-O\-F@{E\-O\-F}}
+\index{E\-O\-F@{E\-O\-F}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{E\-O\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-O\-F~-\/1}}\label{cif_parser_8h_a59adc4c82490d23754cd39c2fb99b0da}
+Symbolic definitions of all the tokens that the parser will work with.
+
+Antlr will define E\-O\-F, but we can't use that as it it is too common in in C header files and that would be confusing. There is no way to filter this out at the moment so we just undef it here for now. That isn't the value we get back from C recognizers anyway. We are looking for A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-F. 
+
+Definition at line 392 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a59adc4c82490d23754cd39c2fb99b0da}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!E\-O\-F@{E\-O\-F}}
+\index{E\-O\-F@{E\-O\-F}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{E\-O\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-O\-F~{\bf A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-F}}}\label{cif_parser_8h_a59adc4c82490d23754cd39c2fb99b0da}
+Symbolic definitions of all the tokens that the parser will work with.
+
+Antlr will define E\-O\-F, but we can't use that as it it is too common in in C header files and that would be confusing. There is no way to filter this out at the moment so we just undef it here for now. That isn't the value we get back from C recognizers anyway. We are looking for A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-E\-O\-F. 
+
+Definition at line 392 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a4e67e9429d48a2ba8f833ee3b1dceb5d}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!E\-O\-L@{E\-O\-L}}
+\index{E\-O\-L@{E\-O\-L}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{E\-O\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-O\-L~12}}\label{cif_parser_8h_a4e67e9429d48a2ba8f833ee3b1dceb5d}
+
+
+Definition at line 365 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a2cf61105dfa8020d1a5f286ca7e97b00}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!E\-X\-P\-O\-N\-E\-N\-T@{E\-X\-P\-O\-N\-E\-N\-T}}
+\index{E\-X\-P\-O\-N\-E\-N\-T@{E\-X\-P\-O\-N\-E\-N\-T}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{E\-X\-P\-O\-N\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-X\-P\-O\-N\-E\-N\-T~13}}\label{cif_parser_8h_a2cf61105dfa8020d1a5f286ca7e97b00}
+
+
+Definition at line 366 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_ae8690abbffa85934d64d545920e2b108}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!F\-L\-O\-A\-T@{F\-L\-O\-A\-T}}
+\index{F\-L\-O\-A\-T@{F\-L\-O\-A\-T}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{F\-L\-O\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-L\-O\-A\-T~14}}\label{cif_parser_8h_ae8690abbffa85934d64d545920e2b108}
+
+
+Definition at line 367 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a1b22400eb48b469f7b91c58c0ce5c0c5}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!G\-L\-O\-B\-A\-L\-\_\-@{G\-L\-O\-B\-A\-L\-\_\-}}
+\index{G\-L\-O\-B\-A\-L\-\_\-@{G\-L\-O\-B\-A\-L\-\_\-}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{G\-L\-O\-B\-A\-L\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-L\-O\-B\-A\-L\-\_\-~15}}\label{cif_parser_8h_a1b22400eb48b469f7b91c58c0ce5c0c5}
+
+
+Definition at line 368 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a0eaa99a18510a16914b2fc07a2d1696e}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!I\-N\-A\-P\-P\-L\-I\-C\-A\-B\-L\-E@{I\-N\-A\-P\-P\-L\-I\-C\-A\-B\-L\-E}}
+\index{I\-N\-A\-P\-P\-L\-I\-C\-A\-B\-L\-E@{I\-N\-A\-P\-P\-L\-I\-C\-A\-B\-L\-E}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{I\-N\-A\-P\-P\-L\-I\-C\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-A\-P\-P\-L\-I\-C\-A\-B\-L\-E~16}}\label{cif_parser_8h_a0eaa99a18510a16914b2fc07a2d1696e}
+
+
+Definition at line 369 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a91d43eadec33c80149f92e5abf5df58c}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!I\-N\-T\-E\-G\-E\-R@{I\-N\-T\-E\-G\-E\-R}}
+\index{I\-N\-T\-E\-G\-E\-R@{I\-N\-T\-E\-G\-E\-R}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{I\-N\-T\-E\-G\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-E\-G\-E\-R~17}}\label{cif_parser_8h_a91d43eadec33c80149f92e5abf5df58c}
+
+
+Definition at line 370 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a1a7445f894d9b3dd4b55a8328cf319ac}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!L\-O\-O\-P\-\_\-@{L\-O\-O\-P\-\_\-}}
+\index{L\-O\-O\-P\-\_\-@{L\-O\-O\-P\-\_\-}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{L\-O\-O\-P\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-O\-P\-\_\-~18}}\label{cif_parser_8h_a1a7445f894d9b3dd4b55a8328cf319ac}
+
+
+Definition at line 371 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a182bbf92a4db7dbaa1bebd0c923be985}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R@{N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R}}
+\index{N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R@{N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R~19}}\label{cif_parser_8h_a182bbf92a4db7dbaa1bebd0c923be985}
+
+
+Definition at line 372 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_adf5df76c1a88880fe03cd9988d8a9ef1}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R\-\_\-@{N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R\-\_\-}}
+\index{N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R\-\_\-@{N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R\-\_\-}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-O\-N\-\_\-\-B\-L\-A\-N\-K\-\_\-\-C\-H\-A\-R\-\_\-~20}}\label{cif_parser_8h_adf5df76c1a88880fe03cd9988d8a9ef1}
+
+
+Definition at line 373 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_abc544a4ed22112e62773c113652c5063}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!N\-U\-M\-B\-E\-R@{N\-U\-M\-B\-E\-R}}
+\index{N\-U\-M\-B\-E\-R@{N\-U\-M\-B\-E\-R}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{N\-U\-M\-B\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-B\-E\-R~21}}\label{cif_parser_8h_abc544a4ed22112e62773c113652c5063}
+
+
+Definition at line 374 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a1046572de30f68fa0b1d2ed02124f876}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!N\-U\-M\-E\-R\-I\-C@{N\-U\-M\-E\-R\-I\-C}}
+\index{N\-U\-M\-E\-R\-I\-C@{N\-U\-M\-E\-R\-I\-C}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{N\-U\-M\-E\-R\-I\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-U\-M\-E\-R\-I\-C~22}}\label{cif_parser_8h_a1046572de30f68fa0b1d2ed02124f876}
+
+
+Definition at line 375 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a5f32699d41605daaba4418c3e359afcd}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!O\-R\-D\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R@{O\-R\-D\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R}}
+\index{O\-R\-D\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R@{O\-R\-D\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{O\-R\-D\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-R\-D\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R~23}}\label{cif_parser_8h_a5f32699d41605daaba4418c3e359afcd}
+
+
+Definition at line 376 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_ab2868d85c8a74e3ee08bdc44580e2235}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!S\-A\-V\-E@{S\-A\-V\-E}}
+\index{S\-A\-V\-E@{S\-A\-V\-E}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{S\-A\-V\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-A\-V\-E~24}}\label{cif_parser_8h_ab2868d85c8a74e3ee08bdc44580e2235}
+
+
+Definition at line 377 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_ab67d2e9f95466c33a7788c8a8f04b5df}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!S\-A\-V\-E\-\_\-@{S\-A\-V\-E\-\_\-}}
+\index{S\-A\-V\-E\-\_\-@{S\-A\-V\-E\-\_\-}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{S\-A\-V\-E\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-A\-V\-E\-\_\-~25}}\label{cif_parser_8h_ab67d2e9f95466c33a7788c8a8f04b5df}
+
+
+Definition at line 378 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_ad6ed1ff873587f2ab46ae0bac5056f29}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!S\-A\-V\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-I\-N\-G@{S\-A\-V\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-I\-N\-G}}
+\index{S\-A\-V\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-I\-N\-G@{S\-A\-V\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-I\-N\-G}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{S\-A\-V\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-A\-V\-E\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-I\-N\-G~26}}\label{cif_parser_8h_ad6ed1ff873587f2ab46ae0bac5056f29}
+
+
+Definition at line 379 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a127753bfd01e80b02582a5682d797e2c}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!S\-E\-M\-I\-\_\-\-C\-O\-L\-O\-N\-\_\-\-T\-E\-X\-T\-\_\-\-F\-I\-E\-L\-D@{S\-E\-M\-I\-\_\-\-C\-O\-L\-O\-N\-\_\-\-T\-E\-X\-T\-\_\-\-F\-I\-E\-L\-D}}
+\index{S\-E\-M\-I\-\_\-\-C\-O\-L\-O\-N\-\_\-\-T\-E\-X\-T\-\_\-\-F\-I\-E\-L\-D@{S\-E\-M\-I\-\_\-\-C\-O\-L\-O\-N\-\_\-\-T\-E\-X\-T\-\_\-\-F\-I\-E\-L\-D}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{S\-E\-M\-I\-\_\-\-C\-O\-L\-O\-N\-\_\-\-T\-E\-X\-T\-\_\-\-F\-I\-E\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-E\-M\-I\-\_\-\-C\-O\-L\-O\-N\-\_\-\-T\-E\-X\-T\-\_\-\-F\-I\-E\-L\-D~27}}\label{cif_parser_8h_a127753bfd01e80b02582a5682d797e2c}
+
+
+Definition at line 380 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a7edb129e47f67beda1312b054794b43a}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E@{S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E}}
+\index{S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E@{S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E~28}}\label{cif_parser_8h_a7edb129e47f67beda1312b054794b43a}
+
+
+Definition at line 381 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_aba38c8673d52f8febeb84b858bf0c5bd}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G@{S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G}}
+\index{S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G@{S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I\-N\-G\-L\-E\-\_\-\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G~29}}\label{cif_parser_8h_aba38c8673d52f8febeb84b858bf0c5bd}
+
+
+Definition at line 382 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a897b222c02a1c2449d0f18c79fb2b910}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!S\-T\-O\-P\-\_\-@{S\-T\-O\-P\-\_\-}}
+\index{S\-T\-O\-P\-\_\-@{S\-T\-O\-P\-\_\-}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{S\-T\-O\-P\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-O\-P\-\_\-~30}}\label{cif_parser_8h_a897b222c02a1c2449d0f18c79fb2b910}
+
+
+Definition at line 383 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_aa6510040cbbc0d01e4b6c298b4e83c99}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!T\-\_\-\-\_\-37@{T\-\_\-\-\_\-37}}
+\index{T\-\_\-\-\_\-37@{T\-\_\-\-\_\-37}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{T\-\_\-\-\_\-37}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-\_\-\-\_\-37~37}}\label{cif_parser_8h_aa6510040cbbc0d01e4b6c298b4e83c99}
+
+
+Definition at line 356 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_afc3d101f633a076cc1ca84b85b6224b2}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!T\-A\-G@{T\-A\-G}}
+\index{T\-A\-G@{T\-A\-G}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{T\-A\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-A\-G~31}}\label{cif_parser_8h_afc3d101f633a076cc1ca84b85b6224b2}
+
+
+Definition at line 384 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_aa4eb2ce1d963c6f6b3be6a7036f6e3d4}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!T\-E\-X\-T\-\_\-\-L\-E\-A\-D\-\_\-\-C\-H\-A\-R@{T\-E\-X\-T\-\_\-\-L\-E\-A\-D\-\_\-\-C\-H\-A\-R}}
+\index{T\-E\-X\-T\-\_\-\-L\-E\-A\-D\-\_\-\-C\-H\-A\-R@{T\-E\-X\-T\-\_\-\-L\-E\-A\-D\-\_\-\-C\-H\-A\-R}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{T\-E\-X\-T\-\_\-\-L\-E\-A\-D\-\_\-\-C\-H\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-E\-X\-T\-\_\-\-L\-E\-A\-D\-\_\-\-C\-H\-A\-R~32}}\label{cif_parser_8h_aa4eb2ce1d963c6f6b3be6a7036f6e3d4}
+
+
+Definition at line 385 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a6de1bda88a7449dbd84a84f146fc64ca}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!T\-O\-K\-E\-N\-S\-O\-U\-R\-C\-E@{T\-O\-K\-E\-N\-S\-O\-U\-R\-C\-E}}
+\index{T\-O\-K\-E\-N\-S\-O\-U\-R\-C\-E@{T\-O\-K\-E\-N\-S\-O\-U\-R\-C\-E}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{T\-O\-K\-E\-N\-S\-O\-U\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-K\-E\-N\-S\-O\-U\-R\-C\-E(
+\begin{DoxyParamCaption}
+\item[{}]{lxr}
+\end{DoxyParamCaption}
+)~lxr-\/$>$p\-Lexer-\/$>$rec-\/$>$state-\/$>$tok\-Source}}\label{cif_parser_8h_a6de1bda88a7449dbd84a84f146fc64ca}
+
+
+Definition at line 396 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_ac1ae4add974b9cfc6b5aaf8a578f01ab}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!U\-N\-K\-N\-O\-W\-N@{U\-N\-K\-N\-O\-W\-N}}
+\index{U\-N\-K\-N\-O\-W\-N@{U\-N\-K\-N\-O\-W\-N}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{U\-N\-K\-N\-O\-W\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-K\-N\-O\-W\-N~33}}\label{cif_parser_8h_ac1ae4add974b9cfc6b5aaf8a578f01ab}
+
+
+Definition at line 386 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a2dbe1f33e11ba460e803b10fb1afe453}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!U\-N\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G@{U\-N\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G}}
+\index{U\-N\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G@{U\-N\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{U\-N\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-Q\-U\-O\-T\-E\-D\-\_\-\-S\-T\-R\-I\-N\-G~34}}\label{cif_parser_8h_a2dbe1f33e11ba460e803b10fb1afe453}
+
+
+Definition at line 387 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a5db7dd271d72571fb5e5ce987f515df4}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-I\-N\-T\-E\-G\-E\-R@{U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-I\-N\-T\-E\-G\-E\-R}}
+\index{U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-I\-N\-T\-E\-G\-E\-R@{U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-I\-N\-T\-E\-G\-E\-R}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-I\-N\-T\-E\-G\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-S\-I\-G\-N\-E\-D\-\_\-\-I\-N\-T\-E\-G\-E\-R~35}}\label{cif_parser_8h_a5db7dd271d72571fb5e5ce987f515df4}
+
+
+Definition at line 388 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_abfa0d183e035eb9705b5faec98294d0f}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!W\-H\-I\-T\-E\-S\-P\-A\-C\-E@{W\-H\-I\-T\-E\-S\-P\-A\-C\-E}}
+\index{W\-H\-I\-T\-E\-S\-P\-A\-C\-E@{W\-H\-I\-T\-E\-S\-P\-A\-C\-E}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{W\-H\-I\-T\-E\-S\-P\-A\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-H\-I\-T\-E\-S\-P\-A\-C\-E~36}}\label{cif_parser_8h_abfa0d183e035eb9705b5faec98294d0f}
+
+
+Definition at line 389 of file cif\-Parser.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{cif_parser_8h_a233f85f30841d02b609f6058a6f5579f}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!cif\-Parser@{cif\-Parser}}
+\index{cif\-Parser@{cif\-Parser}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{cif\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cif\-Parser\-\_\-\-Ctx\-\_\-struct} {\bf cif\-Parser}}}\label{cif_parser_8h_a233f85f30841d02b609f6058a6f5579f}
+
+
+Definition at line 119 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a2cc76ab5c5efb2f12826a759880638af}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!cif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E@{cif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E}}
+\index{cif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E@{cif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{cif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E\-\_\-struct}
+     {\bf cif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E}}}\label{cif_parser_8h_a2cc76ab5c5efb2f12826a759880638af}
+Definition of the data\-\_\-items scope variable tracking structure. An instance of this structure is created by calling cif\-Parser\-\_\-data\-\_\-items\-Push(). \hypertarget{cif_parser_8h_a3046090fb26d3e0ce0e14a29526e72dc}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!cif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E@{cif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E}}
+\index{cif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E@{cif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{cif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E\-\_\-struct}
+     {\bf cif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E}}}\label{cif_parser_8h_a3046090fb26d3e0ce0e14a29526e72dc}
+Definition of the loop\-\_\-body scope variable tracking structure. An instance of this structure is created by calling cif\-Parser\-\_\-loop\-\_\-body\-Push(). \hypertarget{cif_parser_8h_acc631cd364ee212f64e559a7f1ceef87}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!cif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E@{cif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E}}
+\index{cif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E@{cif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{cif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E\-\_\-struct}
+     {\bf cif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E}}}\label{cif_parser_8h_acc631cd364ee212f64e559a7f1ceef87}
+Definition of the parse scope variable tracking structure. An instance of this structure is created by calling cif\-Parser\-\_\-parse\-Push(). \hypertarget{cif_parser_8h_a0858fbea130868e3c9f21bcf216a9709}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!cif\-Parser\-\_\-value\-\_\-return@{cif\-Parser\-\_\-value\-\_\-return}}
+\index{cif\-Parser\-\_\-value\-\_\-return@{cif\-Parser\-\_\-value\-\_\-return}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{cif\-Parser\-\_\-value\-\_\-return}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cif\-Parser\-\_\-value\-\_\-return\-\_\-struct}
+     {\bf cif\-Parser\-\_\-value\-\_\-return}}}\label{cif_parser_8h_a0858fbea130868e3c9f21bcf216a9709}
+\hypertarget{cif_parser_8h_a2c4077303fc91acabafb1e288c8fba3b}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!pcif\-Parser@{pcif\-Parser}}
+\index{pcif\-Parser@{pcif\-Parser}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{pcif\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cif\-Parser\-\_\-\-Ctx\-\_\-struct} $\ast$ {\bf pcif\-Parser}}}\label{cif_parser_8h_a2c4077303fc91acabafb1e288c8fba3b}
+
+
+Definition at line 119 of file cif\-Parser.\-h.
+
+\hypertarget{cif_parser_8h_a9034c1386c9145b1a39af50401219026}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!pcif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E@{pcif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E}}
+\index{pcif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E@{pcif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{pcif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E\-\_\-struct} $\ast$  {\bf pcif\-Parser\-\_\-data\-\_\-items\-\_\-\-S\-C\-O\-P\-E}}}\label{cif_parser_8h_a9034c1386c9145b1a39af50401219026}
+\hypertarget{cif_parser_8h_aea2d24aee164ae2f6ee1f5c8e4e3f17f}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!pcif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E@{pcif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E}}
+\index{pcif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E@{pcif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{pcif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E\-\_\-struct} $\ast$  {\bf pcif\-Parser\-\_\-loop\-\_\-body\-\_\-\-S\-C\-O\-P\-E}}}\label{cif_parser_8h_aea2d24aee164ae2f6ee1f5c8e4e3f17f}
+\hypertarget{cif_parser_8h_a80a5a0ef2513748710a2b15a7fbc3a9c}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!pcif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E@{pcif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E}}
+\index{pcif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E@{pcif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{pcif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E\-\_\-struct} $\ast$  {\bf pcif\-Parser\-\_\-parse\-\_\-\-S\-C\-O\-P\-E}}}\label{cif_parser_8h_a80a5a0ef2513748710a2b15a7fbc3a9c}
+
+
+\subsection{Function Documentation}
+\hypertarget{cif_parser_8h_a2bb3fa49c82e4a00be07b61fb601c34c}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!cif\-Parser\-New@{cif\-Parser\-New}}
+\index{cif\-Parser\-New@{cif\-Parser\-New}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{cif\-Parser\-New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf pcif\-Parser} cif\-Parser\-New (
+\begin{DoxyParamCaption}
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M}}]{instream}
+\end{DoxyParamCaption}
+)}}\label{cif_parser_8h_a2bb3fa49c82e4a00be07b61fb601c34c}
+
+
+Create a new cif\-Parser parser and return a context for it. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em instream} & Pointer to an input stream interface.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to new parser context upon success. 
+\end{DoxyReturn}
+
+
+Definition at line 651 of file cif\-Parser.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cif_parser_8h_a2bb3fa49c82e4a00be07b61fb601c34c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{cif_parser_8h_a2bb3fa49c82e4a00be07b61fb601c34c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cif_parser_8h_ac5cc07e01ff3c44244770c3a4974e6da}{\index{cif\-Parser.\-h@{cif\-Parser.\-h}!cif\-Parser\-New\-S\-S\-D@{cif\-Parser\-New\-S\-S\-D}}
+\index{cif\-Parser\-New\-S\-S\-D@{cif\-Parser\-New\-S\-S\-D}!cifParser.h@{cif\-Parser.\-h}}
+\subsubsection[{cif\-Parser\-New\-S\-S\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf pcif\-Parser} cif\-Parser\-New\-S\-S\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N\-\_\-\-S\-T\-R\-E\-A\-M}}]{instream, }
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E}}]{state}
+\end{DoxyParamCaption}
+)}}\label{cif_parser_8h_ac5cc07e01ff3c44244770c3a4974e6da}
+
+
+Create a new cif\-Parser parser and return a context for it. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em instream} & Pointer to an input stream interface.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to new parser context upon success. 
+\end{DoxyReturn}
+
+
+Definition at line 665 of file cif\-Parser.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cif_parser_8h_ac5cc07e01ff3c44244770c3a4974e6da_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cif_parser_8h_ac5cc07e01ff3c44244770c3a4974e6da_icgraph}
+\end{center}
+\end{figure}
+
+

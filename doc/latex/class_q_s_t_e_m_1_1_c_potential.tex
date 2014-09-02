@@ -1,0 +1,1295 @@
+\hypertarget{class_q_s_t_e_m_1_1_c_potential}{\section{Q\-S\-T\-E\-M\-:\-:C\-Potential Class Reference}
+\label{class_q_s_t_e_m_1_1_c_potential}\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+}
+
+
+{\ttfamily \#include $<$pot\-\_\-base.\-hpp$>$}
+
+
+
+Inheritance diagram for Q\-S\-T\-E\-M\-:\-:C\-Potential\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_potential__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Q\-S\-T\-E\-M\-:\-:C\-Potential\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{class_q_s_t_e_m_1_1_c_potential__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_potential_a854fb18cfde1ced01284ef26db88f7e2}{C\-Potential} ()
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_potential_a776766cc08acf7dcf7c8cb70cc0f5e82}{C\-Potential} (unsigned nx, unsigned ny, unsigned nz, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{image_sim_8m_a3bd72991d01b3af4f1ed8ea1317879de}{dx}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{showimage_8m_ac6bb4b856c3d13f19466d849c6ae0138}{dy}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} dz, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{qstem_8m_a771570fcbf7eebdfa7d620704a8789a0}{atom\-Radius}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} v0)
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_potential_a9847fdc7c46ee0488cc883956fd75f3d}{C\-Potential} (const \hyperlink{namespace_q_s_t_e_m_af9424707fe9f6503298f49b41304bd35}{Config\-Reader\-Ptr} \&config\-Reader)
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_potential_ab76efc606ed2bee0b7e89d6a22c82de9}{Display\-Params} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_a0bac8970d10240f529d4609ed36c03aa}{Atom\-Box\-Look\-Up} (\hyperlink{namespace_q_s_t_e_m_afa320ea3cd2f5ff080c422f81b803a32}{complex\-\_\-tt} \&val, int Znum, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{_read_d_m3___matlab_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{qmb_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} z, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{xyz2cfg_8m_a422e4e22a48b9ea42c9dfe12b157229d}{B})
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_potential_a5a7af8b88594ddf08876b47f4de31d3f}{Make\-Slices} (int nlayer, char $\ast$\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom} $\ast$\hyperlink{_displacement_params_8m_a02389a9bda512aa8f8a3345f4fa27f25}{center})
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_potential_a377f6971483c0fb647cc37eed3c0e6bf}{Refresh} ()
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_potential_aa50c82d9fb190d5782d483b1dd441176}{Read\-Potential} (std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, unsigned sub\-Slab\-Idx)
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_potential_a207db8cc69e2d4837c61507cdf59241c}{Center\-Atom\-Z} (\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ \hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom} $>$\-::iterator \&\hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \&z)
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_potential_a4e5f7f86bf4f96a6408c362d598f19f7}{Add\-Atom\-To\-Slices} (\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ \hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom} $>$\-::iterator \&\hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} atom\-X, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} atom\-Y, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} atom\-Z)=0
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_ac3aa2b1121cc9b6e6d43793db8ea58d8}{Add\-Atom\-Real\-Space} (\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ \hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom} $>$\-::iterator \&\hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} atom\-X, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} atom\-Y, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} atom\-Z)
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_ab0d42adabf429cc1ccd9758a342e0068}{Get\-N\-Slices} () const 
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a71eb899bbc8db10572f0e5fcf4ff4734}{Get\-Slice\-Thickness} () const 
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a3bc49621bc0474ad98685074540dff78}{Get\-Slice\-Thickness} (unsigned idx) const 
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_a07a83b138be2d802fe9384856640f0a9}{Get\-Size\-Pixels} (unsigned \&nx, unsigned \&ny) const 
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_aa5f38bb6eb42d0c08aaed1f50b74f34a}{Set\-Slice\-Thickness} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} thickness\-\_\-\-Angstroms)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_af8c110606944b0129ce26aa8bad0305a}{Set\-Slice\-Thickness} (\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} $>$ thickness\-\_\-\-Angstroms)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_af4d42d60b807e7be0af37e33fe9ae00d}{Set\-N\-Slices} (unsigned slices)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_abb51a726a0532c22c1daf5f440cefe87}{Set\-Structure} (\hyperlink{namespace_q_s_t_e_m_a7ab0b6bb11e12c9829540e6d872946fc}{Structure\-Ptr} structure)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_a41295f2fd00b4d5f756d700ebef51f52}{Write\-Slice} (unsigned idx)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_af83e1d0103b17339f46768c9e05615e8}{Write\-Projected\-Potential} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_a0ab67c8c945cdd2aa25ad9ec04209e9d}{Get\-Slice} (unsigned idx, \hyperlink{namespace_q_s_t_e_m_af210a2c1f9afae1deed746dcd9276221}{Complex\-Vector} \&\hyperlink{draw_xtal_8m_afcf0f444b9db8fc728edff0315b3ab1d}{vec})
+\item 
+\hyperlink{namespace_q_s_t_e_m_afa320ea3cd2f5ff080c422f81b803a32}{complex\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_ad9f41c1917e52eb8a7f0061512403f1a}{Get\-Slice\-Pixel} (unsigned iz, unsigned \hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix}, unsigned \hyperlink{_display_model_properties_8m_af4c5cec9fce175f73b7da5ecd33c2af6}{iy})
+\item 
+\hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a94439ebe2ccd3a0b8cb9bfe5591666ae}{Get\-Atom} (unsigned idx)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_potential_ac0c18b56f08fb41accc58ceedd53db1b}{m\-\_\-potential3\-D}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_af11a143b59973336fee04b7c0b488699}{m\-\_\-atom\-Radius}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_ad6ed270567bcf590b33a5736a4aa8fc1}{Initialize} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_a9858c6b5b383fd370a0862a1ba1bc0c8}{Slice\-Setup} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_ac038d52b6e988cbbd917f54078249b9c}{Resize\-Slices} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_aed049fef3c601fd3b89ef4ff4389ae23}{Read\-Slice} (const std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{namespace_q_s_t_e_m_af210a2c1f9afae1deed746dcd9276221}{Complex\-Vector} \&slice, unsigned idx)
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_potential_acfcb1793302bdd08e5bd362a7eb6f1dd}{\-\_\-\-Add\-Atom\-Real\-Space} (\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ \hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom} $>$\-::iterator \&\hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} atom\-X, unsigned int \hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} atom\-Y, unsigned int \hyperlink{_display_model_properties_8m_af4c5cec9fce175f73b7da5ecd33c2af6}{iy}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} atom\-Z, unsigned int iatom\-Z)=0
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_ace34562524fddea327c00ee56cde6c81}{sf\-L\-U\-T} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{aberrations___t_e_m_8m_aef29541a06b7f933d32a804307db13af}{s}, int at\-Kind)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_potential_a53acdbafdf8087fdf93fdd634973b382}{splinh} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{_read_d_m3___matlab_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}\mbox{[}$\,$\mbox{]}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{qmb_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}\mbox{[}$\,$\mbox{]}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}\mbox{[}$\,$\mbox{]}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{image_sim_8m_a463b16ca2bfa2f0cbab0e62fcb263d8e}{c}\mbox{[}$\,$\mbox{]}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d}\mbox{[}$\,$\mbox{]}, int n)
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_ad0486594c21c994c47392dbc1f9aa8e7}{seval} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} $\ast$\hyperlink{_read_d_m3___matlab_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} $\ast$\hyperlink{qmb_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} $\ast$\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} $\ast$\hyperlink{image_sim_8m_a463b16ca2bfa2f0cbab0e62fcb263d8e}{c}, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} $\ast$\hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d}, int n, \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} x0)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a4983475ef18f1a1f4bbfaabb6d187b9a}{Image\-I\-O\-Ptr} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a09c896379526b58852fe858eb4e4e7de}{m\-\_\-image\-I\-O}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a7ab0b6bb11e12c9829540e6d872946fc}{Structure\-Ptr} \hyperlink{class_q_s_t_e_m_1_1_c_potential_ac8dff71355c172835edb00493b39fe91}{m\-\_\-crystal}
+\item 
+\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ \hyperlink{namespace_q_s_t_e_m_af210a2c1f9afae1deed746dcd9276221}{Complex\-Vector} $>$ \hyperlink{class_q_s_t_e_m_1_1_c_potential_adb76672fc393aeac0f027e44b48715f8}{m\-\_\-trans}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_potential_ae2ca76e0f9d7815bb38a08205dccbc08}{m\-\_\-current\-Potential}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_a88fc2e25a5ddef36c47687f16de05669}{m\-\_\-nx}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_af6331a7642e0a68107e0ca8ebafe8b7b}{m\-\_\-ny}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a58336777f207d02381649b1e237932b3}{m\-\_\-dx}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a892a80bbf826db4b7dbc94ca530e21c4}{m\-\_\-dy}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a81ca8793cb539766b1664be49cd56f14}{m\-\_\-dz}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_abe22d3972e48e00a1ff33f70eb534bbd}{m\-\_\-ddx}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a73a0df1661f8e668b34b87c71c85d538}{m\-\_\-ddy}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a6e750dc3651ffd4e2580667d14ec1b29}{m\-\_\-ddz}
+\item 
+int \hyperlink{class_q_s_t_e_m_1_1_c_potential_a069ef251874998b274ed41a973bb0280}{m\-\_\-box\-Nx}
+\item 
+int \hyperlink{class_q_s_t_e_m_1_1_c_potential_a17fbaa483bd98f3776ad078f13952aeb}{m\-\_\-box\-Ny}
+\item 
+int \hyperlink{class_q_s_t_e_m_1_1_c_potential_af9a23717c144de0075db03ec0f8eeac0}{m\-\_\-box\-Nz}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a9f9f3123596298af6e24256ead39085c}{m\-\_\-v0}
+\item 
+\hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ unsigned, \hyperlink{namespace_q_s_t_e_m_a834093bc53d08abeb557de742e38541e}{atom\-Box\-Ptr} $>$ \hyperlink{class_q_s_t_e_m_1_1_c_potential_af06c591a7de14cc9644892953afbbddf}{m\-\_\-atom\-Boxes}
+\item 
+\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ \hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom} $>$ \hyperlink{class_q_s_t_e_m_1_1_c_potential_ad811b5a6c1770a7b4cb9a86dd4f099b4}{m\-\_\-atoms}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_potential_aff9bc10e6c7a921d2a0ad11ae460a511}{m\-\_\-center\-Slices}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a0a72848b6d447e0a7ba5143f7b302cc7}{m\-\_\-slice\-Thickness}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a81aacf38febd7cdb6bc000315c9151b6}{m\-\_\-z\-Offset}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_a6c74dc1b53754b4415d494c012d8044f}{m\-\_\-nslices}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_af35e6474bd6357b24f88b29dd5a1a1d2}{m\-\_\-output\-Interval}
+\item 
+\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} $>$ \hyperlink{class_q_s_t_e_m_1_1_c_potential_a8c401afb43416b1629c43897faa16b16}{m\-\_\-cz}
+\item 
+\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} $>$ \hyperlink{class_q_s_t_e_m_1_1_c_potential_ad44ace45b9cdf8aa02f01a8e6eaefff6}{m\-\_\-slice\-Pos}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_potential_ae5703ab321d389895876aced33f898ce}{m\-\_\-tds}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a6e261220220263e0165542e79d76e5cd}{m\-\_\-c}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_aa2e21e93059f4ba4705020defff2d42d}{m\-\_\-dr}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a279798b576e5bd9907e5635226838a43}{m\-\_\-atom\-Radius2}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_a9aadfa6b43b9dbeb2b98aa0c97dc5295}{m\-\_\-i\-Rad\-X}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_adbc5d4e1bbd67c44008d63970816213b}{m\-\_\-i\-Rad\-Y}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_a29e42090bed12fa7867c8c9428bdc8d3}{m\-\_\-i\-Rad\-Z}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_ac1a9386f71b9c105b257d7713d1823cc}{m\-\_\-i\-Rad2}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_potential_af814821bdd0dfd339dac5c998cea9753}{m\-\_\-periodic\-X\-Y}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_potential_afc3946ab6457d37286dd9feed1eb6dd2}{m\-\_\-periodic\-Z}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_a3a1063f3da7797774a9795df813eb4c7}{m\-\_\-offset\-X}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_potential_accee84f1b62c4d86ff92cea388737b4d}{m\-\_\-offset\-Y}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_ae33c750324bdad999a71255fb4ce0349}{m\-\_\-cell\-Div}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_a39190bdd6d4704761a8406fcfb0e2586}{m\-\_\-div\-Count}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_potential_ad77a06df3510c87ce0ee5bcbeaca2ee4}{m\-\_\-equal\-Divs}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_a8dc6d423e7ed79a640be09d6d65b2daf}{m\-\_\-print\-Level}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_a17a7497eae902962a89a5a69f052d738}{m\-\_\-display\-Pot\-Calc\-Interval}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_potential_ad9f398d505dd12cdc0fb48f0433c27c9}{m\-\_\-save\-Level}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_potential_a64edcf6510a7c9a8e7f0b69a7288b111}{m\-\_\-save\-Potential}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_potential_a8a65588b67238508c7508d929f83c30c}{m\-\_\-save\-Projected\-Potential}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_potential_a9a31efee8d548970ef9bfe8a8952ece5}{m\-\_\-plot\-Potential}
+\item 
+int \hyperlink{class_q_s_t_e_m_1_1_c_potential_a2ab0972c9970e34c1e0d1bf37a9d86c8}{m\-\_\-scat\-Factor}
+\item 
+std\-::string \hyperlink{class_q_s_t_e_m_1_1_c_potential_a7accc8d9ba35f95f9a6f667096d3fe51}{m\-\_\-file\-Base}
+\item 
+boost\-::filesystem\-::path \hyperlink{class_q_s_t_e_m_1_1_c_potential_a6e79574bb82babb598c5f380dee5ac27}{m\-\_\-pot\-File\-Base}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_potential_a11f3741de38274974f1610db6c2b5a31}{m\-\_\-read\-Potential}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 39 of file pot\-\_\-base.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a854fb18cfde1ced01284ef26db88f7e2}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!C\-Potential@{C\-Potential}}
+\index{C\-Potential@{C\-Potential}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{C\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-C\-Potential (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_potential_a854fb18cfde1ced01284ef26db88f7e2}
+
+
+Definition at line 28 of file pot\-\_\-base.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a776766cc08acf7dcf7c8cb70cc0f5e82}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!C\-Potential@{C\-Potential}}
+\index{C\-Potential@{C\-Potential}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{C\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-C\-Potential (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{nx, }
+\item[{unsigned}]{ny, }
+\item[{unsigned}]{nz, }
+\item[{{\bf float\-\_\-tt}}]{dx, }
+\item[{{\bf float\-\_\-tt}}]{dy, }
+\item[{{\bf float\-\_\-tt}}]{dz, }
+\item[{{\bf float\-\_\-tt}}]{atom\-Radius, }
+\item[{{\bf float\-\_\-tt}}]{v0}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_potential_a776766cc08acf7dcf7c8cb70cc0f5e82}
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a9847fdc7c46ee0488cc883956fd75f3d}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!C\-Potential@{C\-Potential}}
+\index{C\-Potential@{C\-Potential}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{C\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-C\-Potential (
+\begin{DoxyParamCaption}
+\item[{const {\bf Config\-Reader\-Ptr} \&}]{config\-Reader}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_potential_a9847fdc7c46ee0488cc883956fd75f3d}
+
+
+Definition at line 32 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_q_s_t_e_m_1_1_c_potential_a9847fdc7c46ee0488cc883956fd75f3d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_acfcb1793302bdd08e5bd362a7eb6f1dd}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!\-\_\-\-Add\-Atom\-Real\-Space@{\-\_\-\-Add\-Atom\-Real\-Space}}
+\index{\-\_\-\-Add\-Atom\-Real\-Space@{\-\_\-\-Add\-Atom\-Real\-Space}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{\-\_\-\-Add\-Atom\-Real\-Space}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-\_\-\-Add\-Atom\-Real\-Space (
+\begin{DoxyParamCaption}
+\item[{{\bf std\-::vector}$<$ {\bf atom} $>$\-::iterator \&}]{atom, }
+\item[{{\bf float\-\_\-tt}}]{atom\-X, }
+\item[{unsigned int}]{ix, }
+\item[{{\bf float\-\_\-tt}}]{atom\-Y, }
+\item[{unsigned int}]{iy, }
+\item[{{\bf float\-\_\-tt}}]{atom\-Z, }
+\item[{unsigned int}]{iatom\-Z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_acfcb1793302bdd08e5bd362a7eb6f1dd}
+
+
+Implemented in \hyperlink{class_q_s_t_e_m_1_1_c2_d_potential_a6e01a70ac1a5864bd67b4b0560c3a00a}{Q\-S\-T\-E\-M\-::\-C2\-D\-Potential}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_potential_acfcb1793302bdd08e5bd362a7eb6f1dd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ac3aa2b1121cc9b6e6d43793db8ea58d8}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Add\-Atom\-Real\-Space@{Add\-Atom\-Real\-Space}}
+\index{Add\-Atom\-Real\-Space@{Add\-Atom\-Real\-Space}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Add\-Atom\-Real\-Space}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Add\-Atom\-Real\-Space (
+\begin{DoxyParamCaption}
+\item[{{\bf std\-::vector}$<$ {\bf atom} $>$\-::iterator \&}]{atom, }
+\item[{{\bf float\-\_\-tt}}]{atom\-X, }
+\item[{{\bf float\-\_\-tt}}]{atom\-Y, }
+\item[{{\bf float\-\_\-tt}}]{atom\-Z}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_potential_ac3aa2b1121cc9b6e6d43793db8ea58d8}
+
+
+Definition at line 412 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_q_s_t_e_m_1_1_c_potential_ac3aa2b1121cc9b6e6d43793db8ea58d8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_q_s_t_e_m_1_1_c_potential_ac3aa2b1121cc9b6e6d43793db8ea58d8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a4e5f7f86bf4f96a6408c362d598f19f7}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Add\-Atom\-To\-Slices@{Add\-Atom\-To\-Slices}}
+\index{Add\-Atom\-To\-Slices@{Add\-Atom\-To\-Slices}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Add\-Atom\-To\-Slices}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Add\-Atom\-To\-Slices (
+\begin{DoxyParamCaption}
+\item[{{\bf std\-::vector}$<$ {\bf atom} $>$\-::iterator \&}]{atom, }
+\item[{{\bf float\-\_\-tt}}]{atom\-X, }
+\item[{{\bf float\-\_\-tt}}]{atom\-Y, }
+\item[{{\bf float\-\_\-tt}}]{atom\-Z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_a4e5f7f86bf4f96a6408c362d598f19f7}
+
+
+Implemented in \hyperlink{class_q_s_t_e_m_1_1_c2_d_f_f_t_potential_a03242b69412f5aaf09a9a03defc46102}{Q\-S\-T\-E\-M\-::\-C2\-D\-F\-F\-T\-Potential}, \hyperlink{class_q_s_t_e_m_1_1_c3_d_f_f_t_potential_ae123c91e40c74b33f812b85796a690b1}{Q\-S\-T\-E\-M\-::\-C3\-D\-F\-F\-T\-Potential}, \hyperlink{class_q_s_t_e_m_1_1_c2_d_potential_a2fca40fd401de121e552321476bf8d12}{Q\-S\-T\-E\-M\-::\-C2\-D\-Potential}, and \hyperlink{class_q_s_t_e_m_1_1_c3_d_potential_a5887aad522561bfccf9b6f8213ec876b}{Q\-S\-T\-E\-M\-::\-C3\-D\-Potential}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_q_s_t_e_m_1_1_c_potential_a4e5f7f86bf4f96a6408c362d598f19f7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a0bac8970d10240f529d4609ed36c03aa}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Atom\-Box\-Look\-Up@{Atom\-Box\-Look\-Up}}
+\index{Atom\-Box\-Look\-Up@{Atom\-Box\-Look\-Up}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Atom\-Box\-Look\-Up}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Atom\-Box\-Look\-Up (
+\begin{DoxyParamCaption}
+\item[{{\bf complex\-\_\-tt} \&}]{val, }
+\item[{int}]{Znum, }
+\item[{{\bf float\-\_\-tt}}]{x, }
+\item[{{\bf float\-\_\-tt}}]{y, }
+\item[{{\bf float\-\_\-tt}}]{z, }
+\item[{{\bf float\-\_\-tt}}]{B}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_potential_a0bac8970d10240f529d4609ed36c03aa}
+
+
+Definition at line 113 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_q_s_t_e_m_1_1_c_potential_a0bac8970d10240f529d4609ed36c03aa_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_potential_a0bac8970d10240f529d4609ed36c03aa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a207db8cc69e2d4837c61507cdf59241c}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Center\-Atom\-Z@{Center\-Atom\-Z}}
+\index{Center\-Atom\-Z@{Center\-Atom\-Z}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Center\-Atom\-Z}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Center\-Atom\-Z (
+\begin{DoxyParamCaption}
+\item[{{\bf std\-::vector}$<$ {\bf atom} $>$\-::iterator \&}]{atom, }
+\item[{{\bf float\-\_\-tt} \&}]{z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_a207db8cc69e2d4837c61507cdf59241c}
+
+
+Reimplemented in \hyperlink{class_q_s_t_e_m_1_1_c2_d_potential_a84063f5aa913ca72e7d79e780435b3f7}{Q\-S\-T\-E\-M\-::\-C2\-D\-Potential}, and \hyperlink{class_q_s_t_e_m_1_1_c3_d_potential_a82c41479d598f1b31107fd71d6ff9d95}{Q\-S\-T\-E\-M\-::\-C3\-D\-Potential}.
+
+
+
+Definition at line 298 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_potential_a207db8cc69e2d4837c61507cdf59241c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ab76efc606ed2bee0b7e89d6a22c82de9}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Display\-Params@{Display\-Params}}
+\index{Display\-Params@{Display\-Params}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Display\-Params}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Display\-Params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_ab76efc606ed2bee0b7e89d6a22c82de9}
+
+
+Reimplemented from \hyperlink{class_q_s_t_e_m_1_1_i_potential_a4f9d118be7decf1cc12eee493dccd33c}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Reimplemented in \hyperlink{class_q_s_t_e_m_1_1_c2_d_f_f_t_potential_a30d5fe937230d99bf2abeec066d2358a}{Q\-S\-T\-E\-M\-::\-C2\-D\-F\-F\-T\-Potential}, \hyperlink{class_q_s_t_e_m_1_1_c3_d_f_f_t_potential_a08ed3aed7622f2e1ff44206280c09659}{Q\-S\-T\-E\-M\-::\-C3\-D\-F\-F\-T\-Potential}, \hyperlink{class_q_s_t_e_m_1_1_c2_d_potential_aaeb89ba94b9d0c4a57899f00e32fba7b}{Q\-S\-T\-E\-M\-::\-C2\-D\-Potential}, and \hyperlink{class_q_s_t_e_m_1_1_c3_d_potential_ab3507f4fcc46ad7798f1e09f2a964a59}{Q\-S\-T\-E\-M\-::\-C3\-D\-Potential}.
+
+
+
+Definition at line 81 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_potential_ab76efc606ed2bee0b7e89d6a22c82de9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a94439ebe2ccd3a0b8cb9bfe5591666ae}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Get\-Atom@{Get\-Atom}}
+\index{Get\-Atom@{Get\-Atom}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Get\-Atom}]{\setlength{\rightskip}{0pt plus 5cm}{\bf atom} Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Get\-Atom (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{idx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_q_s_t_e_m_1_1_c_potential_a94439ebe2ccd3a0b8cb9bfe5591666ae}
+
+
+Definition at line 88 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ab0d42adabf429cc1ccd9758a342e0068}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Get\-N\-Slices@{Get\-N\-Slices}}
+\index{Get\-N\-Slices@{Get\-N\-Slices}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Get\-N\-Slices}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Get\-N\-Slices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_ab0d42adabf429cc1ccd9758a342e0068}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_potential_a6d0c56412a833bd5bac6789406e7f64d}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Definition at line 63 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a07a83b138be2d802fe9384856640f0a9}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Get\-Size\-Pixels@{Get\-Size\-Pixels}}
+\index{Get\-Size\-Pixels@{Get\-Size\-Pixels}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Get\-Size\-Pixels}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Get\-Size\-Pixels (
+\begin{DoxyParamCaption}
+\item[{unsigned \&}]{nx, }
+\item[{unsigned \&}]{ny}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_a07a83b138be2d802fe9384856640f0a9}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_potential_a6cee19e6abbe5d31ffe8914d2f65d6de}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Definition at line 699 of file pot\-\_\-base.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a0ab67c8c945cdd2aa25ad9ec04209e9d}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Get\-Slice@{Get\-Slice}}
+\index{Get\-Slice@{Get\-Slice}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Get\-Slice}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Get\-Slice (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{idx, }
+\item[{{\bf Complex\-Vector} \&}]{vec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_a0ab67c8c945cdd2aa25ad9ec04209e9d}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_potential_add4c65b913f1798c3392c8cb47309513}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Definition at line 85 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ad9f41c1917e52eb8a7f0061512403f1a}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Get\-Slice\-Pixel@{Get\-Slice\-Pixel}}
+\index{Get\-Slice\-Pixel@{Get\-Slice\-Pixel}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Get\-Slice\-Pixel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Get\-Slice\-Pixel (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{iz, }
+\item[{unsigned}]{ix, }
+\item[{unsigned}]{iy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_ad9f41c1917e52eb8a7f0061512403f1a}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_potential_a350729cdd49ba03189ca80304f6871ad}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Definition at line 291 of file pot\-\_\-base.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a71eb899bbc8db10572f0e5fcf4ff4734}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Get\-Slice\-Thickness@{Get\-Slice\-Thickness}}
+\index{Get\-Slice\-Thickness@{Get\-Slice\-Thickness}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Get\-Slice\-Thickness}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Get\-Slice\-Thickness (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_a71eb899bbc8db10572f0e5fcf4ff4734}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_potential_aad0012872c9d03000c273a16d164c595}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Definition at line 64 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a3bc49621bc0474ad98685074540dff78}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Get\-Slice\-Thickness@{Get\-Slice\-Thickness}}
+\index{Get\-Slice\-Thickness@{Get\-Slice\-Thickness}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Get\-Slice\-Thickness}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Get\-Slice\-Thickness (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{idx}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_a3bc49621bc0474ad98685074540dff78}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_potential_ac28c65dec37200a54ccc8b2c41375eb2}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Definition at line 65 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ad6ed270567bcf590b33a5736a4aa8fc1}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_ad6ed270567bcf590b33a5736a4aa8fc1}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_potential_ae70d5124abd2e172a36cdab52dfdcea4}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Definition at line 49 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_q_s_t_e_m_1_1_c_potential_ad6ed270567bcf590b33a5736a4aa8fc1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a5a7af8b88594ddf08876b47f4de31d3f}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Make\-Slices@{Make\-Slices}}
+\index{Make\-Slices@{Make\-Slices}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Make\-Slices}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Make\-Slices (
+\begin{DoxyParamCaption}
+\item[{int}]{nlayer, }
+\item[{char $\ast$}]{file\-Name, }
+\item[{{\bf atom} $\ast$}]{center}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_a5a7af8b88594ddf08876b47f4de31d3f}
+
+
+Reimplemented from \hyperlink{class_q_s_t_e_m_1_1_i_potential_a77bf71defbd2f1428aafcc61e81218ec}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Reimplemented in \hyperlink{class_q_s_t_e_m_1_1_c2_d_f_f_t_potential_aa4ee28a110118f60fbdca12e6e5f259d}{Q\-S\-T\-E\-M\-::\-C2\-D\-F\-F\-T\-Potential}.
+
+
+
+Definition at line 320 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_potential_a5a7af8b88594ddf08876b47f4de31d3f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_aa50c82d9fb190d5782d483b1dd441176}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Read\-Potential@{Read\-Potential}}
+\index{Read\-Potential@{Read\-Potential}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Read\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Read\-Potential (
+\begin{DoxyParamCaption}
+\item[{std\-::string \&}]{file\-Name, }
+\item[{unsigned}]{sub\-Slab\-Idx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_aa50c82d9fb190d5782d483b1dd441176}
+
+
+Reimplemented from \hyperlink{class_q_s_t_e_m_1_1_i_potential_a7b9b1d1836dd849964055013d9bd2078}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Definition at line 230 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_potential_aa50c82d9fb190d5782d483b1dd441176_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_aed049fef3c601fd3b89ef4ff4389ae23}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Read\-Slice@{Read\-Slice}}
+\index{Read\-Slice@{Read\-Slice}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Read\-Slice}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Read\-Slice (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{file\-Name, }
+\item[{{\bf Complex\-Vector} \&}]{slice, }
+\item[{unsigned}]{idx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_aed049fef3c601fd3b89ef4ff4389ae23}
+
+
+Definition at line 249 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_q_s_t_e_m_1_1_c_potential_aed049fef3c601fd3b89ef4ff4389ae23_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a377f6971483c0fb647cc37eed3c0e6bf}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Refresh@{Refresh}}
+\index{Refresh@{Refresh}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Refresh}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Refresh (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_a377f6971483c0fb647cc37eed3c0e6bf}
+Shuffle the structure with random offsets and recompute potential. Only for when you're computing potential, not loading it from files. 
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_potential_a28940011cfb3b0903e99acf1a17171a8}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Definition at line 225 of file pot\-\_\-base.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ac038d52b6e988cbbd917f54078249b9c}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Resize\-Slices@{Resize\-Slices}}
+\index{Resize\-Slices@{Resize\-Slices}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Resize\-Slices}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Resize\-Slices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_ac038d52b6e988cbbd917f54078249b9c}
+
+
+Definition at line 705 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_potential_ac038d52b6e988cbbd917f54078249b9c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_af4d42d60b807e7be0af37e33fe9ae00d}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Set\-N\-Slices@{Set\-N\-Slices}}
+\index{Set\-N\-Slices@{Set\-N\-Slices}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Set\-N\-Slices}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Set\-N\-Slices (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{slices}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_potential_af4d42d60b807e7be0af37e33fe9ae00d}
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_aa5f38bb6eb42d0c08aaed1f50b74f34a}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Set\-Slice\-Thickness@{Set\-Slice\-Thickness}}
+\index{Set\-Slice\-Thickness@{Set\-Slice\-Thickness}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Set\-Slice\-Thickness}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Set\-Slice\-Thickness (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt}}]{thickness\-\_\-\-Angstroms}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_potential_aa5f38bb6eb42d0c08aaed1f50b74f34a}
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_af8c110606944b0129ce26aa8bad0305a}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Set\-Slice\-Thickness@{Set\-Slice\-Thickness}}
+\index{Set\-Slice\-Thickness@{Set\-Slice\-Thickness}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Set\-Slice\-Thickness}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Set\-Slice\-Thickness (
+\begin{DoxyParamCaption}
+\item[{{\bf std\-::vector}$<$ {\bf float\-\_\-tt} $>$}]{thickness\-\_\-\-Angstroms}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_potential_af8c110606944b0129ce26aa8bad0305a}
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_abb51a726a0532c22c1daf5f440cefe87}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Set\-Structure@{Set\-Structure}}
+\index{Set\-Structure@{Set\-Structure}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Set\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Set\-Structure (
+\begin{DoxyParamCaption}
+\item[{{\bf Structure\-Ptr}}]{structure}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_potential_abb51a726a0532c22c1daf5f440cefe87}
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ad0486594c21c994c47392dbc1f9aa8e7}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!seval@{seval}}
+\index{seval@{seval}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{seval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::seval (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} $\ast$}]{x, }
+\item[{{\bf float\-\_\-tt} $\ast$}]{y, }
+\item[{{\bf float\-\_\-tt} $\ast$}]{b, }
+\item[{{\bf float\-\_\-tt} $\ast$}]{c, }
+\item[{{\bf float\-\_\-tt} $\ast$}]{d, }
+\item[{int}]{n, }
+\item[{{\bf float\-\_\-tt}}]{x0}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_ad0486594c21c994c47392dbc1f9aa8e7}
+
+
+Definition at line 674 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_potential_ad0486594c21c994c47392dbc1f9aa8e7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ace34562524fddea327c00ee56cde6c81}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!sf\-L\-U\-T@{sf\-L\-U\-T}}
+\index{sf\-L\-U\-T@{sf\-L\-U\-T}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{sf\-L\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::sf\-L\-U\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt}}]{s, }
+\item[{int}]{at\-Kind}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_ace34562524fddea327c00ee56cde6c81}
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a9858c6b5b383fd370a0862a1ba1bc0c8}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Slice\-Setup@{Slice\-Setup}}
+\index{Slice\-Setup@{Slice\-Setup}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Slice\-Setup}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Slice\-Setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a9858c6b5b383fd370a0862a1ba1bc0c8}
+
+
+Definition at line 254 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_q_s_t_e_m_1_1_c_potential_a9858c6b5b383fd370a0862a1ba1bc0c8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_q_s_t_e_m_1_1_c_potential_a9858c6b5b383fd370a0862a1ba1bc0c8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a53acdbafdf8087fdf93fdd634973b382}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!splinh@{splinh}}
+\index{splinh@{splinh}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{splinh}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::splinh (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt}}]{x\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf float\-\_\-tt}}]{y\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf float\-\_\-tt}}]{b\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf float\-\_\-tt}}]{c\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf float\-\_\-tt}}]{d\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a53acdbafdf8087fdf93fdd634973b382}
+
+
+Definition at line 580 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_potential_a53acdbafdf8087fdf93fdd634973b382_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_af83e1d0103b17339f46768c9e05615e8}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Write\-Projected\-Potential@{Write\-Projected\-Potential}}
+\index{Write\-Projected\-Potential@{Write\-Projected\-Potential}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Write\-Projected\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Write\-Projected\-Potential (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_af83e1d0103b17339f46768c9e05615e8}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_potential_a52155dd57279e529ac8ec8f448171252}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Definition at line 474 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{class_q_s_t_e_m_1_1_c_potential_af83e1d0103b17339f46768c9e05615e8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_q_s_t_e_m_1_1_c_potential_af83e1d0103b17339f46768c9e05615e8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a41295f2fd00b4d5f756d700ebef51f52}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!Write\-Slice@{Write\-Slice}}
+\index{Write\-Slice@{Write\-Slice}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{Write\-Slice}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Potential\-::\-Write\-Slice (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{idx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_potential_a41295f2fd00b4d5f756d700ebef51f52}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_potential_a539c0e6e9a194893be78a7192a767a12}{Q\-S\-T\-E\-M\-::\-I\-Potential}.
+
+
+
+Definition at line 464 of file pot\-\_\-base.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{class_q_s_t_e_m_1_1_c_potential_a41295f2fd00b4d5f756d700ebef51f52_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_q_s_t_e_m_1_1_c_potential_a41295f2fd00b4d5f756d700ebef51f52_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_af06c591a7de14cc9644892953afbbddf}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-atom\-Boxes@{m\-\_\-atom\-Boxes}}
+\index{m\-\_\-atom\-Boxes@{m\-\_\-atom\-Boxes}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-atom\-Boxes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf std\-::map}$<$unsigned, {\bf atom\-Box\-Ptr}$>$ Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-atom\-Boxes\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_af06c591a7de14cc9644892953afbbddf}
+
+
+Definition at line 117 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_af11a143b59973336fee04b7c0b488699}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-atom\-Radius@{m\-\_\-atom\-Radius}}
+\index{m\-\_\-atom\-Radius@{m\-\_\-atom\-Radius}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-atom\-Radius}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-atom\-Radius}}\label{class_q_s_t_e_m_1_1_c_potential_af11a143b59973336fee04b7c0b488699}
+
+
+Definition at line 92 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a279798b576e5bd9907e5635226838a43}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-atom\-Radius2@{m\-\_\-atom\-Radius2}}
+\index{m\-\_\-atom\-Radius2@{m\-\_\-atom\-Radius2}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-atom\-Radius2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-atom\-Radius2\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a279798b576e5bd9907e5635226838a43}
+
+
+Definition at line 135 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ad811b5a6c1770a7b4cb9a86dd4f099b4}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-atoms@{m\-\_\-atoms}}
+\index{m\-\_\-atoms@{m\-\_\-atoms}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-atoms}]{\setlength{\rightskip}{0pt plus 5cm}{\bf std\-::vector}$<${\bf atom}$>$ Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-atoms\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_ad811b5a6c1770a7b4cb9a86dd4f099b4}
+
+
+Definition at line 118 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a069ef251874998b274ed41a973bb0280}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-box\-Nx@{m\-\_\-box\-Nx}}
+\index{m\-\_\-box\-Nx@{m\-\_\-box\-Nx}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-box\-Nx}]{\setlength{\rightskip}{0pt plus 5cm}int Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-box\-Nx\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a069ef251874998b274ed41a973bb0280}
+
+
+Definition at line 115 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a17fbaa483bd98f3776ad078f13952aeb}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-box\-Ny@{m\-\_\-box\-Ny}}
+\index{m\-\_\-box\-Ny@{m\-\_\-box\-Ny}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-box\-Ny}]{\setlength{\rightskip}{0pt plus 5cm}int Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-box\-Ny\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a17fbaa483bd98f3776ad078f13952aeb}
+
+
+Definition at line 115 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_af9a23717c144de0075db03ec0f8eeac0}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-box\-Nz@{m\-\_\-box\-Nz}}
+\index{m\-\_\-box\-Nz@{m\-\_\-box\-Nz}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-box\-Nz}]{\setlength{\rightskip}{0pt plus 5cm}int Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-box\-Nz\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_af9a23717c144de0075db03ec0f8eeac0}
+
+
+Definition at line 115 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a6e261220220263e0165542e79d76e5cd}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-c@{m\-\_\-c}}
+\index{m\-\_\-c@{m\-\_\-c}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-c\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a6e261220220263e0165542e79d76e5cd}
+
+
+Definition at line 134 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ae33c750324bdad999a71255fb4ce0349}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-cell\-Div@{m\-\_\-cell\-Div}}
+\index{m\-\_\-cell\-Div@{m\-\_\-cell\-Div}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-cell\-Div}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-cell\-Div\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_ae33c750324bdad999a71255fb4ce0349}
+
+
+Definition at line 142 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_aff9bc10e6c7a921d2a0ad11ae460a511}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-center\-Slices@{m\-\_\-center\-Slices}}
+\index{m\-\_\-center\-Slices@{m\-\_\-center\-Slices}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-center\-Slices}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-center\-Slices\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_aff9bc10e6c7a921d2a0ad11ae460a511}
+
+
+Definition at line 121 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ac8dff71355c172835edb00493b39fe91}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-crystal@{m\-\_\-crystal}}
+\index{m\-\_\-crystal@{m\-\_\-crystal}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-crystal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Structure\-Ptr} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-crystal\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_ac8dff71355c172835edb00493b39fe91}
+
+
+Definition at line 106 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ae2ca76e0f9d7815bb38a08205dccbc08}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-current\-Potential@{m\-\_\-current\-Potential}}
+\index{m\-\_\-current\-Potential@{m\-\_\-current\-Potential}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-current\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-current\-Potential\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_ae2ca76e0f9d7815bb38a08205dccbc08}
+
+
+Definition at line 109 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a8c401afb43416b1629c43897faa16b16}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-cz@{m\-\_\-cz}}
+\index{m\-\_\-cz@{m\-\_\-cz}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-cz}]{\setlength{\rightskip}{0pt plus 5cm}{\bf std\-::vector}$<${\bf float\-\_\-tt}$>$ Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-cz\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a8c401afb43416b1629c43897faa16b16}
+
+
+Definition at line 127 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_abe22d3972e48e00a1ff33f70eb534bbd}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-ddx@{m\-\_\-ddx}}
+\index{m\-\_\-ddx@{m\-\_\-ddx}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-ddx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-ddx\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_abe22d3972e48e00a1ff33f70eb534bbd}
+
+
+Definition at line 113 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a73a0df1661f8e668b34b87c71c85d538}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-ddy@{m\-\_\-ddy}}
+\index{m\-\_\-ddy@{m\-\_\-ddy}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-ddy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-ddy\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a73a0df1661f8e668b34b87c71c85d538}
+
+
+Definition at line 113 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a6e750dc3651ffd4e2580667d14ec1b29}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-ddz@{m\-\_\-ddz}}
+\index{m\-\_\-ddz@{m\-\_\-ddz}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-ddz}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-ddz\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a6e750dc3651ffd4e2580667d14ec1b29}
+
+
+Definition at line 113 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a17a7497eae902962a89a5a69f052d738}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-display\-Pot\-Calc\-Interval@{m\-\_\-display\-Pot\-Calc\-Interval}}
+\index{m\-\_\-display\-Pot\-Calc\-Interval@{m\-\_\-display\-Pot\-Calc\-Interval}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-display\-Pot\-Calc\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-display\-Pot\-Calc\-Interval\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a17a7497eae902962a89a5a69f052d738}
+
+
+Definition at line 148 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a39190bdd6d4704761a8406fcfb0e2586}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-div\-Count@{m\-\_\-div\-Count}}
+\index{m\-\_\-div\-Count@{m\-\_\-div\-Count}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-div\-Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-div\-Count\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a39190bdd6d4704761a8406fcfb0e2586}
+
+
+Definition at line 143 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_aa2e21e93059f4ba4705020defff2d42d}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-dr@{m\-\_\-dr}}
+\index{m\-\_\-dr@{m\-\_\-dr}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-dr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-dr\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_aa2e21e93059f4ba4705020defff2d42d}
+
+
+Definition at line 135 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a58336777f207d02381649b1e237932b3}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-dx@{m\-\_\-dx}}
+\index{m\-\_\-dx@{m\-\_\-dx}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-dx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-dx\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a58336777f207d02381649b1e237932b3}
+
+
+Definition at line 112 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a892a80bbf826db4b7dbc94ca530e21c4}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-dy@{m\-\_\-dy}}
+\index{m\-\_\-dy@{m\-\_\-dy}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-dy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-dy\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a892a80bbf826db4b7dbc94ca530e21c4}
+
+
+Definition at line 112 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a81ca8793cb539766b1664be49cd56f14}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-dz@{m\-\_\-dz}}
+\index{m\-\_\-dz@{m\-\_\-dz}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-dz}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-dz\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a81ca8793cb539766b1664be49cd56f14}
+
+
+Definition at line 112 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ad77a06df3510c87ce0ee5bcbeaca2ee4}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-equal\-Divs@{m\-\_\-equal\-Divs}}
+\index{m\-\_\-equal\-Divs@{m\-\_\-equal\-Divs}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-equal\-Divs}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-equal\-Divs\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_ad77a06df3510c87ce0ee5bcbeaca2ee4}
+
+
+Definition at line 145 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a7accc8d9ba35f95f9a6f667096d3fe51}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-file\-Base@{m\-\_\-file\-Base}}
+\index{m\-\_\-file\-Base@{m\-\_\-file\-Base}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-file\-Base}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-file\-Base\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a7accc8d9ba35f95f9a6f667096d3fe51}
+
+
+Definition at line 154 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a09c896379526b58852fe858eb4e4e7de}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-image\-I\-O@{m\-\_\-image\-I\-O}}
+\index{m\-\_\-image\-I\-O@{m\-\_\-image\-I\-O}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-image\-I\-O}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Image\-I\-O\-Ptr} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-image\-I\-O\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a09c896379526b58852fe858eb4e4e7de}
+
+
+Definition at line 105 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ac1a9386f71b9c105b257d7713d1823cc}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-i\-Rad2@{m\-\_\-i\-Rad2}}
+\index{m\-\_\-i\-Rad2@{m\-\_\-i\-Rad2}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-i\-Rad2}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-i\-Rad2\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_ac1a9386f71b9c105b257d7713d1823cc}
+
+
+Definition at line 136 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a9aadfa6b43b9dbeb2b98aa0c97dc5295}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-i\-Rad\-X@{m\-\_\-i\-Rad\-X}}
+\index{m\-\_\-i\-Rad\-X@{m\-\_\-i\-Rad\-X}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-i\-Rad\-X}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-i\-Rad\-X\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a9aadfa6b43b9dbeb2b98aa0c97dc5295}
+
+
+Definition at line 136 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_adbc5d4e1bbd67c44008d63970816213b}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-i\-Rad\-Y@{m\-\_\-i\-Rad\-Y}}
+\index{m\-\_\-i\-Rad\-Y@{m\-\_\-i\-Rad\-Y}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-i\-Rad\-Y}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-i\-Rad\-Y\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_adbc5d4e1bbd67c44008d63970816213b}
+
+
+Definition at line 136 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a29e42090bed12fa7867c8c9428bdc8d3}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-i\-Rad\-Z@{m\-\_\-i\-Rad\-Z}}
+\index{m\-\_\-i\-Rad\-Z@{m\-\_\-i\-Rad\-Z}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-i\-Rad\-Z}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-i\-Rad\-Z\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a29e42090bed12fa7867c8c9428bdc8d3}
+
+
+Definition at line 136 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a6c74dc1b53754b4415d494c012d8044f}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-nslices@{m\-\_\-nslices}}
+\index{m\-\_\-nslices@{m\-\_\-nslices}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-nslices}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-nslices\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a6c74dc1b53754b4415d494c012d8044f}
+
+
+Definition at line 124 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a88fc2e25a5ddef36c47687f16de05669}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-nx@{m\-\_\-nx}}
+\index{m\-\_\-nx@{m\-\_\-nx}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-nx}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-nx\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a88fc2e25a5ddef36c47687f16de05669}
+
+
+Definition at line 111 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_af6331a7642e0a68107e0ca8ebafe8b7b}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-ny@{m\-\_\-ny}}
+\index{m\-\_\-ny@{m\-\_\-ny}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-ny}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-ny\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_af6331a7642e0a68107e0ca8ebafe8b7b}
+
+
+Definition at line 111 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a3a1063f3da7797774a9795df813eb4c7}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-offset\-X@{m\-\_\-offset\-X}}
+\index{m\-\_\-offset\-X@{m\-\_\-offset\-X}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-offset\-X}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-offset\-X\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a3a1063f3da7797774a9795df813eb4c7}
+
+
+Definition at line 139 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_accee84f1b62c4d86ff92cea388737b4d}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-offset\-Y@{m\-\_\-offset\-Y}}
+\index{m\-\_\-offset\-Y@{m\-\_\-offset\-Y}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-offset\-Y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-offset\-Y\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_accee84f1b62c4d86ff92cea388737b4d}
+
+
+Definition at line 139 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_af35e6474bd6357b24f88b29dd5a1a1d2}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-output\-Interval@{m\-\_\-output\-Interval}}
+\index{m\-\_\-output\-Interval@{m\-\_\-output\-Interval}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-output\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-output\-Interval\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_af35e6474bd6357b24f88b29dd5a1a1d2}
+
+
+Definition at line 125 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_af814821bdd0dfd339dac5c998cea9753}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-periodic\-X\-Y@{m\-\_\-periodic\-X\-Y}}
+\index{m\-\_\-periodic\-X\-Y@{m\-\_\-periodic\-X\-Y}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-periodic\-X\-Y}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-periodic\-X\-Y\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_af814821bdd0dfd339dac5c998cea9753}
+
+
+Definition at line 137 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_afc3946ab6457d37286dd9feed1eb6dd2}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-periodic\-Z@{m\-\_\-periodic\-Z}}
+\index{m\-\_\-periodic\-Z@{m\-\_\-periodic\-Z}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-periodic\-Z}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-periodic\-Z\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_afc3946ab6457d37286dd9feed1eb6dd2}
+
+
+Definition at line 137 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a9a31efee8d548970ef9bfe8a8952ece5}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-plot\-Potential@{m\-\_\-plot\-Potential}}
+\index{m\-\_\-plot\-Potential@{m\-\_\-plot\-Potential}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-plot\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-plot\-Potential\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a9a31efee8d548970ef9bfe8a8952ece5}
+
+
+Definition at line 150 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ac0c18b56f08fb41accc58ceedd53db1b}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-potential3\-D@{m\-\_\-potential3\-D}}
+\index{m\-\_\-potential3\-D@{m\-\_\-potential3\-D}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-potential3\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-potential3\-D}}\label{class_q_s_t_e_m_1_1_c_potential_ac0c18b56f08fb41accc58ceedd53db1b}
+
+
+Definition at line 91 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a6e79574bb82babb598c5f380dee5ac27}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-pot\-File\-Base@{m\-\_\-pot\-File\-Base}}
+\index{m\-\_\-pot\-File\-Base@{m\-\_\-pot\-File\-Base}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-pot\-File\-Base}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::filesystem\-::path Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-pot\-File\-Base\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a6e79574bb82babb598c5f380dee5ac27}
+
+
+Definition at line 155 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a8dc6d423e7ed79a640be09d6d65b2daf}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-print\-Level@{m\-\_\-print\-Level}}
+\index{m\-\_\-print\-Level@{m\-\_\-print\-Level}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-print\-Level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-print\-Level\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a8dc6d423e7ed79a640be09d6d65b2daf}
+
+
+Definition at line 147 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a11f3741de38274974f1610db6c2b5a31}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-read\-Potential@{m\-\_\-read\-Potential}}
+\index{m\-\_\-read\-Potential@{m\-\_\-read\-Potential}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-read\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-read\-Potential\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a11f3741de38274974f1610db6c2b5a31}
+
+
+Definition at line 157 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ad9f398d505dd12cdc0fb48f0433c27c9}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-save\-Level@{m\-\_\-save\-Level}}
+\index{m\-\_\-save\-Level@{m\-\_\-save\-Level}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-save\-Level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-save\-Level\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_ad9f398d505dd12cdc0fb48f0433c27c9}
+
+
+Definition at line 149 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a64edcf6510a7c9a8e7f0b69a7288b111}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-save\-Potential@{m\-\_\-save\-Potential}}
+\index{m\-\_\-save\-Potential@{m\-\_\-save\-Potential}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-save\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-save\-Potential\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a64edcf6510a7c9a8e7f0b69a7288b111}
+
+
+Definition at line 150 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a8a65588b67238508c7508d929f83c30c}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-save\-Projected\-Potential@{m\-\_\-save\-Projected\-Potential}}
+\index{m\-\_\-save\-Projected\-Potential@{m\-\_\-save\-Projected\-Potential}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-save\-Projected\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-save\-Projected\-Potential\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a8a65588b67238508c7508d929f83c30c}
+
+
+Definition at line 150 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a2ab0972c9970e34c1e0d1bf37a9d86c8}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-scat\-Factor@{m\-\_\-scat\-Factor}}
+\index{m\-\_\-scat\-Factor@{m\-\_\-scat\-Factor}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-scat\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}int Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-scat\-Factor\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a2ab0972c9970e34c1e0d1bf37a9d86c8}
+
+
+Definition at line 152 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ad44ace45b9cdf8aa02f01a8e6eaefff6}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-slice\-Pos@{m\-\_\-slice\-Pos}}
+\index{m\-\_\-slice\-Pos@{m\-\_\-slice\-Pos}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-slice\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf std\-::vector}$<${\bf float\-\_\-tt}$>$ Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-slice\-Pos\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_ad44ace45b9cdf8aa02f01a8e6eaefff6}
+
+
+Definition at line 129 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a0a72848b6d447e0a7ba5143f7b302cc7}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-slice\-Thickness@{m\-\_\-slice\-Thickness}}
+\index{m\-\_\-slice\-Thickness@{m\-\_\-slice\-Thickness}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-slice\-Thickness}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-slice\-Thickness\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a0a72848b6d447e0a7ba5143f7b302cc7}
+
+
+Definition at line 122 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_ae5703ab321d389895876aced33f898ce}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-tds@{m\-\_\-tds}}
+\index{m\-\_\-tds@{m\-\_\-tds}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-tds}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-tds\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_ae5703ab321d389895876aced33f898ce}
+
+
+Definition at line 131 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_adb76672fc393aeac0f027e44b48715f8}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-trans@{m\-\_\-trans}}
+\index{m\-\_\-trans@{m\-\_\-trans}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-trans}]{\setlength{\rightskip}{0pt plus 5cm}{\bf std\-::vector}$<${\bf Complex\-Vector}$>$ Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-trans\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_adb76672fc393aeac0f027e44b48715f8}
+
+
+Definition at line 107 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a9f9f3123596298af6e24256ead39085c}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-v0@{m\-\_\-v0}}
+\index{m\-\_\-v0@{m\-\_\-v0}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-v0}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-v0\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a9f9f3123596298af6e24256ead39085c}
+
+
+Definition at line 116 of file pot\-\_\-base.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_potential_a81aacf38febd7cdb6bc000315c9151b6}{\index{Q\-S\-T\-E\-M\-::\-C\-Potential@{Q\-S\-T\-E\-M\-::\-C\-Potential}!m\-\_\-z\-Offset@{m\-\_\-z\-Offset}}
+\index{m\-\_\-z\-Offset@{m\-\_\-z\-Offset}!QSTEM::CPotential@{Q\-S\-T\-E\-M\-::\-C\-Potential}}
+\subsubsection[{m\-\_\-z\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Potential\-::m\-\_\-z\-Offset\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_potential_a81aacf38febd7cdb6bc000315c9151b6}
+
+
+Definition at line 123 of file pot\-\_\-base.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+libs/potentials/\hyperlink{pot__base_8hpp}{pot\-\_\-base.\-hpp}\item 
+libs/potentials/\hyperlink{pot__base_8cpp}{pot\-\_\-base.\-cpp}\end{DoxyCompactItemize}

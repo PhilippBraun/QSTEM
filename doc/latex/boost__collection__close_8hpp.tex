@@ -1,0 +1,46 @@
+\hypertarget{boost__collection__close_8hpp}{\section{tests/boost\-\_\-collection\-\_\-close.hpp File Reference}
+\label{boost__collection__close_8hpp}\index{tests/boost\-\_\-collection\-\_\-close.\-hpp@{tests/boost\-\_\-collection\-\_\-close.\-hpp}}
+}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{boost__collection__close_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{boost__collection__close_8hpp_a93f681f91bd7194bdc517ff4f6365375}{C\-H\-E\-C\-K\-\_\-\-C\-L\-O\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-I\-O\-N}(aa, bb, tolerance)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{boost__collection__close_8hpp_a93f681f91bd7194bdc517ff4f6365375}{\index{boost\-\_\-collection\-\_\-close.\-hpp@{boost\-\_\-collection\-\_\-close.\-hpp}!C\-H\-E\-C\-K\-\_\-\-C\-L\-O\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-I\-O\-N@{C\-H\-E\-C\-K\-\_\-\-C\-L\-O\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-I\-O\-N}}
+\index{C\-H\-E\-C\-K\-\_\-\-C\-L\-O\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-I\-O\-N@{C\-H\-E\-C\-K\-\_\-\-C\-L\-O\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-I\-O\-N}!boost_collection_close.hpp@{boost\-\_\-collection\-\_\-close.\-hpp}}
+\subsubsection[{C\-H\-E\-C\-K\-\_\-\-C\-L\-O\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K\-\_\-\-C\-L\-O\-S\-E\-\_\-\-C\-O\-L\-L\-E\-C\-T\-I\-O\-N(
+\begin{DoxyParamCaption}
+\item[{}]{aa, }
+\item[{}]{bb, }
+\item[{}]{tolerance}
+\end{DoxyParamCaption}
+)}}\label{boost__collection__close_8hpp_a93f681f91bd7194bdc517ff4f6365375}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+    using std::distance; \(\backslash\)
+    using std::begin; \(\backslash\)
+    using \hyperlink{convert2cfg_8m_a299397d854bef7eea9db8f6065ba6880}{std::end}; \hyperlink{image_sim_8m_ad73a4d380561ec4b316f4532b70d90a2}{\(\backslash\)}
+\hyperlink{image_sim_8m_ad73a4d380561ec4b316f4532b70d90a2}{    auto} \hyperlink{aberrations_8m_a7492468b961995f6fd82e216c751bb37}{a} = begin(aa), ae = \hyperlink{convert2cfg_8m_a299397d854bef7eea9db8f6065ba6880}{end}(aa); \hyperlink{image_sim_8m_ad73a4d380561ec4b316f4532b70d90a2}{\(\backslash\)}
+\hyperlink{image_sim_8m_ad73a4d380561ec4b316f4532b70d90a2}{    auto} \hyperlink{convert2cfg_8m_a7c0d4aa1bd1632355260db4db3a65d2d}{b} = begin(bb); \(\backslash\)
+    BOOST\_REQUIRE\_EQUAL(distance(a, ae), distance(b, \hyperlink{convert2cfg_8m_a299397d854bef7eea9db8f6065ba6880}{end}(bb))); \(\backslash\)
+    for(; a != ae; ++\hyperlink{aberrations_8m_a7492468b961995f6fd82e216c751bb37}{a}, ++\hyperlink{convert2cfg_8m_a7c0d4aa1bd1632355260db4db3a65d2d}{b}) \{ \(\backslash\)
+        BOOST\_CHECK\_CLOSE(*a, *b, tolerance); \(\backslash\)
+    \} \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+Definition at line 23 of file boost\-\_\-collection\-\_\-close.\-hpp.
+

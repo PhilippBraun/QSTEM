@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['objaperturetheta',['ObjApertureTheta',['../image_sim_8m.html#ac16e8fafe8788f3b927b805b701ed99c',1,'imageSim.m']]],
+  ['occ',['occ',['../struct_q_s_t_e_m_1_1atom_struct.html#a8b71d03f3f48a5f3890fad7d7c5e978e',1,'QSTEM::atomStruct::occ()'],['../_display_model_properties_8m.html#a14685678a932a690bb677ca0be6b191a',1,'occ():&#160;DisplayModelProperties.m']]],
+  ['offset',['offset',['../qmb_8m.html#a4dd6f73f98b7876577fd0d041b94d968',1,'qmb.m']]],
+  ['offsetx',['offsetX',['../qmb_8m.html#afe341aebfd451a2e2a7736670b335b28',1,'qmb.m']]],
+  ['offsety',['offsetY',['../qmb_8m.html#ac914fda1dbe7b5049d8d1bae7be0b913',1,'qmb.m']]],
+  ['offswp',['offsWp',['../qmb_8m.html#a7be50dd816102dbdc68080f096295a51',1,'qmb.m']]],
+  ['offsx',['offsX',['../qmb_8m.html#a655af98782b3eae716496ed726653cca',1,'qmb.m']]],
+  ['ok',['ok',['../_read_d_m3___matlab_8m.html#ab73fdaa1fb7669da760b49600c45d9be',1,'ReadDM3_Matlab.m']]],
+  ['olddeg',['oldDeg',['../aberrations_8m.html#ae7c3ef3501e356393ee02a5d5a75a0ec',1,'oldDeg():&#160;aberrations.m'],['../aberrations___t_e_m_8m.html#ae7c3ef3501e356393ee02a5d5a75a0ec',1,'oldDeg():&#160;aberrations_TEM.m']]],
+  ['oldpath',['oldPath',['../qstem_8m.html#ab4171a1cd001f6152db76555a7e11abf',1,'oldPath():&#160;qstem.m'],['../read_config_file_8m.html#ab4171a1cd001f6152db76555a7e11abf',1,'oldPath():&#160;readConfigFile.m']]],
+  ['oldpos',['OldPos',['../aberrations_8m.html#a36e6c45106ffb95585180c6f14e73a41',1,'OldPos():&#160;aberrations.m'],['../aberrations___t_e_m_8m.html#a36e6c45106ffb95585180c6f14e73a41',1,'OldPos():&#160;aberrations_TEM.m'],['../advanced_settings_8m.html#a36e6c45106ffb95585180c6f14e73a41',1,'OldPos():&#160;advancedSettings.m']]],
+  ['oldunits',['OldUnits',['../aberrations_8m.html#a6a820eb7d5b865729c578fc26ee38728',1,'OldUnits():&#160;aberrations.m'],['../aberrations___t_e_m_8m.html#a6a820eb7d5b865729c578fc26ee38728',1,'OldUnits():&#160;aberrations_TEM.m'],['../advanced_settings_8m.html#a6a820eb7d5b865729c578fc26ee38728',1,'OldUnits():&#160;advancedSettings.m']]],
+  ['on',['on',['../image_sim_8m.html#a454532bd4d96c4531eb16b4052fefbe4',1,'imageSim.m']]],
+  ['ones',['ones',['../_displacement_params_8m.html#aae9af2e7ae27ed31a08ec6a73ee7c424',1,'DisplacementParams.m']]],
+  ['open',['open',['../_read_d_m3___matlab_8m.html#aa8ef7bba54ee37a8beab56f5091c552f',1,'ReadDM3_Matlab.m']]],
+  ['options',['options',['../qmb_8m.html#a02eacfd40be9042ceb0f07547365203d',1,'qmb.m']]],
+  ['os',['os',['../structfftw__iodim__do__not__use__me.html#acff6a6b2225f610d3bee5380e801abb4',1,'fftw_iodim_do_not_use_me::os()'],['../structfftw__iodim64__do__not__use__me.html#a44118d774124bdaa670f640537b151cf',1,'fftw_iodim64_do_not_use_me::os()']]],
+  ['otherwise',['otherwise',['../draw_xtal_8m.html#a6c61c47a014d6a5cdfaf5f90d77d2954',1,'otherwise():&#160;drawXtal.m'],['../image_sim_8m.html#a6c61c47a014d6a5cdfaf5f90d77d2954',1,'otherwise():&#160;imageSim.m']]],
+  ['output',['output',['../qstem_8m.html#a48673c39259e21125ccdd489d990c78e',1,'output():&#160;qstem.m'],['../_read_d_m3___matlab_8m.html#a48673c39259e21125ccdd489d990c78e',1,'output():&#160;ReadDM3_Matlab.m'],['../convert2cfg_8m.html#ab97515cda1e3e845e080f5f32a67fd09',1,'Output():&#160;convert2cfg.m'],['../xyz2cfg_8m.html#ae7cb09154a9f7a8d93757e4683e0caf2',1,'Output():&#160;xyz2cfg.m']]],
+  ['outputon',['OutputOn',['../_read_d_m3___matlab_8m.html#ab11ccc0c48762d0a0d753441eb73b60e',1,'ReadDM3_Matlab.m']]]
+];

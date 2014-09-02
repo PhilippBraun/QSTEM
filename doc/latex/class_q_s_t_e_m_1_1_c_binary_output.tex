@@ -1,0 +1,309 @@
+\hypertarget{class_q_s_t_e_m_1_1_c_binary_output}{\section{Q\-S\-T\-E\-M\-:\-:C\-Binary\-Output Class Reference}
+\label{class_q_s_t_e_m_1_1_c_binary_output}\index{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}}
+}
+
+
+{\ttfamily \#include $<$binary\-\_\-output.\-hpp$>$}
+
+
+
+Inheritance diagram for Q\-S\-T\-E\-M\-:\-:C\-Binary\-Output\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_q_s_t_e_m_1_1_c_binary_output__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Q\-S\-T\-E\-M\-:\-:C\-Binary\-Output\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_q_s_t_e_m_1_1_c_binary_output__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_binary_output_a70a221eeaf6df8090a72d20ae5bc104d}{C\-Binary\-Output} ()
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_binary_output_ab20753f91b070b2ad603b82b8908456f}{$\sim$\-C\-Binary\-Output} ()
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_binary_output_a7aad1e4283cdd03e0835dc35f927f6f3}{Initialize} (std\-::string dir\-Or\-File\-Name, std\-::string run\-\_\-id=\char`\"{}avg\char`\"{})
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_binary_output_a4d79927ead8b30b32666fcc20c88962a}{Write\-Real\-Volume} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} $\ast$data, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ shape, std\-::string label, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$(), std\-::string \hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment}=std\-::string(), \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \hyperlink{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{parameters}=\hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$())
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_binary_output_a8cc530d55603a753dcd6ce1819d6d8fc}{Write\-Complex\-Volume} (\hyperlink{namespace_q_s_t_e_m_afa320ea3cd2f5ff080c422f81b803a32}{complex\-\_\-tt} $\ast$data, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ shape, std\-::string label, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$(), std\-::string \hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment}=std\-::string(), \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \hyperlink{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{parameters}=\hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$())
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_binary_output_a5adf4e3f495d92ca9ce44cf30f282013}{Write\-Image} (const \hyperlink{namespace_q_s_t_e_m_a8dfe9e1dbecce3838cb082d96e991ba7}{Real\-Vector} \&data, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ \&shape, const std\-::string \&label, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ \&position, const std\-::string \&\hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment}, const \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \&\hyperlink{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{parameters})
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_binary_output_a2212bc0ca38a5d07229be18d3bf559a9}{Write\-Image} (const \hyperlink{namespace_q_s_t_e_m_af210a2c1f9afae1deed746dcd9276221}{Complex\-Vector} \&data, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ \&shape, const std\-::string \&label, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ \&position, const std\-::string \&\hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment}, const \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \&\hyperlink{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{parameters})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_binary_output_a41c1e9aa3832eefcdffea0d33d29ef2c}{Describe\-File} (\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ shape, unsigned element\-\_\-size, std\-::string label, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$(), std\-::string \hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment}=\char`\"{}\char`\"{}, \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \hyperlink{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{parameters}=\hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$())
+\item 
+{\footnotesize template$<$typename dtype $>$ }\\void \hyperlink{class_q_s_t_e_m_1_1_c_binary_output_adf3084deab8701c80d66ab536a32dd72}{Write\-Blob} (dtype $\ast$data, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ shape, std\-::string label, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$(), \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \hyperlink{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{parameters}=\hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Binary output included as a fall-\/back for output writers that don't implement all features. For example, the .I\-M\-G writer is not designed for 3\-D data, so it uses this class' Write\-Blob method.
+
+This is meant primarily as a base class, not for actual use... 
+
+Definition at line 20 of file binary\-\_\-output.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_binary_output_a70a221eeaf6df8090a72d20ae5bc104d}{\index{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}!C\-Binary\-Output@{C\-Binary\-Output}}
+\index{C\-Binary\-Output@{C\-Binary\-Output}!QSTEM::CBinaryOutput@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}}
+\subsubsection[{C\-Binary\-Output}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Binary\-Output\-::\-C\-Binary\-Output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_binary_output_a70a221eeaf6df8090a72d20ae5bc104d}
+
+
+Definition at line 8 of file binary\-\_\-output.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_binary_output_ab20753f91b070b2ad603b82b8908456f}{\index{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}!$\sim$\-C\-Binary\-Output@{$\sim$\-C\-Binary\-Output}}
+\index{$\sim$\-C\-Binary\-Output@{$\sim$\-C\-Binary\-Output}!QSTEM::CBinaryOutput@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}}
+\subsubsection[{$\sim$\-C\-Binary\-Output}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Binary\-Output\-::$\sim$\-C\-Binary\-Output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_binary_output_ab20753f91b070b2ad603b82b8908456f}
+
+
+Definition at line 12 of file binary\-\_\-output.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_binary_output_a41c1e9aa3832eefcdffea0d33d29ef2c}{\index{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}!Describe\-File@{Describe\-File}}
+\index{Describe\-File@{Describe\-File}!QSTEM::CBinaryOutput@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}}
+\subsubsection[{Describe\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Binary\-Output\-::\-Describe\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{shape, }
+\item[{unsigned}]{element\-\_\-size, }
+\item[{std\-::string}]{label, }
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}, }
+\item[{std\-::string}]{comment = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$}]{parameters = {\ttfamily {\bf std\-::map}$<$std\-:\-:string,~double$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_binary_output_a41c1e9aa3832eefcdffea0d33d29ef2c}
+
+
+Definition at line 30 of file binary\-\_\-output.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_binary_output_a41c1e9aa3832eefcdffea0d33d29ef2c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_binary_output_a7aad1e4283cdd03e0835dc35f927f6f3}{\index{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!QSTEM::CBinaryOutput@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Binary\-Output\-::\-Initialize (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{dir\-Or\-File\-Name, }
+\item[{std\-::string}]{run\-\_\-id = {\ttfamily \char`\"{}avg\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_binary_output_a7aad1e4283cdd03e0835dc35f927f6f3}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_data_writer_a0702c74c6a781a6caf64e6db349418a2}{Q\-S\-T\-E\-M\-::\-I\-Data\-Writer}.
+
+
+
+Reimplemented in \hyperlink{class_q_s_t_e_m_1_1_c_img_writer_a778d66cc62e4bc2f3390e459b93ad555}{Q\-S\-T\-E\-M\-::\-C\-Img\-Writer}.
+
+
+
+Definition at line 17 of file binary\-\_\-output.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_q_s_t_e_m_1_1_c_binary_output_a7aad1e4283cdd03e0835dc35f927f6f3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_binary_output_adf3084deab8701c80d66ab536a32dd72}{\index{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}!Write\-Blob@{Write\-Blob}}
+\index{Write\-Blob@{Write\-Blob}!QSTEM::CBinaryOutput@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}}
+\subsubsection[{Write\-Blob}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename dtype $>$ void Q\-S\-T\-E\-M\-::\-C\-Binary\-Output\-::\-Write\-Blob (
+\begin{DoxyParamCaption}
+\item[{dtype $\ast$}]{data, }
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{shape, }
+\item[{std\-::string}]{label, }
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$}]{parameters = {\ttfamily {\bf std\-::map}$<$std\-:\-:string,~double$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_binary_output_adf3084deab8701c80d66ab536a32dd72}
+
+
+Definition at line 53 of file binary\-\_\-output.\-hpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_binary_output_adf3084deab8701c80d66ab536a32dd72_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_binary_output_a8cc530d55603a753dcd6ce1819d6d8fc}{\index{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}!Write\-Complex\-Volume@{Write\-Complex\-Volume}}
+\index{Write\-Complex\-Volume@{Write\-Complex\-Volume}!QSTEM::CBinaryOutput@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}}
+\subsubsection[{Write\-Complex\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Binary\-Output\-::\-Write\-Complex\-Volume (
+\begin{DoxyParamCaption}
+\item[{{\bf complex\-\_\-tt} $\ast$}]{data, }
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{shape, }
+\item[{std\-::string}]{label, }
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}, }
+\item[{std\-::string}]{comment = {\ttfamily std\-:\-:string()}, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$}]{parameters = {\ttfamily {\bf std\-::map}$<$std\-:\-:string,~double$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_binary_output_a8cc530d55603a753dcd6ce1819d6d8fc}
+
+
+Definition at line 72 of file binary\-\_\-output.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_binary_output_a8cc530d55603a753dcd6ce1819d6d8fc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_binary_output_a5adf4e3f495d92ca9ce44cf30f282013}{\index{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CBinaryOutput@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Binary\-Output\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Real\-Vector} \&}]{data, }
+\item[{const {\bf std\-::vector}$<$ unsigned $>$ \&}]{shape, }
+\item[{const std\-::string \&}]{label, }
+\item[{const {\bf std\-::vector}$<$ unsigned $>$ \&}]{position, }
+\item[{const std\-::string \&}]{comment, }
+\item[{const {\bf std\-::map}$<$ std\-::string, double $>$ \&}]{parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_binary_output_a5adf4e3f495d92ca9ce44cf30f282013}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_data_writer_a62254b3a1ea8b92a6e6a0265be63a5a0}{Q\-S\-T\-E\-M\-::\-I\-Data\-Writer}.
+
+
+
+Reimplemented in \hyperlink{class_q_s_t_e_m_1_1_c_img_writer_a628956c70f52c70b9246be6117db5d7e}{Q\-S\-T\-E\-M\-::\-C\-Img\-Writer}.
+
+
+
+Definition at line 80 of file binary\-\_\-output.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_binary_output_a5adf4e3f495d92ca9ce44cf30f282013_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_binary_output_a2212bc0ca38a5d07229be18d3bf559a9}{\index{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CBinaryOutput@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Binary\-Output\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Complex\-Vector} \&}]{data, }
+\item[{const {\bf std\-::vector}$<$ unsigned $>$ \&}]{shape, }
+\item[{const std\-::string \&}]{label, }
+\item[{const {\bf std\-::vector}$<$ unsigned $>$ \&}]{position, }
+\item[{const std\-::string \&}]{comment, }
+\item[{const {\bf std\-::map}$<$ std\-::string, double $>$ \&}]{parameters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_binary_output_a2212bc0ca38a5d07229be18d3bf559a9}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_data_writer_aaa289d6b48616890c620e99c3a003b1e}{Q\-S\-T\-E\-M\-::\-I\-Data\-Writer}.
+
+
+
+Reimplemented in \hyperlink{class_q_s_t_e_m_1_1_c_img_writer_ac1cbc5988f5a7b071d867835552c5db9}{Q\-S\-T\-E\-M\-::\-C\-Img\-Writer}.
+
+
+
+Definition at line 88 of file binary\-\_\-output.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_binary_output_a2212bc0ca38a5d07229be18d3bf559a9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_binary_output_a4d79927ead8b30b32666fcc20c88962a}{\index{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}!Write\-Real\-Volume@{Write\-Real\-Volume}}
+\index{Write\-Real\-Volume@{Write\-Real\-Volume}!QSTEM::CBinaryOutput@{Q\-S\-T\-E\-M\-::\-C\-Binary\-Output}}
+\subsubsection[{Write\-Real\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Binary\-Output\-::\-Write\-Real\-Volume (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} $\ast$}]{data, }
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{shape, }
+\item[{std\-::string}]{label, }
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}, }
+\item[{std\-::string}]{comment = {\ttfamily std\-:\-:string()}, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$}]{parameters = {\ttfamily {\bf std\-::map}$<$std\-:\-:string,~double$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_binary_output_a4d79927ead8b30b32666fcc20c88962a}
+
+
+Definition at line 64 of file binary\-\_\-output.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_binary_output_a4d79927ead8b30b32666fcc20c88962a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+libs/data\-\_\-\-I\-O/\hyperlink{binary__output_8hpp}{binary\-\_\-output.\-hpp}\item 
+libs/data\-\_\-\-I\-O/\hyperlink{binary__output_8cpp}{binary\-\_\-output.\-cpp}\end{DoxyCompactItemize}

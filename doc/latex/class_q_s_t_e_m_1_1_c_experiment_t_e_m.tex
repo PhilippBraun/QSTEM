@@ -1,0 +1,369 @@
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m}{\section{Q\-S\-T\-E\-M\-:\-:C\-Experiment\-T\-E\-M Class Reference}
+\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m}\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+}
+
+
+{\ttfamily \#include $<$tem.\-hpp$>$}
+
+
+
+Inheritance diagram for Q\-S\-T\-E\-M\-:\-:C\-Experiment\-T\-E\-M\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{class_q_s_t_e_m_1_1_c_experiment_t_e_m__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Q\-S\-T\-E\-M\-:\-:C\-Experiment\-T\-E\-M\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{class_q_s_t_e_m_1_1_c_experiment_t_e_m__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_aea03e0f75b82eb46e9de44a50b5dc919}{C\-Experiment\-T\-E\-M} (const \hyperlink{namespace_q_s_t_e_m_af9424707fe9f6503298f49b41304bd35}{Config\-Reader\-Ptr} \&config\-Reader)
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ac21a18cdcc38c7b1c85a118b94b502cd}{Run} ()
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a363cbbdac32f3f41a53b8c9465eab647}{Display\-Params} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a1560b9f1ca73536a984da870fbb31979}{Save\-Images} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a5a261bed060c2891394133a0e7d50ae2}{Check\-Params} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ad72523267e6ceea59370b48b29d3b16c}{Describe\-Params} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a176911c21e4533c77e43b31a5d4fc52b}{Write\-Beams} (unsigned absolute\-Slice)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a3072e66e466cbac690b953465b9697e8}{Post\-Slice\-Process} (unsigned absolute\-Slice)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a264e57d513f688ba34346261341c4f33}{Write\-Wave\-Intensity} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_aa43328ecd2b6e74811ff19bbbf8db200}{Collect\-Intensity} (unsigned absolute\-Slice)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} $\ast$$\ast$ \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a4a6f12a7b28398c2ab0875f7138bf731}{m\-\_\-pendelloesung}
+\item 
+\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ int $>$ \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a158be89e938771ae908c44f946f3c208}{m\-\_\-hbeams}
+\item 
+\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ int $>$ \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a6d5aff0ed8f4f9e0741c3394f9015e3d}{m\-\_\-kbeams}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_af8861c5a935974357122c8a46a3ff4e8}{m\-\_\-lbeams}
+\item 
+char \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ad0f92ada3447947c1cfd4675318279ce}{m\-\_\-filebeam} \mbox{[}512\mbox{]}
+\item 
+unsigned \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a51572d5f8a070f27f638f21cef35d4ba}{m\-\_\-nbout}
+\item 
+bool \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a5c2f5087986b2b5b43b79b8bd5a2bebe}{m\-\_\-tilt\-Back}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a1bc6587692685d5942570cc15571fe14}{Plane\-Wave\-Ptr} \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ab0e428cafa2f5585a4e3db77c23310a0}{m\-\_\-wave}
+\item 
+boost\-::shared\-\_\-array$<$ \hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} $>$ \hyperlink{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a83abce7927e8f98feb653c454a0b1209}{m\-\_\-image\-Wave}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file tem.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_aea03e0f75b82eb46e9de44a50b5dc919}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!C\-Experiment\-T\-E\-M@{C\-Experiment\-T\-E\-M}}
+\index{C\-Experiment\-T\-E\-M@{C\-Experiment\-T\-E\-M}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{C\-Experiment\-T\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M (
+\begin{DoxyParamCaption}
+\item[{const {\bf Config\-Reader\-Ptr} \&}]{config\-Reader}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_aea03e0f75b82eb46e9de44a50b5dc919}
+
+
+Definition at line 25 of file tem.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a5a261bed060c2891394133a0e7d50ae2}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!Check\-Params@{Check\-Params}}
+\index{Check\-Params@{Check\-Params}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{Check\-Params}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::\-Check\-Params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a5a261bed060c2891394133a0e7d50ae2}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_experiment_a58dd007d7260a04ec939d3dd95fb303d}{Q\-S\-T\-E\-M\-::\-I\-Experiment}.
+
+
+
+Definition at line 36 of file tem.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_aa43328ecd2b6e74811ff19bbbf8db200}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!Collect\-Intensity@{Collect\-Intensity}}
+\index{Collect\-Intensity@{Collect\-Intensity}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{Collect\-Intensity}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::\-Collect\-Intensity (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{absolute\-Slice}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_aa43328ecd2b6e74811ff19bbbf8db200}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_c_experiment_base_a7e83ca983833f93da2d03bf9eb837f0b}{Q\-S\-T\-E\-M\-::\-C\-Experiment\-Base}.
+
+
+
+Definition at line 278 of file tem.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_experiment_t_e_m_aa43328ecd2b6e74811ff19bbbf8db200_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ad72523267e6ceea59370b48b29d3b16c}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!Describe\-Params@{Describe\-Params}}
+\index{Describe\-Params@{Describe\-Params}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{Describe\-Params}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::\-Describe\-Params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ad72523267e6ceea59370b48b29d3b16c}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_experiment_a596d3fb45526d029a0cdd8805c982c44}{Q\-S\-T\-E\-M\-::\-I\-Experiment}.
+
+
+
+Definition at line 37 of file tem.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a363cbbdac32f3f41a53b8c9465eab647}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!Display\-Params@{Display\-Params}}
+\index{Display\-Params@{Display\-Params}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{Display\-Params}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::\-Display\-Params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a363cbbdac32f3f41a53b8c9465eab647}
+
+
+Reimplemented from \hyperlink{class_q_s_t_e_m_1_1_c_experiment_base_a836c6a96530d2c5c6ba235fc71adc160}{Q\-S\-T\-E\-M\-::\-C\-Experiment\-Base}.
+
+
+
+Definition at line 30 of file tem.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a363cbbdac32f3f41a53b8c9465eab647_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a3072e66e466cbac690b953465b9697e8}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!Post\-Slice\-Process@{Post\-Slice\-Process}}
+\index{Post\-Slice\-Process@{Post\-Slice\-Process}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{Post\-Slice\-Process}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::\-Post\-Slice\-Process (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{absolute\-Slice}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a3072e66e466cbac690b953465b9697e8}
+
+
+Reimplemented from \hyperlink{class_q_s_t_e_m_1_1_c_experiment_base_add43249257db61a77309e3455dfc6496}{Q\-S\-T\-E\-M\-::\-C\-Experiment\-Base}.
+
+
+
+Definition at line 305 of file tem.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a3072e66e466cbac690b953465b9697e8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ac21a18cdcc38c7b1c85a118b94b502cd}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!Run@{Run}}
+\index{Run@{Run}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::\-Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ac21a18cdcc38c7b1c85a118b94b502cd}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_c_experiment_base_a2d9b75bce6825d2539b8a0ed4b62c558}{Q\-S\-T\-E\-M\-::\-C\-Experiment\-Base}.
+
+
+
+Definition at line 36 of file tem.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ac21a18cdcc38c7b1c85a118b94b502cd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a1560b9f1ca73536a984da870fbb31979}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!Save\-Images@{Save\-Images}}
+\index{Save\-Images@{Save\-Images}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{Save\-Images}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::\-Save\-Images (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a1560b9f1ca73536a984da870fbb31979}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_c_experiment_base_a3a19c71c865d60e0a500ba9b837aa89f}{Q\-S\-T\-E\-M\-::\-C\-Experiment\-Base}.
+
+
+
+Definition at line 311 of file tem.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a176911c21e4533c77e43b31a5d4fc52b}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!Write\-Beams@{Write\-Beams}}
+\index{Write\-Beams@{Write\-Beams}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{Write\-Beams}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::\-Write\-Beams (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{absolute\-Slice}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a176911c21e4533c77e43b31a5d4fc52b}
+
+
+Definition at line 283 of file tem.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a176911c21e4533c77e43b31a5d4fc52b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a176911c21e4533c77e43b31a5d4fc52b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a264e57d513f688ba34346261341c4f33}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!Write\-Wave\-Intensity@{Write\-Wave\-Intensity}}
+\index{Write\-Wave\-Intensity@{Write\-Wave\-Intensity}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{Write\-Wave\-Intensity}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::\-Write\-Wave\-Intensity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a264e57d513f688ba34346261341c4f33}
+
+
+Definition at line 43 of file tem.\-hpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ad0f92ada3447947c1cfd4675318279ce}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!m\-\_\-filebeam@{m\-\_\-filebeam}}
+\index{m\-\_\-filebeam@{m\-\_\-filebeam}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{m\-\_\-filebeam}]{\setlength{\rightskip}{0pt plus 5cm}char Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::m\-\_\-filebeam\mbox{[}512\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ad0f92ada3447947c1cfd4675318279ce}
+
+
+Definition at line 53 of file tem.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a158be89e938771ae908c44f946f3c208}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!m\-\_\-hbeams@{m\-\_\-hbeams}}
+\index{m\-\_\-hbeams@{m\-\_\-hbeams}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{m\-\_\-hbeams}]{\setlength{\rightskip}{0pt plus 5cm}{\bf std\-::vector}$<$int$>$ Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::m\-\_\-hbeams\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a158be89e938771ae908c44f946f3c208}
+
+
+Definition at line 50 of file tem.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a83abce7927e8f98feb653c454a0b1209}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!m\-\_\-image\-Wave@{m\-\_\-image\-Wave}}
+\index{m\-\_\-image\-Wave@{m\-\_\-image\-Wave}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{m\-\_\-image\-Wave}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-array$<${\bf float\-\_\-tt}$>$ Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::m\-\_\-image\-Wave\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a83abce7927e8f98feb653c454a0b1209}
+
+
+Definition at line 59 of file tem.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a6d5aff0ed8f4f9e0741c3394f9015e3d}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!m\-\_\-kbeams@{m\-\_\-kbeams}}
+\index{m\-\_\-kbeams@{m\-\_\-kbeams}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{m\-\_\-kbeams}]{\setlength{\rightskip}{0pt plus 5cm}{\bf std\-::vector}$<$int$>$ Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::m\-\_\-kbeams\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a6d5aff0ed8f4f9e0741c3394f9015e3d}
+
+
+Definition at line 50 of file tem.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_af8861c5a935974357122c8a46a3ff4e8}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!m\-\_\-lbeams@{m\-\_\-lbeams}}
+\index{m\-\_\-lbeams@{m\-\_\-lbeams}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{m\-\_\-lbeams}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::m\-\_\-lbeams\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_af8861c5a935974357122c8a46a3ff4e8}
+
+
+Definition at line 52 of file tem.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a51572d5f8a070f27f638f21cef35d4ba}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!m\-\_\-nbout@{m\-\_\-nbout}}
+\index{m\-\_\-nbout@{m\-\_\-nbout}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{m\-\_\-nbout}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::m\-\_\-nbout\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a51572d5f8a070f27f638f21cef35d4ba}
+
+
+Definition at line 54 of file tem.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a4a6f12a7b28398c2ab0875f7138bf731}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!m\-\_\-pendelloesung@{m\-\_\-pendelloesung}}
+\index{m\-\_\-pendelloesung@{m\-\_\-pendelloesung}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{m\-\_\-pendelloesung}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt}$\ast$$\ast$ Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::m\-\_\-pendelloesung\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a4a6f12a7b28398c2ab0875f7138bf731}
+
+
+Definition at line 49 of file tem.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a5c2f5087986b2b5b43b79b8bd5a2bebe}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!m\-\_\-tilt\-Back@{m\-\_\-tilt\-Back}}
+\index{m\-\_\-tilt\-Back@{m\-\_\-tilt\-Back}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{m\-\_\-tilt\-Back}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::m\-\_\-tilt\-Back\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_a5c2f5087986b2b5b43b79b8bd5a2bebe}
+
+
+Definition at line 56 of file tem.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ab0e428cafa2f5585a4e3db77c23310a0}{\index{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}!m\-\_\-wave@{m\-\_\-wave}}
+\index{m\-\_\-wave@{m\-\_\-wave}!QSTEM::CExperimentTEM@{Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M}}
+\subsubsection[{m\-\_\-wave}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plane\-Wave\-Ptr} Q\-S\-T\-E\-M\-::\-C\-Experiment\-T\-E\-M\-::m\-\_\-wave\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_experiment_t_e_m_ab0e428cafa2f5585a4e3db77c23310a0}
+
+
+Definition at line 58 of file tem.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+libs/experiments/\hyperlink{tem_8hpp}{tem.\-hpp}\item 
+libs/experiments/\hyperlink{tem_8cpp}{tem.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,482 @@
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o}{\section{Q\-S\-T\-E\-M\-:\-:C\-Image\-I\-O Class Reference}
+\label{class_q_s_t_e_m_1_1_c_image_i_o}\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+}
+
+
+{\ttfamily \#include $<$imagelib\-\_\-fftw3.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_ae42efef91128103c9255ba464c5c8457}{C\-Image\-I\-O} (int nx, int ny, const std\-::string input\-\_\-extension=\char`\"{}.img\char`\"{}, const std\-::string output\-\_\-extension=\char`\"{}.img\char`\"{})
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_a55315d90b3cf53f9a45bd414d547fecb}{Create\-Real\-Data\-Set} (const std\-::string \&\hyperlink{qmb_8m_abdc1dcc6fed70c14f9b5ae237e486f4e}{name}, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned int $>$ \&\hyperlink{qmb_8m_a923d61728dac7c6dff07427a901c9ba9}{positions})
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_a1014b8c47e8c19fa453bb7438b070189}{Create\-Complex\-Data\-Set} (const std\-::string \&\hyperlink{qmb_8m_abdc1dcc6fed70c14f9b5ae237e486f4e}{name}, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned int $>$ \&\hyperlink{qmb_8m_a923d61728dac7c6dff07427a901c9ba9}{positions})
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_aa62432068099bcaf3c06ad074e11038c}{Write\-Image} (const \hyperlink{namespace_q_s_t_e_m_a8dfe9e1dbecce3838cb082d96e991ba7}{Real\-Vector} \&pix, const std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \&\hyperlink{image_sim_8m_ad57b218fb254a1624c09ad71cb6b6415}{params}, const std\-::string \&\hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment}, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ \&position)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_a8b2842fbfa13791638e27885f6e38646}{Write\-Image} (const \hyperlink{namespace_q_s_t_e_m_a8dfe9e1dbecce3838cb082d96e991ba7}{Real\-Vector} \&pix, const std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \&\hyperlink{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{parameters}, const std\-::string \&\hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment})
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_a64f12e2de142a5454a9d539bd1a44ba8}{Write\-Image} (const \hyperlink{namespace_q_s_t_e_m_a8dfe9e1dbecce3838cb082d96e991ba7}{Real\-Vector} \&pix, const std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, const std\-::string \&\hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment}, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$())
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_a6c5d322842e87cd6aff0bb1996682501}{Write\-Image} (const \hyperlink{namespace_q_s_t_e_m_a8dfe9e1dbecce3838cb082d96e991ba7}{Real\-Vector} \&pix, const std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \&\hyperlink{image_sim_8m_ad57b218fb254a1624c09ad71cb6b6415}{params}, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$())
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_a830d7edaa670a4414f72b3cfa2e7c32e}{Write\-Image} (const \hyperlink{namespace_q_s_t_e_m_a8dfe9e1dbecce3838cb082d96e991ba7}{Real\-Vector} \&pix, const std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$())
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_aeb80c2e87f514f3715661ce4c8bf84db}{Write\-Image} (const \hyperlink{namespace_q_s_t_e_m_af210a2c1f9afae1deed746dcd9276221}{Complex\-Vector} \&pix, const std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \&\hyperlink{image_sim_8m_ad57b218fb254a1624c09ad71cb6b6415}{params}, const std\-::string \&\hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment}, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ \&position)
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_ae3ef72bd1daa4e84ecb23857151127c1}{Write\-Image} (const \hyperlink{namespace_q_s_t_e_m_af210a2c1f9afae1deed746dcd9276221}{Complex\-Vector} \&pix, const std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \&\hyperlink{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{parameters}, const std\-::string \&\hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment})
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_ab2db9eeb6ba489439c235b08f0536248}{Write\-Image} (const \hyperlink{namespace_q_s_t_e_m_af210a2c1f9afae1deed746dcd9276221}{Complex\-Vector} \&pix, const std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, const std\-::string \&\hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment}, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$())
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_a2ad03a0aca2522cd9ef351061e6e3cb0}{Write\-Image} (const \hyperlink{namespace_q_s_t_e_m_af210a2c1f9afae1deed746dcd9276221}{Complex\-Vector} \&pix, const std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \&\hyperlink{image_sim_8m_ad57b218fb254a1624c09ad71cb6b6415}{params}, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$())
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_aa7d16d3d2a96f946f0f0050a5b24a3b6}{Write\-Image} (const \hyperlink{namespace_q_s_t_e_m_af210a2c1f9afae1deed746dcd9276221}{Complex\-Vector} \&pix, const std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, const \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$())
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_afeb5053997a7ee3d0949c28fb5c0a6ad}{Read\-Image} (\hyperlink{namespace_q_s_t_e_m_a8dfe9e1dbecce3838cb082d96e991ba7}{Real\-Vector} \&pix, std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \&\hyperlink{image_sim_8m_ad57b218fb254a1624c09ad71cb6b6415}{params}, std\-::string \&\hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment}, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$())
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_a258072ab925c9904f10e88017b37c508}{Read\-Image} (\hyperlink{namespace_q_s_t_e_m_af210a2c1f9afae1deed746dcd9276221}{Complex\-Vector} \&pix, std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \&\hyperlink{image_sim_8m_ad57b218fb254a1624c09ad71cb6b6415}{params}, std\-::string \&\hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment}, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$())
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_a0d360e6a7b5ae8bb95a902f611859d68}{Read\-Image} (T \&pix, std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, std\-::string \&\hyperlink{image_sim_8m_aea4cc4bd8e43a7f8ebf9b0ee3da8d681}{comment}, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$())
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_a5751f80f17ee382e6391d9daa535df01}{Read\-Image} (T \&pix, std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{std\-::map}$<$ std\-::string, double $>$ \&\hyperlink{image_sim_8m_ad57b218fb254a1624c09ad71cb6b6415}{params}, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$())
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{class_q_s_t_e_m_1_1_c_image_i_o_afe1b20c89325e11eda002c1448a3685a}{Read\-Image} (T \&pix, std\-::string \&\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$ position=\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ unsigned $>$())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 36 of file imagelib\-\_\-fftw3.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_ae42efef91128103c9255ba464c5c8457}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!C\-Image\-I\-O@{C\-Image\-I\-O}}
+\index{C\-Image\-I\-O@{C\-Image\-I\-O}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{C\-Image\-I\-O}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-C\-Image\-I\-O (
+\begin{DoxyParamCaption}
+\item[{int}]{nx, }
+\item[{int}]{ny, }
+\item[{const std\-::string}]{input\-\_\-extension = {\ttfamily \char`\"{}.img\char`\"{}}, }
+\item[{const std\-::string}]{output\-\_\-extension = {\ttfamily \char`\"{}.img\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_image_i_o_ae42efef91128103c9255ba464c5c8457}
+
+
+Definition at line 30 of file imagelib\-\_\-fftw3.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_ae42efef91128103c9255ba464c5c8457_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_a1014b8c47e8c19fa453bb7438b070189}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Create\-Complex\-Data\-Set@{Create\-Complex\-Data\-Set}}
+\index{Create\-Complex\-Data\-Set@{Create\-Complex\-Data\-Set}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Create\-Complex\-Data\-Set}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Create\-Complex\-Data\-Set (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{const {\bf std\-::vector}$<$ unsigned int $>$ \&}]{positions}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_image_i_o_a1014b8c47e8c19fa453bb7438b070189}
+
+
+Definition at line 43 of file imagelib\-\_\-fftw3.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_a55315d90b3cf53f9a45bd414d547fecb}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Create\-Real\-Data\-Set@{Create\-Real\-Data\-Set}}
+\index{Create\-Real\-Data\-Set@{Create\-Real\-Data\-Set}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Create\-Real\-Data\-Set}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Create\-Real\-Data\-Set (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{const {\bf std\-::vector}$<$ unsigned int $>$ \&}]{positions}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_image_i_o_a55315d90b3cf53f9a45bd414d547fecb}
+
+
+Definition at line 38 of file imagelib\-\_\-fftw3.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_afeb5053997a7ee3d0949c28fb5c0a6ad}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Read\-Image@{Read\-Image}}
+\index{Read\-Image@{Read\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Read\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Read\-Image (
+\begin{DoxyParamCaption}
+\item[{{\bf Real\-Vector} \&}]{pix, }
+\item[{std\-::string \&}]{file\-Name, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$ \&}]{params, }
+\item[{std\-::string \&}]{comment, }
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_image_i_o_afeb5053997a7ee3d0949c28fb5c0a6ad}
+
+
+Definition at line 61 of file imagelib\-\_\-fftw3.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_afeb5053997a7ee3d0949c28fb5c0a6ad_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_a258072ab925c9904f10e88017b37c508}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Read\-Image@{Read\-Image}}
+\index{Read\-Image@{Read\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Read\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Read\-Image (
+\begin{DoxyParamCaption}
+\item[{{\bf Complex\-Vector} \&}]{pix, }
+\item[{std\-::string \&}]{file\-Name, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$ \&}]{params, }
+\item[{std\-::string \&}]{comment, }
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_image_i_o_a258072ab925c9904f10e88017b37c508}
+
+
+Definition at line 74 of file imagelib\-\_\-fftw3.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_a0d360e6a7b5ae8bb95a902f611859d68}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Read\-Image@{Read\-Image}}
+\index{Read\-Image@{Read\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Read\-Image}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Read\-Image (
+\begin{DoxyParamCaption}
+\item[{T \&}]{pix, }
+\item[{std\-::string \&}]{file\-Name, }
+\item[{std\-::string \&}]{comment, }
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_q_s_t_e_m_1_1_c_image_i_o_a0d360e6a7b5ae8bb95a902f611859d68}
+
+
+Definition at line 130 of file imagelib\-\_\-fftw3.\-hpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_a0d360e6a7b5ae8bb95a902f611859d68_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_a5751f80f17ee382e6391d9daa535df01}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Read\-Image@{Read\-Image}}
+\index{Read\-Image@{Read\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Read\-Image}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Read\-Image (
+\begin{DoxyParamCaption}
+\item[{T \&}]{pix, }
+\item[{std\-::string \&}]{file\-Name, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$ \&}]{params, }
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_q_s_t_e_m_1_1_c_image_i_o_a5751f80f17ee382e6391d9daa535df01}
+
+
+Definition at line 138 of file imagelib\-\_\-fftw3.\-hpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_a5751f80f17ee382e6391d9daa535df01_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_afe1b20c89325e11eda002c1448a3685a}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Read\-Image@{Read\-Image}}
+\index{Read\-Image@{Read\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Read\-Image}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Read\-Image (
+\begin{DoxyParamCaption}
+\item[{T \&}]{pix, }
+\item[{std\-::string \&}]{file\-Name, }
+\item[{{\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_q_s_t_e_m_1_1_c_image_i_o_afe1b20c89325e11eda002c1448a3685a}
+
+
+Definition at line 146 of file imagelib\-\_\-fftw3.\-hpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_afe1b20c89325e11eda002c1448a3685a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_aa62432068099bcaf3c06ad074e11038c}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Real\-Vector} \&}]{pix, }
+\item[{const std\-::string \&}]{file\-Name, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$ \&}]{params, }
+\item[{const std\-::string \&}]{comment, }
+\item[{const {\bf std\-::vector}$<$ unsigned $>$ \&}]{position}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_image_i_o_aa62432068099bcaf3c06ad074e11038c}
+
+
+Definition at line 48 of file imagelib\-\_\-fftw3.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_aa62432068099bcaf3c06ad074e11038c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_a8b2842fbfa13791638e27885f6e38646}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Real\-Vector} \&}]{pix, }
+\item[{const std\-::string \&}]{file\-Name, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$ \&}]{parameters, }
+\item[{const std\-::string \&}]{comment}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_q_s_t_e_m_1_1_c_image_i_o_a8b2842fbfa13791638e27885f6e38646}
+
+
+Definition at line 53 of file imagelib\-\_\-fftw3.\-hpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_a8b2842fbfa13791638e27885f6e38646_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_a64f12e2de142a5454a9d539bd1a44ba8}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Real\-Vector} \&}]{pix, }
+\item[{const std\-::string \&}]{file\-Name, }
+\item[{const std\-::string \&}]{comment, }
+\item[{const {\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_q_s_t_e_m_1_1_c_image_i_o_a64f12e2de142a5454a9d539bd1a44ba8}
+
+
+Definition at line 60 of file imagelib\-\_\-fftw3.\-hpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_a64f12e2de142a5454a9d539bd1a44ba8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_a6c5d322842e87cd6aff0bb1996682501}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Real\-Vector} \&}]{pix, }
+\item[{const std\-::string \&}]{file\-Name, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$ \&}]{params, }
+\item[{const {\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_q_s_t_e_m_1_1_c_image_i_o_a6c5d322842e87cd6aff0bb1996682501}
+
+
+Definition at line 67 of file imagelib\-\_\-fftw3.\-hpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_a6c5d322842e87cd6aff0bb1996682501_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_a830d7edaa670a4414f72b3cfa2e7c32e}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Real\-Vector} \&}]{pix, }
+\item[{const std\-::string \&}]{file\-Name, }
+\item[{const {\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_q_s_t_e_m_1_1_c_image_i_o_a830d7edaa670a4414f72b3cfa2e7c32e}
+
+
+Definition at line 74 of file imagelib\-\_\-fftw3.\-hpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_a830d7edaa670a4414f72b3cfa2e7c32e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_aeb80c2e87f514f3715661ce4c8bf84db}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Complex\-Vector} \&}]{pix, }
+\item[{const std\-::string \&}]{file\-Name, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$ \&}]{params, }
+\item[{const std\-::string \&}]{comment, }
+\item[{const {\bf std\-::vector}$<$ unsigned $>$ \&}]{position}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_image_i_o_aeb80c2e87f514f3715661ce4c8bf84db}
+
+
+Definition at line 54 of file imagelib\-\_\-fftw3.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_ae3ef72bd1daa4e84ecb23857151127c1}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Complex\-Vector} \&}]{pix, }
+\item[{const std\-::string \&}]{file\-Name, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$ \&}]{parameters, }
+\item[{const std\-::string \&}]{comment}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_q_s_t_e_m_1_1_c_image_i_o_ae3ef72bd1daa4e84ecb23857151127c1}
+
+
+Definition at line 89 of file imagelib\-\_\-fftw3.\-hpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_ae3ef72bd1daa4e84ecb23857151127c1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_ab2db9eeb6ba489439c235b08f0536248}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Complex\-Vector} \&}]{pix, }
+\item[{const std\-::string \&}]{file\-Name, }
+\item[{const std\-::string \&}]{comment, }
+\item[{const {\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_q_s_t_e_m_1_1_c_image_i_o_ab2db9eeb6ba489439c235b08f0536248}
+
+
+Definition at line 97 of file imagelib\-\_\-fftw3.\-hpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_ab2db9eeb6ba489439c235b08f0536248_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_a2ad03a0aca2522cd9ef351061e6e3cb0}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Complex\-Vector} \&}]{pix, }
+\item[{const std\-::string \&}]{file\-Name, }
+\item[{{\bf std\-::map}$<$ std\-::string, double $>$ \&}]{params, }
+\item[{const {\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_q_s_t_e_m_1_1_c_image_i_o_a2ad03a0aca2522cd9ef351061e6e3cb0}
+
+
+Definition at line 104 of file imagelib\-\_\-fftw3.\-hpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_a2ad03a0aca2522cd9ef351061e6e3cb0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_image_i_o_aa7d16d3d2a96f946f0f0050a5b24a3b6}{\index{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CImageIO@{Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Image\-I\-O\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Complex\-Vector} \&}]{pix, }
+\item[{const std\-::string \&}]{file\-Name, }
+\item[{const {\bf std\-::vector}$<$ unsigned $>$}]{position = {\ttfamily {\bf std\-::vector}$<$unsigned$>$()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_q_s_t_e_m_1_1_c_image_i_o_aa7d16d3d2a96f946f0f0050a5b24a3b6}
+
+
+Definition at line 112 of file imagelib\-\_\-fftw3.\-hpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_image_i_o_aa7d16d3d2a96f946f0f0050a5b24a3b6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+libs/\hyperlink{imagelib__fftw3_8hpp}{imagelib\-\_\-fftw3.\-hpp}\item 
+libs/\hyperlink{imagelib__fftw3_8cpp}{imagelib\-\_\-fftw3.\-cpp}\end{DoxyCompactItemize}

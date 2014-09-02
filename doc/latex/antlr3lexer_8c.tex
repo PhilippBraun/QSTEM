@@ -1,0 +1,104 @@
+\hypertarget{antlr3lexer_8c}{\section{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3lexer.c File Reference}
+\label{antlr3lexer_8c}\index{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3lexer.\-c@{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3lexer.\-c}}
+}
+{\ttfamily \#include $<$antlr3lexer.\-h$>$}\\*
+Include dependency graph for antlr3lexer.\-c\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3lexer_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{antlr3interfaces_8h_aa9c680e9ec87505c5f2f4af1d8cbb2e2}{p\-A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-E\-R} \hyperlink{antlr3lexer_8c_aad5d94a0ad6c1d4788f95debb67cf642}{antlr3\-Lexer\-New} (\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} size\-Hint, \hyperlink{antlr3interfaces_8h_a180526531b2c6da5cafe825ae7596bf1}{p\-A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E} state)
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{antlr3interfaces_8h_aa9c680e9ec87505c5f2f4af1d8cbb2e2}{p\-A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-E\-R} \hyperlink{antlr3lexer_8c_acea4b4491be51f1d3f57d4d2836d9d0d}{antlr3\-Lexer\-New\-Stream} (\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} size\-Hint, \hyperlink{antlr3interfaces_8h_a30a8f71f3e04066360723d538fd67f16}{p\-A\-N\-T\-L\-R3\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-T\-R\-E\-A\-M} input, \hyperlink{antlr3interfaces_8h_a180526531b2c6da5cafe825ae7596bf1}{p\-A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E} state)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base implementation of an antlr 3 lexer.
+
+An A\-N\-T\-L\-R3 lexer implements a base recongizer, a token source and a lexer interface. It constructs a base recognizer with default functions, then overrides any of these that are parser specific (usual default implementation of base recognizer. 
+
+Definition in file \hyperlink{antlr3lexer_8c_source}{antlr3lexer.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{antlr3lexer_8c_aad5d94a0ad6c1d4788f95debb67cf642}{\index{antlr3lexer.\-c@{antlr3lexer.\-c}!antlr3\-Lexer\-New@{antlr3\-Lexer\-New}}
+\index{antlr3\-Lexer\-New@{antlr3\-Lexer\-New}!antlr3lexer.c@{antlr3lexer.\-c}}
+\subsubsection[{antlr3\-Lexer\-New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf p\-A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-E\-R} antlr3\-Lexer\-New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32}}]{size\-Hint, }
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E}}]{state}
+\end{DoxyParamCaption}
+)}}\label{antlr3lexer_8c_aad5d94a0ad6c1d4788f95debb67cf642}
+
+
+Definition at line 72 of file antlr3lexer.\-c.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3lexer_8c_aad5d94a0ad6c1d4788f95debb67cf642_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3lexer_8c_aad5d94a0ad6c1d4788f95debb67cf642_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3lexer_8c_acea4b4491be51f1d3f57d4d2836d9d0d}{\index{antlr3lexer.\-c@{antlr3lexer.\-c}!antlr3\-Lexer\-New\-Stream@{antlr3\-Lexer\-New\-Stream}}
+\index{antlr3\-Lexer\-New\-Stream@{antlr3\-Lexer\-New\-Stream}!antlr3lexer.c@{antlr3lexer.\-c}}
+\subsubsection[{antlr3\-Lexer\-New\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf p\-A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-E\-R} antlr3\-Lexer\-New\-Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32}}]{size\-Hint, }
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-T\-R\-E\-A\-M}}]{input, }
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E}}]{state}
+\end{DoxyParamCaption}
+)}}\label{antlr3lexer_8c_acea4b4491be51f1d3f57d4d2836d9d0d}
+
+
+Definition at line 371 of file antlr3lexer.\-c.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3lexer_8c_acea4b4491be51f1d3f57d4d2836d9d0d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3lexer_8c_acea4b4491be51f1d3f57d4d2836d9d0d_icgraph}
+\end{center}
+\end{figure}
+
+

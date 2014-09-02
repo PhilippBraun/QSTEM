@@ -1,0 +1,144 @@
+\hypertarget{matrixlib_8cpp}{\section{libs/matrixlib.cpp File Reference}
+\label{matrixlib_8cpp}\index{libs/matrixlib.\-cpp@{libs/matrixlib.\-cpp}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}matrixlib.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}memory\-\_\-fftw3.\-hpp\char`\"{}}\\*
+Include dependency graph for matrixlib.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{matrixlib_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_q_s_t_e_m}{Q\-S\-T\-E\-M}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{matrixlib_8cpp_afc30e481f763a8d68a861dba91be7316}{\-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C}
+\item 
+\#define \hyperlink{matrixlib_8cpp_acf1c38f71f39386356edb151a131ad11}{T\-I\-N\-Y}~0.\-0
+\item 
+\#define \hyperlink{matrixlib_8cpp_a0442ffe293297c8d849f3fc6d36ac86b}{I\-M\-I\-N}(\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b})~((\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}) $<$ (\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}) ? (\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}) \-: (\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}))
+\item 
+\#define \hyperlink{matrixlib_8cpp_a985ff4ce447bced94342e89ab3766fdd}{F\-M\-A\-X}(\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b})~((\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}) $>$ (\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}) ? (\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}) \-: (\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}))
+\item 
+\#define \hyperlink{matrixlib_8cpp_ac89d5f8a358eb8a1abdcd0fcef134f1a}{S\-I\-G\-N}(\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b})~((\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}) $>$= 0 ? (\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}) \-: -\/(\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}))
+\item 
+\#define \hyperlink{matrixlib_8cpp_ad41630f833e920c1ffa34722f45a8e77}{S\-Q\-R}(\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a})~(((sqrarg=(\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a})) == 0.\-0) ? 0.\-0 \-: sqrarg$\ast$sqrarg)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespace_q_s_t_e_m_abc355cf7175a88fd4cce7ea7b8b634f7}{Q\-S\-T\-E\-M\-::ludcmp} (float\-\_\-tt $\ast$$\ast$\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, int n, int $\ast$indx, float\-\_\-tt $\ast$\hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d})
+\item 
+void \hyperlink{namespace_q_s_t_e_m_a52cb9e4ab3fa015bce219ce7bbc31891}{Q\-S\-T\-E\-M\-::lubksb} (float\-\_\-tt $\ast$$\ast$\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, int n, int $\ast$indx, float\-\_\-tt \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{namespace_q_s_t_e_m_ab7cf11c08d4958453b8a597bb93b1e38}{Q\-S\-T\-E\-M\-::inverse} ()
+\item 
+float\-\_\-tt \hyperlink{namespace_q_s_t_e_m_a5bfcf68c04ebe43cb232f1be9fcceb95}{Q\-S\-T\-E\-M\-::det\-\_\-3x3} (const float\-\_\-tt $\ast$mat)
+\item 
+void \hyperlink{namespace_q_s_t_e_m_ab30c1bc28aeca4c0f003ba52e881e670}{Q\-S\-T\-E\-M\-::trans\-\_\-3x3} (float\-\_\-tt $\ast$Mt, const float\-\_\-tt $\ast$Ms)
+\item 
+void \hyperlink{namespace_q_s_t_e_m_acc22a77e731414c6c8a9370225bb5546}{Q\-S\-T\-E\-M\-::inverse\-\_\-3x3} (float\-\_\-tt $\ast$res, const float\-\_\-tt $\ast$\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a})
+\item 
+float\-\_\-tt $\ast$$\ast$ \hyperlink{namespace_q_s_t_e_m_a09a9764bcea955e486786c88a8d773bf}{Q\-S\-T\-E\-M\-::inv\-M\-M} (float\-\_\-tt $\ast$$\ast$Mmatrix, int \hyperlink{xyz2cfg_8m_a1576913944301b272a197d6e2931da94}{N}, int \hyperlink{_displacement_params_8m_aad05f78187c942f9dd521605fa81f1ba}{M})
+\item 
+void \hyperlink{namespace_q_s_t_e_m_a3ad85d01b0db30cbef2f7beb764276c4}{Q\-S\-T\-E\-M\-::svdcmp1} (float\-\_\-tt $\ast$$\ast$\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, int \hyperlink{_read_d_m3___matlab_8m_a690da4f71682a3ad61fd1af8024eb5d3}{m}, int n, float\-\_\-tt w\mbox{[}$\,$\mbox{]}, float\-\_\-tt $\ast$$\ast$\hyperlink{aberrations___t_e_m_8m_ac4055e3a20b6b3af3d10590ea446ef6c}{v})
+\item 
+float\-\_\-tt \hyperlink{namespace_q_s_t_e_m_a1af432ca346c64d9138440f99f813e51}{Q\-S\-T\-E\-M\-::pythag} (float\-\_\-tt \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, float\-\_\-tt \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b})
+\item 
+void \hyperlink{namespace_q_s_t_e_m_aa2c4c66d135c1e5a78552f723e8f72d8}{Q\-S\-T\-E\-M\-::cross\-Product} (const float\-\_\-tt $\ast$\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, const float\-\_\-tt $\ast$\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}, float\-\_\-tt $\ast$\hyperlink{image_sim_8m_a463b16ca2bfa2f0cbab0e62fcb263d8e}{c})
+\item 
+float\-\_\-tt \hyperlink{namespace_q_s_t_e_m_a16b9a6e71ce2db68471c3211feb491da}{Q\-S\-T\-E\-M\-::dot\-Product} (const float\-\_\-tt $\ast$\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, const float\-\_\-tt $\ast$\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b})
+\item 
+void \hyperlink{namespace_q_s_t_e_m_ac5e1f5b7da5ae1c94681e41321b707e7}{Q\-S\-T\-E\-M\-::vect\-Diff\-\_\-f} (float $\ast$\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, float\-\_\-tt $\ast$\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}, float\-\_\-tt $\ast$\hyperlink{image_sim_8m_a463b16ca2bfa2f0cbab0e62fcb263d8e}{c}, int rev\-Flag)
+\item 
+void \hyperlink{namespace_q_s_t_e_m_ade3d8d331f17c086929cad48d7554ec1}{Q\-S\-T\-E\-M\-::show\-Matrix} (float\-\_\-tt $\ast$$\ast$\hyperlink{_displacement_params_8m_aad05f78187c942f9dd521605fa81f1ba}{M}, int \hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx}, int \hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny}, char $\ast$\hyperlink{qmb_8m_abdc1dcc6fed70c14f9b5ae237e486f4e}{name})
+\item 
+float\-\_\-tt \hyperlink{namespace_q_s_t_e_m_ae902fc588441e4154d9713e9c2a7ecca}{Q\-S\-T\-E\-M\-::find\-Lambda} (plane $\ast$\hyperlink{qmb_8m_a730974c23b072210bc656e3d7c5d3fac}{p}, float $\ast$point, int rev\-Flag)
+\item 
+void \hyperlink{namespace_q_s_t_e_m_a533b9e3efe0ac79ccc71c73249aa1d39}{Q\-S\-T\-E\-M\-::rotate\-Vect} (float\-\_\-tt $\ast$vect\-In, float\-\_\-tt $\ast$vect\-Out, float\-\_\-tt phi\-\_\-x, float\-\_\-tt phi\-\_\-y, float\-\_\-tt phi\-\_\-z)
+\item 
+void \hyperlink{namespace_q_s_t_e_m_a262c0ef985da2a97135a1c7899a65482}{Q\-S\-T\-E\-M\-::rotate\-Matrix} (float\-\_\-tt $\ast$matrix\-In, float\-\_\-tt $\ast$matrix\-Out, float\-\_\-tt phi\-\_\-x, float\-\_\-tt phi\-\_\-y, float\-\_\-tt phi\-\_\-z)
+\item 
+void \hyperlink{namespace_q_s_t_e_m_a27a096719e7ddfebba30a0c3bc7a0966}{Q\-S\-T\-E\-M\-::make\-Cell\-Vect} (grain\-Box $\ast$\hyperlink{qmb_8m_a0c242177b5df8026b76c43e301121a57}{grain}, float\-\_\-tt $\ast$vax, float\-\_\-tt $\ast$vby, float\-\_\-tt $\ast$vcz)
+\item 
+float\-\_\-tt \hyperlink{namespace_q_s_t_e_m_a4a1a9b85d5c9d701837b0e95e99a805b}{Q\-S\-T\-E\-M\-::vect\-Length} (float\-\_\-tt $\ast$vect)
+\item 
+void \hyperlink{namespace_q_s_t_e_m_a3748387153d44d8d383d44bf9df76cf6}{Q\-S\-T\-E\-M\-::matrix\-Product} (float\-\_\-tt $\ast$$\ast$\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, int Nxa, int Nya, float\-\_\-tt $\ast$$\ast$\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}, int Nxb, int Nyb, float\-\_\-tt $\ast$$\ast$\hyperlink{image_sim_8m_a463b16ca2bfa2f0cbab0e62fcb263d8e}{c})
+\item 
+void \hyperlink{namespace_q_s_t_e_m_ab44ad034a5034217de267ab5e0754ad2}{Q\-S\-T\-E\-M\-::matrix\-Product\-Int} (float\-\_\-tt $\ast$$\ast$\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, int Nxa, int Nya, int $\ast$$\ast$\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}, int Nxb, int Nyb, float\-\_\-tt $\ast$$\ast$\hyperlink{image_sim_8m_a463b16ca2bfa2f0cbab0e62fcb263d8e}{c})
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{matrixlib_8cpp_afc30e481f763a8d68a861dba91be7316}{\index{matrixlib.\-cpp@{matrixlib.\-cpp}!\-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C@{\-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C}}
+\index{\-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C@{\-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C}!matrixlib.cpp@{matrixlib.\-cpp}}
+\subsubsection[{\-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-C\-R\-T\-D\-B\-G\-\_\-\-M\-A\-P\-\_\-\-A\-L\-L\-O\-C}}\label{matrixlib_8cpp_afc30e481f763a8d68a861dba91be7316}
+
+
+Definition at line 27 of file matrixlib.\-cpp.
+
+\hypertarget{matrixlib_8cpp_a985ff4ce447bced94342e89ab3766fdd}{\index{matrixlib.\-cpp@{matrixlib.\-cpp}!F\-M\-A\-X@{F\-M\-A\-X}}
+\index{F\-M\-A\-X@{F\-M\-A\-X}!matrixlib.cpp@{matrixlib.\-cpp}}
+\subsubsection[{F\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-M\-A\-X(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf a}, }
+\item[{}]{{\bf b}}
+\end{DoxyParamCaption}
+)~(({\bf a}) $>$ ({\bf b}) ? ({\bf a}) \-: ({\bf b}))}}\label{matrixlib_8cpp_a985ff4ce447bced94342e89ab3766fdd}
+
+
+Definition at line 40 of file matrixlib.\-cpp.
+
+\hypertarget{matrixlib_8cpp_a0442ffe293297c8d849f3fc6d36ac86b}{\index{matrixlib.\-cpp@{matrixlib.\-cpp}!I\-M\-I\-N@{I\-M\-I\-N}}
+\index{I\-M\-I\-N@{I\-M\-I\-N}!matrixlib.cpp@{matrixlib.\-cpp}}
+\subsubsection[{I\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-M\-I\-N(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf a}, }
+\item[{}]{{\bf b}}
+\end{DoxyParamCaption}
+)~(({\bf a}) $<$ ({\bf b}) ? ({\bf a}) \-: ({\bf b}))}}\label{matrixlib_8cpp_a0442ffe293297c8d849f3fc6d36ac86b}
+
+
+Definition at line 39 of file matrixlib.\-cpp.
+
+\hypertarget{matrixlib_8cpp_ac89d5f8a358eb8a1abdcd0fcef134f1a}{\index{matrixlib.\-cpp@{matrixlib.\-cpp}!S\-I\-G\-N@{S\-I\-G\-N}}
+\index{S\-I\-G\-N@{S\-I\-G\-N}!matrixlib.cpp@{matrixlib.\-cpp}}
+\subsubsection[{S\-I\-G\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I\-G\-N(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf a}, }
+\item[{}]{{\bf b}}
+\end{DoxyParamCaption}
+)~(({\bf b}) $>$= 0 ? ({\bf a}) \-: -\/({\bf a}))}}\label{matrixlib_8cpp_ac89d5f8a358eb8a1abdcd0fcef134f1a}
+
+
+Definition at line 41 of file matrixlib.\-cpp.
+
+\hypertarget{matrixlib_8cpp_ad41630f833e920c1ffa34722f45a8e77}{\index{matrixlib.\-cpp@{matrixlib.\-cpp}!S\-Q\-R@{S\-Q\-R}}
+\index{S\-Q\-R@{S\-Q\-R}!matrixlib.cpp@{matrixlib.\-cpp}}
+\subsubsection[{S\-Q\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-Q\-R(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf a}}
+\end{DoxyParamCaption}
+)~(((sqrarg=({\bf a})) == 0.\-0) ? 0.\-0 \-: sqrarg$\ast$sqrarg)}}\label{matrixlib_8cpp_ad41630f833e920c1ffa34722f45a8e77}
+
+
+Definition at line 42 of file matrixlib.\-cpp.
+
+\hypertarget{matrixlib_8cpp_acf1c38f71f39386356edb151a131ad11}{\index{matrixlib.\-cpp@{matrixlib.\-cpp}!T\-I\-N\-Y@{T\-I\-N\-Y}}
+\index{T\-I\-N\-Y@{T\-I\-N\-Y}!matrixlib.cpp@{matrixlib.\-cpp}}
+\subsubsection[{T\-I\-N\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-I\-N\-Y~0.\-0}}\label{matrixlib_8cpp_acf1c38f71f39386356edb151a131ad11}
+
+
+Definition at line 36 of file matrixlib.\-cpp.
+

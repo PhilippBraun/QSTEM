@@ -1,0 +1,90 @@
+\hypertarget{structucif_1_1array__wrapper__base}{\section{ucif\-:\-:array\-\_\-wrapper\-\_\-base Struct Reference}
+\label{structucif_1_1array__wrapper__base}\index{ucif\-::array\-\_\-wrapper\-\_\-base@{ucif\-::array\-\_\-wrapper\-\_\-base}}
+}
+
+
+{\ttfamily \#include $<$builder.\-h$>$}
+
+
+
+Inheritance diagram for ucif\-:\-:array\-\_\-wrapper\-\_\-base\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{structucif_1_1array__wrapper__base__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{structucif_1_1array__wrapper__base_a66626bc3dff247a1c853ae1ea77be1b3}{$\sim$array\-\_\-wrapper\-\_\-base} ()
+\item 
+virtual void \hyperlink{structucif_1_1array__wrapper__base_a11a9e1c2bef2ecf88f02450c1dab229d}{push\-\_\-back} (std\-::string const \&)=0
+\item 
+virtual std\-::string \hyperlink{structucif_1_1array__wrapper__base_a63b4f0edcf90040a7f4155ea02f29f05}{operator\mbox{[}$\,$\mbox{]}} (unsigned const \&) const =0
+\item 
+virtual unsigned \hyperlink{structucif_1_1array__wrapper__base_a000b5a6968937d34dbc194dfdb667116}{size} () const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The mininum functions required for an array interface. Arrays are used for storing lists of loop headers and looped data items, which are passed to the builders. Arrays are also used to store lists of any lexer and parser error messages that are encountered. 
+
+Definition at line 16 of file builder.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structucif_1_1array__wrapper__base_a66626bc3dff247a1c853ae1ea77be1b3}{\index{ucif\-::array\-\_\-wrapper\-\_\-base@{ucif\-::array\-\_\-wrapper\-\_\-base}!$\sim$array\-\_\-wrapper\-\_\-base@{$\sim$array\-\_\-wrapper\-\_\-base}}
+\index{$\sim$array\-\_\-wrapper\-\_\-base@{$\sim$array\-\_\-wrapper\-\_\-base}!ucif::array_wrapper_base@{ucif\-::array\-\_\-wrapper\-\_\-base}}
+\subsubsection[{$\sim$array\-\_\-wrapper\-\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}virtual ucif\-::array\-\_\-wrapper\-\_\-base\-::$\sim$array\-\_\-wrapper\-\_\-base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{structucif_1_1array__wrapper__base_a66626bc3dff247a1c853ae1ea77be1b3}
+
+
+Definition at line 18 of file builder.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structucif_1_1array__wrapper__base_a63b4f0edcf90040a7f4155ea02f29f05}{\index{ucif\-::array\-\_\-wrapper\-\_\-base@{ucif\-::array\-\_\-wrapper\-\_\-base}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!ucif::array_wrapper_base@{ucif\-::array\-\_\-wrapper\-\_\-base}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string ucif\-::array\-\_\-wrapper\-\_\-base\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{unsigned const \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{structucif_1_1array__wrapper__base_a63b4f0edcf90040a7f4155ea02f29f05}
+
+
+Implemented in \hyperlink{structucif_1_1example_1_1my__array__wrapper_af0d2306825fa26fa6c80b034bd1db494}{ucif\-::example\-::my\-\_\-array\-\_\-wrapper}.
+
+\hypertarget{structucif_1_1array__wrapper__base_a11a9e1c2bef2ecf88f02450c1dab229d}{\index{ucif\-::array\-\_\-wrapper\-\_\-base@{ucif\-::array\-\_\-wrapper\-\_\-base}!push\-\_\-back@{push\-\_\-back}}
+\index{push\-\_\-back@{push\-\_\-back}!ucif::array_wrapper_base@{ucif\-::array\-\_\-wrapper\-\_\-base}}
+\subsubsection[{push\-\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ucif\-::array\-\_\-wrapper\-\_\-base\-::push\-\_\-back (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{structucif_1_1array__wrapper__base_a11a9e1c2bef2ecf88f02450c1dab229d}
+
+
+Implemented in \hyperlink{structucif_1_1example_1_1my__array__wrapper_a0062b807d864fe624b2cac1e82265789}{ucif\-::example\-::my\-\_\-array\-\_\-wrapper}.
+
+\hypertarget{structucif_1_1array__wrapper__base_a000b5a6968937d34dbc194dfdb667116}{\index{ucif\-::array\-\_\-wrapper\-\_\-base@{ucif\-::array\-\_\-wrapper\-\_\-base}!size@{size}}
+\index{size@{size}!ucif::array_wrapper_base@{ucif\-::array\-\_\-wrapper\-\_\-base}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned ucif\-::array\-\_\-wrapper\-\_\-base\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{structucif_1_1array__wrapper__base_a000b5a6968937d34dbc194dfdb667116}
+
+
+Implemented in \hyperlink{structucif_1_1example_1_1my__array__wrapper_a065656350c77567177dafa4816fcec77}{ucif\-::example\-::my\-\_\-array\-\_\-wrapper}.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+libs/structure\-\_\-\-I\-O/ucif/\hyperlink{builder_8h}{builder.\-h}\end{DoxyCompactItemize}

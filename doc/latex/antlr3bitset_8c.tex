@@ -1,0 +1,218 @@
+\hypertarget{antlr3bitset_8c}{\section{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3bitset.c File Reference}
+\label{antlr3bitset_8c}\index{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3bitset.\-c@{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3bitset.\-c}}
+}
+{\ttfamily \#include $<$antlr3bitset.\-h$>$}\\*
+Include dependency graph for antlr3bitset.\-c\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3bitset_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{antlr3interfaces_8h_ab15ce244874643afe4a952daf417f744}{p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T} \hyperlink{antlr3bitset_8c_a4179c82d3761a00b268461756c59222a}{antlr3\-Bitset\-New} (\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} num\-Bits)
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} void \hyperlink{antlr3bitset_8c_a6228fd1eed1beb76cb7e880003b15fdc}{antlr3\-Bitset\-Set\-A\-P\-I} (\hyperlink{antlr3interfaces_8h_ab15ce244874643afe4a952daf417f744}{p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T} bitset)
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{antlr3interfaces_8h_ab15ce244874643afe4a952daf417f744}{p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T} \hyperlink{antlr3bitset_8c_ae1db9be711269e919c53fb3fc9f401b8}{antlr3\-Bitset\-Copy} (\hyperlink{antlr3interfaces_8h_a59ad40804c151729987ddc3e78c2d95f}{p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T\-\_\-\-L\-I\-S\-T} blist)
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{antlr3interfaces_8h_ab15ce244874643afe4a952daf417f744}{p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T} \hyperlink{antlr3bitset_8c_a4952080b270043b249ba24ebfb5dd531}{antlr3\-Bitset\-List} (\hyperlink{antlr3interfaces_8h_a8fd297514ac4bb022d25b65da9954adb}{p\-A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-T\-A\-B\-L\-E} list)
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{antlr3interfaces_8h_ab15ce244874643afe4a952daf417f744}{p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T} \hyperlink{antlr3bitset_8c_adee17893182cf3d0c91bfce5e6ba12a9}{antlr3\-Bitset\-Load} (\hyperlink{antlr3interfaces_8h_a59ad40804c151729987ddc3e78c2d95f}{p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T\-\_\-\-L\-I\-S\-T} in\-Bits)
+\begin{DoxyCompactList}\small\item\em Creates a new bitset with at least one 64 bit bset of bits, but as many 64 bit sets as are required. \end{DoxyCompactList}\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{antlr3interfaces_8h_ab15ce244874643afe4a952daf417f744}{p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T} \hyperlink{antlr3bitset_8c_a7e3066d027077cf306b765c5bff590bc}{antlr3\-Bitset\-Of} (\hyperlink{antlr3defs_8h_a6faef5c4687f8eb633d2aefea93973ca}{A\-N\-T\-L\-R3\-\_\-\-I\-N\-T32} bit,...)
+\begin{DoxyCompactList}\small\item\em Creates a new bitset with at least one element, but as many elements are required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the C implementation of A\-N\-T\-L\-R3 bitsets as adapted from Terence Parr's Java implementation. 
+
+Definition in file \hyperlink{antlr3bitset_8c_source}{antlr3bitset.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{antlr3bitset_8c_ae1db9be711269e919c53fb3fc9f401b8}{\index{antlr3bitset.\-c@{antlr3bitset.\-c}!antlr3\-Bitset\-Copy@{antlr3\-Bitset\-Copy}}
+\index{antlr3\-Bitset\-Copy@{antlr3\-Bitset\-Copy}!antlr3bitset.c@{antlr3bitset.\-c}}
+\subsubsection[{antlr3\-Bitset\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T} antlr3\-Bitset\-Copy (
+\begin{DoxyParamCaption}
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T\-\_\-\-L\-I\-S\-T}}]{blist}
+\end{DoxyParamCaption}
+)}}\label{antlr3bitset_8c_ae1db9be711269e919c53fb3fc9f401b8}
+
+
+Definition at line 141 of file antlr3bitset.\-c.
+
+\hypertarget{antlr3bitset_8c_a4952080b270043b249ba24ebfb5dd531}{\index{antlr3bitset.\-c@{antlr3bitset.\-c}!antlr3\-Bitset\-List@{antlr3\-Bitset\-List}}
+\index{antlr3\-Bitset\-List@{antlr3\-Bitset\-List}!antlr3bitset.c@{antlr3bitset.\-c}}
+\subsubsection[{antlr3\-Bitset\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T} antlr3\-Bitset\-List (
+\begin{DoxyParamCaption}
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-T\-A\-B\-L\-E}}]{list}
+\end{DoxyParamCaption}
+)}}\label{antlr3bitset_8c_a4952080b270043b249ba24ebfb5dd531}
+
+
+Definition at line 208 of file antlr3bitset.\-c.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3bitset_8c_a4952080b270043b249ba24ebfb5dd531_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3bitset_8c_adee17893182cf3d0c91bfce5e6ba12a9}{\index{antlr3bitset.\-c@{antlr3bitset.\-c}!antlr3\-Bitset\-Load@{antlr3\-Bitset\-Load}}
+\index{antlr3\-Bitset\-Load@{antlr3\-Bitset\-Load}!antlr3bitset.c@{antlr3bitset.\-c}}
+\subsubsection[{antlr3\-Bitset\-Load}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T} antlr3\-Bitset\-Load (
+\begin{DoxyParamCaption}
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T\-\_\-\-L\-I\-S\-T}}]{in\-Bits}
+\end{DoxyParamCaption}
+)}}\label{antlr3bitset_8c_adee17893182cf3d0c91bfce5e6ba12a9}
+
+
+Creates a new bitset with at least one 64 bit bset of bits, but as many 64 bit sets as are required. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em bset} & A variable number of bits to add to the set, ending in -\/1 (impossible bit).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new bit set with all of the specified bitmaps in it and the A\-P\-I initialized.
+\end{DoxyReturn}
+Call as\-:
+\begin{DoxyItemize}
+\item p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T = antlr\-Bitset\-Load(bset, bset11, ..., -\/1);
+\item p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T = antlr\-Bitset\-Of(-\/1); Create empty bitset
+\end{DoxyItemize}
+
+\begin{DoxyRemark}{Remarks}
+Stdargs function -\/ must supply -\/1 as last paremeter, which is N\-O\-T added to the set. 
+\end{DoxyRemark}
+
+
+Definition at line 254 of file antlr3bitset.\-c.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3bitset_8c_adee17893182cf3d0c91bfce5e6ba12a9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3bitset_8c_a4179c82d3761a00b268461756c59222a}{\index{antlr3bitset.\-c@{antlr3bitset.\-c}!antlr3\-Bitset\-New@{antlr3\-Bitset\-New}}
+\index{antlr3\-Bitset\-New@{antlr3\-Bitset\-New}!antlr3bitset.c@{antlr3bitset.\-c}}
+\subsubsection[{antlr3\-Bitset\-New}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T} antlr3\-Bitset\-New (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32}}]{num\-Bits}
+\end{DoxyParamCaption}
+)}}\label{antlr3bitset_8c_a4179c82d3761a00b268461756c59222a}
+
+
+Definition at line 76 of file antlr3bitset.\-c.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{antlr3bitset_8c_a4179c82d3761a00b268461756c59222a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{antlr3bitset_8c_a4179c82d3761a00b268461756c59222a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3bitset_8c_a7e3066d027077cf306b765c5bff590bc}{\index{antlr3bitset.\-c@{antlr3bitset.\-c}!antlr3\-Bitset\-Of@{antlr3\-Bitset\-Of}}
+\index{antlr3\-Bitset\-Of@{antlr3\-Bitset\-Of}!antlr3bitset.c@{antlr3bitset.\-c}}
+\subsubsection[{antlr3\-Bitset\-Of}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T} antlr3\-Bitset\-Of (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-N\-T\-L\-R3\-\_\-\-I\-N\-T32}}]{bit, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{antlr3bitset_8c_a7e3066d027077cf306b765c5bff590bc}
+
+
+Creates a new bitset with at least one element, but as many elements are required. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em bit} & A variable number of bits to add to the set, ending in -\/1 (impossible bit).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new bit set with all of the specified elements added into it.
+\end{DoxyReturn}
+Call as\-:
+\begin{DoxyItemize}
+\item p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T = antlr\-Bitset\-Of(n, n1, n2, -\/1);
+\item p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T = antlr\-Bitset\-Of(-\/1); Create empty bitset
+\end{DoxyItemize}
+
+\begin{DoxyRemark}{Remarks}
+Stdargs function -\/ must supply -\/1 as last paremeter, which is N\-O\-T added to the set. 
+\end{DoxyRemark}
+
+
+Definition at line 317 of file antlr3bitset.\-c.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3bitset_8c_a7e3066d027077cf306b765c5bff590bc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{antlr3bitset_8c_a6228fd1eed1beb76cb7e880003b15fdc}{\index{antlr3bitset.\-c@{antlr3bitset.\-c}!antlr3\-Bitset\-Set\-A\-P\-I@{antlr3\-Bitset\-Set\-A\-P\-I}}
+\index{antlr3\-Bitset\-Set\-A\-P\-I@{antlr3\-Bitset\-Set\-A\-P\-I}!antlr3bitset.c@{antlr3bitset.\-c}}
+\subsubsection[{antlr3\-Bitset\-Set\-A\-P\-I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} void antlr3\-Bitset\-Set\-A\-P\-I (
+\begin{DoxyParamCaption}
+\item[{{\bf p\-A\-N\-T\-L\-R3\-\_\-\-B\-I\-T\-S\-E\-T}}]{bitset}
+\end{DoxyParamCaption}
+)}}\label{antlr3bitset_8c_a6228fd1eed1beb76cb7e880003b15fdc}
+
+
+Definition at line 122 of file antlr3bitset.\-c.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3bitset_8c_a6228fd1eed1beb76cb7e880003b15fdc_icgraph}
+\end{center}
+\end{figure}
+
+

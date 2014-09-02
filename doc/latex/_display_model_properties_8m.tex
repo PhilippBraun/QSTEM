@@ -1,0 +1,1402 @@
+\hypertarget{_display_model_properties_8m}{\section{G\-U\-I\-\_\-\-Matlab/\-Display\-Model\-Properties.m File Reference}
+\label{_display_model_properties_8m}\index{G\-U\-I\-\_\-\-Matlab/\-Display\-Model\-Properties.\-m@{G\-U\-I\-\_\-\-Matlab/\-Display\-Model\-Properties.\-m}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{xyz2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}{nargin} \&\& \hyperlink{_display_model_properties_8m_aae1d1bec0e9c36c2fddc5cd87d8c4eee}{ischar} (varargin\{1\}) gui\-\_\-\-State.\-gui\-\_\-\-Callback
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{_display_model_properties_8m_a58f7f5bb8af524fdfac53ec31e329e3f}{gui\-\_\-mainfcn} (\hyperlink{virtual_goniometer_8m_a15c01a18166c645a9c9811b10391ee06}{gui\-\_\-\-State}, varargin\{\-:\})
+\item 
+\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} V\-A\-R\-A\-R\-G\-I\-N \hyperlink{_display_model_properties_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object} ()
+\item 
+The input will consist of \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} \\*
+\hyperlink{virtual_goniometer_8m_a0bd56c3fc970360b866a574a6c0a3473}{row} \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{vector} of arguments \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{_display_model_properties_8m_ac27a50c824247d528a1768786bce7805}{size} (varargin, 2) $>$ 0 \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} isstruct(varargin
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{_display_model_properties_8m_ad96e18e0d630e3cd4dc95849cd514a1d}{isfield} (varargin\{1\},'\hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords}') \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{handles.\-a}
+\item 
+\hyperlink{_display_model_properties_8m_a5e769bbbabcaddc548203741c7100228}{fclose} (\hyperlink{xyz2cfg_8m_aa2ccff2cba62991c1532b3a4cb80523c}{fid})
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{_display_model_properties_8m_a0e7cd049abfc77e119e4f3eadf732267}{isempty} (\hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords}) \hyperlink{convert2cfg_8m_a81e11415a2aae5a3469de521f95aa8b4}{msgbox}(\hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('Could not open.\-cfg \hyperlink{write_fields2_file_8m_a75658b9c899229893bf0bc9d90e97d93}{file}\%s!'
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} clear \hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords} \hyperlink{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}{a\-Type} \hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm} \hyperlink{write_c_f_g_8m_a75175ae123d011b5deabab133d940a44}{D\-W} \\*
+\hyperlink{_display_model_properties_8m_a14685678a932a690bb677ca0be6b191a}{occ} \hyperlink{_display_model_properties_8m_a9f9b7255ba6680c145f9c08ebf2bc024}{charge} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{_display_model_properties_8m_a79d1b4edeacaa7034a9cda0e719b8c54}{if} (0) load fel0.\-mat \hyperlink{_display_model_properties_8m_a107456d9f8b237e9253fac83cbf9f43b}{handles.\-V0\-\_\-neutral}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Update \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} structure \hyperlink{_display_model_properties_8m_abe7b9f58eeb305f30e24c60bcbb071d8}{guidata} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles})
+\item 
+\hyperlink{_display_model_properties_8m_ae26b38067a9792326b19b3e2e057feb1}{pushbutton\-\_\-\-Update\-View\-\_\-\-Callback} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles})\%U\-I\-W\-A\-I\-T makes Display\-Model\-Properties wait for user \hyperlink{virtual_goniometer_8m_ae6bae603a9240706c363298f2936600f}{response}(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} U\-I\-R\-E\-S\-U\-M\-E)\%uiwait(handles.\-figure1)
+\item 
+\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} V\-A\-R\-A\-R\-G\-O\-U\-T \hyperlink{_display_model_properties_8m_aa75144726b375b93ecfc08810e5b5f09}{args} ()
+\item 
+\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-U\-I\-D\-A\-T\-A \hyperlink{_display_model_properties_8m_a7c1ef7386988a8ccd4761d8428895842}{varargout} ()
+\item 
+\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-U\-I\-D\-A\-T\-A \hyperlink{_display_model_properties_8m_a65e25cb5736417fcbcfc40cb09690906}{Hints\-:} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object},'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'contents)
+\item 
+\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-C\-B\-O \hyperlink{_display_model_properties_8m_a170fea07bf72217c0c53868de1f85ef7}{Hint\-:} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object},'\hyperlink{qmb_8m_a97695672c0d89ebbb1074dee2ea2a8d8}{Background\-Color}','\hyperlink{qmb_8m_acc4c9367cff2473d08ec9910547865f6}{white}'\hyperlink{virtual_goniometer_8m_a6b11865bcca154f476b9d05d1ac7a75b}{set})
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles},'\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}' \hyperlink{_display_model_properties_8m_a885e50d3f679fcb6e5e0030c3cb41f15}{rmfield} ()
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{_display_model_properties_8m_a9a300d81a25b0524f2c4b35e8187849b}{isequal} (\hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename}, 0)$\vert$$\vert$isequal(\hyperlink{_read_d_m3___matlab_8m_a3453fec604ce3fd43cb779ff533e4f21}{pathname}
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{_display_model_properties_8m_ab557ba0f868837a10aea9f11a682811d}{disp} ('User pressed cancel') \hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{handles.\-file\-Name} = fullfile(\hyperlink{_read_d_m3___matlab_8m_a3453fec604ce3fd43cb779ff533e4f21}{pathname}, \hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename})
+\item 
+'Please load \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} model first' \hyperlink{_display_model_properties_8m_a8fb2b6b4a03427466839a9e801f3c491}{return} ()
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_ae8aaca4e856448def8d7f6b058217382}{a} (1\-:10,\-:)\%Setup \hyperlink{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}{arrays} for 2\-D plot generation Nbins
+\item 
+\hyperlink{_display_model_properties_8m_a313032fd997042bd09ef6ef925185266}{axes} (handles.\-axes\-\_\-\-Model)
+\item 
+\hyperlink{_display_model_properties_8m_a671548be60e818d4bca9312e8b9a1562}{cla} (handles.\-axes\-\_\-\-Model,'reset')\%Fill the window
+\item 
+depending \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} the desired display \hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords} (\-:, 2)
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{_display_model_properties_8m_a76f56ea974562fddd0e0407dc25d484e}{if} (\hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix} $>$ 0)\&\&(\hyperlink{_display_model_properties_8m_af4c5cec9fce175f73b7da5ecd33c2af6}{iy} $>$ 0) \hyperlink{_display_model_properties_8m_a13bff5716d64b093fedd73dd5d761605}{q\-Array2\-D}(\hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix} = griddata(\hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix},\hyperlink{_display_model_properties_8m_af4c5cec9fce175f73b7da5ecd33c2af6}{iy},\hyperlink{_display_model_properties_8m_a13bff5716d64b093fedd73dd5d761605}{q\-Array2\-D}(\hyperlink{qmb_8m_af780f43ca4293d9bd953b5486f71aebd}{ind}),ix2d,iy2d,'nearest')
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{_display_model_properties_8m_a64faf2c59a9a303748398d9f628cf0e7}{fprintf} ('Total charge\-:\%g\textbackslash{}n', \hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{_display_model_properties_8m_a13bff5716d64b093fedd73dd5d761605}{q\-Array2\-D})))
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{xyz2cfg_8m_a4120e7c19c5d82f60cfc57fb6e34665a}{case} \hyperlink{_display_model_properties_8m_a72b467c0ee74a7b30846a776b945584f}{Potential} (neutral \hyperlink{qmb_8m_a7c5cd0264da47e230ba8c984690fe16c}{atoms}) for \hyperlink{_read_d_m3___matlab_8m_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} normalize by \hyperlink{xyz2cfg_8m_a4120e7c19c5d82f60cfc57fb6e34665a}{case} \hyperlink{_display_model_properties_8m_a1a5eccc585b2555849bb809bced6d1d0}{Potential} (charged \hyperlink{qmb_8m_a7c5cd0264da47e230ba8c984690fe16c}{atoms}) for \hyperlink{_read_d_m3___matlab_8m_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j}
+\item 
+\hyperlink{xyz2cfg_8m_a4120e7c19c5d82f60cfc57fb6e34665a}{case} Displacement \hyperlink{_displacement_params_8m_af619c74fd72bdb64d115463dff2720cd}{map} \hyperlink{_display_model_properties_8m_ae8d2ed97c73868c99a0700e03d9b5671}{Displacement\-Params} (\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles})
+\item 
+\hyperlink{_display_model_properties_8m_aae7484262d0de8267f2542fb76fd905f}{Zcount} (\hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix}, \hyperlink{_display_model_properties_8m_af4c5cec9fce175f73b7da5ecd33c2af6}{iy})
+\item 
+\hyperlink{_display_model_properties_8m_ac9bcc2514e18e59a3e2d0ebac29c8d14}{q\-Array2\-D} (\hyperlink{qmb_8m_af780f43ca4293d9bd953b5486f71aebd}{ind})
+\item 
+\hyperlink{_display_model_properties_8m_a3ed87d1aa9bff39cf0cb0f1fcaeec709}{q\-Array2\-D} (1\-:2, 1\-:\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins})=0
+\item 
+\hyperlink{_display_model_properties_8m_ae75028814ecc1b558ec586cc0311b9d6}{q\-Array2\-D} (\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins}-\/1\-:\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins}, 1\-:\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins})=0
+\item 
+\hyperlink{_display_model_properties_8m_a2310b880b89c997b665aa6b3317fbebf}{q\-Array2\-D} (1\-:\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins}, \hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins}-\/1\-:\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins})=0
+\item 
+\hyperlink{_display_model_properties_8m_a5a85593611f6145f7344ebc3f90172f7}{q\-Array2\-D} (1\-:\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins}, 1\-:2)=0
+\item 
+\hyperlink{_display_model_properties_8m_a488ac71f34044d130e110ea9b2ca00cb}{q\-Array2\-D} (1, 1\-:\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins})
+\item 
+\hyperlink{_display_model_properties_8m_a961027ae78846a68f76fcfd3689145fa}{q\-Array2\-D} (\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins}, 1\-:\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins})
+\item 
+\hyperlink{_display_model_properties_8m_a9e4941d0fc2aa117785c308dc3f46ed0}{q\-Array2\-D} (1\-:\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins}, \hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins})
+\item 
+\hyperlink{_display_model_properties_8m_a13bff5716d64b093fedd73dd5d761605}{q\-Array2\-D} (1\-:\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins}, 1)
+\item 
+\hyperlink{_display_model_properties_8m_a748333b7ef3b3672e023b41ec0088918}{imagesc} (\hyperlink{_display_model_properties_8m_a13bff5716d64b093fedd73dd5d761605}{q\-Array2\-D})
+\item 
+\hyperlink{_display_model_properties_8m_ace6453c265aedf6f6d285350c6f6a7ec}{pause} (0.\-5)
+\item 
+\hyperlink{_display_model_properties_8m_a91e734caf7de6a8592c02d9e7e75effa}{set} (gca,'Y\-Dir','normal','Font\-Size', 14)
+\item 
+\hyperlink{_display_model_properties_8m_aa3e9a9a20b3870b903b32566274f83d2}{set} (gca,'Y\-Dir','normal')
+\item 
+\hyperlink{_display_model_properties_8m_a0a3b9908c77f6f19ea7070d9600de1b4}{xlabel} ('\hyperlink{_read_d_m3___matlab_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{_display_model_properties_8m_ab15b62bce31d4d4d1314fd7533fce833}{nm}')
+\item 
+\hyperlink{_display_model_properties_8m_ac95d3ae2bb0e3a2c84b6e1a47eb2e7d6}{ylabel} ('\hyperlink{qmb_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{_display_model_properties_8m_ab15b62bce31d4d4d1314fd7533fce833}{nm}')
+\item 
+\hyperlink{_display_model_properties_8m_a8e8ef2e3082595e9564beb72abd1cd82}{xlim} (\mbox{[}0.\-5 0.\-092 $\ast$\hyperlink{qmb_8m_ae0de5dca4233645eb4e50562ab6242cf}{max}(\hyperlink{_read_d_m3___matlab_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x})\mbox{]})
+\item 
+\hyperlink{_display_model_properties_8m_a56bece9499a2739bbf45651c8d059b6d}{ylim} (\mbox{[}0.\-5 0.\-092 $\ast$\hyperlink{qmb_8m_ae0de5dca4233645eb4e50562ab6242cf}{max}(\hyperlink{qmb_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y})\mbox{]})
+\item 
+\hyperlink{draw_xtal_8m_a097da1a4e072a25b17f4eb06d5c4ab1d}{switch} \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} display\-Mode \hyperlink{xyz2cfg_8m_a4120e7c19c5d82f60cfc57fb6e34665a}{case} \hyperlink{_display_model_properties_8m_af8f39bae8d397f3df7f9d5ff5cca2cd0}{title} (\hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('Average number of electrons per\%g \hyperlink{_display_model_properties_8m_ab15b62bce31d4d4d1314fd7533fce833}{nm}$^\wedge$2', \hyperlink{_display_model_properties_8m_a5c1bfdb154a30f82836fb30c1f157194}{handles.\-unit\-Area}))
+\item 
+\hyperlink{xyz2cfg_8m_a4120e7c19c5d82f60cfc57fb6e34665a}{case} \hyperlink{_display_model_properties_8m_ada43e2d120139dc9a560fc51a564e190}{title} (\hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('Average \hyperlink{_displacement_params_8m_accc427d493facd9d795029ff42af0392}{Z} number per\%g \hyperlink{_display_model_properties_8m_ab15b62bce31d4d4d1314fd7533fce833}{nm}$^\wedge$2', \hyperlink{_display_model_properties_8m_a5c1bfdb154a30f82836fb30c1f157194}{handles.\-unit\-Area}))
+\item 
+id \hyperlink{_display_model_properties_8m_a4f54e3dc518bea14949091c8e66c4fe7}{Nedge} ()
+\item 
+\hyperlink{_display_model_properties_8m_a9d366b2cdeac8d034afe7dd2d477d9b7}{plot} (\hyperlink{_read_d_m3___matlab_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}, q\-Array)
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{_display_model_properties_8m_ae665b658ac848f49499da512cd4cb8a2}{set} (handles.\-axes\-\_\-\-Model,'Position', \hyperlink{_display_model_properties_8m_adf54215d760dbf0f9fe5627a39015333}{pos})
+\item 
+'$\ast$.\hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{img}', 'Save \hyperlink{sim_image_from_wave_8m_acb3ac767ec1048cf315487da2b577ca4}{wave} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} as' \hyperlink{_display_model_properties_8m_add3fe7a65ad92a8dbbf453a00425c7c1}{uiputfile} ()
+\item 
+\hyperlink{_display_model_properties_8m_ad5f51bccacb48b87c88a1e04f006a9c1}{binwrite2\-D} (\hyperlink{_display_model_properties_8m_a13bff5716d64b093fedd73dd5d761605}{handles.\-q\-Array2\-D}, fullfile(\hyperlink{_read_d_m3___matlab_8m_a3453fec604ce3fd43cb779ff533e4f21}{pathname}, \hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename}), \hyperlink{image_sim_8m_a3bd72991d01b3af4f1ed8ea1317879de}{dx}, \hyperlink{showimage_8m_ac6bb4b856c3d13f19466d849c6ae0138}{dy}, \hyperlink{image_sim_8m_a938f8aa70d7f49a21679ad582b6d4ffb}{handles.\-thickness}, 0, 0)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{_display_model_properties_8m_acc89f64219ddae53243030f2c645fc06}{varargout}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} by \hyperlink{_display_model_properties_8m_a831a3e1133c41b364b824dcb52ee0f9a}{itself}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} by creates \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} new \\*
+D\-I\-S\-P\-L\-A\-Y\-M\-O\-D\-E\-L\-P\-R\-O\-P\-E\-R\-T\-I\-E\-S or \\*
+raises the existing singleton $\ast$ \hyperlink{_display_model_properties_8m_a11f28fd71f610f4186ac8c30e0b5236a}{H}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} by creates \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} new \\*
+D\-I\-S\-P\-L\-A\-Y\-M\-O\-D\-E\-L\-P\-R\-O\-P\-E\-R\-T\-I\-E\-S or \\*
+raises the existing singleton \\*
+property \hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value} pairs are \\*
+applied to the G\-U\-I before \\*
+Display\-Model\-Properties\-\_\-\-Opening\-Function \\*
+gets called An unrecognized \\*
+property \hyperlink{qmb_8m_abdc1dcc6fed70c14f9b5ae237e486f4e}{name} or invalid \hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value} \\*
+makes property application \\*
+stop All inputs are passed to \\*
+Display\-Model\-Properties\-\_\-\-Opening\-Fcn \\*
+via varargin $\ast$See G\-U\-I Options \\*
+\hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} G\-U\-I\-D\-E \hyperlink{aberrations___t_e_m_8m_aef29541a06b7f933d32a804307db13af}{s} Tools menu Choose \\*
+G\-U\-I allows only one instance \\*
+to run(singleton)\char`\"{}. \% \% See \\*
+also \hyperlink{_display_model_properties_8m_aae49cf4b5c3c3e15924235a5b855c67e}{gui\-\_\-\-State}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{_display_model_properties_8m_a9b07119da70fc4a54e0d1cb5751d69aa}{nargout} \mbox{[}\hyperlink{virtual_goniometer_8m_a7c1ef7386988a8ccd4761d8428895842}{varargout}\{1\-:nargout\}\mbox{]} = \hyperlink{virtual_goniometer_8m_a58f7f5bb8af524fdfac53ec31e329e3f}{gui\-\_\-mainfcn}(\hyperlink{virtual_goniometer_8m_a15c01a18166c645a9c9811b10391ee06}{gui\-\_\-\-State}, varargin\{\-:\})
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_acb58866fdc8f02a2074fe1b4c696248e}{Mm}
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_a6b5de92512db05f537fca825d4313832}{pos\-File\-Path} = varargin\{1\}.\hyperlink{read_config_file_8m_af1af0cd7fd83b66990bde283570f23ea}{config\-Path}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_addd102b0e03af2114c4c0c229debaf4d}{pos\-File\-Name} = varargin\{1\}.pos\-File\-Name
+\item 
+\hyperlink{_display_model_properties_8m_a2ff994e16bf9521154de4cf659a3b689}{filename} = fullfile(\hyperlink{_display_model_properties_8m_a6b5de92512db05f537fca825d4313832}{handles.\-pos\-File\-Path},\hyperlink{write_fields2_file_8m_a62237b40e0bf78587fcc5d0e6cf4ce8b}{handles.\-pos\-File\-Name})
+\item 
+\hyperlink{_display_model_properties_8m_a7b9c3d619ad7365ec6434713e76142e8}{fid} = fopen(\hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename})
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_a40de446ab6d10300ce08eb0792ac3b4d}{file\-Name} = \hyperlink{write_fields2_file_8m_a62237b40e0bf78587fcc5d0e6cf4ce8b}{handles.\-pos\-File\-Name}
+\item 
+\hyperlink{_display_model_properties_8m_a282b163d0c51ea3b474b98110085bdad}{end} \mbox{[}\hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords}, \hyperlink{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}{a\-Type}, \hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}, \hyperlink{write_c_f_g_8m_a75175ae123d011b5deabab133d940a44}{D\-W}, \hyperlink{_display_model_properties_8m_a14685678a932a690bb677ca0be6b191a}{occ}, \hyperlink{_display_model_properties_8m_a9f9b7255ba6680c145f9c08ebf2bc024}{charge}\mbox{]} = read\-C\-F\-G(\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{handles.\-file\-Name})
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_aed6ba36789aad47faddb1761f9c8139e}{a} = \mbox{[}\hyperlink{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}{a\-Type} \hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords} \hyperlink{write_c_f_g_8m_a75175ae123d011b5deabab133d940a44}{D\-W} \hyperlink{_display_model_properties_8m_a14685678a932a690bb677ca0be6b191a}{occ} \hyperlink{_display_model_properties_8m_a9f9b7255ba6680c145f9c08ebf2bc024}{charge}\mbox{]}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_a1e9a1a7ede5f8d1dd9f322351e7ac3b4}{V0\-\_\-charged} = V0\-\_\-charged
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_a107456d9f8b237e9253fac83cbf9f43b}{V0\-\_\-neutral}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Determine what the user \\*
+wants to \hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Determine what the user \\*
+wants to \hyperlink{_display_model_properties_8m_aa3e85bcc21f31fb262e8662d5e2a8764}{Value}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_a90fffc4ddeaf4dbe79dd5adc47bd9a5d}{atom\-Size} = 30
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_aa155dc23daedcf23548e3141bf539361}{Nedge} = 100
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_a7c734b3780a39d4bc26ba619f7246cb4}{P\-S\-Fwidth} = 10$\ast$\hyperlink{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{str2double}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-\-P\-S\-Fwidth,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'))
+\item 
+convert from \hyperlink{_display_model_properties_8m_ab15b62bce31d4d4d1314fd7533fce833}{nm} to \hyperlink{sim_image_from_wave_8m_a74335ae40bc4ffab9fc80d95fee97208}{A} \hyperlink{showimage_8m_acec6d8ad52a28972fa74e071c1a63b6a}{scale} the \\*
+\hyperlink{_display_model_properties_8m_a7c734b3780a39d4bc26ba619f7246cb4}{P\-S\-Fwidth} to produce \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} Gaussian \\*
+of \hyperlink{_display_model_properties_8m_a630ca408a0134d0efb20d13e62780d9c}{F\-W\-H\-M}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins} = round(\hyperlink{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{str2double}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-\-Nbins,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}')))
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_a5c1bfdb154a30f82836fb30c1f157194}{unit\-Area} = \hyperlink{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{str2double}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-\-Unit\-Area,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'))
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_a938f8aa70d7f49a21679ad582b6d4ffb}{thickness} = \hyperlink{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{str2double}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-thickness,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'))
+\item 
+\hyperlink{_display_model_properties_8m_ac403eb4664ef707165d99192d313aa59}{E0} = \hyperlink{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{str2double}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-\-High\-Voltage,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'))
+\item 
+\hyperlink{_display_model_properties_8m_ab146b9cbab6e73e7588b240dc709fe01}{beta} = \hyperlink{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{str2double}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-beta,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'))
+\item 
+\hyperlink{_display_model_properties_8m_a29d2f984615ceb76cccede96cee6d633}{simple\-Average} = \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-checkbox\-\_\-\-Simple\-Average,'\hyperlink{image_sim_8m_a896c037a32087c5c20d97e64a1786880}{Value}')
+\item 
+\hyperlink{_display_model_properties_8m_adf44f03c6ae7b279f60019d07e59891c}{coords} = \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{handles.\-a}(\-:,2\-:4)
+\item 
+\hyperlink{_display_model_properties_8m_ad4a8ac3c7026e0e2e13426103c839cb7}{a\-Type} = \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{handles.\-a}(\-:,1)
+\item 
+\hyperlink{_display_model_properties_8m_ae436dbba71d976b0111c531939f54e66}{D\-W} = \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{handles.\-a}(\-:,5)
+\item 
+\hyperlink{_display_model_properties_8m_a14685678a932a690bb677ca0be6b191a}{occ} = \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{handles.\-a}(\-:,6)
+\item 
+\hyperlink{_display_model_properties_8m_a9f9b7255ba6680c145f9c08ebf2bc024}{charge} = \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{handles.\-a}(\-:,7)
+\item 
+\hyperlink{_display_model_properties_8m_af443bf254531220087dc4c76086f3c60}{Natom} = \hyperlink{qmb_8m_a34efcbeb95e7c3e7e0050034d30c01cd}{size}(\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{handles.\-a},1)
+\item 
+\hyperlink{showimage_8m_ac1b7f512a0fa5c0b7d1d056a07969aa2}{use} nomenclature from Malis et \hyperlink{_display_model_properties_8m_aa43ed2a9e1a55bb5e3641a85217bf01b}{al}
+\item 
+\hyperlink{_display_model_properties_8m_a0f008999cde6bb6228fbd58b9a7f49c5}{q\-Array2\-D} = \hyperlink{virtual_goniometer_8m_a658ea266fd3baee1bdd483b9117e9f54}{zeros}(\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins})
+\item 
+\hyperlink{_display_model_properties_8m_a52fcae134f6460176c02402bb880c852}{Zcount} = \hyperlink{virtual_goniometer_8m_a658ea266fd3baee1bdd483b9117e9f54}{zeros}(\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins})
+\item 
+\hyperlink{_display_model_properties_8m_aacddc911cdfe5cd5ec97b084754542d4}{dx} = \hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}(1,1)/(\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins}-\/1)
+\item 
+\hyperlink{_display_model_properties_8m_a22b1a06ae09d552a5ca668a07885ebf1}{dy} = \hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}(2,2)/(\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins}-\/1)
+\item 
+\hyperlink{_display_model_properties_8m_adf54215d760dbf0f9fe5627a39015333}{pos} = \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-axes\-\_\-\-Model,'Position')
+\item 
+depending \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} the desired display \hyperlink{_display_model_properties_8m_aabea1a308e18fee00cc3a9031f079ba6}{mode}
+\item 
+depending \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} the desired \\*
+display \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{_display_model_properties_8m_ad2fefc6d13dcba7604d1dbe5835ccbe9}{filled}
+\item 
+axis \hyperlink{_display_model_properties_8m_afeaa7ecdd726aa1950ba61dc659eb561}{equal}
+\item 
+axis \hyperlink{_display_model_properties_8m_a1a71f5e406b211ed616173276484b78b}{tight}
+\item 
+\hyperlink{xyz2cfg_8m_a4120e7c19c5d82f60cfc57fb6e34665a}{case} collect all the \hyperlink{_display_model_properties_8m_a6e2a30274988b40af22153ce1cb610da}{charges}
+\item 
+\hyperlink{_display_model_properties_8m_af4c5cec9fce175f73b7da5ecd33c2af6}{iy} = round(\hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords}(\hyperlink{_read_d_m3___matlab_8m_abf2bc2545a4a5f5683d9ef3ed0d977e0}{j},1)/\hyperlink{image_sim_8m_a3bd72991d01b3af4f1ed8ea1317879de}{dx})+1
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} ix \hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix} = \hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins}
+\item 
+\hyperlink{xyz2cfg_8m_a4120e7c19c5d82f60cfc57fb6e34665a}{case} collect all the \hyperlink{_display_model_properties_8m_a8abbe5b6f803e9ac166164452a702587}{Znumbers}
+\item 
+\hyperlink{_display_model_properties_8m_a9717e7bbecb906637e86cef6da3d83c2}{return}
+\item 
+\hyperlink{xyz2cfg_8m_a4120e7c19c5d82f60cfc57fb6e34665a}{case} Inelastic mean free path for \hyperlink{_display_model_properties_8m_ae68d47bae107c4762d7dc08574518aa5}{j}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} compute \hyperlink{_display_model_properties_8m_aa9db4bc81fc242acfaf589f2241c1aca}{Z\-\_\-eff}
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{_display_model_properties_8m_ad073b585c1c63d28a45d86dd22fcb004}{First}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Compute the \\*
+effective \hyperlink{_displacement_params_8m_accc427d493facd9d795029ff42af0392}{Z} number \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} thos \hyperlink{_display_model_properties_8m_a309babb65f52c3fc48d7b15df1759382}{eplaces}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Compute the \\*
+effective \hyperlink{_displacement_params_8m_accc427d493facd9d795029ff42af0392}{Z} number \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} thos \\*
+where \hyperlink{image_sim_8m_a2bc2c45f22146a64d1dc561fac7e60c1}{it} is \hyperlink{_display_model_properties_8m_adfc876b35db3e97d88b3a2e0d8ff0c61}{defined}
+\item 
+\hyperlink{_display_model_properties_8m_afe51947418c28b930868de413ffe46e8}{Zmean} = \hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{_display_model_properties_8m_a13bff5716d64b093fedd73dd5d761605}{q\-Array2\-D}(\hyperlink{qmb_8m_af780f43ca4293d9bd953b5486f71aebd}{ind}))/\hyperlink{qmb_8m_ab69fc29223800551c1fca07ee84e90ea}{length}(\hyperlink{qmb_8m_af780f43ca4293d9bd953b5486f71aebd}{ind})
+\item 
+\hyperlink{_display_model_properties_8m_a391e34f2de441d79152a7b3d6e4c9c86}{figure}
+\item 
+We now need to interpolate \\*
+over those \hyperlink{qmb_8m_a76d164d39acada2c40fd4397c2715217}{pixels} which have \\*
+not been \hyperlink{_display_model_properties_8m_a806029a93894e5fead865ad2194ccaa8}{calculated}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} compute \hyperlink{_display_model_properties_8m_adaa89d4d69c847c25113bb245d01df31}{Em}
+\item 
+\hyperlink{_display_model_properties_8m_a2af263d0f4f82b772db14de73c71b4d1}{lambda}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} The common display \\*
+code that converts to plots \\*
+from \hyperlink{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}{arrays}
+\item 
+\hyperlink{_display_model_properties_8m_a0888783ccb240d8899f77cdcd85aa4b9}{y} = \hyperlink{showimage_8m_ac6bb4b856c3d13f19466d849c6ae0138}{dy}$\ast$(\mbox{[}0\-:\hyperlink{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{Nbins}-\/1\mbox{]}.')
+\item 
+Setup \hyperlink{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}{arrays} for \hyperlink{sim_image_from_wave_8m_a3341a2f8b0a2b23e6ee1c562cf5a0cc1}{plot} generation \hyperlink{_display_model_properties_8m_ac8a3dfbb1ea8891754a28738b94023b8}{dkx} = 1/\hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}(1,1)
+\item 
+\hyperlink{_display_model_properties_8m_a59650fdddef08cde1605e75fa4181c5e}{dky} = 1/\hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}(2,2)
+\item 
+\hyperlink{_display_model_properties_8m_adcbf6818ca1a5f06faf47e9f23063dc5}{k2} = \hyperlink{aberrations_8m_ae814a4b95d0215118e1ea731ae41185b}{fftshift}(kx.$^\wedge$2+ky.$^\wedge$2)
+\item 
+\hyperlink{sim_image_from_wave_8m_adcbf6818ca1a5f06faf47e9f23063dc5}{k2}(1, 1)\%Smoothen the 2\-D array The scaling should also relate the area of a single unit cell with that of the whole array the scale defines how many pixels are in \hyperlink{_display_model_properties_8m_ab15b62bce31d4d4d1314fd7533fce833}{nm}
+\item 
+\hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{_display_model_properties_8m_ab15b62bce31d4d4d1314fd7533fce833}{nm} \hyperlink{_display_model_properties_8m_aa0f635e3dfa4fc088fb53982ec8a3d4d}{scale} = scale$\ast$\hyperlink{_display_model_properties_8m_a5c1bfdb154a30f82836fb30c1f157194}{handles.\-unit\-Area}/\hyperlink{image_sim_8m_a938f8aa70d7f49a21679ad582b6d4ffb}{handles.\-thickness}
+\item 
+\hyperlink{qmb_8m_ad589399858397b7c05877f34c359ed55}{Display} \hyperlink{_display_model_properties_8m_aa255219653b84441cbe893b4f117f7ed}{\-\_\-\-\_\-pad9\-\_\-\-\_\-}
+\item 
+\hyperlink{_display_model_properties_8m_a75055c100cc86bbb92990a48f766bd91}{colorbar}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Show the integrated \hyperlink{_display_model_properties_8m_a4a4817b8f77622be8fc00228c8ab44f3}{plot}
+\item 
+\hyperlink{_display_model_properties_8m_a90b97b8cf7625e0ff404c0585b6ddb36}{pos\-Plot} = \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-axes\-\_\-\-Plot,'Tight\-Inset')
+\item 
+\hyperlink{_display_model_properties_8m_ad0fe5470ce12d0adac06b5470231cbb3}{pos\-Img} = \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-axes\-\_\-\-Model,'Tight\-Inset')
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_display_model_properties_8m_ae8aaca4e856448def8d7f6b058217382}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!a@{a}}
+\index{a@{a}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} a (
+\begin{DoxyParamCaption}
+\item[{1\-:10}]{, }
+\item[{\-:}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_ae8aaca4e856448def8d7f6b058217382}
+\hypertarget{_display_model_properties_8m_aa75144726b375b93ecfc08810e5b5f09}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!args@{args}}
+\index{args@{args}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{args}]{\setlength{\rightskip}{0pt plus 5cm}{\bf see} V\-A\-R\-A\-R\-G\-O\-U\-T args (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{_display_model_properties_8m_aa75144726b375b93ecfc08810e5b5f09}
+\hypertarget{_display_model_properties_8m_a313032fd997042bd09ef6ef925185266}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!axes@{axes}}
+\index{axes@{axes}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{axes}]{\setlength{\rightskip}{0pt plus 5cm}axes (
+\begin{DoxyParamCaption}
+\item[{handles.}]{axes\-\_\-\-Model}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a313032fd997042bd09ef6ef925185266}
+\hypertarget{_display_model_properties_8m_ad5f51bccacb48b87c88a1e04f006a9c1}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!binwrite2\-D@{binwrite2\-D}}
+\index{binwrite2\-D@{binwrite2\-D}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{binwrite2\-D}]{\setlength{\rightskip}{0pt plus 5cm}binwrite2\-D (
+\begin{DoxyParamCaption}
+\item[{handles.}]{q\-Array2\-D, }
+\item[{fullfile({\bf pathname}, {\bf filename})}]{, }
+\item[{{\bf dx}}]{, }
+\item[{{\bf dy}}]{, }
+\item[{handles.}]{thickness, }
+\item[{0}]{, }
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_ad5f51bccacb48b87c88a1e04f006a9c1}
+\hypertarget{_display_model_properties_8m_a671548be60e818d4bca9312e8b9a1562}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!cla@{cla}}
+\index{cla@{cla}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{cla}]{\setlength{\rightskip}{0pt plus 5cm}cla (
+\begin{DoxyParamCaption}
+\item[{handles.}]{axes\-\_\-\-Model, }
+\item[{'reset'}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a671548be60e818d4bca9312e8b9a1562}
+\hypertarget{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!coords@{coords}}
+\index{coords@{coords}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{coords}]{\setlength{\rightskip}{0pt plus 5cm}depending {\bf on} the desired display coords (
+\begin{DoxyParamCaption}
+\item[{\-:}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}
+\hypertarget{_display_model_properties_8m_ab557ba0f868837a10aea9f11a682811d}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!disp@{disp}}
+\index{disp@{disp}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{disp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} disp (
+\begin{DoxyParamCaption}
+\item[{'User pressed cancel'}]{}
+\end{DoxyParamCaption}
+) = fullfile({\bf pathname}, {\bf filename})}}\label{_display_model_properties_8m_ab557ba0f868837a10aea9f11a682811d}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_model_properties_8m_ab557ba0f868837a10aea9f11a682811d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_display_model_properties_8m_ae8d2ed97c73868c99a0700e03d9b5671}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Displacement\-Params@{Displacement\-Params}}
+\index{Displacement\-Params@{Displacement\-Params}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Displacement\-Params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf case} Displacement {\bf map} Displacement\-Params (
+\begin{DoxyParamCaption}
+\item[{{\bf handles}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_ae8d2ed97c73868c99a0700e03d9b5671}
+\hypertarget{_display_model_properties_8m_a5e769bbbabcaddc548203741c7100228}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!fclose@{fclose}}
+\index{fclose@{fclose}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{fclose}]{\setlength{\rightskip}{0pt plus 5cm}fclose (
+\begin{DoxyParamCaption}
+\item[{{\bf fid}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a5e769bbbabcaddc548203741c7100228}
+\hypertarget{_display_model_properties_8m_a64faf2c59a9a303748398d9f628cf0e7}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{fprintf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} fprintf (
+\begin{DoxyParamCaption}
+\item[{'Total charge\-:\%g\textbackslash{}n'}]{, }
+\item[{{\bf sum}({\bf sum}({\bf q\-Array2\-D}))}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a64faf2c59a9a303748398d9f628cf0e7}
+\hypertarget{_display_model_properties_8m_a58f7f5bb8af524fdfac53ec31e329e3f}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!gui\-\_\-mainfcn@{gui\-\_\-mainfcn}}
+\index{gui\-\_\-mainfcn@{gui\-\_\-mainfcn}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{gui\-\_\-mainfcn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} gui\-\_\-mainfcn (
+\begin{DoxyParamCaption}
+\item[{{\bf gui\-\_\-\-State}}]{, }
+\item[{varargin\{\-:\}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a58f7f5bb8af524fdfac53ec31e329e3f}
+\hypertarget{_display_model_properties_8m_abe7b9f58eeb305f30e24c60bcbb071d8}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!guidata@{guidata}}
+\index{guidata@{guidata}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{guidata}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Update {\bf handles} structure guidata (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object}}]{, }
+\item[{{\bf handles}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_abe7b9f58eeb305f30e24c60bcbb071d8}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{_display_model_properties_8m_abe7b9f58eeb305f30e24c60bcbb071d8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_display_model_properties_8m_a170fea07bf72217c0c53868de1f85ef7}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Hint\-:@{Hint\-:}}
+\index{Hint\-:@{Hint\-:}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Hint\-:}]{\setlength{\rightskip}{0pt plus 5cm}{\bf see} G\-C\-B\-O Hint\-: (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object}}]{, }
+\item[{'{\bf Background\-Color}'}]{, }
+\item[{'{\bf white}'}]{set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{_display_model_properties_8m_a170fea07bf72217c0c53868de1f85ef7}
+\hypertarget{_display_model_properties_8m_a65e25cb5736417fcbcfc40cb09690906}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Hints\-:@{Hints\-:}}
+\index{Hints\-:@{Hints\-:}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Hints\-:}]{\setlength{\rightskip}{0pt plus 5cm}{\bf see} G\-U\-I\-D\-A\-T\-A Hints\-: (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object},'{\bf String}'}]{contents}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{_display_model_properties_8m_a65e25cb5736417fcbcfc40cb09690906}
+
+
+Definition at line 138 of file Display\-Model\-Properties.\-m.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{_display_model_properties_8m_a65e25cb5736417fcbcfc40cb09690906_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_display_model_properties_8m_a6e69a2e6c16546a1aba75e0422487e55}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!h\-Object@{h\-Object}}
+\index{h\-Object@{h\-Object}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{h\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf see} V\-A\-R\-A\-R\-G\-I\-N h\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{_display_model_properties_8m_a6e69a2e6c16546a1aba75e0422487e55}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{_display_model_properties_8m_a6e69a2e6c16546a1aba75e0422487e55_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_display_model_properties_8m_a79d1b4edeacaa7034a9cda0e719b8c54}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!if@{if}}
+\index{if@{if}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} clear {\bf coords} {\bf a\-Type} {\bf Mm} {\bf D\-W} {\bf occ} {\bf charge} {\bf end} {\bf end} {\bf end} if (
+\begin{DoxyParamCaption}
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a79d1b4edeacaa7034a9cda0e719b8c54}
+\hypertarget{_display_model_properties_8m_a76f56ea974562fddd0e0407dc25d484e}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!if@{if}}
+\index{if@{if}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} if (
+\begin{DoxyParamCaption}
+\item[{{\bf ix}}]{, }
+\item[{0}]{}
+\end{DoxyParamCaption}
+) = griddata({\bf ix},{\bf iy},{\bf q\-Array2\-D}({\bf ind}),ix2d,iy2d,'nearest')}}\label{_display_model_properties_8m_a76f56ea974562fddd0e0407dc25d484e}
+\hypertarget{_display_model_properties_8m_a748333b7ef3b3672e023b41ec0088918}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!imagesc@{imagesc}}
+\index{imagesc@{imagesc}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{imagesc}]{\setlength{\rightskip}{0pt plus 5cm}imagesc (
+\begin{DoxyParamCaption}
+\item[{{\bf q\-Array2\-D}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a748333b7ef3b3672e023b41ec0088918}
+\hypertarget{_display_model_properties_8m_aae1d1bec0e9c36c2fddc5cd87d8c4eee}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!ischar@{ischar}}
+\index{ischar@{ischar}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{ischar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} {\bf nargin}\&\& ischar (
+\begin{DoxyParamCaption}
+\item[{varargin\{1\}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_aae1d1bec0e9c36c2fddc5cd87d8c4eee}
+\hypertarget{_display_model_properties_8m_a0e7cd049abfc77e119e4f3eadf732267}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!isempty@{isempty}}
+\index{isempty@{isempty}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{isempty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} isempty (
+\begin{DoxyParamCaption}
+\item[{{\bf coords}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a0e7cd049abfc77e119e4f3eadf732267}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{_display_model_properties_8m_a0e7cd049abfc77e119e4f3eadf732267_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_display_model_properties_8m_a9a300d81a25b0524f2c4b35e8187849b}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!isequal@{isequal}}
+\index{isequal@{isequal}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{isequal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} isequal (
+\begin{DoxyParamCaption}
+\item[{{\bf filename}}]{, }
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a9a300d81a25b0524f2c4b35e8187849b}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{_display_model_properties_8m_a9a300d81a25b0524f2c4b35e8187849b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_display_model_properties_8m_ad96e18e0d630e3cd4dc95849cd514a1d}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!isfield@{isfield}}
+\index{isfield@{isfield}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{isfield}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} isfield (
+\begin{DoxyParamCaption}
+\item[{varargin\{1\}}]{, }
+\item[{'{\bf coords}'}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_ad96e18e0d630e3cd4dc95849cd514a1d}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{_display_model_properties_8m_ad96e18e0d630e3cd4dc95849cd514a1d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_display_model_properties_8m_a4f54e3dc518bea14949091c8e66c4fe7}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Nedge@{Nedge}}
+\index{Nedge@{Nedge}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Nedge}]{\setlength{\rightskip}{0pt plus 5cm}id Nedge (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{_display_model_properties_8m_a4f54e3dc518bea14949091c8e66c4fe7}
+\hypertarget{_display_model_properties_8m_ace6453c265aedf6f6d285350c6f6a7ec}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!pause@{pause}}
+\index{pause@{pause}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}pause (
+\begin{DoxyParamCaption}
+\item[{0.}]{5}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_ace6453c265aedf6f6d285350c6f6a7ec}
+\hypertarget{_display_model_properties_8m_a9d366b2cdeac8d034afe7dd2d477d9b7}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!plot@{plot}}
+\index{plot@{plot}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}plot (
+\begin{DoxyParamCaption}
+\item[{{\bf x}}]{, }
+\item[{q\-Array}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a9d366b2cdeac8d034afe7dd2d477d9b7}
+\hypertarget{_display_model_properties_8m_a72b467c0ee74a7b30846a776b945584f}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Potential@{Potential}}
+\index{Potential@{Potential}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Potential}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} {\bf case} Potential (
+\begin{DoxyParamCaption}
+\item[{neutral}]{atoms}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a72b467c0ee74a7b30846a776b945584f}
+\hypertarget{_display_model_properties_8m_a1a5eccc585b2555849bb809bced6d1d0}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Potential@{Potential}}
+\index{Potential@{Potential}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Potential}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} normalize by {\bf case} Potential (
+\begin{DoxyParamCaption}
+\item[{charged}]{atoms}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a1a5eccc585b2555849bb809bced6d1d0}
+\hypertarget{_display_model_properties_8m_ae26b38067a9792326b19b3e2e057feb1}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!pushbutton\-\_\-\-Update\-View\-\_\-\-Callback@{pushbutton\-\_\-\-Update\-View\-\_\-\-Callback}}
+\index{pushbutton\-\_\-\-Update\-View\-\_\-\-Callback@{pushbutton\-\_\-\-Update\-View\-\_\-\-Callback}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{pushbutton\-\_\-\-Update\-View\-\_\-\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}pushbutton\-\_\-\-Update\-View\-\_\-\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object}}]{, }
+\item[{{\bf eventdata}}]{, }
+\item[{{\bf handles}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_ae26b38067a9792326b19b3e2e057feb1}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{_display_model_properties_8m_ae26b38067a9792326b19b3e2e057feb1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_display_model_properties_8m_ac9bcc2514e18e59a3e2d0ebac29c8d14}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!q\-Array2\-D@{q\-Array2\-D}}
+\index{q\-Array2\-D@{q\-Array2\-D}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{q\-Array2\-D}]{\setlength{\rightskip}{0pt plus 5cm}q\-Array2\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf ind}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_ac9bcc2514e18e59a3e2d0ebac29c8d14}
+\hypertarget{_display_model_properties_8m_a3ed87d1aa9bff39cf0cb0f1fcaeec709}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!q\-Array2\-D@{q\-Array2\-D}}
+\index{q\-Array2\-D@{q\-Array2\-D}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{q\-Array2\-D}]{\setlength{\rightskip}{0pt plus 5cm}q\-Array2\-D (
+\begin{DoxyParamCaption}
+\item[{1\-:2}]{, }
+\item[{1\-:{\bf Nbins}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{_display_model_properties_8m_a3ed87d1aa9bff39cf0cb0f1fcaeec709}
+\hypertarget{_display_model_properties_8m_ae75028814ecc1b558ec586cc0311b9d6}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!q\-Array2\-D@{q\-Array2\-D}}
+\index{q\-Array2\-D@{q\-Array2\-D}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{q\-Array2\-D}]{\setlength{\rightskip}{0pt plus 5cm}q\-Array2\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf Nbins}-\/1\-:{\bf Nbins}}]{, }
+\item[{1\-:{\bf Nbins}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{_display_model_properties_8m_ae75028814ecc1b558ec586cc0311b9d6}
+\hypertarget{_display_model_properties_8m_a2310b880b89c997b665aa6b3317fbebf}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!q\-Array2\-D@{q\-Array2\-D}}
+\index{q\-Array2\-D@{q\-Array2\-D}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{q\-Array2\-D}]{\setlength{\rightskip}{0pt plus 5cm}q\-Array2\-D (
+\begin{DoxyParamCaption}
+\item[{1\-:{\bf Nbins}}]{, }
+\item[{{\bf Nbins}-\/1\-:{\bf Nbins}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{_display_model_properties_8m_a2310b880b89c997b665aa6b3317fbebf}
+\hypertarget{_display_model_properties_8m_a5a85593611f6145f7344ebc3f90172f7}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!q\-Array2\-D@{q\-Array2\-D}}
+\index{q\-Array2\-D@{q\-Array2\-D}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{q\-Array2\-D}]{\setlength{\rightskip}{0pt plus 5cm}q\-Array2\-D (
+\begin{DoxyParamCaption}
+\item[{1\-:{\bf Nbins}}]{, }
+\item[{1\-:2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{_display_model_properties_8m_a5a85593611f6145f7344ebc3f90172f7}
+\hypertarget{_display_model_properties_8m_a488ac71f34044d130e110ea9b2ca00cb}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!q\-Array2\-D@{q\-Array2\-D}}
+\index{q\-Array2\-D@{q\-Array2\-D}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{q\-Array2\-D}]{\setlength{\rightskip}{0pt plus 5cm}q\-Array2\-D (
+\begin{DoxyParamCaption}
+\item[{1}]{, }
+\item[{1\-:{\bf Nbins}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a488ac71f34044d130e110ea9b2ca00cb}
+\hypertarget{_display_model_properties_8m_a961027ae78846a68f76fcfd3689145fa}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!q\-Array2\-D@{q\-Array2\-D}}
+\index{q\-Array2\-D@{q\-Array2\-D}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{q\-Array2\-D}]{\setlength{\rightskip}{0pt plus 5cm}q\-Array2\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf Nbins}}]{, }
+\item[{1\-:{\bf Nbins}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a961027ae78846a68f76fcfd3689145fa}
+\hypertarget{_display_model_properties_8m_a9e4941d0fc2aa117785c308dc3f46ed0}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!q\-Array2\-D@{q\-Array2\-D}}
+\index{q\-Array2\-D@{q\-Array2\-D}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{q\-Array2\-D}]{\setlength{\rightskip}{0pt plus 5cm}q\-Array2\-D (
+\begin{DoxyParamCaption}
+\item[{1\-:{\bf Nbins}}]{, }
+\item[{{\bf Nbins}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a9e4941d0fc2aa117785c308dc3f46ed0}
+\hypertarget{_display_model_properties_8m_a13bff5716d64b093fedd73dd5d761605}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!q\-Array2\-D@{q\-Array2\-D}}
+\index{q\-Array2\-D@{q\-Array2\-D}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{q\-Array2\-D}]{\setlength{\rightskip}{0pt plus 5cm}q\-Array2\-D (
+\begin{DoxyParamCaption}
+\item[{1\-:{\bf Nbins}}]{, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a13bff5716d64b093fedd73dd5d761605}
+\hypertarget{_display_model_properties_8m_a8fb2b6b4a03427466839a9e801f3c491}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!return@{return}}
+\index{return@{return}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{return}]{\setlength{\rightskip}{0pt plus 5cm}'Please load {\bf a} model first' return (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{_display_model_properties_8m_a8fb2b6b4a03427466839a9e801f3c491}
+\hypertarget{_display_model_properties_8m_a885e50d3f679fcb6e5e0030c3cb41f15}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!rmfield@{rmfield}}
+\index{rmfield@{rmfield}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{rmfield}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles},'{\bf a}' rmfield (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{_display_model_properties_8m_a885e50d3f679fcb6e5e0030c3cb41f15}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{_display_model_properties_8m_a885e50d3f679fcb6e5e0030c3cb41f15_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_display_model_properties_8m_a91e734caf7de6a8592c02d9e7e75effa}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!set@{set}}
+\index{set@{set}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{gca}]{, }
+\item[{'Y\-Dir'}]{, }
+\item[{'normal'}]{, }
+\item[{'Font\-Size'}]{, }
+\item[{14}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a91e734caf7de6a8592c02d9e7e75effa}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{_display_model_properties_8m_a91e734caf7de6a8592c02d9e7e75effa_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_display_model_properties_8m_aa3e9a9a20b3870b903b32566274f83d2}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!set@{set}}
+\index{set@{set}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{gca}]{, }
+\item[{'Y\-Dir'}]{, }
+\item[{'normal'}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_aa3e9a9a20b3870b903b32566274f83d2}
+\hypertarget{_display_model_properties_8m_ae665b658ac848f49499da512cd4cb8a2}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!set@{set}}
+\index{set@{set}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{axes\-\_\-\-Model, }
+\item[{'Position'}]{, }
+\item[{{\bf pos}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_ae665b658ac848f49499da512cd4cb8a2}
+\hypertarget{_display_model_properties_8m_ac27a50c824247d528a1768786bce7805}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!size@{size}}
+\index{size@{size}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}The input will consist of {\bf a} {\bf row} {\bf vector} of arguments {\bf if} size (
+\begin{DoxyParamCaption}
+\item[{varargin}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_ac27a50c824247d528a1768786bce7805}
+
+
+Definition at line 59 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_af8f39bae8d397f3df7f9d5ff5cca2cd0}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!title@{title}}
+\index{title@{title}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}{\bf switch} {\bf handles} display\-Mode {\bf case} title (
+\begin{DoxyParamCaption}
+\item[{{\bf sprintf}('Average number of electrons per\%g {\bf nm}$^\wedge$2', {\bf handles.\-unit\-Area})}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_af8f39bae8d397f3df7f9d5ff5cca2cd0}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{_display_model_properties_8m_af8f39bae8d397f3df7f9d5ff5cca2cd0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_display_model_properties_8m_ada43e2d120139dc9a560fc51a564e190}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!title@{title}}
+\index{title@{title}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}{\bf case} title (
+\begin{DoxyParamCaption}
+\item[{{\bf sprintf}('Average {\bf Z} number per\%g {\bf nm}$^\wedge$2', {\bf handles.\-unit\-Area})}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_ada43e2d120139dc9a560fc51a564e190}
+\hypertarget{_display_model_properties_8m_add3fe7a65ad92a8dbbf453a00425c7c1}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!uiputfile@{uiputfile}}
+\index{uiputfile@{uiputfile}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{uiputfile}]{\setlength{\rightskip}{0pt plus 5cm}'$\ast$.{\bf img}', 'Save {\bf wave} {\bf function} as' uiputfile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{_display_model_properties_8m_add3fe7a65ad92a8dbbf453a00425c7c1}
+\hypertarget{_display_model_properties_8m_a7c1ef7386988a8ccd4761d8428895842}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!varargout@{varargout}}
+\index{varargout@{varargout}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{varargout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf see} G\-U\-I\-D\-A\-T\-A varargout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{_display_model_properties_8m_a7c1ef7386988a8ccd4761d8428895842}
+
+
+Definition at line 131 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a0a3b9908c77f6f19ea7070d9600de1b4}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!xlabel@{xlabel}}
+\index{xlabel@{xlabel}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{xlabel}]{\setlength{\rightskip}{0pt plus 5cm}xlabel (
+\begin{DoxyParamCaption}
+\item[{'{\bf x} {\bf in} {\bf nm}'}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a0a3b9908c77f6f19ea7070d9600de1b4}
+\hypertarget{_display_model_properties_8m_a8e8ef2e3082595e9564beb72abd1cd82}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!xlim@{xlim}}
+\index{xlim@{xlim}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{xlim}]{\setlength{\rightskip}{0pt plus 5cm}xlim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a8e8ef2e3082595e9564beb72abd1cd82}
+\hypertarget{_display_model_properties_8m_ac95d3ae2bb0e3a2c84b6e1a47eb2e7d6}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!ylabel@{ylabel}}
+\index{ylabel@{ylabel}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{ylabel}]{\setlength{\rightskip}{0pt plus 5cm}ylabel (
+\begin{DoxyParamCaption}
+\item[{'{\bf y} {\bf in} {\bf nm}'}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_ac95d3ae2bb0e3a2c84b6e1a47eb2e7d6}
+\hypertarget{_display_model_properties_8m_a56bece9499a2739bbf45651c8d059b6d}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!ylim@{ylim}}
+\index{ylim@{ylim}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{ylim}]{\setlength{\rightskip}{0pt plus 5cm}ylim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_a56bece9499a2739bbf45651c8d059b6d}
+\hypertarget{_display_model_properties_8m_aae7484262d0de8267f2542fb76fd905f}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Zcount@{Zcount}}
+\index{Zcount@{Zcount}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Zcount}]{\setlength{\rightskip}{0pt plus 5cm}Zcount (
+\begin{DoxyParamCaption}
+\item[{{\bf ix}}]{, }
+\item[{{\bf iy}}]{}
+\end{DoxyParamCaption}
+)}}\label{_display_model_properties_8m_aae7484262d0de8267f2542fb76fd905f}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_display_model_properties_8m_aa255219653b84441cbe893b4f117f7ed}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!\-\_\-\-\_\-pad9\-\_\-\-\_\-@{\-\_\-\-\_\-pad9\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-pad9\-\_\-\-\_\-@{\-\_\-\-\_\-pad9\-\_\-\-\_\-}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{\-\_\-\-\_\-pad9\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Display} \-\_\-\-\_\-pad9\-\_\-\-\_\-}}\label{_display_model_properties_8m_aa255219653b84441cbe893b4f117f7ed}
+
+
+Definition at line 482 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_aed6ba36789aad47faddb1761f9c8139e}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!a@{a}}
+\index{a@{a}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} {\bf handles} a = \mbox{[}{\bf a\-Type} {\bf coords} {\bf D\-W} {\bf occ} {\bf charge}\mbox{]}}}\label{_display_model_properties_8m_aed6ba36789aad47faddb1761f9c8139e}
+
+
+Definition at line 81 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_aa43ed2a9e1a55bb5e3641a85217bf01b}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!al@{al}}
+\index{al@{al}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{al}]{\setlength{\rightskip}{0pt plus 5cm}{\bf use} nomenclature from Malis et al}}\label{_display_model_properties_8m_aa43ed2a9e1a55bb5e3641a85217bf01b}
+
+
+Definition at line 292 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!arrays@{arrays}}
+\index{arrays@{arrays}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{arrays}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} {\bf end} The common display code that converts to plots from arrays}}\label{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}
+
+
+Definition at line 455 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a90fffc4ddeaf4dbe79dd5adc47bd9a5d}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!atom\-Size@{atom\-Size}}
+\index{atom\-Size@{atom\-Size}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{atom\-Size}]{\setlength{\rightskip}{0pt plus 5cm}depending {\bf on} the desired display {\bf handles} atom\-Size = 30}}\label{_display_model_properties_8m_a90fffc4ddeaf4dbe79dd5adc47bd9a5d}
+
+
+Definition at line 269 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_ad4a8ac3c7026e0e2e13426103c839cb7}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!a\-Type@{a\-Type}}
+\index{a\-Type@{a\-Type}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{a\-Type}]{\setlength{\rightskip}{0pt plus 5cm}depending {\bf on} the desired display {\bf handles} a\-Type = {\bf handles.\-a}(\-:,1)}}\label{_display_model_properties_8m_ad4a8ac3c7026e0e2e13426103c839cb7}
+
+
+Definition at line 285 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_ab146b9cbab6e73e7588b240dc709fe01}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!beta@{beta}}
+\index{beta@{beta}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{beta}]{\setlength{\rightskip}{0pt plus 5cm}beta = {\bf str2double}({\bf get}(handles.\-edit\-\_\-beta,'{\bf String}'))}}\label{_display_model_properties_8m_ab146b9cbab6e73e7588b240dc709fe01}
+
+
+Definition at line 279 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a806029a93894e5fead865ad2194ccaa8}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!calculated@{calculated}}
+\index{calculated@{calculated}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{calculated}]{\setlength{\rightskip}{0pt plus 5cm}We now need to interpolate over those {\bf pixels} which have not been calculated}}\label{_display_model_properties_8m_a806029a93894e5fead865ad2194ccaa8}
+
+
+Definition at line 425 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a9f9b7255ba6680c145f9c08ebf2bc024}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!charge@{charge}}
+\index{charge@{charge}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{charge}]{\setlength{\rightskip}{0pt plus 5cm}charge = {\bf handles.\-a}(\-:,7)}}\label{_display_model_properties_8m_a9f9b7255ba6680c145f9c08ebf2bc024}
+
+
+Definition at line 288 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a6e2a30274988b40af22153ce1cb610da}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!charges@{charges}}
+\index{charges@{charges}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{charges}]{\setlength{\rightskip}{0pt plus 5cm}{\bf case} collect all the charges}}\label{_display_model_properties_8m_a6e2a30274988b40af22153ce1cb610da}
+
+
+Definition at line 314 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a75055c100cc86bbb92990a48f766bd91}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!colorbar@{colorbar}}
+\index{colorbar@{colorbar}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{colorbar}]{\setlength{\rightskip}{0pt plus 5cm}colorbar}}\label{_display_model_properties_8m_a75055c100cc86bbb92990a48f766bd91}
+
+
+Definition at line 487 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_adf44f03c6ae7b279f60019d07e59891c}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!coords@{coords}}
+\index{coords@{coords}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{coords}]{\setlength{\rightskip}{0pt plus 5cm}coords = {\bf handles.\-a}(\-:,2\-:4)}}\label{_display_model_properties_8m_adf44f03c6ae7b279f60019d07e59891c}
+
+
+Definition at line 284 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_adfc876b35db3e97d88b3a2e0d8ff0c61}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!defined@{defined}}
+\index{defined@{defined}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{defined}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} {\bf if} no boundary with more than {\bf points} has been defined}}\label{_display_model_properties_8m_adfc876b35db3e97d88b3a2e0d8ff0c61}
+
+
+Definition at line 405 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_ac8a3dfbb1ea8891754a28738b94023b8}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!dkx@{dkx}}
+\index{dkx@{dkx}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{dkx}]{\setlength{\rightskip}{0pt plus 5cm}Setup {\bf arrays} for {\bf plot} generation dkx = 1/{\bf Mm}(1,1)}}\label{_display_model_properties_8m_ac8a3dfbb1ea8891754a28738b94023b8}
+
+
+Definition at line 459 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a59650fdddef08cde1605e75fa4181c5e}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!dky@{dky}}
+\index{dky@{dky}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{dky}]{\setlength{\rightskip}{0pt plus 5cm}dky = 1/{\bf Mm}(2,2)}}\label{_display_model_properties_8m_a59650fdddef08cde1605e75fa4181c5e}
+
+
+Definition at line 460 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_ae436dbba71d976b0111c531939f54e66}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!D\-W@{D\-W}}
+\index{D\-W@{D\-W}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{D\-W}]{\setlength{\rightskip}{0pt plus 5cm}D\-W = {\bf handles.\-a}(\-:,5)}}\label{_display_model_properties_8m_ae436dbba71d976b0111c531939f54e66}
+
+
+Definition at line 286 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_aacddc911cdfe5cd5ec97b084754542d4}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!dx@{dx}}
+\index{dx@{dx}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{dx}]{\setlength{\rightskip}{0pt plus 5cm}dx = {\bf Mm}(1,1)/({\bf Nbins}-\/1)}}\label{_display_model_properties_8m_aacddc911cdfe5cd5ec97b084754542d4}
+
+
+Definition at line 299 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a22b1a06ae09d552a5ca668a07885ebf1}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!dy@{dy}}
+\index{dy@{dy}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{dy}]{\setlength{\rightskip}{0pt plus 5cm}dy = {\bf Mm}(2,2)/({\bf Nbins}-\/1)}}\label{_display_model_properties_8m_a22b1a06ae09d552a5ca668a07885ebf1}
+
+
+Definition at line 300 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_ac403eb4664ef707165d99192d313aa59}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!E0@{E0}}
+\index{E0@{E0}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{E0}]{\setlength{\rightskip}{0pt plus 5cm}E0 = {\bf str2double}({\bf get}(handles.\-edit\-\_\-\-High\-Voltage,'{\bf String}'))}}\label{_display_model_properties_8m_ac403eb4664ef707165d99192d313aa59}
+
+
+Definition at line 278 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_adaa89d4d69c847c25113bb245d01df31}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Em@{Em}}
+\index{Em@{Em}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Em}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} compute Em}}\label{_display_model_properties_8m_adaa89d4d69c847c25113bb245d01df31}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= 7.6eV*\hyperlink{_display_model_properties_8m_aa9db4bc81fc242acfaf589f2241c1aca}{Z\_eff}^0.36:
+        \hyperlink{_display_model_properties_8m_a0f008999cde6bb6228fbd58b9a7f49c5}{qArray2D} = 7.6*\hyperlink{_display_model_properties_8m_a0f008999cde6bb6228fbd58b9a7f49c5}{qArray2D}.^0.36
+\end{DoxyCode}
+
+
+Definition at line 432 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a282b163d0c51ea3b474b98110085bdad}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!end@{end}}
+\index{end@{end}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}end\mbox{[}{\bf filename}, {\bf pathname}\mbox{]} = read\-C\-F\-G({\bf handles.\-file\-Name})}}\label{_display_model_properties_8m_a282b163d0c51ea3b474b98110085bdad}
+
+
+Definition at line 77 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a309babb65f52c3fc48d7b15df1759382}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!eplaces@{eplaces}}
+\index{eplaces@{eplaces}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{eplaces}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} {\bf end} Compute the effective {\bf Z} number {\bf in} thos eplaces}}\label{_display_model_properties_8m_a309babb65f52c3fc48d7b15df1759382}
+
+
+Definition at line 405 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_afeaa7ecdd726aa1950ba61dc659eb561}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!equal@{equal}}
+\index{equal@{equal}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}axis equal}}\label{_display_model_properties_8m_afeaa7ecdd726aa1950ba61dc659eb561}
+
+
+Definition at line 310 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a7b9c3d619ad7365ec6434713e76142e8}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!fid@{fid}}
+\index{fid@{fid}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{fid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} fid = fopen({\bf filename})}}\label{_display_model_properties_8m_a7b9c3d619ad7365ec6434713e76142e8}
+
+
+Definition at line 70 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a391e34f2de441d79152a7b3d6e4c9c86}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!figure@{figure}}
+\index{figure@{figure}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{figure}]{\setlength{\rightskip}{0pt plus 5cm}figure}}\label{_display_model_properties_8m_a391e34f2de441d79152a7b3d6e4c9c86}
+
+
+Definition at line 421 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a2ff994e16bf9521154de4cf659a3b689}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!filename@{filename}}
+\index{filename@{filename}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}filename = fullfile({\bf handles.\-pos\-File\-Path},{\bf handles.\-pos\-File\-Name})}}\label{_display_model_properties_8m_a2ff994e16bf9521154de4cf659a3b689}
+
+
+Definition at line 69 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a40de446ab6d10300ce08eb0792ac3b4d}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!file\-Name@{file\-Name}}
+\index{file\-Name@{file\-Name}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{file\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} {\bf handles} file\-Name = {\bf handles.\-pos\-File\-Name}}}\label{_display_model_properties_8m_a40de446ab6d10300ce08eb0792ac3b4d}
+
+
+Definition at line 75 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_ad2fefc6d13dcba7604d1dbe5835ccbe9}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!filled@{filled}}
+\index{filled@{filled}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{filled}]{\setlength{\rightskip}{0pt plus 5cm}depending {\bf on} the desired display {\bf handles} filled}}\label{_display_model_properties_8m_ad2fefc6d13dcba7604d1dbe5835ccbe9}
+
+
+Definition at line 309 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_ad073b585c1c63d28a45d86dd22fcb004}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!First@{First}}
+\index{First@{First}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{First}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} First}}\label{_display_model_properties_8m_ad073b585c1c63d28a45d86dd22fcb004}
+
+
+Definition at line 399 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a630ca408a0134d0efb20d13e62780d9c}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!F\-W\-H\-M@{F\-W\-H\-M}}
+\index{F\-W\-H\-M@{F\-W\-H\-M}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{F\-W\-H\-M}]{\setlength{\rightskip}{0pt plus 5cm}convert from {\bf nm} to {\bf A} {\bf scale} the {\bf P\-S\-Fwidth} to produce {\bf a} Gaussian of F\-W\-H\-M}}\label{_display_model_properties_8m_a630ca408a0134d0efb20d13e62780d9c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \hyperlink{_display_model_properties_8m_a7c734b3780a39d4bc26ba619f7246cb4}{PSFwidth}:
+\hyperlink{aberrations___t_e_m_8m_a7cfce9e4244a1936557979efaaa3882a}{handles}.PSFwidth  = \hyperlink{aberrations___t_e_m_8m_a7cfce9e4244a1936557979efaaa3882a}{handles}.PSFwidth /(sqrt(-log(0.5))*2)
+\end{DoxyCode}
+
+
+Definition at line 272 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_aae49cf4b5c3c3e15924235a5b855c67e}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!gui\-\_\-\-State@{gui\-\_\-\-State}}
+\index{gui\-\_\-\-State@{gui\-\_\-\-State}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{gui\-\_\-\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} by creates {\bf a} new D\-I\-S\-P\-L\-A\-Y\-M\-O\-D\-E\-L\-P\-R\-O\-P\-E\-R\-T\-I\-E\-S or raises the existing singleton property {\bf value} pairs are applied to the G\-U\-I before Display\-Model\-Properties\-\_\-\-Opening\-Function gets called An unrecognized property {\bf name} or invalid {\bf value} makes property application stop All inputs are passed to Display\-Model\-Properties\-\_\-\-Opening\-Fcn via varargin$\ast$ See G\-U\-I Options {\bf on} G\-U\-I\-D\-E {\bf s} Tools menu Choose G\-U\-I allows only one instance to run (singleton)\char`\"{}. \% \% See also gui\-\_\-\-State}}\label{_display_model_properties_8m_aae49cf4b5c3c3e15924235a5b855c67e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \textcolor{keyword}{struct}(\textcolor{stringliteral}{'gui\_Name'},       mfilename, ...
+                   \textcolor{stringliteral}{'gui\_Singleton'},  gui\_Singleton, ...
+                   \textcolor{stringliteral}{'gui\_OpeningFcn'}, @DisplayModelProperties\_OpeningFcn, ...
+                   \textcolor{stringliteral}{'gui\_OutputFcn'},  @DisplayModelProperties\_OutputFcn, ...
+                   \textcolor{stringliteral}{'gui\_LayoutFcn'},  [] , ...
+                   \textcolor{stringliteral}{'gui\_Callback'},   [])
+\end{DoxyCode}
+
+
+Definition at line 30 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a11f28fd71f610f4186ac8c30e0b5236a}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!H@{H}}
+\index{H@{H}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} by creates {\bf a} new D\-I\-S\-P\-L\-A\-Y\-M\-O\-D\-E\-L\-P\-R\-O\-P\-E\-R\-T\-I\-E\-S or raises the existing singleton$\ast$ H}}\label{_display_model_properties_8m_a11f28fd71f610f4186ac8c30e0b5236a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= DISPLAYMODELPROPERTIES returns the handle to \hyperlink{_display_model_properties_8m_aed6ba36789aad47faddb1761f9c8139e}{a} \textcolor{keyword}{new} DISPLAYMODELPROPERTIES or the handle to
+%      the existing singleton*.
+%
+%      DISPLAYMODELPROPERTIES(\textcolor{stringliteral}{'CALLBACK'},\hyperlink{_display_model_properties_8m_a6e69a2e6c16546a1aba75e0422487e55}{hObject},eventData,\hyperlink{aberrations___t_e_m_8m_a7cfce9e4244a1936557979efaaa3882a}{handles},...) calls the local
+%      \hyperlink{binread2_d_8m_a6802a4975f2ff519ca7f69ffaf7fcdde}{function} named CALLBACK \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} DISPLAYMODELPROPERTIES.\hyperlink{_displacement_params_8m_aad05f78187c942f9dd521605fa81f1ba}{M} with the given
+%      input arguments.
+%
+%      DISPLAYMODELPROPERTIES('Property','\hyperlink{_display_model_properties_8m_aa3e85bcc21f31fb262e8662d5e2a8764}{Value}',...) creates \hyperlink{_display_model_properties_8m_aed6ba36789aad47faddb1761f9c8139e}{a} new DISPLAYMODELPROPERTIES or raises 
+      the
+%      existing singleton*.  Starting from the left
+\end{DoxyCode}
+
+
+Definition at line 6 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a831a3e1133c41b364b824dcb52ee0f9a}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!itself@{itself}}
+\index{itself@{itself}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{itself}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} by itself}}\label{_display_model_properties_8m_a831a3e1133c41b364b824dcb52ee0f9a}
+
+
+Definition at line 1 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!ix@{ix}}
+\index{ix@{ix}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{ix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} ix ix = {\bf Nbins}}}\label{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}
+
+
+Definition at line 316 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_af4c5cec9fce175f73b7da5ecd33c2af6}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!iy@{iy}}
+\index{iy@{iy}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{iy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} iy = round({\bf coords}({\bf j},1)/{\bf dx})+1}}\label{_display_model_properties_8m_af4c5cec9fce175f73b7da5ecd33c2af6}
+
+
+Definition at line 315 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_ae68d47bae107c4762d7dc08574518aa5}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!j@{j}}
+\index{j@{j}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{j}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf case} {\bf t} {\bf lambda} {\bf map} for j}}\label{_display_model_properties_8m_ae68d47bae107c4762d7dc08574518aa5}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=1:\hyperlink{_display_model_properties_8m_af443bf254531220087dc4c76086f3c60}{Natom}
+            \hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix} = round(\hyperlink{_display_model_properties_8m_adf44f03c6ae7b279f60019d07e59891c}{coords}(\hyperlink{_display_model_properties_8m_ae68d47bae107c4762d7dc08574518aa5}{j},2)/\hyperlink{_display_model_properties_8m_a22b1a06ae09d552a5ca668a07885ebf1}{dy})+1
+\end{DoxyCode}
+
+
+Definition at line 388 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_adcbf6818ca1a5f06faf47e9f23063dc5}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!k2@{k2}}
+\index{k2@{k2}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{k2}]{\setlength{\rightskip}{0pt plus 5cm}k2 = {\bf fftshift}(kx.$^\wedge$2+ky.$^\wedge$2)}}\label{_display_model_properties_8m_adcbf6818ca1a5f06faf47e9f23063dc5}
+
+
+Definition at line 465 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a2af263d0f4f82b772db14de73c71b4d1}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!lambda@{lambda}}
+\index{lambda@{lambda}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{lambda}]{\setlength{\rightskip}{0pt plus 5cm}{\bf h} $\ast${\bf c} lambda}}\label{_display_model_properties_8m_a2af263d0f4f82b772db14de73c71b4d1}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= 106*F*\hyperlink{_display_model_properties_8m_ac403eb4664ef707165d99192d313aa59}{E0}/(\hyperlink{_display_model_properties_8m_adaa89d4d69c847c25113bb245d01df31}{Em}*log(2*\hyperlink{_display_model_properties_8m_ab146b9cbab6e73e7588b240dc709fe01}{beta}*\hyperlink{_display_model_properties_8m_ac403eb4664ef707165d99192d313aa59}{E0}/\hyperlink{_display_model_properties_8m_adaa89d4d69c847c25113bb245d01df31}{Em}))
+        \hyperlink{_display_model_properties_8m_a0f008999cde6bb6228fbd58b9a7f49c5}{qArray2D} = 106*F*\hyperlink{_display_model_properties_8m_ac403eb4664ef707165d99192d313aa59}{E0}./(\hyperlink{_display_model_properties_8m_a0f008999cde6bb6228fbd58b9a7f49c5}{qArray2D}.*log(2*\hyperlink{_display_model_properties_8m_ab146b9cbab6e73e7588b240dc709fe01}{beta}*\hyperlink{_display_model_properties_8m_ac403eb4664ef707165d99192d313aa59}{E0}./
+      \hyperlink{_display_model_properties_8m_a0f008999cde6bb6228fbd58b9a7f49c5}{qArray2D}))
+\end{DoxyCode}
+
+
+Definition at line 435 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_acb58866fdc8f02a2074fe1b4c696248e}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Mm@{Mm}}
+\index{Mm@{Mm}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Mm}]{\setlength{\rightskip}{0pt plus 5cm}Mm}}\label{_display_model_properties_8m_acb58866fdc8f02a2074fe1b4c696248e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= diag([\hyperlink{convert2cfg_8m_a20fc5038c021fd98154bd49a45a0e238}{max}(varargin\{1\}.boundingBox(:,1)) - min(varargin\{1\}.boundingBox(:,1)), 
+                \hyperlink{convert2cfg_8m_a20fc5038c021fd98154bd49a45a0e238}{max}(varargin\{1\}.boundingBox(:,2)) - min(varargin\{1\}.boundingBox(:,2)),
+                \hyperlink{convert2cfg_8m_a20fc5038c021fd98154bd49a45a0e238}{max}(varargin\{1\}.boundingBox(:,3)) - min(varargin\{1\}.boundingBox(:,3))])
+\end{DoxyCode}
+
+
+Definition at line 63 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_aabea1a308e18fee00cc3a9031f079ba6}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!mode@{mode}}
+\index{mode@{mode}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf return} {\bf end} mode}}\label{_display_model_properties_8m_aabea1a308e18fee00cc3a9031f079ba6}
+
+
+Definition at line 309 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a9b07119da70fc4a54e0d1cb5751d69aa}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!nargout@{nargout}}
+\index{nargout@{nargout}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{nargout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} nargout\mbox{[}{\bf varargout}\{1\-:nargout\}\mbox{]} = {\bf gui\-\_\-mainfcn}({\bf gui\-\_\-\-State}, varargin\{\-:\})}}\label{_display_model_properties_8m_a9b07119da70fc4a54e0d1cb5751d69aa}
+
+
+Definition at line 41 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_af443bf254531220087dc4c76086f3c60}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Natom@{Natom}}
+\index{Natom@{Natom}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Natom}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} Natom = {\bf size}({\bf handles.\-a},1)}}\label{_display_model_properties_8m_af443bf254531220087dc4c76086f3c60}
+
+
+Definition at line 290 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Nbins@{Nbins}}
+\index{Nbins@{Nbins}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Nbins}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Nbins = round({\bf str2double}({\bf get}(handles.\-edit\-\_\-\-Nbins,'{\bf String}')))}}\label{_display_model_properties_8m_ae2dc6526bbbd7c21a3e782e3a709c19f}
+
+
+Definition at line 275 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_aa155dc23daedcf23548e3141bf539361}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Nedge@{Nedge}}
+\index{Nedge@{Nedge}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Nedge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} Nedge = 100}}\label{_display_model_properties_8m_aa155dc23daedcf23548e3141bf539361}
+
+
+Definition at line 270 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_ab15b62bce31d4d4d1314fd7533fce833}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!nm@{nm}}
+\index{nm@{nm}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{nm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf k2} (1,1) \% Smoothen the 2\-D array The scaling should also relate the area of a single unit cell with that of the whole array the scale defines how many pixels are in nm}}\label{_display_model_properties_8m_ab15b62bce31d4d4d1314fd7533fce833}
+
+
+Definition at line 466 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a14685678a932a690bb677ca0be6b191a}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!occ@{occ}}
+\index{occ@{occ}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{occ}]{\setlength{\rightskip}{0pt plus 5cm}occ = {\bf handles.\-a}(\-:,6)}}\label{_display_model_properties_8m_a14685678a932a690bb677ca0be6b191a}
+
+
+Definition at line 287 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a4a4817b8f77622be8fc00228c8ab44f3}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!plot@{plot}}
+\index{plot@{plot}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}Update plot}}\label{_display_model_properties_8m_a4a4817b8f77622be8fc00228c8ab44f3}
+
+
+Definition at line 501 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_adf54215d760dbf0f9fe5627a39015333}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!pos@{pos}}
+\index{pos@{pos}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}pos = {\bf get}(handles.\-axes\-\_\-\-Model,'Position')}}\label{_display_model_properties_8m_adf54215d760dbf0f9fe5627a39015333}
+
+
+Definition at line 302 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_addd102b0e03af2114c4c0c229debaf4d}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!pos\-File\-Name@{pos\-File\-Name}}
+\index{pos\-File\-Name@{pos\-File\-Name}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{pos\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} pos\-File\-Name = varargin\{1\}.pos\-File\-Name}}\label{_display_model_properties_8m_addd102b0e03af2114c4c0c229debaf4d}
+
+
+Definition at line 68 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a6b5de92512db05f537fca825d4313832}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!pos\-File\-Path@{pos\-File\-Path}}
+\index{pos\-File\-Path@{pos\-File\-Path}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{pos\-File\-Path}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} {\bf handles} pos\-File\-Path = varargin\{1\}.{\bf config\-Path}}}\label{_display_model_properties_8m_a6b5de92512db05f537fca825d4313832}
+
+
+Definition at line 67 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_ad0fe5470ce12d0adac06b5470231cbb3}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!pos\-Img@{pos\-Img}}
+\index{pos\-Img@{pos\-Img}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{pos\-Img}]{\setlength{\rightskip}{0pt plus 5cm}pos\-Img = {\bf get}(handles.\-axes\-\_\-\-Model,'Tight\-Inset')}}\label{_display_model_properties_8m_ad0fe5470ce12d0adac06b5470231cbb3}
+
+
+Definition at line 511 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a90b97b8cf7625e0ff404c0585b6ddb36}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!pos\-Plot@{pos\-Plot}}
+\index{pos\-Plot@{pos\-Plot}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{pos\-Plot}]{\setlength{\rightskip}{0pt plus 5cm}pos\-Plot = {\bf get}(handles.\-axes\-\_\-\-Plot,'Tight\-Inset')}}\label{_display_model_properties_8m_a90b97b8cf7625e0ff404c0585b6ddb36}
+
+
+Definition at line 510 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a7c734b3780a39d4bc26ba619f7246cb4}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!P\-S\-Fwidth@{P\-S\-Fwidth}}
+\index{P\-S\-Fwidth@{P\-S\-Fwidth}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{P\-S\-Fwidth}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} P\-S\-Fwidth = 10$\ast${\bf str2double}({\bf get}(handles.\-edit\-\_\-\-P\-S\-Fwidth,'{\bf String}'))}}\label{_display_model_properties_8m_a7c734b3780a39d4bc26ba619f7246cb4}
+
+
+Definition at line 271 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a0f008999cde6bb6228fbd58b9a7f49c5}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!q\-Array2\-D@{q\-Array2\-D}}
+\index{q\-Array2\-D@{q\-Array2\-D}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{q\-Array2\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} q\-Array2\-D = {\bf zeros}({\bf Nbins})}}\label{_display_model_properties_8m_a0f008999cde6bb6228fbd58b9a7f49c5}
+
+
+Definition at line 297 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a9717e7bbecb906637e86cef6da3d83c2}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!return@{return}}
+\index{return@{return}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{return}]{\setlength{\rightskip}{0pt plus 5cm}return}}\label{_display_model_properties_8m_a9717e7bbecb906637e86cef6da3d83c2}
+
+
+Definition at line 385 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_aa0f635e3dfa4fc088fb53982ec8a3d4d}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!scale@{scale}}
+\index{scale@{scale}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf in} {\bf nm} scale = scale$\ast${\bf handles.\-unit\-Area}/{\bf handles.\-thickness}}}\label{_display_model_properties_8m_aa0f635e3dfa4fc088fb53982ec8a3d4d}
+
+
+Definition at line 475 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!see@{see}}
+\index{see@{see}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{see}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Determine what the user wants to see}}\label{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}
+
+
+Definition at line 268 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a29d2f984615ceb76cccede96cee6d633}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!simple\-Average@{simple\-Average}}
+\index{simple\-Average@{simple\-Average}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{simple\-Average}]{\setlength{\rightskip}{0pt plus 5cm}simple\-Average = {\bf get}(handles.\-checkbox\-\_\-\-Simple\-Average,'{\bf Value}')}}\label{_display_model_properties_8m_a29d2f984615ceb76cccede96cee6d633}
+
+
+Definition at line 280 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a938f8aa70d7f49a21679ad582b6d4ffb}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!thickness@{thickness}}
+\index{thickness@{thickness}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{thickness}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} {\bf handles} thickness = {\bf str2double}({\bf get}(handles.\-edit\-\_\-thickness,'{\bf String}'))}}\label{_display_model_properties_8m_a938f8aa70d7f49a21679ad582b6d4ffb}
+
+
+Definition at line 277 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a1a71f5e406b211ed616173276484b78b}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!tight@{tight}}
+\index{tight@{tight}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{tight}]{\setlength{\rightskip}{0pt plus 5cm}axis tight}}\label{_display_model_properties_8m_a1a71f5e406b211ed616173276484b78b}
+
+
+Definition at line 310 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a5c1bfdb154a30f82836fb30c1f157194}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!unit\-Area@{unit\-Area}}
+\index{unit\-Area@{unit\-Area}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{unit\-Area}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} unit\-Area = {\bf str2double}({\bf get}(handles.\-edit\-\_\-\-Unit\-Area,'{\bf String}'))}}\label{_display_model_properties_8m_a5c1bfdb154a30f82836fb30c1f157194}
+
+
+Definition at line 276 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a1e9a1a7ede5f8d1dd9f322351e7ac3b4}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!V0\-\_\-charged@{V0\-\_\-charged}}
+\index{V0\-\_\-charged@{V0\-\_\-charged}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{V0\-\_\-charged}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} V0\-\_\-charged = V0\-\_\-charged}}\label{_display_model_properties_8m_a1e9a1a7ede5f8d1dd9f322351e7ac3b4}
+
+
+Definition at line 91 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a107456d9f8b237e9253fac83cbf9f43b}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!V0\-\_\-neutral@{V0\-\_\-neutral}}
+\index{V0\-\_\-neutral@{V0\-\_\-neutral}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{V0\-\_\-neutral}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} {\bf handles} V0\-\_\-neutral}}\label{_display_model_properties_8m_a107456d9f8b237e9253fac83cbf9f43b}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= [0.5286    0.4173    3.2556    3.0383    2.7850    2.4709    2.2034    1.9839 ...
+    1.8017    1.6494    4.7387    5.1781    5.8665    5.7535    5.4738    5.1640 ...
+    4.8566    4.5712    8.8966    9.8371    9.2502    8.7270    8.2633    6.9550 ...
+    7.4772    7.1403    6.8305    6.5466    6.2851    6.0434    7.1413    7.3741 ...
+    7.3686    7.2661    7.0805    6.8811   11.6690   13.0052   12.5953   12.1094 ...
+   10.6991   10.2830   10.8336    9.5521    9.2244    7.5645    8.6414    9.2024 ...
+   10.5928   11.0376   11.1772   11.1747   10.9811   10.7652   16.3483   18.1123 ...
+   17.7054   17.2940   16.8631   16.4897   16.1899   15.7949   15.4700   15.2591 ...
+   14.8526   14.5577   14.2730   13.9978   13.7312   13.4728   13.4834   13.2202 ...
+   12.9316   12.6434   12.3627   12.0917   11.7793   10.8225   10.5466   10.9356 ...
+   12.8045   13.5344   13.8911   14.0629   13.7529   13.4546   18.5513   20.3926 ...
+   20.4678   20.2022   19.6404   19.2909]
+\end{DoxyCode}
+
+
+Definition at line 93 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_aa3e85bcc21f31fb262e8662d5e2a8764}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Value@{Value}}
+\index{Value@{Value}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Determine what the user wants to Value}}\label{_display_model_properties_8m_aa3e85bcc21f31fb262e8662d5e2a8764}
+
+
+Definition at line 268 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_acc89f64219ddae53243030f2c645fc06}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!varargout@{varargout}}
+\index{varargout@{varargout}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{varargout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} varargout}}\label{_display_model_properties_8m_acc89f64219ddae53243030f2c645fc06}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= DisplayModelProperties(varargin)
+% DISPLAYMODELPROPERTIES \hyperlink{_displacement_params_8m_aad05f78187c942f9dd521605fa81f1ba}{M}-\hyperlink{qmb_8m_a0afda3603b043ac6b7362fdee225631e}{file} for DisplayModelProperties.fig
+%      DISPLAYMODELPROPERTIES
+\end{DoxyCode}
+
+
+Definition at line 1 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a0888783ccb240d8899f77cdcd85aa4b9}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!y@{y}}
+\index{y@{y}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Display} $\ast$ y = {\bf dy}$\ast$(\mbox{[}0\-:{\bf Nbins}-\/1\mbox{]}.')}}\label{_display_model_properties_8m_a0888783ccb240d8899f77cdcd85aa4b9}
+
+
+Definition at line 456 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_aa9db4bc81fc242acfaf589f2241c1aca}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Z\-\_\-eff@{Z\-\_\-eff}}
+\index{Z\-\_\-eff@{Z\-\_\-eff}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Z\-\_\-eff}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} compute Z\-\_\-eff}}\label{_display_model_properties_8m_aa9db4bc81fc242acfaf589f2241c1aca}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{_displacement_params_8m_accc427d493facd9d795029ff42af0392}{Z})/\hyperlink{convert2cfg_8m_aabbdf768a12d7ff279a05a15db19fa61}{length}(\hyperlink{_displacement_params_8m_accc427d493facd9d795029ff42af0392}{Z})
+                    \hyperlink{_display_model_properties_8m_a0f008999cde6bb6228fbd58b9a7f49c5}{qArray2D}(\hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix},\hyperlink{_display_model_properties_8m_af4c5cec9fce175f73b7da5ecd33c2af6}{iy}) = \hyperlink{_display_model_properties_8m_a0f008999cde6bb6228fbd58b9a7f49c5}{qArray2D}(ix,\hyperlink{_display_model_properties_8m_af4c5cec9fce175f73b7da5ecd33c2af6}{iy})+
+      \hyperlink{_display_model_properties_8m_ad4a8ac3c7026e0e2e13426103c839cb7}{aType}(\hyperlink{_display_model_properties_8m_ae68d47bae107c4762d7dc08574518aa5}{j})*\hyperlink{_display_model_properties_8m_a14685678a932a690bb677ca0be6b191a}{occ}(\hyperlink{_display_model_properties_8m_ae68d47bae107c4762d7dc08574518aa5}{j})
+\end{DoxyCode}
+
+
+Definition at line 395 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a52fcae134f6460176c02402bb880c852}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Zcount@{Zcount}}
+\index{Zcount@{Zcount}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Zcount}]{\setlength{\rightskip}{0pt plus 5cm}Zcount = {\bf zeros}({\bf Nbins})}}\label{_display_model_properties_8m_a52fcae134f6460176c02402bb880c852}
+
+
+Definition at line 298 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_afe51947418c28b930868de413ffe46e8}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Zmean@{Zmean}}
+\index{Zmean@{Zmean}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Zmean}]{\setlength{\rightskip}{0pt plus 5cm}Zmean = {\bf sum}({\bf q\-Array2\-D}({\bf ind}))/{\bf length}({\bf ind})}}\label{_display_model_properties_8m_afe51947418c28b930868de413ffe46e8}
+
+
+Definition at line 408 of file Display\-Model\-Properties.\-m.
+
+\hypertarget{_display_model_properties_8m_a8abbe5b6f803e9ac166164452a702587}{\index{Display\-Model\-Properties.\-m@{Display\-Model\-Properties.\-m}!Znumbers@{Znumbers}}
+\index{Znumbers@{Znumbers}!DisplayModelProperties.m@{Display\-Model\-Properties.\-m}}
+\subsubsection[{Znumbers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} {\bf case} collect all the Znumbers}}\label{_display_model_properties_8m_a8abbe5b6f803e9ac166164452a702587}
+
+
+Definition at line 327 of file Display\-Model\-Properties.\-m.
+

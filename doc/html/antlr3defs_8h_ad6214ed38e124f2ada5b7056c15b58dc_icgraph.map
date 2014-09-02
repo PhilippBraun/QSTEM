@@ -1,0 +1,12 @@
+<map id="antlr3SetTokenAPI" name="antlr3SetTokenAPI">
+<area shape="rect" id="node2" href="$antlr3commontoken_8c.html#a3e0e53093c8170217cb4bee33c2714c9" title="antlr3TokenFactoryNew" alt="" coords="187,57,349,84"/>
+<area shape="rect" id="node7" href="$antlr3lexer_8c.html#aad5d94a0ad6c1d4788f95debb67cf642" title="antlr3LexerNew" alt="" coords="211,108,325,135"/>
+<area shape="rect" id="node3" href="$antlr3commontreeadaptor_8c.html#a8354d855e26d4417b311740c64b9f0e3" title="ANTLR3_TREE_ADAPTORNew" alt="" coords="398,56,613,83"/>
+<area shape="rect" id="node4" href="$antlr3commontreeadaptor_8c.html#ab957d9b226644a3af57c91c8553a9cf8" title="ANTLR3_TREE_ADAPTORDebugNew" alt="" coords="661,5,915,32"/>
+<area shape="rect" id="node5" href="$antlr3commontreenodestream_8c.html#af53a0945d04dc72b9a3b927c1fa5ffd7" title="antlr3CommonTreeNodeStreamNew" alt="" coords="671,56,905,83"/>
+<area shape="rect" id="node6" href="$antlr3commontreenodestream_8c.html#a80515ce12fe3b7e18473029d07dceaa7" title="antlr3CommonTreeNodeStream\lNewTree" alt="" coords="963,47,1170,89"/>
+<area shape="rect" id="node8" href="$antlr3lexer_8c.html#acea4b4491be51f1d3f57d4d2836d9d0d" title="antlr3LexerNewStream" alt="" coords="428,108,583,135"/>
+<area shape="rect" id="node9" href="$cif_lexer_8h.html#a73b0d4cc3e5ea3dcf37b901e7e88ab2d" title="Create a new lexer called cifLexer. " alt="" coords="727,109,849,136"/>
+<area shape="rect" id="node10" href="$cif_lexer_8h.html#a38553a530136591242351a3db661cf69" title="Create a new lexer called cifLexer. " alt="" coords="1019,113,1114,140"/>
+<area shape="rect" id="node11" href="$classucif_1_1parser.html#ac292e778a980fb0979d8d47e388fe1a7" title="ucif::parser::parser" alt="" coords="1219,113,1349,140"/>
+</map>

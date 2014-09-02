@@ -1,0 +1,92 @@
+\hypertarget{namespacepython_1_1fileio_1_1read_cfg}{\section{python.\-fileio.\-read\-Cfg Namespace Reference}
+\label{namespacepython_1_1fileio_1_1read_cfg}\index{python.\-fileio.\-read\-Cfg@{python.\-fileio.\-read\-Cfg}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}{def} \hyperlink{namespacepython_1_1fileio_1_1read_cfg_aae086b7fa3ade4aaf4c7aec598e23344}{get\-\_\-atom\-\_\-arrays}
+\item 
+\hyperlink{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}{def} \hyperlink{namespacepython_1_1fileio_1_1read_cfg_a1769a0316d318139caae32b4d48e3056}{get\-\_\-cell\-\_\-box}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{namespacepython_1_1fileio_1_1read_cfg_a5604f72b29109b23876023593a3eefd3}{array\-\_\-re}
+\item 
+tuple \hyperlink{namespacepython_1_1fileio_1_1read_cfg_ab37ee94881162c11a48d464d4ac60ade}{box\-\_\-re} = re.\-compile(\char`\"{}H0\textbackslash{}((\textbackslash{}\hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d}),(\textbackslash{}\hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d})\textbackslash{}) = (\textbackslash{}\hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d}+\textbackslash{}.\textbackslash{}\hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d}+)\textbackslash{}\hyperlink{aberrations___t_e_m_8m_aef29541a06b7f933d32a804307db13af}{s}$\ast$\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}/*
+QSTEM - image simulation for TEM/STEM/CBED
+Copyright (C) 2000-2010  Christoph Koch
+Copyright (C) 2010-2013  Christoph Koch, Michael Sarahan
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\hypertarget{namespacepython_1_1fileio_1_1read_cfg_aae086b7fa3ade4aaf4c7aec598e23344}{\index{python\-::fileio\-::read\-Cfg@{python\-::fileio\-::read\-Cfg}!get\-\_\-atom\-\_\-arrays@{get\-\_\-atom\-\_\-arrays}}
+\index{get\-\_\-atom\-\_\-arrays@{get\-\_\-atom\-\_\-arrays}!python::fileio::readCfg@{python\-::fileio\-::read\-Cfg}}
+\subsubsection[{get\-\_\-atom\-\_\-arrays}]{\setlength{\rightskip}{0pt plus 5cm}{\bf def} python.\-fileio.\-read\-Cfg.\-get\-\_\-atom\-\_\-arrays (
+\begin{DoxyParamCaption}
+\item[{}]{filename}
+\end{DoxyParamCaption}
+)}}\label{namespacepython_1_1fileio_1_1read_cfg_aae086b7fa3ade4aaf4c7aec598e23344}
+\begin{DoxyVerb}Returns a dictionary with an entry per element.  The key to the dictionary 
+is the atomic number, while the value is an array containing coordinates,
+Debye-Waller factors, occupancies, and charges on a site-specific basis.
+\end{DoxyVerb}
+ 
+
+Definition at line 30 of file read\-Cfg.\-py.
+
+\hypertarget{namespacepython_1_1fileio_1_1read_cfg_a1769a0316d318139caae32b4d48e3056}{\index{python\-::fileio\-::read\-Cfg@{python\-::fileio\-::read\-Cfg}!get\-\_\-cell\-\_\-box@{get\-\_\-cell\-\_\-box}}
+\index{get\-\_\-cell\-\_\-box@{get\-\_\-cell\-\_\-box}!python::fileio::readCfg@{python\-::fileio\-::read\-Cfg}}
+\subsubsection[{get\-\_\-cell\-\_\-box}]{\setlength{\rightskip}{0pt plus 5cm}{\bf def} python.\-fileio.\-read\-Cfg.\-get\-\_\-cell\-\_\-box (
+\begin{DoxyParamCaption}
+\item[{}]{filename}
+\end{DoxyParamCaption}
+)}}\label{namespacepython_1_1fileio_1_1read_cfg_a1769a0316d318139caae32b4d48e3056}
+\begin{DoxyVerb}Returns a 3-element 1D numpy array with the cell dimensions, as X,Y,Z.
+\end{DoxyVerb}
+ 
+
+Definition at line 47 of file read\-Cfg.\-py.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{namespacepython_1_1fileio_1_1read_cfg_a5604f72b29109b23876023593a3eefd3}{\index{python\-::fileio\-::read\-Cfg@{python\-::fileio\-::read\-Cfg}!array\-\_\-re@{array\-\_\-re}}
+\index{array\-\_\-re@{array\-\_\-re}!python::fileio::readCfg@{python\-::fileio\-::read\-Cfg}}
+\subsubsection[{array\-\_\-re}]{\setlength{\rightskip}{0pt plus 5cm}tuple python.\-fileio.\-read\-Cfg.\-array\-\_\-re}}\label{namespacepython_1_1fileio_1_1read_cfg_a5604f72b29109b23876023593a3eefd3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+1 = re.compile(\textcolor{stringliteral}{"(\(\backslash\)d+)\(\backslash\)s*\(\backslash\)n([A-Za-z]\{1,2\})\(\backslash\)s*\(\backslash\)n(.*?)(?=\(\backslash\)d+\(\backslash\)s*\(\backslash\)n\(\backslash\)s*[A-Za-z]\{1,2\}\(\backslash\)s*\(\backslash\)n|\(\backslash\)Z)"}, 
+2                flags=re.M|re.S)
+\end{DoxyCode}
+
+
+Definition at line 26 of file read\-Cfg.\-py.
+
+\hypertarget{namespacepython_1_1fileio_1_1read_cfg_ab37ee94881162c11a48d464d4ac60ade}{\index{python\-::fileio\-::read\-Cfg@{python\-::fileio\-::read\-Cfg}!box\-\_\-re@{box\-\_\-re}}
+\index{box\-\_\-re@{box\-\_\-re}!python::fileio::readCfg@{python\-::fileio\-::read\-Cfg}}
+\subsubsection[{box\-\_\-re}]{\setlength{\rightskip}{0pt plus 5cm}tuple python.\-fileio.\-read\-Cfg.\-box\-\_\-re = re.\-compile(\char`\"{}H0\textbackslash{}((\textbackslash{}{\bf d}),(\textbackslash{}{\bf d})\textbackslash{}) = (\textbackslash{}{\bf d}+\textbackslash{}.\textbackslash{}{\bf d}+)\textbackslash{}{\bf s}$\ast$\char`\"{})}}\label{namespacepython_1_1fileio_1_1read_cfg_ab37ee94881162c11a48d464d4ac60ade}
+
+
+Definition at line 28 of file read\-Cfg.\-py.
+

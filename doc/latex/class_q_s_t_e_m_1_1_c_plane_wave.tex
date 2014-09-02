@@ -1,0 +1,324 @@
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave}{\section{Q\-S\-T\-E\-M\-:\-:C\-Plane\-Wave Class Reference}
+\label{class_q_s_t_e_m_1_1_c_plane_wave}\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+}
+
+
+{\ttfamily \#include $<$wave\-\_\-plane.\-hpp$>$}
+
+
+
+Inheritance diagram for Q\-S\-T\-E\-M\-:\-:C\-Plane\-Wave\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_q_s_t_e_m_1_1_c_plane_wave__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Q\-S\-T\-E\-M\-:\-:C\-Plane\-Wave\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_q_s_t_e_m_1_1_c_plane_wave__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_a421425314a4c7f543e2dc39efeaf9463}{C\-Plane\-Wave} (const \hyperlink{namespace_q_s_t_e_m_af9424707fe9f6503298f49b41304bd35}{Config\-Reader\-Ptr} \&config\-Reader)
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_acd10dfc6e070843e1ac72ae64ac354fc}{C\-Plane\-Wave} (const \hyperlink{class_q_s_t_e_m_1_1_c_plane_wave}{C\-Plane\-Wave} \&other)
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_a3445688687cccd272918cbb23b1b9b88}{C\-Plane\-Wave} ()
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_ae91ea6a98ce22da77e509ce0e3f1a9d9}{Form\-Probe} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_ab2f1de8dae9fb2e3a5f0303eb7b47af6}{Tilt\-Beam} (bool tilt\-Back=\hyperlink{antlr3convertutf_8h_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_afc19dcfc2d396a24bed4fffd51a4b5c1}{Tilt\-Back} ()
+\item 
+virtual void \hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_a914eeba909b3c90bb18da53844eec01e}{Display\-Params} ()
+\item 
+\hyperlink{namespace_q_s_t_e_m_ab42c5fe058973736465964e84b504b74}{Wave\-Ptr} \hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_a17bbfe09446b8fbc20e8cb1ece0cc147}{Clone} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_a6b9fe90895773a71a8ce2c60ff0317a7}{Read\-Image} ()
+\item 
+void \hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_a68f2f5ababe33996b41c8cb10d8b0f57}{Write\-Image} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_a6957cdb11b7953433ae8a5e40483a526}{m\-\_\-btiltx}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} \hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_ad3a475f7af67a75bf764ecef0609ba26}{m\-\_\-btilty}
+\item 
+\hyperlink{namespace_q_s_t_e_m_a8dfe9e1dbecce3838cb082d96e991ba7}{Real\-Vector} \hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_ac176c624744dc2e0e08478af67802e24}{m\-\_\-image}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_q_s_t_e_m_1_1_c_plane_wave_a414e4fef4e6402acd09bb1f2669428f3}{C\-Wave\-Factory}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file wave\-\_\-plane.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_a421425314a4c7f543e2dc39efeaf9463}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!C\-Plane\-Wave@{C\-Plane\-Wave}}
+\index{C\-Plane\-Wave@{C\-Plane\-Wave}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{C\-Plane\-Wave}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::\-C\-Plane\-Wave (
+\begin{DoxyParamCaption}
+\item[{const {\bf Config\-Reader\-Ptr} \&}]{config\-Reader}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_plane_wave_a421425314a4c7f543e2dc39efeaf9463}
+
+
+Definition at line 27 of file wave\-\_\-plane.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_acd10dfc6e070843e1ac72ae64ac354fc}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!C\-Plane\-Wave@{C\-Plane\-Wave}}
+\index{C\-Plane\-Wave@{C\-Plane\-Wave}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{C\-Plane\-Wave}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::\-C\-Plane\-Wave (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Plane\-Wave} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_plane_wave_acd10dfc6e070843e1ac72ae64ac354fc}
+Copy constructor -\/ used to copy wave just before dispatching multiple threads for S\-T\-E\-M simulations 
+
+Definition at line 36 of file wave\-\_\-plane.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_a3445688687cccd272918cbb23b1b9b88}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!C\-Plane\-Wave@{C\-Plane\-Wave}}
+\index{C\-Plane\-Wave@{C\-Plane\-Wave}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{C\-Plane\-Wave}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::\-C\-Plane\-Wave (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_plane_wave_a3445688687cccd272918cbb23b1b9b88}
+
+
+Definition at line 31 of file wave\-\_\-plane.\-cpp.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_plane_wave_a3445688687cccd272918cbb23b1b9b88_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_a17bbfe09446b8fbc20e8cb1ece0cc147}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!Clone@{Clone}}
+\index{Clone@{Clone}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Wave\-Ptr} Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::\-Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_plane_wave_a17bbfe09446b8fbc20e8cb1ece0cc147}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_c_base_wave_a8eb38c8355451380f9cb08f56eddbe79}{Q\-S\-T\-E\-M\-::\-C\-Base\-Wave}.
+
+
+
+Definition at line 41 of file wave\-\_\-plane.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_plane_wave_a17bbfe09446b8fbc20e8cb1ece0cc147_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_a914eeba909b3c90bb18da53844eec01e}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!Display\-Params@{Display\-Params}}
+\index{Display\-Params@{Display\-Params}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{Display\-Params}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::\-Display\-Params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_plane_wave_a914eeba909b3c90bb18da53844eec01e}
+
+
+Reimplemented from \hyperlink{class_q_s_t_e_m_1_1_c_base_wave_aff9612fc5a55a7aadcfda9ee9845a4f0}{Q\-S\-T\-E\-M\-::\-C\-Base\-Wave}.
+
+
+
+Definition at line 46 of file wave\-\_\-plane.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_plane_wave_a914eeba909b3c90bb18da53844eec01e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_ae91ea6a98ce22da77e509ce0e3f1a9d9}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!Form\-Probe@{Form\-Probe}}
+\index{Form\-Probe@{Form\-Probe}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{Form\-Probe}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::\-Form\-Probe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_plane_wave_ae91ea6a98ce22da77e509ce0e3f1a9d9}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_c_base_wave_a0685004c0de2182187a33d76edf8d583}{Q\-S\-T\-E\-M\-::\-C\-Base\-Wave}.
+
+
+
+Definition at line 55 of file wave\-\_\-plane.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_plane_wave_ae91ea6a98ce22da77e509ce0e3f1a9d9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_a6b9fe90895773a71a8ce2c60ff0317a7}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!Read\-Image@{Read\-Image}}
+\index{Read\-Image@{Read\-Image}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{Read\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::\-Read\-Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_plane_wave_a6b9fe90895773a71a8ce2c60ff0317a7}
+
+
+Definition at line 98 of file wave\-\_\-plane.\-cpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_afc19dcfc2d396a24bed4fffd51a4b5c1}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!Tilt\-Back@{Tilt\-Back}}
+\index{Tilt\-Back@{Tilt\-Back}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{Tilt\-Back}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::\-Tilt\-Back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_plane_wave_afc19dcfc2d396a24bed4fffd51a4b5c1}
+
+
+Definition at line 93 of file wave\-\_\-plane.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_plane_wave_afc19dcfc2d396a24bed4fffd51a4b5c1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_ab2f1de8dae9fb2e3a5f0303eb7b47af6}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!Tilt\-Beam@{Tilt\-Beam}}
+\index{Tilt\-Beam@{Tilt\-Beam}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{Tilt\-Beam}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::\-Tilt\-Beam (
+\begin{DoxyParamCaption}
+\item[{bool}]{tilt\-Back = {\ttfamily {\bf false}}}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_plane_wave_ab2f1de8dae9fb2e3a5f0303eb7b47af6}
+
+
+Definition at line 70 of file wave\-\_\-plane.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_plane_wave_ab2f1de8dae9fb2e3a5f0303eb7b47af6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_plane_wave_ab2f1de8dae9fb2e3a5f0303eb7b47af6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_a68f2f5ababe33996b41c8cb10d8b0f57}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!Write\-Image@{Write\-Image}}
+\index{Write\-Image@{Write\-Image}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{Write\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::\-Write\-Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_plane_wave_a68f2f5ababe33996b41c8cb10d8b0f57}
+
+
+Definition at line 104 of file wave\-\_\-plane.\-cpp.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_a414e4fef4e6402acd09bb1f2669428f3}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!C\-Wave\-Factory@{C\-Wave\-Factory}}
+\index{C\-Wave\-Factory@{C\-Wave\-Factory}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{C\-Wave\-Factory}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf C\-Wave\-Factory}\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_q_s_t_e_m_1_1_c_plane_wave_a414e4fef4e6402acd09bb1f2669428f3}
+
+
+Definition at line 48 of file wave\-\_\-plane.\-hpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_a6957cdb11b7953433ae8a5e40483a526}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!m\-\_\-btiltx@{m\-\_\-btiltx}}
+\index{m\-\_\-btiltx@{m\-\_\-btiltx}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{m\-\_\-btiltx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::m\-\_\-btiltx\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_plane_wave_a6957cdb11b7953433ae8a5e40483a526}
+
+
+Definition at line 45 of file wave\-\_\-plane.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_ad3a475f7af67a75bf764ecef0609ba26}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!m\-\_\-btilty@{m\-\_\-btilty}}
+\index{m\-\_\-btilty@{m\-\_\-btilty}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{m\-\_\-btilty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf float\-\_\-tt} Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::m\-\_\-btilty\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_plane_wave_ad3a475f7af67a75bf764ecef0609ba26}
+
+
+Definition at line 45 of file wave\-\_\-plane.\-hpp.
+
+\hypertarget{class_q_s_t_e_m_1_1_c_plane_wave_ac176c624744dc2e0e08478af67802e24}{\index{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}!m\-\_\-image@{m\-\_\-image}}
+\index{m\-\_\-image@{m\-\_\-image}!QSTEM::CPlaneWave@{Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave}}
+\subsubsection[{m\-\_\-image}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real\-Vector} Q\-S\-T\-E\-M\-::\-C\-Plane\-Wave\-::m\-\_\-image\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_plane_wave_ac176c624744dc2e0e08478af67802e24}
+
+
+Definition at line 46 of file wave\-\_\-plane.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+libs/wavefunctions/\hyperlink{wave__plane_8hpp}{wave\-\_\-plane.\-hpp}\item 
+libs/wavefunctions/\hyperlink{wave__plane_8cpp}{wave\-\_\-plane.\-cpp}\end{DoxyCompactItemize}

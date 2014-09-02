@@ -1,0 +1,9 @@
+<map id="QSTEM::CPotential::MakeSlices" name="QSTEM::CPotential::MakeSlices">
+<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_potential.html#a9858c6b5b383fd370a0862a1ba1bc0c8" title="QSTEM::CPotential::\lSliceSetup" alt="" coords="207,5,353,46"/>
+<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_potential.html#a207db8cc69e2d4837c61507cdf59241c" title="QSTEM::CPotential::\lCenterAtomZ" alt="" coords="207,70,353,111"/>
+<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_potential.html#a4e5f7f86bf4f96a6408c362d598f19f7" title="QSTEM::CPotential::\lAddAtomToSlices" alt="" coords="207,135,353,177"/>
+<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c_potential.html#a41295f2fd00b4d5f756d700ebef51f52" title="QSTEM::CPotential::\lWriteSlice" alt="" coords="207,201,353,242"/>
+<area shape="rect" id="node8" href="$class_q_s_t_e_m_1_1_c_potential.html#af83e1d0103b17339f46768c9e05615e8" title="QSTEM::CPotential::\lWriteProjectedPotential" alt="" coords="201,266,359,307"/>
+<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_potential.html#ac038d52b6e988cbbd917f54078249b9c" title="QSTEM::CPotential::\lResizeSlices" alt="" coords="408,5,555,46"/>
+<area shape="rect" id="node7" href="$aberrations_8m.html#a9d64efc26f20183fa57b389757578c0c" title="sprintf" alt="" coords="452,240,511,267"/>
+</map>

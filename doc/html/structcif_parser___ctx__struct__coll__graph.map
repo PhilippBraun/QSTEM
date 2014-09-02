@@ -1,0 +1,8 @@
+<map id="cifParser_Ctx_struct" name="cifParser_Ctx_struct">
+<area shape="rect" id="node2" href="$structcif_parser__data__items___s_c_o_p_e__struct.html" title="cifParser_data_items\l_SCOPE_struct" alt="" coords="345,81,490,122"/>
+<area shape="rect" id="node3" href="$structucif_1_1array__wrapper__base.html" title="ucif::array_wrapper_base" alt="" coords="5,36,173,63"/>
+<area shape="rect" id="node4" href="$structcif_parser__loop__body___s_c_o_p_e__struct.html" title="cifParser_loop_body\l_SCOPE_struct" alt="" coords="347,146,487,187"/>
+<area shape="rect" id="node5" href="$structcif_parser__value__return__struct.html" title="cifParser_value_return\l_struct" alt="" coords="341,363,493,405"/>
+<area shape="rect" id="node7" href="$structcif_parser__parse___s_c_o_p_e__struct.html" title="cifParser_parse_SCOPE\l_struct" alt="" coords="334,429,501,470"/>
+<area shape="rect" id="node8" href="$structucif_1_1builder__base.html" title="ucif::builder_base" alt="" coords="27,436,151,463"/>
+</map>

@@ -1,0 +1,48 @@
+\hypertarget{antlr3recognizersharedstate_8h}{\section{libs/structure\-\_\-\-I\-O/ucif/antlr3/include/antlr3recognizersharedstate.h File Reference}
+\label{antlr3recognizersharedstate_8h}\index{libs/structure\-\_\-\-I\-O/ucif/antlr3/include/antlr3recognizersharedstate.\-h@{libs/structure\-\_\-\-I\-O/ucif/antlr3/include/antlr3recognizersharedstate.\-h}}
+}
+{\ttfamily \#include $<$antlr3defs.\-h$>$}\\*
+Include dependency graph for antlr3recognizersharedstate.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3recognizersharedstate_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3recognizersharedstate_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_n_t_l_r3___r_e_c_o_g_n_i_z_e_r___s_h_a_r_e_d___s_t_a_t_e__struct}{A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \\*
+\hyperlink{struct_a_n_t_l_r3___r_e_c_o_g_n_i_z_e_r___s_h_a_r_e_d___s_t_a_t_e__struct}{A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E\-\_\-struct} \hyperlink{antlr3recognizersharedstate_8h_ab509314e45e1322b571f133c3ea6d81c}{A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+While the C runtime does not need to model the state of multiple lexers and parsers in the same way as the Java runtime does it is no overhead to reflect that model. In fact the C runtime has always been able to share recognizer state.
+
+This 'class' therefore defines all the elements of a recognizer (either lexer, parser or tree parser) that are need to track the current recognition state. Multiple recognizers may then share this state, for instance when one grammar imports another. 
+
+Definition in file \hyperlink{antlr3recognizersharedstate_8h_source}{antlr3recognizersharedstate.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{antlr3recognizersharedstate_8h_ab509314e45e1322b571f133c3ea6d81c}{\index{antlr3recognizersharedstate.\-h@{antlr3recognizersharedstate.\-h}!A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E@{A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E}}
+\index{A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E@{A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E}!antlr3recognizersharedstate.h@{antlr3recognizersharedstate.\-h}}
+\subsubsection[{A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}
+         {\bf A\-N\-T\-L\-R3\-\_\-\-R\-E\-C\-O\-G\-N\-I\-Z\-E\-R\-\_\-\-S\-H\-A\-R\-E\-D\-\_\-\-S\-T\-A\-T\-E}}}\label{antlr3recognizersharedstate_8h_ab509314e45e1322b571f133c3ea6d81c}
+All the data elements required to track the current state of any recognizer (lexer, parser, tree parser). May be share between multiple recognizers such that grammar inheritance is easily supported. 

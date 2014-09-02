@@ -1,0 +1,5 @@
+<map id="QSTEM::IDataReader::ReadImage" name="QSTEM::IDataReader::ReadImage">
+<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_i_data_reader.html#a13224a229c0383269d032ace270a39c9" title="QSTEM::IDataReader\l::ReadParameters" alt="" coords="206,5,357,46"/>
+<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_i_data_reader.html#a412a522b1f4935557e194991672b2670" title="QSTEM::IDataReader\l::ReadComment" alt="" coords="206,70,357,111"/>
+<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_i_data_reader.html#a4e15e1eb69872af78bd08630ef782f58" title="QSTEM::IDataReader\l::ReadImageData" alt="" coords="206,135,357,177"/>
+</map>

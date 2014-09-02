@@ -1,0 +1,6 @@
+<map id="QSTEM::CExperimentBase::fft_normalize" name="QSTEM::CExperimentBase::fft_normalize">
+<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_experiment_base.html#a912f78e3a9eb1cbbd578c22851da82b6" title="QSTEM::CExperimentBase\l::RunMuls" alt="" coords="238,49,421,90"/>
+<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_experiment_c_b_e_d.html#acb7adf203c7ea7f9c5a5d7f0d5094a2d" title="QSTEM::CExperimentCBED::Run" alt="" coords="470,5,693,32"/>
+<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_experiment_s_t_e_m.html#abdf03000104d915ebe68bb1f81742b35" title="QSTEM::CExperimentSTEM::Run" alt="" coords="470,56,693,83"/>
+<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_experiment_t_e_m.html#ac21a18cdcc38c7b1c85a118b94b502cd" title="QSTEM::CExperimentTEM::Run" alt="" coords="475,107,688,133"/>
+</map>

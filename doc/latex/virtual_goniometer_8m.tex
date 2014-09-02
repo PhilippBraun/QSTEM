@@ -1,0 +1,772 @@
+\hypertarget{virtual_goniometer_8m}{\section{G\-U\-I\-\_\-\-Matlab/virtual\-Goniometer.m File Reference}
+\label{virtual_goniometer_8m}\index{G\-U\-I\-\_\-\-Matlab/virtual\-Goniometer.\-m@{G\-U\-I\-\_\-\-Matlab/virtual\-Goniometer.\-m}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{xyz2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}{nargin} \&\& \hyperlink{virtual_goniometer_8m_aae1d1bec0e9c36c2fddc5cd87d8c4eee}{ischar} (varargin\{1\}) gui\-\_\-\-State.\-gui\-\_\-\-Callback
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{virtual_goniometer_8m_a58f7f5bb8af524fdfac53ec31e329e3f}{gui\-\_\-mainfcn} (\hyperlink{virtual_goniometer_8m_a15c01a18166c645a9c9811b10391ee06}{gui\-\_\-\-State}, varargin\{\-:\})
+\item 
+\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} V\-A\-R\-A\-R\-G\-I\-N \hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object} ()
+\item 
+Update \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} structure \hyperlink{virtual_goniometer_8m_aa51cad2115521e3fbf79721e9f49ddf2}{guidata} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles})
+\item 
+U\-I\-W\-A\-I\-T makes virtual\-Goniometer \\*
+wait for user \hyperlink{virtual_goniometer_8m_ae6bae603a9240706c363298f2936600f}{response} (\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} U\-I\-R\-E\-S\-U\-M\-E)\%uiwait(handles.\-figure1)
+\item 
+\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} V\-A\-R\-A\-R\-G\-O\-U\-T \hyperlink{virtual_goniometer_8m_aa75144726b375b93ecfc08810e5b5f09}{args} ()
+\item 
+\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-U\-I\-D\-A\-T\-A \hyperlink{virtual_goniometer_8m_a7c1ef7386988a8ccd4761d8428895842}{varargout} ()
+\item 
+\hyperlink{virtual_goniometer_8m_a844a230c7cd44f22c4b9b9c55ad7a081}{fprintf} ('Angles of matrix\-:alpha=\%.\-2f°, beta=\%.\-2f°, gamma=\%.\-2f°\textbackslash{}n', alpha\-P, beta\-P, gamma\-P)
+\item 
+\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-a,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}' \hyperlink{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{str2double} ()
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} ((\hyperlink{fftw__allocator_8hpp_a3265f53b67af1612bd5c314cdce95c32}{abs}(\hyperlink{virtual_goniometer_8m_a62197192f0fbf4e0675eb37be1c4c175}{alpha})$<$ 1e-\/4)$\vert$$\vert$(abs(beta)$<$ 1e-\/4)$\vert$$\vert$(abs(gamma)$<$ 1e-\/4)) errordlg('\-At least one of the angles is too small!') return end H00
+\item 
+start \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} refinement to search \\*
+for the correct matrix entries \\*
+\hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} the \hyperlink{virtual_goniometer_8m_a433dfaf305bd77a91e39b24b2622c06d}{fprintf} ('\hyperlink{_read_d_m3___matlab_8m_a8626f0bba659e1b0b2d966d226f378a9}{found} structure matrix with \hyperlink{virtual_goniometer_8m_a7a7386b8044055e14b58efd949326489}{chi2}=\%f\textbackslash{}n', \hyperlink{virtual_goniometer_8m_a7a7386b8044055e14b58efd949326489}{chi2})
+\item 
+\hyperlink{virtual_goniometer_8m_a693650abee94ccb729f7951e3ea31551}{H} (3,\-:)
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a33f3637549bd78cf3aa7c5f6f1872114}{set} (handles.\-edit\-\_\-\-H00,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f', H00))
+\item 
+\hyperlink{virtual_goniometer_8m_a31b126786add954cd2679910c21272bb}{set} (handles.\-edit\-\_\-\-H01,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f', H01))
+\item 
+\hyperlink{virtual_goniometer_8m_aac395b03514bbd6039c7d3c64af8eb93}{set} (handles.\-edit\-\_\-\-H02,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f', H02))
+\item 
+\hyperlink{virtual_goniometer_8m_a5e466fa0993d8414f2bdf257c59e27a8}{set} (handles.\-edit\-\_\-\-H10,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f', H10))
+\item 
+\hyperlink{virtual_goniometer_8m_a5147088ebf2622eeffbb66ae0f24a5ba}{set} (handles.\-edit\-\_\-\-H11,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f', H11))
+\item 
+\hyperlink{virtual_goniometer_8m_a729b245c28ed1fa74d127736f95dfe18}{set} (handles.\-edit\-\_\-\-H12,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f', H12))
+\item 
+\hyperlink{virtual_goniometer_8m_ae76525d00b9751a2e7631d0ff6a072aa}{set} (handles.\-edit\-\_\-\-H20,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f', H20))
+\item 
+\hyperlink{virtual_goniometer_8m_ad0006e11f8770bcf60e8442b9551449b}{set} (handles.\-edit\-\_\-\-H21,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f', H21))
+\item 
+\hyperlink{virtual_goniometer_8m_a5cafc607f9c3df78e068cb07e15dd6b7}{set} (handles.\-edit\-\_\-\-H22,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f', H22))
+\item 
+\hyperlink{virtual_goniometer_8m_a630aed6e1fae525ef09bb2c512164c09}{fprintf} ('Angles of matrix\-:alpha=\%.\-2f°, beta=\%.\-2f°, gamma=\%.\-2f°\textbackslash{}n', alpha, beta, gamma)
+\item 
+\hyperlink{virtual_goniometer_8m_a087955cc1d201a8f85127e79858f9f2e}{fprintf} ('Vector lengths\-:a=\%.\-2f, b=\%.\-2f, c=\%.\-2f\textbackslash{}n', a, b, c)
+\item 
+3 \hyperlink{virtual_goniometer_8m_a658ea266fd3baee1bdd483b9117e9f54}{zeros} ()
+\item 
+\hyperlink{virtual_goniometer_8m_aa309c8122293c3c6a15610c093f940c0}{H} (1, 1)
+\item 
+\hyperlink{virtual_goniometer_8m_af25c7f104d389050e2a201d14cd2302d}{H} (1, 2)
+\item 
+\hyperlink{virtual_goniometer_8m_a308cc9455b6611a0d29c79fcff9aa774}{H} (1, 3)
+\item 
+\hyperlink{virtual_goniometer_8m_a455fc251b494e1377c4a2897d72c4051}{H} (2, 1)
+\item 
+\hyperlink{virtual_goniometer_8m_a597bc51791b064382ab4b97da30c490c}{H} (2, 2)
+\item 
+\hyperlink{virtual_goniometer_8m_aaef8f3559f2aa50b9298e27b61a23cc7}{H} (2, 3)
+\item 
+\hyperlink{virtual_goniometer_8m_a1928aeb51c3e1800f3579af217dfb05f}{H} (3, 1)
+\item 
+\hyperlink{virtual_goniometer_8m_a21020086ddc66a1b7b9b29bcedb62a12}{H} (3, 2)
+\item 
+\hyperlink{virtual_goniometer_8m_aeb50ec823be780641f12c814f7630535}{H} (3, 3)
+\item 
+\hyperlink{virtual_goniometer_8m_a9e77f1678cb67efd50993a21a3058812}{ref\-Zone} (1)
+\item 
+\hyperlink{virtual_goniometer_8m_a9ae0e9f79475ae4d538f403a388ebcdf}{ref\-Zone} (2)
+\item 
+\hyperlink{virtual_goniometer_8m_a06092d831c92576d89939742b85f0738}{ref\-Zone} (3)
+\item 
+\hyperlink{virtual_goniometer_8m_a23ac2dc0e6ce1fc51ed9bff4f01be1c8}{zone} (1)
+\item 
+\hyperlink{virtual_goniometer_8m_ae95ba9dee26eb6fd878d177251ad6777}{zone} (2)
+\item 
+\hyperlink{virtual_goniometer_8m_ad44926d3cf3ffa4d6ce892ac22f9633c}{zone} (3)
+\item 
+\hyperlink{virtual_goniometer_8m_abc0996af36f3789e7aa95d77d8fbed7b}{set} (handles.\-edit\-\_\-tiltx,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f', rot\-Angles(1)))
+\item 
+\hyperlink{virtual_goniometer_8m_a6376dab02498427cb9f63505d8930222}{set} (handles.\-edit\-\_\-tilty,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f', rot\-Angles(2)))
+\item 
+\hyperlink{virtual_goniometer_8m_a6b11865bcca154f476b9d05d1ac7a75b}{set} (handles.\-edit\-\_\-tiltz,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f', rot\-Angles(3)))
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{virtual_goniometer_8m_acc89f64219ddae53243030f2c645fc06}{varargout}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} by \hyperlink{virtual_goniometer_8m_a831a3e1133c41b364b824dcb52ee0f9a}{itself}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} by creates \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} new \\*
+V\-I\-R\-T\-U\-A\-L\-G\-O\-N\-I\-O\-M\-E\-T\-E\-R or raises \\*
+the existing singleton $\ast$ \hyperlink{virtual_goniometer_8m_afaafc315b95987fc2b071bcd8f698b81}{H}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} by creates \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} new \\*
+V\-I\-R\-T\-U\-A\-L\-G\-O\-N\-I\-O\-M\-E\-T\-E\-R or raises \\*
+the existing singleton \\*
+property \hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value} pairs are \\*
+applied to the G\-U\-I before \\*
+virtual\-Goniometer\-\_\-\-Opening\-Function \\*
+gets called An unrecognized \\*
+property \hyperlink{qmb_8m_abdc1dcc6fed70c14f9b5ae237e486f4e}{name} or invalid \hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value} \\*
+makes property application \\*
+stop All inputs are passed to \\*
+virtual\-Goniometer\-\_\-\-Opening\-Fcn \\*
+via varargin $\ast$See G\-U\-I Options \\*
+\hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} G\-U\-I\-D\-E \hyperlink{aberrations___t_e_m_8m_aef29541a06b7f933d32a804307db13af}{s} Tools menu Choose \\*
+G\-U\-I allows only one instance \\*
+to run(singleton)\char`\"{}. \% \% See \\*
+also \hyperlink{virtual_goniometer_8m_a15c01a18166c645a9c9811b10391ee06}{gui\-\_\-\-State}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{virtual_goniometer_8m_a9b07119da70fc4a54e0d1cb5751d69aa}{nargout} \mbox{[}\hyperlink{virtual_goniometer_8m_a7c1ef7386988a8ccd4761d8428895842}{varargout}\{1\-:nargout\}\mbox{]} = \hyperlink{virtual_goniometer_8m_a58f7f5bb8af524fdfac53ec31e329e3f}{gui\-\_\-mainfcn}(\hyperlink{virtual_goniometer_8m_a15c01a18166c645a9c9811b10391ee06}{gui\-\_\-\-State}, varargin\{\-:\})
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} edit\-\_\-a\-\_\-\-Callback(\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \\*
+\hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles})\%\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object} \\*
+handle to edit\-\_\-a(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-C\-B\-O)\%\hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata} \\*
+reserved-\/to be \hyperlink{qmb_8m_adfc876b35db3e97d88b3a2e0d8ff0c61}{defined} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} \\*
+future \hyperlink{_read_d_m3___matlab_8m_a6ef5fcb21bae737d3cf018fa9185009b}{version} of M\-A\-T\-L\-A\-B\%\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \\*
+structure with \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} and \\*
+user data(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-U\-I\-D\-A\-T\-A)\%Hints \\*
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} edit\-\_\-b\-\_\-\-Callback(\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \\*
+\hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles})\%\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object} \\*
+handle to edit\-\_\-b(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-C\-B\-O)\%\hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata} \\*
+reserved-\/to be \hyperlink{qmb_8m_adfc876b35db3e97d88b3a2e0d8ff0c61}{defined} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} \\*
+future \hyperlink{_read_d_m3___matlab_8m_a6ef5fcb21bae737d3cf018fa9185009b}{version} of M\-A\-T\-L\-A\-B\%\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \\*
+structure with \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} and \\*
+user data(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-U\-I\-D\-A\-T\-A)\%Hints \\*
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} edit\-\_\-c\-\_\-\-Callback(\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \\*
+\hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles})\%\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object} \\*
+handle to edit\-\_\-c(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-C\-B\-O)\%\hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata} \\*
+reserved-\/to be \hyperlink{qmb_8m_adfc876b35db3e97d88b3a2e0d8ff0c61}{defined} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} \\*
+future \hyperlink{_read_d_m3___matlab_8m_a6ef5fcb21bae737d3cf018fa9185009b}{version} of M\-A\-T\-L\-A\-B\%\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \\*
+structure with \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} and \\*
+user data(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-U\-I\-D\-A\-T\-A)\%Hints \\*
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \\*
+\hyperlink{scale_s_t_e_m_image_8m_abf18f61c6ed50da6937e412ea82c74aa}{edit\-\_\-alpha\-\_\-\-Callback}(\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \\*
+\hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles})\%\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object} \\*
+handle to edit\-\_\-alpha(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-C\-B\-O)\%\hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata} \\*
+reserved-\/to be \hyperlink{qmb_8m_adfc876b35db3e97d88b3a2e0d8ff0c61}{defined} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} \\*
+future \hyperlink{_read_d_m3___matlab_8m_a6ef5fcb21bae737d3cf018fa9185009b}{version} of M\-A\-T\-L\-A\-B\%\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \\*
+structure with \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} and \\*
+user data(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-U\-I\-D\-A\-T\-A)\%Hints \\*
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \\*
+edit\-\_\-beta\-\_\-\-Callback(\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \\*
+\hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles})\%\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object} \\*
+handle to edit\-\_\-beta(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-C\-B\-O)\%\hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata} \\*
+reserved-\/to be \hyperlink{qmb_8m_adfc876b35db3e97d88b3a2e0d8ff0c61}{defined} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} \\*
+future \hyperlink{_read_d_m3___matlab_8m_a6ef5fcb21bae737d3cf018fa9185009b}{version} of M\-A\-T\-L\-A\-B\%\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \\*
+structure with \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} and \\*
+user data(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-U\-I\-D\-A\-T\-A)\%Hints \\*
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \\*
+edit\-\_\-gamma\-\_\-\-Callback(\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \\*
+\hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles})\%\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object} \\*
+handle to edit\-\_\-gamma(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-C\-B\-O)\%\hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata} \\*
+reserved-\/to be \hyperlink{qmb_8m_adfc876b35db3e97d88b3a2e0d8ff0c61}{defined} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} \\*
+future \hyperlink{_read_d_m3___matlab_8m_a6ef5fcb21bae737d3cf018fa9185009b}{version} of M\-A\-T\-L\-A\-B\%\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \\*
+structure with \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} and \\*
+user data(\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-U\-I\-D\-A\-T\-A)\%Hints \\*
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{virtual_goniometer_8m_a7a7386b8044055e14b58efd949326489}{chi2}
+\item 
+\hyperlink{virtual_goniometer_8m_a8dbb65f9831cbebb850c3699df003676}{alpha\-P} = acos(\hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{virtual_goniometer_8m_aeb50ec823be780641f12c814f7630535}{H}(2,\-:).$\ast$\hyperlink{virtual_goniometer_8m_aeb50ec823be780641f12c814f7630535}{H}(3,\-:))/sqrt(\hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{virtual_goniometer_8m_aeb50ec823be780641f12c814f7630535}{H}(2,\-:).$^\wedge$2)$\ast$\hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{virtual_goniometer_8m_aeb50ec823be780641f12c814f7630535}{H}(3,\-:).$^\wedge$2)))$\ast$180/pi
+\item 
+\hyperlink{virtual_goniometer_8m_ad226f839cd3b45e2c5b363a4ab975386}{beta\-P} = acos(\hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{virtual_goniometer_8m_aeb50ec823be780641f12c814f7630535}{H}(1,\-:).$\ast$\hyperlink{virtual_goniometer_8m_aeb50ec823be780641f12c814f7630535}{H}(3,\-:))/sqrt(\hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{virtual_goniometer_8m_aeb50ec823be780641f12c814f7630535}{H}(1,\-:).$^\wedge$2)$\ast$\hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{virtual_goniometer_8m_aeb50ec823be780641f12c814f7630535}{H}(3,\-:).$^\wedge$2)))$\ast$180/pi
+\item 
+\hyperlink{virtual_goniometer_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b} = \hyperlink{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{str2double}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-b,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'))
+\item 
+\hyperlink{virtual_goniometer_8m_ae0323a9039add2978bf5b49550572c7c}{c} = \hyperlink{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{str2double}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-c,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'))
+\item 
+\hyperlink{virtual_goniometer_8m_a62197192f0fbf4e0675eb37be1c4c175}{alpha} = \hyperlink{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{str2double}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-alpha,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'))$\ast$pi/180
+\item 
+\hyperlink{virtual_goniometer_8m_ab146b9cbab6e73e7588b240dc709fe01}{beta} = \hyperlink{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{str2double}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-beta,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'))$\ast$pi/180
+\item 
+\hyperlink{virtual_goniometer_8m_a8d00631c9622112f1877fdb1222c242e}{gamma} = \hyperlink{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{str2double}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-gamma,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'))$\ast$pi/180
+\item 
+\hyperlink{virtual_goniometer_8m_a2956b3c3c88e899db770033378d001fc}{H01} = 0
+\item 
+\hyperlink{virtual_goniometer_8m_ae48a38ace9ce3c77a9f874a13cb624bd}{H02} = 0
+\item 
+\hyperlink{virtual_goniometer_8m_aec0f3296464d8361abe37f60d5496c2f}{H10} = \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}$\ast$cos(\hyperlink{virtual_goniometer_8m_a8d00631c9622112f1877fdb1222c242e}{gamma})
+\item 
+\hyperlink{virtual_goniometer_8m_aa84c46fe58c25716d1f7605de8df3c23}{H11} = \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}$\ast$sin(\hyperlink{virtual_goniometer_8m_a8d00631c9622112f1877fdb1222c242e}{gamma})
+\item 
+\hyperlink{virtual_goniometer_8m_a8ccbb97e13e2694cd089ea35a4a18fd0}{H12} = 0
+\item 
+\hyperlink{virtual_goniometer_8m_affb2a9d3d10246a82c5e1ee2d7f37e93}{H20} = 0
+\item 
+\hyperlink{virtual_goniometer_8m_a45b983dd2f4e0bb03cbbe01107a10677}{H21} = 0
+\item 
+\hyperlink{virtual_goniometer_8m_abd500617d8d5379b31bad3a33dd3081a}{H22} = \hyperlink{image_sim_8m_a463b16ca2bfa2f0cbab0e62fcb263d8e}{c}
+\item 
+start \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} refinement to search \\*
+for the correct matrix entries \\*
+\hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} the \hyperlink{virtual_goniometer_8m_a0bd56c3fc970360b866a574a6c0a3473}{row}
+\item 
+\hyperlink{virtual_goniometer_8m_a4124bc0a9335c27f086f24ba207a4912}{a} = sqrt(\hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{virtual_goniometer_8m_aeb50ec823be780641f12c814f7630535}{H}(1,\-:).$^\wedge$2))
+\item 
+\hyperlink{virtual_goniometer_8m_ada457d4f9e1a63fdf3ae9feed633d5a8}{ref\-Zone} = \hyperlink{virtual_goniometer_8m_a658ea266fd3baee1bdd483b9117e9f54}{zeros}(3,1)
+\item 
+\hyperlink{virtual_goniometer_8m_a828b8f8a58cd9813deb365aab404c850}{zone} = \hyperlink{virtual_goniometer_8m_a658ea266fd3baee1bdd483b9117e9f54}{zeros}(3,1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{virtual_goniometer_8m_aa75144726b375b93ecfc08810e5b5f09}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!args@{args}}
+\index{args@{args}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{args}]{\setlength{\rightskip}{0pt plus 5cm}{\bf see} V\-A\-R\-A\-R\-G\-O\-U\-T args (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{virtual_goniometer_8m_aa75144726b375b93ecfc08810e5b5f09}
+\hypertarget{virtual_goniometer_8m_a844a230c7cd44f22c4b9b9c55ad7a081}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{fprintf}]{\setlength{\rightskip}{0pt plus 5cm}fprintf (
+\begin{DoxyParamCaption}
+\item[{'Angles of matrix\-:alpha}]{ = {\ttfamily \%.2f°}, }
+\item[{{\bf beta}}]{ = {\ttfamily \%.2f°}, }
+\item[{{\bf gamma}}]{ = {\ttfamily \%.2f°\textbackslash{}n'}, }
+\item[{{\bf alpha\-P}}]{, }
+\item[{{\bf beta\-P}}]{, }
+\item[{gamma\-P}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a844a230c7cd44f22c4b9b9c55ad7a081}
+\hypertarget{virtual_goniometer_8m_a433dfaf305bd77a91e39b24b2622c06d}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{fprintf}]{\setlength{\rightskip}{0pt plus 5cm}start {\bf a} refinement to search for the correct matrix entries {\bf in} the fprintf (
+\begin{DoxyParamCaption}
+\item[{'{\bf found} structure matrix with}]{chi2 = {\ttfamily \%f\textbackslash{}n'}, }
+\item[{{\bf chi2}}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a433dfaf305bd77a91e39b24b2622c06d}
+\hypertarget{virtual_goniometer_8m_a630aed6e1fae525ef09bb2c512164c09}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{fprintf}]{\setlength{\rightskip}{0pt plus 5cm}fprintf (
+\begin{DoxyParamCaption}
+\item[{'Angles of matrix\-:alpha}]{ = {\ttfamily \%.2f°}, }
+\item[{{\bf beta}}]{ = {\ttfamily \%.2f°}, }
+\item[{{\bf gamma}}]{ = {\ttfamily \%.2f°\textbackslash{}n'}, }
+\item[{{\bf alpha}}]{, }
+\item[{{\bf beta}}]{, }
+\item[{{\bf gamma}}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a630aed6e1fae525ef09bb2c512164c09}
+\hypertarget{virtual_goniometer_8m_a087955cc1d201a8f85127e79858f9f2e}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{fprintf}]{\setlength{\rightskip}{0pt plus 5cm}fprintf (
+\begin{DoxyParamCaption}
+\item[{'Vector lengths\-:a}]{ = {\ttfamily \%.2f}, }
+\item[{{\bf b}}]{ = {\ttfamily \%.2f}, }
+\item[{{\bf c}}]{ = {\ttfamily \%.2f\textbackslash{}n'}, }
+\item[{{\bf a}}]{, }
+\item[{{\bf b}}]{, }
+\item[{{\bf c}}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a087955cc1d201a8f85127e79858f9f2e}
+\hypertarget{virtual_goniometer_8m_a58f7f5bb8af524fdfac53ec31e329e3f}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!gui\-\_\-mainfcn@{gui\-\_\-mainfcn}}
+\index{gui\-\_\-mainfcn@{gui\-\_\-mainfcn}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{gui\-\_\-mainfcn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} gui\-\_\-mainfcn (
+\begin{DoxyParamCaption}
+\item[{{\bf gui\-\_\-\-State}}]{, }
+\item[{varargin\{\-:\}}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a58f7f5bb8af524fdfac53ec31e329e3f}
+\hypertarget{virtual_goniometer_8m_aa51cad2115521e3fbf79721e9f49ddf2}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!guidata@{guidata}}
+\index{guidata@{guidata}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{guidata}]{\setlength{\rightskip}{0pt plus 5cm}Update {\bf handles} structure guidata (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object}}]{, }
+\item[{{\bf handles}}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_aa51cad2115521e3fbf79721e9f49ddf2}
+\hypertarget{virtual_goniometer_8m_a693650abee94ccb729f7951e3ea31551}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H@{H}}
+\index{H@{H}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}H (
+\begin{DoxyParamCaption}
+\item[{3}]{, }
+\item[{\-:}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a693650abee94ccb729f7951e3ea31551}
+\hypertarget{virtual_goniometer_8m_aa309c8122293c3c6a15610c093f940c0}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H@{H}}
+\index{H@{H}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}H (
+\begin{DoxyParamCaption}
+\item[{1}]{, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_aa309c8122293c3c6a15610c093f940c0}
+\hypertarget{virtual_goniometer_8m_af25c7f104d389050e2a201d14cd2302d}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H@{H}}
+\index{H@{H}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}H (
+\begin{DoxyParamCaption}
+\item[{1}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_af25c7f104d389050e2a201d14cd2302d}
+\hypertarget{virtual_goniometer_8m_a308cc9455b6611a0d29c79fcff9aa774}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H@{H}}
+\index{H@{H}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}H (
+\begin{DoxyParamCaption}
+\item[{1}]{, }
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a308cc9455b6611a0d29c79fcff9aa774}
+\hypertarget{virtual_goniometer_8m_a455fc251b494e1377c4a2897d72c4051}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H@{H}}
+\index{H@{H}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}H (
+\begin{DoxyParamCaption}
+\item[{2}]{, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a455fc251b494e1377c4a2897d72c4051}
+\hypertarget{virtual_goniometer_8m_a597bc51791b064382ab4b97da30c490c}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H@{H}}
+\index{H@{H}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}H (
+\begin{DoxyParamCaption}
+\item[{2}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a597bc51791b064382ab4b97da30c490c}
+\hypertarget{virtual_goniometer_8m_aaef8f3559f2aa50b9298e27b61a23cc7}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H@{H}}
+\index{H@{H}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}H (
+\begin{DoxyParamCaption}
+\item[{2}]{, }
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_aaef8f3559f2aa50b9298e27b61a23cc7}
+\hypertarget{virtual_goniometer_8m_a1928aeb51c3e1800f3579af217dfb05f}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H@{H}}
+\index{H@{H}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}H (
+\begin{DoxyParamCaption}
+\item[{3}]{, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a1928aeb51c3e1800f3579af217dfb05f}
+\hypertarget{virtual_goniometer_8m_a21020086ddc66a1b7b9b29bcedb62a12}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H@{H}}
+\index{H@{H}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}H (
+\begin{DoxyParamCaption}
+\item[{3}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a21020086ddc66a1b7b9b29bcedb62a12}
+\hypertarget{virtual_goniometer_8m_aeb50ec823be780641f12c814f7630535}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H@{H}}
+\index{H@{H}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}H (
+\begin{DoxyParamCaption}
+\item[{3}]{, }
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_aeb50ec823be780641f12c814f7630535}
+\hypertarget{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!h\-Object@{h\-Object}}
+\index{h\-Object@{h\-Object}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{h\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf see} V\-A\-R\-A\-R\-G\-I\-N h\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}
+\hypertarget{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!if@{if}}
+\index{if@{if}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{({\bf abs}({\bf alpha})$<$ 1e-\/4)$\vert$$\vert$(abs(beta)$<$ 1e-\/4)$\vert$$\vert$(abs(gamma)$<$ 1e-\/4)}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}
+\hypertarget{virtual_goniometer_8m_aae1d1bec0e9c36c2fddc5cd87d8c4eee}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!ischar@{ischar}}
+\index{ischar@{ischar}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{ischar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} {\bf nargin}\&\& ischar (
+\begin{DoxyParamCaption}
+\item[{varargin\{1\}}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_aae1d1bec0e9c36c2fddc5cd87d8c4eee}
+\hypertarget{virtual_goniometer_8m_a9e77f1678cb67efd50993a21a3058812}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!ref\-Zone@{ref\-Zone}}
+\index{ref\-Zone@{ref\-Zone}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{ref\-Zone}]{\setlength{\rightskip}{0pt plus 5cm}ref\-Zone (
+\begin{DoxyParamCaption}
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a9e77f1678cb67efd50993a21a3058812}
+\hypertarget{virtual_goniometer_8m_a9ae0e9f79475ae4d538f403a388ebcdf}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!ref\-Zone@{ref\-Zone}}
+\index{ref\-Zone@{ref\-Zone}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{ref\-Zone}]{\setlength{\rightskip}{0pt plus 5cm}ref\-Zone (
+\begin{DoxyParamCaption}
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a9ae0e9f79475ae4d538f403a388ebcdf}
+\hypertarget{virtual_goniometer_8m_a06092d831c92576d89939742b85f0738}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!ref\-Zone@{ref\-Zone}}
+\index{ref\-Zone@{ref\-Zone}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{ref\-Zone}]{\setlength{\rightskip}{0pt plus 5cm}ref\-Zone (
+\begin{DoxyParamCaption}
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a06092d831c92576d89939742b85f0738}
+\hypertarget{virtual_goniometer_8m_ae6bae603a9240706c363298f2936600f}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!response@{response}}
+\index{response@{response}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{response}]{\setlength{\rightskip}{0pt plus 5cm}U\-I\-W\-A\-I\-T makes virtual\-Goniometer wait for user response (
+\begin{DoxyParamCaption}
+\item[{{\bf see}}]{U\-I\-R\-E\-S\-U\-M\-E}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_ae6bae603a9240706c363298f2936600f}
+\hypertarget{virtual_goniometer_8m_a33f3637549bd78cf3aa7c5f6f1872114}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!set@{set}}
+\index{set@{set}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-\-H00, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-3f', H00)}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a33f3637549bd78cf3aa7c5f6f1872114}
+\hypertarget{virtual_goniometer_8m_a31b126786add954cd2679910c21272bb}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!set@{set}}
+\index{set@{set}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-\-H01, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-3f', H01)}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a31b126786add954cd2679910c21272bb}
+\hypertarget{virtual_goniometer_8m_aac395b03514bbd6039c7d3c64af8eb93}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!set@{set}}
+\index{set@{set}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-\-H02, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-3f', H02)}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_aac395b03514bbd6039c7d3c64af8eb93}
+\hypertarget{virtual_goniometer_8m_a5e466fa0993d8414f2bdf257c59e27a8}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!set@{set}}
+\index{set@{set}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-\-H10, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-3f', H10)}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a5e466fa0993d8414f2bdf257c59e27a8}
+\hypertarget{virtual_goniometer_8m_a5147088ebf2622eeffbb66ae0f24a5ba}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!set@{set}}
+\index{set@{set}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-\-H11, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-3f', H11)}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a5147088ebf2622eeffbb66ae0f24a5ba}
+\hypertarget{virtual_goniometer_8m_a729b245c28ed1fa74d127736f95dfe18}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!set@{set}}
+\index{set@{set}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-\-H12, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-3f', H12)}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a729b245c28ed1fa74d127736f95dfe18}
+\hypertarget{virtual_goniometer_8m_ae76525d00b9751a2e7631d0ff6a072aa}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!set@{set}}
+\index{set@{set}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-\-H20, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-3f', H20)}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_ae76525d00b9751a2e7631d0ff6a072aa}
+\hypertarget{virtual_goniometer_8m_ad0006e11f8770bcf60e8442b9551449b}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!set@{set}}
+\index{set@{set}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-\-H21, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-3f', H21)}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_ad0006e11f8770bcf60e8442b9551449b}
+\hypertarget{virtual_goniometer_8m_a5cafc607f9c3df78e068cb07e15dd6b7}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!set@{set}}
+\index{set@{set}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-\-H22, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-3f', H22)}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a5cafc607f9c3df78e068cb07e15dd6b7}
+\hypertarget{virtual_goniometer_8m_abc0996af36f3789e7aa95d77d8fbed7b}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!set@{set}}
+\index{set@{set}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-tiltx, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-3f', rot\-Angles(1))}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_abc0996af36f3789e7aa95d77d8fbed7b}
+\hypertarget{virtual_goniometer_8m_a6376dab02498427cb9f63505d8930222}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!set@{set}}
+\index{set@{set}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-tilty, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-3f', rot\-Angles(2))}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a6376dab02498427cb9f63505d8930222}
+\hypertarget{virtual_goniometer_8m_a6b11865bcca154f476b9d05d1ac7a75b}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!set@{set}}
+\index{set@{set}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-tiltz, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-3f', rot\-Angles(3))}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a6b11865bcca154f476b9d05d1ac7a75b}
+\hypertarget{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!str2double@{str2double}}
+\index{str2double@{str2double}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{str2double}]{\setlength{\rightskip}{0pt plus 5cm}{\bf get}(handles.\-edit\-\_\-a,'{\bf String}' str2double (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{virtual_goniometer_8m_a45e3f9f82f6a321be8628cadc91f24e7}
+\hypertarget{virtual_goniometer_8m_a7c1ef7386988a8ccd4761d8428895842}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!varargout@{varargout}}
+\index{varargout@{varargout}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{varargout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf see} G\-U\-I\-D\-A\-T\-A varargout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{virtual_goniometer_8m_a7c1ef7386988a8ccd4761d8428895842}
+
+
+Definition at line 69 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a658ea266fd3baee1bdd483b9117e9f54}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!zeros@{zeros}}
+\index{zeros@{zeros}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{zeros}]{\setlength{\rightskip}{0pt plus 5cm}3 zeros (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{virtual_goniometer_8m_a658ea266fd3baee1bdd483b9117e9f54}
+\hypertarget{virtual_goniometer_8m_a23ac2dc0e6ce1fc51ed9bff4f01be1c8}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!zone@{zone}}
+\index{zone@{zone}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{zone}]{\setlength{\rightskip}{0pt plus 5cm}zone (
+\begin{DoxyParamCaption}
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_a23ac2dc0e6ce1fc51ed9bff4f01be1c8}
+\hypertarget{virtual_goniometer_8m_ae95ba9dee26eb6fd878d177251ad6777}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!zone@{zone}}
+\index{zone@{zone}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{zone}]{\setlength{\rightskip}{0pt plus 5cm}zone (
+\begin{DoxyParamCaption}
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_ae95ba9dee26eb6fd878d177251ad6777}
+\hypertarget{virtual_goniometer_8m_ad44926d3cf3ffa4d6ce892ac22f9633c}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!zone@{zone}}
+\index{zone@{zone}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{zone}]{\setlength{\rightskip}{0pt plus 5cm}zone (
+\begin{DoxyParamCaption}
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{virtual_goniometer_8m_ad44926d3cf3ffa4d6ce892ac22f9633c}
+
+
+\subsection{Variable Documentation}
+\hypertarget{virtual_goniometer_8m_a4124bc0a9335c27f086f24ba207a4912}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!a@{a}}
+\index{a@{a}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}a = sqrt({\bf sum}({\bf H}(1,\-:).$^\wedge$2))}}\label{virtual_goniometer_8m_a4124bc0a9335c27f086f24ba207a4912}
+
+
+Definition at line 279 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a62197192f0fbf4e0675eb37be1c4c175}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!alpha@{alpha}}
+\index{alpha@{alpha}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{alpha}]{\setlength{\rightskip}{0pt plus 5cm}alpha = {\bf str2double}({\bf get}(handles.\-edit\-\_\-alpha,'{\bf String}'))$\ast$pi/180}}\label{virtual_goniometer_8m_a62197192f0fbf4e0675eb37be1c4c175}
+
+
+Definition at line 231 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a8dbb65f9831cbebb850c3699df003676}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!alpha\-P@{alpha\-P}}
+\index{alpha\-P@{alpha\-P}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{alpha\-P}]{\setlength{\rightskip}{0pt plus 5cm}alpha\-P = acos({\bf sum}({\bf H}(2,\-:).$\ast${\bf H}(3,\-:))/sqrt({\bf sum}({\bf H}(2,\-:).$^\wedge$2)$\ast${\bf sum}({\bf H}(3,\-:).$^\wedge$2)))$\ast$180/pi}}\label{virtual_goniometer_8m_a8dbb65f9831cbebb850c3699df003676}
+
+
+Definition at line 215 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!b@{b}}
+\index{b@{b}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}b = {\bf str2double}({\bf get}(handles.\-edit\-\_\-b,'{\bf String}'))}}\label{virtual_goniometer_8m_a21ad0bd836b90d08f4cf640b4c298e7c}
+
+
+Definition at line 228 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_ab146b9cbab6e73e7588b240dc709fe01}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!beta@{beta}}
+\index{beta@{beta}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{beta}]{\setlength{\rightskip}{0pt plus 5cm}beta = {\bf str2double}({\bf get}(handles.\-edit\-\_\-beta,'{\bf String}'))$\ast$pi/180}}\label{virtual_goniometer_8m_ab146b9cbab6e73e7588b240dc709fe01}
+
+
+Definition at line 232 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_ad226f839cd3b45e2c5b363a4ab975386}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!beta\-P@{beta\-P}}
+\index{beta\-P@{beta\-P}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{beta\-P}]{\setlength{\rightskip}{0pt plus 5cm}beta\-P = acos({\bf sum}({\bf H}(1,\-:).$\ast${\bf H}(3,\-:))/sqrt({\bf sum}({\bf H}(1,\-:).$^\wedge$2)$\ast${\bf sum}({\bf H}(3,\-:).$^\wedge$2)))$\ast$180/pi}}\label{virtual_goniometer_8m_ad226f839cd3b45e2c5b363a4ab975386}
+
+
+Definition at line 216 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_ae0323a9039add2978bf5b49550572c7c}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!c@{c}}
+\index{c@{c}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{c}]{\setlength{\rightskip}{0pt plus 5cm}c = {\bf str2double}({\bf get}(handles.\-edit\-\_\-c,'{\bf String}'))}}\label{virtual_goniometer_8m_ae0323a9039add2978bf5b49550572c7c}
+
+
+Definition at line 229 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a7a7386b8044055e14b58efd949326489}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!chi2@{chi2}}
+\index{chi2@{chi2}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{chi2}]{\setlength{\rightskip}{0pt plus 5cm}chi2}}\label{virtual_goniometer_8m_a7a7386b8044055e14b58efd949326489}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= refineMatrix(H3,\hyperlink{virtual_goniometer_8m_afaafc315b95987fc2b071bcd8f698b81}{H},\hyperlink{virtual_goniometer_8m_a62197192f0fbf4e0675eb37be1c4c175}{alpha},\hyperlink{virtual_goniometer_8m_ab146b9cbab6e73e7588b240dc709fe01}{beta},\hyperlink{virtual_goniometer_8m_a8d00631c9622112f1877fdb1222c242e}{gamma})
+\hyperlink{virtual_goniometer_8m_afaafc315b95987fc2b071bcd8f698b81}{H}(3,:) = H3.'
+\end{DoxyCode}
+
+
+Definition at line 213 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a8d00631c9622112f1877fdb1222c242e}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!gamma@{gamma}}
+\index{gamma@{gamma}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{gamma}]{\setlength{\rightskip}{0pt plus 5cm}gamma = {\bf str2double}({\bf get}(handles.\-edit\-\_\-gamma,'{\bf String}'))$\ast$pi/180}}\label{virtual_goniometer_8m_a8d00631c9622112f1877fdb1222c242e}
+
+
+Definition at line 233 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a15c01a18166c645a9c9811b10391ee06}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!gui\-\_\-\-State@{gui\-\_\-\-State}}
+\index{gui\-\_\-\-State@{gui\-\_\-\-State}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{gui\-\_\-\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} by creates {\bf a} new V\-I\-R\-T\-U\-A\-L\-G\-O\-N\-I\-O\-M\-E\-T\-E\-R or raises the existing singleton property {\bf value} pairs are applied to the G\-U\-I before virtual\-Goniometer\-\_\-\-Opening\-Function gets called An unrecognized property {\bf name} or invalid {\bf value} makes property application stop All inputs are passed to virtual\-Goniometer\-\_\-\-Opening\-Fcn via varargin$\ast$ See G\-U\-I Options {\bf on} G\-U\-I\-D\-E {\bf s} Tools menu Choose G\-U\-I allows only one instance to run (singleton)\char`\"{}. \% \% See also gui\-\_\-\-State}}\label{virtual_goniometer_8m_a15c01a18166c645a9c9811b10391ee06}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \textcolor{keyword}{struct}(\textcolor{stringliteral}{'gui\_Name'},       mfilename, ...
+                   \textcolor{stringliteral}{'gui\_Singleton'},  gui\_Singleton, ...
+                   \textcolor{stringliteral}{'gui\_OpeningFcn'}, @virtualGoniometer\_OpeningFcn, ...
+                   \textcolor{stringliteral}{'gui\_OutputFcn'},  @virtualGoniometer\_OutputFcn, ...
+                   \textcolor{stringliteral}{'gui\_LayoutFcn'},  [] , ...
+                   \textcolor{stringliteral}{'gui\_Callback'},   [])
+\end{DoxyCode}
+
+
+Definition at line 29 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_afaafc315b95987fc2b071bcd8f698b81}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H@{H}}
+\index{H@{H}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}H}}\label{virtual_goniometer_8m_afaafc315b95987fc2b071bcd8f698b81}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= VIRTUALGONIOMETER returns the handle to \hyperlink{virtual_goniometer_8m_a4124bc0a9335c27f086f24ba207a4912}{a} \textcolor{keyword}{new} VIRTUALGONIOMETER or the handle to
+%      the existing singleton*.
+%
+%      VIRTUALGONIOMETER(\textcolor{stringliteral}{'CALLBACK'},\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{hObject},eventData,\hyperlink{aberrations___t_e_m_8m_a7cfce9e4244a1936557979efaaa3882a}{handles},...) calls the local
+%      \hyperlink{binread2_d_8m_a6802a4975f2ff519ca7f69ffaf7fcdde}{function} named CALLBACK \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} VIRTUALGONIOMETER.\hyperlink{_displacement_params_8m_aad05f78187c942f9dd521605fa81f1ba}{M} with the given input arguments.
+%
+%      VIRTUALGONIOMETER('Property','\hyperlink{_display_model_properties_8m_aa3e85bcc21f31fb262e8662d5e2a8764}{Value}',...) creates \hyperlink{virtual_goniometer_8m_a4124bc0a9335c27f086f24ba207a4912}{a} new VIRTUALGONIOMETER or raises the
+%      existing singleton*.  Starting from the left
+\end{DoxyCode}
+
+
+Definition at line 6 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a2956b3c3c88e899db770033378d001fc}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H01@{H01}}
+\index{H01@{H01}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H01}]{\setlength{\rightskip}{0pt plus 5cm}H01 = 0}}\label{virtual_goniometer_8m_a2956b3c3c88e899db770033378d001fc}
+
+
+Definition at line 241 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_ae48a38ace9ce3c77a9f874a13cb624bd}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H02@{H02}}
+\index{H02@{H02}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H02}]{\setlength{\rightskip}{0pt plus 5cm}H02 = 0}}\label{virtual_goniometer_8m_ae48a38ace9ce3c77a9f874a13cb624bd}
+
+
+Definition at line 242 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_aec0f3296464d8361abe37f60d5496c2f}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H10@{H10}}
+\index{H10@{H10}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H10}]{\setlength{\rightskip}{0pt plus 5cm}H10 = {\bf b}$\ast$cos({\bf gamma})}}\label{virtual_goniometer_8m_aec0f3296464d8361abe37f60d5496c2f}
+
+
+Definition at line 243 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_aa84c46fe58c25716d1f7605de8df3c23}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H11@{H11}}
+\index{H11@{H11}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H11}]{\setlength{\rightskip}{0pt plus 5cm}H11 = {\bf b}$\ast$sin({\bf gamma})}}\label{virtual_goniometer_8m_aa84c46fe58c25716d1f7605de8df3c23}
+
+
+Definition at line 244 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a8ccbb97e13e2694cd089ea35a4a18fd0}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H12@{H12}}
+\index{H12@{H12}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H12}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H10} {\bf H11} H12 = 0}}\label{virtual_goniometer_8m_a8ccbb97e13e2694cd089ea35a4a18fd0}
+
+
+Definition at line 245 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_affb2a9d3d10246a82c5e1ee2d7f37e93}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H20@{H20}}
+\index{H20@{H20}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H20}]{\setlength{\rightskip}{0pt plus 5cm}H20 = 0}}\label{virtual_goniometer_8m_affb2a9d3d10246a82c5e1ee2d7f37e93}
+
+
+Definition at line 246 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a45b983dd2f4e0bb03cbbe01107a10677}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H21@{H21}}
+\index{H21@{H21}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H21}]{\setlength{\rightskip}{0pt plus 5cm}H21 = 0}}\label{virtual_goniometer_8m_a45b983dd2f4e0bb03cbbe01107a10677}
+
+
+Definition at line 247 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_abd500617d8d5379b31bad3a33dd3081a}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!H22@{H22}}
+\index{H22@{H22}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{H22}]{\setlength{\rightskip}{0pt plus 5cm}H22 = {\bf c}}}\label{virtual_goniometer_8m_abd500617d8d5379b31bad3a33dd3081a}
+
+
+Definition at line 248 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a831a3e1133c41b364b824dcb52ee0f9a}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!itself@{itself}}
+\index{itself@{itself}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{itself}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} by itself}}\label{virtual_goniometer_8m_a831a3e1133c41b364b824dcb52ee0f9a}
+
+
+Definition at line 1 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a9b07119da70fc4a54e0d1cb5751d69aa}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!nargout@{nargout}}
+\index{nargout@{nargout}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{nargout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} nargout\mbox{[}{\bf varargout}\{1\-:nargout\}\mbox{]} = {\bf gui\-\_\-mainfcn}({\bf gui\-\_\-\-State}, varargin\{\-:\})}}\label{virtual_goniometer_8m_a9b07119da70fc4a54e0d1cb5751d69aa}
+
+
+Definition at line 40 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_ada457d4f9e1a63fdf3ae9feed633d5a8}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!ref\-Zone@{ref\-Zone}}
+\index{ref\-Zone@{ref\-Zone}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{ref\-Zone}]{\setlength{\rightskip}{0pt plus 5cm}ref\-Zone = {\bf zeros}(3,1)}}\label{virtual_goniometer_8m_ada457d4f9e1a63fdf3ae9feed633d5a8}
+
+
+Definition at line 301 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a0bd56c3fc970360b866a574a6c0a3473}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!row@{row}}
+\index{row@{row}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{row}]{\setlength{\rightskip}{0pt plus 5cm}start {\bf a} refinement to search for the correct matrix entries {\bf in} the row}}\label{virtual_goniometer_8m_a0bd56c3fc970360b866a574a6c0a3473}
+
+
+Definition at line 254 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_acc89f64219ddae53243030f2c645fc06}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!varargout@{varargout}}
+\index{varargout@{varargout}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{varargout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} varargout}}\label{virtual_goniometer_8m_acc89f64219ddae53243030f2c645fc06}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= virtualGoniometer(varargin)
+% VIRTUALGONIOMETER \hyperlink{_displacement_params_8m_aad05f78187c942f9dd521605fa81f1ba}{M}-\hyperlink{qmb_8m_a0afda3603b043ac6b7362fdee225631e}{file} for virtualGoniometer.fig
+%      VIRTUALGONIOMETER
+\end{DoxyCode}
+
+
+Definition at line 1 of file virtual\-Goniometer.\-m.
+
+\hypertarget{virtual_goniometer_8m_a828b8f8a58cd9813deb365aab404c850}{\index{virtual\-Goniometer.\-m@{virtual\-Goniometer.\-m}!zone@{zone}}
+\index{zone@{zone}!virtualGoniometer.m@{virtual\-Goniometer.\-m}}
+\subsubsection[{zone}]{\setlength{\rightskip}{0pt plus 5cm}zone = {\bf zeros}(3,1)}}\label{virtual_goniometer_8m_a828b8f8a58cd9813deb365aab404c850}
+
+
+Definition at line 302 of file virtual\-Goniometer.\-m.
+

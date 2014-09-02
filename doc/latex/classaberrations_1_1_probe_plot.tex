@@ -1,0 +1,105 @@
+\hypertarget{classaberrations_1_1_probe_plot}{\section{aberrations.\-Probe\-Plot Class Reference}
+\label{classaberrations_1_1_probe_plot}\index{aberrations.\-Probe\-Plot@{aberrations.\-Probe\-Plot}}
+}
+
+
+Inheritance diagram for aberrations.\-Probe\-Plot\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classaberrations_1_1_probe_plot__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for aberrations.\-Probe\-Plot\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classaberrations_1_1_probe_plot__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}{def} \hyperlink{classaberrations_1_1_probe_plot_a375c718a4c08b81b86abcf8422b79243}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classaberrations_1_1_probe_plot_a6543bf7e879a2bcbb57e59f09aeb2bd9}{renderer}
+\item 
+\hyperlink{classaberrations_1_1_probe_plot_aeee4b28e67fa521e038e1ff128125417}{plot}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{classaberrations_1_1_probe_plot_acbbcf0f30a788960927703ea3ca53af9}{traits\-\_\-view}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 560 of file aberrations.\-py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classaberrations_1_1_probe_plot_a375c718a4c08b81b86abcf8422b79243}{\index{aberrations\-::\-Probe\-Plot@{aberrations\-::\-Probe\-Plot}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!aberrations::ProbePlot@{aberrations\-::\-Probe\-Plot}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf def} aberrations.\-Probe\-Plot.\-\_\-\-\_\-init\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classaberrations_1_1_probe_plot_a375c718a4c08b81b86abcf8422b79243}
+
+
+Definition at line 562 of file aberrations.\-py.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classaberrations_1_1_probe_plot_aeee4b28e67fa521e038e1ff128125417}{\index{aberrations\-::\-Probe\-Plot@{aberrations\-::\-Probe\-Plot}!plot@{plot}}
+\index{plot@{plot}!aberrations::ProbePlot@{aberrations\-::\-Probe\-Plot}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}aberrations.\-Probe\-Plot.\-plot}}\label{classaberrations_1_1_probe_plot_aeee4b28e67fa521e038e1ff128125417}
+
+
+Definition at line 572 of file aberrations.\-py.
+
+\hypertarget{classaberrations_1_1_probe_plot_a6543bf7e879a2bcbb57e59f09aeb2bd9}{\index{aberrations\-::\-Probe\-Plot@{aberrations\-::\-Probe\-Plot}!renderer@{renderer}}
+\index{renderer@{renderer}!aberrations::ProbePlot@{aberrations\-::\-Probe\-Plot}}
+\subsubsection[{renderer}]{\setlength{\rightskip}{0pt plus 5cm}aberrations.\-Probe\-Plot.\-renderer}}\label{classaberrations_1_1_probe_plot_a6543bf7e879a2bcbb57e59f09aeb2bd9}
+
+
+Definition at line 570 of file aberrations.\-py.
+
+\hypertarget{classaberrations_1_1_probe_plot_acbbcf0f30a788960927703ea3ca53af9}{\index{aberrations\-::\-Probe\-Plot@{aberrations\-::\-Probe\-Plot}!traits\-\_\-view@{traits\-\_\-view}}
+\index{traits\-\_\-view@{traits\-\_\-view}!aberrations::ProbePlot@{aberrations\-::\-Probe\-Plot}}
+\subsubsection[{traits\-\_\-view}]{\setlength{\rightskip}{0pt plus 5cm}tuple aberrations.\-Probe\-Plot.\-traits\-\_\-view\hspace{0.3cm}{\ttfamily [static]}}}\label{classaberrations_1_1_probe_plot_acbbcf0f30a788960927703ea3ca53af9}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+1 = View(
+2         VGroup(
+3             HGroup(Item(\textcolor{stringliteral}{'HT'}, label=\textcolor{stringliteral}{"High Tension, kV"},help=\textcolor{stringliteral}{'The microscope accelerating voltage'}),spring,
+      Item(\textcolor{stringliteral}{'wl'}, label=\textcolor{stringliteral}{"Wavelength, nm"},style = \textcolor{stringliteral}{'readonly'})),
+4             HGroup(spring,Item(\textcolor{stringliteral}{'alpha'}, label=\textcolor{stringliteral}{"Conv. Angle"})),
+5             HGroup(
+6                 VGroup(
+7                     Item(\textcolor{stringliteral}{'noms'},label=\textcolor{stringliteral}{"Nomenclature"})),
+8                     Item(\textcolor{stringliteral}{'notations[self.noms]'},label=\textcolor{stringliteral}{'Labels'})),
+9             HGroup(Item(\textcolor{stringliteral}{'plot'}, editor=ComponentEditor(), show\_label=\textcolor{keyword}{False}))),
+10         width=800, height=600, resizable=\textcolor{keyword}{True}, title=\textcolor{stringliteral}{"Chaco Plot"}
+11         )
+\end{DoxyCode}
+
+
+Definition at line 574 of file aberrations.\-py.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Q\-S\-T\-E\-M\-\_\-\-G\-U\-I\-\_\-\-Traits/\hyperlink{aberrations_8py}{aberrations.\-py}\end{DoxyCompactItemize}

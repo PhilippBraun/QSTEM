@@ -1,0 +1,359 @@
+\hypertarget{antlr3convertutf_8h}{\section{libs/structure\-\_\-\-I\-O/ucif/antlr3/include/antlr3convertutf.h File Reference}
+\label{antlr3convertutf_8h}\index{libs/structure\-\_\-\-I\-O/ucif/antlr3/include/antlr3convertutf.\-h@{libs/structure\-\_\-\-I\-O/ucif/antlr3/include/antlr3convertutf.\-h}}
+}
+{\ttfamily \#include $<$antlr3defs.\-h$>$}\\*
+Include dependency graph for antlr3convertutf.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3convertutf_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3convertutf_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{antlr3convertutf_8h_a44b240b95a93f71535c03f5e26d7dbe1}{U\-N\-I\-\_\-\-R\-E\-P\-L\-A\-C\-E\-M\-E\-N\-T\-\_\-\-C\-H\-A\-R}~(\hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32})0x0000\-F\-F\-F\-D
+\item 
+\#define \hyperlink{antlr3convertutf_8h_adc71280d09832f0fb6c6b83fbf043140}{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-B\-M\-P}~(\hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32})0x0000\-F\-F\-F\-F
+\item 
+\#define \hyperlink{antlr3convertutf_8h_a69d0ea77d1231214ba0893e846d7fcaf}{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F16}~(\hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32})0x0010\-F\-F\-F\-F
+\item 
+\#define \hyperlink{antlr3convertutf_8h_a26c4390ae1463df1e6075ea585ed79a3}{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F32}~(\hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32})0x7\-F\-F\-F\-F\-F\-F\-F
+\item 
+\#define \hyperlink{antlr3convertutf_8h_a98a2f50a1ca513613316ffd384dd1bfb}{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-L\-E\-G\-A\-L\-\_\-\-U\-T\-F32}~(\hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32})0x0010\-F\-F\-F\-F
+\item 
+\#define \hyperlink{antlr3convertutf_8h_a4ab84eb26356a90f3b7b9ac7aca1edfe}{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-S\-T\-A\-R\-T}~(\hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32})0x\-D800
+\item 
+\#define \hyperlink{antlr3convertutf_8h_ae5481872f1061e4e2a66849802b4b81e}{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-E\-N\-D}~(\hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32})0x\-D\-B\-F\-F
+\item 
+\#define \hyperlink{antlr3convertutf_8h_a23de5862375b48afcb4e3ff7b56a274d}{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-S\-T\-A\-R\-T}~(\hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32})0x\-D\-C00
+\item 
+\#define \hyperlink{antlr3convertutf_8h_ab9a531ffb73be79f7089049c1b84dc59}{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-E\-N\-D}~(\hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32})0x\-D\-F\-F\-F
+\item 
+\#define \hyperlink{antlr3convertutf_8h_a6deb49caf4aa178d5233aefa0e0c5de4}{half\-Shift}~((\hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32})10)
+\item 
+\#define \hyperlink{antlr3convertutf_8h_a38cef06ebddf4a53ca88c041ef6af6f4}{half\-Base}~((\hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32})0x0010000\-U\-L)
+\item 
+\#define \hyperlink{antlr3convertutf_8h_a53c10cb14ea96ef617e3dc68169946f8}{half\-Mask}~((\hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32})0x3\-F\-F\-U\-L)
+\item 
+\#define \hyperlink{antlr3convertutf_8h_a65e9886d74aaee76545e83dd09011727}{false}~\hyperlink{antlr3errors_8h_a3baea4fe1963323e5757ee2c8f471d1c}{A\-N\-T\-L\-R3\-\_\-\-F\-A\-L\-S\-E}
+\item 
+\#define \hyperlink{antlr3convertutf_8h_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}~\hyperlink{antlr3errors_8h_a8cfcfbce03f3039eb35d87f97105dc1b}{A\-N\-T\-L\-R3\-\_\-\-T\-R\-U\-E}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} \hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32}
+\item 
+typedef \hyperlink{antlr3defs_8h_a205216f9d663437545bf28be1918d0e1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T16} \hyperlink{antlr3convertutf_8h_af93b2c832691faa507616d97f8458dc3}{U\-T\-F16}
+\item 
+typedef \hyperlink{antlr3defs_8h_a785358a47238c5936f6bb88108ebbb7e}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T8} \hyperlink{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}{U\-T\-F8}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9}{Conversion\-Result} \{ \hyperlink{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9a52ace604d4b4bfdbb02699abcdfc5856}{conversion\-O\-K}, 
+\hyperlink{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9aab3cce3e3d047a29ab541a1284763223}{source\-Exhausted}, 
+\hyperlink{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9a22d7628029ab488395e9802cc21d3d1b}{target\-Exhausted}, 
+\hyperlink{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9a42f7df28717a1aaf7cbb89c8d907b631}{source\-Illegal}
+ \}
+\item 
+enum \hyperlink{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50}{Conversion\-Flags} \{ \hyperlink{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50a204e76a6d941d3c151696d05abeacd40}{strict\-Conversion} = 0, 
+\hyperlink{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50ac7c2c3c32c7fbed195185e68879e550c}{lenient\-Conversion}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9}{Conversion\-Result} \hyperlink{antlr3convertutf_8h_a741e622980b476dff14e7b04828f662f}{Convert\-U\-T\-F8to\-U\-T\-F16} (const \hyperlink{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}{U\-T\-F8} $\ast$$\ast$source\-Start, const \hyperlink{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}{U\-T\-F8} $\ast$source\-End, \hyperlink{antlr3convertutf_8h_af93b2c832691faa507616d97f8458dc3}{U\-T\-F16} $\ast$$\ast$target\-Start, \hyperlink{antlr3convertutf_8h_af93b2c832691faa507616d97f8458dc3}{U\-T\-F16} $\ast$target\-End, \hyperlink{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50}{Conversion\-Flags} flags)
+\item 
+\hyperlink{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9}{Conversion\-Result} \hyperlink{antlr3convertutf_8h_aac4f4c7a40bf37b26159fb498faf74b7}{Convert\-U\-T\-F16to\-U\-T\-F8} (const \hyperlink{antlr3convertutf_8h_af93b2c832691faa507616d97f8458dc3}{U\-T\-F16} $\ast$$\ast$source\-Start, const \hyperlink{antlr3convertutf_8h_af93b2c832691faa507616d97f8458dc3}{U\-T\-F16} $\ast$source\-End, \hyperlink{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}{U\-T\-F8} $\ast$$\ast$target\-Start, \hyperlink{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}{U\-T\-F8} $\ast$target\-End, \hyperlink{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50}{Conversion\-Flags} flags)
+\item 
+\hyperlink{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9}{Conversion\-Result} \hyperlink{antlr3convertutf_8h_a41eac02a22186fe9d0e7f0de369377d7}{Convert\-U\-T\-F8to\-U\-T\-F32} (const \hyperlink{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}{U\-T\-F8} $\ast$$\ast$source\-Start, const \hyperlink{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}{U\-T\-F8} $\ast$source\-End, \hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32} $\ast$$\ast$target\-Start, \hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32} $\ast$target\-End, \hyperlink{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50}{Conversion\-Flags} flags)
+\item 
+\hyperlink{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9}{Conversion\-Result} \hyperlink{antlr3convertutf_8h_ad1c6ec7ea9caa4e69abbd57ad801f1b3}{Convert\-U\-T\-F32to\-U\-T\-F8} (const \hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32} $\ast$$\ast$source\-Start, const \hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32} $\ast$source\-End, \hyperlink{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}{U\-T\-F8} $\ast$$\ast$target\-Start, \hyperlink{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}{U\-T\-F8} $\ast$target\-End, \hyperlink{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50}{Conversion\-Flags} flags)
+\item 
+\hyperlink{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9}{Conversion\-Result} \hyperlink{antlr3convertutf_8h_aed6b82a676f820ac62410612e6dffa44}{Convert\-U\-T\-F16to\-U\-T\-F32} (const \hyperlink{antlr3convertutf_8h_af93b2c832691faa507616d97f8458dc3}{U\-T\-F16} $\ast$$\ast$source\-Start, const \hyperlink{antlr3convertutf_8h_af93b2c832691faa507616d97f8458dc3}{U\-T\-F16} $\ast$source\-End, \hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32} $\ast$$\ast$target\-Start, \hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32} $\ast$target\-End, \hyperlink{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50}{Conversion\-Flags} flags)
+\item 
+\hyperlink{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9}{Conversion\-Result} \hyperlink{antlr3convertutf_8h_a09b6433eaa10eda9bcbcaba175ad20d2}{Convert\-U\-T\-F32to\-U\-T\-F16} (const \hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32} $\ast$$\ast$source\-Start, const \hyperlink{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{U\-T\-F32} $\ast$source\-End, \hyperlink{antlr3convertutf_8h_af93b2c832691faa507616d97f8458dc3}{U\-T\-F16} $\ast$$\ast$target\-Start, \hyperlink{antlr3convertutf_8h_af93b2c832691faa507616d97f8458dc3}{U\-T\-F16} $\ast$target\-End, \hyperlink{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50}{Conversion\-Flags} flags)
+\item 
+\hyperlink{antlr3defs_8h_a5b33dccbba3b7212539695e21df4079b}{A\-N\-T\-L\-R3\-\_\-\-B\-O\-O\-L\-E\-A\-N} \hyperlink{antlr3convertutf_8h_add8596fa587de60e4c9948528093481b}{is\-Legal\-U\-T\-F8\-Sequence} (const \hyperlink{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}{U\-T\-F8} $\ast$source, const \hyperlink{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}{U\-T\-F8} $\ast$source\-End)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{antlr3convertutf_8h_a65e9886d74aaee76545e83dd09011727}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!false@{false}}
+\index{false@{false}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{false}]{\setlength{\rightskip}{0pt plus 5cm}\#define false~{\bf A\-N\-T\-L\-R3\-\_\-\-F\-A\-L\-S\-E}}}\label{antlr3convertutf_8h_a65e9886d74aaee76545e83dd09011727}
+
+
+Definition at line 141 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_a38cef06ebddf4a53ca88c041ef6af6f4}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!half\-Base@{half\-Base}}
+\index{half\-Base@{half\-Base}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{half\-Base}]{\setlength{\rightskip}{0pt plus 5cm}\#define half\-Base~(({\bf U\-T\-F32})0x0010000\-U\-L)}}\label{antlr3convertutf_8h_a38cef06ebddf4a53ca88c041ef6af6f4}
+
+
+Definition at line 122 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_a53c10cb14ea96ef617e3dc68169946f8}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!half\-Mask@{half\-Mask}}
+\index{half\-Mask@{half\-Mask}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{half\-Mask}]{\setlength{\rightskip}{0pt plus 5cm}\#define half\-Mask~(({\bf U\-T\-F32})0x3\-F\-F\-U\-L)}}\label{antlr3convertutf_8h_a53c10cb14ea96ef617e3dc68169946f8}
+
+
+Definition at line 123 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_a6deb49caf4aa178d5233aefa0e0c5de4}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!half\-Shift@{half\-Shift}}
+\index{half\-Shift@{half\-Shift}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{half\-Shift}]{\setlength{\rightskip}{0pt plus 5cm}\#define half\-Shift~(({\bf U\-T\-F32})10)}}\label{antlr3convertutf_8h_a6deb49caf4aa178d5233aefa0e0c5de4}
+
+
+Definition at line 121 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!true@{true}}
+\index{true@{true}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{true}]{\setlength{\rightskip}{0pt plus 5cm}\#define true~{\bf A\-N\-T\-L\-R3\-\_\-\-T\-R\-U\-E}}}\label{antlr3convertutf_8h_a41f9c5fb8b08eb5dc3edce4dcb37fee7}
+
+
+Definition at line 142 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_adc71280d09832f0fb6c6b83fbf043140}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-B\-M\-P@{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-B\-M\-P}}
+\index{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-B\-M\-P@{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-B\-M\-P}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-B\-M\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-B\-M\-P~({\bf U\-T\-F32})0x0000\-F\-F\-F\-F}}\label{antlr3convertutf_8h_adc71280d09832f0fb6c6b83fbf043140}
+
+
+Definition at line 112 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_a98a2f50a1ca513613316ffd384dd1bfb}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-L\-E\-G\-A\-L\-\_\-\-U\-T\-F32@{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-L\-E\-G\-A\-L\-\_\-\-U\-T\-F32}}
+\index{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-L\-E\-G\-A\-L\-\_\-\-U\-T\-F32@{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-L\-E\-G\-A\-L\-\_\-\-U\-T\-F32}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-L\-E\-G\-A\-L\-\_\-\-U\-T\-F32}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-L\-E\-G\-A\-L\-\_\-\-U\-T\-F32~({\bf U\-T\-F32})0x0010\-F\-F\-F\-F}}\label{antlr3convertutf_8h_a98a2f50a1ca513613316ffd384dd1bfb}
+
+
+Definition at line 115 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_a69d0ea77d1231214ba0893e846d7fcaf}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F16@{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F16}}
+\index{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F16@{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F16}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F16}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F16~({\bf U\-T\-F32})0x0010\-F\-F\-F\-F}}\label{antlr3convertutf_8h_a69d0ea77d1231214ba0893e846d7fcaf}
+
+
+Definition at line 113 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_a26c4390ae1463df1e6075ea585ed79a3}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F32@{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F32}}
+\index{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F32@{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F32}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F32}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-I\-\_\-\-M\-A\-X\-\_\-\-U\-T\-F32~({\bf U\-T\-F32})0x7\-F\-F\-F\-F\-F\-F\-F}}\label{antlr3convertutf_8h_a26c4390ae1463df1e6075ea585ed79a3}
+
+
+Definition at line 114 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_a44b240b95a93f71535c03f5e26d7dbe1}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!U\-N\-I\-\_\-\-R\-E\-P\-L\-A\-C\-E\-M\-E\-N\-T\-\_\-\-C\-H\-A\-R@{U\-N\-I\-\_\-\-R\-E\-P\-L\-A\-C\-E\-M\-E\-N\-T\-\_\-\-C\-H\-A\-R}}
+\index{U\-N\-I\-\_\-\-R\-E\-P\-L\-A\-C\-E\-M\-E\-N\-T\-\_\-\-C\-H\-A\-R@{U\-N\-I\-\_\-\-R\-E\-P\-L\-A\-C\-E\-M\-E\-N\-T\-\_\-\-C\-H\-A\-R}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{U\-N\-I\-\_\-\-R\-E\-P\-L\-A\-C\-E\-M\-E\-N\-T\-\_\-\-C\-H\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-I\-\_\-\-R\-E\-P\-L\-A\-C\-E\-M\-E\-N\-T\-\_\-\-C\-H\-A\-R~({\bf U\-T\-F32})0x0000\-F\-F\-F\-D}}\label{antlr3convertutf_8h_a44b240b95a93f71535c03f5e26d7dbe1}
+
+
+Definition at line 111 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_ae5481872f1061e4e2a66849802b4b81e}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-E\-N\-D@{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-E\-N\-D}}
+\index{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-E\-N\-D@{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-E\-N\-D}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-E\-N\-D~({\bf U\-T\-F32})0x\-D\-B\-F\-F}}\label{antlr3convertutf_8h_ae5481872f1061e4e2a66849802b4b81e}
+
+
+Definition at line 118 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_a4ab84eb26356a90f3b7b9ac7aca1edfe}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-S\-T\-A\-R\-T@{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-S\-T\-A\-R\-T}}
+\index{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-S\-T\-A\-R\-T@{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-S\-T\-A\-R\-T}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-H\-I\-G\-H\-\_\-\-S\-T\-A\-R\-T~({\bf U\-T\-F32})0x\-D800}}\label{antlr3convertutf_8h_a4ab84eb26356a90f3b7b9ac7aca1edfe}
+
+
+Definition at line 117 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_ab9a531ffb73be79f7089049c1b84dc59}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-E\-N\-D@{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-E\-N\-D}}
+\index{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-E\-N\-D@{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-E\-N\-D}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-E\-N\-D~({\bf U\-T\-F32})0x\-D\-F\-F\-F}}\label{antlr3convertutf_8h_ab9a531ffb73be79f7089049c1b84dc59}
+
+
+Definition at line 120 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_a23de5862375b48afcb4e3ff7b56a274d}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-S\-T\-A\-R\-T@{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-S\-T\-A\-R\-T}}
+\index{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-S\-T\-A\-R\-T@{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-S\-T\-A\-R\-T}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-N\-I\-\_\-\-S\-U\-R\-\_\-\-L\-O\-W\-\_\-\-S\-T\-A\-R\-T~({\bf U\-T\-F32})0x\-D\-C00}}\label{antlr3convertutf_8h_a23de5862375b48afcb4e3ff7b56a274d}
+
+
+Definition at line 119 of file antlr3convertutf.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{antlr3convertutf_8h_af93b2c832691faa507616d97f8458dc3}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!U\-T\-F16@{U\-T\-F16}}
+\index{U\-T\-F16@{U\-T\-F16}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{U\-T\-F16}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T16} {\bf U\-T\-F16}}}\label{antlr3convertutf_8h_af93b2c832691faa507616d97f8458dc3}
+
+
+Definition at line 107 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!U\-T\-F32@{U\-T\-F32}}
+\index{U\-T\-F32@{U\-T\-F32}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{U\-T\-F32}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} {\bf U\-T\-F32}}}\label{antlr3convertutf_8h_af1c03378b5e4c9f483ce8ff3d00f0ba8}
+
+
+Definition at line 106 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!U\-T\-F8@{U\-T\-F8}}
+\index{U\-T\-F8@{U\-T\-F8}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{U\-T\-F8}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T8} {\bf U\-T\-F8}}}\label{antlr3convertutf_8h_a10cf1433c6d73033ed6832aaa9682c54}
+
+
+Definition at line 108 of file antlr3convertutf.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!Conversion\-Flags@{Conversion\-Flags}}
+\index{Conversion\-Flags@{Conversion\-Flags}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{Conversion\-Flags}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Conversion\-Flags}}}\label{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{strict\-Conversion@{strict\-Conversion}!antlr3convertutf.\-h@{antlr3convertutf.\-h}}\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!strict\-Conversion@{strict\-Conversion}}\item[{\em 
+\hypertarget{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50a204e76a6d941d3c151696d05abeacd40}{strict\-Conversion}\label{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50a204e76a6d941d3c151696d05abeacd40}
+}]\index{lenient\-Conversion@{lenient\-Conversion}!antlr3convertutf.\-h@{antlr3convertutf.\-h}}\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!lenient\-Conversion@{lenient\-Conversion}}\item[{\em 
+\hypertarget{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50ac7c2c3c32c7fbed195185e68879e550c}{lenient\-Conversion}\label{antlr3convertutf_8h_a1d9122b53f6029d5fcc7c669e5d44a50ac7c2c3c32c7fbed195185e68879e550c}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 132 of file antlr3convertutf.\-h.
+
+\hypertarget{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!Conversion\-Result@{Conversion\-Result}}
+\index{Conversion\-Result@{Conversion\-Result}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{Conversion\-Result}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Conversion\-Result}}}\label{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{conversion\-O\-K@{conversion\-O\-K}!antlr3convertutf.\-h@{antlr3convertutf.\-h}}\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!conversion\-O\-K@{conversion\-O\-K}}\item[{\em 
+\hypertarget{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9a52ace604d4b4bfdbb02699abcdfc5856}{conversion\-O\-K}\label{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9a52ace604d4b4bfdbb02699abcdfc5856}
+}]\index{source\-Exhausted@{source\-Exhausted}!antlr3convertutf.\-h@{antlr3convertutf.\-h}}\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!source\-Exhausted@{source\-Exhausted}}\item[{\em 
+\hypertarget{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9aab3cce3e3d047a29ab541a1284763223}{source\-Exhausted}\label{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9aab3cce3e3d047a29ab541a1284763223}
+}]\index{target\-Exhausted@{target\-Exhausted}!antlr3convertutf.\-h@{antlr3convertutf.\-h}}\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!target\-Exhausted@{target\-Exhausted}}\item[{\em 
+\hypertarget{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9a22d7628029ab488395e9802cc21d3d1b}{target\-Exhausted}\label{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9a22d7628029ab488395e9802cc21d3d1b}
+}]\index{source\-Illegal@{source\-Illegal}!antlr3convertutf.\-h@{antlr3convertutf.\-h}}\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!source\-Illegal@{source\-Illegal}}\item[{\em 
+\hypertarget{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9a42f7df28717a1aaf7cbb89c8d907b631}{source\-Illegal}\label{antlr3convertutf_8h_afa2a6d5a1431289c92cea9cceeb174c9a42f7df28717a1aaf7cbb89c8d907b631}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 125 of file antlr3convertutf.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{antlr3convertutf_8h_aed6b82a676f820ac62410612e6dffa44}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!Convert\-U\-T\-F16to\-U\-T\-F32@{Convert\-U\-T\-F16to\-U\-T\-F32}}
+\index{Convert\-U\-T\-F16to\-U\-T\-F32@{Convert\-U\-T\-F16to\-U\-T\-F32}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{Convert\-U\-T\-F16to\-U\-T\-F32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Conversion\-Result} Convert\-U\-T\-F16to\-U\-T\-F32 (
+\begin{DoxyParamCaption}
+\item[{const {\bf U\-T\-F16} $\ast$$\ast$}]{source\-Start, }
+\item[{const {\bf U\-T\-F16} $\ast$}]{source\-End, }
+\item[{{\bf U\-T\-F32} $\ast$$\ast$}]{target\-Start, }
+\item[{{\bf U\-T\-F32} $\ast$}]{target\-End, }
+\item[{{\bf Conversion\-Flags}}]{flags}
+\end{DoxyParamCaption}
+)}}\label{antlr3convertutf_8h_aed6b82a676f820ac62410612e6dffa44}
+
+
+Definition at line 101 of file antlr3convertutf.\-c.
+
+\hypertarget{antlr3convertutf_8h_aac4f4c7a40bf37b26159fb498faf74b7}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!Convert\-U\-T\-F16to\-U\-T\-F8@{Convert\-U\-T\-F16to\-U\-T\-F8}}
+\index{Convert\-U\-T\-F16to\-U\-T\-F8@{Convert\-U\-T\-F16to\-U\-T\-F8}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{Convert\-U\-T\-F16to\-U\-T\-F8}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Conversion\-Result} Convert\-U\-T\-F16to\-U\-T\-F8 (
+\begin{DoxyParamCaption}
+\item[{const {\bf U\-T\-F16} $\ast$$\ast$}]{source\-Start, }
+\item[{const {\bf U\-T\-F16} $\ast$}]{source\-End, }
+\item[{{\bf U\-T\-F8} $\ast$$\ast$}]{target\-Start, }
+\item[{{\bf U\-T\-F8} $\ast$}]{target\-End, }
+\item[{{\bf Conversion\-Flags}}]{flags}
+\end{DoxyParamCaption}
+)}}\label{antlr3convertutf_8h_aac4f4c7a40bf37b26159fb498faf74b7}
+
+
+Definition at line 205 of file antlr3convertutf.\-c.
+
+\hypertarget{antlr3convertutf_8h_a09b6433eaa10eda9bcbcaba175ad20d2}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!Convert\-U\-T\-F32to\-U\-T\-F16@{Convert\-U\-T\-F32to\-U\-T\-F16}}
+\index{Convert\-U\-T\-F32to\-U\-T\-F16@{Convert\-U\-T\-F32to\-U\-T\-F16}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{Convert\-U\-T\-F32to\-U\-T\-F16}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Conversion\-Result} Convert\-U\-T\-F32to\-U\-T\-F16 (
+\begin{DoxyParamCaption}
+\item[{const {\bf U\-T\-F32} $\ast$$\ast$}]{source\-Start, }
+\item[{const {\bf U\-T\-F32} $\ast$}]{source\-End, }
+\item[{{\bf U\-T\-F16} $\ast$$\ast$}]{target\-Start, }
+\item[{{\bf U\-T\-F16} $\ast$}]{target\-End, }
+\item[{{\bf Conversion\-Flags}}]{flags}
+\end{DoxyParamCaption}
+)}}\label{antlr3convertutf_8h_a09b6433eaa10eda9bcbcaba175ad20d2}
+
+
+Definition at line 52 of file antlr3convertutf.\-c.
+
+\hypertarget{antlr3convertutf_8h_ad1c6ec7ea9caa4e69abbd57ad801f1b3}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!Convert\-U\-T\-F32to\-U\-T\-F8@{Convert\-U\-T\-F32to\-U\-T\-F8}}
+\index{Convert\-U\-T\-F32to\-U\-T\-F8@{Convert\-U\-T\-F32to\-U\-T\-F8}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{Convert\-U\-T\-F32to\-U\-T\-F8}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Conversion\-Result} Convert\-U\-T\-F32to\-U\-T\-F8 (
+\begin{DoxyParamCaption}
+\item[{const {\bf U\-T\-F32} $\ast$$\ast$}]{source\-Start, }
+\item[{const {\bf U\-T\-F32} $\ast$}]{source\-End, }
+\item[{{\bf U\-T\-F8} $\ast$$\ast$}]{target\-Start, }
+\item[{{\bf U\-T\-F8} $\ast$}]{target\-End, }
+\item[{{\bf Conversion\-Flags}}]{flags}
+\end{DoxyParamCaption}
+)}}\label{antlr3convertutf_8h_ad1c6ec7ea9caa4e69abbd57ad801f1b3}
+
+
+Definition at line 402 of file antlr3convertutf.\-c.
+
+\hypertarget{antlr3convertutf_8h_a741e622980b476dff14e7b04828f662f}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!Convert\-U\-T\-F8to\-U\-T\-F16@{Convert\-U\-T\-F8to\-U\-T\-F16}}
+\index{Convert\-U\-T\-F8to\-U\-T\-F16@{Convert\-U\-T\-F8to\-U\-T\-F16}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{Convert\-U\-T\-F8to\-U\-T\-F16}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Conversion\-Result} Convert\-U\-T\-F8to\-U\-T\-F16 (
+\begin{DoxyParamCaption}
+\item[{const {\bf U\-T\-F8} $\ast$$\ast$}]{source\-Start, }
+\item[{const {\bf U\-T\-F8} $\ast$}]{source\-End, }
+\item[{{\bf U\-T\-F16} $\ast$$\ast$}]{target\-Start, }
+\item[{{\bf U\-T\-F16} $\ast$}]{target\-End, }
+\item[{{\bf Conversion\-Flags}}]{flags}
+\end{DoxyParamCaption}
+)}}\label{antlr3convertutf_8h_a741e622980b476dff14e7b04828f662f}
+
+
+Definition at line 329 of file antlr3convertutf.\-c.
+
+\hypertarget{antlr3convertutf_8h_a41eac02a22186fe9d0e7f0de369377d7}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!Convert\-U\-T\-F8to\-U\-T\-F32@{Convert\-U\-T\-F8to\-U\-T\-F32}}
+\index{Convert\-U\-T\-F8to\-U\-T\-F32@{Convert\-U\-T\-F8to\-U\-T\-F32}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{Convert\-U\-T\-F8to\-U\-T\-F32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Conversion\-Result} Convert\-U\-T\-F8to\-U\-T\-F32 (
+\begin{DoxyParamCaption}
+\item[{const {\bf U\-T\-F8} $\ast$$\ast$}]{source\-Start, }
+\item[{const {\bf U\-T\-F8} $\ast$}]{source\-End, }
+\item[{{\bf U\-T\-F32} $\ast$$\ast$}]{target\-Start, }
+\item[{{\bf U\-T\-F32} $\ast$}]{target\-End, }
+\item[{{\bf Conversion\-Flags}}]{flags}
+\end{DoxyParamCaption}
+)}}\label{antlr3convertutf_8h_a41eac02a22186fe9d0e7f0de369377d7}
+
+
+Definition at line 455 of file antlr3convertutf.\-c.
+
+\hypertarget{antlr3convertutf_8h_add8596fa587de60e4c9948528093481b}{\index{antlr3convertutf.\-h@{antlr3convertutf.\-h}!is\-Legal\-U\-T\-F8\-Sequence@{is\-Legal\-U\-T\-F8\-Sequence}}
+\index{is\-Legal\-U\-T\-F8\-Sequence@{is\-Legal\-U\-T\-F8\-Sequence}!antlr3convertutf.h@{antlr3convertutf.\-h}}
+\subsubsection[{is\-Legal\-U\-T\-F8\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-B\-O\-O\-L\-E\-A\-N} is\-Legal\-U\-T\-F8\-Sequence (
+\begin{DoxyParamCaption}
+\item[{const {\bf U\-T\-F8} $\ast$}]{source, }
+\item[{const {\bf U\-T\-F8} $\ast$}]{source\-End}
+\end{DoxyParamCaption}
+)}}\label{antlr3convertutf_8h_add8596fa587de60e4c9948528093481b}
+
+
+Definition at line 319 of file antlr3convertutf.\-c.
+

@@ -1,0 +1,1088 @@
+\hypertarget{convert2cfg_8m}{\section{G\-U\-I\-\_\-\-Matlab/convert2cfg.m File Reference}
+\label{convert2cfg_8m}\index{G\-U\-I\-\_\-\-Matlab/convert2cfg.\-m@{G\-U\-I\-\_\-\-Matlab/convert2cfg.\-m}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{convert2cfg_8m_a84141555921b8647196edb083e1b4a7a}{convert2cfg} ()\%\hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename} without extension\mbox{[}full\-\_\-filename
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_a801d4e56dc468c6e1087515b8363c3db}{isequal} (full\-\_\-filename, 0)$\vert$$\vert$isequal(\hyperlink{_read_d_m3___matlab_8m_a3453fec604ce3fd43cb779ff533e4f21}{pathname}
+\item 
+\hyperlink{convert2cfg_8m_a5a114b6d8185a4180659b5e181b9c7bf}{if} (\hyperlink{write_fields2_file_8m_a998c38403f8a2f5e6759fe4e7866f6f1}{strcmp}(ext,'.xyz')==1)\%\hyperlink{convert2cfg_8m_a739cface9f02228d027b700ba47386cc}{z\-\_\-shift}
+\item 
+\hyperlink{convert2cfg_8m_af20fac30bb3da7eb933361ae8bd6ab7a}{if} (\hyperlink{xyz2cfg_8m_aa2ccff2cba62991c1532b3a4cb80523c}{fid}$<$ 1) \hyperlink{qmb_8m_a0c0ef75e700415c282f9c5ba379897f3}{errordlg}(\hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('Could not \hyperlink{_read_d_m3___matlab_8m_aa8ef7bba54ee37a8beab56f5091c552f}{open} \hyperlink{write_fields2_file_8m_a75658b9c899229893bf0bc9d90e97d93}{file}\%s.\-xyz!' = interp2(\hyperlink{qmb_8m_a444de622d9f7337821fd95b445ce0226}{wp\-X},\hyperlink{qmb_8m_aed94e56e44775e6522292aeca1bc4ab6}{wp\-Y},\hyperlink{qmb_8m_a0f6268ba235e68e92b5f94c127d89464}{c\-Offs\-X},p0(\-:,1),p0(\-:,2),'linear',0)
+\item 
+\hyperlink{convert2cfg_8m_a914b5878a579e7493e9475d9f37a5833}{fprintf} ('Comment\-:\%s\textbackslash{}n', \hyperlink{convert2cfg_8m_a87b6a234dfb7fd69a3d6035bee37ed71}{commentline})
+\item 
+\hyperlink{convert2cfg_8m_a2902a7a983ab04c79cae2162ad553481}{type} (\hyperlink{xyz2cfg_8m_a48778a20054c081efeb3c7b471d90a21}{k1}, 1\-:2)
+\item 
+\hyperlink{convert2cfg_8m_af643748b4cb49f42bbf009133199039a}{coords} (\hyperlink{xyz2cfg_8m_a48778a20054c081efeb3c7b471d90a21}{k1}, 1\-:3)
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{convert2cfg_8m_a5f84f51058cdb4f43c29d2c875659f42}{fclose} (\hyperlink{xyz2cfg_8m_aa2ccff2cba62991c1532b3a4cb80523c}{fid})
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_add57aad399f787c409167e1b6d30ea8a}{$\sim$isempty} (\hyperlink{convert2cfg_8m_a3a352c2235a269bac37d1a34a19cde48}{sv})
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_ade88e8de42005b5e34af15b8da07ab66}{shift\-Vect} (1)
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_aabbdf768a12d7ff279a05a15db19fa61}{length} (\hyperlink{convert2cfg_8m_a3a352c2235a269bac37d1a34a19cde48}{sv}) $>$ 1
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_a3003cc018402da3937a3a717796894e4}{shift\-Vect} (2)
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_adfee1814e296151ed1c4034f04a793e2}{shift\-Vect} (3)
+\item 
+\hyperlink{convert2cfg_8m_a48308006190521f63f981c09f3c94ce6}{Mmd} (\hyperlink{qmb_8m_afa11cee267466e31be8442f57b6f8187}{find}(Mmd$<$ 1))
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_aea1369a66cb89289c3ea4c165821918f}{$\sim$isempty} (\hyperlink{convert2cfg_8m_af87ca49659c81b8770a57f9955eb5ff1}{Mmd2})
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_af2100764c936261be94fc54e851816c2}{Mm} (1, 1)
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_a1af63a8914c49b30255340f7b263a096}{length} (\hyperlink{convert2cfg_8m_af87ca49659c81b8770a57f9955eb5ff1}{Mmd2}) $>$ 1
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_aecc51f5747019469991cb140f91b7a53}{Mm} (2, 2)
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_a27b6539fce401b314fb20fd0099d7d69}{Mm} (3, 3)
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{convert2cfg_8m_a896b666bfafd899f6ad051149a76a0a7}{if} (\hyperlink{xyz2cfg_8m_aa4fb5a91b00fd8e7bfe7495b8c221b1c}{write\-C\-F\-G}(\hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename}, \hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}, \hyperlink{xyz2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{natom}, \hyperlink{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}{a\-Type}, \hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords},\mbox{[}0 0 0\mbox{]}, 0)) \hyperlink{convert2cfg_8m_a81e11415a2aae5a3469de521f95aa8b4}{msgbox}(\hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('Wrote cfg \hyperlink{write_fields2_file_8m_a75658b9c899229893bf0bc9d90e97d93}{file}\%s.\-cfg'
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{convert2cfg_8m_adaf2296b0af0af8d6d31aa11f288b107}{msgbox} (\hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('Error creating cfg \hyperlink{write_fields2_file_8m_a75658b9c899229893bf0bc9d90e97d93}{file}\%s.\-cfg', \hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename}),'\hyperlink{convert2cfg_8m_a84141555921b8647196edb083e1b4a7a}{convert2cfg}','\hyperlink{convert2cfg_8m_abf75d0e474a103d59888210782ff8baf}{modal}')
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Read xtl files \hyperlink{convert2cfg_8m_a8d4b59d5e3e6e2d936d55641e4cfdca3}{if} (\hyperlink{write_fields2_file_8m_a998c38403f8a2f5e6759fe4e7866f6f1}{strcmp}(ext,'.xtl')==1) \hyperlink{xyz2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{natom}=0
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{qmb_8m_a516de6ea08285d21453660e255a49e88}{while} \hyperlink{convert2cfg_8m_a2036d620df36b0f50226fce21a5d989d}{strncmp} (fgets(\hyperlink{xyz2cfg_8m_aa2ccff2cba62991c1532b3a4cb80523c}{fid}),'C\-E\-L\-L', 4)
+\item 
+\hyperlink{convert2cfg_8m_aaefc9c4411511eb948a1c1a963fc0bf8}{fprintf} ('Found unit \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} parameters\-:\textbackslash{}na=\%f, \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}=\%f, \hyperlink{image_sim_8m_a463b16ca2bfa2f0cbab0e62fcb263d8e}{c}=\%f,\textbackslash{}nalpha=\%f, \hyperlink{virtual_goniometer_8m_ab146b9cbab6e73e7588b240dc709fe01}{beta}=\%f, \hyperlink{virtual_goniometer_8m_a8d00631c9622112f1877fdb1222c242e}{gamma}=\%f\textbackslash{}n', \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}, \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}, \hyperlink{image_sim_8m_a463b16ca2bfa2f0cbab0e62fcb263d8e}{c}, \hyperlink{virtual_goniometer_8m_a62197192f0fbf4e0675eb37be1c4c175}{alpha}, \hyperlink{virtual_goniometer_8m_ab146b9cbab6e73e7588b240dc709fe01}{beta}, \hyperlink{virtual_goniometer_8m_a8d00631c9622112f1877fdb1222c242e}{gamma})
+\item 
+\hyperlink{qmb_8m_a516de6ea08285d21453660e255a49e88}{while} \hyperlink{convert2cfg_8m_ad08efcf9822642a0152979fc14ce7a36}{strncmp} (\hyperlink{convert2cfg_8m_af30278de8dab4c8bc6e28657bdf50d14}{buf},'\hyperlink{cif_parser_8h_a59adc4c82490d23754cd39c2fb99b0da}{E\-O\-F}', 3)
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_a261b23a71adeae0bdd614ac030cedc2b}{$\sim$isempty} (\hyperlink{qmb_8m_af780f43ca4293d9bd953b5486f71aebd}{ind}) \hyperlink{_display_model_properties_8m_adf54215d760dbf0f9fe5627a39015333}{pos}
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_a20fc5038c021fd98154bd49a45a0e238}{max} (\hyperlink{_display_model_properties_8m_adf54215d760dbf0f9fe5627a39015333}{pos})$<$ 1 \hyperlink{xyz2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{natom}
+\item 
+\hyperlink{convert2cfg_8m_acbf350ce00d8eaa94a7044064af9eae3}{coords} (\hyperlink{xyz2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{natom}, 1\-:3)
+\item 
+\hyperlink{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}{a\-Type} (\hyperlink{xyz2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{natom})
+\item 
+start \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} refinement to search \\*
+for the correct matrix entries \\*
+\hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} the \hyperlink{convert2cfg_8m_a433dfaf305bd77a91e39b24b2622c06d}{fprintf} ('\hyperlink{_read_d_m3___matlab_8m_a8626f0bba659e1b0b2d966d226f378a9}{found} structure matrix with \hyperlink{virtual_goniometer_8m_a7a7386b8044055e14b58efd949326489}{chi2}=\%f\textbackslash{}n', \hyperlink{virtual_goniometer_8m_a7a7386b8044055e14b58efd949326489}{chi2})
+\item 
+\hyperlink{convert2cfg_8m_a7e2909942b5260776e40a258a6c171f2}{Mm} (3,\-:)
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{convert2cfg_8m_a9db22c0bdcf628d0aee1c9ba9eeef2d9}{if} (\hyperlink{xyz2cfg_8m_aa4fb5a91b00fd8e7bfe7495b8c221b1c}{write\-C\-F\-G}(\hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename}, \hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}, \hyperlink{xyz2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{natom}, \hyperlink{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}{a\-Type}, \hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords},\mbox{[}0 0 0\mbox{]}, 1)) \hyperlink{convert2cfg_8m_a81e11415a2aae5a3469de521f95aa8b4}{msgbox}(\hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('Wrote cfg file\textbackslash{}n\%s.\-cfg'
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{convert2cfg_8m_a81e11415a2aae5a3469de521f95aa8b4}{msgbox} (\hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('Error creating cfg file\textbackslash{}n\%s.\-cfg', \hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename}),'\hyperlink{convert2cfg_8m_a84141555921b8647196edb083e1b4a7a}{convert2cfg}','\hyperlink{convert2cfg_8m_abf75d0e474a103d59888210782ff8baf}{modal}')
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_a59e4156f1d11eb4351f57910b15976a2}{$\sim$isnumeric} (\hyperlink{xyz2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{D\-I\-M}) \hyperlink{xyz2cfg_8m_a85727b4c27bae9d34bee79da53a07660}{error}('The second input argument is not numeric.\-At least one numeric \hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value} is expected.')
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Check to \hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} too many \\*
+arguments were input If there \\*
+were then exit the \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \\*
+issuing \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} error message to the \\*
+user elseif \hyperlink{xyz2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}{nargin} \hyperlink{convert2cfg_8m_abc6d4b0a6102106533fc2e29fbb8c8e1}{error} ('Too many input arguments supplied.\-Only two are allowed.')
+\item 
+Retrieve the primary \hyperlink{convert2cfg_8m_accb90676408decb4be6591f6bc0664ca}{dimension} (column) to be \hyperlink{xyz2cfg_8m_abec65cbed63875da4a4ea5447e83b867}{sorted.\-col}
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{convert2cfg_8m_a85727b4c27bae9d34bee79da53a07660}{error} ('This column is mixed so sorting cannot be completed.')
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{convert2cfg_8m_aea8eee85d5cbb354554d5625d1bbc2ad}{pathname} = \hyperlink{image_sim_8m_acf66413b59082c95cc095f3e1373f608}{uigetfile}(\{'$\ast$.xtl';'$\ast$.xyz'\}, 'Pick \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} .xyz or .xtl \hyperlink{write_fields2_file_8m_a75658b9c899229893bf0bc9d90e97d93}{file}')
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_a9717e7bbecb906637e86cef6da3d83c2}{return}
+\item 
+\hyperlink{convert2cfg_8m_a299397d854bef7eea9db8f6065ba6880}{end} \mbox{[}pathstr, oldfilename, ext\mbox{]} = \hyperlink{qmb_8m_a3f5148a2cb27e0bbf68da5bed91b82e0}{fileparts}(\mbox{[}\hyperlink{_read_d_m3___matlab_8m_a3453fec604ce3fd43cb779ff533e4f21}{pathname},full\-\_\-filename\mbox{]})
+\item 
+\hyperlink{convert2cfg_8m_a1a3091fb7347c8f640f7b03687dadd44}{filename} =fullfile(\hyperlink{_read_d_m3___matlab_8m_a3453fec604ce3fd43cb779ff533e4f21}{pathname},oldfilename)
+\item 
+\hyperlink{convert2cfg_8m_af54b44244fe4a858a27959384ba826e7}{atom\-Name}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{convert2cfg_8m_a5426bacb877a26d44d95d753f4927cf3}{natom\-\_\-temp}
+\item 
+\hyperlink{convert2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{natom} =sscanf(\hyperlink{convert2cfg_8m_af30278de8dab4c8bc6e28657bdf50d14}{buf},'\%\hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d}')
+\item 
+\hyperlink{convert2cfg_8m_a87b6a234dfb7fd69a3d6035bee37ed71}{commentline}
+\item 
+for \hyperlink{convert2cfg_8m_abe1a4654a886b56b76d377ffc86f3dcc}{k1}
+\item 
+\hyperlink{convert2cfg_8m_af30278de8dab4c8bc6e28657bdf50d14}{buf} = fgets(\hyperlink{xyz2cfg_8m_aa2ccff2cba62991c1532b3a4cb80523c}{fid})
+\item 
+\hyperlink{convert2cfg_8m_a7c0d4aa1bd1632355260db4db3a65d2d}{b} =sortcell(data,1)
+\item 
+sort the data according to \\*
+\hyperlink{qmb_8m_ad5a54bc5a2abedf790cf00f7c63f6235}{atom} \hyperlink{convert2cfg_8m_a2902a7a983ab04c79cae2162ad553481}{type} \hyperlink{convert2cfg_8m_a0feca58bc91843177686656c1f828093}{shift\-Vect} = -\/min(\mbox{[}min(\hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords}); \hyperlink{virtual_goniometer_8m_a658ea266fd3baee1bdd483b9117e9f54}{zeros}(1,3)\mbox{]})
+\item 
+\hyperlink{convert2cfg_8m_ad84e19307a43d3f799a4daeef0a6484a}{prompt} =\{'Enter the \hyperlink{xyz2cfg_8m_ac16738663da61b835844f663e221d53c}{shift} \hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{vector} as \char`\"{}x \hyperlink{qmb_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y} z\char`\"{}\-: '\}
+\item 
+\hyperlink{convert2cfg_8m_ab74e6bf80237ddc4109968cedc58c151}{name} ='Define coordinate \hyperlink{qmb_8m_a4dd6f73f98b7876577fd0d041b94d968}{offset}'
+\item 
+\hyperlink{convert2cfg_8m_af2f323caad11c790b60b05a6916887c3}{numlines} =1
+\item 
+\hyperlink{convert2cfg_8m_a75180f3a56b12e0ea7561b96f5583f33}{defaultanswer} =\{\hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-3f \%.\-3f \%.\-3f',shift\-Vect)\}
+\item 
+creates the dialog \hyperlink{read_c_f_g__qstem_8m_a552eedb796e4ec274fe617b434bf69b2}{box} the \\*
+user input is stored into \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} \\*
+\hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \hyperlink{convert2cfg_8m_a739cface9f02228d027b700ba47386cc}{z\-\_\-shift} =inputdlg(\hyperlink{qmb_8m_a3ea2ecf5cd37962abca4617725a4080c}{prompt},\hyperlink{qmb_8m_abdc1dcc6fed70c14f9b5ae237e486f4e}{name},\hyperlink{qmb_8m_af2f323caad11c790b60b05a6916887c3}{numlines},\hyperlink{qmb_8m_a6912f34cb31cf50eee93fb2bf1dc8771}{defaultanswer})
+\item 
+\hyperlink{convert2cfg_8m_a3a352c2235a269bac37d1a34a19cde48}{sv} = sscanf(\hyperlink{convert2cfg_8m_a739cface9f02228d027b700ba47386cc}{z\-\_\-shift}\{1\},'\%f \%f \%f')
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{convert2cfg_8m_aebd1d90aba8ea0e93ba32de5293b3cf5}{coords} = cell2mat(\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}(\-:,2\-:4))
+\item 
+\hyperlink{convert2cfg_8m_a6ce0c0e420d3168a558d4739ee18db84}{Mmd} =\hyperlink{qmb_8m_ae0de5dca4233645eb4e50562ab6242cf}{max}(\hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords})-\/min(\mbox{[}\hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords}; \mbox{[}0 0 0\mbox{]}\mbox{]})
+\item 
+\hyperlink{convert2cfg_8m_ac6daf47a997fb1c7d59c3d0fd79e14e2}{Mm} = \mbox{[}7.\-461 0 0
+\item 
+creates the dialog \hyperlink{read_c_f_g__qstem_8m_a552eedb796e4ec274fe617b434bf69b2}{box} the \\*
+user input is stored into \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} \\*
+\hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \hyperlink{convert2cfg_8m_a230dc0282515afc8139e7baf1843e845}{cell\-Size} =inputdlg(\hyperlink{qmb_8m_a3ea2ecf5cd37962abca4617725a4080c}{prompt},\hyperlink{qmb_8m_abdc1dcc6fed70c14f9b5ae237e486f4e}{name},\hyperlink{qmb_8m_af2f323caad11c790b60b05a6916887c3}{numlines},\hyperlink{qmb_8m_a6912f34cb31cf50eee93fb2bf1dc8771}{defaultanswer})
+\item 
+\hyperlink{convert2cfg_8m_af87ca49659c81b8770a57f9955eb5ff1}{Mmd2} = sscanf(\hyperlink{convert2cfg_8m_a230dc0282515afc8139e7baf1843e845}{cell\-Size}\{1\},'\%f \%f \%f')
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{convert2cfg_8m_adb3fce483c086cdfed46db6894e052fd}{convert2cfg}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{convert2cfg_8m_abf75d0e474a103d59888210782ff8baf}{modal}
+\item 
+\hyperlink{convert2cfg_8m_a7b9c3d619ad7365ec6434713e76142e8}{fid} = fopen(strcat(\hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename},'.xtl'),'\hyperlink{_read_d_m3___matlab_8m_a514f1b439f404f86f77090fa9edc96ce}{r}')
+\item 
+\hyperlink{convert2cfg_8m_a37b5152701bbdfde1fcd3cf58d4fc032}{unit\-Cell} = sscanf(\hyperlink{convert2cfg_8m_af30278de8dab4c8bc6e28657bdf50d14}{buf},'\%f',6)
+\item 
+\hyperlink{convert2cfg_8m_a7492468b961995f6fd82e216c751bb37}{a} = \hyperlink{convert2cfg_8m_a37b5152701bbdfde1fcd3cf58d4fc032}{unit\-Cell}(1)
+\item 
+\hyperlink{convert2cfg_8m_ae0323a9039add2978bf5b49550572c7c}{c} = \hyperlink{convert2cfg_8m_a37b5152701bbdfde1fcd3cf58d4fc032}{unit\-Cell}(3)
+\item 
+\hyperlink{convert2cfg_8m_a62197192f0fbf4e0675eb37be1c4c175}{alpha} = \hyperlink{convert2cfg_8m_a37b5152701bbdfde1fcd3cf58d4fc032}{unit\-Cell}(4)$\ast$pi/180
+\item 
+\hyperlink{convert2cfg_8m_ab146b9cbab6e73e7588b240dc709fe01}{beta} = \hyperlink{convert2cfg_8m_a37b5152701bbdfde1fcd3cf58d4fc032}{unit\-Cell}(5)$\ast$pi/180
+\item 
+\hyperlink{convert2cfg_8m_a8d00631c9622112f1877fdb1222c242e}{gamma} = \hyperlink{convert2cfg_8m_a37b5152701bbdfde1fcd3cf58d4fc032}{unit\-Cell}(6)$\ast$pi/180
+\item 
+Now look for the atomic \hyperlink{convert2cfg_8m_a923d61728dac7c6dff07427a901c9ba9}{positions}
+\item 
+Now look for the atomic \hyperlink{convert2cfg_8m_a1030cd2355387f1bc4763e1c640c504b}{A\-T\-O\-M\-S}
+\item 
+\hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords} \hyperlink{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}{a\-Type} \hyperlink{convert2cfg_8m_ac7ab10c5cbfe66cb174be3993acdfca0}{H00} = \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a}
+\item 
+\hyperlink{convert2cfg_8m_a2956b3c3c88e899db770033378d001fc}{H01} = 0
+\item 
+\hyperlink{convert2cfg_8m_ae48a38ace9ce3c77a9f874a13cb624bd}{H02} = 0
+\item 
+\hyperlink{convert2cfg_8m_aec0f3296464d8361abe37f60d5496c2f}{H10} = \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}$\ast$cos(\hyperlink{virtual_goniometer_8m_a8d00631c9622112f1877fdb1222c242e}{gamma})
+\item 
+\hyperlink{convert2cfg_8m_aa84c46fe58c25716d1f7605de8df3c23}{H11} = \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}$\ast$sin(\hyperlink{virtual_goniometer_8m_a8d00631c9622112f1877fdb1222c242e}{gamma})
+\item 
+\hyperlink{convert2cfg_8m_a8ccbb97e13e2694cd089ea35a4a18fd0}{H12} = 0
+\item 
+\hyperlink{convert2cfg_8m_affb2a9d3d10246a82c5e1ee2d7f37e93}{H20} = 0
+\item 
+\hyperlink{convert2cfg_8m_a45b983dd2f4e0bb03cbbe01107a10677}{H21} = 0
+\item 
+\hyperlink{convert2cfg_8m_a047ec35c736a4c006e21f58b70f7a325}{H22} = \hyperlink{image_sim_8m_a463b16ca2bfa2f0cbab0e62fcb263d8e}{c}
+\item 
+start \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} refinement to search \\*
+for the correct matrix entries \\*
+\hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} the \hyperlink{convert2cfg_8m_a0bd56c3fc970360b866a574a6c0a3473}{row}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{convert2cfg_8m_ae76081fb2cef09480162f3c1b69dfbb2}{Y}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} no \\*
+\hyperlink{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}{dimension} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} is \hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} \hyperlink{convert2cfg_8m_ab97515cda1e3e845e080f5f32a67fd09}{Output}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} no \\*
+\hyperlink{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}{dimension} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} is \hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} \\*
+Note that this \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} has \\*
+only been tested \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} mixed \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \\*
+\hyperlink{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}{arrays} containing character \\*
+strings and numeric values \\*
+Documentation \hyperlink{convert2cfg_8m_af3c3447c812ef57e7ea08bba5454a11c}{Date}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} no \\*
+\hyperlink{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}{dimension} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} is \hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} \\*
+Note that this \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} has \\*
+only been tested \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} mixed \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \\*
+\hyperlink{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}{arrays} containing character \\*
+strings and numeric values \\*
+Documentation D\-F\-O Canada \\*
+Creation Last \hyperlink{convert2cfg_8m_a09bd674312d24c22b58c21bcdea95d95}{Updated}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} no \\*
+\hyperlink{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}{dimension} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} is \hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} \\*
+Note that this \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} has \\*
+only been tested \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} mixed \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \\*
+\hyperlink{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}{arrays} containing character \\*
+strings and numeric values \\*
+Documentation D\-F\-O Canada \\*
+Creation Last Check to \hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \\*
+no input arguments were \\*
+\hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} If this is the \hyperlink{convert2cfg_8m_a851a9364db662e9fa5eb14ca6e8a4b5a}{case}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} no \\*
+\hyperlink{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}{dimension} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} is \hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} \\*
+Note that this \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} has \\*
+only been tested \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} mixed \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \\*
+\hyperlink{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}{arrays} containing character \\*
+strings and numeric values \\*
+Documentation D\-F\-O Canada \\*
+Creation Last Check to \hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \\*
+no input arguments were \\*
+\hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} If this is the stop \\*
+execution and \hyperlink{_read_d_m3___matlab_8m_a48673c39259e21125ccdd489d990c78e}{output} an \hyperlink{xyz2cfg_8m_a85727b4c27bae9d34bee79da53a07660}{error} \\*
+message to the user \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{convert2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}{nargin}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{convert2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{D\-I\-M} = 1
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Now \hyperlink{qmb_8m_afa11cee267466e31be8442f57b6f8187}{find} out \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} the \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \\*
+\hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} is being sorted \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} more \\*
+than one column If \hyperlink{image_sim_8m_a2bc2c45f22146a64d1dc561fac7e60c1}{it} is then \\*
+\hyperlink{showimage_8m_ac1b7f512a0fa5c0b7d1d056a07969aa2}{use} recursion to call the \\*
+sortcell \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} again to \\*
+sort the less important \\*
+columns first Repeat calls to \\*
+sortcell until only one column \\*
+is left to be sorted Then \\*
+\hyperlink{_display_model_properties_8m_a8fb2b6b4a03427466839a9e801f3c491}{return} the sorted \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \\*
+to the calling \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} to \\*
+continue with the higher \\*
+priority sorting \hyperlink{convert2cfg_8m_a36d3e3e56673eb6fd47c295c71e697ac}{ndim} = \hyperlink{qmb_8m_ab69fc29223800551c1fca07ee84e90ea}{length}(\hyperlink{xyz2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{D\-I\-M})
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{xyz2cfg_8m_a36d3e3e56673eb6fd47c295c71e697ac}{ndim} \hyperlink{convert2cfg_8m_abec65cbed63875da4a4ea5447e83b867}{col} = \hyperlink{xyz2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{D\-I\-M}(2\-:\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end})
+\item 
+\hyperlink{convert2cfg_8m_ac51b57a703ba1c5869228690c93e1701}{X} = sortcell(X, \hyperlink{xyz2cfg_8m_abec65cbed63875da4a4ea5447e83b867}{col})
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Get the dimensions of the \\*
+input \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{convert2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \mbox{[}nrows, ncols\mbox{]} = \hyperlink{qmb_8m_a34efcbeb95e7c3e7e0050034d30c01cd}{size}(\hyperlink{xyz2cfg_8m_ac51b57a703ba1c5869228690c93e1701}{X})
+\item 
+Place the cells for this \\*
+column \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} variable B \hyperlink{convert2cfg_8m_a422e4e22a48b9ea42c9dfe12b157229d}{B} = \hyperlink{xyz2cfg_8m_ac51b57a703ba1c5869228690c93e1701}{X}(\-:,\hyperlink{xyz2cfg_8m_abec65cbed63875da4a4ea5447e83b867}{col})
+\item 
+\hyperlink{convert2cfg_8m_acdedd5ceacaca4e0d58295f41fa4b2a1}{suma} = \hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a})
+\item 
+\hyperlink{convert2cfg_8m_a857b8ed87332556c1cbf373a09c94ce8}{sumb} = \hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b})
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Sort the current \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} and \\*
+\hyperlink{_display_model_properties_8m_a8fb2b6b4a03427466839a9e801f3c491}{return} the new \hyperlink{convert2cfg_8m_ab8735b00764542f758cab8113c52b8ec}{index} \mbox{[}\hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix}, \hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix}\mbox{]} = sort(\hyperlink{xyz2cfg_8m_a422e4e22a48b9ea42c9dfe12b157229d}{B})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}{\index{convert2cfg.\-m@{convert2cfg.\-m}!a\-Type@{a\-Type}}
+\index{a\-Type@{a\-Type}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{a\-Type}]{\setlength{\rightskip}{0pt plus 5cm}a\-Type (
+\begin{DoxyParamCaption}
+\item[{{\bf natom}}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}
+\hypertarget{convert2cfg_8m_a84141555921b8647196edb083e1b4a7a}{\index{convert2cfg.\-m@{convert2cfg.\-m}!convert2cfg@{convert2cfg}}
+\index{convert2cfg@{convert2cfg}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{convert2cfg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} convert2cfg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a84141555921b8647196edb083e1b4a7a}
+\hypertarget{convert2cfg_8m_af643748b4cb49f42bbf009133199039a}{\index{convert2cfg.\-m@{convert2cfg.\-m}!coords@{coords}}
+\index{coords@{coords}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{coords}]{\setlength{\rightskip}{0pt plus 5cm}coords (
+\begin{DoxyParamCaption}
+\item[{{\bf k1}}]{, }
+\item[{1\-:3}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_af643748b4cb49f42bbf009133199039a}
+\hypertarget{convert2cfg_8m_acbf350ce00d8eaa94a7044064af9eae3}{\index{convert2cfg.\-m@{convert2cfg.\-m}!coords@{coords}}
+\index{coords@{coords}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{coords}]{\setlength{\rightskip}{0pt plus 5cm}coords (
+\begin{DoxyParamCaption}
+\item[{{\bf natom}}]{, }
+\item[{1\-:3}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_acbf350ce00d8eaa94a7044064af9eae3}
+\hypertarget{convert2cfg_8m_accb90676408decb4be6591f6bc0664ca}{\index{convert2cfg.\-m@{convert2cfg.\-m}!dimension@{dimension}}
+\index{dimension@{dimension}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{dimension}]{\setlength{\rightskip}{0pt plus 5cm}Retrieve the primary dimension (
+\begin{DoxyParamCaption}
+\item[{column}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_accb90676408decb4be6591f6bc0664ca}
+\hypertarget{convert2cfg_8m_abc6d4b0a6102106533fc2e29fbb8c8e1}{\index{convert2cfg.\-m@{convert2cfg.\-m}!error@{error}}
+\index{error@{error}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Check to {\bf see} {\bf if} too many arguments were input If there were then exit the {\bf function} issuing {\bf a} error message to the user elseif {\bf nargin} error (
+\begin{DoxyParamCaption}
+\item[{'Too many input arguments supplied.\-Only two are allowed.'}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_abc6d4b0a6102106533fc2e29fbb8c8e1}
+\hypertarget{convert2cfg_8m_a85727b4c27bae9d34bee79da53a07660}{\index{convert2cfg.\-m@{convert2cfg.\-m}!error@{error}}
+\index{error@{error}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} error (
+\begin{DoxyParamCaption}
+\item[{'This column is mixed so sorting cannot be completed.'}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a85727b4c27bae9d34bee79da53a07660}
+\hypertarget{convert2cfg_8m_a5f84f51058cdb4f43c29d2c875659f42}{\index{convert2cfg.\-m@{convert2cfg.\-m}!fclose@{fclose}}
+\index{fclose@{fclose}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{fclose}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} fclose (
+\begin{DoxyParamCaption}
+\item[{{\bf fid}}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a5f84f51058cdb4f43c29d2c875659f42}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{convert2cfg_8m_a5f84f51058cdb4f43c29d2c875659f42_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{convert2cfg_8m_a914b5878a579e7493e9475d9f37a5833}{\index{convert2cfg.\-m@{convert2cfg.\-m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{fprintf}]{\setlength{\rightskip}{0pt plus 5cm}fprintf (
+\begin{DoxyParamCaption}
+\item[{'Comment\-:\%s\textbackslash{}n'}]{, }
+\item[{{\bf commentline}}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a914b5878a579e7493e9475d9f37a5833}
+\hypertarget{convert2cfg_8m_aaefc9c4411511eb948a1c1a963fc0bf8}{\index{convert2cfg.\-m@{convert2cfg.\-m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{fprintf}]{\setlength{\rightskip}{0pt plus 5cm}fprintf (
+\begin{DoxyParamCaption}
+\item[{'Found unit {\bf cell} parameters\-:\textbackslash{}}]{na = {\ttfamily \%f}, }
+\item[{{\bf b}}]{ = {\ttfamily \%f}, }
+\item[{{\bf c}}]{ = {\ttfamily \%f}, }
+\item[{\textbackslash{}}]{nalpha = {\ttfamily \%f}, }
+\item[{{\bf beta}}]{ = {\ttfamily \%f}, }
+\item[{{\bf gamma}}]{ = {\ttfamily \%f\textbackslash{}n'}, }
+\item[{{\bf a}}]{, }
+\item[{{\bf b}}]{, }
+\item[{{\bf c}}]{, }
+\item[{{\bf alpha}}]{, }
+\item[{{\bf beta}}]{, }
+\item[{{\bf gamma}}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_aaefc9c4411511eb948a1c1a963fc0bf8}
+\hypertarget{convert2cfg_8m_a433dfaf305bd77a91e39b24b2622c06d}{\index{convert2cfg.\-m@{convert2cfg.\-m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{fprintf}]{\setlength{\rightskip}{0pt plus 5cm}start {\bf a} refinement to search for the correct matrix entries {\bf in} the fprintf (
+\begin{DoxyParamCaption}
+\item[{'{\bf found} structure matrix with}]{chi2 = {\ttfamily \%f\textbackslash{}n'}, }
+\item[{{\bf chi2}}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a433dfaf305bd77a91e39b24b2622c06d}
+\hypertarget{convert2cfg_8m_a5a114b6d8185a4180659b5e181b9c7bf}{\index{convert2cfg.\-m@{convert2cfg.\-m}!if@{if}}
+\index{if@{if}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{{\bf strcmp}(ext,'.xyz')}]{ = {\ttfamily =1}}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a5a114b6d8185a4180659b5e181b9c7bf}
+\hypertarget{convert2cfg_8m_af20fac30bb3da7eb933361ae8bd6ab7a}{\index{convert2cfg.\-m@{convert2cfg.\-m}!if@{if}}
+\index{if@{if}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) = interp2({\bf wp\-X},{\bf wp\-Y},{\bf c\-Offs\-X},p0(\-:,1),p0(\-:,2),'linear',0)}}\label{convert2cfg_8m_af20fac30bb3da7eb933361ae8bd6ab7a}
+\hypertarget{convert2cfg_8m_a896b666bfafd899f6ad051149a76a0a7}{\index{convert2cfg.\-m@{convert2cfg.\-m}!if@{if}}
+\index{if@{if}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} if (
+\begin{DoxyParamCaption}
+\item[{{\bf write\-C\-F\-G}({\bf filename}, {\bf Mm}, {\bf natom}, {\bf a\-Type}, {\bf coords}, \mbox{[}0 0 0\mbox{]}, 0)}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a896b666bfafd899f6ad051149a76a0a7}
+\hypertarget{convert2cfg_8m_a8d4b59d5e3e6e2d936d55641e4cfdca3}{\index{convert2cfg.\-m@{convert2cfg.\-m}!if@{if}}
+\index{if@{if}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} Read xtl files if (
+\begin{DoxyParamCaption}
+\item[{{\bf strcmp}(ext,'.xtl')}]{ = {\ttfamily =1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{convert2cfg_8m_a8d4b59d5e3e6e2d936d55641e4cfdca3}
+\hypertarget{convert2cfg_8m_a9db22c0bdcf628d0aee1c9ba9eeef2d9}{\index{convert2cfg.\-m@{convert2cfg.\-m}!if@{if}}
+\index{if@{if}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} if (
+\begin{DoxyParamCaption}
+\item[{{\bf write\-C\-F\-G}({\bf filename}, {\bf Mm}, {\bf natom}, {\bf a\-Type}, {\bf coords}, \mbox{[}0 0 0\mbox{]}, 1)}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a9db22c0bdcf628d0aee1c9ba9eeef2d9}
+\hypertarget{convert2cfg_8m_a801d4e56dc468c6e1087515b8363c3db}{\index{convert2cfg.\-m@{convert2cfg.\-m}!isequal@{isequal}}
+\index{isequal@{isequal}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{isequal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} isequal (
+\begin{DoxyParamCaption}
+\item[{full\-\_\-filename}]{, }
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a801d4e56dc468c6e1087515b8363c3db}
+\hypertarget{convert2cfg_8m_aabbdf768a12d7ff279a05a15db19fa61}{\index{convert2cfg.\-m@{convert2cfg.\-m}!length@{length}}
+\index{length@{length}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} length (
+\begin{DoxyParamCaption}
+\item[{{\bf sv}}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_aabbdf768a12d7ff279a05a15db19fa61}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{convert2cfg_8m_aabbdf768a12d7ff279a05a15db19fa61_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{convert2cfg_8m_a1af63a8914c49b30255340f7b263a096}{\index{convert2cfg.\-m@{convert2cfg.\-m}!length@{length}}
+\index{length@{length}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} length (
+\begin{DoxyParamCaption}
+\item[{{\bf Mmd2}}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a1af63a8914c49b30255340f7b263a096}
+\hypertarget{convert2cfg_8m_a20fc5038c021fd98154bd49a45a0e238}{\index{convert2cfg.\-m@{convert2cfg.\-m}!max@{max}}
+\index{max@{max}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{max}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} max (
+\begin{DoxyParamCaption}
+\item[{{\bf pos}}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a20fc5038c021fd98154bd49a45a0e238}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{convert2cfg_8m_a20fc5038c021fd98154bd49a45a0e238_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{convert2cfg_8m_af2100764c936261be94fc54e851816c2}{\index{convert2cfg.\-m@{convert2cfg.\-m}!Mm@{Mm}}
+\index{Mm@{Mm}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{Mm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} Mm (
+\begin{DoxyParamCaption}
+\item[{1}]{, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_af2100764c936261be94fc54e851816c2}
+\hypertarget{convert2cfg_8m_aecc51f5747019469991cb140f91b7a53}{\index{convert2cfg.\-m@{convert2cfg.\-m}!Mm@{Mm}}
+\index{Mm@{Mm}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{Mm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} Mm (
+\begin{DoxyParamCaption}
+\item[{2}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_aecc51f5747019469991cb140f91b7a53}
+\hypertarget{convert2cfg_8m_a27b6539fce401b314fb20fd0099d7d69}{\index{convert2cfg.\-m@{convert2cfg.\-m}!Mm@{Mm}}
+\index{Mm@{Mm}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{Mm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} Mm (
+\begin{DoxyParamCaption}
+\item[{3}]{, }
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a27b6539fce401b314fb20fd0099d7d69}
+\hypertarget{convert2cfg_8m_a7e2909942b5260776e40a258a6c171f2}{\index{convert2cfg.\-m@{convert2cfg.\-m}!Mm@{Mm}}
+\index{Mm@{Mm}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{Mm}]{\setlength{\rightskip}{0pt plus 5cm}Mm (
+\begin{DoxyParamCaption}
+\item[{3}]{, }
+\item[{\-:}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a7e2909942b5260776e40a258a6c171f2}
+\hypertarget{convert2cfg_8m_a48308006190521f63f981c09f3c94ce6}{\index{convert2cfg.\-m@{convert2cfg.\-m}!Mmd@{Mmd}}
+\index{Mmd@{Mmd}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{Mmd}]{\setlength{\rightskip}{0pt plus 5cm}Mmd (
+\begin{DoxyParamCaption}
+\item[{{\bf find}(Mmd$<$ 1)}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a48308006190521f63f981c09f3c94ce6}
+\hypertarget{convert2cfg_8m_adaf2296b0af0af8d6d31aa11f288b107}{\index{convert2cfg.\-m@{convert2cfg.\-m}!msgbox@{msgbox}}
+\index{msgbox@{msgbox}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{msgbox}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} msgbox (
+\begin{DoxyParamCaption}
+\item[{{\bf sprintf}('Error creating cfg {\bf file}\%s.\-cfg', {\bf filename})}]{, }
+\item[{'{\bf convert2cfg}'}]{, }
+\item[{'{\bf modal}'}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_adaf2296b0af0af8d6d31aa11f288b107}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{convert2cfg_8m_adaf2296b0af0af8d6d31aa11f288b107_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{convert2cfg_8m_a81e11415a2aae5a3469de521f95aa8b4}{\index{convert2cfg.\-m@{convert2cfg.\-m}!msgbox@{msgbox}}
+\index{msgbox@{msgbox}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{msgbox}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} msgbox (
+\begin{DoxyParamCaption}
+\item[{{\bf sprintf}('Error creating cfg file\textbackslash{}n\%s.\-cfg', {\bf filename})}]{, }
+\item[{'{\bf convert2cfg}'}]{, }
+\item[{'{\bf modal}'}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a81e11415a2aae5a3469de521f95aa8b4}
+\hypertarget{convert2cfg_8m_ade88e8de42005b5e34af15b8da07ab66}{\index{convert2cfg.\-m@{convert2cfg.\-m}!shift\-Vect@{shift\-Vect}}
+\index{shift\-Vect@{shift\-Vect}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{shift\-Vect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} shift\-Vect (
+\begin{DoxyParamCaption}
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_ade88e8de42005b5e34af15b8da07ab66}
+\hypertarget{convert2cfg_8m_a3003cc018402da3937a3a717796894e4}{\index{convert2cfg.\-m@{convert2cfg.\-m}!shift\-Vect@{shift\-Vect}}
+\index{shift\-Vect@{shift\-Vect}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{shift\-Vect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} shift\-Vect (
+\begin{DoxyParamCaption}
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a3003cc018402da3937a3a717796894e4}
+\hypertarget{convert2cfg_8m_adfee1814e296151ed1c4034f04a793e2}{\index{convert2cfg.\-m@{convert2cfg.\-m}!shift\-Vect@{shift\-Vect}}
+\index{shift\-Vect@{shift\-Vect}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{shift\-Vect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} shift\-Vect (
+\begin{DoxyParamCaption}
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_adfee1814e296151ed1c4034f04a793e2}
+\hypertarget{convert2cfg_8m_a2036d620df36b0f50226fce21a5d989d}{\index{convert2cfg.\-m@{convert2cfg.\-m}!strncmp@{strncmp}}
+\index{strncmp@{strncmp}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{strncmp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf while} strncmp (
+\begin{DoxyParamCaption}
+\item[{fgets({\bf fid})}]{, }
+\item[{'C\-E\-L\-L'}]{, }
+\item[{4}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a2036d620df36b0f50226fce21a5d989d}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{convert2cfg_8m_a2036d620df36b0f50226fce21a5d989d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{convert2cfg_8m_ad08efcf9822642a0152979fc14ce7a36}{\index{convert2cfg.\-m@{convert2cfg.\-m}!strncmp@{strncmp}}
+\index{strncmp@{strncmp}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{strncmp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf while} strncmp (
+\begin{DoxyParamCaption}
+\item[{{\bf buf}}]{, }
+\item[{'{\bf E\-O\-F}'}]{, }
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_ad08efcf9822642a0152979fc14ce7a36}
+\hypertarget{convert2cfg_8m_a2902a7a983ab04c79cae2162ad553481}{\index{convert2cfg.\-m@{convert2cfg.\-m}!type@{type}}
+\index{type@{type}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}type (
+\begin{DoxyParamCaption}
+\item[{{\bf k1}}]{, }
+\item[{1\-:2}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a2902a7a983ab04c79cae2162ad553481}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{convert2cfg_8m_a2902a7a983ab04c79cae2162ad553481_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{convert2cfg_8m_add57aad399f787c409167e1b6d30ea8a}{\index{convert2cfg.\-m@{convert2cfg.\-m}!$\sim$isempty@{$\sim$isempty}}
+\index{$\sim$isempty@{$\sim$isempty}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{$\sim$isempty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} $\sim${\bf isempty} (
+\begin{DoxyParamCaption}
+\item[{{\bf sv}}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_add57aad399f787c409167e1b6d30ea8a}
+\hypertarget{convert2cfg_8m_aea1369a66cb89289c3ea4c165821918f}{\index{convert2cfg.\-m@{convert2cfg.\-m}!$\sim$isempty@{$\sim$isempty}}
+\index{$\sim$isempty@{$\sim$isempty}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{$\sim$isempty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} $\sim${\bf isempty} (
+\begin{DoxyParamCaption}
+\item[{{\bf Mmd2}}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_aea1369a66cb89289c3ea4c165821918f}
+\hypertarget{convert2cfg_8m_a261b23a71adeae0bdd614ac030cedc2b}{\index{convert2cfg.\-m@{convert2cfg.\-m}!$\sim$isempty@{$\sim$isempty}}
+\index{$\sim$isempty@{$\sim$isempty}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{$\sim$isempty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} $\sim${\bf isempty} (
+\begin{DoxyParamCaption}
+\item[{{\bf ind}}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a261b23a71adeae0bdd614ac030cedc2b}
+\hypertarget{convert2cfg_8m_a59e4156f1d11eb4351f57910b15976a2}{\index{convert2cfg.\-m@{convert2cfg.\-m}!$\sim$isnumeric@{$\sim$isnumeric}}
+\index{$\sim$isnumeric@{$\sim$isnumeric}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{$\sim$isnumeric}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} $\sim$isnumeric (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-I\-M}}]{}
+\end{DoxyParamCaption}
+)}}\label{convert2cfg_8m_a59e4156f1d11eb4351f57910b15976a2}
+
+
+\subsection{Variable Documentation}
+\hypertarget{convert2cfg_8m_a7492468b961995f6fd82e216c751bb37}{\index{convert2cfg.\-m@{convert2cfg.\-m}!a@{a}}
+\index{a@{a}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}a {\bf otherwise} a = {\bf unit\-Cell}(1)}}\label{convert2cfg_8m_a7492468b961995f6fd82e216c751bb37}
+
+
+Definition at line 126 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a62197192f0fbf4e0675eb37be1c4c175}{\index{convert2cfg.\-m@{convert2cfg.\-m}!alpha@{alpha}}
+\index{alpha@{alpha}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{alpha}]{\setlength{\rightskip}{0pt plus 5cm}alpha = {\bf unit\-Cell}(4)$\ast$pi/180}}\label{convert2cfg_8m_a62197192f0fbf4e0675eb37be1c4c175}
+
+
+Definition at line 129 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{\index{convert2cfg.\-m@{convert2cfg.\-m}!array@{array}}
+\index{array@{array}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{array}]{\setlength{\rightskip}{0pt plus 5cm}Using the {\bf index} from the sorted array = {\bf size}({\bf X})}}\label{convert2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}
+
+
+Definition at line 259 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_af54b44244fe4a858a27959384ba826e7}{\index{convert2cfg.\-m@{convert2cfg.\-m}!atom\-Name@{atom\-Name}}
+\index{atom\-Name@{atom\-Name}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{atom\-Name}]{\setlength{\rightskip}{0pt plus 5cm}atom\-Name}}\label{convert2cfg_8m_af54b44244fe4a858a27959384ba826e7}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= ['H ','He','Li','Be','B ','C ','N ','O ','F ','Ne','Na','Mg','Al','Si','P ','S ','Cl',...
+    'Ar','K ','Ca','Sc','Ti','V ','Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br',...
+    'Kr','Rb','Sr','Y ','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te',...
+    'I ','Xe','Cs','Ba','La','Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm',...
+    'Yb','Lu','Hf','Ta','W ','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn',...
+    'Fr','Ra','Ac','Th','Pa','U ','Np','Pu','Am','Cm','Bk','Cf','Es','Fm','Md','No','Lr']
+\end{DoxyCode}
+
+
+Definition at line 13 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a1030cd2355387f1bc4763e1c640c504b}{\index{convert2cfg.\-m@{convert2cfg.\-m}!A\-T\-O\-M\-S@{A\-T\-O\-M\-S}}
+\index{A\-T\-O\-M\-S@{A\-T\-O\-M\-S}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{A\-T\-O\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}Now look for the atomic A\-T\-O\-M\-S}}\label{convert2cfg_8m_a1030cd2355387f1bc4763e1c640c504b}
+
+
+Definition at line 135 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a7c0d4aa1bd1632355260db4db3a65d2d}{\index{convert2cfg.\-m@{convert2cfg.\-m}!b@{b}}
+\index{b@{b}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}{\bf a} {\bf otherwise} If {\bf it} is {\bf a} numeric {\bf value} {\bf it} returns {\bf a} {\bf in} the boolean {\bf array} b =sortcell(data,1)}}\label{convert2cfg_8m_a7c0d4aa1bd1632355260db4db3a65d2d}
+
+
+Definition at line 64 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a422e4e22a48b9ea42c9dfe12b157229d}{\index{convert2cfg.\-m@{convert2cfg.\-m}!B@{B}}
+\index{B@{B}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{B}]{\setlength{\rightskip}{0pt plus 5cm}Place the cells for this column {\bf in} variable B B = {\bf X}(\-:,{\bf col})}}\label{convert2cfg_8m_a422e4e22a48b9ea42c9dfe12b157229d}
+
+
+Definition at line 265 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_ab146b9cbab6e73e7588b240dc709fe01}{\index{convert2cfg.\-m@{convert2cfg.\-m}!beta@{beta}}
+\index{beta@{beta}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{beta}]{\setlength{\rightskip}{0pt plus 5cm}beta = {\bf unit\-Cell}(5)$\ast$pi/180}}\label{convert2cfg_8m_ab146b9cbab6e73e7588b240dc709fe01}
+
+
+Definition at line 130 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_af30278de8dab4c8bc6e28657bdf50d14}{\index{convert2cfg.\-m@{convert2cfg.\-m}!buf@{buf}}
+\index{buf@{buf}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{buf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} buf = fgets({\bf fid})}}\label{convert2cfg_8m_af30278de8dab4c8bc6e28657bdf50d14}
+
+
+Definition at line 56 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_ae0323a9039add2978bf5b49550572c7c}{\index{convert2cfg.\-m@{convert2cfg.\-m}!c@{c}}
+\index{c@{c}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{c}]{\setlength{\rightskip}{0pt plus 5cm}c = {\bf unit\-Cell}(3)}}\label{convert2cfg_8m_ae0323a9039add2978bf5b49550572c7c}
+
+
+Definition at line 128 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a851a9364db662e9fa5eb14ca6e8a4b5a}{\index{convert2cfg.\-m@{convert2cfg.\-m}!case@{case}}
+\index{case@{case}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{case}]{\setlength{\rightskip}{0pt plus 5cm}Si case}}\label{convert2cfg_8m_a851a9364db662e9fa5eb14ca6e8a4b5a}
+
+
+Definition at line 184 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a230dc0282515afc8139e7baf1843e845}{\index{convert2cfg.\-m@{convert2cfg.\-m}!cell\-Size@{cell\-Size}}
+\index{cell\-Size@{cell\-Size}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{cell\-Size}]{\setlength{\rightskip}{0pt plus 5cm}creates the dialog {\bf box} the user input is stored into {\bf a} {\bf cell} {\bf array} cell\-Size =inputdlg({\bf prompt},{\bf name},{\bf numlines},{\bf defaultanswer})}}\label{convert2cfg_8m_a230dc0282515afc8139e7baf1843e845}
+
+
+Definition at line 94 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_abec65cbed63875da4a4ea5447e83b867}{\index{convert2cfg.\-m@{convert2cfg.\-m}!col@{col}}
+\index{col@{col}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{col}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} {\bf ndim} col = {\bf D\-I\-M}(2\-:{\bf end})}}\label{convert2cfg_8m_abec65cbed63875da4a4ea5447e83b867}
+
+
+Definition at line 254 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a87b6a234dfb7fd69a3d6035bee37ed71}{\index{convert2cfg.\-m@{convert2cfg.\-m}!commentline@{commentline}}
+\index{commentline@{commentline}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{commentline}]{\setlength{\rightskip}{0pt plus 5cm}commentline}}\label{convert2cfg_8m_a87b6a234dfb7fd69a3d6035bee37ed71}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=textscan(\hyperlink{convert2cfg_8m_a7b9c3d619ad7365ec6434713e76142e8}{fid},\textcolor{stringliteral}{'%s'},1,\textcolor{stringliteral}{'delimiter'},\textcolor{stringliteral}{'CR'})
+    \hyperlink{convert2cfg_8m_a87b6a234dfb7fd69a3d6035bee37ed71}{commentline}=fgets(\hyperlink{convert2cfg_8m_a7b9c3d619ad7365ec6434713e76142e8}{fid})
+\end{DoxyCode}
+
+
+Definition at line 50 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_adb3fce483c086cdfed46db6894e052fd}{\index{convert2cfg.\-m@{convert2cfg.\-m}!convert2cfg@{convert2cfg}}
+\index{convert2cfg@{convert2cfg}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{convert2cfg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} convert2cfg}}\label{convert2cfg_8m_adb3fce483c086cdfed46db6894e052fd}
+
+
+Definition at line 105 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_aebd1d90aba8ea0e93ba32de5293b3cf5}{\index{convert2cfg.\-m@{convert2cfg.\-m}!coords@{coords}}
+\index{coords@{coords}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{coords}]{\setlength{\rightskip}{0pt plus 5cm}{\bf shift} coords = cell2mat({\bf b}(\-:,2\-:4))}}\label{convert2cfg_8m_aebd1d90aba8ea0e93ba32de5293b3cf5}
+
+
+Definition at line 81 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_af3c3447c812ef57e7ea08bba5454a11c}{\index{convert2cfg.\-m@{convert2cfg.\-m}!Date@{Date}}
+\index{Date@{Date}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{Date}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} {\bf if} no {\bf dimension} {\bf array} is {\bf supplied} Note that this {\bf function} has only been tested {\bf on} mixed {\bf cell} {\bf arrays} containing character strings and numeric values Documentation D\-F\-O Canada Creation Date}}\label{convert2cfg_8m_af3c3447c812ef57e7ea08bba5454a11c}
+
+
+Definition at line 184 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a75180f3a56b12e0ea7561b96f5583f33}{\index{convert2cfg.\-m@{convert2cfg.\-m}!defaultanswer@{defaultanswer}}
+\index{defaultanswer@{defaultanswer}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{defaultanswer}]{\setlength{\rightskip}{0pt plus 5cm}defaultanswer =\{{\bf sprintf}('\%.\-3f \%.\-3f \%.\-3f',shift\-Vect)\}}}\label{convert2cfg_8m_a75180f3a56b12e0ea7561b96f5583f33}
+
+
+Definition at line 71 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{\index{convert2cfg.\-m@{convert2cfg.\-m}!D\-I\-M@{D\-I\-M}}
+\index{D\-I\-M@{D\-I\-M}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{D\-I\-M}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} D\-I\-M = 1}}\label{convert2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}
+
+
+Definition at line 230 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a299397d854bef7eea9db8f6065ba6880}{\index{convert2cfg.\-m@{convert2cfg.\-m}!end@{end}}
+\index{end@{end}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf return} end = {\bf fileparts}(\mbox{[}{\bf pathname},full\-\_\-filename\mbox{]})}}\label{convert2cfg_8m_a299397d854bef7eea9db8f6065ba6880}
+
+
+Definition at line 8 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a7b9c3d619ad7365ec6434713e76142e8}{\index{convert2cfg.\-m@{convert2cfg.\-m}!fid@{fid}}
+\index{fid@{fid}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{fid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} fid = fopen(strcat({\bf filename},'.xtl'),'{\bf r}')}}\label{convert2cfg_8m_a7b9c3d619ad7365ec6434713e76142e8}
+
+
+Definition at line 116 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a1a3091fb7347c8f640f7b03687dadd44}{\index{convert2cfg.\-m@{convert2cfg.\-m}!filename@{filename}}
+\index{filename@{filename}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} {\bf a} valid {\bf file} has been filename =fullfile({\bf pathname},oldfilename)}}\label{convert2cfg_8m_a1a3091fb7347c8f640f7b03687dadd44}
+
+
+Definition at line 11 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a8d00631c9622112f1877fdb1222c242e}{\index{convert2cfg.\-m@{convert2cfg.\-m}!gamma@{gamma}}
+\index{gamma@{gamma}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{gamma}]{\setlength{\rightskip}{0pt plus 5cm}gamma = {\bf unit\-Cell}(6)$\ast$pi/180}}\label{convert2cfg_8m_a8d00631c9622112f1877fdb1222c242e}
+
+
+Definition at line 131 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_ac7ab10c5cbfe66cb174be3993acdfca0}{\index{convert2cfg.\-m@{convert2cfg.\-m}!H00@{H00}}
+\index{H00@{H00}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{H00}]{\setlength{\rightskip}{0pt plus 5cm}{\bf coords} {\bf a\-Type} H00 = {\bf a}}}\label{convert2cfg_8m_ac7ab10c5cbfe66cb174be3993acdfca0}
+
+
+Definition at line 154 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a2956b3c3c88e899db770033378d001fc}{\index{convert2cfg.\-m@{convert2cfg.\-m}!H01@{H01}}
+\index{H01@{H01}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{H01}]{\setlength{\rightskip}{0pt plus 5cm}H01 = 0}}\label{convert2cfg_8m_a2956b3c3c88e899db770033378d001fc}
+
+
+Definition at line 155 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_ae48a38ace9ce3c77a9f874a13cb624bd}{\index{convert2cfg.\-m@{convert2cfg.\-m}!H02@{H02}}
+\index{H02@{H02}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{H02}]{\setlength{\rightskip}{0pt plus 5cm}H02 = 0}}\label{convert2cfg_8m_ae48a38ace9ce3c77a9f874a13cb624bd}
+
+
+Definition at line 156 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_aec0f3296464d8361abe37f60d5496c2f}{\index{convert2cfg.\-m@{convert2cfg.\-m}!H10@{H10}}
+\index{H10@{H10}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{H10}]{\setlength{\rightskip}{0pt plus 5cm}H10 = {\bf b}$\ast$cos({\bf gamma})}}\label{convert2cfg_8m_aec0f3296464d8361abe37f60d5496c2f}
+
+
+Definition at line 157 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_aa84c46fe58c25716d1f7605de8df3c23}{\index{convert2cfg.\-m@{convert2cfg.\-m}!H11@{H11}}
+\index{H11@{H11}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{H11}]{\setlength{\rightskip}{0pt plus 5cm}H11 = {\bf b}$\ast$sin({\bf gamma})}}\label{convert2cfg_8m_aa84c46fe58c25716d1f7605de8df3c23}
+
+
+Definition at line 158 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a8ccbb97e13e2694cd089ea35a4a18fd0}{\index{convert2cfg.\-m@{convert2cfg.\-m}!H12@{H12}}
+\index{H12@{H12}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{H12}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H10} {\bf H11} H12 = 0}}\label{convert2cfg_8m_a8ccbb97e13e2694cd089ea35a4a18fd0}
+
+
+Definition at line 159 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_affb2a9d3d10246a82c5e1ee2d7f37e93}{\index{convert2cfg.\-m@{convert2cfg.\-m}!H20@{H20}}
+\index{H20@{H20}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{H20}]{\setlength{\rightskip}{0pt plus 5cm}H20 = 0}}\label{convert2cfg_8m_affb2a9d3d10246a82c5e1ee2d7f37e93}
+
+
+Definition at line 160 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a45b983dd2f4e0bb03cbbe01107a10677}{\index{convert2cfg.\-m@{convert2cfg.\-m}!H21@{H21}}
+\index{H21@{H21}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{H21}]{\setlength{\rightskip}{0pt plus 5cm}H21 = 0}}\label{convert2cfg_8m_a45b983dd2f4e0bb03cbbe01107a10677}
+
+
+Definition at line 161 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a047ec35c736a4c006e21f58b70f7a325}{\index{convert2cfg.\-m@{convert2cfg.\-m}!H22@{H22}}
+\index{H22@{H22}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{H22}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H20} {\bf H21} H22 = {\bf c}}}\label{convert2cfg_8m_a047ec35c736a4c006e21f58b70f7a325}
+
+
+Definition at line 162 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_ab8735b00764542f758cab8113c52b8ec}{\index{convert2cfg.\-m@{convert2cfg.\-m}!index@{index}}
+\index{index@{index}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Sort the current {\bf array} and {\bf return} the new index\mbox{[}{\bf ix}, {\bf ix}\mbox{]} = sort({\bf B})}}\label{convert2cfg_8m_ab8735b00764542f758cab8113c52b8ec}
+
+
+Definition at line 291 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_abe1a4654a886b56b76d377ffc86f3dcc}{\index{convert2cfg.\-m@{convert2cfg.\-m}!k1@{k1}}
+\index{k1@{k1}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{k1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} for k1}}\label{convert2cfg_8m_abe1a4654a886b56b76d377ffc86f3dcc}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=1:\hyperlink{convert2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{natom}
+        % data(\hyperlink{convert2cfg_8m_abe1a4654a886b56b76d377ffc86f3dcc}{k1},:)=fscanf(\hyperlink{convert2cfg_8m_a7b9c3d619ad7365ec6434713e76142e8}{fid},\textcolor{stringliteral}{'%2c %f32 %f32 %f32'},1)
+\end{DoxyCode}
+
+
+Definition at line 54 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_ac6daf47a997fb1c7d59c3d0fd79e14e2}{\index{convert2cfg.\-m@{convert2cfg.\-m}!Mm@{Mm}}
+\index{Mm@{Mm}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{Mm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf shift} Mm = \mbox{[}7.\-461 0 0}}\label{convert2cfg_8m_ac6daf47a997fb1c7d59c3d0fd79e14e2}
+
+
+Definition at line 85 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a6ce0c0e420d3168a558d4739ee18db84}{\index{convert2cfg.\-m@{convert2cfg.\-m}!Mmd@{Mmd}}
+\index{Mmd@{Mmd}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{Mmd}]{\setlength{\rightskip}{0pt plus 5cm}Mmd ={\bf max}({\bf coords})-\/min(\mbox{[}{\bf coords}; \mbox{[}0 0 0\mbox{]}\mbox{]})}}\label{convert2cfg_8m_a6ce0c0e420d3168a558d4739ee18db84}
+
+
+Definition at line 84 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_af87ca49659c81b8770a57f9955eb5ff1}{\index{convert2cfg.\-m@{convert2cfg.\-m}!Mmd2@{Mmd2}}
+\index{Mmd2@{Mmd2}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{Mmd2}]{\setlength{\rightskip}{0pt plus 5cm}Mmd2 = sscanf({\bf cell\-Size}\{1\},'\%f \%f \%f')}}\label{convert2cfg_8m_af87ca49659c81b8770a57f9955eb5ff1}
+
+
+Definition at line 95 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_abf75d0e474a103d59888210782ff8baf}{\index{convert2cfg.\-m@{convert2cfg.\-m}!modal@{modal}}
+\index{modal@{modal}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{modal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} modal}}\label{convert2cfg_8m_abf75d0e474a103d59888210782ff8baf}
+
+
+Definition at line 105 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_ab74e6bf80237ddc4109968cedc58c151}{\index{convert2cfg.\-m@{convert2cfg.\-m}!name@{name}}
+\index{name@{name}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}name ='Define coordinate {\bf offset}'}}\label{convert2cfg_8m_ab74e6bf80237ddc4109968cedc58c151}
+
+
+Definition at line 69 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}{\index{convert2cfg.\-m@{convert2cfg.\-m}!nargin@{nargin}}
+\index{nargin@{nargin}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{nargin}]{\setlength{\rightskip}{0pt plus 5cm}Check to {\bf see} {\bf if} the first input argument is {\bf a} {\bf cell} {\bf array} and the second one is numeric If either check fails then stop execution and {\bf output} an {\bf error} message to the user elseif nargin}}\label{convert2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+== 0
+    \hyperlink{convert2cfg_8m_abc6d4b0a6102106533fc2e29fbb8c8e1}{error}(\textcolor{stringliteral}{'No input arguments were supplied.  At least one is expected.'})
+\end{DoxyCode}
+
+
+Definition at line 221 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{\index{convert2cfg.\-m@{convert2cfg.\-m}!natom@{natom}}
+\index{natom@{natom}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{natom}]{\setlength{\rightskip}{0pt plus 5cm}natom =sscanf({\bf buf},'\%{\bf d}')}}\label{convert2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}
+
+
+Definition at line 48 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a5426bacb877a26d44d95d753f4927cf3}{\index{convert2cfg.\-m@{convert2cfg.\-m}!natom\-\_\-temp@{natom\-\_\-temp}}
+\index{natom\-\_\-temp@{natom\-\_\-temp}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{natom\-\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} natom\-\_\-temp}}\label{convert2cfg_8m_a5426bacb877a26d44d95d753f4927cf3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=textscan(\hyperlink{convert2cfg_8m_a7b9c3d619ad7365ec6434713e76142e8}{fid},\textcolor{stringliteral}{'%d'},1)
+    \hyperlink{convert2cfg_8m_af30278de8dab4c8bc6e28657bdf50d14}{buf} = fgets(\hyperlink{convert2cfg_8m_a7b9c3d619ad7365ec6434713e76142e8}{fid})
+\end{DoxyCode}
+
+
+Definition at line 46 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a36d3e3e56673eb6fd47c295c71e697ac}{\index{convert2cfg.\-m@{convert2cfg.\-m}!ndim@{ndim}}
+\index{ndim@{ndim}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{ndim}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Now {\bf find} out {\bf if} the {\bf cell} {\bf array} is being sorted {\bf on} more than one column If {\bf it} is then {\bf use} recursion to call the sortcell {\bf function} again to sort the less important columns first Repeat calls to sortcell until only one column is left to be sorted Then {\bf return} the sorted {\bf cell} {\bf array} to the calling {\bf function} to continue with the higher priority sorting ndim = {\bf length}({\bf D\-I\-M})}}\label{convert2cfg_8m_a36d3e3e56673eb6fd47c295c71e697ac}
+
+
+Definition at line 252 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_af2f323caad11c790b60b05a6916887c3}{\index{convert2cfg.\-m@{convert2cfg.\-m}!numlines@{numlines}}
+\index{numlines@{numlines}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{numlines}]{\setlength{\rightskip}{0pt plus 5cm}numlines =1}}\label{convert2cfg_8m_af2f323caad11c790b60b05a6916887c3}
+
+
+Definition at line 70 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_ab97515cda1e3e845e080f5f32a67fd09}{\index{convert2cfg.\-m@{convert2cfg.\-m}!Output@{Output}}
+\index{Output@{Output}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{Output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} {\bf function} {\bf if} no {\bf dimension} {\bf array} is {\bf supplied} Output}}\label{convert2cfg_8m_ab97515cda1e3e845e080f5f32a67fd09}
+
+
+Definition at line 184 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_aea8eee85d5cbb354554d5625d1bbc2ad}{\index{convert2cfg.\-m@{convert2cfg.\-m}!pathname@{pathname}}
+\index{pathname@{pathname}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{pathname}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} pathname = {\bf uigetfile}(\{'$\ast$.xtl';'$\ast$.xyz'\}, 'Pick {\bf a} .xyz or .xtl {\bf file}')}}\label{convert2cfg_8m_aea8eee85d5cbb354554d5625d1bbc2ad}
+
+
+Definition at line 3 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a923d61728dac7c6dff07427a901c9ba9}{\index{convert2cfg.\-m@{convert2cfg.\-m}!positions@{positions}}
+\index{positions@{positions}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{positions}]{\setlength{\rightskip}{0pt plus 5cm}update {\bf atom} positions}}\label{convert2cfg_8m_a923d61728dac7c6dff07427a901c9ba9}
+
+
+Definition at line 135 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_ad84e19307a43d3f799a4daeef0a6484a}{\index{convert2cfg.\-m@{convert2cfg.\-m}!prompt@{prompt}}
+\index{prompt@{prompt}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{prompt}]{\setlength{\rightskip}{0pt plus 5cm}prompt =\{'Enter the {\bf shift} {\bf vector} as \char`\"{}x {\bf y} z\char`\"{}\-: '\}}}\label{convert2cfg_8m_ad84e19307a43d3f799a4daeef0a6484a}
+
+
+Definition at line 68 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a9717e7bbecb906637e86cef6da3d83c2}{\index{convert2cfg.\-m@{convert2cfg.\-m}!return@{return}}
+\index{return@{return}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{return}]{\setlength{\rightskip}{0pt plus 5cm}return}}\label{convert2cfg_8m_a9717e7bbecb906637e86cef6da3d83c2}
+
+
+Definition at line 5 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a0bd56c3fc970360b866a574a6c0a3473}{\index{convert2cfg.\-m@{convert2cfg.\-m}!row@{row}}
+\index{row@{row}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{row}]{\setlength{\rightskip}{0pt plus 5cm}start {\bf a} refinement to search for the correct matrix entries {\bf in} the row}}\label{convert2cfg_8m_a0bd56c3fc970360b866a574a6c0a3473}
+
+
+Definition at line 168 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a0feca58bc91843177686656c1f828093}{\index{convert2cfg.\-m@{convert2cfg.\-m}!shift\-Vect@{shift\-Vect}}
+\index{shift\-Vect@{shift\-Vect}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{shift\-Vect}]{\setlength{\rightskip}{0pt plus 5cm}sort the data according to {\bf atom} {\bf type} shift\-Vect = -\/min(\mbox{[}min({\bf coords}); {\bf zeros}(1,3)\mbox{]})}}\label{convert2cfg_8m_a0feca58bc91843177686656c1f828093}
+
+
+Definition at line 65 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_acdedd5ceacaca4e0d58295f41fa4b2a1}{\index{convert2cfg.\-m@{convert2cfg.\-m}!suma@{suma}}
+\index{suma@{suma}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{suma}]{\setlength{\rightskip}{0pt plus 5cm}Check to {\bf see} {\bf if} {\bf cell} {\bf array} {\bf B} contained only character string If {\bf cell} {\bf array} {\bf B} contains character strings then do nothing because no further content handling is required {\bf if} suma = {\bf sum}({\bf a})}}\label{convert2cfg_8m_acdedd5ceacaca4e0d58295f41fa4b2a1}
+
+
+Definition at line 273 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a857b8ed87332556c1cbf373a09c94ce8}{\index{convert2cfg.\-m@{convert2cfg.\-m}!sumb@{sumb}}
+\index{sumb@{sumb}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{sumb}]{\setlength{\rightskip}{0pt plus 5cm}sumb = {\bf sum}({\bf b})}}\label{convert2cfg_8m_a857b8ed87332556c1cbf373a09c94ce8}
+
+
+Definition at line 275 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a3a352c2235a269bac37d1a34a19cde48}{\index{convert2cfg.\-m@{convert2cfg.\-m}!sv@{sv}}
+\index{sv@{sv}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{sv}]{\setlength{\rightskip}{0pt plus 5cm}sv = sscanf({\bf z\-\_\-shift}\{1\},'\%f \%f \%f')}}\label{convert2cfg_8m_a3a352c2235a269bac37d1a34a19cde48}
+
+
+Definition at line 75 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a37b5152701bbdfde1fcd3cf58d4fc032}{\index{convert2cfg.\-m@{convert2cfg.\-m}!unit\-Cell@{unit\-Cell}}
+\index{unit\-Cell@{unit\-Cell}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{unit\-Cell}]{\setlength{\rightskip}{0pt plus 5cm}unit\-Cell = sscanf({\bf buf},'\%f',6)}}\label{convert2cfg_8m_a37b5152701bbdfde1fcd3cf58d4fc032}
+
+
+Definition at line 125 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a09bd674312d24c22b58c21bcdea95d95}{\index{convert2cfg.\-m@{convert2cfg.\-m}!Updated@{Updated}}
+\index{Updated@{Updated}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{Updated}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} {\bf function} {\bf if} no {\bf dimension} {\bf array} is {\bf supplied} Note that this {\bf function} has only been tested {\bf on} mixed {\bf cell} {\bf arrays} containing character strings and numeric values Documentation D\-F\-O Canada Creation Last Updated}}\label{convert2cfg_8m_a09bd674312d24c22b58c21bcdea95d95}
+
+
+Definition at line 184 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_ac51b57a703ba1c5869228690c93e1701}{\index{convert2cfg.\-m@{convert2cfg.\-m}!X@{X}}
+\index{X@{X}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{X}]{\setlength{\rightskip}{0pt plus 5cm}X = sortcell(X, {\bf col})}}\label{convert2cfg_8m_ac51b57a703ba1c5869228690c93e1701}
+
+
+Definition at line 255 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_ae76081fb2cef09480162f3c1b69dfbb2}{\index{convert2cfg.\-m@{convert2cfg.\-m}!Y@{Y}}
+\index{Y@{Y}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{Y}]{\setlength{\rightskip}{0pt plus 5cm}Using the {\bf index} from the sorted update the input {\bf cell} {\bf array} and {\bf return} {\bf it} Y}}\label{convert2cfg_8m_ae76081fb2cef09480162f3c1b69dfbb2}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= sortcell(\hyperlink{convert2cfg_8m_ac51b57a703ba1c5869228690c93e1701}{X}, \hyperlink{convert2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{DIM})
+% SORTCELL    Sort \hyperlink{convert2cfg_8m_a7492468b961995f6fd82e216c751bb37}{a} \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{convert2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} ascending order.
+%
+% Description: SORTCELL sorts the input \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{convert2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} according to the
+%   dimensions (columns) specified by the user.
+%
+% Usage: \hyperlink{convert2cfg_8m_ae76081fb2cef09480162f3c1b69dfbb2}{Y} = sortcell(\hyperlink{convert2cfg_8m_ac51b57a703ba1c5869228690c93e1701}{X}, \hyperlink{convert2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{DIM})
+%
+% Input:
+%      X: the \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{convert2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} to be sorted.
+%  \hyperlink{convert2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{DIM}: (optional) one or more column numbers. Simply an \hyperlink{convert2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} of one or
+%       more column numbers.  The first number is the primary column \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on}
+%       which to sort. Extra column numbers may be \hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} \hyperlink{convert2cfg_8m_a5a114b6d8185a4180659b5e181b9c7bf}{if} secondary
+%       sorting is required. The defuault \hyperlink{qstem_8m_aeee9d3c55cddc06149a5f9799cd5232d}{value} is 1
+\end{DoxyCode}
+
+
+Definition at line 184 of file convert2cfg.\-m.
+
+\hypertarget{convert2cfg_8m_a739cface9f02228d027b700ba47386cc}{\index{convert2cfg.\-m@{convert2cfg.\-m}!z\-\_\-shift@{z\-\_\-shift}}
+\index{z\-\_\-shift@{z\-\_\-shift}!convert2cfg.m@{convert2cfg.\-m}}
+\subsubsection[{z\-\_\-shift}]{\setlength{\rightskip}{0pt plus 5cm}creates the dialog {\bf box} the user input is stored into {\bf a} {\bf cell} {\bf array} z\-\_\-shift =inputdlg({\bf prompt},{\bf name},{\bf numlines},{\bf defaultanswer})}}\label{convert2cfg_8m_a739cface9f02228d027b700ba47386cc}
+
+
+Definition at line 74 of file convert2cfg.\-m.
+

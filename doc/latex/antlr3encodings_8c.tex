@@ -1,0 +1,41 @@
+\hypertarget{antlr3encodings_8c}{\section{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3encodings.c File Reference}
+\label{antlr3encodings_8c}\index{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3encodings.\-c@{libs/structure\-\_\-\-I\-O/ucif/antlr3/src/antlr3encodings.\-c}}
+}
+{\ttfamily \#include $<$antlr3.\-h$>$}\\*
+Include dependency graph for antlr3encodings.\-c\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antlr3encodings_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{antlr3defs_8h_ac6724ab3b71a7f4b3c340f52312e8488}{A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} \hyperlink{antlr3defs_8h_a078eec1343cdbb862af80f352ea701da}{A\-N\-T\-L\-R3\-\_\-\-U\-C\-H\-A\-R} \hyperlink{antlr3encodings_8c_a3a67004f09213f9d957e0f5de90836ed}{antlr3c8to\-Antlrc} (\hyperlink{antlr3defs_8h_a3a21ba3b56d771ae6fb58a90fcbd831d}{A\-N\-T\-L\-R3\-\_\-\-I\-N\-T8} inc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{antlr3encodings_8c_a3a67004f09213f9d957e0f5de90836ed}{\index{antlr3encodings.\-c@{antlr3encodings.\-c}!antlr3c8to\-Antlrc@{antlr3c8to\-Antlrc}}
+\index{antlr3c8to\-Antlrc@{antlr3c8to\-Antlrc}!antlr3encodings.c@{antlr3encodings.\-c}}
+\subsubsection[{antlr3c8to\-Antlrc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-A\-P\-I} {\bf A\-N\-T\-L\-R3\-\_\-\-U\-C\-H\-A\-R} antlr3c8to\-Antlrc (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-N\-T\-L\-R3\-\_\-\-I\-N\-T8}}]{inc}
+\end{DoxyParamCaption}
+)}}\label{antlr3encodings_8c_a3a67004f09213f9d957e0f5de90836ed}
+Provides basic utility functions to convert between the various Unicode character conversions. There are of course various packages that could be used instead of these functions, but then the Antlr 3 C runtime would be dependant on the particular package. Using I\-C\-U for this is a good idea if your project is already dependant on it.\-Convert 8 bit character to A\-N\-T\-L\-R char form.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em inc} & Input character to transform from 8 bit form. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\-N\-T\-L\-R3\-\_\-\-U\-C\-H\-A\-R encoding of the character. 
+\end{DoxyReturn}
+
+
+Definition at line 47 of file antlr3encodings.\-c.
+

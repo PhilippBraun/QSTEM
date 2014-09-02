@@ -1,0 +1,4 @@
+tests/libs/wavefunctions/CMakeLists.txt
+tests/libs/wavefunctions/test_wave_base.cpp
+tests/libs/wavefunctions/test_wave_convergent.cpp
+tests/libs/wavefunctions/test_wave_plane.cpp

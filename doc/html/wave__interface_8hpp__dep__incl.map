@@ -1,0 +1,25 @@
+<map id="libs/wavefunctions/wave_interface.hpp" name="libs/wavefunctions/wave_interface.hpp">
+<area shape="rect" id="node2" href="$wave__factory_8hpp.html" title="libs/wavefunctions\l/wave_factory.hpp" alt="" coords="607,97,736,138"/>
+<area shape="rect" id="node17" href="$wave__base_8hpp.html" title="libs/wavefunctions\l/wave_base.hpp" alt="" coords="1508,97,1637,138"/>
+<area shape="rect" id="node23" href="$test__wave__base_8cpp.html" title="tests/libs/wavefunctions\l/test_wave_base.cpp" alt="" coords="1849,278,2012,319"/>
+<area shape="rect" id="node3" href="$detectors_8hpp.html" title="libs/detectors.hpp" alt="" coords="268,195,393,221"/>
+<area shape="rect" id="node6" href="$stem_8cpp.html" title="libs/experiments/stem.cpp" alt="" coords="153,368,327,395"/>
+<area shape="rect" id="node9" href="$base_8hpp.html" title="libs/experiments/base.hpp" alt="" coords="686,195,860,221"/>
+<area shape="rect" id="node15" href="$wave__factory_8cpp.html" title="libs/wavefunctions\l/wave_factory.cpp" alt="" coords="1353,278,1483,319"/>
+<area shape="rect" id="node16" href="$test__wave__convergent_8cpp.html" title="tests/libs/wavefunctions\l/test_wave_convergent.cpp" alt="" coords="479,187,661,229"/>
+<area shape="rect" id="node4" href="$detectors_8cpp.html" title="libs/detectors.cpp" alt="" coords="27,285,152,312"/>
+<area shape="rect" id="node5" href="$stem_8hpp.html" title="libs/experiments/stem.hpp" alt="" coords="387,285,561,312"/>
+<area shape="rect" id="node8" href="$test__detectors_8cpp.html" title="tests/libs/test_detectors.cpp" alt="" coords="176,285,363,312"/>
+<area shape="rect" id="node7" href="$experiments_8cpp.html" title="libs/experiments.cpp" alt="" coords="510,368,652,395"/>
+<area shape="rect" id="node10" href="$base_8cpp.html" title="libs/experiments/base.cpp" alt="" coords="785,285,959,312"/>
+<area shape="rect" id="node11" href="$cbed_8hpp.html" title="libs/experiments/cbed.hpp" alt="" coords="586,285,760,312"/>
+<area shape="rect" id="node13" href="$tem_8hpp.html" title="libs/experiments/tem.hpp" alt="" coords="1161,285,1329,312"/>
+<area shape="rect" id="node12" href="$cbed_8cpp.html" title="libs/experiments/cbed.cpp" alt="" coords="677,368,851,395"/>
+<area shape="rect" id="node14" href="$tem_8cpp.html" title="libs/experiments/tem.cpp" alt="" coords="1161,368,1329,395"/>
+<area shape="rect" id="node18" href="$wave__base_8cpp.html" title="libs/wavefunctions\l/wave_base.cpp" alt="" coords="1663,187,1792,229"/>
+<area shape="rect" id="node19" href="$wave__convergent_8hpp.html" title="libs/wavefunctions\l/wave_convergent.hpp" alt="" coords="1331,187,1484,229"/>
+<area shape="rect" id="node21" href="$wave__plane_8hpp.html" title="libs/wavefunctions\l/wave_plane.hpp" alt="" coords="1508,187,1637,229"/>
+<area shape="rect" id="node20" href="$wave__convergent_8cpp.html" title="libs/wavefunctions\l/wave_convergent.cpp" alt="" coords="983,278,1136,319"/>
+<area shape="rect" id="node22" href="$wave__plane_8cpp.html" title="libs/wavefunctions\l/wave_plane.cpp" alt="" coords="1508,278,1637,319"/>
+<area shape="rect" id="node24" href="$test__wave__plane_8cpp.html" title="tests/libs/wavefunctions\l/test_wave_plane.cpp" alt="" coords="1663,278,1825,319"/>
+</map>

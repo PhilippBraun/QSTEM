@@ -1,0 +1,8 @@
+<map id="QSTEM::CBaseWave::GetWavelength" name="QSTEM::CBaseWave::GetWavelength">
+<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_base_wave.html#aff9612fc5a55a7aadcfda9ee9845a4f0" title="QSTEM::CBaseWave::Display\lParams" alt="" coords="304,70,507,111"/>
+<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_plane_wave.html#ab2f1de8dae9fb2e3a5f0303eb7b47af6" title="QSTEM::CPlaneWave::\lTiltBeam" alt="" coords="324,135,487,177"/>
+<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_convergent_wave.html#acff347f02f2a0405efa296cf5621fdcd" title="QSTEM::CConvergentWave\l::DisplayParams" alt="" coords="555,5,743,46"/>
+<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_plane_wave.html#a914eeba909b3c90bb18da53844eec01e" title="QSTEM::CPlaneWave::\lDisplayParams" alt="" coords="568,70,731,111"/>
+<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c_plane_wave.html#ae91ea6a98ce22da77e509ce0e3f1a9d9" title="QSTEM::CPlaneWave::\lFormProbe" alt="" coords="568,135,731,177"/>
+<area shape="rect" id="node7" href="$class_q_s_t_e_m_1_1_c_plane_wave.html#afc19dcfc2d396a24bed4fffd51a4b5c1" title="QSTEM::CPlaneWave::\lTiltBack" alt="" coords="568,201,731,242"/>
+</map>

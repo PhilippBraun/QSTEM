@@ -1,0 +1,28 @@
+<map id="ucif::parser::parser" name="ucif::parser::parser">
+<area shape="rect" id="node2" href="$antlr3defs_8h.html#ae9a868f3283bbe989d378fc2c934fe6f" title="antlr3StringStreamNew" alt="" coords="513,56,671,83"/>
+<area shape="rect" id="node4" href="$cif_lexer_8cpp.html#a38553a530136591242351a3db661cf69" title="Create a new lexer called cifLexer. " alt="" coords="263,5,358,32"/>
+<area shape="rect" id="node17" href="$antlr3defs_8h.html#ad4ef5baa73e1fdd0f0c2fc4cce4277cb" title="antlr3CommonTokenStreamSourceNew" alt="" coords="184,107,437,133"/>
+<area shape="rect" id="node21" href="$cif_parser_8cpp.html#a2bb3fa49c82e4a00be07b61fb601c34c" title="Create a new cifParser parser and return a context for it. " alt="" coords="260,157,361,184"/>
+<area shape="rect" id="node27" href="$structucif_1_1builder__base.html#a70da885cbe1f8089dc73a8175a1c3620" title="ucif::builder_base\l::new_array" alt="" coords="249,209,373,250"/>
+<area shape="rect" id="node3" href="$_displacement_params_8m.html#affbd44b02f0a59a4922b0c7d090cadd4" title="size" alt="" coords="805,56,851,83"/>
+<area shape="rect" id="node5" href="$cif_lexer_8cpp.html#a73b0d4cc3e5ea3dcf37b901e7e88ab2d" title="Create a new lexer called cifLexer. " alt="" coords="531,5,653,32"/>
+<area shape="rect" id="node6" href="$antlr3defs_8h.html#acea4b4491be51f1d3f57d4d2836d9d0d" title="antlr3LexerNewStream" alt="" coords="751,5,905,32"/>
+<area shape="rect" id="node7" href="$antlr3lexer_8c.html#aad5d94a0ad6c1d4788f95debb67cf642" title="antlr3LexerNew" alt="" coords="961,31,1074,57"/>
+<area shape="rect" id="node8" href="$group__p_a_n_t_l_r3___b_a_s_e___r_e_c_o_g_n_i_z_e_r.html#ga5b539798327f965e6289a9f613515c9a" title="antlr3BaseRecognizerNew" alt="" coords="1126,169,1303,196"/>
+<area shape="rect" id="node16" href="$antlr3defs_8h.html#ad6214ed38e124f2ada5b7056c15b58dc" title="antlr3SetTokenAPI" alt="" coords="1149,31,1281,57"/>
+<area shape="rect" id="node9" href="$antlr3defs_8h.html#a0f20590f5ba34812e48d6cec3e126fd6" title="antlr3VectorNew" alt="" coords="1373,119,1491,145"/>
+<area shape="rect" id="node12" href="$group__p_a_n_t_l_r3___b_a_s_e___r_e_c_o_g_n_i_z_e_r.html#ga974d33def91ba5fb5a6fa8e42c6d876e" title="antlr3MTExceptionNew" alt="" coords="1353,220,1511,247"/>
+<area shape="rect" id="node15" href="$convert2cfg_8m.html#a2902a7a983ab04c79cae2162ad553481" title="type" alt="" coords="1409,169,1455,196"/>
+<area shape="rect" id="node10" href="$qmb_8m.html#aefb171b55ae8f21666e62483197a0473" title="vector" alt="" coords="1635,233,1693,260"/>
+<area shape="rect" id="node11" href="$antlr3collections_8c.html#a257bb3a732b0aee54f196ea448944d0b" title="antlr3SetVectorApi" alt="" coords="1599,284,1729,311"/>
+<area shape="rect" id="node13" href="$group__p_a_n_t_l_r3___b_a_s_e___r_e_c_o_g_n_i_z_e_r.html#gab2d77cd376112c8ff6ed7353ba78dab7" title="antlr3RecognitionExceptionNew" alt="" coords="1560,183,1768,209"/>
+<area shape="rect" id="node14" href="$antlr3defs_8h.html#a531349f2d4207f5ac71c35d056676565" title="Creates a new ANTLR3 exception structure. " alt="" coords="1816,183,1955,209"/>
+<area shape="rect" id="node18" href="$antlr3tokenstream_8c.html#ab8426bed8df754240d19d2ee37edee70" title="antlr3CommonTokenStreamNew" alt="" coords="486,107,698,133"/>
+<area shape="rect" id="node19" href="$antlr3tokenstream_8c.html#ae626fd40b41f59b8081b8c475b75381e" title="antlr3TokenStreamNew" alt="" coords="749,157,907,184"/>
+<area shape="rect" id="node20" href="$group__p_a_n_t_l_r3___i_n_t___s_t_r_e_a_m.html#ga58e4ce6e808a830c69cc73f3db040ae4" title="antlr3IntStreamNew" alt="" coords="759,208,897,235"/>
+<area shape="rect" id="node22" href="$cif_parser_8cpp.html#ac5cc07e01ff3c44244770c3a4974e6da" title="Create a new cifParser parser and return a context for it. " alt="" coords="527,259,657,285"/>
+<area shape="rect" id="node23" href="$antlr3defs_8h.html#abede6d25edd8b3e67f8aa6a5094b6f9c" title="antlr3ParserNewStream" alt="" coords="747,259,909,285"/>
+<area shape="rect" id="node25" href="$antlr3defs_8h.html#acd2d302cb08802568e25ca38c6dab300" title="antlr3StackNew" alt="" coords="960,303,1075,329"/>
+<area shape="rect" id="node24" href="$antlr3parser_8c.html#ae667dafdcef9adc2fceebc8420a7cded" title="antlr3ParserNew" alt="" coords="958,220,1077,247"/>
+<area shape="rect" id="node26" href="$antlr3collections_8c.html#a0f20590f5ba34812e48d6cec3e126fd6" title="antlr3VectorNew" alt="" coords="1373,284,1491,311"/>
+</map>

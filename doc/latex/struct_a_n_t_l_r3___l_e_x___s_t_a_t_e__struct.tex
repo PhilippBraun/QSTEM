@@ -1,0 +1,66 @@
+\hypertarget{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct}{\section{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct Struct Reference}
+\label{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct}\index{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+}
+
+
+Structure for track lex input states as part of mark() and rewind() of lexer.  
+
+
+
+
+{\ttfamily \#include $<$antlr3input.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct_ac1a199a9d03827b5a0f4903c471a8823}{next\-Char}
+\item 
+\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} \hyperlink{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct_a00999851e4d46ac4cd60e3be5c0bac13}{line}
+\item 
+void $\ast$ \hyperlink{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct_a02f3890c40ac5408967b59943261c90c}{current\-Line}
+\item 
+\hyperlink{antlr3defs_8h_a6faef5c4687f8eb633d2aefea93973ca}{A\-N\-T\-L\-R3\-\_\-\-I\-N\-T32} \hyperlink{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct_a73739086ab0955aa12c5e9d1242df682}{char\-Position\-In\-Line}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure for track lex input states as part of mark() and rewind() of lexer. 
+
+Definition at line 243 of file antlr3input.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct_a73739086ab0955aa12c5e9d1242df682}{\index{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!char\-Position\-In\-Line@{char\-Position\-In\-Line}}
+\index{char\-Position\-In\-Line@{char\-Position\-In\-Line}!ANTLR3_LEX_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{char\-Position\-In\-Line}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-I\-N\-T32} A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::char\-Position\-In\-Line}}\label{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct_a73739086ab0955aa12c5e9d1242df682}
+The offset within the current line of the current character 
+
+Definition at line 264 of file antlr3input.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct_a02f3890c40ac5408967b59943261c90c}{\index{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!current\-Line@{current\-Line}}
+\index{current\-Line@{current\-Line}!ANTLR3_LEX_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{current\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::current\-Line}}\label{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct_a02f3890c40ac5408967b59943261c90c}
+Pointer into the input buffer where the current line started. 
+
+Definition at line 260 of file antlr3input.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct_a00999851e4d46ac4cd60e3be5c0bac13}{\index{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!line@{line}}
+\index{line@{line}!ANTLR3_LEX_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{line}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::line}}\label{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct_a00999851e4d46ac4cd60e3be5c0bac13}
+The line number we are traversing in the input file. This gets incremented by a newline() call in the lexer grammer actions. 
+
+Definition at line 255 of file antlr3input.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct_ac1a199a9d03827b5a0f4903c471a8823}{\index{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!next\-Char@{next\-Char}}
+\index{next\-Char@{next\-Char}!ANTLR3_LEX_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{next\-Char}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\-N\-T\-L\-R3\-\_\-\-L\-E\-X\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::next\-Char}}\label{struct_a_n_t_l_r3___l_e_x___s_t_a_t_e__struct_ac1a199a9d03827b5a0f4903c471a8823}
+Pointer to the next character to be consumed from the input data This is cast to point at the encoding of the original file that was read by the functions installed as pointer in this input stream context instance at file/string/whatever load time. 
+
+Definition at line 250 of file antlr3input.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+libs/structure\-\_\-\-I\-O/ucif/antlr3/include/\hyperlink{antlr3input_8h}{antlr3input.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,77 @@
+\hypertarget{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct}{\section{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct Struct Reference}
+\label{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct}\index{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct}}
+}
+
+
+{\ttfamily \#include $<$antlr3collections.\-h$>$}
+
+
+
+Collaboration diagram for A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_afadbac81f409738376f4bc88a9d0a154}{void} (\hyperlink{antlr3defs_8h_a91c919dd260a95cc88a0cd9b5c0a11cc}{A\-N\-T\-L\-R3\-\_\-\-C\-D\-E\-C\-L} $\ast$free)(void $\ast$\hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_afc2e60867f757681c1d0c32582c0a4e5}{data})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{antlr3collections_8h_a67e2f00efde84a6ce02d81e614d031f2}{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-K\-E\-Y} \hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_a4d8303b5c6bfcfb33c6db86c88915d37}{keybase}
+\item 
+\hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_afadbac81f409738376f4bc88a9d0a154}{void} $\ast$ \hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_afc2e60867f757681c1d0c32582c0a4e5}{data}
+\item 
+struct \hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct}{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct} $\ast$ \hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_a915d0ff5431c587100dbd7b93e19f6f6}{next\-Entry}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Internal structure representing an element in a hash bucket. Stores the original key so that duplicate keys can be rejected if necessary, and contains function can be supported. If the hash key could be unique I would have invented the perfect compression algorithm ;-\/) 
+
+Definition at line 61 of file antlr3collections.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_afadbac81f409738376f4bc88a9d0a154}{\index{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct}!void@{void}}
+\index{void@{void}!ANTLR3_HASH_ENTRY_struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct}}
+\subsubsection[{void}]{\setlength{\rightskip}{0pt plus 5cm}A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct\-::void (
+\begin{DoxyParamCaption}
+\item[{{\bf A\-N\-T\-L\-R3\-\_\-\-C\-D\-E\-C\-L} $\ast$}]{free}
+\end{DoxyParamCaption}
+)}}\label{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_afadbac81f409738376f4bc88a9d0a154}
+Pointer to routine that knows how to release the memory structure pointed at by data. If this is N\-U\-L\-L then we assume that the data pointer does not need to be freed when the entry is deleted from the table. 
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_afc2e60867f757681c1d0c32582c0a4e5}{\index{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct}!data@{data}}
+\index{data@{data}!ANTLR3_HASH_ENTRY_struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void}$\ast$ A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct\-::data}}\label{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_afc2e60867f757681c1d0c32582c0a4e5}
+Pointer to the data for this particular entry 
+
+Definition at line 69 of file antlr3collections.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_a4d8303b5c6bfcfb33c6db86c88915d37}{\index{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct}!keybase@{keybase}}
+\index{keybase@{keybase}!ANTLR3_HASH_ENTRY_struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct}}
+\subsubsection[{keybase}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-K\-E\-Y} A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct\-::keybase}}\label{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_a4d8303b5c6bfcfb33c6db86c88915d37}
+Key that created this particular entry 
+
+Definition at line 65 of file antlr3collections.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_a915d0ff5431c587100dbd7b93e19f6f6}{\index{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct}!next\-Entry@{next\-Entry}}
+\index{next\-Entry@{next\-Entry}!ANTLR3_HASH_ENTRY_struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct}}
+\subsubsection[{next\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct}$\ast$ A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y\-\_\-struct\-::next\-Entry}}\label{struct_a_n_t_l_r3___h_a_s_h___e_n_t_r_y__struct_a915d0ff5431c587100dbd7b93e19f6f6}
+Pointer to the next entry in this bucket if there is one. Sometimes different keys will hash to the same bucket (especially if the number of buckets is small). We could implement dual hashing algorithms to minimize this, but that seems over the top for what this is needed for. 
+
+Definition at line 83 of file antlr3collections.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+libs/structure\-\_\-\-I\-O/ucif/antlr3/include/\hyperlink{antlr3collections_8h}{antlr3collections.\-h}\end{DoxyCompactItemize}

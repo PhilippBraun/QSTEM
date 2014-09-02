@@ -1,0 +1,5 @@
+<map id="QSTEM::getZNumber" name="QSTEM::getZNumber">
+<area shape="rect" id="node2" href="$struct_q_s_t_e_m_1_1atom_struct.html#a4709812849cd4e6df9a71cd733884876" title="QSTEM::atomStruct::\latomStruct" alt="" coords="208,5,357,46"/>
+<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_cfg_reader.html#ab3fddeae25408380d09ff5aff044eaa9" title="QSTEM::CCfgReader::\lReadNextAtom" alt="" coords="203,70,362,111"/>
+<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_cfg_reader.html#abe37375764899c2f0bda75740198e9fd" title="QSTEM::CCfgReader::\lReadAtoms" alt="" coords="411,70,570,111"/>
+</map>

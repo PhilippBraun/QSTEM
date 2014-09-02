@@ -1,0 +1,3 @@
+tests/libs/potentials/CMakeLists.txt
+tests/libs/potentials/test_pot_2d.cpp
+tests/libs/potentials/test_pot_3d_fft.cpp

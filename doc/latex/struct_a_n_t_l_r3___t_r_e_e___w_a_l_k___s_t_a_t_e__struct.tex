@@ -1,0 +1,116 @@
+\hypertarget{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct}{\section{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct Struct Reference}
+\label{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct}\index{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+}
+
+
+{\ttfamily \#include $<$antlr3commontreenodestream.\-h$>$}
+
+
+
+Collaboration diagram for A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} \hyperlink{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a81cb853de85e8e2eba4bc664d6fe69ac}{current\-Child\-Index}
+\item 
+\hyperlink{antlr3defs_8h_a0361e6bf442e07afe923e4d05e9ebc4f}{A\-N\-T\-L\-R3\-\_\-\-M\-A\-R\-K\-E\-R} \hyperlink{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a7af3a25031e5a20b4434d68990f70710}{absolute\-Node\-Index}
+\item 
+\hyperlink{antlr3interfaces_8h_a6313a8a3e8f044398a393bd10c083852}{p\-A\-N\-T\-L\-R3\-\_\-\-B\-A\-S\-E\-\_\-\-T\-R\-E\-E} \hyperlink{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a119ad4ee2544e6eb922686df253c6767}{current\-Node}
+\item 
+\hyperlink{antlr3interfaces_8h_a6313a8a3e8f044398a393bd10c083852}{p\-A\-N\-T\-L\-R3\-\_\-\-B\-A\-S\-E\-\_\-\-T\-R\-E\-E} \hyperlink{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a77be281eb465677083c373f033fc277b}{previous\-Node}
+\item 
+\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} \hyperlink{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a96e83da07f8207ce53150a0efe5af4b1}{node\-Stack\-Size}
+\item 
+\hyperlink{antlr3interfaces_8h_a6313a8a3e8f044398a393bd10c083852}{p\-A\-N\-T\-L\-R3\-\_\-\-B\-A\-S\-E\-\_\-\-T\-R\-E\-E} $\ast$ \hyperlink{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a89b4e27e9026bf942ec3206ead1443c6}{look\-Ahead}
+\item 
+\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} \hyperlink{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a12a33b0eaa232ef9763e9fa66125041b}{look\-Ahead\-Length}
+\item 
+\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} \hyperlink{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_ac7a5c57635cbc5f27a4be6423b76ca0a}{tail}
+\item 
+\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} \hyperlink{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_aef51da5125569745309cdf73331d0c4a}{head}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This structure is used to save the state information in the treenodestream when walking ahead with cyclic D\-F\-A or for syntactic predicates, we need to record the state of the tree node stream. This class wraps up the current state of the Common\-Tree\-Node\-Stream. Calling mark() will push another of these on the markers stack. 
+
+Definition at line 318 of file antlr3commontreenodestream.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a7af3a25031e5a20b4434d68990f70710}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!absolute\-Node\-Index@{absolute\-Node\-Index}}
+\index{absolute\-Node\-Index@{absolute\-Node\-Index}!ANTLR3_TREE_WALK_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{absolute\-Node\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-M\-A\-R\-K\-E\-R} A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::absolute\-Node\-Index}}\label{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a7af3a25031e5a20b4434d68990f70710}
+
+
+Definition at line 321 of file antlr3commontreenodestream.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a81cb853de85e8e2eba4bc664d6fe69ac}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!current\-Child\-Index@{current\-Child\-Index}}
+\index{current\-Child\-Index@{current\-Child\-Index}!ANTLR3_TREE_WALK_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{current\-Child\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::current\-Child\-Index}}\label{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a81cb853de85e8e2eba4bc664d6fe69ac}
+
+
+Definition at line 320 of file antlr3commontreenodestream.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a119ad4ee2544e6eb922686df253c6767}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!current\-Node@{current\-Node}}
+\index{current\-Node@{current\-Node}!ANTLR3_TREE_WALK_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{current\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-A\-N\-T\-L\-R3\-\_\-\-B\-A\-S\-E\-\_\-\-T\-R\-E\-E} A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::current\-Node}}\label{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a119ad4ee2544e6eb922686df253c6767}
+
+
+Definition at line 322 of file antlr3commontreenodestream.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_aef51da5125569745309cdf73331d0c4a}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!head@{head}}
+\index{head@{head}!ANTLR3_TREE_WALK_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{head}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::head}}\label{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_aef51da5125569745309cdf73331d0c4a}
+
+
+Definition at line 328 of file antlr3commontreenodestream.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a89b4e27e9026bf942ec3206ead1443c6}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!look\-Ahead@{look\-Ahead}}
+\index{look\-Ahead@{look\-Ahead}!ANTLR3_TREE_WALK_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{look\-Ahead}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-A\-N\-T\-L\-R3\-\_\-\-B\-A\-S\-E\-\_\-\-T\-R\-E\-E}$\ast$ A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::look\-Ahead}}\label{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a89b4e27e9026bf942ec3206ead1443c6}
+
+
+Definition at line 325 of file antlr3commontreenodestream.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a12a33b0eaa232ef9763e9fa66125041b}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!look\-Ahead\-Length@{look\-Ahead\-Length}}
+\index{look\-Ahead\-Length@{look\-Ahead\-Length}!ANTLR3_TREE_WALK_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{look\-Ahead\-Length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::look\-Ahead\-Length}}\label{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a12a33b0eaa232ef9763e9fa66125041b}
+
+
+Definition at line 326 of file antlr3commontreenodestream.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a96e83da07f8207ce53150a0efe5af4b1}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!node\-Stack\-Size@{node\-Stack\-Size}}
+\index{node\-Stack\-Size@{node\-Stack\-Size}!ANTLR3_TREE_WALK_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{node\-Stack\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::node\-Stack\-Size}}\label{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a96e83da07f8207ce53150a0efe5af4b1}
+
+
+Definition at line 324 of file antlr3commontreenodestream.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a77be281eb465677083c373f033fc277b}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!previous\-Node@{previous\-Node}}
+\index{previous\-Node@{previous\-Node}!ANTLR3_TREE_WALK_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{previous\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-A\-N\-T\-L\-R3\-\_\-\-B\-A\-S\-E\-\_\-\-T\-R\-E\-E} A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::previous\-Node}}\label{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_a77be281eb465677083c373f033fc277b}
+
+
+Definition at line 323 of file antlr3commontreenodestream.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_ac7a5c57635cbc5f27a4be6423b76ca0a}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}!tail@{tail}}
+\index{tail@{tail}!ANTLR3_TREE_WALK_STATE_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct}}
+\subsubsection[{tail}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} A\-N\-T\-L\-R3\-\_\-\-T\-R\-E\-E\-\_\-\-W\-A\-L\-K\-\_\-\-S\-T\-A\-T\-E\-\_\-struct\-::tail}}\label{struct_a_n_t_l_r3___t_r_e_e___w_a_l_k___s_t_a_t_e__struct_ac7a5c57635cbc5f27a4be6423b76ca0a}
+
+
+Definition at line 327 of file antlr3commontreenodestream.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+libs/structure\-\_\-\-I\-O/ucif/antlr3/include/\hyperlink{antlr3commontreenodestream_8h}{antlr3commontreenodestream.\-h}\end{DoxyCompactItemize}

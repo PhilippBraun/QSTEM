@@ -1,0 +1,534 @@
+\hypertarget{sim_image_from_wave_8m}{\section{G\-U\-I\-\_\-\-Matlab/sim\-Image\-From\-Wave.m File Reference}
+\label{sim_image_from_wave_8m}\index{G\-U\-I\-\_\-\-Matlab/sim\-Image\-From\-Wave.\-m@{G\-U\-I\-\_\-\-Matlab/sim\-Image\-From\-Wave.\-m}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+objective \hyperlink{sim_image_from_wave_8m_a3b69f23425e7c4d37f9381a15da540ee}{aperture} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{sim_image_from_wave_8m_a74335ae40bc4ffab9fc80d95fee97208}{A} \hyperlink{virtual_goniometer_8m_a6b11865bcca154f476b9d05d1ac7a75b}{set} very \hyperlink{sim_image_from_wave_8m_a4c8e7c568925ce5dd2b928882005e08d}{large} (0.\-1\-A) Cs=0.\-6e7
+\item 
+\hyperlink{image_sim_8m_a6e1ec50d40620688cd6376e335851fa5}{Cs} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{sim_image_from_wave_8m_a74335ae40bc4ffab9fc80d95fee97208}{A} (1mm=1e7\-A) 1.\-2mm S\-E\-S\-A\-M Cc
+\item 
+relative energy \hyperlink{sim_image_from_wave_8m_a38bcf55414b93eac67018aee91bed97c}{spread} (0.\-4e\-V at 200k\-V) alpha=0.\-1e-\/3
+\item 
+id \hyperlink{sim_image_from_wave_8m_a0e567a6e32240aa0eaf37486cbd9a311}{Astig} ()
+\item 
+\hyperlink{sim_image_from_wave_8m_a7dc8886bf0ca02f39e3d5a76c0ebcaa4}{fprintf} ('Focal spread\-:\%g A\textbackslash{}n', \hyperlink{sim_image_from_wave_8m_a38ade178ddc6a845e495916d25738bf2}{Df})
+\item 
+basis of \hyperlink{sim_image_from_wave_8m_a656d5e61939acabefd422775c5d110f1}{defocus} (Scherzer) \hyperlink{image_sim_8m_a131dfbed98a438571209fb0821f3d5ec}{def\-Step}
+\item 
+\hyperlink{sim_image_from_wave_8m_ab711138fbc8d64d69b5316d62ba220f0}{fprintf} ('dx\-:\%g, dy\-:\%g, thickness\-:\%g\textbackslash{}n', d\-X, d\-Y, \hyperlink{showimage_8m_ad941f6ef920fbfb3d75b60ddbedbdd39}{t})
+\item 
+\hyperlink{sim_image_from_wave_8m_a97348fbfc3835d034b18d2a3ed5fe6ee}{if} (0)
+\item 
+\hyperlink{sim_image_from_wave_8m_aa83fd3c6e35fb2262f9ed2134a4bfd41}{imagesc} (d\-Y $\ast$\mbox{[}0\-:\hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny}-\/1\mbox{]}, d\-X $\ast$\mbox{[}0\-:\hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx}-\/1\mbox{]}, \hyperlink{fftw__allocator_8hpp_a3265f53b67af1612bd5c314cdce95c32}{abs}(\hyperlink{sim_image_from_wave_8m_acb3ac767ec1048cf315487da2b577ca4}{wave}))
+\item 
+\hyperlink{sim_image_from_wave_8m_a3b69f23425e7c4d37f9381a15da540ee}{aperture} (\hyperlink{sim_image_from_wave_8m_adcbf6818ca1a5f06faf47e9f23063dc5}{k2}$<$ kmax $\ast$kmax)
+\item 
+Save \hyperlink{image_sim_8m_afae9c1ba68a4a4b4cbdc4b36f2e0afe6}{image} \hyperlink{sim_image_from_wave_8m_a935ac73cb7bc7883eb826f6f1d5400a8}{if} (1) \hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}
+\item 
+\hyperlink{sim_image_from_wave_8m_abf371cc06f10c0f6b7f9b77c506ca183}{fprintf} ('Image\%\hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d}(\hyperlink{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}{def}=\%gnm)\-: ', \hyperlink{sim_image_from_wave_8m_aedd72202f5fa11b5b301b347617895bb}{idf}, \hyperlink{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}{def}/10)
+\item 
+\hyperlink{sim_image_from_wave_8m_ad0fbb0f36386dc50c313aebc4694c81c}{binwrite2\-D} (\hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{img}, \hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, 0, \hyperlink{showimage_8m_ad941f6ef920fbfb3d75b60ddbedbdd39}{t})
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{qmb_8m_ad589399858397b7c05877f34c359ed55}{Display} \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} few \hyperlink{sim_image_from_wave_8m_a9dded133f3736d53ec1c57e9ea9cc767}{imagesc} (d\-Y $\ast$\mbox{[}0\-:\hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny}-\/1\mbox{]}, d\-X $\ast$\mbox{[}0\-:\hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx}-\/1\mbox{]}, \hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{img})
+\item 
+\hyperlink{sim_image_from_wave_8m_af56c95f61621bf9779137b38fcb3e0fd}{colormap} ('gray')
+\item 
+\hyperlink{sim_image_from_wave_8m_a3549364daae0112d3a892a326b72d359}{title} (\hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\hyperlink{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}{def}=\%gnm', \hyperlink{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}{def}/10))
+\item 
+\hyperlink{sim_image_from_wave_8m_aaaa6eb6a7a4c5af057b011e096237df7}{subplot} (2, 2, 2) \hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{img}
+\item 
+\hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{img} (1, 1)=0
+\item 
+\hyperlink{sim_image_from_wave_8m_a7a874549a590291be0eebb879a12b9ea}{imagesc} (\hyperlink{sim_image_from_wave_8m_a59650fdddef08cde1605e75fa4181c5e}{dky} $\ast$\mbox{[}-\/\hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny}/2\-:\hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny}/2-\/1\mbox{]}, \hyperlink{image_sim_8m_a064c4bb1964142fe511cd6590ef1f595}{dkx} $\ast$\mbox{[}-\/\hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx}/2\-:\hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx}/2-\/1\mbox{]}, log(1+\hyperlink{aberrations_8m_ae814a4b95d0215118e1ea731ae41185b}{fftshift}(\hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{img})))
+\item 
+\hyperlink{sim_image_from_wave_8m_a60baf35af99b5bbeefda8d670599dc61}{title} ('Diffractogram')
+\item 
+\hyperlink{sim_image_from_wave_8m_ac5490bd91d39e9238e37ab49385f108d}{xlim} (\mbox{[}-\/1.\-5 1.\-5\mbox{]}) \hyperlink{qmb_8m_a3852c71c2302cdad168740b91d542b3a}{ylim}(\mbox{[}-\/1.\-5 1.\-5\mbox{]}) \hyperlink{sim_image_from_wave_8m_aaaa6eb6a7a4c5af057b011e096237df7}{subplot}(2
+\item 
+\hyperlink{sim_image_from_wave_8m_a3341a2f8b0a2b23e6ee1c562cf5a0cc1}{plot} (\hyperlink{image_sim_8m_a064c4bb1964142fe511cd6590ef1f595}{dkx} $\ast$\mbox{[}-\/\hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx}/2\-:\hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx}/2-\/1\mbox{]},\mbox{[}\hyperlink{aberrations_8m_ae814a4b95d0215118e1ea731ae41185b}{fftshift}(\hyperlink{image_sim_8m_a55decb3992eb3fe116b673a079cbc0fe}{Etemp}(\-:, 1)) \hyperlink{aberrations_8m_ae814a4b95d0215118e1ea731ae41185b}{fftshift}(\hyperlink{image_sim_8m_ac6ccae1666df2c1024de02dcc9cc833e}{Espat}(\-:, 1))...\hyperlink{aberrations_8m_ae814a4b95d0215118e1ea731ae41185b}{fftshift}(-\/\hyperlink{fftw__allocator_8hpp_a4b67f0883b07b3e879fc8c8481e3d393}{imag}(\hyperlink{sim_image_from_wave_8m_a4805df3f93d2fd44d85d536abab5b7a8}{chi}(\-:, 1))).$\ast$\hyperlink{aberrations_8m_ae814a4b95d0215118e1ea731ae41185b}{fftshift}(\hyperlink{image_sim_8m_a55decb3992eb3fe116b673a079cbc0fe}{Etemp}(\-:, 1)).$\ast$\hyperlink{aberrations_8m_ae814a4b95d0215118e1ea731ae41185b}{fftshift}(\hyperlink{image_sim_8m_ac6ccae1666df2c1024de02dcc9cc833e}{Espat}(\-:, 1))\mbox{]})
+\item 
+\hyperlink{sim_image_from_wave_8m_a1726e1f9cd2d2130d723ffa5bab5eacf}{legend} ('temporal coherence','spatial coherence', '\hyperlink{image_sim_8m_a0bbe3bce7888733cdeb0db41e5b1dc36}{C\-T\-F}') \hyperlink{sim_image_from_wave_8m_ac5490bd91d39e9238e37ab49385f108d}{xlim}(\mbox{[}0 2\mbox{]})
+\item 
+\hyperlink{sim_image_from_wave_8m_aaaa6eb6a7a4c5af057b011e096237df7}{subplot}(2, 2, 4) \hyperlink{sim_image_from_wave_8m_a7a874549a590291be0eebb879a12b9ea}{imagesc}(\hyperlink{sim_image_from_wave_8m_a59650fdddef08cde1605e75fa4181c5e}{dky} \\*
+$\ast$\mbox{[}-\/\hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny}/2 \hyperlink{sim_image_from_wave_8m_a44bef1002aae03ce551200278fa06223}{title} ('2\-D transfer function(\-Im\mbox{[}chi(q)\mbox{]})')
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Through focus series \\*
+reconstruction \hyperlink{write_fields2_file_8m_a75658b9c899229893bf0bc9d90e97d93}{file} \\*
+through\-Focus \hyperlink{_read_d_m3___matlab_8m_a690da4f71682a3ad61fd1af8024eb5d3}{m} format \hyperlink{sim_image_from_wave_8m_a5afac14ac860987466647e55f28eca33}{compact}
+\item 
+\hyperlink{sim_image_from_wave_8m_aa329f2975fbe76cfdf70a27f88bfc0ef}{save\-Memory} = 2
+\item 
+\hyperlink{sim_image_from_wave_8m_aedf03b9517092eee7dae1588bbc00e19}{directory} = 'sphere1'
+\item 
+\hyperlink{sim_image_from_wave_8m_aca36b09d6e71a60cfa3837d7e24c07ca}{lambda} = wavelength(300)
+\item 
+electron wavelength for beam \\*
+energy Microscope \hyperlink{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{parameters}
+\item 
+Cc \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{sim_image_from_wave_8m_a2d779e6c55dd0a8494a4ca9ed8714204}{A}
+\item 
+astigmatism \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{sim_image_from_wave_8m_a74335ae40bc4ffab9fc80d95fee97208}{A} \hyperlink{sim_image_from_wave_8m_a6a2e4fbe5e7c5462dea38bed93169e5b}{Astig\-Phi} = 30$\ast$pi/180
+\item 
+\hyperlink{image_sim_8m_a0a2c0e3061e6dfed2bb93e1d6a220939}{angle} of astigmatism \hyperlink{sim_image_from_wave_8m_a38ade178ddc6a845e495916d25738bf2}{Df} = Cc$\ast$delta\-E\-\_\-\-E
+\item 
+\hyperlink{sim_image_from_wave_8m_ac14a938158345bed28242803677a8212}{def0}
+\item 
+\hyperlink{sim_image_from_wave_8m_a6982f38ee9865914f2fb8226037bd3c8}{Nimg} = 20
+\item 
+\hyperlink{sim_image_from_wave_8m_a893e87b43fb9e0ad1de60d41fb3e338b}{plot\-Flag} = 1
+\item 
+\hyperlink{sim_image_from_wave_8m_a4fc3031161d6f3c3fa0a16037c4cfe71}{wave\-Name} = \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%\hyperlink{aberrations___t_e_m_8m_aef29541a06b7f933d32a804307db13af}{s}/\hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{wave.\-img}',\hyperlink{sim_image_from_wave_8m_aedf03b9517092eee7dae1588bbc00e19}{directory})
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Add some carbon to the specimen \hyperlink{sim_image_from_wave_8m_aa092e314c697a00facfe496a7779b61b}{surface}
+\item 
+\hyperlink{sim_image_from_wave_8m_acb3ac767ec1048cf315487da2b577ca4}{wave} = fft2(wave.$\ast$carbon)
+\item 
+define the reciprocal space \hyperlink{sim_image_from_wave_8m_ae16de8b25c906d11f01b9f4d0b81a70b}{sampling}
+\item 
+\hyperlink{sim_image_from_wave_8m_a59650fdddef08cde1605e75fa4181c5e}{dky} = 1/(\hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny}$\ast$d\-Y)
+\item 
+\hyperlink{sim_image_from_wave_8m_adcbf6818ca1a5f06faf47e9f23063dc5}{k2} = \hyperlink{aberrations_8m_ae814a4b95d0215118e1ea731ae41185b}{fftshift}(kx.$^\wedge$2+ky.$^\wedge$2)
+\item 
+\hyperlink{sim_image_from_wave_8m_aaf40c223796354fb6b79c9ed047c513a}{phi} = atan2(\hyperlink{image_sim_8m_ae83a3dfda6520a0fe8f0dc112b82bdbc}{ky},\hyperlink{image_sim_8m_a7d62e13f9dba56dfbd9a08101e6bfd77}{kx})
+\item 
+clear \hyperlink{image_sim_8m_a7d62e13f9dba56dfbd9a08101e6bfd77}{kx} \hyperlink{image_sim_8m_ae83a3dfda6520a0fe8f0dc112b82bdbc}{ky} \hyperlink{sim_image_from_wave_8m_ac11faa037dc9050b7db352519f8f8440}{aperture} = \hyperlink{virtual_goniometer_8m_a658ea266fd3baee1bdd483b9117e9f54}{zeros}(\hyperlink{qmb_8m_a34efcbeb95e7c3e7e0050034d30c01cd}{size}(\hyperlink{sim_image_from_wave_8m_acb3ac767ec1048cf315487da2b577ca4}{wave}))
+\item 
+temporal coherence \hyperlink{sim_image_from_wave_8m_acd3d6bf79802fda5452b60a07bc8fc03}{envelope}
+\item 
+all units \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{sim_image_from_wave_8m_a74335ae40bc4ffab9fc80d95fee97208}{A} \hyperlink{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}{def} = \hyperlink{sim_image_from_wave_8m_ac14a938158345bed28242803677a8212}{def0}+(\hyperlink{sim_image_from_wave_8m_aedd72202f5fa11b5b301b347617895bb}{idf}-\/1)$\ast$\hyperlink{image_sim_8m_a131dfbed98a438571209fb0821f3d5ec}{def\-Step}
+\item 
+\hyperlink{sim_image_from_wave_8m_ab3d24876579c14d6de1789dcf8748b8e}{def\-Array} = \hyperlink{sim_image_from_wave_8m_ac14a938158345bed28242803677a8212}{def0} + \hyperlink{image_sim_8m_a131dfbed98a438571209fb0821f3d5ec}{def\-Step}$\ast$\mbox{[}0\-:\hyperlink{sim_image_from_wave_8m_a6982f38ee9865914f2fb8226037bd3c8}{Nimg}-\/1\mbox{]}
+\item 
+additional images fro alignment for \hyperlink{sim_image_from_wave_8m_aedd72202f5fa11b5b301b347617895bb}{idf}
+\item 
+\hyperlink{sim_image_from_wave_8m_a12a8932e3a6c30507e8db1e5f119806a}{Espat} = exp(-\/(pi$\ast$\hyperlink{virtual_goniometer_8m_a62197192f0fbf4e0675eb37be1c4c175}{alpha}$\ast$\hyperlink{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}{def}+pi$\ast$\hyperlink{virtual_goniometer_8m_a62197192f0fbf4e0675eb37be1c4c175}{alpha}$\ast$\hyperlink{wavelength_8m_ac74dc040fa5d0c030c0d25905d271f51}{lambda}$^\wedge$2$\ast$Cs.$\ast$\hyperlink{sim_image_from_wave_8m_adcbf6818ca1a5f06faf47e9f23063dc5}{k2}).$^\wedge$2.$\ast$\hyperlink{sim_image_from_wave_8m_adcbf6818ca1a5f06faf47e9f23063dc5}{k2})
+\item 
+\hyperlink{sim_image_from_wave_8m_a4805df3f93d2fd44d85d536abab5b7a8}{chi} = exp(-\/\hyperlink{_read_d_m3___matlab_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}$\ast$pi$\ast$(\hyperlink{wavelength_8m_ac74dc040fa5d0c030c0d25905d271f51}{lambda}$\ast$(\hyperlink{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}{def}+Astig.$\ast$cos(2$\ast$(\hyperlink{image_sim_8m_a06cb4ec95553375c06ca596fe1352937}{phi}-\/\hyperlink{sim_image_from_wave_8m_a6a2e4fbe5e7c5462dea38bed93169e5b}{Astig\-Phi}))).$\ast$\hyperlink{sim_image_from_wave_8m_adcbf6818ca1a5f06faf47e9f23063dc5}{k2}+0.\-5$\ast$\hyperlink{wavelength_8m_ac74dc040fa5d0c030c0d25905d271f51}{lambda}$^\wedge$3$\ast$Cs.$\ast$k2.$^\wedge$2))
+\item 
+\hyperlink{sim_image_from_wave_8m_a86d0d51ceb4bc3bd26707520f257a5a4}{img} = \hyperlink{fftw__allocator_8hpp_a3265f53b67af1612bd5c314cdce95c32}{abs}(ifft2(aperture.$\ast$wave.$\ast$chi.$\ast$Etemp.$\ast$\hyperlink{image_sim_8m_ac6ccae1666df2c1024de02dcc9cc833e}{Espat})).$^\wedge$2+0.\-02$\ast$randn(\hyperlink{qmb_8m_a34efcbeb95e7c3e7e0050034d30c01cd}{size}(\hyperlink{sim_image_from_wave_8m_acb3ac767ec1048cf315487da2b577ca4}{wave}))
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{qmb_8m_ad589399858397b7c05877f34c359ed55}{Display} \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} few \hyperlink{sim_image_from_wave_8m_ae96dd82fe30390e15166c14e3cb1e777}{figures}
+\item 
+axis \hyperlink{sim_image_from_wave_8m_afeaa7ecdd726aa1950ba61dc659eb561}{equal}
+\item 
+axis \hyperlink{sim_image_from_wave_8m_a1a71f5e406b211ed616173276484b78b}{tight}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sim_image_from_wave_8m_a74335ae40bc4ffab9fc80d95fee97208}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!A@{A}}
+\index{A@{A}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{A}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cs} {\bf in} A (
+\begin{DoxyParamCaption}
+\item[{1mm}]{ = {\ttfamily 1e7A}}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a74335ae40bc4ffab9fc80d95fee97208}
+\hypertarget{sim_image_from_wave_8m_a3b69f23425e7c4d37f9381a15da540ee}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!aperture@{aperture}}
+\index{aperture@{aperture}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{aperture}]{\setlength{\rightskip}{0pt plus 5cm}aperture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a3b69f23425e7c4d37f9381a15da540ee}
+\hypertarget{sim_image_from_wave_8m_a0e567a6e32240aa0eaf37486cbd9a311}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!Astig@{Astig}}
+\index{Astig@{Astig}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{Astig}]{\setlength{\rightskip}{0pt plus 5cm}id Astig (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{sim_image_from_wave_8m_a0e567a6e32240aa0eaf37486cbd9a311}
+\hypertarget{sim_image_from_wave_8m_ad0fbb0f36386dc50c313aebc4694c81c}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!binwrite2\-D@{binwrite2\-D}}
+\index{binwrite2\-D@{binwrite2\-D}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{binwrite2\-D}]{\setlength{\rightskip}{0pt plus 5cm}binwrite2\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf img}}]{, }
+\item[{{\bf file\-Name}}]{, }
+\item[{0}]{, }
+\item[{{\bf t}}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_ad0fbb0f36386dc50c313aebc4694c81c}
+\hypertarget{sim_image_from_wave_8m_af56c95f61621bf9779137b38fcb3e0fd}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!colormap@{colormap}}
+\index{colormap@{colormap}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{colormap}]{\setlength{\rightskip}{0pt plus 5cm}colormap (
+\begin{DoxyParamCaption}
+\item[{'gray'}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_af56c95f61621bf9779137b38fcb3e0fd}
+\hypertarget{sim_image_from_wave_8m_a656d5e61939acabefd422775c5d110f1}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!defocus@{defocus}}
+\index{defocus@{defocus}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{defocus}]{\setlength{\rightskip}{0pt plus 5cm}basis of defocus (
+\begin{DoxyParamCaption}
+\item[{Scherzer}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a656d5e61939acabefd422775c5d110f1}
+\hypertarget{sim_image_from_wave_8m_a7dc8886bf0ca02f39e3d5a76c0ebcaa4}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{fprintf}]{\setlength{\rightskip}{0pt plus 5cm}fprintf (
+\begin{DoxyParamCaption}
+\item[{'Focal spread\-:\%g A\textbackslash{}n'}]{, }
+\item[{{\bf Df}}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a7dc8886bf0ca02f39e3d5a76c0ebcaa4}
+\hypertarget{sim_image_from_wave_8m_ab711138fbc8d64d69b5316d62ba220f0}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{fprintf}]{\setlength{\rightskip}{0pt plus 5cm}fprintf (
+\begin{DoxyParamCaption}
+\item[{'dx\-:\%}]{g, }
+\item[{dy\-:\%}]{g, }
+\item[{thickness\-:\%g\textbackslash{}n'}]{, }
+\item[{d\-X}]{, }
+\item[{d\-Y}]{, }
+\item[{{\bf t}}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_ab711138fbc8d64d69b5316d62ba220f0}
+\hypertarget{sim_image_from_wave_8m_abf371cc06f10c0f6b7f9b77c506ca183}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{fprintf}]{\setlength{\rightskip}{0pt plus 5cm}fprintf (
+\begin{DoxyParamCaption}
+\item[{'Image\%{\bf d}({\bf def}=\%gnm)\-: '}]{, }
+\item[{{\bf idf}}]{, }
+\item[{{\bf def}/}]{10}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_abf371cc06f10c0f6b7f9b77c506ca183}
+\hypertarget{sim_image_from_wave_8m_a97348fbfc3835d034b18d2a3ed5fe6ee}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!if@{if}}
+\index{if@{if}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a97348fbfc3835d034b18d2a3ed5fe6ee}
+\hypertarget{sim_image_from_wave_8m_a935ac73cb7bc7883eb826f6f1d5400a8}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!if@{if}}
+\index{if@{if}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}Save {\bf image} if (
+\begin{DoxyParamCaption}
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a935ac73cb7bc7883eb826f6f1d5400a8}
+\hypertarget{sim_image_from_wave_8m_aa83fd3c6e35fb2262f9ed2134a4bfd41}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!imagesc@{imagesc}}
+\index{imagesc@{imagesc}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{imagesc}]{\setlength{\rightskip}{0pt plus 5cm}imagesc (
+\begin{DoxyParamCaption}
+\item[{d\-Y $\ast$}]{\mbox{[}0\-:\-Ny-\/1\mbox{]}, }
+\item[{d\-X $\ast$}]{\mbox{[}0\-:\-Nx-\/1\mbox{]}, }
+\item[{{\bf abs}({\bf wave})}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_aa83fd3c6e35fb2262f9ed2134a4bfd41}
+\hypertarget{sim_image_from_wave_8m_a9dded133f3736d53ec1c57e9ea9cc767}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!imagesc@{imagesc}}
+\index{imagesc@{imagesc}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{imagesc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} {\bf Display} {\bf a} few imagesc (
+\begin{DoxyParamCaption}
+\item[{d\-Y $\ast$}]{\mbox{[}0\-:\-Ny-\/1\mbox{]}, }
+\item[{d\-X $\ast$}]{\mbox{[}0\-:\-Nx-\/1\mbox{]}, }
+\item[{{\bf img}}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a9dded133f3736d53ec1c57e9ea9cc767}
+\hypertarget{sim_image_from_wave_8m_a7a874549a590291be0eebb879a12b9ea}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!imagesc@{imagesc}}
+\index{imagesc@{imagesc}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{imagesc}]{\setlength{\rightskip}{0pt plus 5cm}imagesc (
+\begin{DoxyParamCaption}
+\item[{{\bf dky} $\ast$}]{\mbox{[}-\/\-Ny/2\-:\-Ny/2-\/1\mbox{]}, }
+\item[{{\bf dkx} $\ast$}]{\mbox{[}-\/\-Nx/2\-:\-Nx/2-\/1\mbox{]}, }
+\item[{log(1+{\bf fftshift}({\bf img}))}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a7a874549a590291be0eebb879a12b9ea}
+\hypertarget{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!img@{img}}
+\index{img@{img}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{img}]{\setlength{\rightskip}{0pt plus 5cm}img (
+\begin{DoxyParamCaption}
+\item[{1}]{, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}
+\hypertarget{sim_image_from_wave_8m_a4c8e7c568925ce5dd2b928882005e08d}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!large@{large}}
+\index{large@{large}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{large}]{\setlength{\rightskip}{0pt plus 5cm}objective {\bf aperture} {\bf in} {\bf A} {\bf set} very large (
+\begin{DoxyParamCaption}
+\item[{0.}]{1\-A}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{sim_image_from_wave_8m_a4c8e7c568925ce5dd2b928882005e08d}
+\hypertarget{sim_image_from_wave_8m_a1726e1f9cd2d2130d723ffa5bab5eacf}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!legend@{legend}}
+\index{legend@{legend}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{legend}]{\setlength{\rightskip}{0pt plus 5cm}legend (
+\begin{DoxyParamCaption}
+\item[{'temporal coherence'}]{, }
+\item[{'spatial coherence'}]{, }
+\item[{'{\bf C\-T\-F}'}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a1726e1f9cd2d2130d723ffa5bab5eacf}
+\hypertarget{sim_image_from_wave_8m_a3341a2f8b0a2b23e6ee1c562cf5a0cc1}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!plot@{plot}}
+\index{plot@{plot}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}plot (
+\begin{DoxyParamCaption}
+\item[{{\bf dkx} $\ast$}]{\mbox{[}-\/\-Nx/2\-:\-Nx/2-\/1\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a3341a2f8b0a2b23e6ee1c562cf5a0cc1}
+\hypertarget{sim_image_from_wave_8m_a38bcf55414b93eac67018aee91bed97c}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!spread@{spread}}
+\index{spread@{spread}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{spread}]{\setlength{\rightskip}{0pt plus 5cm}relative energy spread (
+\begin{DoxyParamCaption}
+\item[{0.\-4e\-V at}]{200k\-V}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{sim_image_from_wave_8m_a38bcf55414b93eac67018aee91bed97c}
+\hypertarget{sim_image_from_wave_8m_aaaa6eb6a7a4c5af057b011e096237df7}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!subplot@{subplot}}
+\index{subplot@{subplot}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{subplot}]{\setlength{\rightskip}{0pt plus 5cm}subplot (
+\begin{DoxyParamCaption}
+\item[{2}]{, }
+\item[{2}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_aaaa6eb6a7a4c5af057b011e096237df7}
+\hypertarget{sim_image_from_wave_8m_a3549364daae0112d3a892a326b72d359}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!title@{title}}
+\index{title@{title}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}title (
+\begin{DoxyParamCaption}
+\item[{{\bf sprintf}('{\bf def}=\%gnm', {\bf def}/10)}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a3549364daae0112d3a892a326b72d359}
+\hypertarget{sim_image_from_wave_8m_a60baf35af99b5bbeefda8d670599dc61}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!title@{title}}
+\index{title@{title}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}title (
+\begin{DoxyParamCaption}
+\item[{'Diffractogram'}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a60baf35af99b5bbeefda8d670599dc61}
+\hypertarget{sim_image_from_wave_8m_a44bef1002aae03ce551200278fa06223}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!title@{title}}
+\index{title@{title}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}{\bf subplot} (2,2,4) {\bf imagesc}({\bf dky}$\ast$\mbox{[}-\/{\bf Ny}/2 title (
+\begin{DoxyParamCaption}
+\item[{'2\-D transfer function(\-Im\mbox{[}chi(q)\mbox{]})'}]{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_a44bef1002aae03ce551200278fa06223}
+\hypertarget{sim_image_from_wave_8m_ac5490bd91d39e9238e37ab49385f108d}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!xlim@{xlim}}
+\index{xlim@{xlim}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{xlim}]{\setlength{\rightskip}{0pt plus 5cm}xlim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{sim_image_from_wave_8m_ac5490bd91d39e9238e37ab49385f108d}
+
+
+\subsection{Variable Documentation}
+\hypertarget{sim_image_from_wave_8m_a2d779e6c55dd0a8494a4ca9ed8714204}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!A@{A}}
+\index{A@{A}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{A}]{\setlength{\rightskip}{0pt plus 5cm}Cc {\bf in} A}}\label{sim_image_from_wave_8m_a2d779e6c55dd0a8494a4ca9ed8714204}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= 1e7A
+deltaE\_E = 0.8/300\hyperlink{qmb_8m_ada985816ea79ac4451f0f552d48090e5}{e3}
+\end{DoxyCode}
+
+
+Definition at line 16 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_ac11faa037dc9050b7db352519f8f8440}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!aperture@{aperture}}
+\index{aperture@{aperture}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{aperture}]{\setlength{\rightskip}{0pt plus 5cm}clear {\bf kx} {\bf ky} aperture = {\bf zeros}({\bf size}({\bf wave}))}}\label{sim_image_from_wave_8m_ac11faa037dc9050b7db352519f8f8440}
+
+
+Definition at line 57 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_a6a2e4fbe5e7c5462dea38bed93169e5b}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!Astig\-Phi@{Astig\-Phi}}
+\index{Astig\-Phi@{Astig\-Phi}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{Astig\-Phi}]{\setlength{\rightskip}{0pt plus 5cm}astigmatism {\bf in} {\bf A} Astig\-Phi = 30$\ast$pi/180}}\label{sim_image_from_wave_8m_a6a2e4fbe5e7c5462dea38bed93169e5b}
+
+
+Definition at line 20 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_a4805df3f93d2fd44d85d536abab5b7a8}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!chi@{chi}}
+\index{chi@{chi}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{chi}]{\setlength{\rightskip}{0pt plus 5cm}chi = exp(-\/{\bf i}$\ast$pi$\ast$({\bf lambda}$\ast$({\bf def}+Astig.$\ast$cos(2$\ast$({\bf phi}-\/{\bf Astig\-Phi}))).$\ast${\bf k2}+0.\-5$\ast${\bf lambda}$^\wedge$3$\ast$Cs.$\ast$k2.$^\wedge$2))}}\label{sim_image_from_wave_8m_a4805df3f93d2fd44d85d536abab5b7a8}
+
+
+Definition at line 70 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_a5afac14ac860987466647e55f28eca33}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!compact@{compact}}
+\index{compact@{compact}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{compact}]{\setlength{\rightskip}{0pt plus 5cm}Through focus series reconstruction {\bf file} through\-Focus {\bf m} format compact}}\label{sim_image_from_wave_8m_a5afac14ac860987466647e55f28eca33}
+
+
+Definition at line 4 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!def@{def}}
+\index{def@{def}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{def}]{\setlength{\rightskip}{0pt plus 5cm}all units {\bf in} {\bf A} def = {\bf def0}+({\bf idf}-\/1)$\ast${\bf def\-Step}}}\label{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}
+
+
+Definition at line 64 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_ac14a938158345bed28242803677a8212}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!def0@{def0}}
+\index{def0@{def0}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{def0}]{\setlength{\rightskip}{0pt plus 5cm}def0}}\label{sim_image_from_wave_8m_ac14a938158345bed28242803677a8212}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= -sqrt(1.5*\hyperlink{image_sim_8m_a6e1ec50d40620688cd6376e335851fa5}{Cs}*\hyperlink{sim_image_from_wave_8m_aca36b09d6e71a60cfa3837d7e24c07ca}{lambda})       % basis of \hyperlink{sim_image_from_wave_8m_a656d5e61939acabefd422775c5d110f1}{defocus} (extended Scherzer)
+% \hyperlink{sim_image_from_wave_8m_ac14a938158345bed28242803677a8212}{def0} = -sqrt(\hyperlink{image_sim_8m_a6e1ec50d40620688cd6376e335851fa5}{Cs}*\hyperlink{sim_image_from_wave_8m_aca36b09d6e71a60cfa3837d7e24c07ca}{lambda})       % basis of \hyperlink{sim_image_from_wave_8m_a656d5e61939acabefd422775c5d110f1}{defocus} (Scherzer)
+\hyperlink{sim_image_from_wave_8m_ac14a938158345bed28242803677a8212}{def0} = 200
+\end{DoxyCode}
+
+
+Definition at line 26 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_ab3d24876579c14d6de1789dcf8748b8e}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!def\-Array@{def\-Array}}
+\index{def\-Array@{def\-Array}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{def\-Array}]{\setlength{\rightskip}{0pt plus 5cm}regular {\bf defocus} {\bf array} def\-Array = {\bf def0} + {\bf def\-Step}$\ast$\mbox{[}0\-:{\bf Nimg}-\/1\mbox{]}}}\label{sim_image_from_wave_8m_ab3d24876579c14d6de1789dcf8748b8e}
+
+
+Definition at line 65 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_a38ade178ddc6a845e495916d25738bf2}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!Df@{Df}}
+\index{Df@{Df}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{Df}]{\setlength{\rightskip}{0pt plus 5cm}{\bf angle} of astigmatism Df = Cc$\ast$delta\-E\-\_\-\-E}}\label{sim_image_from_wave_8m_a38ade178ddc6a845e495916d25738bf2}
+
+
+Definition at line 23 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_aedf03b9517092eee7dae1588bbc00e19}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!directory@{directory}}
+\index{directory@{directory}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{directory}]{\setlength{\rightskip}{0pt plus 5cm}directory = 'sphere1'}}\label{sim_image_from_wave_8m_aedf03b9517092eee7dae1588bbc00e19}
+
+
+Definition at line 7 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_a59650fdddef08cde1605e75fa4181c5e}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!dky@{dky}}
+\index{dky@{dky}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{dky}]{\setlength{\rightskip}{0pt plus 5cm}dky = 1/({\bf Ny}$\ast$d\-Y)}}\label{sim_image_from_wave_8m_a59650fdddef08cde1605e75fa4181c5e}
+
+
+Definition at line 49 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_acd3d6bf79802fda5452b60a07bc8fc03}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!envelope@{envelope}}
+\index{envelope@{envelope}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{envelope}]{\setlength{\rightskip}{0pt plus 5cm}temporal coherence envelope}}\label{sim_image_from_wave_8m_acd3d6bf79802fda5452b60a07bc8fc03}
+
+
+Definition at line 62 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_afeaa7ecdd726aa1950ba61dc659eb561}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!equal@{equal}}
+\index{equal@{equal}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}axis equal}}\label{sim_image_from_wave_8m_afeaa7ecdd726aa1950ba61dc659eb561}
+
+
+Definition at line 88 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_a12a8932e3a6c30507e8db1e5f119806a}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!Espat@{Espat}}
+\index{Espat@{Espat}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{Espat}]{\setlength{\rightskip}{0pt plus 5cm}Espat = exp(-\/(pi$\ast${\bf alpha}$\ast${\bf def}+pi$\ast${\bf alpha}$\ast${\bf lambda}$^\wedge$2$\ast$Cs.$\ast${\bf k2}).$^\wedge$2.$\ast${\bf k2})}}\label{sim_image_from_wave_8m_a12a8932e3a6c30507e8db1e5f119806a}
+
+
+Definition at line 69 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_ae96dd82fe30390e15166c14e3cb1e777}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!figures@{figures}}
+\index{figures@{figures}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{figures}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} {\bf Display} {\bf a} few figures}}\label{sim_image_from_wave_8m_ae96dd82fe30390e15166c14e3cb1e777}
+
+
+Definition at line 86 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_aedd72202f5fa11b5b301b347617895bb}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!idf@{idf}}
+\index{idf@{idf}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{idf}]{\setlength{\rightskip}{0pt plus 5cm}additional images fro alignment for idf}}\label{sim_image_from_wave_8m_aedd72202f5fa11b5b301b347617895bb}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=1:\hyperlink{convert2cfg_8m_aabbdf768a12d7ff279a05a15db19fa61}{length}(\hyperlink{sim_image_from_wave_8m_ab3d24876579c14d6de1789dcf8748b8e}{defArray})
+    \hyperlink{sim_image_from_wave_8m_a72b6b8e83430abf007f20aeae4dc2f74}{def} = \hyperlink{sim_image_from_wave_8m_ab3d24876579c14d6de1789dcf8748b8e}{defArray}(\hyperlink{sim_image_from_wave_8m_aedd72202f5fa11b5b301b347617895bb}{idf})
+\end{DoxyCode}
+
+
+Definition at line 67 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_a86d0d51ceb4bc3bd26707520f257a5a4}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!img@{img}}
+\index{img@{img}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{img}]{\setlength{\rightskip}{0pt plus 5cm}img = {\bf abs}(ifft2(aperture.$\ast$wave.$\ast$chi.$\ast$Etemp.$\ast${\bf Espat})).$^\wedge$2+0.\-02$\ast$randn({\bf size}({\bf wave}))}}\label{sim_image_from_wave_8m_a86d0d51ceb4bc3bd26707520f257a5a4}
+
+
+Definition at line 73 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_adcbf6818ca1a5f06faf47e9f23063dc5}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!k2@{k2}}
+\index{k2@{k2}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{k2}]{\setlength{\rightskip}{0pt plus 5cm}k2 = {\bf fftshift}(kx.$^\wedge$2+ky.$^\wedge$2)}}\label{sim_image_from_wave_8m_adcbf6818ca1a5f06faf47e9f23063dc5}
+
+
+Definition at line 52 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_aca36b09d6e71a60cfa3837d7e24c07ca}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!lambda@{lambda}}
+\index{lambda@{lambda}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{lambda}]{\setlength{\rightskip}{0pt plus 5cm}lambda = wavelength(300)}}\label{sim_image_from_wave_8m_aca36b09d6e71a60cfa3837d7e24c07ca}
+
+
+Definition at line 10 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_a6982f38ee9865914f2fb8226037bd3c8}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!Nimg@{Nimg}}
+\index{Nimg@{Nimg}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{Nimg}]{\setlength{\rightskip}{0pt plus 5cm}Nimg = 20}}\label{sim_image_from_wave_8m_a6982f38ee9865914f2fb8226037bd3c8}
+
+
+Definition at line 30 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!parameters@{parameters}}
+\index{parameters@{parameters}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{parameters}]{\setlength{\rightskip}{0pt plus 5cm}electron wavelength for beam energy Microscope parameters}}\label{sim_image_from_wave_8m_acb6d7970e73c00effe1d16e23142f11d}
+
+
+Definition at line 14 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_aaf40c223796354fb6b79c9ed047c513a}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!phi@{phi}}
+\index{phi@{phi}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{phi}]{\setlength{\rightskip}{0pt plus 5cm}phi = atan2({\bf ky},{\bf kx})}}\label{sim_image_from_wave_8m_aaf40c223796354fb6b79c9ed047c513a}
+
+
+Definition at line 53 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_a893e87b43fb9e0ad1de60d41fb3e338b}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!plot\-Flag@{plot\-Flag}}
+\index{plot\-Flag@{plot\-Flag}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{plot\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}plot\-Flag = 1}}\label{sim_image_from_wave_8m_a893e87b43fb9e0ad1de60d41fb3e338b}
+
+
+Definition at line 32 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_ae16de8b25c906d11f01b9f4d0b81a70b}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!sampling@{sampling}}
+\index{sampling@{sampling}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{sampling}]{\setlength{\rightskip}{0pt plus 5cm}define the reciprocal space sampling}}\label{sim_image_from_wave_8m_ae16de8b25c906d11f01b9f4d0b81a70b}
+
+
+Definition at line 48 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_aa329f2975fbe76cfdf70a27f88bfc0ef}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!save\-Memory@{save\-Memory}}
+\index{save\-Memory@{save\-Memory}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{save\-Memory}]{\setlength{\rightskip}{0pt plus 5cm}save\-Memory = 2}}\label{sim_image_from_wave_8m_aa329f2975fbe76cfdf70a27f88bfc0ef}
+
+
+Definition at line 5 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_aa092e314c697a00facfe496a7779b61b}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!surface@{surface}}
+\index{surface@{surface}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{surface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Add some carbon to the specimen surface}}\label{sim_image_from_wave_8m_aa092e314c697a00facfe496a7779b61b}
+
+
+Definition at line 43 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_a1a71f5e406b211ed616173276484b78b}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!tight@{tight}}
+\index{tight@{tight}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{tight}]{\setlength{\rightskip}{0pt plus 5cm}axis tight}}\label{sim_image_from_wave_8m_a1a71f5e406b211ed616173276484b78b}
+
+
+Definition at line 88 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_acb3ac767ec1048cf315487da2b577ca4}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!wave@{wave}}
+\index{wave@{wave}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{wave}]{\setlength{\rightskip}{0pt plus 5cm}wave = fft2(wave.$\ast$carbon)}}\label{sim_image_from_wave_8m_acb3ac767ec1048cf315487da2b577ca4}
+
+
+Definition at line 44 of file sim\-Image\-From\-Wave.\-m.
+
+\hypertarget{sim_image_from_wave_8m_a4fc3031161d6f3c3fa0a16037c4cfe71}{\index{sim\-Image\-From\-Wave.\-m@{sim\-Image\-From\-Wave.\-m}!wave\-Name@{wave\-Name}}
+\index{wave\-Name@{wave\-Name}!simImageFromWave.m@{sim\-Image\-From\-Wave.\-m}}
+\subsubsection[{wave\-Name}]{\setlength{\rightskip}{0pt plus 5cm}wave\-Name = {\bf sprintf}('\%{\bf s}/{\bf wave.\-img}',{\bf directory})}}\label{sim_image_from_wave_8m_a4fc3031161d6f3c3fa0a16037c4cfe71}
+
+
+Definition at line 34 of file sim\-Image\-From\-Wave.\-m.
+

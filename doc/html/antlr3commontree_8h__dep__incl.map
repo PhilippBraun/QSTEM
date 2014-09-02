@@ -1,0 +1,32 @@
+<map id="libs/structure_IO/ucif/antlr3/include/antlr3commontree.h" name="libs/structure_IO/ucif/antlr3/include/antlr3commontree.h">
+<area shape="rect" id="node2" href="$antlr3commontreeadaptor_8h.html" title="libs/structure_IO/ucif\l/antlr3/include/antlr3commontreeadaptor.h" alt="" coords="251,97,516,138"/>
+<area shape="rect" id="node16" href="$antlr3commontreenodestream_8h.html" title="libs/structure_IO/ucif\l/antlr3/include/antlr3commontreenodestream.h" alt="" coords="863,187,1153,229"/>
+<area shape="rect" id="node31" href="$antlr3commontree_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3commontree.c" alt="" coords="818,97,1016,138"/>
+<area shape="rect" id="node3" href="$antlr3_8h.html" title="libs/structure_IO/ucif\l/antlr3/include/antlr3.h" alt="" coords="706,459,856,501"/>
+<area shape="rect" id="node24" href="$antlr3rewritestreams_8h.html" title="libs/structure_IO/ucif\l/antlr3/include/antlr3rewritestreams.h" alt="" coords="111,369,347,410"/>
+<area shape="rect" id="node30" href="$antlr3commontreeadaptor_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3commontreeadaptor.c" alt="" coords="104,187,347,229"/>
+<area shape="rect" id="node4" href="$antlr3collections_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3collections.c" alt="" coords="5,550,195,591"/>
+<area shape="rect" id="node5" href="$antlr3commontoken_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3commontoken.c" alt="" coords="219,550,428,591"/>
+<area shape="rect" id="node6" href="$antlr3debughandlers_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3debughandlers.c" alt="" coords="453,550,663,591"/>
+<area shape="rect" id="node7" href="$antlr3encodings_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3encodings.c" alt="" coords="688,550,875,591"/>
+<area shape="rect" id="node8" href="$antlr3filestream_8c.html" title="The ANTLR3 C filestream is used when the source character stream is a filesystem based input set and ..." alt="" coords="899,550,1083,591"/>
+<area shape="rect" id="node9" href="$cif_lexer_8h.html" title="libs/structure_IO/ucif\l/cifLexer.h" alt="" coords="1301,550,1443,591"/>
+<area shape="rect" id="node13" href="$cif_parser_8h.html" title="libs/structure_IO/ucif\l/cifParser.h" alt="" coords="1107,550,1249,591"/>
+<area shape="rect" id="node10" href="$cif_lexer_8cpp.html" title="libs/structure_IO/ucif\l/cifLexer.cpp" alt="" coords="1301,641,1443,682"/>
+<area shape="rect" id="node11" href="$parser_8h.html" title="libs/structure_IO/ucif\l/parser.h" alt="" coords="1191,731,1333,773"/>
+<area shape="rect" id="node12" href="$main_8cpp.html" title="libs/structure_IO/ucif\l/examples/main.cpp" alt="" coords="1191,822,1333,863"/>
+<area shape="rect" id="node14" href="$cif_parser_8cpp.html" title="libs/structure_IO/ucif\l/cifParser.cpp" alt="" coords="1082,641,1224,682"/>
+<area shape="rect" id="node15" href="$utils_8h.html" title="libs/structure_IO/ucif\l/utils.h" alt="" coords="915,641,1057,682"/>
+<area shape="rect" id="node17" href="$antlr3baserecognizer_8h.html" title="libs/structure_IO/ucif\l/antlr3/include/antlr3baserecognizer.h" alt="" coords="889,278,1127,319"/>
+<area shape="rect" id="node26" href="$antlr3treeparser_8h.html" title="libs/structure_IO/ucif\l/antlr3/include/antlr3treeparser.h" alt="" coords="1352,369,1560,410"/>
+<area shape="rect" id="node29" href="$antlr3commontreenodestream_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3commontreenodestream.c" alt="" coords="1152,278,1419,319"/>
+<area shape="rect" id="node18" href="$antlr3cyclicdfa_8h.html" title="libs/structure_IO/ucif\l/antlr3/include/antlr3cyclicdfa.h" alt="" coords="421,369,624,410"/>
+<area shape="rect" id="node20" href="$antlr3lexer_8h.html" title="libs/structure_IO/ucif\l/antlr3/include/antlr3lexer.h" alt="" coords="939,369,1117,410"/>
+<area shape="rect" id="node22" href="$antlr3parser_8h.html" title="libs/structure_IO/ucif\l/antlr3/include/antlr3parser.h" alt="" coords="1141,369,1328,410"/>
+<area shape="rect" id="node28" href="$antlr3baserecognizer_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3baserecognizer.c" alt="" coords="649,369,863,410"/>
+<area shape="rect" id="node19" href="$antlr3cyclicdfa_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3cyclicdfa.c" alt="" coords="433,459,612,501"/>
+<area shape="rect" id="node21" href="$antlr3lexer_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3lexer.c" alt="" coords="951,459,1104,501"/>
+<area shape="rect" id="node23" href="$antlr3parser_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3parser.c" alt="" coords="1153,459,1316,501"/>
+<area shape="rect" id="node25" href="$antlr3rewritestreams_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3rewritestreams.c" alt="" coords="123,459,336,501"/>
+<area shape="rect" id="node27" href="$antlr3treeparser_8c.html" title="libs/structure_IO/ucif\l/antlr3/src/antlr3treeparser.c" alt="" coords="1363,459,1548,501"/>
+</map>

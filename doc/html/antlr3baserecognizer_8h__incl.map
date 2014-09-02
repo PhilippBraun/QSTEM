@@ -1,0 +1,25 @@
+<map id="libs/structure_IO/ucif/antlr3/include/antlr3baserecognizer.h" name="libs/structure_IO/ucif/antlr3/include/antlr3baserecognizer.h">
+<area shape="rect" id="node2" href="$antlr3defs_8h.html" title="antlr3defs.h" alt="" coords="1276,768,1367,795"/>
+<area shape="rect" id="node8" href="$antlr3exception_8h.html" title="antlr3exception.h" alt="" coords="2034,171,2155,197"/>
+<area shape="rect" id="node9" href="$antlr3input_8h.html" title="antlr3input.h" alt="" coords="179,395,272,421"/>
+<area shape="rect" id="node13" href="$antlr3commontoken_8h.html" title="Defines the interface for a common token. " alt="" coords="320,544,467,571"/>
+<area shape="rect" id="node15" href="$antlr3tokenstream_8h.html" title="antlr3tokenstream.h" alt="" coords="486,320,623,347"/>
+<area shape="rect" id="node16" href="$antlr3debugeventlistener_8h.html" title="antlr3debugeventlistener.h" alt="" coords="1150,395,1324,421"/>
+<area shape="rect" id="node18" href="$antlr3commontreenodestream_8h.html" title="antlr3commontreenodestream.h" alt="" coords="1137,171,1343,197"/>
+<area shape="rect" id="node22" href="$antlr3recognizersharedstate_8h.html" title="antlr3recognizersharedstate.h" alt="" coords="1714,619,1907,645"/>
+<area shape="rect" id="node23" href="$antlr3lexer_8h.html" title="antlr3lexer.h" alt="" coords="308,245,401,272"/>
+<area shape="rect" id="node24" href="$antlr3parser_8h.html" title="antlr3parser.h" alt="" coords="1764,96,1865,123"/>
+<area shape="rect" id="node25" href="$antlr3treeparser_8h.html" title="antlr3treeparser.h" alt="" coords="1436,96,1559,123"/>
+<area shape="rect" id="node3" href="$antlr3errors_8h.html" title="antlr3errors.h" alt="" coords="1407,843,1505,869"/>
+<area shape="rect" id="node4" href="$antlr3config_8h.html" title="antlr3config.h" alt="" coords="1530,843,1629,869"/>
+<area shape="rect" id="node6" href="$antlr3interfaces_8h.html" title="antlr3interfaces.h" alt="" coords="1260,843,1383,869"/>
+<area shape="rect" id="node7" href="$antlr3convertutf_8h.html" title="antlr3convertutf.h" alt="" coords="1028,843,1151,869"/>
+<area shape="rect" id="node10" href="$antlr3string_8h.html" title="antlr3string.h" alt="" coords="1013,544,1109,571"/>
+<area shape="rect" id="node14" href="$antlr3intstream_8h.html" title="antlr3intstream.h" alt="" coords="398,469,516,496"/>
+<area shape="rect" id="node11" href="$antlr3collections_8h.html" title="antlr3collections.h" alt="" coords="998,619,1124,645"/>
+<area shape="rect" id="node12" href="$antlr3bitset_8h.html" title="antlr3bitset.h" alt="" coords="1013,693,1109,720"/>
+<area shape="rect" id="node17" href="$antlr3basetree_8h.html" title="antlr3basetree.h" alt="" coords="1200,469,1315,496"/>
+<area shape="rect" id="node19" href="$antlr3commontreeadaptor_8h.html" title="antlr3commontreeadaptor.h" alt="" coords="1130,245,1309,272"/>
+<area shape="rect" id="node21" href="$antlr3commontree_8h.html" title="antlr3commontree.h" alt="" coords="1349,395,1485,421"/>
+<area shape="rect" id="node20" href="$antlr3basetreeadaptor_8h.html" title="antlr3basetreeadaptor.h" alt="" coords="1033,320,1191,347"/>
+</map>

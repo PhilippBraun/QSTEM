@@ -1,0 +1,82 @@
+\hypertarget{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct}{\section{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct Struct Reference}
+\label{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct}\index{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct}}
+}
+
+
+{\ttfamily \#include $<$antlr3collections.\-h$>$}
+
+
+
+Collaboration diagram for A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{antlr3interfaces_8h_a8fd297514ac4bb022d25b65da9954adb}{p\-A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-T\-A\-B\-L\-E} \hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_ac6f3d9cc871f25ae1f009a3c816721a4}{table}
+\item 
+\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} \hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_ad53b9a754de26c4fba1c9c6379279c65}{bucket}
+\item 
+\hyperlink{antlr3interfaces_8h_a23202440c7441d8812a77e62318aafc9}{p\-A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y} \hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_a0d890c54d35efa0166d2d780c08e6e57}{entry}
+\item 
+int($\ast$ \hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_a2d8768bcca37e77b64cc9ab2651ce134}{next} )(struct \hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct}{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct} $\ast$en, \hyperlink{antlr3collections_8h_a1ee403fb57021487a3ed534abe05fb2a}{p\-A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-K\-E\-Y} $\ast$key, void $\ast$$\ast$data)
+\item 
+void($\ast$ \hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_ab6e60503e41b2e8c95e3edd5a23e76aa}{free} )(struct \hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct}{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct} $\ast$\hyperlink{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_ac6f3d9cc871f25ae1f009a3c816721a4}{table})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Internal structure representing an enumeration of a table. This is returned by antlr3\-Enumeration() Allows the programmer to traverse the table in hash order without knowing what is in the actual table.
+
+Note that it is up to the caller to ensure that the table structure does not change in the hash bucket that is currently being enumerated as this structure just tracks the next pointers in the bucket series. 
+
+Definition at line 157 of file antlr3collections.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_ad53b9a754de26c4fba1c9c6379279c65}{\index{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct}!bucket@{bucket}}
+\index{bucket@{bucket}!ANTLR3_HASH_ENUM_struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct}}
+\subsubsection[{bucket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct\-::bucket}}\label{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_ad53b9a754de26c4fba1c9c6379279c65}
+
+
+Definition at line 165 of file antlr3collections.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_a0d890c54d35efa0166d2d780c08e6e57}{\index{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct}!entry@{entry}}
+\index{entry@{entry}!ANTLR3_HASH_ENUM_struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct}}
+\subsubsection[{entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-T\-R\-Y} A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct\-::entry}}\label{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_a0d890c54d35efa0166d2d780c08e6e57}
+
+
+Definition at line 169 of file antlr3collections.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_ab6e60503e41b2e8c95e3edd5a23e76aa}{\index{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct}!free@{free}}
+\index{free@{free}!ANTLR3_HASH_ENUM_struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct}}
+\subsubsection[{free}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct\-::free)(struct {\bf A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct} $\ast${\bf table})}}\label{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_ab6e60503e41b2e8c95e3edd5a23e76aa}
+
+
+Definition at line 174 of file antlr3collections.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_a2d8768bcca37e77b64cc9ab2651ce134}{\index{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct}!next@{next}}
+\index{next@{next}!ANTLR3_HASH_ENUM_struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct\-::next)(struct {\bf A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct} $\ast$en, {\bf p\-A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-K\-E\-Y} $\ast$key, void $\ast$$\ast$data)}}\label{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_a2d8768bcca37e77b64cc9ab2651ce134}
+
+
+Definition at line 173 of file antlr3collections.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_ac6f3d9cc871f25ae1f009a3c816721a4}{\index{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct}!table@{table}}
+\index{table@{table}!ANTLR3_HASH_ENUM_struct@{A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct}}
+\subsubsection[{table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-T\-A\-B\-L\-E} A\-N\-T\-L\-R3\-\_\-\-H\-A\-S\-H\-\_\-\-E\-N\-U\-M\-\_\-struct\-::table}}\label{struct_a_n_t_l_r3___h_a_s_h___e_n_u_m__struct_ac6f3d9cc871f25ae1f009a3c816721a4}
+
+
+Definition at line 161 of file antlr3collections.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+libs/structure\-\_\-\-I\-O/ucif/antlr3/include/\hyperlink{antlr3collections_8h}{antlr3collections.\-h}\end{DoxyCompactItemize}

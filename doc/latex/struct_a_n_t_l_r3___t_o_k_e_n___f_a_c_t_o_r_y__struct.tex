@@ -1,0 +1,130 @@
+\hypertarget{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct}{\section{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct Struct Reference}
+\label{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct}\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}}
+}
+
+
+A\-N\-T\-L\-R3 Token factory interface to create lots of tokens efficiently rather than creating and freeing lots of little bits of memory.  
+
+
+
+
+{\ttfamily \#include $<$antlr3commontoken.\-h$>$}
+
+
+
+Collaboration diagram for A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{antlr3interfaces_8h_adaa6df9cbf0cd7ab37fd545520ff299b}{p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N} $\ast$ \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_ab9e726d32971c19670422fc957a4e224}{pools}
+\item 
+\hyperlink{antlr3defs_8h_a6faef5c4687f8eb633d2aefea93973ca}{A\-N\-T\-L\-R3\-\_\-\-I\-N\-T32} \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_affb2e4b787902103b05789ea9e6df0b6}{this\-Pool}
+\item 
+\hyperlink{antlr3defs_8h_a6faef5c4687f8eb633d2aefea93973ca}{A\-N\-T\-L\-R3\-\_\-\-I\-N\-T32} \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a19bec4eaa4b7a97b302d44864e929263}{max\-Pool}
+\item 
+\hyperlink{antlr3defs_8h_ac41f744abd0fd25144b9eb9d11b1dfd1}{A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a80b13cdd84923d749e14df702a03664d}{next\-Token}
+\item 
+\hyperlink{antlr3commontoken_8h_ab35c5fc3921ac6bfa1dbb31681aa9a0f}{A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N} \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a8047d14d770f3d37823460a61d2263b8}{un\-Truc}
+\item 
+\hyperlink{antlr3interfaces_8h_a30a8f71f3e04066360723d538fd67f16}{p\-A\-N\-T\-L\-R3\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-T\-R\-E\-A\-M} \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a5eb7471ee5333de2b227ffea4efa6053}{input}
+\item 
+\hyperlink{antlr3interfaces_8h_adaa6df9cbf0cd7ab37fd545520ff299b}{p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N}($\ast$ \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a111fabbe4ff4fd673d2bda2bc6e0165f}{new\-Token} )(struct \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct} $\ast$factory)
+\item 
+void($\ast$ \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a8ca6227695d2d0bbcbe4bfa6dfc719f7}{reset} )(struct \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct} $\ast$factory)
+\item 
+void($\ast$ \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a7ab10b5c63340112c1c0c5cff2c700bc}{set\-Input\-Stream} )(struct \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct} $\ast$factory, \hyperlink{antlr3interfaces_8h_a30a8f71f3e04066360723d538fd67f16}{p\-A\-N\-T\-L\-R3\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-T\-R\-E\-A\-M} \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a5eb7471ee5333de2b227ffea4efa6053}{input})
+\item 
+void($\ast$ \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a65f6d61359780abd5f909ae71f038a26}{close} )(struct \hyperlink{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct}{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct} $\ast$factory)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\-N\-T\-L\-R3 Token factory interface to create lots of tokens efficiently rather than creating and freeing lots of little bits of memory. 
+
+Definition at line 233 of file antlr3commontoken.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a65f6d61359780abd5f909ae71f038a26}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}!close@{close}}
+\index{close@{close}!ANTLR3_TOKEN_FACTORY_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct\-::close)(struct {\bf A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct} $\ast$factory)}}\label{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a65f6d61359780abd5f909ae71f038a26}
+Pointer to a function the destroys the factory 
+
+Definition at line 277 of file antlr3commontoken.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a5eb7471ee5333de2b227ffea4efa6053}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}!input@{input}}
+\index{input@{input}!ANTLR3_TOKEN_FACTORY_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}}
+\subsubsection[{input}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-A\-N\-T\-L\-R3\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-T\-R\-E\-A\-M} A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct\-::input}}\label{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a5eb7471ee5333de2b227ffea4efa6053}
+Pointer to an input stream that is using this token factory (may be N\-U\-L\-L) which will be assigned to the tokens automatically. 
+
+Definition at line 260 of file antlr3commontoken.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a19bec4eaa4b7a97b302d44864e929263}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}!max\-Pool@{max\-Pool}}
+\index{max\-Pool@{max\-Pool}!ANTLR3_TOKEN_FACTORY_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}}
+\subsubsection[{max\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-I\-N\-T32} A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct\-::max\-Pool}}\label{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a19bec4eaa4b7a97b302d44864e929263}
+Maximum pool count we have available 
+
+Definition at line 245 of file antlr3commontoken.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a111fabbe4ff4fd673d2bda2bc6e0165f}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}!new\-Token@{new\-Token}}
+\index{new\-Token@{new\-Token}!ANTLR3_TOKEN_FACTORY_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}}
+\subsubsection[{new\-Token}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N}($\ast$ A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct\-::new\-Token)(struct {\bf A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct} $\ast$factory)}}\label{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a111fabbe4ff4fd673d2bda2bc6e0165f}
+Pointer to a function that returns a new token 
+
+Definition at line 264 of file antlr3commontoken.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a80b13cdd84923d749e14df702a03664d}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}!next\-Token@{next\-Token}}
+\index{next\-Token@{next\-Token}!ANTLR3_TOKEN_FACTORY_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}}
+\subsubsection[{next\-Token}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-U\-I\-N\-T32} A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct\-::next\-Token}}\label{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a80b13cdd84923d749e14df702a03664d}
+The next token to throw out from the pool, will cause a new pool allocation if this exceeds the available token\-Count 
+
+Definition at line 250 of file antlr3commontoken.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_ab9e726d32971c19670422fc957a4e224}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}!pools@{pools}}
+\index{pools@{pools}!ANTLR3_TOKEN_FACTORY_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}}
+\subsubsection[{pools}]{\setlength{\rightskip}{0pt plus 5cm}{\bf p\-A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N}$\ast$ A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct\-::pools}}\label{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_ab9e726d32971c19670422fc957a4e224}
+Pointers to the array of tokens that this factory has produced so far 
+
+Definition at line 237 of file antlr3commontoken.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a8ca6227695d2d0bbcbe4bfa6dfc719f7}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}!reset@{reset}}
+\index{reset@{reset}!ANTLR3_TOKEN_FACTORY_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct\-::reset)(struct {\bf A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct} $\ast$factory)}}\label{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a8ca6227695d2d0bbcbe4bfa6dfc719f7}
+Pointer to a function that resets the factory so you can reuse the pools it has laready allocated 
+
+Definition at line 269 of file antlr3commontoken.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a7ab10b5c63340112c1c0c5cff2c700bc}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}!set\-Input\-Stream@{set\-Input\-Stream}}
+\index{set\-Input\-Stream@{set\-Input\-Stream}!ANTLR3_TOKEN_FACTORY_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}}
+\subsubsection[{set\-Input\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct\-::set\-Input\-Stream)(struct {\bf A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct} $\ast$factory, {\bf p\-A\-N\-T\-L\-R3\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-T\-R\-E\-A\-M} {\bf input})}}\label{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a7ab10b5c63340112c1c0c5cff2c700bc}
+Pointer to a function that changes teh curent inptu stream so that new tokens are created with reference to their originating text. 
+
+Definition at line 274 of file antlr3commontoken.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_affb2e4b787902103b05789ea9e6df0b6}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}!this\-Pool@{this\-Pool}}
+\index{this\-Pool@{this\-Pool}!ANTLR3_TOKEN_FACTORY_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}}
+\subsubsection[{this\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-I\-N\-T32} A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct\-::this\-Pool}}\label{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_affb2e4b787902103b05789ea9e6df0b6}
+Current pool tokens we are allocating from 
+
+Definition at line 241 of file antlr3commontoken.\-h.
+
+\hypertarget{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a8047d14d770f3d37823460a61d2263b8}{\index{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}!un\-Truc@{un\-Truc}}
+\index{un\-Truc@{un\-Truc}!ANTLR3_TOKEN_FACTORY_struct@{A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct}}
+\subsubsection[{un\-Truc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-N\-T\-L\-R3\-\_\-\-C\-O\-M\-M\-O\-N\-\_\-\-T\-O\-K\-E\-N} A\-N\-T\-L\-R3\-\_\-\-T\-O\-K\-E\-N\-\_\-\-F\-A\-C\-T\-O\-R\-Y\-\_\-struct\-::un\-Truc}}\label{struct_a_n_t_l_r3___t_o_k_e_n___f_a_c_t_o_r_y__struct_a8047d14d770f3d37823460a61d2263b8}
+Trick to initialize tokens and their A\-P\-I quickly, we set up this token when the factory is created, then just copy the memory it uses into the new token. 
+
+Definition at line 255 of file antlr3commontoken.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+libs/structure\-\_\-\-I\-O/ucif/antlr3/include/\hyperlink{antlr3commontoken_8h}{antlr3commontoken.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,426 @@
+\hypertarget{xyz2cfg_8m}{\section{G\-U\-I\-\_\-\-Matlab/xyz2cfg.m File Reference}
+\label{xyz2cfg_8m}\index{G\-U\-I\-\_\-\-Matlab/xyz2cfg.\-m@{G\-U\-I\-\_\-\-Matlab/xyz2cfg.\-m}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{xyz2cfg_8m_aa4fb5a91b00fd8e7bfe7495b8c221b1c}{write\-C\-F\-G} (\hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename}, \hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}, \hyperlink{xyz2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{natom}, \hyperlink{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}{a\-Type}, \hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords}) \hyperlink{write_fields2_file_8m_a5e769bbbabcaddc548203741c7100228}{fclose}(\hyperlink{xyz2cfg_8m_aa2ccff2cba62991c1532b3a4cb80523c}{fid})
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{xyz2cfg_8m_a59e4156f1d11eb4351f57910b15976a2}{$\sim$isnumeric} (\hyperlink{xyz2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{D\-I\-M}) \hyperlink{xyz2cfg_8m_a85727b4c27bae9d34bee79da53a07660}{error}('The second input argument is not numeric.\-At least one numeric \hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value} is expected.')
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Check to \hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} too many \\*
+arguments were input If there \\*
+were then exit the \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \\*
+issuing \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} error message to the \\*
+user elseif \hyperlink{xyz2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}{nargin} \hyperlink{xyz2cfg_8m_abc6d4b0a6102106533fc2e29fbb8c8e1}{error} ('Too many input arguments supplied.\-Only two are allowed.')
+\item 
+Retrieve the primary \hyperlink{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}{dimension} (column) to be \hyperlink{xyz2cfg_8m_abec65cbed63875da4a4ea5447e83b867}{sorted.\-col}
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{xyz2cfg_8m_a85727b4c27bae9d34bee79da53a07660}{error} ('This column is mixed so sorting cannot be completed.')
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} xyz2cfg(\hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename})\%\hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename} \\*
+without extension\%written by \\*
+Yaron Kauffmann-\/01.\-11.\-08\%reads \\*
+xyz files containing atomic \\*
+\hyperlink{qmb_8m_a923d61728dac7c6dff07427a901c9ba9}{positions} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} cartesian \\*
+coordinates and converts to \\*
+cfg format\%readable by Q\-S\-T\-E\-M(\hyperlink{_read_d_m3___matlab_8m_a0e9c2d135a8f15e6539173a79e5c1532}{http} \hyperlink{xyz2cfg_8m_aa2ccff2cba62991c1532b3a4cb80523c}{fid} = fopen(strcat(\hyperlink{write_fields2_file_8m_af3723aa817dbb65282d5e1db81f08ad8}{filename},'.xyz'),'\hyperlink{_read_d_m3___matlab_8m_a514f1b439f404f86f77090fa9edc96ce}{r}')
+\item 
+\hyperlink{xyz2cfg_8m_a52eb4293524a9487a4e33bb83c2a19e2}{natom\-\_\-temp} = fscanf(\hyperlink{xyz2cfg_8m_aa2ccff2cba62991c1532b3a4cb80523c}{fid},'\%\hyperlink{_read_d_m3___matlab_8m_a6f6ccfcf58b31cb6412107d9d5281426}{i}')
+\item 
+\hyperlink{xyz2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{natom}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b} =sortcell(data,1)
+\item 
+sort the data according to \\*
+\hyperlink{qmb_8m_ad5a54bc5a2abedf790cf00f7c63f6235}{atom} \hyperlink{convert2cfg_8m_a2902a7a983ab04c79cae2162ad553481}{type} \hyperlink{xyz2cfg_8m_aebd1d90aba8ea0e93ba32de5293b3cf5}{coords} = cell2mat(\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}(\-:,2\-:4))
+\item 
+\hyperlink{xyz2cfg_8m_ac6daf47a997fb1c7d59c3d0fd79e14e2}{Mm} =diag(\hyperlink{qmb_8m_ae0de5dca4233645eb4e50562ab6242cf}{max}(\hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords})-\/min(\hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords}))
+\item 
+for \hyperlink{xyz2cfg_8m_a48778a20054c081efeb3c7b471d90a21}{k1}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{xyz2cfg_8m_ae76081fb2cef09480162f3c1b69dfbb2}{Y}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} no \hyperlink{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}{dimension} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \\*
+is \hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} \hyperlink{xyz2cfg_8m_ae7cb09154a9f7a8d93757e4683e0caf2}{Output}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} no \hyperlink{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}{dimension} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \\*
+is \hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} Note that this \\*
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} has only been tested \\*
+\hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} mixed \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}{arrays} \\*
+containing character strings \\*
+and numeric values \\*
+Documentation \hyperlink{xyz2cfg_8m_af3c3447c812ef57e7ea08bba5454a11c}{Date}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} no \hyperlink{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}{dimension} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \\*
+is \hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} Note that this \\*
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} has only been tested \\*
+\hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} mixed \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}{arrays} \\*
+containing character strings \\*
+and numeric values \\*
+Documentation D\-F\-O Canada \\*
+Creation Last \hyperlink{xyz2cfg_8m_a85faadf2ba15f876f2642d9509296496}{Updated}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} no \hyperlink{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}{dimension} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \\*
+is \hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} Note that this \\*
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} has only been tested \\*
+\hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} mixed \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}{arrays} \\*
+containing character strings \\*
+and numeric values \\*
+Documentation D\-F\-O Canada \\*
+Creation Last Check to \hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \\*
+no input arguments were \\*
+\hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} If this is the \hyperlink{xyz2cfg_8m_a4120e7c19c5d82f60cfc57fb6e34665a}{case}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} no \hyperlink{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}{dimension} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \\*
+is \hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} Note that this \\*
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} has only been tested \\*
+\hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} mixed \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{_display_model_properties_8m_a912794af617f4685224d3fa0abd00c37}{arrays} \\*
+containing character strings \\*
+and numeric values \\*
+Documentation D\-F\-O Canada \\*
+Creation Last Check to \hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \\*
+no input arguments were \\*
+\hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} If this is the stop \\*
+execution and \hyperlink{_read_d_m3___matlab_8m_a48673c39259e21125ccdd489d990c78e}{output} an \hyperlink{xyz2cfg_8m_a85727b4c27bae9d34bee79da53a07660}{error} \\*
+message to the user \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{xyz2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}{nargin}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{xyz2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{D\-I\-M} = 1
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Now \hyperlink{qmb_8m_afa11cee267466e31be8442f57b6f8187}{find} out \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} the \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \\*
+\hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} is being sorted \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} more \\*
+than one column If \hyperlink{image_sim_8m_a2bc2c45f22146a64d1dc561fac7e60c1}{it} is then \\*
+\hyperlink{showimage_8m_ac1b7f512a0fa5c0b7d1d056a07969aa2}{use} recursion to call the \\*
+sortcell \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} again to \\*
+sort the less important \\*
+columns first Repeat calls to \\*
+sortcell until only one column \\*
+is left to be sorted Then \\*
+\hyperlink{_display_model_properties_8m_a8fb2b6b4a03427466839a9e801f3c491}{return} the sorted \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \\*
+to the calling \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} to \\*
+continue with the higher \\*
+priority sorting \hyperlink{xyz2cfg_8m_a36d3e3e56673eb6fd47c295c71e697ac}{ndim} = \hyperlink{qmb_8m_ab69fc29223800551c1fca07ee84e90ea}{length}(\hyperlink{xyz2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{D\-I\-M})
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{xyz2cfg_8m_a36d3e3e56673eb6fd47c295c71e697ac}{ndim} \hyperlink{xyz2cfg_8m_abec65cbed63875da4a4ea5447e83b867}{col} = \hyperlink{xyz2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{D\-I\-M}(2\-:\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end})
+\item 
+\hyperlink{xyz2cfg_8m_ac51b57a703ba1c5869228690c93e1701}{X} = sortcell(X, \hyperlink{xyz2cfg_8m_abec65cbed63875da4a4ea5447e83b867}{col})
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Get the dimensions of the \\*
+input \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \mbox{[}nrows, ncols\mbox{]} = \hyperlink{qmb_8m_a34efcbeb95e7c3e7e0050034d30c01cd}{size}(\hyperlink{xyz2cfg_8m_ac51b57a703ba1c5869228690c93e1701}{X})
+\item 
+Place the cells for this \\*
+column \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} variable B \hyperlink{xyz2cfg_8m_a422e4e22a48b9ea42c9dfe12b157229d}{B} = \hyperlink{xyz2cfg_8m_ac51b57a703ba1c5869228690c93e1701}{X}(\-:,\hyperlink{xyz2cfg_8m_abec65cbed63875da4a4ea5447e83b867}{col})
+\item 
+Check each \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \\*
+\hyperlink{xyz2cfg_8m_a422e4e22a48b9ea42c9dfe12b157229d}{B} to \hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{image_sim_8m_a2bc2c45f22146a64d1dc561fac7e60c1}{it} contains either \\*
+a character string or numeric \\*
+\hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value} If \hyperlink{image_sim_8m_a2bc2c45f22146a64d1dc561fac7e60c1}{it} is a character \\*
+string \hyperlink{image_sim_8m_a2bc2c45f22146a64d1dc561fac7e60c1}{it} returns a \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} the \\*
+same location of boolean \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \hyperlink{xyz2cfg_8m_a7492468b961995f6fd82e216c751bb37}{a} = cellfun('isclass', \hyperlink{xyz2cfg_8m_a422e4e22a48b9ea42c9dfe12b157229d}{B}, 'char')
+\item 
+\hyperlink{xyz2cfg_8m_acdedd5ceacaca4e0d58295f41fa4b2a1}{suma} = \hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a})
+\item 
+\hyperlink{xyz2cfg_8m_a857b8ed87332556c1cbf373a09c94ce8}{sumb} = \hyperlink{read_c_f_g__qstem_8m_a85162b5d5e6736f5aa8616580d4e8a75}{sum}(\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b})
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} Sort the current \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} and \\*
+\hyperlink{_display_model_properties_8m_a8fb2b6b4a03427466839a9e801f3c491}{return} the new \hyperlink{xyz2cfg_8m_ab8735b00764542f758cab8113c52b8ec}{index} \mbox{[}\hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix}, \hyperlink{_display_model_properties_8m_a76b405b72b88bde9488209ac06ddb714}{ix}\mbox{]} = sort(\hyperlink{xyz2cfg_8m_a422e4e22a48b9ea42c9dfe12b157229d}{B})
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{xyz2cfg_8m_aa4fb5a91b00fd8e7bfe7495b8c221b1c}{write\-C\-F\-G}(\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm}, \\*
+\hyperlink{xyz2cfg_8m_a1576913944301b272a197d6e2931da94}{N}, \hyperlink{convert2cfg_8m_acb65e003f967dd898ad0b68195201fb4}{a\-Type}, \hyperlink{_display_model_properties_8m_aa684b8f5c00f08923a11c0006e918dc8}{coords}, \hyperlink{xyz2cfg_8m_ac16738663da61b835844f663e221d53c}{shift}, \hyperlink{xyz2cfg_8m_aeb02c2817edf619fabdf1972b000db18}{mode})\%\%\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name} \\*
+\hyperlink{qmb_8m_aab2463cd078f7c5368f6eb80f5a549b8}{x2} \hyperlink{qmb_8m_a41b94b12b7cb45b3ddee299d4e7b79e8}{y2} \hyperlink{xyz2cfg_8m_a443f39ebf825d17965b949d5c860b891}{z2}
+\item 
+\hyperlink{xyz2cfg_8m_ac16738663da61b835844f663e221d53c}{shift} \hyperlink{xyz2cfg_8m_a1b0f1f273386698926da8b2cc0def623}{\-\_\-\-\_\-pad9\-\_\-\-\_\-}
+\item 
+\hyperlink{xyz2cfg_8m_ac16738663da61b835844f663e221d53c}{shift} \hyperlink{xyz2cfg_8m_a1576913944301b272a197d6e2931da94}{N}
+\item 
+\hyperlink{xyz2cfg_8m_ac16738663da61b835844f663e221d53c}{shift} \hyperlink{xyz2cfg_8m_a71f0b5fc2a13fffa24fe329c91ad25b5}{a\-Type}
+\item 
+shift \hyperlink{xyz2cfg_8m_ac16738663da61b835844f663e221d53c}{shift}
+\item 
+\hyperlink{xyz2cfg_8m_ac16738663da61b835844f663e221d53c}{shift} mode \hyperlink{xyz2cfg_8m_aeb02c2817edf619fabdf1972b000db18}{mode} =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!dimension@{dimension}}
+\index{dimension@{dimension}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{dimension}]{\setlength{\rightskip}{0pt plus 5cm}Retrieve the primary dimension (
+\begin{DoxyParamCaption}
+\item[{column}]{}
+\end{DoxyParamCaption}
+)}}\label{xyz2cfg_8m_accb90676408decb4be6591f6bc0664ca}
+\hypertarget{xyz2cfg_8m_abc6d4b0a6102106533fc2e29fbb8c8e1}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!error@{error}}
+\index{error@{error}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Check to {\bf see} {\bf if} too many arguments were input If there were then exit the {\bf function} issuing {\bf a} error message to the user elseif {\bf nargin} error (
+\begin{DoxyParamCaption}
+\item[{'Too many input arguments supplied.\-Only two are allowed.'}]{}
+\end{DoxyParamCaption}
+)}}\label{xyz2cfg_8m_abc6d4b0a6102106533fc2e29fbb8c8e1}
+\hypertarget{xyz2cfg_8m_a85727b4c27bae9d34bee79da53a07660}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!error@{error}}
+\index{error@{error}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} error (
+\begin{DoxyParamCaption}
+\item[{'This column is mixed so sorting cannot be completed.'}]{}
+\end{DoxyParamCaption}
+)}}\label{xyz2cfg_8m_a85727b4c27bae9d34bee79da53a07660}
+\hypertarget{xyz2cfg_8m_aa4fb5a91b00fd8e7bfe7495b8c221b1c}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!write\-C\-F\-G@{write\-C\-F\-G}}
+\index{write\-C\-F\-G@{write\-C\-F\-G}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{write\-C\-F\-G}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} write\-C\-F\-G (
+\begin{DoxyParamCaption}
+\item[{{\bf filename}}]{, }
+\item[{{\bf Mm}}]{, }
+\item[{{\bf natom}}]{, }
+\item[{{\bf a\-Type}}]{, }
+\item[{{\bf coords}}]{}
+\end{DoxyParamCaption}
+)}}\label{xyz2cfg_8m_aa4fb5a91b00fd8e7bfe7495b8c221b1c}
+\hypertarget{xyz2cfg_8m_a59e4156f1d11eb4351f57910b15976a2}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!$\sim$isnumeric@{$\sim$isnumeric}}
+\index{$\sim$isnumeric@{$\sim$isnumeric}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{$\sim$isnumeric}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} $\sim$isnumeric (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-I\-M}}]{}
+\end{DoxyParamCaption}
+)}}\label{xyz2cfg_8m_a59e4156f1d11eb4351f57910b15976a2}
+
+
+\subsection{Variable Documentation}
+\hypertarget{xyz2cfg_8m_a1b0f1f273386698926da8b2cc0def623}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!\-\_\-\-\_\-pad9\-\_\-\-\_\-@{\-\_\-\-\_\-pad9\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-pad9\-\_\-\-\_\-@{\-\_\-\-\_\-pad9\-\_\-\-\_\-}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{\-\_\-\-\_\-pad9\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf shift} \-\_\-\-\_\-pad9\-\_\-\-\_\-}}\label{xyz2cfg_8m_a1b0f1f273386698926da8b2cc0def623}
+
+
+Definition at line 177 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a7492468b961995f6fd82e216c751bb37}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!a@{a}}
+\index{a@{a}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}a {\bf otherwise} a = cellfun('isclass', {\bf B}, 'char')}}\label{xyz2cfg_8m_a7492468b961995f6fd82e216c751bb37}
+
+
+Definition at line 136 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!array@{array}}
+\index{array@{array}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{array}]{\setlength{\rightskip}{0pt plus 5cm}Using the {\bf index} from the sorted array = {\bf size}({\bf X})}}\label{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}
+
+
+Definition at line 126 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a71f0b5fc2a13fffa24fe329c91ad25b5}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!a\-Type@{a\-Type}}
+\index{a\-Type@{a\-Type}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{a\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf shift} a\-Type}}\label{xyz2cfg_8m_a71f0b5fc2a13fffa24fe329c91ad25b5}
+
+
+Definition at line 177 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!b@{b}}
+\index{b@{b}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}b =sortcell(data,1)}}\label{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}
+
+
+Definition at line 32 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a422e4e22a48b9ea42c9dfe12b157229d}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!B@{B}}
+\index{B@{B}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{B}]{\setlength{\rightskip}{0pt plus 5cm}Place the cells for this column {\bf in} variable B B = {\bf X}(\-:,{\bf col})}}\label{xyz2cfg_8m_a422e4e22a48b9ea42c9dfe12b157229d}
+
+
+Definition at line 132 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a4120e7c19c5d82f60cfc57fb6e34665a}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!case@{case}}
+\index{case@{case}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{case}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} {\bf if} no {\bf dimension} {\bf array} is {\bf supplied} Note that this {\bf function} has only been tested {\bf on} mixed {\bf cell} {\bf arrays} containing character strings and numeric values Documentation D\-F\-O Canada Creation Last Check to {\bf see} {\bf if} no input arguments were {\bf supplied} If this is the case}}\label{xyz2cfg_8m_a4120e7c19c5d82f60cfc57fb6e34665a}
+
+
+Definition at line 51 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_abec65cbed63875da4a4ea5447e83b867}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!col@{col}}
+\index{col@{col}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{col}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} {\bf ndim} col = {\bf D\-I\-M}(2\-:{\bf end})}}\label{xyz2cfg_8m_abec65cbed63875da4a4ea5447e83b867}
+
+
+Definition at line 121 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_aebd1d90aba8ea0e93ba32de5293b3cf5}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!coords@{coords}}
+\index{coords@{coords}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{coords}]{\setlength{\rightskip}{0pt plus 5cm}{\bf shift} coords = cell2mat({\bf b}(\-:,2\-:4))}}\label{xyz2cfg_8m_aebd1d90aba8ea0e93ba32de5293b3cf5}
+
+
+Definition at line 34 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_af3c3447c812ef57e7ea08bba5454a11c}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!Date@{Date}}
+\index{Date@{Date}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{Date}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} {\bf if} no {\bf dimension} {\bf array} is {\bf supplied} Note that this {\bf function} has only been tested {\bf on} mixed {\bf cell} {\bf arrays} containing character strings and numeric values Documentation D\-F\-O Canada Creation Date}}\label{xyz2cfg_8m_af3c3447c812ef57e7ea08bba5454a11c}
+
+
+Definition at line 51 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!D\-I\-M@{D\-I\-M}}
+\index{D\-I\-M@{D\-I\-M}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{D\-I\-M}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} D\-I\-M = 1}}\label{xyz2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}
+
+
+Definition at line 97 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_aa2ccff2cba62991c1532b3a4cb80523c}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!fid@{fid}}
+\index{fid@{fid}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{fid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} xyz2cfg ({\bf filename}) \% {\bf filename} without extension \% written by Yaron Kauffmann -\/ 01.\-11.\-08 \% reads xyz files containing atomic {\bf positions} {\bf in} cartesian coordinates and converts to cfg format \% readable by Q\-S\-T\-E\-M ({\bf http} fid = fopen(strcat({\bf filename},'.xyz'),'{\bf r}')}}\label{xyz2cfg_8m_aa2ccff2cba62991c1532b3a4cb80523c}
+
+
+Definition at line 23 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_ab8735b00764542f758cab8113c52b8ec}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!index@{index}}
+\index{index@{index}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Sort the current {\bf array} and {\bf return} the new index\mbox{[}{\bf ix}, {\bf ix}\mbox{]} = sort({\bf B})}}\label{xyz2cfg_8m_ab8735b00764542f758cab8113c52b8ec}
+
+
+Definition at line 158 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a48778a20054c081efeb3c7b471d90a21}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!k1@{k1}}
+\index{k1@{k1}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{k1}]{\setlength{\rightskip}{0pt plus 5cm}for k1}}\label{xyz2cfg_8m_a48778a20054c081efeb3c7b471d90a21}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=1:\hyperlink{xyz2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{natom}
+  \hyperlink{xyz2cfg_8m_a71f0b5fc2a13fffa24fe329c91ad25b5}{aType}(\hyperlink{xyz2cfg_8m_a48778a20054c081efeb3c7b471d90a21}{k1})=(1+findstr(char(\hyperlink{xyz2cfg_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}(\hyperlink{xyz2cfg_8m_a48778a20054c081efeb3c7b471d90a21}{k1},1)),\hyperlink{convert2cfg_8m_ab74e6bf80237ddc4109968cedc58c151}{name}))/2
+\end{DoxyCode}
+
+
+Definition at line 39 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_ac6daf47a997fb1c7d59c3d0fd79e14e2}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!Mm@{Mm}}
+\index{Mm@{Mm}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{Mm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf shift} Mm =diag({\bf max}({\bf coords})-\/min({\bf coords}))}}\label{xyz2cfg_8m_ac6daf47a997fb1c7d59c3d0fd79e14e2}
+
+
+Definition at line 36 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_aeb02c2817edf619fabdf1972b000db18}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!mode@{mode}}
+\index{mode@{mode}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf shift} mode mode =0}}\label{xyz2cfg_8m_aeb02c2817edf619fabdf1972b000db18}
+
+
+Definition at line 179 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a1576913944301b272a197d6e2931da94}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!N@{N}}
+\index{N@{N}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{N}]{\setlength{\rightskip}{0pt plus 5cm}{\bf shift} N}}\label{xyz2cfg_8m_a1576913944301b272a197d6e2931da94}
+
+
+Definition at line 177 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!nargin@{nargin}}
+\index{nargin@{nargin}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{nargin}]{\setlength{\rightskip}{0pt plus 5cm}Check to {\bf see} {\bf if} the first input argument is {\bf a} {\bf cell} {\bf array} and the second one is numeric If either check fails then stop execution and {\bf output} an {\bf error} message to the user elseif nargin}}\label{xyz2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+== 0
+    \hyperlink{xyz2cfg_8m_abc6d4b0a6102106533fc2e29fbb8c8e1}{error}(\textcolor{stringliteral}{'No input arguments were supplied.  At least one is expected.'})
+\end{DoxyCode}
+
+
+Definition at line 88 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!natom@{natom}}
+\index{natom@{natom}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{natom}]{\setlength{\rightskip}{0pt plus 5cm}natom}}\label{xyz2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=\hyperlink{xyz2cfg_8m_a52eb4293524a9487a4e33bb83c2a19e2}{natom\_temp}(1)
+
+  for \hyperlink{xyz2cfg_8m_a48778a20054c081efeb3c7b471d90a21}{k1}=1:\hyperlink{xyz2cfg_8m_a27dd74db90774bfbbd4ed72ae89229a6}{natom}
+  data(\hyperlink{xyz2cfg_8m_a48778a20054c081efeb3c7b471d90a21}{k1},:)=textscan(\hyperlink{xyz2cfg_8m_aa2ccff2cba62991c1532b3a4cb80523c}{fid},'%2\hyperlink{aberrations_8m_a9a0c48d58e082211052c49509165f1db}{c} %f32 %f32 %f32',1)
+\end{DoxyCode}
+
+
+Definition at line 25 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a52eb4293524a9487a4e33bb83c2a19e2}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!natom\-\_\-temp@{natom\-\_\-temp}}
+\index{natom\-\_\-temp@{natom\-\_\-temp}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{natom\-\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}natom\-\_\-temp = fscanf({\bf fid},'\%{\bf i}')}}\label{xyz2cfg_8m_a52eb4293524a9487a4e33bb83c2a19e2}
+
+
+Definition at line 24 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a36d3e3e56673eb6fd47c295c71e697ac}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!ndim@{ndim}}
+\index{ndim@{ndim}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{ndim}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Now {\bf find} out {\bf if} the {\bf cell} {\bf array} is being sorted {\bf on} more than one column If {\bf it} is then {\bf use} recursion to call the sortcell {\bf function} again to sort the less important columns first Repeat calls to sortcell until only one column is left to be sorted Then {\bf return} the sorted {\bf cell} {\bf array} to the calling {\bf function} to continue with the higher priority sorting ndim = {\bf length}({\bf D\-I\-M})}}\label{xyz2cfg_8m_a36d3e3e56673eb6fd47c295c71e697ac}
+
+
+Definition at line 119 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_ae7cb09154a9f7a8d93757e4683e0caf2}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!Output@{Output}}
+\index{Output@{Output}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{Output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} {\bf if} no {\bf dimension} {\bf array} is {\bf supplied} Output}}\label{xyz2cfg_8m_ae7cb09154a9f7a8d93757e4683e0caf2}
+
+
+Definition at line 51 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_ac16738663da61b835844f663e221d53c}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!shift@{shift}}
+\index{shift@{shift}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{shift}]{\setlength{\rightskip}{0pt plus 5cm}shift shift}}\label{xyz2cfg_8m_ac16738663da61b835844f663e221d53c}
+
+
+Definition at line 177 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_acdedd5ceacaca4e0d58295f41fa4b2a1}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!suma@{suma}}
+\index{suma@{suma}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{suma}]{\setlength{\rightskip}{0pt plus 5cm}Check to {\bf see} {\bf if} {\bf cell} {\bf array} {\bf B} contained only character string If {\bf cell} {\bf array} {\bf B} contains character strings then do nothing because no further content handling is required {\bf if} suma = {\bf sum}({\bf a})}}\label{xyz2cfg_8m_acdedd5ceacaca4e0d58295f41fa4b2a1}
+
+
+Definition at line 140 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a857b8ed87332556c1cbf373a09c94ce8}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!sumb@{sumb}}
+\index{sumb@{sumb}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{sumb}]{\setlength{\rightskip}{0pt plus 5cm}sumb = {\bf sum}({\bf b})}}\label{xyz2cfg_8m_a857b8ed87332556c1cbf373a09c94ce8}
+
+
+Definition at line 142 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a85faadf2ba15f876f2642d9509296496}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!Updated@{Updated}}
+\index{Updated@{Updated}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{Updated}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} {\bf if} no {\bf dimension} {\bf array} is {\bf supplied} Note that this {\bf function} has only been tested {\bf on} mixed {\bf cell} {\bf arrays} containing character strings and numeric values Documentation D\-F\-O Canada Creation Last Updated}}\label{xyz2cfg_8m_a85faadf2ba15f876f2642d9509296496}
+
+
+Definition at line 51 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_ac51b57a703ba1c5869228690c93e1701}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!X@{X}}
+\index{X@{X}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{X}]{\setlength{\rightskip}{0pt plus 5cm}X = sortcell(X, {\bf col})}}\label{xyz2cfg_8m_ac51b57a703ba1c5869228690c93e1701}
+
+
+Definition at line 122 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_ae76081fb2cef09480162f3c1b69dfbb2}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!Y@{Y}}
+\index{Y@{Y}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{Y}]{\setlength{\rightskip}{0pt plus 5cm}Using the {\bf index} from the sorted update the input {\bf cell} {\bf array} and {\bf return} {\bf it} Y}}\label{xyz2cfg_8m_ae76081fb2cef09480162f3c1b69dfbb2}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= sortcell(\hyperlink{xyz2cfg_8m_ac51b57a703ba1c5869228690c93e1701}{X}, \hyperlink{xyz2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{DIM})
+% SORTCELL    Sort \hyperlink{xyz2cfg_8m_a7492468b961995f6fd82e216c751bb37}{a} \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} ascending order.
+%
+% Description: SORTCELL sorts the input \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} according to the
+%   dimensions (columns) specified by the user.
+%
+% Usage: \hyperlink{xyz2cfg_8m_ae76081fb2cef09480162f3c1b69dfbb2}{Y} = sortcell(\hyperlink{xyz2cfg_8m_ac51b57a703ba1c5869228690c93e1701}{X}, \hyperlink{xyz2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{DIM})
+%
+% Input:
+%      X: the \hyperlink{_read_d_m3___matlab_8m_a788f12e84a4147fbec966d469221fb80}{cell} \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} to be sorted.
+%  \hyperlink{xyz2cfg_8m_ad4ef775b9bd3dace2b8188ded8c71fa0}{DIM}: (optional) one or more column numbers. Simply an \hyperlink{xyz2cfg_8m_a7cec22fd326288e5df0dadf886d5d919}{array} of one or
+%       more column numbers.  The first number is the primary column \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on}
+%       which to sort. Extra column numbers may be \hyperlink{draw_c_f_g_8m_af5cfcebd7c554a530c18ff3b636ccc75}{supplied} \hyperlink{aberrations_8m_a586dc012aec3988e5244e65c8dcdf992}{if} secondary
+%       sorting is required. The defuault \hyperlink{qstem_8m_aeee9d3c55cddc06149a5f9799cd5232d}{value} is 1
+\end{DoxyCode}
+
+
+Definition at line 51 of file xyz2cfg.\-m.
+
+\hypertarget{xyz2cfg_8m_a443f39ebf825d17965b949d5c860b891}{\index{xyz2cfg.\-m@{xyz2cfg.\-m}!z2@{z2}}
+\index{z2@{z2}!xyz2cfg.m@{xyz2cfg.\-m}}
+\subsubsection[{z2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} {\bf write\-C\-F\-G} ({\bf file\-Name},{\bf Mm},{\bf N},{\bf a\-Type},{\bf coords},{\bf shift},{\bf mode}) \% \% {\bf file\-Name} {\bf x2} {\bf y2} z2}}\label{xyz2cfg_8m_a443f39ebf825d17965b949d5c860b891}
+
+
+Definition at line 165 of file xyz2cfg.\-m.
+

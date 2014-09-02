@@ -1,0 +1,212 @@
+\hypertarget{class_q_s_t_e_m_1_1_c_cfg_reader}{\section{Q\-S\-T\-E\-M\-:\-:C\-Cfg\-Reader Class Reference}
+\label{class_q_s_t_e_m_1_1_c_cfg_reader}\index{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}}
+}
+
+
+{\ttfamily \#include $<$cfg.\-hpp$>$}
+
+
+
+Inheritance diagram for Q\-S\-T\-E\-M\-:\-:C\-Cfg\-Reader\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_q_s_t_e_m_1_1_c_cfg_reader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Q\-S\-T\-E\-M\-:\-:C\-Cfg\-Reader\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_q_s_t_e_m_1_1_c_cfg_reader__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_cfg_reader_a62646755bad76e30077cd65e5b88f1ea}{C\-Cfg\-Reader} (const boost\-::filesystem\-::path \&structure\-\_\-file)
+\item 
+\hyperlink{class_q_s_t_e_m_1_1_c_cfg_reader_a28e4f5d42dd104758c4fd708f47c383c}{$\sim$\-C\-Cfg\-Reader} ()
+\item 
+int \hyperlink{class_q_s_t_e_m_1_1_c_cfg_reader_a4acbc1290112e7784d5e5867771b8348}{Read\-Cell\-Params} (\hyperlink{namespace_q_s_t_e_m_a915d7caa497280d9f927c4ce8d330e47}{float\-\_\-tt} $\ast$$\ast$\hyperlink{qmb_8m_af27b785a845d3df0f02f4259f63e97c0}{Mm})
+\item 
+int \hyperlink{class_q_s_t_e_m_1_1_c_cfg_reader_abe37375764899c2f0bda75740198e9fd}{Read\-Atoms} (\hyperlink{qmb_8m_af54b69a32590de218622e869b06b47b3}{std\-::vector}$<$ \hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom} $>$ \&\hyperlink{qmb_8m_a7c5cd0264da47e230ba8c984690fe16c}{atoms})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_q_s_t_e_m_1_1_c_cfg_reader_ab3fddeae25408380d09ff5aff044eaa9}{Read\-Next\-Atom} (\hyperlink{namespace_q_s_t_e_m_a402dabc31a7a1fe906d0cdd138c69686}{atom} $\ast$new\-Atomcom)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_q_s_t_e_m_1_1_c_cfg_reader_a3cb3ed52e085d68c53079740b35a543f}{C\-Structure\-Reader\-Factory}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 27 of file cfg.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_cfg_reader_a62646755bad76e30077cd65e5b88f1ea}{\index{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}!C\-Cfg\-Reader@{C\-Cfg\-Reader}}
+\index{C\-Cfg\-Reader@{C\-Cfg\-Reader}!QSTEM::CCfgReader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}}
+\subsubsection[{C\-Cfg\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader\-::\-C\-Cfg\-Reader (
+\begin{DoxyParamCaption}
+\item[{const boost\-::filesystem\-::path \&}]{structure\-\_\-file}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_cfg_reader_a62646755bad76e30077cd65e5b88f1ea}
+
+
+Definition at line 28 of file cfg.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_q_s_t_e_m_1_1_c_cfg_reader_a62646755bad76e30077cd65e5b88f1ea_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_cfg_reader_a28e4f5d42dd104758c4fd708f47c383c}{\index{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}!$\sim$\-C\-Cfg\-Reader@{$\sim$\-C\-Cfg\-Reader}}
+\index{$\sim$\-C\-Cfg\-Reader@{$\sim$\-C\-Cfg\-Reader}!QSTEM::CCfgReader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}}
+\subsubsection[{$\sim$\-C\-Cfg\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader\-::$\sim$\-C\-Cfg\-Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_q_s_t_e_m_1_1_c_cfg_reader_a28e4f5d42dd104758c4fd708f47c383c}
+
+
+Definition at line 41 of file cfg.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{class_q_s_t_e_m_1_1_c_cfg_reader_a28e4f5d42dd104758c4fd708f47c383c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_cfg_reader_abe37375764899c2f0bda75740198e9fd}{\index{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}!Read\-Atoms@{Read\-Atoms}}
+\index{Read\-Atoms@{Read\-Atoms}!QSTEM::CCfgReader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}}
+\subsubsection[{Read\-Atoms}]{\setlength{\rightskip}{0pt plus 5cm}int Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader\-::\-Read\-Atoms (
+\begin{DoxyParamCaption}
+\item[{{\bf std\-::vector}$<$ {\bf atom} $>$ \&}]{atoms}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_cfg_reader_abe37375764899c2f0bda75740198e9fd}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_structure_reader_ae7384d16113b1982a2db4d99f68a705c}{Q\-S\-T\-E\-M\-::\-I\-Structure\-Reader}.
+
+
+
+Definition at line 77 of file cfg.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_cfg_reader_abe37375764899c2f0bda75740198e9fd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_cfg_reader_a4acbc1290112e7784d5e5867771b8348}{\index{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}!Read\-Cell\-Params@{Read\-Cell\-Params}}
+\index{Read\-Cell\-Params@{Read\-Cell\-Params}!QSTEM::CCfgReader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}}
+\subsubsection[{Read\-Cell\-Params}]{\setlength{\rightskip}{0pt plus 5cm}int Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader\-::\-Read\-Cell\-Params (
+\begin{DoxyParamCaption}
+\item[{{\bf float\-\_\-tt} $\ast$$\ast$}]{Mm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_q_s_t_e_m_1_1_c_cfg_reader_a4acbc1290112e7784d5e5867771b8348}
+
+
+Implements \hyperlink{class_q_s_t_e_m_1_1_i_structure_reader_a61502527af837692803de6792b10bc55}{Q\-S\-T\-E\-M\-::\-I\-Structure\-Reader}.
+
+
+
+Definition at line 50 of file cfg.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_q_s_t_e_m_1_1_c_cfg_reader_a4acbc1290112e7784d5e5867771b8348_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_q_s_t_e_m_1_1_c_cfg_reader_ab3fddeae25408380d09ff5aff044eaa9}{\index{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}!Read\-Next\-Atom@{Read\-Next\-Atom}}
+\index{Read\-Next\-Atom@{Read\-Next\-Atom}!QSTEM::CCfgReader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}}
+\subsubsection[{Read\-Next\-Atom}]{\setlength{\rightskip}{0pt plus 5cm}int Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader\-::\-Read\-Next\-Atom (
+\begin{DoxyParamCaption}
+\item[{{\bf atom} $\ast$}]{new\-Atomcom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_q_s_t_e_m_1_1_c_cfg_reader_ab3fddeae25408380d09ff5aff044eaa9}
+
+
+Definition at line 107 of file cfg.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_q_s_t_e_m_1_1_c_cfg_reader_ab3fddeae25408380d09ff5aff044eaa9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_s_t_e_m_1_1_c_cfg_reader_ab3fddeae25408380d09ff5aff044eaa9_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_q_s_t_e_m_1_1_c_cfg_reader_a3cb3ed52e085d68c53079740b35a543f}{\index{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}!C\-Structure\-Reader\-Factory@{C\-Structure\-Reader\-Factory}}
+\index{C\-Structure\-Reader\-Factory@{C\-Structure\-Reader\-Factory}!QSTEM::CCfgReader@{Q\-S\-T\-E\-M\-::\-C\-Cfg\-Reader}}
+\subsubsection[{C\-Structure\-Reader\-Factory}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf C\-Structure\-Reader\-Factory}\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_q_s_t_e_m_1_1_c_cfg_reader_a3cb3ed52e085d68c53079740b35a543f}
+
+
+Definition at line 45 of file cfg.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+libs/structure\-\_\-\-I\-O/\hyperlink{cfg_8hpp}{cfg.\-hpp}\item 
+libs/structure\-\_\-\-I\-O/\hyperlink{cfg_8cpp}{cfg.\-cpp}\end{DoxyCompactItemize}

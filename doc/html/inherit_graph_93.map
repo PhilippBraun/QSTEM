@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_q_s_t_e_m_1_1_i_experiment.html" title="QSTEM::IExperiment" alt="" coords="5,56,152,83"/>
+<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_experiment_base.html" title="QSTEM::CExperimentBase" alt="" coords="201,56,383,83"/>
+<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_experiment_c_b_e_d.html" title="QSTEM::CExperimentCBED" alt="" coords="433,5,623,32"/>
+<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_experiment_s_t_e_m.html" title="QSTEM::CExperimentSTEM" alt="" coords="433,56,623,83"/>
+<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_experiment_t_e_m.html" title="QSTEM::CExperimentTEM" alt="" coords="437,107,619,133"/>
+</map>

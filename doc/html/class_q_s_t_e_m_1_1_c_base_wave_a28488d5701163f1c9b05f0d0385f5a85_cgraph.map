@@ -1,0 +1,9 @@
+<map id="QSTEM::CBaseWave::CBaseWave" name="QSTEM::CBaseWave::CBaseWave">
+<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a27ed5f8bae505fea61dcf51927296921" title="QSTEM::CBaseWave::GetSize\lPixels" alt="" coords="306,5,513,46"/>
+<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a68b7329460165a086d92c9c0c80b1e4a" title="QSTEM::CBaseWave::GetResolution" alt="" coords="288,71,531,97"/>
+<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_base_wave.html#ab92ade82333f4b58109f6fd7267c377f" title="QSTEM::CBaseWave::GetVoltage" alt="" coords="297,121,521,148"/>
+<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a212673ef34f962fc714f117c50f01006" title="QSTEM::CBaseWave::Initialize" alt="" coords="306,172,513,199"/>
+<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a8011eef696b446a889aa708b033beaed" title="QSTEM::CBaseWave::Wavelength" alt="" coords="579,113,807,140"/>
+<area shape="rect" id="node7" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a64828910b6c68bbd81517bde1551bfcc" title="QSTEM::CBaseWave::Create\lDataSets" alt="" coords="594,165,793,206"/>
+<area shape="rect" id="node8" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a07e971c0248d0fa244f9edb3dc585f94" title="QSTEM::CBaseWave::Initialize\lKVectors" alt="" coords="590,230,797,271"/>
+</map>

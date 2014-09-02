@@ -1,0 +1,22 @@
+<map id="libs/experiments/stem.hpp" name="libs/experiments/stem.hpp">
+<area shape="rect" id="node2" href="$base_8hpp.html" title="base.hpp" alt="" coords="779,80,852,107"/>
+<area shape="rect" id="node35" href="$detectors_8hpp.html" title="detectors.hpp" alt="" coords="908,80,1009,107"/>
+<area shape="rect" id="node3" href="$experiment__interface_8hpp.html" title="experiment_interface.hpp" alt="" coords="324,155,492,181"/>
+<area shape="rect" id="node17" href="$pot__factory_8hpp.html" title="potentials/pot_factory.hpp" alt="" coords="698,320,869,347"/>
+<area shape="rect" id="node23" href="$wave__factory_8hpp.html" title="wavefunctions/wave\l_factory.hpp" alt="" coords="888,230,1028,271"/>
+<area shape="rect" id="node26" href="$crystal_8hpp.html" title="crystal.hpp" alt="" coords="553,237,639,264"/>
+<area shape="rect" id="node31" href="$imagelib__fftw3_8hpp.html" title="imagelib_fftw3.hpp" alt="" coords="1439,155,1568,181"/>
+<area shape="rect" id="node4" href="$stemtypes__fftw3_8hpp.html" title="stemtypes_fftw3.hpp" alt="" coords="656,560,800,587"/>
+<area shape="rect" id="node6" href="$fftw__allocator_8hpp.html" title="fftw_allocator.hpp" alt="" coords="747,635,872,661"/>
+<area shape="rect" id="node13" href="$el_table_8hpp.html" title="elTable.hpp" alt="" coords="550,635,639,661"/>
+<area shape="rect" id="node19" href="$pot__interface_8hpp.html" title="pot_interface.hpp" alt="" coords="571,403,693,429"/>
+<area shape="rect" id="node22" href="$config__reader__factory_8hpp.html" title="config_IO/config_reader\l_factory.hpp" alt="" coords="819,395,977,437"/>
+<area shape="rect" id="node20" href="$read__interface_8hpp.html" title="config_IO/read_interface.hpp" alt="" coords="652,485,841,512"/>
+<area shape="rect" id="node24" href="$wave__interface_8hpp.html" title="wave_interface.hpp" alt="" coords="999,320,1133,347"/>
+<area shape="rect" id="node27" href="$structure__readers_8hpp.html" title="structure_readers.hpp" alt="" coords="121,320,268,347"/>
+<area shape="rect" id="node28" href="$cfg_8hpp.html" title="structure_IO/cfg.hpp" alt="" coords="101,403,241,429"/>
+<area shape="rect" id="node29" href="$structure_interface_8hpp.html" title="structureInterface.hpp" alt="" coords="43,485,191,512"/>
+<area shape="rect" id="node32" href="$data__io__factories_8hpp.html" title="data_IO/data_io_factories.hpp" alt="" coords="1593,403,1788,429"/>
+<area shape="rect" id="node33" href="$output__interface_8hpp.html" title="output_interface.hpp" alt="" coords="1593,485,1732,512"/>
+<area shape="rect" id="node34" href="$input__interface_8hpp.html" title="input_interface.hpp" alt="" coords="1757,485,1888,512"/>
+</map>

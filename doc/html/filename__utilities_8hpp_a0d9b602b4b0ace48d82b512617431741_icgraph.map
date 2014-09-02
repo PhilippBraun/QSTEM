@@ -1,0 +1,12 @@
+<map id="AddPositionToFilename" name="AddPositionToFilename">
+<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_img_reader.html#a7cace40ef620bdc3c016d7368c688a02" title="QSTEM::CImgReader::\lBuildFilenameString" alt="" coords="214,283,373,325"/>
+<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_img_reader.html#a58988cb3ab5d0545d2e561592b31ccbf" title="QSTEM::CImgReader::\lReadHeader" alt="" coords="422,234,581,275"/>
+<area shape="rect" id="node11" href="$class_q_s_t_e_m_1_1_c_img_reader.html#a9149fbc2b8545ed0d3a0c62bc267d137" title="QSTEM::CImgReader::\l_ReadImageData" alt="" coords="422,331,581,373"/>
+<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_img_reader.html#a54833e5ad9fcb632f8938eeaf321da0e" title="QSTEM::CImgReader::\lReadParameters" alt="" coords="630,70,789,111"/>
+<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_img_reader.html#aaf06d11f6d9c3100afeb1bc6ed7a9b6f" title="QSTEM::CImgReader::\lReadComment" alt="" coords="630,135,789,177"/>
+<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c_img_reader.html#a22293ffbcaf75170f08e8e29160cc25f" title="QSTEM::CImgReader::\lReadSize" alt="" coords="630,201,789,242"/>
+<area shape="rect" id="node7" href="$class_q_s_t_e_m_1_1_c_img_reader.html#af0d00a9f363702a834bfe7fed526be50" title="QSTEM::CImgReader::\lReadComplex" alt="" coords="630,266,789,307"/>
+<area shape="rect" id="node8" href="$class_q_s_t_e_m_1_1_c_img_reader.html#ac2fb47aaa943a508038a6538f67c5c26" title="QSTEM::CImgReader::\lReadElementByteSize" alt="" coords="630,5,789,46"/>
+<area shape="rect" id="node9" href="$class_q_s_t_e_m_1_1_c_img_reader.html#af14ac98a7a3eaeb8830879ee82d51f29" title="QSTEM::CImgReader::\lReadImageData" alt="" coords="630,397,789,438"/>
+<area shape="rect" id="node10" href="$class_q_s_t_e_m_1_1_c_img_reader.html#aef0794d71af2a84341d511468dda85e2" title="QSTEM::CImgReader::\lReadImage" alt="" coords="630,331,789,373"/>
+</map>

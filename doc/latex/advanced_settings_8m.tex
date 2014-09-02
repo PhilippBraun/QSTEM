@@ -1,0 +1,569 @@
+\hypertarget{advanced_settings_8m}{\section{G\-U\-I\-\_\-\-Matlab/advanced\-Settings.m File Reference}
+\label{advanced_settings_8m}\index{G\-U\-I\-\_\-\-Matlab/advanced\-Settings.\-m@{G\-U\-I\-\_\-\-Matlab/advanced\-Settings.\-m}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{xyz2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}{nargin} \&\& \hyperlink{advanced_settings_8m_aae1d1bec0e9c36c2fddc5cd87d8c4eee}{ischar} (varargin\{1\}) gui\-\_\-\-State.\-gui\-\_\-\-Callback
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{advanced_settings_8m_a58f7f5bb8af524fdfac53ec31e329e3f}{gui\-\_\-mainfcn} (\hyperlink{virtual_goniometer_8m_a15c01a18166c645a9c9811b10391ee06}{gui\-\_\-\-State}, varargin\{\-:\})
+\item 
+\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} V\-A\-R\-A\-R\-G\-I\-N \hyperlink{advanced_settings_8m_acf66746edd1ce2f3770f81fd6023732c}{Yes} ()
+\item 
+Update \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} structure \hyperlink{advanced_settings_8m_aa51cad2115521e3fbf79721e9f49ddf2}{guidata} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles})
+\item 
+Insert custom Title and Text \\*
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} specified by the user be \\*
+sure they are not easily \\*
+confused with existing \hyperlink{scale_s_t_e_m_image_8m_a391e34f2de441d79152a7b3d6e4c9c86}{figure} \\*
+properties See the \hyperlink{_read_d_m3___matlab_8m_a48673c39259e21125ccdd489d990c78e}{output} of \hyperlink{advanced_settings_8m_a62f9a4acc3ea3f0baa964276dbd69bd0}{set} (\hyperlink{scale_s_t_e_m_image_8m_a391e34f2de441d79152a7b3d6e4c9c86}{figure}) for\%\hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} list of \hyperlink{scale_s_t_e_m_image_8m_a391e34f2de441d79152a7b3d6e4c9c86}{figure} properties.\-handles.\-data
+\item 
+\hyperlink{advanced_settings_8m_a5073681bff98914b9fab5e143b140ae3}{set} (handles.\-edit\-\_\-\-Save\-Level,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%\hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d}', \hyperlink{qstem_8m_a5a7a04041b8d36231b865f8c9b07cd40}{handles.\-data.\-save\-Level}))
+\item 
+\hyperlink{advanced_settings_8m_a6cbd8f179fb8534e80fb756162c303ed}{set} (handles.\-edit\-\_\-\-Print\-Level,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%\hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d}', \hyperlink{qstem_8m_a24e096d96b8b76611e893ddd6c372ae5}{handles.\-data.\-print\-Level}))
+\item 
+\hyperlink{advanced_settings_8m_a4e87332fbd987be6922c3ef3fdc01b77}{set} (handles.\-edit\-\_\-\-Atom\-Radius,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%.\-1f', handles.\-data.\-atom\-Radius))
+\item 
+\hyperlink{advanced_settings_8m_a6a06fed7e0f666677c44c99fed2ba768}{set} (handles.\-checkbox\-\_\-\-Save\-Potential,'\hyperlink{image_sim_8m_a896c037a32087c5c20d97e64a1786880}{Value}', \hyperlink{qstem_8m_a2627b1fe484f7e86e38deba8dabb27ed}{handles.\-data.\-save\-Potential})
+\item 
+\hyperlink{advanced_settings_8m_aad0fdef024f1b6b9561dd989ed9c40e7}{set} (handles.\-edit\-\_\-prop\-Prog\-Interval,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%\hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d}', \hyperlink{qstem_8m_a05446d3838f219de184194c1dca0dc0e}{handles.\-data.\-prop\-Prog\-Interval}))
+\item 
+\hyperlink{advanced_settings_8m_a7826e2d0aaa5130f9b3ec5ddadb83795}{set} (handles.\-edit\-\_\-pot\-Prog\-Interval,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{image_sim_8m_a37ab591fb85a1c67556fa5187eb197e1}{sprintf}('\%\hyperlink{_read_d_m3___matlab_8m_a1aabac6d068eef6a7bad3fdf50a05cc8}{d}', \hyperlink{qstem_8m_a286321d6d000730b555812c3c9ae8645}{handles.\-data.\-pot\-Prog\-Interval}))
+\item 
+0,'Default\-Figure\-Position' \hyperlink{advanced_settings_8m_ac33ee765f5ad9f134540bac393721cfe}{get} () = \hyperlink{fftw__allocator_8hpp_a6db901743a0e6a777646d9b285e25780}{real}(\hyperlink{aberrations___t_e_m_8m_ac4055e3a20b6b3af3d10590ea446ef6c}{v})
+\item 
+\hyperlink{advanced_settings_8m_a755bcbc3f64813e0b21f897637ee1fc3}{set} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, 'Units', '\hyperlink{qmb_8m_a76d164d39acada2c40fd4397c2715217}{pixels}')
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{advanced_settings_8m_a3e9abce732c52a887bbe428e87d894c1}{isempty} (gcbf) Screen\-Units
+\item 
+\hyperlink{advanced_settings_8m_a7c4b18936cb5c26506540a56f64989b9}{set} (0,'Units','\hyperlink{qmb_8m_a76d164d39acada2c40fd4397c2715217}{pixels}')
+\item 
+\hyperlink{advanced_settings_8m_a550c76a547ec726296d3f64924533de3}{set} (0,'Units', Screen\-Units)
+\item 
+\hyperlink{advanced_settings_8m_aa384c440c2b5f9073386a16d369d9460}{Fig\-Pos} (1)
+\item 
+\hyperlink{advanced_settings_8m_a796a162897c9f7605e555935901768b1}{Fig\-Pos} (2)
+\item 
+\hyperlink{advanced_settings_8m_a41c89f4aade9a62b030fd997bfa5dc3b}{set} (gcbf,'Units','\hyperlink{qmb_8m_a76d164d39acada2c40fd4397c2715217}{pixels}')
+\item 
+\hyperlink{advanced_settings_8m_aa9f767d97ae373ddd16d15f4fcc193e2}{set} (gcbf,'Units', \hyperlink{advanced_settings_8m_a15e7849b7b7b46b135a5a3b1c1711b20}{G\-C\-B\-F\-Old\-Units})
+\item 
+\hyperlink{advanced_settings_8m_aa5da93914d039d4734f300a7ec352fe3}{Fig\-Pos} (1\-:2)
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{advanced_settings_8m_afc71e4560bf8c4a93062c77d39274491}{Fig\-Pos} (3\-:4)
+\item 
+\hyperlink{advanced_settings_8m_aee36c86b8f8e82b97efcafb5e2c23f78}{set} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, 'Position', \hyperlink{advanced_settings_8m_afc71e4560bf8c4a93062c77d39274491}{Fig\-Pos})
+\item 
+\hyperlink{advanced_settings_8m_a2fd4170ccf868004e42136094eafb356}{set} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, 'Units', \hyperlink{advanced_settings_8m_a6a820eb7d5b865729c578fc26ee38728}{Old\-Units})
+\item 
+Make the G\-U\-I \hyperlink{convert2cfg_8m_abf75d0e474a103d59888210782ff8baf}{modal} \hyperlink{advanced_settings_8m_acfaae161a922ce0181ae2d8462b9b4d7}{set} (handles.\-Advanced\-Settings,'Window\-Style','\hyperlink{convert2cfg_8m_abf75d0e474a103d59888210782ff8baf}{modal}')
+\item 
+U\-I\-W\-A\-I\-T makes advanced\-Settings \\*
+wait for user \hyperlink{advanced_settings_8m_a090aacc4db9d55c39d0b0c74923aa471}{response} (\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} U\-I\-R\-E\-S\-U\-M\-E) uiwait(handles.\-Advanced\-Settings)
+\item 
+\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} V\-A\-R\-A\-R\-G\-O\-U\-T \hyperlink{advanced_settings_8m_aa75144726b375b93ecfc08810e5b5f09}{args} ()
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a2d1282f9b3298deed846ed1613f9f3c4}{str2num}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-\-Save\-Level,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}' \hyperlink{advanced_settings_8m_a05ceb1cc3b74082a4c5ce7f459a483d4}{floor} ()
+\item 
+The \hyperlink{scale_s_t_e_m_image_8m_a391e34f2de441d79152a7b3d6e4c9c86}{figure} can be deleted now \hyperlink{advanced_settings_8m_ab5e3ce553fb7568c77f69dcdddc9267e}{delete} (handles.\-Advanced\-Settings)
+\item 
+handles.\-Advanced\-Settings \hyperlink{advanced_settings_8m_ab3e88cc462267ef561ed8d7ce216d5da}{uiresume} ()
+\item 
+\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object},'Current\-Key' \hyperlink{advanced_settings_8m_aa2fa5ea275f5d08a1f7ca407861c4be1}{No} ()
+\item 
+\hyperlink{advanced_settings_8m_af293e9598c0a5a48422dacf2612b7f3b}{uiresume} (handles.\-Advanced\-Settings)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{advanced_settings_8m_a64af3e25200c59fba64c6e2a38fb4456}{varargout}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} creates \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} new \\*
+A\-D\-V\-A\-N\-C\-E\-D\-S\-E\-T\-T\-I\-N\-G\-S or raises the \\*
+existing singleton $\ast$ \hyperlink{advanced_settings_8m_ade56eed2f1dd3fdb4302d266b907f14e}{H}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} creates \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} new \\*
+A\-D\-V\-A\-N\-C\-E\-D\-S\-E\-T\-T\-I\-N\-G\-S or raises the \\*
+existing singleton property \\*
+\hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value} pairs are applied to the \\*
+G\-U\-I before \\*
+advanced\-Settings\-\_\-\-Opening\-Function \\*
+gets called An unrecognized \\*
+property \hyperlink{qmb_8m_abdc1dcc6fed70c14f9b5ae237e486f4e}{name} or invalid \hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value} \\*
+makes property application \\*
+stop All inputs are passed to \\*
+advanced\-Settings\-\_\-\-Opening\-Fcn \\*
+via varargin $\ast$See G\-U\-I Options \\*
+\hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} G\-U\-I\-D\-E \hyperlink{aberrations___t_e_m_8m_aef29541a06b7f933d32a804307db13af}{s} Tools menu Choose \\*
+G\-U\-I allows only one instance \\*
+to run(singleton)\char`\"{}. \% \% See \\*
+also \hyperlink{advanced_settings_8m_ad061037517d90bd7bdf32a9bdbe1a43a}{gui\-\_\-\-State}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{advanced_settings_8m_a9b07119da70fc4a54e0d1cb5751d69aa}{nargout} \mbox{[}\hyperlink{virtual_goniometer_8m_a7c1ef7386988a8ccd4761d8428895842}{varargout}\{1\-:nargout\}\mbox{]} = \hyperlink{virtual_goniometer_8m_a58f7f5bb8af524fdfac53ec31e329e3f}{gui\-\_\-mainfcn}(\hyperlink{virtual_goniometer_8m_a15c01a18166c645a9c9811b10391ee06}{gui\-\_\-\-State}, varargin\{\-:\})
+\item 
+Insert custom Title and Text \\*
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} specified by the user \hyperlink{advanced_settings_8m_a98e24af10201eb2a871179d81c16c84f}{Hint}
+\item 
+\hyperlink{advanced_settings_8m_a6a820eb7d5b865729c578fc26ee38728}{Old\-Units} = \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, 'Units')
+\item 
+\hyperlink{advanced_settings_8m_a36e6c45106ffb95585180c6f14e73a41}{Old\-Pos} = \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object},'Position')
+\item 
+\hyperlink{advanced_settings_8m_a7dc5dbc83c2ec0e5543f8591088ddd7b}{Fig\-Width} = \hyperlink{advanced_settings_8m_a36e6c45106ffb95585180c6f14e73a41}{Old\-Pos}(3)
+\item 
+\hyperlink{advanced_settings_8m_a523706260f2d86d0c79633bcf063dc0c}{Fig\-Height} = \hyperlink{advanced_settings_8m_a36e6c45106ffb95585180c6f14e73a41}{Old\-Pos}(4)
+\item 
+\hyperlink{advanced_settings_8m_a2f62333425afb8c8a85fd93d5cb6c198}{Screen\-Size} =\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(0,'Screen\-Size')
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{advanced_settings_8m_a15e7849b7b7b46b135a5a3b1c1711b20}{G\-C\-B\-F\-Old\-Units} = \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(gcbf,'Units')
+\item 
+\hyperlink{advanced_settings_8m_a95e5626bee872359d7dcd335cc87f7d4}{G\-C\-B\-F\-Pos} = \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(gcbf,'Position')
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} data \hyperlink{advanced_settings_8m_a667c8618c3037045908c160a270507c2}{print\-Level} = \hyperlink{advanced_settings_8m_a05ceb1cc3b74082a4c5ce7f459a483d4}{floor}(\hyperlink{scale_s_t_e_m_image_8m_a2d1282f9b3298deed846ed1613f9f3c4}{str2num}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-\-Print\-Level,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}')))
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} data \hyperlink{advanced_settings_8m_a586b56c6c7fc038287fe6eb80ed035c6}{atom\-Radius} = \hyperlink{fftw__allocator_8hpp_a3265f53b67af1612bd5c314cdce95c32}{abs}(\hyperlink{scale_s_t_e_m_image_8m_a2d1282f9b3298deed846ed1613f9f3c4}{str2num}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-\-Atom\-Radius,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}')))
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} data \hyperlink{advanced_settings_8m_a9d46fd6fa59ba6c35733e783f0268e4f}{save\-Potential} = \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-checkbox\-\_\-\-Save\-Potential,'\hyperlink{image_sim_8m_a896c037a32087c5c20d97e64a1786880}{Value}')
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} data \hyperlink{advanced_settings_8m_a0688aaeba6faffc2c1122843bce23ce5}{save\-Total\-Potential} = \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-checkbox\-\_\-\-Save\-Total\-Potential,'\hyperlink{image_sim_8m_a896c037a32087c5c20d97e64a1786880}{Value}')
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} data \hyperlink{advanced_settings_8m_a0f754385b23e610f6c06d0235a915abb}{prop\-Prog\-Interval} = \hyperlink{advanced_settings_8m_a05ceb1cc3b74082a4c5ce7f459a483d4}{floor}(\hyperlink{scale_s_t_e_m_image_8m_a2d1282f9b3298deed846ed1613f9f3c4}{str2num}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-prop\-Prog\-Interval,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}')))
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} data \hyperlink{advanced_settings_8m_aa8eb5302d59afdfaf28f3bc137c7863b}{pot\-Prog\-Interval} = \hyperlink{advanced_settings_8m_a05ceb1cc3b74082a4c5ce7f459a483d4}{floor}(\hyperlink{scale_s_t_e_m_image_8m_a2d1282f9b3298deed846ed1613f9f3c4}{str2num}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-pot\-Prog\-Interval,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}')))
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} The G\-U\-I is no longer \hyperlink{advanced_settings_8m_a6eae355d0d16babb03dcdc277c76c47b}{waiting}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{advanced_settings_8m_aa75144726b375b93ecfc08810e5b5f09}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!args@{args}}
+\index{args@{args}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{args}]{\setlength{\rightskip}{0pt plus 5cm}{\bf see} V\-A\-R\-A\-R\-G\-O\-U\-T args (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{advanced_settings_8m_aa75144726b375b93ecfc08810e5b5f09}
+\hypertarget{advanced_settings_8m_ab5e3ce553fb7568c77f69dcdddc9267e}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!delete@{delete}}
+\index{delete@{delete}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{delete}]{\setlength{\rightskip}{0pt plus 5cm}The {\bf figure} can be deleted now delete (
+\begin{DoxyParamCaption}
+\item[{handles.}]{Advanced\-Settings}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_ab5e3ce553fb7568c77f69dcdddc9267e}
+\hypertarget{advanced_settings_8m_aa384c440c2b5f9073386a16d369d9460}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!Fig\-Pos@{Fig\-Pos}}
+\index{Fig\-Pos@{Fig\-Pos}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{Fig\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}Fig\-Pos (
+\begin{DoxyParamCaption}
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_aa384c440c2b5f9073386a16d369d9460}
+\hypertarget{advanced_settings_8m_a796a162897c9f7605e555935901768b1}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!Fig\-Pos@{Fig\-Pos}}
+\index{Fig\-Pos@{Fig\-Pos}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{Fig\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}Fig\-Pos (
+\begin{DoxyParamCaption}
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a796a162897c9f7605e555935901768b1}
+\hypertarget{advanced_settings_8m_aa5da93914d039d4734f300a7ec352fe3}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!Fig\-Pos@{Fig\-Pos}}
+\index{Fig\-Pos@{Fig\-Pos}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{Fig\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}Fig\-Pos (
+\begin{DoxyParamCaption}
+\item[{1\-:2}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_aa5da93914d039d4734f300a7ec352fe3}
+\hypertarget{advanced_settings_8m_afc71e4560bf8c4a93062c77d39274491}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!Fig\-Pos@{Fig\-Pos}}
+\index{Fig\-Pos@{Fig\-Pos}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{Fig\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} Fig\-Pos (
+\begin{DoxyParamCaption}
+\item[{3\-:4}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_afc71e4560bf8c4a93062c77d39274491}
+\hypertarget{advanced_settings_8m_a05ceb1cc3b74082a4c5ce7f459a483d4}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!floor@{floor}}
+\index{floor@{floor}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{floor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf str2num}({\bf get}(handles.\-edit\-\_\-\-Save\-Level,'{\bf String}' floor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{advanced_settings_8m_a05ceb1cc3b74082a4c5ce7f459a483d4}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{advanced_settings_8m_a05ceb1cc3b74082a4c5ce7f459a483d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{advanced_settings_8m_ac33ee765f5ad9f134540bac393721cfe}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!get@{get}}
+\index{get@{get}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) = {\bf real}({\bf v})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{advanced_settings_8m_ac33ee765f5ad9f134540bac393721cfe}
+
+
+Definition at line 1102 of file aberrations.\-m.
+
+\hypertarget{advanced_settings_8m_a58f7f5bb8af524fdfac53ec31e329e3f}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!gui\-\_\-mainfcn@{gui\-\_\-mainfcn}}
+\index{gui\-\_\-mainfcn@{gui\-\_\-mainfcn}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{gui\-\_\-mainfcn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} gui\-\_\-mainfcn (
+\begin{DoxyParamCaption}
+\item[{{\bf gui\-\_\-\-State}}]{, }
+\item[{varargin\{\-:\}}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a58f7f5bb8af524fdfac53ec31e329e3f}
+\hypertarget{advanced_settings_8m_aa51cad2115521e3fbf79721e9f49ddf2}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!guidata@{guidata}}
+\index{guidata@{guidata}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{guidata}]{\setlength{\rightskip}{0pt plus 5cm}Update {\bf handles} structure guidata (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object}}]{, }
+\item[{{\bf handles}}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_aa51cad2115521e3fbf79721e9f49ddf2}
+\hypertarget{advanced_settings_8m_aae1d1bec0e9c36c2fddc5cd87d8c4eee}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!ischar@{ischar}}
+\index{ischar@{ischar}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{ischar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} {\bf nargin}\&\& ischar (
+\begin{DoxyParamCaption}
+\item[{varargin\{1\}}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_aae1d1bec0e9c36c2fddc5cd87d8c4eee}
+\hypertarget{advanced_settings_8m_a3e9abce732c52a887bbe428e87d894c1}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!isempty@{isempty}}
+\index{isempty@{isempty}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{isempty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} isempty (
+\begin{DoxyParamCaption}
+\item[{gcbf}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a3e9abce732c52a887bbe428e87d894c1}
+\hypertarget{advanced_settings_8m_aa2fa5ea275f5d08a1f7ca407861c4be1}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!No@{No}}
+\index{No@{No}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{No}]{\setlength{\rightskip}{0pt plus 5cm}{\bf get}({\bf h\-Object},'Current\-Key' No (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{advanced_settings_8m_aa2fa5ea275f5d08a1f7ca407861c4be1}
+\hypertarget{advanced_settings_8m_a090aacc4db9d55c39d0b0c74923aa471}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!response@{response}}
+\index{response@{response}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{response}]{\setlength{\rightskip}{0pt plus 5cm}U\-I\-W\-A\-I\-T makes advanced\-Settings wait for user response (
+\begin{DoxyParamCaption}
+\item[{{\bf see}}]{U\-I\-R\-E\-S\-U\-M\-E}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a090aacc4db9d55c39d0b0c74923aa471}
+\hypertarget{advanced_settings_8m_a62f9a4acc3ea3f0baa964276dbd69bd0}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}Insert custom Title and Text {\bf if} specified by the user be sure they are not easily confused with existing {\bf figure} properties See the {\bf output} of set (
+\begin{DoxyParamCaption}
+\item[{{\bf figure}}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a62f9a4acc3ea3f0baa964276dbd69bd0}
+\hypertarget{advanced_settings_8m_a5073681bff98914b9fab5e143b140ae3}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-\-Save\-Level, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%{\bf d}', {\bf handles.\-data.\-save\-Level})}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a5073681bff98914b9fab5e143b140ae3}
+\hypertarget{advanced_settings_8m_a6cbd8f179fb8534e80fb756162c303ed}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-\-Print\-Level, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%{\bf d}', {\bf handles.\-data.\-print\-Level})}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a6cbd8f179fb8534e80fb756162c303ed}
+\hypertarget{advanced_settings_8m_a4e87332fbd987be6922c3ef3fdc01b77}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-\-Atom\-Radius, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%.\-1f', handles.\-data.\-atom\-Radius)}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a4e87332fbd987be6922c3ef3fdc01b77}
+\hypertarget{advanced_settings_8m_a6a06fed7e0f666677c44c99fed2ba768}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{checkbox\-\_\-\-Save\-Potential, }
+\item[{'{\bf Value}'}]{, }
+\item[{handles.\-data.}]{save\-Potential}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a6a06fed7e0f666677c44c99fed2ba768}
+\hypertarget{advanced_settings_8m_aad0fdef024f1b6b9561dd989ed9c40e7}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-prop\-Prog\-Interval, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%{\bf d}', {\bf handles.\-data.\-prop\-Prog\-Interval})}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_aad0fdef024f1b6b9561dd989ed9c40e7}
+\hypertarget{advanced_settings_8m_a7826e2d0aaa5130f9b3ec5ddadb83795}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-pot\-Prog\-Interval, }
+\item[{'{\bf String}'}]{, }
+\item[{{\bf sprintf}('\%{\bf d}', {\bf handles.\-data.\-pot\-Prog\-Interval})}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a7826e2d0aaa5130f9b3ec5ddadb83795}
+\hypertarget{advanced_settings_8m_a755bcbc3f64813e0b21f897637ee1fc3}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object}}]{, }
+\item[{'Units'}]{, }
+\item[{'{\bf pixels}'}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a755bcbc3f64813e0b21f897637ee1fc3}
+\hypertarget{advanced_settings_8m_a7c4b18936cb5c26506540a56f64989b9}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{0}]{, }
+\item[{'Units'}]{, }
+\item[{'{\bf pixels}'}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a7c4b18936cb5c26506540a56f64989b9}
+\hypertarget{advanced_settings_8m_a550c76a547ec726296d3f64924533de3}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{0}]{, }
+\item[{'Units'}]{, }
+\item[{Screen\-Units}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a550c76a547ec726296d3f64924533de3}
+\hypertarget{advanced_settings_8m_a41c89f4aade9a62b030fd997bfa5dc3b}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{gcbf}]{, }
+\item[{'Units'}]{, }
+\item[{'{\bf pixels}'}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a41c89f4aade9a62b030fd997bfa5dc3b}
+\hypertarget{advanced_settings_8m_aa9f767d97ae373ddd16d15f4fcc193e2}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{gcbf}]{, }
+\item[{'Units'}]{, }
+\item[{{\bf G\-C\-B\-F\-Old\-Units}}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_aa9f767d97ae373ddd16d15f4fcc193e2}
+\hypertarget{advanced_settings_8m_aee36c86b8f8e82b97efcafb5e2c23f78}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object}}]{, }
+\item[{'Position'}]{, }
+\item[{{\bf Fig\-Pos}}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_aee36c86b8f8e82b97efcafb5e2c23f78}
+\hypertarget{advanced_settings_8m_a2fd4170ccf868004e42136094eafb356}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object}}]{, }
+\item[{'Units'}]{, }
+\item[{{\bf Old\-Units}}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_a2fd4170ccf868004e42136094eafb356}
+\hypertarget{advanced_settings_8m_acfaae161a922ce0181ae2d8462b9b4d7}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!set@{set}}
+\index{set@{set}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}Make the G\-U\-I {\bf modal} set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{Advanced\-Settings, }
+\item[{'Window\-Style'}]{, }
+\item[{'{\bf modal}'}]{}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_acfaae161a922ce0181ae2d8462b9b4d7}
+\hypertarget{advanced_settings_8m_ab3e88cc462267ef561ed8d7ce216d5da}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!uiresume@{uiresume}}
+\index{uiresume@{uiresume}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{uiresume}]{\setlength{\rightskip}{0pt plus 5cm}handles.\-Advanced\-Settings uiresume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{advanced_settings_8m_ab3e88cc462267ef561ed8d7ce216d5da}
+\hypertarget{advanced_settings_8m_af293e9598c0a5a48422dacf2612b7f3b}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!uiresume@{uiresume}}
+\index{uiresume@{uiresume}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{uiresume}]{\setlength{\rightskip}{0pt plus 5cm}uiresume (
+\begin{DoxyParamCaption}
+\item[{handles.}]{Advanced\-Settings}
+\end{DoxyParamCaption}
+)}}\label{advanced_settings_8m_af293e9598c0a5a48422dacf2612b7f3b}
+\hypertarget{advanced_settings_8m_acf66746edd1ce2f3770f81fd6023732c}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!Yes@{Yes}}
+\index{Yes@{Yes}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{Yes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf see} V\-A\-R\-A\-R\-G\-I\-N Yes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{advanced_settings_8m_acf66746edd1ce2f3770f81fd6023732c}
+
+
+\subsection{Variable Documentation}
+\hypertarget{advanced_settings_8m_a586b56c6c7fc038287fe6eb80ed035c6}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!atom\-Radius@{atom\-Radius}}
+\index{atom\-Radius@{atom\-Radius}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{atom\-Radius}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} data atom\-Radius = {\bf abs}({\bf str2num}({\bf get}(handles.\-edit\-\_\-\-Atom\-Radius,'{\bf String}')))}}\label{advanced_settings_8m_a586b56c6c7fc038287fe6eb80ed035c6}
+
+
+Definition at line 119 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a523706260f2d86d0c79633bcf063dc0c}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!Fig\-Height@{Fig\-Height}}
+\index{Fig\-Height@{Fig\-Height}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{Fig\-Height}]{\setlength{\rightskip}{0pt plus 5cm}Fig\-Height = {\bf Old\-Pos}(4)}}\label{advanced_settings_8m_a523706260f2d86d0c79633bcf063dc0c}
+
+
+Definition at line 81 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a7dc5dbc83c2ec0e5543f8591088ddd7b}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!Fig\-Width@{Fig\-Width}}
+\index{Fig\-Width@{Fig\-Width}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{Fig\-Width}]{\setlength{\rightskip}{0pt plus 5cm}Fig\-Width = {\bf Old\-Pos}(3)}}\label{advanced_settings_8m_a7dc5dbc83c2ec0e5543f8591088ddd7b}
+
+
+Definition at line 80 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a15e7849b7b7b46b135a5a3b1c1711b20}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!G\-C\-B\-F\-Old\-Units@{G\-C\-B\-F\-Old\-Units}}
+\index{G\-C\-B\-F\-Old\-Units@{G\-C\-B\-F\-Old\-Units}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{G\-C\-B\-F\-Old\-Units}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} G\-C\-B\-F\-Old\-Units = {\bf get}(gcbf,'Units')}}\label{advanced_settings_8m_a15e7849b7b7b46b135a5a3b1c1711b20}
+
+
+Definition at line 91 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a95e5626bee872359d7dcd335cc87f7d4}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!G\-C\-B\-F\-Pos@{G\-C\-B\-F\-Pos}}
+\index{G\-C\-B\-F\-Pos@{G\-C\-B\-F\-Pos}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{G\-C\-B\-F\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}G\-C\-B\-F\-Pos = {\bf get}(gcbf,'Position')}}\label{advanced_settings_8m_a95e5626bee872359d7dcd335cc87f7d4}
+
+
+Definition at line 93 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_ad061037517d90bd7bdf32a9bdbe1a43a}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!gui\-\_\-\-State@{gui\-\_\-\-State}}
+\index{gui\-\_\-\-State@{gui\-\_\-\-State}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{gui\-\_\-\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} creates {\bf a} new A\-D\-V\-A\-N\-C\-E\-D\-S\-E\-T\-T\-I\-N\-G\-S or raises the existing singleton property {\bf value} pairs are applied to the G\-U\-I before advanced\-Settings\-\_\-\-Opening\-Function gets called An unrecognized property {\bf name} or invalid {\bf value} makes property application stop All inputs are passed to advanced\-Settings\-\_\-\-Opening\-Fcn via varargin$\ast$ See G\-U\-I Options {\bf on} G\-U\-I\-D\-E {\bf s} Tools menu Choose G\-U\-I allows only one instance to run (singleton)\char`\"{}. \% \% See also gui\-\_\-\-State}}\label{advanced_settings_8m_ad061037517d90bd7bdf32a9bdbe1a43a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \textcolor{keyword}{struct}(\textcolor{stringliteral}{'gui\_Name'},       mfilename, ...
+                   \textcolor{stringliteral}{'gui\_Singleton'},  gui\_Singleton, ...
+                   \textcolor{stringliteral}{'gui\_OpeningFcn'}, @advancedSettings\_OpeningFcn, ...
+                   \textcolor{stringliteral}{'gui\_OutputFcn'},  @advancedSettings\_OutputFcn, ...
+                   \textcolor{stringliteral}{'gui\_LayoutFcn'},  [] , ...
+                   \textcolor{stringliteral}{'gui\_Callback'},   [])
+\end{DoxyCode}
+
+
+Definition at line 29 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_ade56eed2f1dd3fdb4302d266b907f14e}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!H@{H}}
+\index{H@{H}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} creates {\bf a} new A\-D\-V\-A\-N\-C\-E\-D\-S\-E\-T\-T\-I\-N\-G\-S or raises the existing singleton$\ast$ H}}\label{advanced_settings_8m_ade56eed2f1dd3fdb4302d266b907f14e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= ADVANCEDSETTINGS returns the handle to \hyperlink{aberrations_8m_a7492468b961995f6fd82e216c751bb37}{a} \textcolor{keyword}{new} ADVANCEDSETTINGS or the handle to
+%      the existing singleton*.
+%
+%      ADVANCEDSETTINGS(\textcolor{stringliteral}{'CALLBACK'},\hyperlink{_displacement_params_8m_a6e69a2e6c16546a1aba75e0422487e55}{hObject},eventData,\hyperlink{aberrations___t_e_m_8m_a7cfce9e4244a1936557979efaaa3882a}{handles},...) calls the local
+%      \hyperlink{binread2_d_8m_a6802a4975f2ff519ca7f69ffaf7fcdde}{function} named CALLBACK \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} ADVANCEDSETTINGS.\hyperlink{_displacement_params_8m_aad05f78187c942f9dd521605fa81f1ba}{M} with the given input arguments.
+%
+%      ADVANCEDSETTINGS('Property','\hyperlink{_display_model_properties_8m_aa3e85bcc21f31fb262e8662d5e2a8764}{Value}',...) creates \hyperlink{aberrations_8m_a7492468b961995f6fd82e216c751bb37}{a} new ADVANCEDSETTINGS or raises the
+%      existing singleton*.  Starting from the left
+\end{DoxyCode}
+
+
+Definition at line 6 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a98e24af10201eb2a871179d81c16c84f}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!Hint@{Hint}}
+\index{Hint@{Hint}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{Hint}]{\setlength{\rightskip}{0pt plus 5cm}Insert custom Title and Text {\bf if} specified by the user Hint}}\label{advanced_settings_8m_a98e24af10201eb2a871179d81c16c84f}
+
+
+Definition at line 61 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a9b07119da70fc4a54e0d1cb5751d69aa}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!nargout@{nargout}}
+\index{nargout@{nargout}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{nargout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} nargout\mbox{[}{\bf varargout}\{1\-:nargout\}\mbox{]} = {\bf gui\-\_\-mainfcn}({\bf gui\-\_\-\-State}, varargin\{\-:\})}}\label{advanced_settings_8m_a9b07119da70fc4a54e0d1cb5751d69aa}
+
+
+Definition at line 40 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a36e6c45106ffb95585180c6f14e73a41}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!Old\-Pos@{Old\-Pos}}
+\index{Old\-Pos@{Old\-Pos}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{Old\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}Old\-Pos = {\bf get}({\bf h\-Object},'Position')}}\label{advanced_settings_8m_a36e6c45106ffb95585180c6f14e73a41}
+
+
+Definition at line 79 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a6a820eb7d5b865729c578fc26ee38728}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!Old\-Units@{Old\-Units}}
+\index{Old\-Units@{Old\-Units}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{Old\-Units}]{\setlength{\rightskip}{0pt plus 5cm}Old\-Units = {\bf get}({\bf h\-Object}, 'Units')}}\label{advanced_settings_8m_a6a820eb7d5b865729c578fc26ee38728}
+
+
+Definition at line 77 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_aa8eb5302d59afdfaf28f3bc137c7863b}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!pot\-Prog\-Interval@{pot\-Prog\-Interval}}
+\index{pot\-Prog\-Interval@{pot\-Prog\-Interval}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{pot\-Prog\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} data pot\-Prog\-Interval = {\bf floor}({\bf str2num}({\bf get}(handles.\-edit\-\_\-pot\-Prog\-Interval,'{\bf String}')))}}\label{advanced_settings_8m_aa8eb5302d59afdfaf28f3bc137c7863b}
+
+
+Definition at line 123 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a667c8618c3037045908c160a270507c2}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!print\-Level@{print\-Level}}
+\index{print\-Level@{print\-Level}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{print\-Level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} data print\-Level = {\bf floor}({\bf str2num}({\bf get}(handles.\-edit\-\_\-\-Print\-Level,'{\bf String}')))}}\label{advanced_settings_8m_a667c8618c3037045908c160a270507c2}
+
+
+Definition at line 118 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a0f754385b23e610f6c06d0235a915abb}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!prop\-Prog\-Interval@{prop\-Prog\-Interval}}
+\index{prop\-Prog\-Interval@{prop\-Prog\-Interval}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{prop\-Prog\-Interval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} data prop\-Prog\-Interval = {\bf floor}({\bf str2num}({\bf get}(handles.\-edit\-\_\-prop\-Prog\-Interval,'{\bf String}')))}}\label{advanced_settings_8m_a0f754385b23e610f6c06d0235a915abb}
+
+
+Definition at line 122 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a9d46fd6fa59ba6c35733e783f0268e4f}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!save\-Potential@{save\-Potential}}
+\index{save\-Potential@{save\-Potential}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{save\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} data save\-Potential = {\bf get}(handles.\-checkbox\-\_\-\-Save\-Potential,'{\bf Value}')}}\label{advanced_settings_8m_a9d46fd6fa59ba6c35733e783f0268e4f}
+
+
+Definition at line 120 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a0688aaeba6faffc2c1122843bce23ce5}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!save\-Total\-Potential@{save\-Total\-Potential}}
+\index{save\-Total\-Potential@{save\-Total\-Potential}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{save\-Total\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} data save\-Total\-Potential = {\bf get}(handles.\-checkbox\-\_\-\-Save\-Total\-Potential,'{\bf Value}')}}\label{advanced_settings_8m_a0688aaeba6faffc2c1122843bce23ce5}
+
+
+Definition at line 121 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a2f62333425afb8c8a85fd93d5cb6c198}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!Screen\-Size@{Screen\-Size}}
+\index{Screen\-Size@{Screen\-Size}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{Screen\-Size}]{\setlength{\rightskip}{0pt plus 5cm}Screen\-Size ={\bf get}(0,'Screen\-Size')}}\label{advanced_settings_8m_a2f62333425afb8c8a85fd93d5cb6c198}
+
+
+Definition at line 85 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a64af3e25200c59fba64c6e2a38fb4456}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!varargout@{varargout}}
+\index{varargout@{varargout}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{varargout}]{\setlength{\rightskip}{0pt plus 5cm}varargout}}\label{advanced_settings_8m_a64af3e25200c59fba64c6e2a38fb4456}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= advancedSettings(varargin)
+% ADVANCEDSETTINGS \hyperlink{_displacement_params_8m_aad05f78187c942f9dd521605fa81f1ba}{M}-\hyperlink{qmb_8m_a0afda3603b043ac6b7362fdee225631e}{file} for advancedSettings.fig
+%      ADVANCEDSETTINGS by \hyperlink{_displacement_params_8m_a831a3e1133c41b364b824dcb52ee0f9a}{itself}
+\end{DoxyCode}
+
+
+Definition at line 1 of file advanced\-Settings.\-m.
+
+\hypertarget{advanced_settings_8m_a6eae355d0d16babb03dcdc277c76c47b}{\index{advanced\-Settings.\-m@{advanced\-Settings.\-m}!waiting@{waiting}}
+\index{waiting@{waiting}!advancedSettings.m@{advanced\-Settings.\-m}}
+\subsubsection[{waiting}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} The G\-U\-I is no longer waiting}}\label{advanced_settings_8m_a6eae355d0d16babb03dcdc277c76c47b}
+
+
+Definition at line 142 of file advanced\-Settings.\-m.
+

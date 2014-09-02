@@ -1,0 +1,6 @@
+<map id="QSTEM::CPotential::ReadPotential" name="QSTEM::CPotential::ReadPotential">
+<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_data_reader_factory.html#a82a7cfabc38ce162874e908c26ab90f9" title="QSTEM::CDataReaderFactory::Get" alt="" coords="201,5,431,32"/>
+<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_data_reader_factory.html#a76c7dd3521506b9c6f2ed868d1eb4f90" title="QSTEM::CDataReaderFactory\l::GetReader" alt="" coords="215,57,417,98"/>
+<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_potential.html#ac038d52b6e988cbbd917f54078249b9c" title="QSTEM::CPotential::\lResizeSlices" alt="" coords="243,122,389,163"/>
+<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_potential.html#aed049fef3c601fd3b89ef4ff4389ae23" title="QSTEM::CPotential::\lReadSlice" alt="" coords="243,187,389,229"/>
+</map>

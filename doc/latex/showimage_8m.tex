@@ -1,0 +1,518 @@
+\hypertarget{showimage_8m}{\section{G\-U\-I\-\_\-\-Matlab/showimage.m File Reference}
+\label{showimage_8m}\index{G\-U\-I\-\_\-\-Matlab/showimage.\-m@{G\-U\-I\-\_\-\-Matlab/showimage.\-m}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{xyz2cfg_8m_a7f9b12e953d2678415a3d421f36ae4d6}{nargin} \&\& \hyperlink{showimage_8m_aae1d1bec0e9c36c2fddc5cd87d8c4eee}{ischar} (varargin\{1\}) gui\-\_\-\-State.\-gui\-\_\-\-Callback
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{showimage_8m_a58f7f5bb8af524fdfac53ec31e329e3f}{gui\-\_\-mainfcn} (\hyperlink{virtual_goniometer_8m_a15c01a18166c645a9c9811b10391ee06}{gui\-\_\-\-State}, varargin\{\-:\})
+\item 
+\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} V\-A\-R\-A\-R\-G\-I\-N \hyperlink{showimage_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object} ()
+\item 
+\hyperlink{showimage_8m_a4eadc7fb307c1654508c05dc96cd9966}{set} (handles.\-edit\-\_\-directoryname,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}', \hyperlink{showimage_8m_aa1d0c5f34e44e9afc5718e975103941d}{handles.\-directoryname})
+\item 
+\hyperlink{showimage_8m_a60d55c29e50e42f4bd078734c19bac31}{if} (\hyperlink{qmb_8m_ab69fc29223800551c1fca07ee84e90ea}{length}(varargin) $>$ 0) input\-Dir
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{showimage_8m_adb44e1a7edbb4952fe2b07ca68a1655e}{isempty} (findstr(input\-Dir,'\-:\textbackslash{}')) input\-Dir
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} decide which part of \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} \\*
+complex \hyperlink{image_sim_8m_afae9c1ba68a4a4b4cbdc4b36f2e0afe6}{image} to \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} \hyperlink{showimage_8m_a43b622563c16a4caf2e67b5e35e368c7}{fprintf} ('Complex choice\-:\%d\textbackslash{}n', \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-listbox\-\_\-\-Complex,'\hyperlink{image_sim_8m_a896c037a32087c5c20d97e64a1786880}{Value}'))
+\item 
+\hyperlink{draw_xtal_8m_a097da1a4e072a25b17f4eb06d5c4ab1d}{switch} \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get} (handles.\-listbox\-\_\-\-Complex,'\hyperlink{image_sim_8m_a896c037a32087c5c20d97e64a1786880}{Value}') \hyperlink{xyz2cfg_8m_a4120e7c19c5d82f60cfc57fb6e34665a}{case} 1\%Modulus \hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{img}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{showimage_8m_a047548a2c8b6784c10844de910898b90}{set} (handles.\-listbox\-\_\-\-Complex,'\hyperlink{showimage_8m_a1278af71b2b0c86e50d9e50f815e6161}{Enable}','off') \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if}(0) \hyperlink{draw_xtal_8m_a097da1a4e072a25b17f4eb06d5c4ab1d}{switch} \hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-listbox\-\_\-\-Complex
+\item 
+\hyperlink{showimage_8m_a0ab352382246f5fe0590f991f05e0651}{if} ((\hyperlink{showimage_8m_a433190cc875291fed273a92321706246}{replicate\-X} $>$ 1)$\vert$$\vert$(\hyperlink{showimage_8m_a93808385d7d4a2e41697556f6de53113}{replicate\-Y} $>$ 1)) \hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{img}
+\item 
+\hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} show\-In\-New\-Window \hyperlink{scale_s_t_e_m_image_8m_a391e34f2de441d79152a7b3d6e4c9c86}{figure} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \\*
+\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-checkbox\-\_\-\-Surfplot,'\hyperlink{image_sim_8m_a896c037a32087c5c20d97e64a1786880}{Value}') \\*
+surf(\hyperlink{image_sim_8m_a3bd72991d01b3af4f1ed8ea1317879de}{dx} $\ast$\mbox{[}0 \hyperlink{showimage_8m_acdc7a0c2536e4cc7de29cde9ac00dfdf}{colormap} ('default')
+\item 
+shading interp \hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{showimage_8m_aab54ff81c11d243aba47a9e6a121f288}{imagesc} (\hyperlink{image_sim_8m_a3bd72991d01b3af4f1ed8ea1317879de}{dx} $\ast$\mbox{[}0\-:\hyperlink{showimage_8m_a433190cc875291fed273a92321706246}{replicate\-X} $\ast$\hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx}-\/1\mbox{]}, \hyperlink{showimage_8m_ac6bb4b856c3d13f19466d849c6ae0138}{dy} $\ast$\mbox{[}0\-:\hyperlink{showimage_8m_a93808385d7d4a2e41697556f6de53113}{replicate\-Y} $\ast$\hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny}-\/1\mbox{]}, \hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{img})
+\item 
+\hyperlink{showimage_8m_aa3e9a9a20b3870b903b32566274f83d2}{set} (gca,'Y\-Dir','normal')
+\item 
+\hyperlink{showimage_8m_af56c95f61621bf9779137b38fcb3e0fd}{colormap} ('gray')
+\item 
+shading interp \hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{showimage_8m_a6eaf4a154ca7a7ead7ae8d6c6f6d38ad}{imagesc} (\hyperlink{image_sim_8m_a3bd72991d01b3af4f1ed8ea1317879de}{dx} $\ast$\mbox{[}0\-:\hyperlink{showimage_8m_a433190cc875291fed273a92321706246}{replicate\-X} $\ast$\hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx}-\/1\mbox{]}, \hyperlink{showimage_8m_ac6bb4b856c3d13f19466d849c6ae0138}{dy} $\ast$\mbox{[}0\-:\hyperlink{showimage_8m_a93808385d7d4a2e41697556f6de53113}{replicate\-Y} $\ast$\hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny}-\/1\mbox{]}, \hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{img},'Parent', handles.\-axes\-\_\-\-Image)
+\item 
+\hyperlink{showimage_8m_a3ed9392a70f0f667b363ddfdef9ced54}{guidata} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles})
+\item 
+\hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} G\-C\-B\-O \hyperlink{showimage_8m_a170fea07bf72217c0c53868de1f85ef7}{Hint\-:} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object},'\hyperlink{qmb_8m_a97695672c0d89ebbb1074dee2ea2a8d8}{Background\-Color}','\hyperlink{qmb_8m_acc4c9367cff2473d08ec9910547865f6}{white}'\hyperlink{virtual_goniometer_8m_a6b11865bcca154f476b9d05d1ac7a75b}{set})
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{showimage_8m_a10ca0f603549907e4634a58a9474e73d}{edit\-\_\-\-Oversampling\-\_\-\-Callback} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles}) \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles}
+\item 
+\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{showimage_8m_abe03348881b4c9f50326ced431b739cd}{listbox\-\_\-image\-\_\-\-Callback} ()
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{showimage_8m_a5061f469930da66e82e0739030d55434}{edit\-\_\-\-Source\-Size\-\_\-\-Callback} (\hyperlink{virtual_goniometer_8m_a6e69a2e6c16546a1aba75e0422487e55}{h\-Object}, \hyperlink{qmb_8m_a5f0afe6204672342221604c5c8eb3887}{eventdata}, \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles}) \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles}
+\item 
+\hyperlink{qmb_8m_a7a230f02bdffebd1357e3c0b49e01271}{file\-Name}, \hyperlink{_read_d_m3___matlab_8m_a9b0b6d24f95658a64d11e8d57d2c1c7d}{print\-Flag}, flag \hyperlink{showimage_8m_a7ab106986b00222f9a8b5e3f29711658}{headerlength} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \hyperlink{showimage_8m_acc89f64219ddae53243030f2c645fc06}{varargout}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} by \hyperlink{showimage_8m_a831a3e1133c41b364b824dcb52ee0f9a}{itself}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} by creates \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} new \\*
+S\-H\-O\-W\-I\-M\-A\-G\-E or raises the \\*
+existing singleton $\ast$ \hyperlink{showimage_8m_a9c679669d62b72846eda13babedbf334}{H}
+\item 
+\hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} by creates \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} new \\*
+S\-H\-O\-W\-I\-M\-A\-G\-E or raises the \\*
+existing singleton property \\*
+\hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value} pairs are applied to the \\*
+G\-U\-I before \\*
+showimage\-\_\-\-Opening\-Function gets \\*
+called An unrecognized \\*
+property \hyperlink{qmb_8m_abdc1dcc6fed70c14f9b5ae237e486f4e}{name} or invalid \hyperlink{read_config_file_8m_afcc7a4b78ecd8fa7e713f8cfa0f51017}{value} \\*
+makes property application \\*
+stop All inputs are passed to \\*
+showimage\-\_\-\-Opening\-Fcn via \\*
+varargin $\ast$See G\-U\-I Options \hyperlink{image_sim_8m_a454532bd4d96c4531eb16b4052fefbe4}{on} \\*
+G\-U\-I\-D\-E \hyperlink{aberrations___t_e_m_8m_aef29541a06b7f933d32a804307db13af}{s} Tools menu Choose G\-U\-I \\*
+allows only one instance to \\*
+run(singleton)\char`\"{}. \% \% See also \hyperlink{showimage_8m_a08a59f7450937d1d98042764490d71be}{gui\-\_\-\-State}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{showimage_8m_a9b07119da70fc4a54e0d1cb5751d69aa}{nargout} \mbox{[}\hyperlink{virtual_goniometer_8m_a7c1ef7386988a8ccd4761d8428895842}{varargout}\{1\-:nargout\}\mbox{]} = \hyperlink{virtual_goniometer_8m_a58f7f5bb8af524fdfac53ec31e329e3f}{gui\-\_\-mainfcn}(\hyperlink{virtual_goniometer_8m_a15c01a18166c645a9c9811b10391ee06}{gui\-\_\-\-State}, varargin\{\-:\})
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{showimage_8m_aa1d0c5f34e44e9afc5718e975103941d}{directoryname} = pwd()
+\item 
+\hyperlink{showimage_8m_a2ff994e16bf9521154de4cf659a3b689}{filename} = ''
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} if$\sim$isdir(input\-Dir)\%Check \\*
+to \hyperlink{_display_model_properties_8m_a634fdd7f6426b0a49817c39e9101a3c4}{see} whether \hyperlink{write_fields2_file_8m_a75658b9c899229893bf0bc9d90e97d93}{file} exists \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} \hyperlink{showimage_8m_aac101b26d78c9a6f145790c38d29e6d1}{fid$<$ 0input\-Dir=pwd;elsefclose(fid)\mbox{[}input\-Dir, name, ext\mbox{]}=fileparts(input\-Dir);filename=\mbox{[}name, ext\mbox{]};endendhandles.\-directoryname=input\-Dir;set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);\%if file\-:\%handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);end\%\-Update handles structureguidata(h\-Object, handles);\%\-U\-I\-W\-A\-I\-T makes showimage wait for user response(see U\-I\-R\-E\-S\-U\-M\-E)\%uiwait(handles.\-figure1);\%-\/-\/-\/\-Outputs from this function are returned to the command line.\-function varargout=showimage\-\_\-\-Output\-Fcn(h\-Object, eventdata, handles)\%varargoutcell array for returning output args(see V\-A\-R\-A\-R\-G\-O\-U\-T);\%h\-Objecthandle to figure\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%\-Get default command line output from handles structurevarargout\{1\}=handles.\-output;function edit\-\_\-directoryname\-\_\-\-Callback(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%\-Hints\-:get(h\-Object,'\-String') returns contents of edit\-\_\-directoryname as text\%str2double(get(h\-Object,'\-String')) returns contents of edit\-\_\-directoryname as a double\%-\/-\/-\/\-Executes during object creation, after setting all properties.\-function edit\-\_\-directoryname\-\_\-\-Create\-Fcn(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesempty-\/handles not created until after all Create\-Fcns called\%\-Hint\-:edit controls usually have a white background on Windows.\%\-See I\-S\-P\-C and C\-O\-M\-P\-U\-T\-E\-R.\-if ispc \&\&isequal(get(h\-Object,'\-Background\-Color'), get(0,'default\-Uicontrol\-Background\-Color')) set(h\-Object,'\-Background\-Color','white');end\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-Select\-Dir.\-function handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, ask\-User, filename) if(nargin$<$ 4) ask\-User=1;endif(nargin$<$ 5) filename= '';endhandles.\-directoryname=get(handles.\-edit\-\_\-directoryname,'\-String');if ask\-Userhandles.\-directoryname=uigetdir(handles.\-directoryname);if ischar(handles.\-directoryname) set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);endendif$\sim$ischar(handles.\-directoryname) returnend\%handles.\-directorynamehandles.\-files=dir(sprintf('\%s\textbackslash{}\textbackslash{}$\ast$.\-img', handles.\-directoryname));\%handles.\-files.\-nameset(handles.\-listbox\-\_\-image,'\-String',\{handles.\-files.\-name\});set(handles.\-listbox\-\_\-image,'\-Value', 1);handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-New\-Window.\-function pushbutton\-\_\-\-New\-Window\-\_\-\-Callback(h\-Object, eventdata, handles) handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on selection change in listbox\-\_\-image.\-function handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, show\-In\-New\-Window, fname) if nargin$<$ 4show\-In\-New\-Window=0;endif(nargin$<$ 5) fname= '';endif isempty(fname) filelist=get(handles.\-listbox\-\_\-image,'\-String');\%filename=sprintf('\%s\textbackslash{}\textbackslash{}\%s', handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});if isempty(filelist) filename= '';elsefilename=fullfile(handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});endelsefilelist=get(handles.\-listbox\-\_\-image,'\-String');for j=1\-:length(filelist) if strcmp(filelist\{j\}, fname) set(handles.\-listbox\-\_\-image,'\-Value', j);breakendendfilename=fullfile(handles.\-directoryname, fname);endif isempty(filename) returnend\mbox{[}img, t, dx, dy, params, comment\mbox{]}=binread2\-D(filename);\mbox{[}\-Ny, Nx\mbox{]}=size(img);real\-Flag=isreal(img);ss=0;\-S\-T\-E\-Mimage=0;comment=char(comment);if length(comment)==10if sum(abs(comment-\/'\-S\-T\-E\-M image'))==0\%fprintf('\-S\-T\-E\-M image\textbackslash{}n') ss=abs(str2num(get(handles.\-edit\-\_\-\-Source\-Size,'\-String')));source\-Size=ss;\%scale the source size to produce a Gaussian of F\-W\-H\-M=ss\-:ss=ss/(sqrt(-\/log(0.\-5))$\ast$2);\%=ss/1.\-66510922231540;\-S\-T\-E\-Mimage=1;endendif S\-T\-E\-Mimageset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A,\%d runs averaged over\textbackslash{}n\%s', t, dx, dy, params(1), comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','on');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','on');if(0) set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','on');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','on');endelseset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A\textbackslash{}n\%s', t, dx, dy, comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','off');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','off');if(0) set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','off');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','off');endendhandles.\-Oversampling=abs(str2num(get(handles.\-edit\-\_\-\-Oversampling,'\-String')));if handles.\-Oversampling $\ast$max(\-Nx, Ny) $>$ 1024handles.\-Oversampling=floor(1024/max(\-Nx, Ny));endif handles.\-Oversampling$<$ 1handles.\-Oversampling=1;endset(handles.\-edit\-\_\-\-Oversampling,'\-String', handles.\-Oversampling);\%oversample image, if desired\-:scale=1;if handles.\-Oversampling $>$ 1\-Ny\-O=round(handles.\-Oversampling $\ast$\-Ny);\-Nx\-O=round(handles.\-Oversampling $\ast$\-Nx);imgft=zeros(\-Ny\-O, Nx\-O);\-Nx\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Nx/2)+1;\-Ny\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Ny/2)+1;\-Nx\-Mid=floor(\-Nx/2)+1;\-Ny\-Mid=floor(\-Ny/2)+1;imgft(\-Ny\-O\-Mid-\/\-Ny\-Mid+\mbox{[}1\-:\-Ny\mbox{]}, Nx\-O\-Mid-\/\-Nx\-Mid+\mbox{[}1\-:\-Nx\mbox{]})=fftshift(fft2(img));\%\-Apply effective source size for S\-T\-E\-M images\-:if ss $>$} \mbox{[}qx, qy\mbox{]} = meshgrid((-\/Nx\-O\-Mid+\mbox{[}1\-:Nx\-O\mbox{]})/(\hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx}$\ast$\hyperlink{image_sim_8m_a3bd72991d01b3af4f1ed8ea1317879de}{dx}),(-\/Ny\-O\-Mid+\mbox{[}1\-:Ny\-O\mbox{]})/(\hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny}$\ast$\hyperlink{showimage_8m_ac6bb4b856c3d13f19466d849c6ae0138}{dy}))
+\item 
+\hyperlink{showimage_8m_ae07f845786f7290b6eb093f5e8670d10}{img} = ifft2(ifftshift(imgft.$\ast$exp(-\/((pi$\ast$ss)$^\wedge$2$\ast$(qx.$^\wedge$2+qy.$^\wedge$2)))))
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_acec6d8ad52a28972fa74e071c1a63b6a}{scale} = 1/(\hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx}$\ast$\hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny})
+\item 
+\hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx} = round(handles.\-Oversampling$\ast$Nx)
+\item 
+\hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny} = round(handles.\-Oversampling$\ast$Ny)
+\item 
+\hyperlink{showimage_8m_af50f21d9ce17d934229f60fd58b3fac0}{dx} = dx/handles.\-Oversampling
+\item 
+\hyperlink{showimage_8m_ac6bb4b856c3d13f19466d849c6ae0138}{dy} = dy/handles.\-Oversampling
+\item 
+\hyperlink{qmb_8m_a2d9568f50e74214c48513c91bf8f143a}{else} \hyperlink{virtual_goniometer_8m_a4dc2538540fbdf026d9a93aec8af9423}{if} ss \hyperlink{showimage_8m_aacb99081fc18913427b9738cba32292a}{Nx\-Mid} = \hyperlink{advanced_settings_8m_a05ceb1cc3b74082a4c5ce7f459a483d4}{floor}(\hyperlink{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{Nx}/2)+1
+\item 
+\hyperlink{showimage_8m_ac5a2f44691cfa358379332220d04ab1b}{Ny\-Mid} = \hyperlink{advanced_settings_8m_a05ceb1cc3b74082a4c5ce7f459a483d4}{floor}(\hyperlink{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{Ny}/2)+1
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} decide which part of \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} \\*
+complex \hyperlink{image_sim_8m_afae9c1ba68a4a4b4cbdc4b36f2e0afe6}{image} to \hyperlink{showimage_8m_ac1b7f512a0fa5c0b7d1d056a07969aa2}{use}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} decide which part of \hyperlink{image_sim_8m_aa9c57d86c53f86ed6afc6339a0476363}{a} \\*
+complex \hyperlink{image_sim_8m_afae9c1ba68a4a4b4cbdc4b36f2e0afe6}{image} to \hyperlink{showimage_8m_a1278af71b2b0c86e50d9e50f815e6161}{Enable}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_a433190cc875291fed273a92321706246}{replicate\-X} = \hyperlink{scale_s_t_e_m_image_8m_a2d1282f9b3298deed846ed1613f9f3c4}{str2num}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-\-Replicate\-X,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'))
+\item 
+\hyperlink{showimage_8m_a93808385d7d4a2e41697556f6de53113}{replicate\-Y} = \hyperlink{scale_s_t_e_m_image_8m_a2d1282f9b3298deed846ed1613f9f3c4}{str2num}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-\-Replicate\-Y,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}'))
+\item 
+axis \hyperlink{showimage_8m_afeaa7ecdd726aa1950ba61dc659eb561}{equal}
+\item 
+axis \hyperlink{showimage_8m_a1a71f5e406b211ed616173276484b78b}{tight}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{image_sim_8m_aec0a4fa5ed0e46b2a0a8fb27d295274d}{colorbar} \hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{showimage_8m_a41bb1e845038e2407234668e39e94f56}{img\-Final} = \hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{img}
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{showimage_8m_ad941f6ef920fbfb3d75b60ddbedbdd39}{t} = t
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a7cfce9e4244a1936557979efaaa3882a}{handles} \hyperlink{showimage_8m_a405b2916e2d66a1795ec3f2038ab5f88}{source\-Size} = \hyperlink{fftw__allocator_8hpp_a3265f53b67af1612bd5c314cdce95c32}{abs}(\hyperlink{scale_s_t_e_m_image_8m_a2d1282f9b3298deed846ed1613f9f3c4}{str2num}(\hyperlink{showimage_8m_a11214dca6c394abde47b5f968409433e}{get}(handles.\-edit\-\_\-\-Source\-Size,'\hyperlink{qmb_8m_a57845f93c6d3079cc203a7f78506f171}{String}')))
+\item 
+\hyperlink{scale_s_t_e_m_image_8m_a201589b538fc56729422d4773c8b0cfe}{end} \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} \mbox{[}\hyperlink{sim_image_from_wave_8m_a158106813601030227d9d5f4a634da7f}{img}, \hyperlink{showimage_8m_ad941f6ef920fbfb3d75b60ddbedbdd39}{t}, \hyperlink{image_sim_8m_a3bd72991d01b3af4f1ed8ea1317879de}{dx}, \hyperlink{showimage_8m_ac6bb4b856c3d13f19466d849c6ae0138}{dy}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{showimage_8m_acdc7a0c2536e4cc7de29cde9ac00dfdf}{\index{showimage.\-m@{showimage.\-m}!colormap@{colormap}}
+\index{colormap@{colormap}!showimage.m@{showimage.\-m}}
+\subsubsection[{colormap}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} show\-In\-New\-Window {\bf figure} {\bf if} {\bf get} (handles.\-checkbox\-\_\-\-Surfplot,'{\bf Value}') surf({\bf dx}$\ast$\mbox{[}0 colormap (
+\begin{DoxyParamCaption}
+\item[{'default'}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_acdc7a0c2536e4cc7de29cde9ac00dfdf}
+\hypertarget{showimage_8m_af56c95f61621bf9779137b38fcb3e0fd}{\index{showimage.\-m@{showimage.\-m}!colormap@{colormap}}
+\index{colormap@{colormap}!showimage.m@{showimage.\-m}}
+\subsubsection[{colormap}]{\setlength{\rightskip}{0pt plus 5cm}colormap (
+\begin{DoxyParamCaption}
+\item[{'gray'}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_af56c95f61621bf9779137b38fcb3e0fd}
+\hypertarget{showimage_8m_a10ca0f603549907e4634a58a9474e73d}{\index{showimage.\-m@{showimage.\-m}!edit\-\_\-\-Oversampling\-\_\-\-Callback@{edit\-\_\-\-Oversampling\-\_\-\-Callback}}
+\index{edit\-\_\-\-Oversampling\-\_\-\-Callback@{edit\-\_\-\-Oversampling\-\_\-\-Callback}!showimage.m@{showimage.\-m}}
+\subsubsection[{edit\-\_\-\-Oversampling\-\_\-\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf function} edit\-\_\-\-Oversampling\-\_\-\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object}}]{, }
+\item[{{\bf eventdata}}]{, }
+\item[{{\bf handles}}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_a10ca0f603549907e4634a58a9474e73d}
+\hypertarget{showimage_8m_a5061f469930da66e82e0739030d55434}{\index{showimage.\-m@{showimage.\-m}!edit\-\_\-\-Source\-Size\-\_\-\-Callback@{edit\-\_\-\-Source\-Size\-\_\-\-Callback}}
+\index{edit\-\_\-\-Source\-Size\-\_\-\-Callback@{edit\-\_\-\-Source\-Size\-\_\-\-Callback}!showimage.m@{showimage.\-m}}
+\subsubsection[{edit\-\_\-\-Source\-Size\-\_\-\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf function} edit\-\_\-\-Source\-Size\-\_\-\-Callback (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object}}]{, }
+\item[{{\bf eventdata}}]{, }
+\item[{{\bf handles}}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_a5061f469930da66e82e0739030d55434}
+\hypertarget{showimage_8m_a43b622563c16a4caf2e67b5e35e368c7}{\index{showimage.\-m@{showimage.\-m}!fprintf@{fprintf}}
+\index{fprintf@{fprintf}!showimage.m@{showimage.\-m}}
+\subsubsection[{fprintf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} decide which part of {\bf a} complex {\bf image} to {\bf on} fprintf (
+\begin{DoxyParamCaption}
+\item[{'Complex choice\-:\%d\textbackslash{}n'}]{, }
+\item[{{\bf get}(handles.\-listbox\-\_\-\-Complex,'{\bf Value}')}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_a43b622563c16a4caf2e67b5e35e368c7}
+\hypertarget{showimage_8m_a11214dca6c394abde47b5f968409433e}{\index{showimage.\-m@{showimage.\-m}!get@{get}}
+\index{get@{get}!showimage.m@{showimage.\-m}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf switch} get (
+\begin{DoxyParamCaption}
+\item[{handles.}]{listbox\-\_\-\-Complex, }
+\item[{'{\bf Value}'}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_a11214dca6c394abde47b5f968409433e}
+\hypertarget{showimage_8m_a58f7f5bb8af524fdfac53ec31e329e3f}{\index{showimage.\-m@{showimage.\-m}!gui\-\_\-mainfcn@{gui\-\_\-mainfcn}}
+\index{gui\-\_\-mainfcn@{gui\-\_\-mainfcn}!showimage.m@{showimage.\-m}}
+\subsubsection[{gui\-\_\-mainfcn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} gui\-\_\-mainfcn (
+\begin{DoxyParamCaption}
+\item[{{\bf gui\-\_\-\-State}}]{, }
+\item[{varargin\{\-:\}}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_a58f7f5bb8af524fdfac53ec31e329e3f}
+\hypertarget{showimage_8m_a3ed9392a70f0f667b363ddfdef9ced54}{\index{showimage.\-m@{showimage.\-m}!guidata@{guidata}}
+\index{guidata@{guidata}!showimage.m@{showimage.\-m}}
+\subsubsection[{guidata}]{\setlength{\rightskip}{0pt plus 5cm}guidata (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object}}]{, }
+\item[{{\bf handles}}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_a3ed9392a70f0f667b363ddfdef9ced54}
+\hypertarget{showimage_8m_a7ab106986b00222f9a8b5e3f29711658}{\index{showimage.\-m@{showimage.\-m}!headerlength@{headerlength}}
+\index{headerlength@{headerlength}!showimage.m@{showimage.\-m}}
+\subsubsection[{headerlength}]{\setlength{\rightskip}{0pt plus 5cm}{\bf file\-Name},{\bf print\-Flag},flag headerlength (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{showimage_8m_a7ab106986b00222f9a8b5e3f29711658}
+\hypertarget{showimage_8m_a170fea07bf72217c0c53868de1f85ef7}{\index{showimage.\-m@{showimage.\-m}!Hint\-:@{Hint\-:}}
+\index{Hint\-:@{Hint\-:}!showimage.m@{showimage.\-m}}
+\subsubsection[{Hint\-:}]{\setlength{\rightskip}{0pt plus 5cm}{\bf see} G\-C\-B\-O Hint\-: (
+\begin{DoxyParamCaption}
+\item[{{\bf h\-Object}}]{, }
+\item[{'{\bf Background\-Color}'}]{, }
+\item[{'{\bf white}'}]{set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{showimage_8m_a170fea07bf72217c0c53868de1f85ef7}
+\hypertarget{showimage_8m_a6e69a2e6c16546a1aba75e0422487e55}{\index{showimage.\-m@{showimage.\-m}!h\-Object@{h\-Object}}
+\index{h\-Object@{h\-Object}!showimage.m@{showimage.\-m}}
+\subsubsection[{h\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf see} V\-A\-R\-A\-R\-G\-I\-N h\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{showimage_8m_a6e69a2e6c16546a1aba75e0422487e55}
+\hypertarget{showimage_8m_a60d55c29e50e42f4bd078734c19bac31}{\index{showimage.\-m@{showimage.\-m}!if@{if}}
+\index{if@{if}!showimage.m@{showimage.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{{\bf length}(varargin)}]{, }
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_a60d55c29e50e42f4bd078734c19bac31}
+\hypertarget{showimage_8m_a0ab352382246f5fe0590f991f05e0651}{\index{showimage.\-m@{showimage.\-m}!if@{if}}
+\index{if@{if}!showimage.m@{showimage.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{({\bf replicate\-X} $>$ 1)$\vert$$\vert$({\bf replicate\-Y} $>$ 1)}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_a0ab352382246f5fe0590f991f05e0651}
+\hypertarget{showimage_8m_aab54ff81c11d243aba47a9e6a121f288}{\index{showimage.\-m@{showimage.\-m}!imagesc@{imagesc}}
+\index{imagesc@{imagesc}!showimage.m@{showimage.\-m}}
+\subsubsection[{imagesc}]{\setlength{\rightskip}{0pt plus 5cm}shading interp {\bf else} imagesc (
+\begin{DoxyParamCaption}
+\item[{{\bf dx} $\ast$}]{\mbox{[}0\-:replicate\-X $\ast$\-Nx-\/1\mbox{]}, }
+\item[{{\bf dy} $\ast$}]{\mbox{[}0\-:replicate\-Y $\ast$\-Ny-\/1\mbox{]}, }
+\item[{{\bf img}}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_aab54ff81c11d243aba47a9e6a121f288}
+\hypertarget{showimage_8m_a6eaf4a154ca7a7ead7ae8d6c6f6d38ad}{\index{showimage.\-m@{showimage.\-m}!imagesc@{imagesc}}
+\index{imagesc@{imagesc}!showimage.m@{showimage.\-m}}
+\subsubsection[{imagesc}]{\setlength{\rightskip}{0pt plus 5cm}shading interp {\bf else} imagesc (
+\begin{DoxyParamCaption}
+\item[{{\bf dx} $\ast$}]{\mbox{[}0\-:replicate\-X $\ast$\-Nx-\/1\mbox{]}, }
+\item[{{\bf dy} $\ast$}]{\mbox{[}0\-:replicate\-Y $\ast$\-Ny-\/1\mbox{]}, }
+\item[{{\bf img}}]{, }
+\item[{'Parent'}]{, }
+\item[{handles.}]{axes\-\_\-\-Image}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_a6eaf4a154ca7a7ead7ae8d6c6f6d38ad}
+\hypertarget{showimage_8m_aae1d1bec0e9c36c2fddc5cd87d8c4eee}{\index{showimage.\-m@{showimage.\-m}!ischar@{ischar}}
+\index{ischar@{ischar}!showimage.m@{showimage.\-m}}
+\subsubsection[{ischar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} {\bf nargin}\&\& ischar (
+\begin{DoxyParamCaption}
+\item[{varargin\{1\}}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_aae1d1bec0e9c36c2fddc5cd87d8c4eee}
+\hypertarget{showimage_8m_adb44e1a7edbb4952fe2b07ca68a1655e}{\index{showimage.\-m@{showimage.\-m}!isempty@{isempty}}
+\index{isempty@{isempty}!showimage.m@{showimage.\-m}}
+\subsubsection[{isempty}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} isempty (
+\begin{DoxyParamCaption}
+\item[{findstr(input\-Dir,'\-:\textbackslash{}')}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_adb44e1a7edbb4952fe2b07ca68a1655e}
+\hypertarget{showimage_8m_abe03348881b4c9f50326ced431b739cd}{\index{showimage.\-m@{showimage.\-m}!listbox\-\_\-image\-\_\-\-Callback@{listbox\-\_\-image\-\_\-\-Callback}}
+\index{listbox\-\_\-image\-\_\-\-Callback@{listbox\-\_\-image\-\_\-\-Callback}!showimage.m@{showimage.\-m}}
+\subsubsection[{listbox\-\_\-image\-\_\-\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}{\bf h\-Object} {\bf eventdata} {\bf handles} listbox\-\_\-image\-\_\-\-Callback (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{showimage_8m_abe03348881b4c9f50326ced431b739cd}
+\hypertarget{showimage_8m_a4eadc7fb307c1654508c05dc96cd9966}{\index{showimage.\-m@{showimage.\-m}!set@{set}}
+\index{set@{set}!showimage.m@{showimage.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{edit\-\_\-directoryname, }
+\item[{'{\bf String}'}]{, }
+\item[{handles.}]{directoryname}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_a4eadc7fb307c1654508c05dc96cd9966}
+\hypertarget{showimage_8m_a047548a2c8b6784c10844de910898b90}{\index{showimage.\-m@{showimage.\-m}!set@{set}}
+\index{set@{set}!showimage.m@{showimage.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf else} set (
+\begin{DoxyParamCaption}
+\item[{handles.}]{listbox\-\_\-\-Complex, }
+\item[{'{\bf Enable}'}]{, }
+\item[{'off'}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_a047548a2c8b6784c10844de910898b90}
+\hypertarget{showimage_8m_aa3e9a9a20b3870b903b32566274f83d2}{\index{showimage.\-m@{showimage.\-m}!set@{set}}
+\index{set@{set}!showimage.m@{showimage.\-m}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}set (
+\begin{DoxyParamCaption}
+\item[{gca}]{, }
+\item[{'Y\-Dir'}]{, }
+\item[{'normal'}]{}
+\end{DoxyParamCaption}
+)}}\label{showimage_8m_aa3e9a9a20b3870b903b32566274f83d2}
+
+
+\subsection{Variable Documentation}
+\hypertarget{showimage_8m_aa1d0c5f34e44e9afc5718e975103941d}{\index{showimage.\-m@{showimage.\-m}!directoryname@{directoryname}}
+\index{directoryname@{directoryname}!showimage.m@{showimage.\-m}}
+\subsubsection[{directoryname}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} directoryname = pwd()}}\label{showimage_8m_aa1d0c5f34e44e9afc5718e975103941d}
+
+
+Definition at line 58 of file showimage.\-m.
+
+\hypertarget{showimage_8m_af50f21d9ce17d934229f60fd58b3fac0}{\index{showimage.\-m@{showimage.\-m}!dx@{dx}}
+\index{dx@{dx}!showimage.m@{showimage.\-m}}
+\subsubsection[{dx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} dx = dx/handles.\-Oversampling}}\label{showimage_8m_af50f21d9ce17d934229f60fd58b3fac0}
+
+
+Definition at line 262 of file showimage.\-m.
+
+\hypertarget{showimage_8m_ac6bb4b856c3d13f19466d849c6ae0138}{\index{showimage.\-m@{showimage.\-m}!dy@{dy}}
+\index{dy@{dy}!showimage.m@{showimage.\-m}}
+\subsubsection[{dy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} dy = dy/handles.\-Oversampling}}\label{showimage_8m_ac6bb4b856c3d13f19466d849c6ae0138}
+
+
+Definition at line 263 of file showimage.\-m.
+
+\hypertarget{showimage_8m_a1278af71b2b0c86e50d9e50f815e6161}{\index{showimage.\-m@{showimage.\-m}!Enable@{Enable}}
+\index{Enable@{Enable}!showimage.m@{showimage.\-m}}
+\subsubsection[{Enable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} decide which part of {\bf a} complex {\bf image} to Enable}}\label{showimage_8m_a1278af71b2b0c86e50d9e50f815e6161}
+
+
+Definition at line 276 of file showimage.\-m.
+
+\hypertarget{showimage_8m_afeaa7ecdd726aa1950ba61dc659eb561}{\index{showimage.\-m@{showimage.\-m}!equal@{equal}}
+\index{equal@{equal}!showimage.m@{showimage.\-m}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}axis equal}}\label{showimage_8m_afeaa7ecdd726aa1950ba61dc659eb561}
+
+
+Definition at line 332 of file showimage.\-m.
+
+\hypertarget{showimage_8m_aac101b26d78c9a6f145790c38d29e6d1}{\index{showimage.\-m@{showimage.\-m}!fid$<$ 0input\-Dir=pwd;elsefclose(fid)\mbox{[}input\-Dir, name, ext\mbox{]}=fileparts(input\-Dir);filename=\mbox{[}name, ext\mbox{]};endendhandles.\-directoryname=input\-Dir;set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);\%if file\-:\%handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);end\%Update handles structureguidata(h\-Object, handles);\%U\-I\-W\-A\-I\-T makes showimage wait for user response(see U\-I\-R\-E\-S\-U\-M\-E)\%uiwait(handles.\-figure1);\%-\/-\/-\/\-Outputs from this function are returned to the command line.\-function varargout=showimage\-\_\-\-Output\-Fcn(h\-Object, eventdata, handles)\%varargoutcell array for returning output args(see V\-A\-R\-A\-R\-G\-O\-U\-T);\%h\-Objecthandle to figure\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%Get default command line output from handles structurevarargout\{1\}=handles.\-output;function edit\-\_\-directoryname\-\_\-\-Callback(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%Hints\-:get(h\-Object,'\-String') returns contents of edit\-\_\-directoryname as text\%str2double(get(h\-Object,'\-String')) returns contents of edit\-\_\-directoryname as a double\%-\/-\/-\/\-Executes during object creation, after setting all properties.\-function edit\-\_\-directoryname\-\_\-\-Create\-Fcn(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesempty-\/handles not created until after all Create\-Fcns called\%Hint\-:edit controls usually have a white background on Windows.\%See I\-S\-P\-C and C\-O\-M\-P\-U\-T\-E\-R.\-if ispc \&\&isequal(get(h\-Object,'\-Background\-Color'), get(0,'default\-Uicontrol\-Background\-Color')) set(h\-Object,'\-Background\-Color','white');end\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-Select\-Dir.\-function handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, ask\-User, filename) if(nargin$<$ 4) ask\-User=1;endif(nargin$<$ 5) filename= '';endhandles.\-directoryname=get(handles.\-edit\-\_\-directoryname,'\-String');if ask\-Userhandles.\-directoryname=uigetdir(handles.\-directoryname);if ischar(handles.\-directoryname) set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);endendif$\sim$ischar(handles.\-directoryname) returnend\%handles.\-directorynamehandles.\-files=dir(sprintf('\%s\textbackslash{}\textbackslash{}$\ast$.\-img', handles.\-directoryname));\%handles.\-files.\-nameset(handles.\-listbox\-\_\-image,'\-String',\{handles.\-files.\-name\});set(handles.\-listbox\-\_\-image,'\-Value', 1);handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-New\-Window.\-function pushbutton\-\_\-\-New\-Window\-\_\-\-Callback(h\-Object, eventdata, handles) handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on selection change in listbox\-\_\-image.\-function handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, show\-In\-New\-Window, fname) if nargin$<$ 4show\-In\-New\-Window=0;endif(nargin$<$ 5) fname= '';endif isempty(fname) filelist=get(handles.\-listbox\-\_\-image,'\-String');\%filename=sprintf('\%s\textbackslash{}\textbackslash{}\%s', handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});if isempty(filelist) filename= '';elsefilename=fullfile(handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});endelsefilelist=get(handles.\-listbox\-\_\-image,'\-String');for j=1\-:length(filelist) if strcmp(filelist\{j\}, fname) set(handles.\-listbox\-\_\-image,'\-Value', j);breakendendfilename=fullfile(handles.\-directoryname, fname);endif isempty(filename) returnend\mbox{[}img, t, dx, dy, params, comment\mbox{]}=binread2\-D(filename);\mbox{[}\-Ny, Nx\mbox{]}=size(img);real\-Flag=isreal(img);ss=0;\-S\-T\-E\-Mimage=0;comment=char(comment);if length(comment)==10if sum(abs(comment-\/'\-S\-T\-E\-M image'))==0\%fprintf('\-S\-T\-E\-M image\textbackslash{}n') ss=abs(str2num(get(handles.\-edit\-\_\-\-Source\-Size,'\-String')));source\-Size=ss;\%scale the source size to produce a Gaussian of F\-W\-H\-M=ss\-:ss=ss/(sqrt(-\/log(0.\-5))$\ast$2);\%=ss/1.\-66510922231540;\-S\-T\-E\-Mimage=1;endendif S\-T\-E\-Mimageset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A,\%d runs averaged over\textbackslash{}n\%s', t, dx, dy, params(1), comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','on');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','on');if(0) set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','on');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','on');endelseset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A\textbackslash{}n\%s', t, dx, dy, comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','off');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','off');if(0) set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','off');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','off');endendhandles.\-Oversampling=abs(str2num(get(handles.\-edit\-\_\-\-Oversampling,'\-String')));if handles.\-Oversampling $\ast$max(\-Nx, Ny) $>$ 1024handles.\-Oversampling=floor(1024/max(\-Nx, Ny));endif handles.\-Oversampling$<$ 1handles.\-Oversampling=1;endset(handles.\-edit\-\_\-\-Oversampling,'\-String', handles.\-Oversampling);\%oversample image, if desired\-:scale=1;if handles.\-Oversampling $>$ 1\-Ny\-O=round(handles.\-Oversampling $\ast$\-Ny);\-Nx\-O=round(handles.\-Oversampling $\ast$\-Nx);imgft=zeros(\-Ny\-O, Nx\-O);\-Nx\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Nx/2)+1;\-Ny\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Ny/2)+1;\-Nx\-Mid=floor(\-Nx/2)+1;\-Ny\-Mid=floor(\-Ny/2)+1;imgft(\-Ny\-O\-Mid-\/\-Ny\-Mid+\mbox{[}1\-:\-Ny\mbox{]}, Nx\-O\-Mid-\/\-Nx\-Mid+\mbox{[}1\-:\-Nx\mbox{]})=fftshift(fft2(img));\%Apply effective source size for S\-T\-E\-M images\-:if ss $>$@{fid$<$ 0input\-Dir=pwd;elsefclose(fid)[input\-Dir, name, ext]=fileparts(input\-Dir);filename=[name, ext];endendhandles.\-directoryname=input\-Dir;set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);\%if file\-:\%handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);end\%\-Update handles structureguidata(h\-Object, handles);\%\-U\-I\-W\-A\-I\-T makes showimage wait for user response(see U\-I\-R\-E\-S\-U\-M\-E)\%uiwait(handles.\-figure1);\%-\/-\/-\/\-Outputs from this function are returned to the command line.\-function varargout=showimage\-\_\-\-Output\-Fcn(h\-Object, eventdata, handles)\%varargoutcell array for returning output args(see V\-A\-R\-A\-R\-G\-O\-U\-T);\%h\-Objecthandle to figure\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%\-Get default command line output from handles structurevarargout\{1\}=handles.\-output;function edit\-\_\-directoryname\-\_\-\-Callback(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%\-Hints\-:get(h\-Object,'\-String') returns contents of edit\-\_\-directoryname as text\%str2double(get(h\-Object,'\-String')) returns contents of edit\-\_\-directoryname as a double\%-\/-\/-\/\-Executes during object creation, after setting all properties.\-function edit\-\_\-directoryname\-\_\-\-Create\-Fcn(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesempty-\/handles not created until after all Create\-Fcns called\%\-Hint\-:edit controls usually have a white background on Windows.\%\-See I\-S\-P\-C and C\-O\-M\-P\-U\-T\-E\-R.\-if ispc \&\&isequal(get(h\-Object,'\-Background\-Color'), get(0,'default\-Uicontrol\-Background\-Color')) set(h\-Object,'\-Background\-Color','white');end\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-Select\-Dir.\-function handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, ask\-User, filename) if(nargin$<$ 4) ask\-User=1;endif(nargin$<$ 5) filename= '';endhandles.\-directoryname=get(handles.\-edit\-\_\-directoryname,'\-String');if ask\-Userhandles.\-directoryname=uigetdir(handles.\-directoryname);if ischar(handles.\-directoryname) set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);endendif$\sim$ischar(handles.\-directoryname) returnend\%handles.\-directorynamehandles.\-files=dir(sprintf('\%s\textbackslash{}\textbackslash{}$\ast$.\-img', handles.\-directoryname));\%handles.\-files.\-nameset(handles.\-listbox\-\_\-image,'\-String',\{handles.\-files.\-name\});set(handles.\-listbox\-\_\-image,'\-Value', 1);handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-New\-Window.\-function pushbutton\-\_\-\-New\-Window\-\_\-\-Callback(h\-Object, eventdata, handles) handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on selection change in listbox\-\_\-image.\-function handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, show\-In\-New\-Window, fname) if nargin$<$ 4show\-In\-New\-Window=0;endif(nargin$<$ 5) fname= '';endif isempty(fname) filelist=get(handles.\-listbox\-\_\-image,'\-String');\%filename=sprintf('\%s\textbackslash{}\textbackslash{}\%s', handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});if isempty(filelist) filename= '';elsefilename=fullfile(handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});endelsefilelist=get(handles.\-listbox\-\_\-image,'\-String');for j=1\-:length(filelist) if strcmp(filelist\{j\}, fname) set(handles.\-listbox\-\_\-image,'\-Value', j);breakendendfilename=fullfile(handles.\-directoryname, fname);endif isempty(filename) returnend[img, t, dx, dy, params, comment]=binread2\-D(filename);[Ny, Nx]=size(img);real\-Flag=isreal(img);ss=0;\-S\-T\-E\-Mimage=0;comment=char(comment);if length(comment)==10if sum(abs(comment-\/'\-S\-T\-E\-M image'))==0\%fprintf('\-S\-T\-E\-M image\textbackslash{}n') ss=abs(str2num(get(handles.\-edit\-\_\-\-Source\-Size,'\-String')));source\-Size=ss;\%scale the source size to produce a Gaussian of F\-W\-H\-M=ss\-:ss=ss/(sqrt(-\/log(0.\-5))$\ast$2);\%=ss/1.\-66510922231540;\-S\-T\-E\-Mimage=1;endendif S\-T\-E\-Mimageset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A,\%d runs averaged over\textbackslash{}n\%s', t, dx, dy, params(1), comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','on');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','on');if(0) set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','on');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','on');endelseset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A\textbackslash{}n\%s', t, dx, dy, comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','off');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','off');if(0) set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','off');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','off');endendhandles.\-Oversampling=abs(str2num(get(handles.\-edit\-\_\-\-Oversampling,'\-String')));if handles.\-Oversampling $\ast$max(\-Nx, Ny) $>$ 1024handles.\-Oversampling=floor(1024/max(\-Nx, Ny));endif handles.\-Oversampling$<$ 1handles.\-Oversampling=1;endset(handles.\-edit\-\_\-\-Oversampling,'\-String', handles.\-Oversampling);\%oversample image, if desired\-:scale=1;if handles.\-Oversampling $>$ 1\-Ny\-O=round(handles.\-Oversampling $\ast$\-Ny);\-Nx\-O=round(handles.\-Oversampling $\ast$\-Nx);imgft=zeros(\-Ny\-O, Nx\-O);\-Nx\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Nx/2)+1;\-Ny\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Ny/2)+1;\-Nx\-Mid=floor(\-Nx/2)+1;\-Ny\-Mid=floor(\-Ny/2)+1;imgft(\-Ny\-O\-Mid-\/\-Ny\-Mid+[1\-:\-Ny], Nx\-O\-Mid-\/\-Nx\-Mid+[1\-:\-Nx])=fftshift(fft2(img));\%\-Apply effective source size for S\-T\-E\-M images\-:if ss $>$}}
+\index{fid$<$ 0input\-Dir=pwd;elsefclose(fid)\mbox{[}input\-Dir, name, ext\mbox{]}=fileparts(input\-Dir);filename=\mbox{[}name, ext\mbox{]};endendhandles.\-directoryname=input\-Dir;set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);\%if file\-:\%handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);end\%Update handles structureguidata(h\-Object, handles);\%U\-I\-W\-A\-I\-T makes showimage wait for user response(see U\-I\-R\-E\-S\-U\-M\-E)\%uiwait(handles.\-figure1);\%-\/-\/-\/\-Outputs from this function are returned to the command line.\-function varargout=showimage\-\_\-\-Output\-Fcn(h\-Object, eventdata, handles)\%varargoutcell array for returning output args(see V\-A\-R\-A\-R\-G\-O\-U\-T);\%h\-Objecthandle to figure\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%Get default command line output from handles structurevarargout\{1\}=handles.\-output;function edit\-\_\-directoryname\-\_\-\-Callback(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%Hints\-:get(h\-Object,'\-String') returns contents of edit\-\_\-directoryname as text\%str2double(get(h\-Object,'\-String')) returns contents of edit\-\_\-directoryname as a double\%-\/-\/-\/\-Executes during object creation, after setting all properties.\-function edit\-\_\-directoryname\-\_\-\-Create\-Fcn(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesempty-\/handles not created until after all Create\-Fcns called\%Hint\-:edit controls usually have a white background on Windows.\%See I\-S\-P\-C and C\-O\-M\-P\-U\-T\-E\-R.\-if ispc \&\&isequal(get(h\-Object,'\-Background\-Color'), get(0,'default\-Uicontrol\-Background\-Color')) set(h\-Object,'\-Background\-Color','white');end\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-Select\-Dir.\-function handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, ask\-User, filename) if(nargin$<$ 4) ask\-User=1;endif(nargin$<$ 5) filename= '';endhandles.\-directoryname=get(handles.\-edit\-\_\-directoryname,'\-String');if ask\-Userhandles.\-directoryname=uigetdir(handles.\-directoryname);if ischar(handles.\-directoryname) set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);endendif$\sim$ischar(handles.\-directoryname) returnend\%handles.\-directorynamehandles.\-files=dir(sprintf('\%s\textbackslash{}\textbackslash{}$\ast$.\-img', handles.\-directoryname));\%handles.\-files.\-nameset(handles.\-listbox\-\_\-image,'\-String',\{handles.\-files.\-name\});set(handles.\-listbox\-\_\-image,'\-Value', 1);handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-New\-Window.\-function pushbutton\-\_\-\-New\-Window\-\_\-\-Callback(h\-Object, eventdata, handles) handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on selection change in listbox\-\_\-image.\-function handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, show\-In\-New\-Window, fname) if nargin$<$ 4show\-In\-New\-Window=0;endif(nargin$<$ 5) fname= '';endif isempty(fname) filelist=get(handles.\-listbox\-\_\-image,'\-String');\%filename=sprintf('\%s\textbackslash{}\textbackslash{}\%s', handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});if isempty(filelist) filename= '';elsefilename=fullfile(handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});endelsefilelist=get(handles.\-listbox\-\_\-image,'\-String');for j=1\-:length(filelist) if strcmp(filelist\{j\}, fname) set(handles.\-listbox\-\_\-image,'\-Value', j);breakendendfilename=fullfile(handles.\-directoryname, fname);endif isempty(filename) returnend\mbox{[}img, t, dx, dy, params, comment\mbox{]}=binread2\-D(filename);\mbox{[}\-Ny, Nx\mbox{]}=size(img);real\-Flag=isreal(img);ss=0;\-S\-T\-E\-Mimage=0;comment=char(comment);if length(comment)==10if sum(abs(comment-\/'\-S\-T\-E\-M image'))==0\%fprintf('\-S\-T\-E\-M image\textbackslash{}n') ss=abs(str2num(get(handles.\-edit\-\_\-\-Source\-Size,'\-String')));source\-Size=ss;\%scale the source size to produce a Gaussian of F\-W\-H\-M=ss\-:ss=ss/(sqrt(-\/log(0.\-5))$\ast$2);\%=ss/1.\-66510922231540;\-S\-T\-E\-Mimage=1;endendif S\-T\-E\-Mimageset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A,\%d runs averaged over\textbackslash{}n\%s', t, dx, dy, params(1), comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','on');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','on');if(0) set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','on');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','on');endelseset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A\textbackslash{}n\%s', t, dx, dy, comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','off');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','off');if(0) set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','off');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','off');endendhandles.\-Oversampling=abs(str2num(get(handles.\-edit\-\_\-\-Oversampling,'\-String')));if handles.\-Oversampling $\ast$max(\-Nx, Ny) $>$ 1024handles.\-Oversampling=floor(1024/max(\-Nx, Ny));endif handles.\-Oversampling$<$ 1handles.\-Oversampling=1;endset(handles.\-edit\-\_\-\-Oversampling,'\-String', handles.\-Oversampling);\%oversample image, if desired\-:scale=1;if handles.\-Oversampling $>$ 1\-Ny\-O=round(handles.\-Oversampling $\ast$\-Ny);\-Nx\-O=round(handles.\-Oversampling $\ast$\-Nx);imgft=zeros(\-Ny\-O, Nx\-O);\-Nx\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Nx/2)+1;\-Ny\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Ny/2)+1;\-Nx\-Mid=floor(\-Nx/2)+1;\-Ny\-Mid=floor(\-Ny/2)+1;imgft(\-Ny\-O\-Mid-\/\-Ny\-Mid+\mbox{[}1\-:\-Ny\mbox{]}, Nx\-O\-Mid-\/\-Nx\-Mid+\mbox{[}1\-:\-Nx\mbox{]})=fftshift(fft2(img));\%Apply effective source size for S\-T\-E\-M images\-:if ss $>$@{fid$<$ 0input\-Dir=pwd;elsefclose(fid)[input\-Dir, name, ext]=fileparts(input\-Dir);filename=[name, ext];endendhandles.\-directoryname=input\-Dir;set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);\%if file\-:\%handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);end\%\-Update handles structureguidata(h\-Object, handles);\%\-U\-I\-W\-A\-I\-T makes showimage wait for user response(see U\-I\-R\-E\-S\-U\-M\-E)\%uiwait(handles.\-figure1);\%-\/-\/-\/\-Outputs from this function are returned to the command line.\-function varargout=showimage\-\_\-\-Output\-Fcn(h\-Object, eventdata, handles)\%varargoutcell array for returning output args(see V\-A\-R\-A\-R\-G\-O\-U\-T);\%h\-Objecthandle to figure\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%\-Get default command line output from handles structurevarargout\{1\}=handles.\-output;function edit\-\_\-directoryname\-\_\-\-Callback(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%\-Hints\-:get(h\-Object,'\-String') returns contents of edit\-\_\-directoryname as text\%str2double(get(h\-Object,'\-String')) returns contents of edit\-\_\-directoryname as a double\%-\/-\/-\/\-Executes during object creation, after setting all properties.\-function edit\-\_\-directoryname\-\_\-\-Create\-Fcn(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesempty-\/handles not created until after all Create\-Fcns called\%\-Hint\-:edit controls usually have a white background on Windows.\%\-See I\-S\-P\-C and C\-O\-M\-P\-U\-T\-E\-R.\-if ispc \&\&isequal(get(h\-Object,'\-Background\-Color'), get(0,'default\-Uicontrol\-Background\-Color')) set(h\-Object,'\-Background\-Color','white');end\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-Select\-Dir.\-function handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, ask\-User, filename) if(nargin$<$ 4) ask\-User=1;endif(nargin$<$ 5) filename= '';endhandles.\-directoryname=get(handles.\-edit\-\_\-directoryname,'\-String');if ask\-Userhandles.\-directoryname=uigetdir(handles.\-directoryname);if ischar(handles.\-directoryname) set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);endendif$\sim$ischar(handles.\-directoryname) returnend\%handles.\-directorynamehandles.\-files=dir(sprintf('\%s\textbackslash{}\textbackslash{}$\ast$.\-img', handles.\-directoryname));\%handles.\-files.\-nameset(handles.\-listbox\-\_\-image,'\-String',\{handles.\-files.\-name\});set(handles.\-listbox\-\_\-image,'\-Value', 1);handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-New\-Window.\-function pushbutton\-\_\-\-New\-Window\-\_\-\-Callback(h\-Object, eventdata, handles) handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on selection change in listbox\-\_\-image.\-function handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, show\-In\-New\-Window, fname) if nargin$<$ 4show\-In\-New\-Window=0;endif(nargin$<$ 5) fname= '';endif isempty(fname) filelist=get(handles.\-listbox\-\_\-image,'\-String');\%filename=sprintf('\%s\textbackslash{}\textbackslash{}\%s', handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});if isempty(filelist) filename= '';elsefilename=fullfile(handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});endelsefilelist=get(handles.\-listbox\-\_\-image,'\-String');for j=1\-:length(filelist) if strcmp(filelist\{j\}, fname) set(handles.\-listbox\-\_\-image,'\-Value', j);breakendendfilename=fullfile(handles.\-directoryname, fname);endif isempty(filename) returnend[img, t, dx, dy, params, comment]=binread2\-D(filename);[Ny, Nx]=size(img);real\-Flag=isreal(img);ss=0;\-S\-T\-E\-Mimage=0;comment=char(comment);if length(comment)==10if sum(abs(comment-\/'\-S\-T\-E\-M image'))==0\%fprintf('\-S\-T\-E\-M image\textbackslash{}n') ss=abs(str2num(get(handles.\-edit\-\_\-\-Source\-Size,'\-String')));source\-Size=ss;\%scale the source size to produce a Gaussian of F\-W\-H\-M=ss\-:ss=ss/(sqrt(-\/log(0.\-5))$\ast$2);\%=ss/1.\-66510922231540;\-S\-T\-E\-Mimage=1;endendif S\-T\-E\-Mimageset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A,\%d runs averaged over\textbackslash{}n\%s', t, dx, dy, params(1), comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','on');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','on');if(0) set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','on');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','on');endelseset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A\textbackslash{}n\%s', t, dx, dy, comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','off');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','off');if(0) set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','off');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','off');endendhandles.\-Oversampling=abs(str2num(get(handles.\-edit\-\_\-\-Oversampling,'\-String')));if handles.\-Oversampling $\ast$max(\-Nx, Ny) $>$ 1024handles.\-Oversampling=floor(1024/max(\-Nx, Ny));endif handles.\-Oversampling$<$ 1handles.\-Oversampling=1;endset(handles.\-edit\-\_\-\-Oversampling,'\-String', handles.\-Oversampling);\%oversample image, if desired\-:scale=1;if handles.\-Oversampling $>$ 1\-Ny\-O=round(handles.\-Oversampling $\ast$\-Ny);\-Nx\-O=round(handles.\-Oversampling $\ast$\-Nx);imgft=zeros(\-Ny\-O, Nx\-O);\-Nx\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Nx/2)+1;\-Ny\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Ny/2)+1;\-Nx\-Mid=floor(\-Nx/2)+1;\-Ny\-Mid=floor(\-Ny/2)+1;imgft(\-Ny\-O\-Mid-\/\-Ny\-Mid+[1\-:\-Ny], Nx\-O\-Mid-\/\-Nx\-Mid+[1\-:\-Nx])=fftshift(fft2(img));\%\-Apply effective source size for S\-T\-E\-M images\-:if ss $>$}!showimage.m@{showimage.\-m}}
+\subsubsection[{fid$<$ 0input\-Dir=pwd;elsefclose(fid)[input\-Dir, name, ext]=fileparts(input\-Dir);filename=[name, ext];endendhandles.\-directoryname=input\-Dir;set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);\%if file\-:\%handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);end\%\-Update handles structureguidata(h\-Object, handles);\%\-U\-I\-W\-A\-I\-T makes showimage wait for user response(see U\-I\-R\-E\-S\-U\-M\-E)\%uiwait(handles.\-figure1);\%-\/-\/-\/\-Outputs from this function are returned to the command line.\-function varargout=showimage\-\_\-\-Output\-Fcn(h\-Object, eventdata, handles)\%varargoutcell array for returning output args(see V\-A\-R\-A\-R\-G\-O\-U\-T);\%h\-Objecthandle to figure\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%\-Get default command line output from handles structurevarargout\{1\}=handles.\-output;function edit\-\_\-directoryname\-\_\-\-Callback(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%\-Hints\-:get(h\-Object,'\-String') returns contents of edit\-\_\-directoryname as text\%str2double(get(h\-Object,'\-String')) returns contents of edit\-\_\-directoryname as a double\%-\/-\/-\/\-Executes during object creation, after setting all properties.\-function edit\-\_\-directoryname\-\_\-\-Create\-Fcn(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesempty-\/handles not created until after all Create\-Fcns called\%\-Hint\-:edit controls usually have a white background on Windows.\%\-See I\-S\-P\-C and C\-O\-M\-P\-U\-T\-E\-R.\-if ispc \&\&isequal(get(h\-Object,'\-Background\-Color'), get(0,'default\-Uicontrol\-Background\-Color')) set(h\-Object,'\-Background\-Color','white');end\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-Select\-Dir.\-function handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, ask\-User, filename) if(nargin$<$ 4) ask\-User=1;endif(nargin$<$ 5) filename= '';endhandles.\-directoryname=get(handles.\-edit\-\_\-directoryname,'\-String');if ask\-Userhandles.\-directoryname=uigetdir(handles.\-directoryname);if ischar(handles.\-directoryname) set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);endendif$\sim$ischar(handles.\-directoryname) returnend\%handles.\-directorynamehandles.\-files=dir(sprintf('\%s\textbackslash{}\textbackslash{}$\ast$.\-img', handles.\-directoryname));\%handles.\-files.\-nameset(handles.\-listbox\-\_\-image,'\-String',\{handles.\-files.\-name\});set(handles.\-listbox\-\_\-image,'\-Value', 1);handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-New\-Window.\-function pushbutton\-\_\-\-New\-Window\-\_\-\-Callback(h\-Object, eventdata, handles) handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on selection change in listbox\-\_\-image.\-function handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, show\-In\-New\-Window, fname) if nargin$<$ 4show\-In\-New\-Window=0;endif(nargin$<$ 5) fname= '';endif isempty(fname) filelist=get(handles.\-listbox\-\_\-image,'\-String');\%filename=sprintf('\%s\textbackslash{}\textbackslash{}\%s', handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});if isempty(filelist) filename= '';elsefilename=fullfile(handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});endelsefilelist=get(handles.\-listbox\-\_\-image,'\-String');for j=1\-:length(filelist) if strcmp(filelist\{j\}, fname) set(handles.\-listbox\-\_\-image,'\-Value', j);breakendendfilename=fullfile(handles.\-directoryname, fname);endif isempty(filename) returnend[img, t, dx, dy, params, comment]=binread2\-D(filename);[Ny, Nx]=size(img);real\-Flag=isreal(img);ss=0;\-S\-T\-E\-Mimage=0;comment=char(comment);if length(comment)==10if sum(abs(comment-\/'\-S\-T\-E\-M image'))==0\%fprintf('\-S\-T\-E\-M image\textbackslash{}n') ss=abs(str2num(get(handles.\-edit\-\_\-\-Source\-Size,'\-String')));source\-Size=ss;\%scale the source size to produce a Gaussian of F\-W\-H\-M=ss\-:ss=ss/(sqrt(-\/log(0.\-5))$\ast$2);\%=ss/1.\-66510922231540;\-S\-T\-E\-Mimage=1;endendif S\-T\-E\-Mimageset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A,\%d runs averaged over\textbackslash{}n\%s', t, dx, dy, params(1), comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','on');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','on');if(0) set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','on');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','on');endelseset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A\textbackslash{}n\%s', t, dx, dy, comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','off');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','off');if(0) set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','off');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','off');endendhandles.\-Oversampling=abs(str2num(get(handles.\-edit\-\_\-\-Oversampling,'\-String')));if handles.\-Oversampling $\ast$max(\-Nx, Ny) $>$ 1024handles.\-Oversampling=floor(1024/max(\-Nx, Ny));endif handles.\-Oversampling$<$ 1handles.\-Oversampling=1;endset(handles.\-edit\-\_\-\-Oversampling,'\-String', handles.\-Oversampling);\%oversample image, if desired\-:scale=1;if handles.\-Oversampling $>$ 1\-Ny\-O=round(handles.\-Oversampling $\ast$\-Ny);\-Nx\-O=round(handles.\-Oversampling $\ast$\-Nx);imgft=zeros(\-Ny\-O, Nx\-O);\-Nx\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Nx/2)+1;\-Ny\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Ny/2)+1;\-Nx\-Mid=floor(\-Nx/2)+1;\-Ny\-Mid=floor(\-Ny/2)+1;imgft(\-Ny\-O\-Mid-\/\-Ny\-Mid+[1\-:\-Ny], Nx\-O\-Mid-\/\-Nx\-Mid+[1\-:\-Nx])=fftshift(fft2(img));\%\-Apply effective source size for S\-T\-E\-M images\-:if ss $>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} $\sim$isdir (input\-Dir) \% Check to {\bf see} whether {\bf file} exists {\bf if} {\bf fid}$<$ 0input\-Dir=pwd;elsefclose(fid)\mbox{[}input\-Dir, name, ext\mbox{]}=fileparts(input\-Dir);filename=\mbox{[}name, ext\mbox{]};endendhandles.\-directoryname=input\-Dir;set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);\%if file\-:\%handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);end\%\-Update handles structureguidata(h\-Object, handles);\%\-U\-I\-W\-A\-I\-T makes showimage wait for user response(see U\-I\-R\-E\-S\-U\-M\-E)\%uiwait(handles.\-figure1);\%-\/-\/-\/\-Outputs from this function are returned to the command line.\-function varargout=showimage\-\_\-\-Output\-Fcn(h\-Object, eventdata, handles)\%varargoutcell array for returning output args(see V\-A\-R\-A\-R\-G\-O\-U\-T);\%h\-Objecthandle to figure\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%\-Get default command line output from handles structurevarargout\{1\}=handles.\-output;function edit\-\_\-directoryname\-\_\-\-Callback(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesstructure with handles and user data(see G\-U\-I\-D\-A\-T\-A)\%\-Hints\-:get(h\-Object,'\-String') returns contents of edit\-\_\-directoryname as text\%str2double(get(h\-Object,'\-String')) returns contents of edit\-\_\-directoryname as a double\%-\/-\/-\/\-Executes during object creation, after setting all properties.\-function edit\-\_\-directoryname\-\_\-\-Create\-Fcn(h\-Object, eventdata, handles)\%h\-Objecthandle to edit\-\_\-directoryname(see G\-C\-B\-O)\%eventdatareserved-\/to be defined in a future version of M\-A\-T\-L\-A\-B\%handlesempty-\/handles not created until after all Create\-Fcns called\%\-Hint\-:edit controls usually have a white background on Windows.\%\-See I\-S\-P\-C and C\-O\-M\-P\-U\-T\-E\-R.\-if ispc \&\&isequal(get(h\-Object,'\-Background\-Color'), get(0,'default\-Uicontrol\-Background\-Color'))set(h\-Object,'\-Background\-Color','white');end\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-Select\-Dir.\-function handles=pushbutton\-\_\-\-Select\-Dir\-\_\-\-Callback(h\-Object, eventdata, handles, ask\-User, filename) if(nargin$<$ 4)ask\-User=1;endif(nargin$<$ 5)filename= '';endhandles.\-directoryname=get(handles.\-edit\-\_\-directoryname,'\-String');if ask\-Userhandles.\-directoryname=uigetdir(handles.\-directoryname);if ischar(handles.\-directoryname)set(handles.\-edit\-\_\-directoryname,'\-String', handles.\-directoryname);endendif$\sim$ischar(handles.\-directoryname)returnend\%handles.\-directorynamehandles.\-files=dir(sprintf('\%s\textbackslash{}\textbackslash{}$\ast$.\-img', handles.\-directoryname));\%handles.\-files.\-nameset(handles.\-listbox\-\_\-image,'\-String',\{handles.\-files.\-name\});set(handles.\-listbox\-\_\-image,'\-Value', 1);handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 0, filename);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on button press in pushbutton\-\_\-\-New\-Window.\-function pushbutton\-\_\-\-New\-Window\-\_\-\-Callback(h\-Object, eventdata, handles) handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, 1);guidata(h\-Object, handles);\%-\/-\/-\/\-Executes on selection change in listbox\-\_\-image.\-function handles=listbox\-\_\-image\-\_\-\-Callback(h\-Object, eventdata, handles, show\-In\-New\-Window, fname) if nargin$<$ 4show\-In\-New\-Window=0;endif(nargin$<$ 5)fname= '';endif isempty(fname)filelist=get(handles.\-listbox\-\_\-image,'\-String');\%filename=sprintf('\%s\textbackslash{}\textbackslash{}\%s', handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});if isempty(filelist)filename= '';elsefilename=fullfile(handles.\-directoryname, filelist\{get(handles.\-listbox\-\_\-image,'\-Value')\});endelsefilelist=get(handles.\-listbox\-\_\-image,'\-String');for j=1\-:length(filelist)if strcmp(filelist\{j\}, fname)set(handles.\-listbox\-\_\-image,'\-Value', j);breakendendfilename=fullfile(handles.\-directoryname, fname);endif isempty(filename)returnend\mbox{[}img, t, dx, dy, params, comment\mbox{]}=binread2\-D(filename);\mbox{[}\-Ny, Nx\mbox{]}=size(img);real\-Flag=isreal(img);ss=0;\-S\-T\-E\-Mimage=0;comment=char(comment);if length(comment)==10if sum(abs(comment-\/'\-S\-T\-E\-M image'))==0\%fprintf('\-S\-T\-E\-M image\textbackslash{}n')ss=abs(str2num(get(handles.\-edit\-\_\-\-Source\-Size,'\-String')));source\-Size=ss;\%scale the source size to produce a Gaussian of F\-W\-H\-M=ss\-:ss=ss/(sqrt(-\/log(0.\-5))$\ast$2);\%=ss/1.\-66510922231540;\-S\-T\-E\-Mimage=1;endendif S\-T\-E\-Mimageset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A,\%d runs averaged over\textbackslash{}n\%s', t, dx, dy, params(1), comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','on');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','on');if(0)set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','on');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','on');endelseset(handles.\-text\-\_\-\-Image\-Properties,'\-String', sprintf('\-Thickness\-:\%.\-1f\-A\textbackslash{}n\-Sampling\-:\%.\-1f x\%.\-1f\-A\textbackslash{}n\%s', t, dx, dy, comment));set(handles.\-edit\-\_\-\-Source\-Size,'\-Enable','off');set(handles.\-pushbutton\-\_\-\-Quantify,'\-Enable','off');if(0)set(handles.\-edit\-\_\-\-Replicate\-X,'\-Enable','off');set(handles.\-edit\-\_\-\-Replicate\-Y,'\-Enable','off');endendhandles.\-Oversampling=abs(str2num(get(handles.\-edit\-\_\-\-Oversampling,'\-String')));if handles.\-Oversampling $\ast$max(\-Nx, Ny) $>$ 1024handles.\-Oversampling=floor(1024/max(\-Nx, Ny));endif handles.\-Oversampling$<$ 1handles.\-Oversampling=1;endset(handles.\-edit\-\_\-\-Oversampling,'\-String', handles.\-Oversampling);\%oversample image, if desired\-:scale=1;if handles.\-Oversampling $>$ 1\-Ny\-O=round(handles.\-Oversampling $\ast$\-Ny);\-Nx\-O=round(handles.\-Oversampling $\ast$\-Nx);imgft=zeros(\-Ny\-O, Nx\-O);\-Nx\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Nx/2)+1;\-Ny\-O\-Mid=floor(handles.\-Oversampling $\ast$\-Ny/2)+1;\-Nx\-Mid=floor(\-Nx/2)+1;\-Ny\-Mid=floor(\-Ny/2)+1;imgft(\-Ny\-O\-Mid-\/\-Ny\-Mid+\mbox{[}1\-:\-Ny\mbox{]}, Nx\-O\-Mid-\/\-Nx\-Mid+\mbox{[}1\-:\-Nx\mbox{]})=fftshift(fft2(img));\%\-Apply effective source size for S\-T\-E\-M images\-:if ss $>$\mbox{[}qx, qy\mbox{]} = meshgrid((-\/Nx\-O\-Mid+\mbox{[}1\-:Nx\-O\mbox{]})/({\bf Nx}$\ast${\bf dx}),(-\/Ny\-O\-Mid+\mbox{[}1\-:Ny\-O\mbox{]})/({\bf Ny}$\ast${\bf dy}))}}\label{showimage_8m_aac101b26d78c9a6f145790c38d29e6d1}
+
+
+Definition at line 251 of file showimage.\-m.
+
+\hypertarget{showimage_8m_a2ff994e16bf9521154de4cf659a3b689}{\index{showimage.\-m@{showimage.\-m}!filename@{filename}}
+\index{filename@{filename}!showimage.m@{showimage.\-m}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}filename = ''}}\label{showimage_8m_a2ff994e16bf9521154de4cf659a3b689}
+
+
+Definition at line 63 of file showimage.\-m.
+
+\hypertarget{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{\index{showimage.\-m@{showimage.\-m}!function@{function}}
+\index{function@{function}!showimage.m@{showimage.\-m}}
+\subsubsection[{function}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} function\mbox{[}{\bf img}, {\bf t}, {\bf dx}, {\bf dy}\mbox{]}}}\label{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \hyperlink{namespacepython_1_1fileio_1_1read__img_a3ffec208a1fe92342eafab85c08961a0}{binread2D}(\hyperlink{binwrite2_d_8m_a7a230f02bdffebd1357e3c0b49e01271}{fileName},flag)
+% \hyperlink{qmb_8m_a0afda3603b043ac6b7362fdee225631e}{file} \textcolor{keywordflow}{for} reading binary data of different formats
+% input: 
+% \hyperlink{binwrite2_d_8m_a7a230f02bdffebd1357e3c0b49e01271}{fileName} - \hyperlink{convert2cfg_8m_ab74e6bf80237ddc4109968cedc58c151}{name} of \hyperlink{qmb_8m_a0afda3603b043ac6b7362fdee225631e}{file} (string)
+% \hyperlink{_read_d_m3___matlab_8m_a9b0b6d24f95658a64d11e8d57d2c1c7d}{printFlag} - 0: non-verbose
+\end{DoxyCode}
+
+
+Definition at line 436 of file showimage.\-m.
+
+\hypertarget{showimage_8m_a08a59f7450937d1d98042764490d71be}{\index{showimage.\-m@{showimage.\-m}!gui\-\_\-\-State@{gui\-\_\-\-State}}
+\index{gui\-\_\-\-State@{gui\-\_\-\-State}!showimage.m@{showimage.\-m}}
+\subsubsection[{gui\-\_\-\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} by creates {\bf a} new S\-H\-O\-W\-I\-M\-A\-G\-E or raises the existing singleton property {\bf value} pairs are applied to the G\-U\-I before showimage\-\_\-\-Opening\-Function gets called An unrecognized property {\bf name} or invalid {\bf value} makes property application stop All inputs are passed to showimage\-\_\-\-Opening\-Fcn via varargin$\ast$ See G\-U\-I Options {\bf on} G\-U\-I\-D\-E {\bf s} Tools menu Choose G\-U\-I allows only one instance to run (singleton)\char`\"{}. \% \% See also gui\-\_\-\-State}}\label{showimage_8m_a08a59f7450937d1d98042764490d71be}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \textcolor{keyword}{struct}(\textcolor{stringliteral}{'gui\_Name'},       mfilename, ...
+                   \textcolor{stringliteral}{'gui\_Singleton'},  gui\_Singleton, ...
+                   \textcolor{stringliteral}{'gui\_OpeningFcn'}, @showimage\_OpeningFcn, ...
+                   \textcolor{stringliteral}{'gui\_OutputFcn'},  @showimage\_OutputFcn, ...
+                   \textcolor{stringliteral}{'gui\_LayoutFcn'},  [] , ...
+                   \textcolor{stringliteral}{'gui\_Callback'},   [])
+\end{DoxyCode}
+
+
+Definition at line 30 of file showimage.\-m.
+
+\hypertarget{showimage_8m_a9c679669d62b72846eda13babedbf334}{\index{showimage.\-m@{showimage.\-m}!H@{H}}
+\index{H@{H}!showimage.m@{showimage.\-m}}
+\subsubsection[{H}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} by creates {\bf a} new S\-H\-O\-W\-I\-M\-A\-G\-E or raises the existing singleton$\ast$ H}}\label{showimage_8m_a9c679669d62b72846eda13babedbf334}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= SHOWIMAGE returns the handle to \hyperlink{aberrations_8m_a7492468b961995f6fd82e216c751bb37}{a} \textcolor{keyword}{new} SHOWIMAGE or the handle to
+%      the existing singleton*.
+%
+%      SHOWIMAGE(\textcolor{stringliteral}{'CALLBACK'},\hyperlink{showimage_8m_a6e69a2e6c16546a1aba75e0422487e55}{hObject},eventData,\hyperlink{aberrations___t_e_m_8m_a7cfce9e4244a1936557979efaaa3882a}{handles},...) calls the local
+%      \hyperlink{showimage_8m_aa70d913bbaaadbcc10dbf2f8f2416e1c}{function} named CALLBACK \hyperlink{_displacement_params_8m_abae9a3ce1348fc8b6ab1330584bd5bea}{in} SHOWIMAGE.\hyperlink{_displacement_params_8m_aad05f78187c942f9dd521605fa81f1ba}{M} with the given input arguments.
+%
+%      SHOWIMAGE('Property','\hyperlink{_display_model_properties_8m_aa3e85bcc21f31fb262e8662d5e2a8764}{Value}',...) creates \hyperlink{aberrations_8m_a7492468b961995f6fd82e216c751bb37}{a} new SHOWIMAGE or raises the
+%      existing singleton*.  Starting from the left
+\end{DoxyCode}
+
+
+Definition at line 7 of file showimage.\-m.
+
+\hypertarget{showimage_8m_ae07f845786f7290b6eb093f5e8670d10}{\index{showimage.\-m@{showimage.\-m}!img@{img}}
+\index{img@{img}!showimage.m@{showimage.\-m}}
+\subsubsection[{img}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} img = ifft2(ifftshift(imgft.$\ast$exp(-\/((pi$\ast$ss)$^\wedge$2$\ast$(qx.$^\wedge$2+qy.$^\wedge$2)))))}}\label{showimage_8m_ae07f845786f7290b6eb093f5e8670d10}
+
+
+Definition at line 252 of file showimage.\-m.
+
+\hypertarget{showimage_8m_a41bb1e845038e2407234668e39e94f56}{\index{showimage.\-m@{showimage.\-m}!img\-Final@{img\-Final}}
+\index{img\-Final@{img\-Final}!showimage.m@{showimage.\-m}}
+\subsubsection[{img\-Final}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} {\bf colorbar} {\bf handles} img\-Final = {\bf img}}}\label{showimage_8m_a41bb1e845038e2407234668e39e94f56}
+
+
+Definition at line 347 of file showimage.\-m.
+
+\hypertarget{showimage_8m_a831a3e1133c41b364b824dcb52ee0f9a}{\index{showimage.\-m@{showimage.\-m}!itself@{itself}}
+\index{itself@{itself}!showimage.m@{showimage.\-m}}
+\subsubsection[{itself}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} by itself}}\label{showimage_8m_a831a3e1133c41b364b824dcb52ee0f9a}
+
+
+Definition at line 1 of file showimage.\-m.
+
+\hypertarget{showimage_8m_a9b07119da70fc4a54e0d1cb5751d69aa}{\index{showimage.\-m@{showimage.\-m}!nargout@{nargout}}
+\index{nargout@{nargout}!showimage.m@{showimage.\-m}}
+\subsubsection[{nargout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} nargout\mbox{[}{\bf varargout}\{1\-:nargout\}\mbox{]} = {\bf gui\-\_\-mainfcn}({\bf gui\-\_\-\-State}, varargin\{\-:\})}}\label{showimage_8m_a9b07119da70fc4a54e0d1cb5751d69aa}
+
+
+Definition at line 41 of file showimage.\-m.
+
+\hypertarget{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}{\index{showimage.\-m@{showimage.\-m}!Nx@{Nx}}
+\index{Nx@{Nx}!showimage.m@{showimage.\-m}}
+\subsubsection[{Nx}]{\setlength{\rightskip}{0pt plus 5cm}Nx = round(handles.\-Oversampling$\ast$Nx)}}\label{showimage_8m_a5c7e4f16622600cb52580b191565e2dd}
+
+
+Definition at line 260 of file showimage.\-m.
+
+\hypertarget{showimage_8m_aacb99081fc18913427b9738cba32292a}{\index{showimage.\-m@{showimage.\-m}!Nx\-Mid@{Nx\-Mid}}
+\index{Nx\-Mid@{Nx\-Mid}!showimage.m@{showimage.\-m}}
+\subsubsection[{Nx\-Mid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf else} {\bf if} ss Nx\-Mid = {\bf floor}({\bf Nx}/2)+1}}\label{showimage_8m_aacb99081fc18913427b9738cba32292a}
+
+
+Definition at line 267 of file showimage.\-m.
+
+\hypertarget{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}{\index{showimage.\-m@{showimage.\-m}!Ny@{Ny}}
+\index{Ny@{Ny}!showimage.m@{showimage.\-m}}
+\subsubsection[{Ny}]{\setlength{\rightskip}{0pt plus 5cm}Ny = round(handles.\-Oversampling$\ast$Ny)}}\label{showimage_8m_ac1452fdfd6ea1c8c005ac90bbfa62011}
+
+
+Definition at line 261 of file showimage.\-m.
+
+\hypertarget{showimage_8m_ac5a2f44691cfa358379332220d04ab1b}{\index{showimage.\-m@{showimage.\-m}!Ny\-Mid@{Ny\-Mid}}
+\index{Ny\-Mid@{Ny\-Mid}!showimage.m@{showimage.\-m}}
+\subsubsection[{Ny\-Mid}]{\setlength{\rightskip}{0pt plus 5cm}Ny\-Mid = {\bf floor}({\bf Ny}/2)+1}}\label{showimage_8m_ac5a2f44691cfa358379332220d04ab1b}
+
+
+Definition at line 268 of file showimage.\-m.
+
+\hypertarget{showimage_8m_a433190cc875291fed273a92321706246}{\index{showimage.\-m@{showimage.\-m}!replicate\-X@{replicate\-X}}
+\index{replicate\-X@{replicate\-X}!showimage.m@{showimage.\-m}}
+\subsubsection[{replicate\-X}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} replicate\-X = {\bf str2num}({\bf get}(handles.\-edit\-\_\-\-Replicate\-X,'{\bf String}'))}}\label{showimage_8m_a433190cc875291fed273a92321706246}
+
+
+Definition at line 314 of file showimage.\-m.
+
+\hypertarget{showimage_8m_a93808385d7d4a2e41697556f6de53113}{\index{showimage.\-m@{showimage.\-m}!replicate\-Y@{replicate\-Y}}
+\index{replicate\-Y@{replicate\-Y}!showimage.m@{showimage.\-m}}
+\subsubsection[{replicate\-Y}]{\setlength{\rightskip}{0pt plus 5cm}replicate\-Y = {\bf str2num}({\bf get}(handles.\-edit\-\_\-\-Replicate\-Y,'{\bf String}'))}}\label{showimage_8m_a93808385d7d4a2e41697556f6de53113}
+
+
+Definition at line 315 of file showimage.\-m.
+
+\hypertarget{showimage_8m_acec6d8ad52a28972fa74e071c1a63b6a}{\index{showimage.\-m@{showimage.\-m}!scale@{scale}}
+\index{scale@{scale}!showimage.m@{showimage.\-m}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}scale = 1/({\bf Nx}$\ast${\bf Ny})}}\label{showimage_8m_acec6d8ad52a28972fa74e071c1a63b6a}
+
+
+Definition at line 259 of file showimage.\-m.
+
+\hypertarget{showimage_8m_a405b2916e2d66a1795ec3f2038ab5f88}{\index{showimage.\-m@{showimage.\-m}!source\-Size@{source\-Size}}
+\index{source\-Size@{source\-Size}!showimage.m@{showimage.\-m}}
+\subsubsection[{source\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} source\-Size = {\bf abs}({\bf str2num}({\bf get}(handles.\-edit\-\_\-\-Source\-Size,'{\bf String}')))}}\label{showimage_8m_a405b2916e2d66a1795ec3f2038ab5f88}
+
+
+Definition at line 351 of file showimage.\-m.
+
+\hypertarget{showimage_8m_ad941f6ef920fbfb3d75b60ddbedbdd39}{\index{showimage.\-m@{showimage.\-m}!t@{t}}
+\index{t@{t}!showimage.m@{showimage.\-m}}
+\subsubsection[{t}]{\setlength{\rightskip}{0pt plus 5cm}{\bf handles} t = t}}\label{showimage_8m_ad941f6ef920fbfb3d75b60ddbedbdd39}
+
+
+Definition at line 350 of file showimage.\-m.
+
+\hypertarget{showimage_8m_a1a71f5e406b211ed616173276484b78b}{\index{showimage.\-m@{showimage.\-m}!tight@{tight}}
+\index{tight@{tight}!showimage.m@{showimage.\-m}}
+\subsubsection[{tight}]{\setlength{\rightskip}{0pt plus 5cm}axis tight}}\label{showimage_8m_a1a71f5e406b211ed616173276484b78b}
+
+
+Definition at line 332 of file showimage.\-m.
+
+\hypertarget{showimage_8m_ac1b7f512a0fa5c0b7d1d056a07969aa2}{\index{showimage.\-m@{showimage.\-m}!use@{use}}
+\index{use@{use}!showimage.m@{showimage.\-m}}
+\subsubsection[{use}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} decide which part of {\bf a} complex {\bf image} to use}}\label{showimage_8m_ac1b7f512a0fa5c0b7d1d056a07969aa2}
+
+
+Definition at line 276 of file showimage.\-m.
+
+\hypertarget{showimage_8m_acc89f64219ddae53243030f2c645fc06}{\index{showimage.\-m@{showimage.\-m}!varargout@{varargout}}
+\index{varargout@{varargout}!showimage.m@{showimage.\-m}}
+\subsubsection[{varargout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf function} varargout}}\label{showimage_8m_acc89f64219ddae53243030f2c645fc06}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= showimage(varargin)
+% %compile \textcolor{keyword}{using} \textcolor{stringliteral}{'mcc -m showimage'}
+% SHOWIMAGE \hyperlink{_displacement_params_8m_aad05f78187c942f9dd521605fa81f1ba}{M}-\hyperlink{qmb_8m_a0afda3603b043ac6b7362fdee225631e}{file} for showimage.fig
+%      SHOWIMAGE
+\end{DoxyCode}
+
+
+Definition at line 1 of file showimage.\-m.
+

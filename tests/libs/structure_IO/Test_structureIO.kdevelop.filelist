@@ -1,0 +1,2 @@
+tests/libs/structure_IO/CMakeLists.txt
+tests/libs/structure_IO/test_structure_cfg.cpp
