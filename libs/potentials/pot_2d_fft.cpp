@@ -244,8 +244,7 @@ complex_tt *C2DFFTPotential::GetAtomPotential2D(int Znum, double B) {
 	// initialize this atom, if it has not been done yet:
 	if (m_atPot.count(Znum) == 0) {
 		// setup cubic spline interpolation:
-		splinh(scatPar[0], scatPar[Znum], &splinb[0], &splinc[0], &splind[0],
-				N_SF);
+		splinh(scatPar[0], scatPar[Znum], splinb, splinc, splind,N_SF);
 
 		//atPot[Znum] = (fftwf_complex*) fftwf_malloc(nx*ny*sizeof(fftwf_complex));
 		m_atPot[Znum] = ComplexVector(nx * ny);
@@ -262,8 +261,7 @@ complex_tt *C2DFFTPotential::GetAtomPotential2D(int Znum, double B) {
 					// f = fe3D(Znum,k2,m_tds,1.0,m_scatFactor);
 					// multiply scattering factor with Debye-Waller factor:
 					// printf("k2=%g,B=%g, exp(-k2B)=%g\n",k2,B,exp(-k2*B));
-					float_tt f = seval(scatPar[0], scatPar[Znum], &splinb[0],
-							&splinc[0], &splind[0], N_SF, sqrt(s2))
+					float_tt f = seval(scatPar[0], scatPar[Znum], splinb, splinc, splind, N_SF, sqrt(s2))
 							* exp(-s2 * B * 0.25);
 					float_tt phase = PI * (kx * m_dx * nx + ky * m_dy * ny);
 					m_atPot[Znum][ind] = std::complex<float_tt>(f * cos(phase),

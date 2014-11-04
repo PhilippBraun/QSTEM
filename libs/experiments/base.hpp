@@ -56,6 +56,8 @@ protected:
     void ReadAvgArray(unsigned navg);
     void ReadAvgArray(unsigned posX, unsigned posY);
 
+    void InitializePropagators(WavePtr wave);
+
     void _WriteAvgArray(std::string &fileName, std::string &comment,
                         std::map<std::string, double> &params,
                         std::vector<unsigned> &position);
@@ -103,7 +105,7 @@ protected:
     unsigned m_totalSliceCount; // The total number of slices that we've progressed through (all sub-slabs included)
 
     float_tt m_thickness;       // The total thickness of the sample at the current slice
-
+    float_tt m_dz;
     RealVector m_chisq;
     std::string m_mode;      // String representing the multislice mode (e.g. TEM, STEM, etc.)
 

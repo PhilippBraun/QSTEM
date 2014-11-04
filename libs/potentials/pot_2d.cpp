@@ -41,7 +41,9 @@ void C2DPotential::Initialize(const ConfigReaderPtr &configReader)
   CPotential::Initialize(configReader);
 }
 
+void  C2DPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 
+}
 void C2DPotential::DisplayParams()
 {
   CPotential::DisplayParams();

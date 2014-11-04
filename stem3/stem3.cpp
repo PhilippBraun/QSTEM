@@ -35,7 +35,7 @@ QSTEM - image simulation for TEM/STEM/CBED
 #endif
 
 #include <string.h>
-
+#include <omp.h>
 #include <time.h>
 
 #include "experiments.hpp"
@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
     fileName=argv[1];
   // Initialize the config file reader
   QSTEM::ConfigReaderPtr configReader = QSTEM::CConfigReaderFactory::Get()->GetReader(fileName);
-  
+  omp_set_num_threads(1);
   if (!configReader->IsValid())
     {
       printf("could not open input file %s!\n",fileName.c_str());

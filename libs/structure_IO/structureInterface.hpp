@@ -37,7 +37,7 @@ class IStructureReader
 {
 public:
   virtual int ReadCellParams(float_tt **Mm)=0;
-  virtual int ReadAtoms(std::vector<atom> &atoms)=0;
+  virtual int ReadAtoms(std::vector<atom> &atoms, std::vector<atom> &uniqueAtoms)=0;
 };
 
 

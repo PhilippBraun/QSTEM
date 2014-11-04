@@ -22,6 +22,9 @@
 
 #include "readparams.hpp"
 
+#include <list>
+#include <algorithm>
+
 namespace QSTEM
 {
 
@@ -74,10 +77,10 @@ int CCfgReader::ReadCellParams(float_tt **Mm) {
   return 0;
 }
 
-int CCfgReader::ReadAtoms(std::vector<atom> &atoms)
+int CCfgReader::ReadAtoms(std::vector<atom> &atoms, std::vector<atom> &uniqueAtoms)
 {
   unsigned ncoord;
-
+  std::list<int> uniqueZ;
   if (!m_isValid)
     throw std::runtime_error("Invalid structure file in CCfgReader.");
 
@@ -92,6 +95,12 @@ int CCfgReader::ReadAtoms(std::vector<atom> &atoms)
   for (unsigned i=0; i<ncoord; i++)
     {
       ReadNextAtom(&atoms[i]);
+      atom a = atoms[i];
+      bool thisZexists = (std::find(uniqueZ.begin(),uniqueZ.end(),atoms[i].Znum)) != uniqueZ.end();
+      if(!thisZexists){
+    	  uniqueZ.push_back(atoms[i].Znum);
+    	  uniqueAtoms.push_back(atoms[i]);
+      }
     }
   return 0;
 }

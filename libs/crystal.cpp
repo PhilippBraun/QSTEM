@@ -64,7 +64,7 @@ CCrystal::CCrystal(const ConfigReaderPtr &configReader) {
 	m_structureReader->ReadCellParams(m_Mm);
 
 	// Read in the initial atomic positions from the file (do duplication, tilt, and shaking later)
-	m_structureReader->ReadAtoms(m_baseAtoms);
+	m_structureReader->ReadAtoms(m_baseAtoms,m_uniqueAtoms);
 	if (m_printLevel >= 3)
 		printf("Read %d atoms, tds: %d\n", m_baseAtoms.size(), m_tds);
 	CalculateCellDimensions();
@@ -397,6 +397,7 @@ void CCrystal::ReadUnitCell(bool handleVacancies) {
 				m_atoms[j].y -= boxYmin;
 				m_atoms[j].z -= boxZmin;
 //				std::cout << j << std::endl;
+//				printf("(%f, %f, %f)\n",m_atoms[j].x,m_atoms[j].y,m_atoms[j].z);
 			}
 
 			// Offset the atoms in x- and y-directions:

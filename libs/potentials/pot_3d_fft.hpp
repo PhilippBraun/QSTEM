@@ -39,15 +39,18 @@ protected:
                          float_tt atomBoxX, unsigned int ix, 
                          float_tt atomBoxY, unsigned int iy, 
                          float_tt atomZ);
-  void GetAtomPotential3D(unsigned Znum, float_tt B,unsigned &nzSub,unsigned &Nr,unsigned &Nz_lut,
-                                 ComplexVector &output);
   void GetAtomPotentialOffset3D(unsigned Znum, float_tt B,unsigned &nzSub,unsigned &Nr,unsigned &Nz_lut,float_tt q,
                                 ComplexVector &output);
-private:
+  virtual void ComputeAtomPotential(std::vector<atom>::iterator &atom);
+
+protected:
+  virtual void SliceSetup();
   // collection of atom potentials
   std::map<unsigned, ComplexVector> m_atPot;
   std::map<unsigned, ComplexVector> m_offsetPot;
-private:	
+  unsigned m_nzPerSlice, m_nz;
+  float_tt m_dkx, m_dkz;
+
   friend class CPotFactory;
   // Create an instance of this class, wrapped in a shared ptr
   //     This should not be inherited - any subclass needs its own implementation.

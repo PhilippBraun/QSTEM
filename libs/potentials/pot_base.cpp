@@ -18,6 +18,7 @@
  */
 
 #include "pot_base.hpp"
+#include <omp.h>
 
 const std::string kPotFileName = "potslice";
 const int BUF_LEN = 256;
@@ -25,11 +26,11 @@ const int BUF_LEN = 256;
 namespace QSTEM {
 
 CPotential::CPotential() :
-		IPotential() {
+						IPotential() {
 }
 
 CPotential::CPotential(const ConfigReaderPtr &configReader) :
-		IPotential() {
+						IPotential() {
 	Initialize(configReader);
 }
 
@@ -86,6 +87,7 @@ void CPotential::Initialize() {
 
 	m_slicePos[0] = m_zOffset;
 	m_divCount = -1;
+
 }
 
 void CPotential::DisplayParams() {
@@ -187,9 +189,9 @@ void CPotential::AtomBoxLookUp(complex_tt &val, int Znum, float_tt x,
 						fileName);
 				printf(
 						"Parameters:\n"
-								"file:    Z=%d, B=%.3f A^2 (%d, %d, %d) (%.7f, %.7f %.7f) nsz=%d V=%g\n"
-								"program: Z=%d, B=%.3f A^2 (%d, %d, %d) (%.7f, %.7f %.7f) nsz=%d V=%g\n"
-								"will create new potential file, please wait ...\n",
+						"file:    Z=%d, B=%.3f A^2 (%d, %d, %d) (%.7f, %.7f %.7f) nsz=%d V=%g\n"
+						"program: Z=%d, B=%.3f A^2 (%d, %d, %d) (%.7f, %.7f %.7f) nsz=%d V=%g\n"
+						"will create new potential file, please wait ...\n",
 						tZ, tB, tnx, tny, tnz, tdx, tdy, tdz, tzOversample, tv0,
 						Znum, B, boxNx, boxNy, boxNz, ddx, ddy, ddz,
 						OVERSAMPLINGZ, m_v0);
@@ -294,7 +296,7 @@ void CPotential::SliceSetup() {
 		m_slicePos[i] = m_slicePos[i - 1] + m_sliceThicknesses[i - 1] / 2.0
 				+ m_sliceThicknesses[i] / 2.0;
 	}
-	m_trans1.resize(boost::extents[m_nslices][m_ny][m_nx]);
+	//	m_trans1.resize(boost::extents[m_nslices][m_ny][m_nx]);
 	// If we are going to read the potential, then we need to size the slices according to the first read pot slice
 	if (m_readPotential) {
 	}
@@ -311,7 +313,7 @@ void CPotential::SliceSetup() {
 
 complex_tt CPotential::GetSlicePixel(unsigned iz, unsigned ix, unsigned iy) {
 	unsigned idx = iy * m_nx + ix;
-//	return m_trans[iz][idx];
+	//	return m_trans[iz][idx];
 	return m_trans1[iz][iy][ix];
 }
 
@@ -360,51 +362,52 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 	SliceSetup();
 
 	// reset the potential to zero:
-	memset((void *) m_trans1.data(), 0,
-			m_nslices * m_nx * m_ny * sizeof(complex_tt));
+	memset((void *) m_trans1.data(), 0,	m_nslices * m_nx * m_ny * sizeof(complex_tt));
 
-	/****************************************************************
-	 * Loop through all the atoms and add their potential
-	 * to the slices:
-	 ***************************************************************/
+
+	#pragma omp parallel for
+	for (std::vector<atom>::iterator atom = m_crystal->m_uniqueAtoms.begin();	atom < m_crystal->m_uniqueAtoms.end(); atom++) {
+//		printf("uniqueatoms size %d\n",m_crystal->m_uniqueAtoms.size());
+		ComputeAtomPotential(atom);
+	}
 
 	time(&time0);
+	int atomsAdded = 0;
+	#pragma omp parallel for shared(atomsAdded)
+	for (std::vector<atom>::iterator atom = m_crystal->m_atoms.begin();	atom < m_crystal->m_atoms.end(); atom++) {
 
-	for (std::vector<atom>::iterator atom = m_crystal->m_atoms.begin();
-			atom != m_crystal->m_atoms.end(); atom++) {
 		// make sure we skip vacancies:
-		while (atom->Znum == 0)
-			atom++;
+		while (atom->Znum == 0)	atom++;
 		size_t iatom = atom - m_crystal->m_atoms.begin();
-		if ((m_printLevel >= 4) && (m_displayPotCalcInterval > 0)
-				&& ((iatom + 1) % (m_displayPotCalcInterval)) == 0) {
-			printf(
-					"Adding potential for atom %d (Z=%d, pos=[%.1f, %.1f, %.1f])\n",
-					iatom + 1, atom->Znum, atom->x, atom->y, atom->z);
+
+		if ((m_printLevel >= 4) && (m_displayPotCalcInterval > 0)&& ((iatom + 1) % (m_displayPotCalcInterval)) == 0) {
+			printf("Adding potential for atom %d (Z=%u, pos=[%.1f, %.1f, %.1f])\n",	iatom + 1, atom->Znum, atom->x, atom->y, atom->z);
 		}
-		/* atom coordinates in cartesian coords
-		 * The x- and y-position will be offset by the starting point
-		 * of the actually needed array of projected potential
-		 */
-//		printf("x: %e y: %e\n");
+
+		/* atom coordinates in cartesian coords.  The x- and y-position will be offset by the starting point
+		 * of the actually needed array of projected potential */
+
 		float_tt atomX = atom->x - m_offsetX;
 		float_tt atomY = atom->y - m_offsetY;
 		float_tt atomZ;
-		// make sure that slices are centered for 2D and 3D differently:
+
 		CenterAtomZ(atom, atomZ);
+
+		//		printf("(%f, %f, %f) Z=%d\n",atomX,atomY,atomZ,atom->Znum);
 
 		AddAtomToSlices(atom, atomX, atomY, atomZ);
 
+		#pragma omp critical
+		atomsAdded++;
+
+		if(atomsAdded % 100 == 0) printf("%2.1f percent of atoms added\n",(float)atomsAdded/m_atoms->size()*100);
+
 	} /* for iatom =0 ... */
+
 	time(&time1);
 	if (m_printLevel)
-		printf(
-				"%g sec used for real space potential calculation (%g sec per atom)\n",
-				difftime(time1, time0),
-				difftime(time1, time0) / m_crystal->m_atoms.size());
-	else if (m_printLevel)
-		printf("%g sec used for real space potential calculation\n",
-				difftime(time1, time0));
+		printf(	"%g sec used for real space potential calculation (%g sec per atom)\n",	difftime(time1, time0),	difftime(time1, time0) / m_crystal->m_atoms.size());
+
 
 	/*************************************************/
 	/* Save the potential slices                                         */
@@ -419,15 +422,13 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 				float_tt ddy = potVal;
 				for (unsigned ix = 0; ix <  m_nx; ix++)
 					for (unsigned iy = 0; iy < m_ny ; iy++){
-					potVal = m_trans1[iz][iy][ix].real();
-					if (ddy < potVal)
-						ddy = potVal;
-					if (ddx > potVal)
-						ddx = potVal;
-				}
-				printf(
-						"Saving (complex) potential layer %d to file (r: %g..%g)\n",
-						iz, ddx, ddy);
+						potVal = m_trans1[iz][iy][ix].real();
+						if (ddy < potVal)
+							ddy = potVal;
+						if (ddx > potVal)
+							ddx = potVal;
+					}
+				printf("Saving (complex) potential layer %d to file (r: %g..%g)\n",iz, ddx, ddy);
 			}
 
 			WriteSlice(iz);
@@ -514,10 +515,10 @@ void CPotential::WriteProjectedPotential() {
 
 	for (unsigned idy = 0; idy < m_ny; idy++)
 		for (unsigned idx = 0; idx < m_nx ; idx++){
-		tempPot[idx] = 0;
-		for (unsigned iz = 0; iz < m_nslices; iz++)
-			tempPot[idx] += m_trans1[iz][idy][idx].real();
-	}
+			tempPot[idx] = 0;
+			for (unsigned iz = 0; iz < m_nslices; iz++)
+				tempPot[idx] += m_trans1[iz][idy][idx].real();
+		}
 
 	float_tt ddx = tempPot[0], ddy = potVal;
 	for (unsigned ix = 0; ix < m_ny * m_nx; potVal = tempPot[++ix]) {
@@ -613,8 +614,8 @@ void CPotential::WriteProjectedPotential() {
  interval. NOTE that the last set of coefficients,
  b[n-1], c[n-1], d[n-1] are meaningless.
  */
-void CPotential::splinh(float_tt x[], float_tt y[], float_tt b[], float_tt c[],
-		float_tt d[], int n) {
+void CPotential::splinh(float_tt x[], float_tt y[],std::vector<float_tt>& b,std::vector<float_tt>& c,
+		std::vector<float_tt>& d, int n) {
 #define SMALL 1.0e-25
 
 	int i, nm1, nm4;
@@ -707,8 +708,8 @@ void CPotential::splinh(float_tt x[], float_tt y[], float_tt b[], float_tt c[],
  interval. NOTE that the last set of coefficients,
  b[n-1], c[n-1], d[n-1] are meaningless.
  */
-float_tt CPotential::seval(float_tt *x, float_tt *y, float_tt *b, float_tt *c,
-		float_tt *d, int n, float_tt x0) {
+float_tt CPotential::seval(float_tt *x, float_tt *y,std::vector<float_tt>& b,std::vector<float_tt>& c,
+		std::vector<float_tt>& d, int n, float_tt x0) {
 	int i, j, k;
 	float_tt z, seval1;
 
@@ -742,11 +743,11 @@ void CPotential::GetSizePixels(unsigned int &nx, unsigned int &ny) const {
 }
 
 void CPotential::ResizeSlices() {
-//	std::vector<ComplexVector>::iterator slice = m_trans.begin(), end =
-//			m_trans.end();
-//	for (slice; slice != end; ++slice) {
-//		(*slice).resize(m_nx * m_ny);
-//	}
+	//	std::vector<ComplexVector>::iterator slice = m_trans.begin(), end =
+	//			m_trans.end();
+	//	for (slice; slice != end; ++slice) {
+	//		(*slice).resize(m_nx * m_ny);
+	//	}
 	m_trans1.resize(boost::extents[m_nslices][m_ny][m_nx]);
 }
 

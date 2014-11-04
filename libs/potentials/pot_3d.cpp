@@ -32,7 +32,9 @@ C3DPotential::C3DPotential(const ConfigReaderPtr &configReader) : CPotential(con
 	m_boxNz = (int)(m_atomRadius/m_ddz+2.0);
         m_sliceStep = 2*m_nx*m_ny;
 }
+void C3DPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 
+}
 void C3DPotential::DisplayParams()
 {
   CPotential::DisplayParams();

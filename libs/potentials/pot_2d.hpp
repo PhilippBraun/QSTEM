@@ -22,7 +22,8 @@ public:
 	void _AddAtomRealSpace(std::vector<atom>::iterator &atom, float_tt atomBoxX,
 			unsigned int ix, float_tt atomBoxY, unsigned int iy, float_tt atomZ,
 			unsigned int iatomZ);
-private:
+protected:
+	virtual void ComputeAtomPotential(std::vector<atom>::iterator &atom);
 	friend class CPotFactory;
 	// Create an instance of this class, wrapped in a shared ptr
 	//     This should not be inherited - any subclass needs its own implementation.

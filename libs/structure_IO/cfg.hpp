@@ -31,7 +31,7 @@ public:
   ~CCfgReader();
   
   int ReadCellParams(float_tt **Mm);
-  int ReadAtoms(std::vector<atom> &atoms);
+  int ReadAtoms(std::vector<atom> &atoms, std::vector<atom> &uniqueAtoms);
 protected:
   int ReadNextAtom(atom *newAtomcom);
 private:

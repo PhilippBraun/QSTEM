@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 2.8)
 
 project(qstem)
-
+include_directories(/usr/local/include/icl-9.1)
+SET(ICL_LINK_FLAGS    "-lICLUtils")
 #set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--export-all-symbols")
 #set(CMAKE_SHARED_LINKER_FLAGS "-Wl")
 #SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC" )
-
+SET( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${ICL_LINK_FLAGS}" )
 if (WIN32)
   set(Boost_USE_STATIC_LIBS ON)
 endif(WIN32)
@@ -13,6 +14,7 @@ endif(WIN32)
 find_package(Boost COMPONENTS system filesystem REQUIRED)
 
 FIND_PACKAGE(HDF5 "1.8.5" REQUIRED)
+
 
 FILE(GLOB LIBS_FILES "*.?pp")
 

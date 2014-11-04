@@ -53,7 +53,8 @@ BOOST_AUTO_TEST_CASE(testReadMm)
 BOOST_AUTO_TEST_CASE( testReadAtoms )
 {
   std::vector<atom> atoms;
-  reader->ReadAtoms(atoms);
+  std::vector<atom> uniqueAtoms;
+  reader->ReadAtoms(atoms,uniqueAtoms);
   // Make sure that we read all the atoms in the file
   BOOST_CHECK_EQUAL(atoms.size(), 5);
   // Make sure that we read the first atom correctly

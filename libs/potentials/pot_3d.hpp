@@ -24,7 +24,7 @@ public:
                          float_tt atomZ, unsigned iAtomZ);
 protected:
   unsigned m_sliceStep;  // number of float_tt to advance to next slice (2*m_nx*m_ny)
-
+  virtual void ComputeAtomPotential(std::vector<atom>::iterator &atom);
 private:
   friend class CPotFactory;
   // Create an instance of this class, wrapped in a shared ptr

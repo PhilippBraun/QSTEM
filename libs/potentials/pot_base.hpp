@@ -34,7 +34,7 @@
 #ifndef POTENTIAL_BASE_H
 #define POTENTIAL_BASE_H
 
-#define OVERSAMPLING 3
+#define OVERSAMPLING 2
 #define OVERSAMPLINGZ 3*OVERSAMPLING
 
 namespace QSTEM
@@ -60,6 +60,7 @@ public:
   virtual void Refresh();
   virtual void ReadPotential(std::string &fileName, unsigned subSlabIdx);
   virtual void SetStructure(StructurePtr structure);
+  virtual void ComputeAtomPotential(std::vector<atom>::iterator &atom)=0;
   unsigned GetNSlices() const {return m_nslices;}
   float_tt GetSliceThickness() const {return m_sliceThickness;}
   float_tt GetSliceThickness(unsigned idx) const {return m_sliceThicknesses[idx];}
@@ -91,7 +92,7 @@ public:
 protected:
   void Initialize();
   void Initialize(const ConfigReaderPtr &configReader);
-  void SliceSetup();
+  virtual void SliceSetup();
   void ResizeSlices();
   void ReadSlice(const std::string &fileName, ComplexArray2DView slice, unsigned idx);
   virtual void _AddAtomRealSpace(std::vector<atom>::iterator &atom, 
@@ -157,10 +158,9 @@ protected:
 
   float_tt sfLUT(float_tt s,int atKind);
 
-  void splinh( float_tt x[], float_tt y[],
-                   float_tt b[], float_tt c[], float_tt d[], int n);
-  float_tt seval( float_tt *x, float_tt *y, float_tt *b, float_tt *c,
-                  float_tt *d, int n, float_tt x0 );
+  void splinh( float_tt x[], float_tt y[],  std::vector<float_tt>& b,std::vector<float_tt>& c,std::vector<float_tt>& d, int n);
+  float_tt seval( float_tt *x, float_tt *y,std::vector<float_tt>& b,std::vector<float_tt>& c,
+			std::vector<float_tt>& d, int n, float_tt x0 );
 };
 
 }
