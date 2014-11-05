@@ -54,6 +54,8 @@ void usage() {
 
 int main(int argc, char *argv[]) 
 {
+  int nThreads = 4;
+
   std::string fileName;
   /*************************************************************
    * read in the parameters
@@ -64,7 +66,9 @@ int main(int argc, char *argv[])
     fileName=argv[1];
   // Initialize the config file reader
   QSTEM::ConfigReaderPtr configReader = QSTEM::CConfigReaderFactory::Get()->GetReader(fileName);
-  omp_set_num_threads(1);
+  fftw_init_threads();
+  fftw_plan_with_nthreads(nThreads);
+  omp_set_num_threads(nThreads);
   if (!configReader->IsValid())
     {
       printf("could not open input file %s!\n",fileName.c_str());

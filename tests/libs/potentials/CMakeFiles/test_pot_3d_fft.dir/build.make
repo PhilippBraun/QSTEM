@@ -96,6 +96,9 @@ bin/test_pot_3d_fft: /usr/lib/x86_64-linux-gnu/libdl.so
 bin/test_pot_3d_fft: /usr/lib/x86_64-linux-gnu/libm.so
 bin/test_pot_3d_fft: /usr/local/lib/libfftw3.so
 bin/test_pot_3d_fft: /usr/lib/x86_64-linux-gnu/libfftw3f.so
+bin/test_pot_3d_fft: /usr/local/lib/libfftw3_omp.a
+bin/test_pot_3d_fft: /usr/local/lib/libcvmlcpp.so
+bin/test_pot_3d_fft: /usr/local/lib/libblitz.a
 bin/test_pot_3d_fft: tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../../../bin/test_pot_3d_fft"
 	cd /home/philipp/QSTEM/tests/libs/potentials && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_pot_3d_fft.dir/link.txt --verbose=$(VERBOSE)

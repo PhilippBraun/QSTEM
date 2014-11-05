@@ -26,6 +26,7 @@
 #include "config_IO/config_reader_factory.hpp"
 
 #include "wave_interface.hpp"
+#include "omp.h"
 
 void CreateWaveFunctionDataSets(unsigned x, unsigned y, std::vector<unsigned> positions, std::string output_ext);
 

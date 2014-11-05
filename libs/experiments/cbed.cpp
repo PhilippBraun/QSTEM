@@ -56,12 +56,9 @@ void CExperimentCBED::Run()
 	double probeCenterX,probeCenterY,probeOffsetX,probeOffsetY;
 	float_tt t=0;
 	float_tt **avgPendelloesung = NULL;
-
 	unsigned nx, ny;
 	m_wave->GetSizePixels(nx, ny);
-
 	std::map<std::string, double> params;
-
 	std::vector<unsigned> position(1);         // Used to indicate the number of averages
 
 	m_chisq.resize(m_avgRuns);
@@ -69,9 +66,7 @@ void CExperimentCBED::Run()
 	if (m_lbeams) {
 		m_pendelloesung = NULL;
 		if (avgPendelloesung == NULL) {
-			avgPendelloesung = float2D(m_nbout,
-					m_potential->GetNSlices()*m_cellDiv,
-					"pendelloesung");
+			avgPendelloesung = float2D(m_nbout,	m_potential->GetNSlices()*m_cellDiv,"pendelloesung");
 		}
 	}
 	probeCenterX = m_scanXStart;
@@ -150,16 +145,10 @@ void CExperimentCBED::Run()
 
 			m_potential->Refresh();
 
-
 			RunMultislice(m_wave);
 
-			//printf("Thickness: %gA, int.=%g\n",
-			//       m_wave->thickness,m_wave->intIntensity);
+			if ((m_avgCount == 0) && (m_saveLevel > 2)) m_wave->WriteWave();
 
-			/***************** Only if Save level > 2: ****************/
-			if ((m_avgCount == 0) && (m_saveLevel > 2)) {
-				m_wave->WriteWave();
-			}
 #ifdef VIB_IMAGE_TEST_CBED
 			m_wave->WriteWave()
 #endif 
@@ -172,7 +161,7 @@ void CExperimentCBED::Run()
 		// TODO: Why are we reading in a DP at this point?  Do we have one yet?
 		//     What happens if it isn't there?
 //		m_wave->ReadDiffPat();
-		AddDPToAvgArray(m_wave);
+//		AddDPToAvgArray(m_wave);
 
 
 		if (m_avgCount == 0) {

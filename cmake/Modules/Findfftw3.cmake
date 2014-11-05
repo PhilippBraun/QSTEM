@@ -16,10 +16,12 @@ IF(WIN32)
 ELSEIF(UNIX)
 	find_library(FFTW3_LIBS fftw3 HINTS $ENV{HOME}/lib /usr/lib)
 	find_library(FFTW3F_LIBS fftw3f HINTS $ENV{HOME}/lib /usr/lib)
+	find_library(FFTW3_OMP_LIBS fftw3_omp HINTS $ENV{HOME}/lib /usr/lib /usr/local/lib)
 ENDIF(WIN32)
 
 set(FFTW3_FOUND TRUE)
 set(FFTW3F_FOUND TRUE)
+set(FFTW3_OMP_FOUND TRUE)
  
 if (NOT FFTW3_INCLUDE_DIRS)
   set(FFTW3_FOUND FALSE)
@@ -28,6 +30,10 @@ endif (NOT FFTW3_INCLUDE_DIRS)
 if (NOT FFTW3_LIBS)
   set(FFTW3_FOUND FALSE)
 endif (NOT FFTW3_LIBS)
+
+if (NOT FFTW3_OMP_LIBS)
+  set(FFTW3_OMP_FOUND FALSE)
+endif (NOT FFTW3_OMP_LIBS)
 
 if (NOT FFTW3F_LIBS)
   set(FFTW3F_FOUND FALSE)

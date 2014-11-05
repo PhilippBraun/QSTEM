@@ -224,6 +224,21 @@ public:
 //	  int    tomoCount;  // number of diffraction patterns.
 //	  double zoomFactor; // increases the size of the super-box in x,y, in order to
 //	                     // make full use of atoms present, creates vacuum edge around sample.
+//	std::string &mode;
+//	unsigned &printLevel;
+//	unsigned &saveLevel;
+//	unsigned &displayPotCalcInterval;
+//	unsigned &displayProgInterval;
+//	boost::filesystem::path &fileOrFolderName;
+//	unsigned &nCellX, unsigned &nCellY, unsigned &nCellZ;
+//	unsigned &cellDiv;
+//	float_tt &btiltx, float_tt &btilty, bool &tiltBack;
+//	float_tt &tiltx, float_tt &tilty, float_tt &tiltz,
+//	                                      float_tt &cubex, float_tt &cubey, float_tt &cubez,
+//	                                      bool &adjustCubeSize;
+//	                                      bool &doTDS, float_tt &tdsTemperature,
+//	                                                                         boost::filesystem::path &phononFile, bool &useEinstein;
+//	                                                                         float_tt &xOffset, float_tt &yOffset;
 };
 
 class IConfigReader

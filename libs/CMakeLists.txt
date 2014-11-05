@@ -1,22 +1,28 @@
 cmake_minimum_required(VERSION 2.8)
 
 project(qstem)
-include_directories(/usr/local/include/icl-9.1)
+
+
+SET(ICL_INCLUDE_DIR "/usr/local/include/icl-9.1")
 SET(ICL_LINK_FLAGS    "-lICLUtils")
+set(BLITZ_INCLUDE_DIR "/usr/local/include/blitz/")
+set(CVML_LIB "/usr/local/lib/libcvmlcpp.so")
+set(BLITZ_LIB "/usr/local/lib/libblitz.a")
+
 #set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--export-all-symbols")
 #set(CMAKE_SHARED_LINKER_FLAGS "-Wl")
-#SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC" )
-SET( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${ICL_LINK_FLAGS}" )
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC" )
+SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${ICL_LINK_FLAGS}" )
+
 if (WIN32)
   set(Boost_USE_STATIC_LIBS ON)
 endif(WIN32)
 
 find_package(Boost COMPONENTS system filesystem REQUIRED)
+find_package(HDF5 "1.8.5" REQUIRED)
 
-FIND_PACKAGE(HDF5 "1.8.5" REQUIRED)
 
-
-FILE(GLOB LIBS_FILES "*.?pp")
+file(GLOB LIBS_FILES "*.?pp")
 
 function (add_lib_dir dirname)
 	#add_subdirectory(${dirname})
@@ -51,11 +57,14 @@ include_directories(
   experiments
   ${Boost_INCLUDE_DIRS} 
   ${FFTW3_INCLUDE_DIRS} 
-  ${HDF5_INCLUDE_DIR}  )
+  ${HDF5_INCLUDE_DIR}
+  ${BLITZ_INCLUDE_DIR}
+  ${ICL_INCLUDE_DIR}  )
 
 add_library(${PROJECT_NAME} SHARED ${LIBS_FILES})
-target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${HDF5_LIBRARIES} ${FFTW3F_LIBS} ${FFTW3_LIBS})
+target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${HDF5_LIBRARIES} ${FFTW3_LIBS} ${FFTW3F_LIBS} ${FFTW3_OMP_LIBS} ${CVML_LIB} ${BLITZ_LIB})
 
 if(OPENMP)
-  SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "${OpenMP_C_FLAGS}" LINK_FLAGS  "${OpenMP_C_FLAGS}")
+  SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "${OpenMP_C_FLAGS}" LINK_FLAGS  "${OpenMP_C_FLAGS}")      
+  
 endif(OPENMP)

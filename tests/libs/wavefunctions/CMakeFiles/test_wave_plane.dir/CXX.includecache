@@ -9663,6 +9663,8 @@ config_IO/config_reader_factory.hpp
 libs/wavefunctions/config_IO/config_reader_factory.hpp
 wave_interface.hpp
 libs/wavefunctions/wave_interface.hpp
+omp.h
+libs/wavefunctions/omp.h
 
 libs/wavefunctions/wave_interface.hpp
 map

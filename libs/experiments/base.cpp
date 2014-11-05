@@ -47,6 +47,7 @@ CExperimentBase::CExperimentBase(const ConfigReaderPtr &configReader) : IExperim
   boost::filesystem::path p;
   configReader->ReadTemperatureData(m_tds,tds,p,tmp);
   DisplayParams();
+  m_avgArray = RealVector();
 
 
 
@@ -217,11 +218,13 @@ void CExperimentBase::InitializePropagators(WavePtr wave){
 
 	float_tt scale = m_dz*PI;
 
+#pragma omp parallel for
 	for(int ixa=0; ixa<nx; ixa++) {
 		float_tt t = scale * (wave->GetKX2(ixa)*wave->GetWavelength());
 		m_propxr[ixa] = (float_tt)  cos(t);
 		m_propxi[ixa] = (float_tt) -sin(t);
 	}
+#pragma omp parallel for
 	for(int iya=0; iya<ny; iya++) {
 		float_tt t = scale * (wave->GetKY2(iya)*wave->GetWavelength());
 		m_propyr[iya] = (float_tt)  cos(t);
@@ -236,9 +239,7 @@ void CExperimentBase::InitializePropagators(WavePtr wave){
 *      running a separate instance of the function.  It is nested in
 *      the main OpenMP parallel region - specifying critical, single, and
 *      barrier OpenMP pragmas should be OK.
-*
-* waver, wavei are expected to contain incident wave function 
-* they will be updated at return
+
 *****************************************************************/
 int CExperimentBase::RunMultislice(WavePtr wave) 
 {
@@ -262,6 +263,9 @@ int CExperimentBase::RunMultislice(WavePtr wave)
   fftScale = 1.0/(nx*ny);
 
   wavlen = wave->GetWavelength();
+
+  m_avgArray.resize(wave->GetTotalPixels());
+  m_imageIO = ImageIOPtr(new CImageIO(nx,ny));
 
   /*  calculate the total specimen thickness and echo */
   cztot=0.0;
@@ -318,15 +322,7 @@ void CExperimentBase::Propagate(WavePtr wave, float_tt dz)
   complex_tt *w=wave->GetWavePointer();
 
   px=nx*ny;
-
-  // TODO: this will not be thread safe, since m_propxr will be shared amongst threads
-
-  /* end of: if dz != dzs */
-  /*************************************************************/
-  
-  /*************************************************************
-   * Propagation
-   ************************************************************/
+#pragma omp parallel for private(wr, wi, tr, ti)
   for (unsigned i=0; i<px; i++)
   {
 	  try {

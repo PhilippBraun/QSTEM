@@ -96,6 +96,9 @@ bin/test_crystal: /usr/lib/x86_64-linux-gnu/libdl.so
 bin/test_crystal: /usr/lib/x86_64-linux-gnu/libm.so
 bin/test_crystal: /usr/local/lib/libfftw3.so
 bin/test_crystal: /usr/lib/x86_64-linux-gnu/libfftw3f.so
+bin/test_crystal: /usr/local/lib/libfftw3_omp.a
+bin/test_crystal: /usr/local/lib/libcvmlcpp.so
+bin/test_crystal: /usr/local/lib/libblitz.a
 bin/test_crystal: tests/libs/CMakeFiles/test_crystal.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../../bin/test_crystal"
 	cd /home/philipp/QSTEM/tests/libs && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_crystal.dir/link.txt --verbose=$(VERBOSE)

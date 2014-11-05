@@ -96,6 +96,9 @@ bin/test_structure_cfg: /usr/lib/x86_64-linux-gnu/libdl.so
 bin/test_structure_cfg: /usr/lib/x86_64-linux-gnu/libm.so
 bin/test_structure_cfg: /usr/local/lib/libfftw3.so
 bin/test_structure_cfg: /usr/lib/x86_64-linux-gnu/libfftw3f.so
+bin/test_structure_cfg: /usr/local/lib/libfftw3_omp.a
+bin/test_structure_cfg: /usr/local/lib/libcvmlcpp.so
+bin/test_structure_cfg: /usr/local/lib/libblitz.a
 bin/test_structure_cfg: tests/libs/structure_IO/CMakeFiles/test_structure_cfg.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../../../bin/test_structure_cfg"
 	cd /home/philipp/QSTEM/tests/libs/structure_IO && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_structure_cfg.dir/link.txt --verbose=$(VERBOSE)
