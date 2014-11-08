@@ -42,7 +42,7 @@ public:
   // Resizes memory arrays, computes initial parameters based on start state
   virtual void Initialize()=0;
   // Same as Initialize, but before running Initialize(), it loads appropriate parameters from configReader
-  virtual void Initialize(const ConfigReaderPtr &configReader)=0;
+  virtual void Initialize(const Config &configReader)=0;
 
 
   virtual void DisplayParams(){};

@@ -42,13 +42,13 @@ void CWaveFactory::Register(const std::string &type, CreateWaveFn pfnCreate)
 	m_FactoryMap[type] = pfnCreate;
 }
 
-WavePtr CWaveFactory::GetWave(const std::string &type, const ConfigReaderPtr &reader)
+WavePtr CWaveFactory::GetWave(const std::string &type, const Config &c)
 {
   std::string lower_type = type;
   boost::algorithm::to_lower(lower_type);
   FactoryMap::iterator it = m_FactoryMap.find(lower_type);
   if( it != m_FactoryMap.end() )
-    return it->second(reader);
+    return it->second(c);
   return WavePtr();
 }
 

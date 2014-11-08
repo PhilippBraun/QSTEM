@@ -22,16 +22,46 @@
 namespace QSTEM
 {
 
-CConvergentWave::CConvergentWave(const ConfigReaderPtr &configReader) : CBaseWave(configReader)
+CConvergentWave::CConvergentWave(const Config &c) : CBaseWave(c)
 {
 	// TODO: where does beam current belong?
 	//configReader->ReadDoseParameters(m_beamCurrent, m_dwellTime);
-	configReader->ReadAberrationAmplitudes(m_Cs, m_C5, m_Cc, m_df0, m_Scherzer, m_astigMag,
-			m_a33, m_a31, m_a44, m_a42, m_a55, m_a53, m_a51, m_a66, m_a64, m_a62);
-	configReader->ReadAberrationAngles(m_astigAngle, m_phi33, m_phi31, m_phi44, m_phi42,
-			m_phi55, m_phi53, m_phi51, m_phi66, m_phi64, m_phi62);
-	configReader->ReadSmoothingParameters(m_ismoth, m_gaussScale, m_gaussFlag);
-	configReader->ReadProbeParameters(m_dE_E, m_dI_I, m_dV_V, m_alpha, m_aAIS);
+	const WaveConfig& w = c.Wave;
+	m_Cs = w.Cs;
+	m_C5= w.C5;
+	m_Cc= w.Cc;
+	m_df0= w.Defocus;
+	m_Scherzer= "";
+	m_astigMag= w.Astigmatism;
+	m_a33= w.a_33;
+	m_a31= w.a_31;
+	m_a44= w.a_44;
+	m_a42= w.a_42;
+	m_a55= w.a_55;
+	m_a53= w.a_53;
+	m_a51= w.a_51;
+	m_a66= w.a_66;
+	m_a64= w.a_64;
+	m_a62= w.a_62;
+	m_astigAngle= w.AstigmatismAngle;
+	m_phi33= w.phi_33;
+	m_phi31= w.phi_31;
+	m_phi44= w.phi_44;
+	m_phi42= w.phi_42;
+	m_phi55= w.phi_55;
+	m_phi53= w.phi_53;
+	m_phi51= w.phi_51;
+	m_phi66= w.phi_66;
+	m_phi64= w.phi_64;
+	m_phi62= w.phi_62;
+	m_ismoth= w.Smooth;
+	m_gaussScale= w.gaussScale;
+	m_gaussFlag= w.Gaussian;
+	m_dE_E= w.dE_E;
+	m_dI_I= w.dI_I;
+	m_dV_V= w.dV_V;
+	m_alpha= w.alpha;
+	m_aAIS= w.AISaperture;
 }
 
 /** Copy constructor - used to copy wave just before dispatching multiple threads for STEM simulations */

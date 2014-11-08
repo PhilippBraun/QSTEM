@@ -29,7 +29,7 @@ namespace QSTEM
 class QSTEM_HELPER_DLL_EXPORT CExperimentTEM : public CExperimentBase
 {
 public:
-  CExperimentTEM(const ConfigReaderPtr &configReader);
+  CExperimentTEM(const Config &configReader);
   virtual void Run();
   virtual void DisplayParams();
   void SaveImages();

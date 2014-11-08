@@ -27,7 +27,7 @@ C3DPotential::C3DPotential() : CPotential()
 {
 }
 
-C3DPotential::C3DPotential(const ConfigReaderPtr &configReader) : CPotential(configReader)
+C3DPotential::C3DPotential(const Config &configReader) : CPotential(configReader)
 {
 	m_boxNz = (int)(m_atomRadius/m_ddz+2.0);
         m_sliceStep = 2*m_nx*m_ny;

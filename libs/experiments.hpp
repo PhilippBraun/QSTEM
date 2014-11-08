@@ -28,7 +28,7 @@
 namespace QSTEM
 {
 
-ExperimentPtr QSTEM_HELPER_DLL_EXPORT GetExperiment(ConfigReaderPtr &configReader);
+ExperimentPtr QSTEM_HELPER_DLL_EXPORT GetExperiment(Config &configReader);
 
 }
 

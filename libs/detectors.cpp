@@ -160,63 +160,66 @@ void Detector::CollectIntensity(const WavePtr &wave)
 }
 
 
-DetectorManager::DetectorManager(ConfigReaderPtr &configReader)
+DetectorManager::DetectorManager(Config &configReader)
 {
   LoadDetectors(configReader);
 }
 
-void DetectorManager::LoadDetectors(ConfigReaderPtr &configReader, std::vector<float_tt> &thicknesses)
+void DetectorManager::LoadDetectors(Config &configReader, std::vector<float_tt> &thicknesses)
 {
-  int numDetectors;
-
-  m_thicknesses=thicknesses;
-
-  m_detectors.resize(m_thicknesses.size());
-  configReader->ReadNumberOfDetectors(numDetectors);
-  for (size_t plane_idx=0; plane_idx<m_thicknesses.size(); plane_idx++)
-    {
-      m_detectors[plane_idx].resize(numDetectors);
-      for (size_t det_idx=0; det_idx<numDetectors; det_idx++)
-        {
-          DetectorPtr det = m_detectors[plane_idx][det_idx];
-          configReader->ReadDetectorParameters(det_idx, det->m_rInside, det->m_rOutside, det->m_name, 
-                                               det->m_shiftX, det->m_shiftY);
-          det->Initialize();
-        }
-    }
+	// TODO: DetectorManager currently broken because of config
+//  int numDetectors;
+//
+//  m_thicknesses=thicknesses;
+//
+//  m_detectors.resize(m_thicknesses.size());
+//  configReader->ReadNumberOfDetectors(numDetectors);
+//  for (size_t plane_idx=0; plane_idx<m_thicknesses.size(); plane_idx++)
+//    {
+//      m_detectors[plane_idx].resize(numDetectors);
+//      for (size_t det_idx=0; det_idx<numDetectors; det_idx++)
+//        {
+//          DetectorPtr det = m_detectors[plane_idx][det_idx];
+//          configReader->ReadDetectorParameters(det_idx, det->m_rInside, det->m_rOutside, det->m_name,
+//                                               det->m_shiftX, det->m_shiftY);
+//          det->Initialize();
+//        }
+//    }
 }
 
-void DetectorManager::LoadDetectors(ConfigReaderPtr &configReader, std::vector<unsigned> &output_planes)
+void DetectorManager::LoadDetectors(Config &configReader, std::vector<unsigned> &output_planes)
 {
-  float_tt sliceThickness, dummyf;
-  bool dummyb;
-  unsigned dummyi;
-  configReader->ReadSliceParameters(dummyb, sliceThickness, dummyi, dummyi, dummyf);
-  // one extra plane for the final output
-  std::vector<float_tt> thicknesses(output_planes.size(), float_tt());
-  for (size_t plane_idx=0; plane_idx<thicknesses.size(); plane_idx++)
-    {
-      thicknesses[plane_idx]=output_planes[plane_idx]*sliceThickness;
-    }
-  return LoadDetectors(configReader, thicknesses);
+	// TODO: DetectorManager currently broken because of config
+//  float_tt sliceThickness, dummyf;
+//  bool dummyb;
+//  unsigned dummyi;
+//  configReader->ReadSliceParameters(dummyb, sliceThickness, dummyi, dummyi, dummyf);
+//  // one extra plane for the final output
+//  std::vector<float_tt> thicknesses(output_planes.size(), float_tt());
+//  for (size_t plane_idx=0; plane_idx<thicknesses.size(); plane_idx++)
+//    {
+//      thicknesses[plane_idx]=output_planes[plane_idx]*sliceThickness;
+//    }
+//  return LoadDetectors(configReader, thicknesses);
 }
 
-void DetectorManager::LoadDetectors(ConfigReaderPtr &configReader)
+void DetectorManager::LoadDetectors(Config &configReader)
 {
-  float_tt sliceThickness, dummyf;
-  bool dummyb;
-  unsigned nslices, outputInterval;
-  int numDetectors;
-  configReader->ReadSliceParameters(dummyb, sliceThickness, nslices, outputInterval, dummyf);
-  // one extra plane for the final output
-  unsigned nplanes = nslices/outputInterval;
-  std::vector<float_tt> thicknesses(nplanes+1, float_tt());
-  for (size_t plane_idx=0; plane_idx<nplanes; plane_idx++)
-    {
-      thicknesses[plane_idx]=(plane_idx+1)*sliceThickness;
-    }
-  thicknesses[nplanes]=nslices*sliceThickness;
-  return LoadDetectors(configReader, thicknesses);
+	// TODO: DetectorManager currently broken because of config
+//  float_tt sliceThickness, dummyf;
+//  bool dummyb;
+//  unsigned nslices, outputInterval;
+//  int numDetectors;
+//  configReader->ReadSliceParameters(dummyb, sliceThickness, nslices, outputInterval, dummyf);
+//  // one extra plane for the final output
+//  unsigned nplanes = nslices/outputInterval;
+//  std::vector<float_tt> thicknesses(nplanes+1, float_tt());
+//  for (size_t plane_idx=0; plane_idx<nplanes; plane_idx++)
+//    {
+//      thicknesses[plane_idx]=(plane_idx+1)*sliceThickness;
+//    }
+//  thicknesses[nplanes]=nslices*sliceThickness;
+//  return LoadDetectors(configReader, thicknesses);
 }
 
 void DetectorManager::CollectIntensity(WavePtr &wave, int plane_idx)

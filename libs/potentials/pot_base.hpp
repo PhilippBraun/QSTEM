@@ -46,7 +46,7 @@ class CPotential : public IPotential
 public:
   CPotential();
   CPotential(unsigned nx, unsigned ny, unsigned nz, float_tt dx, float_tt dy, float_tt dz, float_tt atomRadius, float_tt v0);
-  CPotential(const ConfigReaderPtr &configReader);
+  CPotential(const Config &c);
   virtual ~CPotential();
 
   void AtomBoxLookUp(complex_tt &val, int Znum, float_tt x, float_tt y, float_tt z, float_tt B);
@@ -91,7 +91,7 @@ public:
 
 protected:
   void Initialize();
-  void Initialize(const ConfigReaderPtr &configReader);
+  void Initialize(const Config &configReader);
   virtual void SliceSetup();
   void ResizeSlices();
   void ReadSlice(const std::string &fileName, ComplexArray2DView slice, unsigned idx);

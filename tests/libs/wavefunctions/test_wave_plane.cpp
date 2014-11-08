@@ -29,8 +29,8 @@ using namespace QSTEM;
 struct PlaneWaveFixture {
   PlaneWaveFixture()
   {
-   configReader = CConfigReaderFactory::Get()->GetReader("tem_STO.qsc");
-    wave = WavePtr(new CPlaneWave(configReader));
+//   configReader = CConfigReaderFactory::Get()->GetReader("tem_STO.qsc");
+//    wave = WavePtr(new CPlaneWave(configReader));
     //std::cout << "setup plane wave fixture" << std::endl; 
   }
   ~PlaneWaveFixture()
@@ -38,7 +38,7 @@ struct PlaneWaveFixture {
     //std::cout << "teardown plane wave fixture" << std::endl; 
   }
   WavePtr wave;
-  ConfigReaderPtr configReader;
+//  Config configReader;
 };
 
 // Tests specific to the Plane Wave class

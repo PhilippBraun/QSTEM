@@ -34,7 +34,7 @@ class QSTEM_HELPER_DLL_EXPORT CCrystal
 {
 public:
   CCrystal();  // default constructor: does nothing, so you have to add stuff to it after constructing.
-  CCrystal(const ConfigReaderPtr &configReader);
+  CCrystal(const Config &configReader);
   CCrystal(unsigned ncx, unsigned ncy, unsigned ncz,    // ncells in any given direction
 	  float_tt tx, float_tt ty, float_tt tz				// Tilts in any given direction
 	  );

@@ -61,7 +61,7 @@ add_subdirectory(libs)
 add_subdirectory(stem3)
 #add_subdirectory(gbmaker)
 #add_subdirectory(qscRg12)
-OPTION( BUILD_TESTS "Set to ON to enable unit test target generation.  Requires Boost Test binary libraries to be installed." ON )
+OPTION( BUILD_TESTS "Set to ON to enable unit test target generation.  Requires Boost Test binary libraries to be installed." OFF )
 
 if (BUILD_TESTS)
   enable_testing()

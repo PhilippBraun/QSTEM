@@ -26,9 +26,9 @@ class C2DFFTPotential : public C2DPotential
 {
 public:
   C2DFFTPotential();
-  C2DFFTPotential(const ConfigReaderPtr &configReader);
+  C2DFFTPotential(const Config &configReader);
   virtual void Initialize();
-  virtual void Initialize(const ConfigReaderPtr &configReader);
+  virtual void Initialize(const Config &configReader);
   virtual void DisplayParams();
 
 
@@ -53,7 +53,7 @@ private:
   // Create an instance of this class, wrapped in a shared ptr
   //     This should not be inherited - any subclass needs its own implementation.
   static PotPtr Create() {return PotPtr(new C2DFFTPotential());}
-  static PotPtr Create(const ConfigReaderPtr &configReader){return PotPtr(new C2DFFTPotential(configReader));}
+  static PotPtr Create(const Config &configReader){return PotPtr(new C2DFFTPotential(configReader));}
 };
 
 }

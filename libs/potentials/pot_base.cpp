@@ -25,13 +25,11 @@ const int BUF_LEN = 256;
 
 namespace QSTEM {
 
-CPotential::CPotential() :
-						IPotential() {
+CPotential::CPotential() :	IPotential() {
 }
 
-CPotential::CPotential(const ConfigReaderPtr &configReader) :
-						IPotential() {
-	Initialize(configReader);
+CPotential::CPotential(const Config &c) :						IPotential() {
+	Initialize(c);
 }
 
 CPotential::~CPotential() {
@@ -42,19 +40,27 @@ void CPotential::SetStructure(StructurePtr structure) {
 	m_crystal = structure;
 	m_atoms = &(m_crystal->m_atoms);
 }
-void CPotential::Initialize(const ConfigReaderPtr &configReader) {
-	configReader->ReadProbeArraySize(m_nx, m_ny);
-	configReader->ReadResolution(m_dx, m_dy);
-	configReader->ReadVoltage(m_v0);
-	configReader->ReadPotentialOutputParameters(m_savePotential,
-			m_saveProjectedPotential, m_plotPotential);
-	configReader->ReadAtomRadius(m_atomRadius);
-	configReader->ReadSliceParameters(m_centerSlices, m_sliceThickness,
-			m_nslices, m_outputInterval, m_zOffset);
-	configReader->ReadSliceOffset(m_offsetX, m_offsetY);
+void CPotential::Initialize(const Config &c) {
+	m_nx = m_ny = c.Model.nPixels;
+	m_dx = c.Model.resolutionXAngstrom;
+	m_dy = c.Model.resolutionYAngstrom;
+	m_v0 = c.Beam.EnergykeV;
+	m_atomRadius = c.Potential.AtomRadiusAngstrom;
+	m_offsetX = c.Model.xOffset;
+	m_offsetY = c.Model.yOffset;
+	m_savePotential = c.Potential.SavePotential;
+	m_saveProjectedPotential = c.Potential.SaveProjectedPotential;
+	m_plotPotential= c.Potential.PlotVrr;
+	m_centerSlices = c.Model.CenterSlices;
+	m_sliceThickness = c.Model.sliceThicknessAngstrom;
+	m_nslices =c.Model.nSlices;
+	m_outputInterval=c.Output.PotentialProgressInterval;
+	m_zOffset = c.Model.zOffset;
+	m_offsetX =c.Model.xOffset;
+	m_offsetY=c.Model.yOffset;
 
-	// Read if we should load the pot from a file
-	configReader->ReadLoadPotential(m_readPotential, m_potFileBase);
+	// TODO: Read if we should load the pot from a file
+//	configReader->ReadLoadPotential(m_readPotential, m_potFileBase);
 	Initialize();
 }
 void CPotential::Initialize() {
@@ -365,15 +371,15 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 	memset((void *) m_trans1.data(), 0,	m_nslices * m_nx * m_ny * sizeof(complex_tt));
 
 
-	#pragma omp parallel for
+#pragma omp parallel for
 	for (std::vector<atom>::iterator atom = m_crystal->m_uniqueAtoms.begin();	atom < m_crystal->m_uniqueAtoms.end(); atom++) {
-//		printf("uniqueatoms size %d\n",m_crystal->m_uniqueAtoms.size());
+		//		printf("uniqueatoms size %d\n",m_crystal->m_uniqueAtoms.size());
 		ComputeAtomPotential(atom);
 	}
 
 	time(&time0);
 	int atomsAdded = 0;
-	#pragma omp parallel for shared(atomsAdded)
+#pragma omp parallel for shared(atomsAdded)
 	for (std::vector<atom>::iterator atom = m_crystal->m_atoms.begin();	atom < m_crystal->m_atoms.end(); atom++) {
 
 		// make sure we skip vacancies:
@@ -397,7 +403,7 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 
 		AddAtomToSlices(atom, atomX, atomY, atomZ);
 
-		#pragma omp critical
+#pragma omp critical
 		atomsAdded++;
 
 		if(atomsAdded % 100 == 0) printf("%2.1f percent of atoms added\n",(float)atomsAdded/m_atoms->size()*100);

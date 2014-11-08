@@ -37,8 +37,10 @@ void StructureConfig::Read(ptree& t){
 void ModelConfig::Read(ptree& t){
 	UseTDS=t.get<bool>("model.tds");
 	TiltBack=t.get<bool>("model.tiltBack");
+	CenterSlices=t.get<bool>("model.centerSlices");
 	TDSRuns=t.get<int>("model.tds.tdsRuns");
 	nPixels=t.get<int>("model.nPixels");
+	nSlices =t.get<int>("model.slices");
 	SliceThicknessCalculation = static_cast<QSTEM::SliceThicknessCalculation>(t.get<int>("model.sliceThicknessCalculation"));
 	sliceThicknessAngstrom=t.get<float_tt>("model.sliceThicknessAngstrom");
 	xOffset=t.get<float_tt>("model.xOffset");
@@ -62,6 +64,7 @@ void PotentialConfig::Read(ptree& t){
 	OneTimeIntegration=t.get<bool>("model.potential.oneTimeIntegration");
 	StructureFactorType  = static_cast<QSTEM::StructureFactorType>(t.get<int>("model.potential.structureFactors"));
 	AtomRadiusAngstrom=t.get<float_tt>("model.potential.atomRadiusAngstrom");
+	NSubSlabs=t.get<int>("model.potential.NSubSlabs");
 }
 void OutputConfig::Read(ptree& t){
 	int LogLevel=t.get<int>("output.loglevel");
@@ -84,6 +87,30 @@ void WaveConfig::Read(ptree& t){
 	AstigmatismAngle=t.get<float_tt>("wave.astigmatismAngle");
 	Smooth=t.get<bool>("wave.smooth");
 	Gaussian=t.get<bool>("wave.gaussian");
+	a_33=t.get<float_tt>("wave.a_33");
+	a_31=t.get<float_tt>("wave.a_31");
+	a_44=t.get<float_tt>("wave.a_44");
+	a_42=t.get<float_tt>("wave.a_42");
+	a_55=t.get<float_tt>("wave.a_55");
+	a_53=t.get<float_tt>("wave.a_53");
+	a_51=t.get<float_tt>("wave.a_51");
+	a_66=t.get<float_tt>("wave.a_66");
+	a_64=t.get<float_tt>("wave.a_64");
+	a_62=t.get<float_tt>("wave.a_62");
+	phi_33=t.get<float_tt>("wave.phi_33");
+	phi_31=t.get<float_tt>("wave.phi_31");
+	phi_44=t.get<float_tt>("wave.phi_44");
+	phi_42=t.get<float_tt>("wave.phi_42");
+	phi_55=t.get<float_tt>("wave.phi_55");
+	phi_53=t.get<float_tt>("wave.phi_53");
+	phi_51=t.get<float_tt>("wave.phi_51");
+	phi_66=t.get<float_tt>("wave.phi_66");
+	phi_64=t.get<float_tt>("wave.phi_64");
+	phi_62=t.get<float_tt>("wave.phi_62");
+	gaussScale=t.get<float_tt>("wave.gaussScale");
+	dI_I=t.get<float_tt>("wave.dI/I");
+	dE_E=t.get<float_tt>("wave.dE/E");
+	AISaperture=t.get<float_tt>("wave.AISaperture");
 }
 void BeamConfig::Read(ptree& t){
 	EnergykeV =t.get<float_tt>("beam.energy_keV");

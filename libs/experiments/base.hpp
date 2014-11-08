@@ -36,7 +36,7 @@ namespace QSTEM
 class QSTEM_HELPER_DLL_EXPORT CExperimentBase : public IExperiment
 {
 public:
-    CExperimentBase(const ConfigReaderPtr &configReader);
+    CExperimentBase(const Config &configReader);
     virtual void DisplayProgress(int flag);
     virtual void DisplayParams();
     virtual void Run()=0;
@@ -94,7 +94,7 @@ protected:
 
     boost::filesystem::path m_outputLocation;
 
-    StructurePtr m_crystal;  // The structure of the sample (atom positions)
+    StructurePtr m_sample;  // The structure of the sample (atom positions)
     WavePtr m_wave;		   // The electron wave (this may be copied for multiprocessing)
     PotPtr m_potential;      // The sample potential
 
@@ -105,18 +105,13 @@ protected:
     bool m_equalDivs;			// Whether or not all sub-slabs are the same size
     unsigned m_outputInterval;  // The number of slices between saving intermediate output files
     unsigned m_totalSliceCount; // The total number of slices that we've progressed through (all sub-slabs included)
-
     float_tt m_thickness;       // The total thickness of the sample at the current slice
     float_tt m_dz;
     RealVector m_chisq;
-    std::string m_mode;      // String representing the multislice mode (e.g. TEM, STEM, etc.)
-
+    QSTEM::ExperimentType m_mode;      // String representing the multislice mode (e.g. TEM, STEM, etc.)
     RealVector m_avgArray;   // The averaged diffraction pattern (m_avgCount says how many are averaged currently)
-
     unsigned m_iPosX,m_iPosY;           /* integer offset for positioning probe within potential array */
-
     ImageIOPtr m_imageIO;
-
     std::vector<float_tt> m_propxr, m_propxi, m_propyr, m_propyi;
 };
 

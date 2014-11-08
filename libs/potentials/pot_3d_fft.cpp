@@ -27,7 +27,7 @@ namespace QSTEM {
 
 C3DFFTPotential::C3DFFTPotential() :C3DPotential() {}
 
-C3DFFTPotential::C3DFFTPotential(const ConfigReaderPtr &configReader) :	C3DPotential(configReader), m_dkz(0), m_dkx(0), m_nz(0), m_nzPerSlice(0) {
+C3DFFTPotential::C3DFFTPotential(const Config &configReader) :	C3DPotential(configReader), m_dkz(0), m_dkx(0), m_nz(0), m_nzPerSlice(0) {
 	for (unsigned i = 0; i < m_nslices; i++) {
 		if (m_sliceThicknesses[0] != m_sliceThicknesses[i]) {
 			printf("Warning: slice thickness not constant, will give wrong results (iz=%d)!\n",i);

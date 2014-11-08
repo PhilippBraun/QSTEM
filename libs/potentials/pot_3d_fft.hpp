@@ -26,7 +26,7 @@ class C3DFFTPotential : public C3DPotential
 {
 public:
   C3DFFTPotential();
-  C3DFFTPotential(const ConfigReaderPtr &configReader);
+  C3DFFTPotential(const Config &configReader);
   virtual void DisplayParams();
   //virtual void makeSlices(int nlayer, char *fileName, atom *center);
   virtual void AddAtomToSlices(std::vector<atom>::iterator &atom, float_tt atomX, float_tt atomY, float_tt atomZ);
@@ -55,7 +55,7 @@ protected:
   // Create an instance of this class, wrapped in a shared ptr
   //     This should not be inherited - any subclass needs its own implementation.
   static PotPtr Create() {return PotPtr(new C3DFFTPotential());}
-  static PotPtr Create(const ConfigReaderPtr &configReader){return PotPtr(new C3DFFTPotential(configReader));}
+  static PotPtr Create(const Config &configReader){return PotPtr(new C3DFFTPotential(configReader));}
 };
 
 }

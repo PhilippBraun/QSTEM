@@ -24,24 +24,18 @@
 namespace QSTEM
 {
 
-CExperimentCBED::CExperimentCBED(const ConfigReaderPtr &configReader) : CExperimentBase(configReader)
+CExperimentCBED::CExperimentCBED(const Config &c) : CExperimentBase(c)
 {
-	m_mode="CBED";
-	configReader->ReadSourceRadius(m_sourceRadius);
-	m_wave = CWaveFactory::Get()->GetWave("Convergent", configReader);
+	m_mode=ExperimentType::CBED;
+	m_sourceRadius = c.Beam.SourceDiameterAngstrom/2;
+	m_wave = CWaveFactory::Get()->GetWave("Convergent", c);
 	m_wave->FormProbe();
-	m_potential = CPotFactory::Get()->GetPotential(configReader);
-	m_crystal = StructurePtr(new CCrystal(configReader));
+	m_potential = CPotFactory::Get()->GetPotential(c);
+	m_sample = StructurePtr(new CCrystal(c));
 	unsigned int nslices,outputInterval;
 	bool centerSlices;
 	float_tt sliceThickness, zOffset;
-	configReader->ReadSliceParameters(centerSlices,m_dz,m_nslices,outputInterval,zOffset);
-
-
 	//  if(sliceThickness != 0) nslices =
-
-
-
 }
 
 void CExperimentCBED::DisplayParams()
@@ -77,9 +71,9 @@ void CExperimentCBED::Run()
 	timerTot = 0; /* cputim();*/
 	DisplayProgress(-1);
 
-	m_crystal->ReadUnitCell(true);
-	m_potential->SetStructure(m_crystal);
-	m_potential->MakeSlices(m_nslices,m_crystal);
+	m_sample->ReadUnitCell(true);
+	m_potential->SetStructure(m_sample);
+	m_potential->MakeSlices(m_nslices,m_sample);
 
 	for (m_avgCount = 0;m_avgCount < m_avgRuns;m_avgCount++) {
 		m_totalSliceCount = 0;
@@ -154,7 +148,7 @@ void CExperimentCBED::Run()
 #ifdef VIB_IMAGE_TEST_CBED
 			m_wave->WriteWave()
 #endif 
-        		  m_totalSliceCount += m_potential->GetNSlices();
+        				  m_totalSliceCount += m_potential->GetNSlices();
 
 		} // end of for pCount = 0...
 
@@ -162,8 +156,8 @@ void CExperimentCBED::Run()
 
 		// TODO: Why are we reading in a DP at this point?  Do we have one yet?
 		//     What happens if it isn't there?
-//		m_wave->ReadDiffPat();
-//		AddDPToAvgArray(m_wave);
+		//		m_wave->ReadDiffPat();
+		//		AddDPToAvgArray(m_wave);
 
 
 		if (m_avgCount == 0) {

@@ -15,7 +15,7 @@ QSTEM - image simulation for TEM/STEM/CBED
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 #define VIB_IMAGE_TEST
 
@@ -53,66 +53,41 @@ QSTEM - image simulation for TEM/STEM/CBED
 
 using namespace boost::units;
 using namespace boost::units::si;
+using boost::property_tree::ptree;
 
 void usage() {
-  printf("usage: stem [input file='stem.dat']\n\n");
+	printf("usage: stem [input file='stem.dat']\n\n");
 }
-
-
-/***************************************************************
-***************************************************************
-* MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN *
-***************************************************************
-**************************************************************/
-
 
 int main(int argc, char *argv[]) 
 {
-  int nThreads = 1;
+	std::string fileName;
+	if (argc < 2)   fileName = "config.info";
+	else    fileName=argv[1];
 
+	ptree pt;
+	boost::property_tree::info_parser::read_info(fileName,pt);
+	QSTEM::Config c(pt);
 
+	fftw_init_threads();
+	fftw_plan_with_nthreads(c.nThreads);
+	omp_set_num_threads(c.nThreads);
 
-  using boost::property_tree::ptree;
-  ptree pt;
-  boost::property_tree::info_parser::read_info("/home/philipp/QSTEM/bin/1.xml",pt);
-  std::string mode = pt.get<std::string>("mode");
-
-  std::string fileName;
-  /*************************************************************
-   * read in the parameters
-   ************************************************************/  
-  if (argc < 2)
-    fileName = "stem.dat";
-  else
-    fileName=argv[1];
-  QSTEM::Config c(pt);
-  // Initialize the config file reader
-  QSTEM::ConfigReaderPtr configReader = QSTEM::CConfigReaderFactory::Get()->GetReader(fileName);
-  fftw_init_threads();
-  fftw_plan_with_nthreads(nThreads);
-  omp_set_num_threads(nThreads);
-//  if (!configReader->IsValid())
-//    {
-//      printf("could not open input file %s!\n",fileName.c_str());
-//      exit(0);
-//      usage();
-//    }
-  
-  QSTEM::ExperimentPtr expt = QSTEM::GetExperiment(configReader);
-  expt->Run();
+	QSTEM::ExperimentPtr expt = QSTEM::GetExperiment(c);
+	expt->Run();
 
 #if _DEBUG
-  _CrtDumpMemoryLeaks();
+	_CrtDumpMemoryLeaks();
 #endif
 
-  return 0;
+	return 0;
 }
 
 /***************************************************************
-***************************************************************
-** End of MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN  ** 
-***************************************************************
-**************************************************************/
+ ***************************************************************
+ ** End of MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN  **
+ ***************************************************************
+ **************************************************************/
 
 /*
 void initMuls() {
@@ -125,16 +100,16 @@ void initMuls() {
 	for (sCount = slices;sCount < NCINMAX;sCount++)
 		muls.cin2[sCount] = 0;
 	muls.nlayer = slices;
-	
+
        	muls.sparam = (float *)malloc(NPARAM*sizeof(float));
 	for (i=0;i<NPARAM;i++)
 		muls.sparam[i] = 0.0;
 }
-*/
+ */
 
 /************************************************************************
-*
-***********************************************************************/
+ *
+ ***********************************************************************/
 
 /*
 void readArray(FILE *fp, char *title,double *array,int N) {
@@ -156,12 +131,12 @@ void readArray(FILE *fp, char *title,double *array,int N) {
     }  
   }
 }
-*/
+ */
 
 /***********************************************************************
-* readSFactLUT() reads the scattering factor lookup table from the 
-* input file
-**********************************************************************/
+ * readSFactLUT() reads the scattering factor lookup table from the
+ * input file
+ **********************************************************************/
 /*
 // TODO: 20131222 - does not seem to be used anywhere
 void readSFactLUT() {
@@ -212,15 +187,15 @@ void readSFactLUT() {
 	muls.sfkArray = kArray;
 	muls.sfNk = Nk+1;
 }
-*/
+ */
 
 /************************************************************************
-* readFile() 
-*
-* reads the parameters from the input file and does some 
-* further setup accordingly
-*
-***********************************************************************/
+ * readFile()
+ *
+ * reads the parameters from the input file and does some
+ * further setup accordingly
+ *
+ ***********************************************************************/
 /*
 void readFile(ConfigReaderPtr &configReader) {
 	char answer[256],*strptr;
@@ -242,7 +217,7 @@ void readFile(ConfigReaderPtr &configReader) {
 	muls.cubez = 0.0;
 
         configReader->ReadMode(muls.mode);
-        
+
         if (muls.mode == STEM)
           configReader->ReadOutputLevel(muls.printLevel, muls.saveLevel, muls.displayPotCalcInterval,
                                         muls.displayProgInterval);
@@ -458,7 +433,7 @@ void readFile(ConfigReaderPtr &configReader) {
 	//**********************************************************
 	// quick little fix to calculate gaussian energy distribution
 	// without using statistics (better for only few runs)
-	
+
 	if (muls.printLevel > 0) printf("avgRuns: %d\n",muls.avgRuns);
 	// serious bug in Visual C - dy comes out enormous.
 	//dy = sqrt((double)pi)/((double)2.0*(double)(muls.avgRuns));
@@ -494,7 +469,7 @@ void readFile(ConfigReaderPtr &configReader) {
         muls.Cs*=1e7;
         muls.C5*=1e7;
         muls.Cc*=1e7;
-        
+
         switch(muls.Scherzer)
           {
           case 1:
@@ -542,7 +517,7 @@ void readFile(ConfigReaderPtr &configReader) {
           // instantiating the detector manager creates the detectors
           muls.detectors = DetectorMgrPtr(new DetectorManager(configReader));
         }
-        
+
         // ************************************************************************
         // Tomography Parameters:
 	if (muls.mode == TOMO) {     
@@ -662,6 +637,6 @@ void readFile(ConfigReaderPtr &configReader) {
 
 
 } // end of readFile()
-*/
+ */
 
 

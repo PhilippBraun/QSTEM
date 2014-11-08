@@ -23,34 +23,37 @@
 namespace QSTEM
 {
 
-// This file defines a base class that should cover most multislice simulations.
-// Things like displaying progress after a multislice run, handling multiple runs, etc are covered here.
-
-CExperimentBase::CExperimentBase(const ConfigReaderPtr &configReader) : IExperiment()
-	, m_mode("Undefined")
+CExperimentBase::CExperimentBase(const Config &c) : IExperiment()
 {
-  // Subclasses should choose their wavefunction type appropriately - the config file does not
-  //    provide enough information to determine this ATM.
-
-  // Read potential parameters and initialize a pot object
-  //m_potential = CPotFactory::Get()->GetPotential(configReader);
-  configReader->ReadMode(m_mode);
-  configReader->ReadOutputName(m_outputLocation);
-  configReader->ReadNSubSlabs(m_cellDiv);
   m_equalDivs = true;
-  configReader->ReadPotentialOutputInterval(m_outputInterval);
-  bool tmp;
-  configReader->ReadAverageParameters(m_avgRuns,tmp);
-  configReader->ReadSaveLevel(m_saveLevel);
-  configReader->ReadPrintLevel(m_printLevel);
+  m_outputInterval = c.Output.PotentialProgressInterval;
+  m_outputLocation = c.Output.SaveFolder;
+  m_cellDiv = c.Potential.NSubSlabs;
+  m_avgRuns = c.Model.TDSRuns;
+  m_saveLevel = static_cast<unsigned>(c.Output.SaveLevel);
+  m_printLevel = c.Output.LogLevel;
+  m_tds = c.Model.UseTDS;
+  m_mode = c.ExperimentType;
   float_tt tds;
-  boost::filesystem::path p;
-  configReader->ReadTemperatureData(m_tds,tds,p,tmp);
   DisplayParams();
   m_avgArray = RealVector();
 
-
-
+  // need to load structure before
+//  configReader->ReadSliceParameters(centerSlices,m_dz,m_nslices,outputInterval,zOffset);
+//
+//  switch (SliceThicknessCalculation) {
+//	case SliceThicknessCalculation::Auto:
+//
+//		break;
+//	case SliceThicknessCalculation::NumberOfSlices:
+//
+//		break;
+//	case SliceThicknessCalculation::Thickness:
+//
+//		break;
+//	default:
+//		break;
+//}
 }
 
 void CExperimentBase::DisplayParams() {
@@ -83,7 +86,7 @@ void CExperimentBase::DisplayParams() {
   strftime( Time, 9, "%H:%M:%S", mytime );
   
   printf("\n*****************************************************************************************\n");
-  printf("* Running program STEM3 (version %s) in %s mode\n",VERSION, m_mode.c_str());
+  printf("* Running program STEM3 (version %s) in %d mode\n",VERSION, static_cast<int>(m_mode));
   printf("* Date: %s, Time: %s\n",Date,Time);
   
   // create the data folder ... 
@@ -131,13 +134,13 @@ void CExperimentBase::DisplayProgress(int flag)
        }
   */
   if (m_printLevel > 0) {
-    if (m_crystal->GetTDS()) {
+    if (m_sample->GetTDS()) {
       timeAvg = ((m_avgCount)*timeAvg+curTime)/(m_avgCount+1);
       intensityAvg = ((m_avgCount)*intensityAvg+m_intIntensity)/(m_avgCount+1);
       printf("\n********************** run %3d ************************\n",m_avgCount+1);
       // if (muls.avgCount < 1) {
 
-      std::map<unsigned, float_tt> displacements(m_crystal->GetU2());
+      std::map<unsigned, float_tt> displacements(m_sample->GetU2());
       std::map<unsigned, float_tt>::iterator disp=displacements.begin(), end=displacements.end();
 
       printf("* <u>: %3d |",(*disp++).first);

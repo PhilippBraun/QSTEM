@@ -29,9 +29,9 @@ using namespace QSTEM;
 struct ConvergentWaveFixture {
   ConvergentWaveFixture()
   {
-   configReader = CConfigReaderFactory::Get()->GetReader("stem_STO_4x4.qsc");
+//   configReader = CConfigReaderFactory::Get()->GetReader("stem_STO_4x4.qsc");
     // just default to using the STEM config file here
-   wave = CWaveFactory::Get()->GetWave("Convergent",configReader);
+//   wave = CWaveFactory::Get()->GetWave("Convergent",configReader);
     //std::cout << "setup convergent wave fixture" << std::endl; 
   }
   ~ConvergentWaveFixture()
@@ -40,7 +40,7 @@ struct ConvergentWaveFixture {
   }
 
   WavePtr wave;
-  ConfigReaderPtr configReader;
+//  Config configReader;
 };
 
 BOOST_FIXTURE_TEST_SUITE(TestConvergentWave, ConvergentWaveFixture)

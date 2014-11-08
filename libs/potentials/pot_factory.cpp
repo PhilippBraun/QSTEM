@@ -60,12 +60,11 @@ PotPtr CPotFactory::GetPotential(bool _3D, bool fft)
 }
 
 
-PotPtr CPotFactory::GetPotential(const ConfigReaderPtr &configReader)
+PotPtr CPotFactory::GetPotential(const Config &c)
 {
-  bool _3D, fft;
-  configReader->ReadPotentialCalculationParameters(fft, _3D);
+  bool _3D = c.Potential.Use3D, fft = c.Potential.UseFFT;
   PotPtr pot=GetPotential(_3D, fft);
-  pot->Initialize(configReader);
+  pot->Initialize(c);
 
   return pot;
 }

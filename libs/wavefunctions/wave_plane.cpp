@@ -24,7 +24,7 @@ static std::string imageFilePrefix="image";
 namespace QSTEM
 {
 
-CPlaneWave::CPlaneWave(const ConfigReaderPtr &configReader) : CBaseWave(configReader)
+CPlaneWave::CPlaneWave(const Config &configReader) : CBaseWave(configReader)
 {
 }
 

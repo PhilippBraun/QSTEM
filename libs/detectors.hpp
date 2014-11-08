@@ -65,14 +65,14 @@ typedef boost::shared_ptr<Detector> DetectorPtr;
 class DetectorManager
 {
 public:
-  DetectorManager(ConfigReaderPtr &configReader);
+  DetectorManager(Config &configReader);
   ~DetectorManager();
-  void LoadDetectors(ConfigReaderPtr &configReader, std::vector<unsigned> &output_planes);
+  void LoadDetectors(Config &configReader, std::vector<unsigned> &output_planes);
   // Use this for more generally setting output at set thicknesses (TODO: make sure intensity is 
   //    collected at these planes!!)
-  void LoadDetectors(ConfigReaderPtr &configReader, std::vector<float_tt> &thicknesses);
+  void LoadDetectors(Config &configReader, std::vector<float_tt> &thicknesses);
   // Loads parameters for detectors from a config file
-  void LoadDetectors(ConfigReaderPtr &configReader);
+  void LoadDetectors(Config &configReader);
   // collects intensity from diffraction patterns to yield image intensity
   void CollectIntensity(WavePtr &wave, int plane_idx);
   // Saves detector images to files

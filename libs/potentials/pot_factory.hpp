@@ -57,7 +57,7 @@ public:
   PotPtr GetPotential(bool _3D, bool fft);
   // ultimately uses the string-based method, but parses the config reader for you to make that string.  
   //    Has side effect of initializing pot automatically for you using the passed in configReader.
-  PotPtr GetPotential(const ConfigReaderPtr &configReader);
+  PotPtr GetPotential(const Config &configReader);
 };
 
 }

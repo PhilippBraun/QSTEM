@@ -66,8 +66,8 @@ public:
 };
 class ModelConfig : IPropertyTreeReader{
 public:
-	bool UseTDS, TiltBack;
-	int TDSRuns,nPixels;
+	bool UseTDS, TiltBack,CenterSlices;
+	int TDSRuns,nPixels,nSlices;
 	QSTEM::SliceThicknessCalculation SliceThicknessCalculation;
 	float_tt sliceThicknessAngstrom,xOffset,yOffset,zOffset,resolutionXAngstrom,resolutionYAngstrom,crystalTiltX,
 				crystalTiltY,crystalTiltZ,beamTiltX,beamTiltY;
@@ -79,12 +79,15 @@ public:
 	bool Use3D, UseFFT, BandlimitTransmissionFunction,SavePotential,SaveProjectedPotential,OneTimeIntegration, PlotVrr;
 	QSTEM::StructureFactorType StructureFactorType;
 	float_tt AtomRadiusAngstrom;
+	int NSubSlabs;
 
 	virtual void Read(ptree& t);
 };
 class WaveConfig : IPropertyTreeReader{
 public:
-	float_tt Cs,C5,Cc,dV_V,alpha,Defocus,Astigmatism,AstigmatismAngle;
+	float_tt Cs,C5,Cc,dV_V,alpha,Defocus,Astigmatism,AstigmatismAngle,
+	a_33,a_31,a_44,a_42,a_55,a_53,a_51,a_66,a_64,a_62,phi_33,phi_31,phi_44,phi_42,phi_55,phi_53,phi_51,phi_66,phi_64,phi_62,gaussScale,
+	dI_I,dE_E,AISaperture;
 	bool Smooth,Gaussian;
 
 	virtual void Read(ptree& t);

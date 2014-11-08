@@ -45,7 +45,7 @@ class QSTEM_HELPER_DLL_EXPORT CBaseWave : public IWave
 public:
   // initializing constructor:
   CBaseWave(unsigned nx, unsigned ny, float_tt resX, float_tt resY, std::string input_ext, std::string output_ext);
-  CBaseWave(const ConfigReaderPtr &configReader);
+  CBaseWave(const Config &configReader);
   // define a copy constructor to create new arrays
   CBaseWave( const CBaseWave& other );
   CBaseWave();

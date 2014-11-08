@@ -27,7 +27,7 @@ namespace QSTEM
 class QSTEM_HELPER_DLL_EXPORT CConvergentWave : public CBaseWave
 {
 public:
-  CConvergentWave(const ConfigReaderPtr &configReader);
+  CConvergentWave(const Config &c);
   CConvergentWave( const CConvergentWave& other );
   CConvergentWave();
   virtual void FormProbe();
@@ -66,7 +66,7 @@ private:
   friend class CWaveFactory;
   // Create an instance of this class, wrapped in a shared ptr
   //     This should not be inherited - any subclass needs its own implementation.
-  static WavePtr Create(const ConfigReaderPtr &reader){
+  static WavePtr Create(const Config &reader){
     return WavePtr(new CConvergentWave(reader));
   }  
 };

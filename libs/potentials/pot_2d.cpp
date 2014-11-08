@@ -26,7 +26,7 @@ C2DPotential::C2DPotential() : CPotential()
 {
 }
 
-C2DPotential::C2DPotential(const ConfigReaderPtr &configReader) : CPotential(configReader)
+C2DPotential::C2DPotential(const Config &configReader) : CPotential(configReader)
 {
 	m_boxNz = 1;
 }
@@ -36,7 +36,7 @@ void C2DPotential::Initialize()
   CPotential::Initialize();
 }
 
-void C2DPotential::Initialize(const ConfigReaderPtr &configReader)
+void C2DPotential::Initialize(const Config &configReader)
 {
   CPotential::Initialize(configReader);
 }

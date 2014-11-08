@@ -28,7 +28,7 @@ namespace QSTEM
 class CExperimentCBED : public CExperimentBase
 {
 public:
-    CExperimentCBED(const ConfigReaderPtr &configReader);
+    CExperimentCBED(const Config &configReader);
 
     void Run();
     void DisplayParams();

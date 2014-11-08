@@ -10,7 +10,7 @@ class C3DPotential : public CPotential
 {
 public:
   C3DPotential();
-  C3DPotential(const ConfigReaderPtr &configReader);
+  C3DPotential(const Config &configReader);
   virtual void DisplayParams();
   virtual void AtomBoxLookUp(complex_tt &val, int Znum, float_tt x, float_tt y, float_tt z, float_tt B);
   //virtual void makeSlices(int nlayer, char *fileName, atom *center);
@@ -30,7 +30,7 @@ private:
   // Create an instance of this class, wrapped in a shared ptr
   //     This should not be inherited - any subclass needs its own implementation.
   static PotPtr Create() {return PotPtr(new C3DPotential());}
-  static PotPtr Create(const ConfigReaderPtr &configReader){return PotPtr(new C3DPotential(configReader));}
+  static PotPtr Create(const Config &configReader){return PotPtr(new C3DPotential(configReader));}
 };
 
 }

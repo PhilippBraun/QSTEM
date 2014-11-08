@@ -42,24 +42,22 @@ static const float_tt k_sq3 = 1.0 / sqrt(3.0); /* sq3 is an additional needed fa
  * introduced in order to match the wobble factor with <u^2>
  */
 
-CCrystal::CCrystal() :
-		m_minX(0), m_maxX(0), m_minY(0), m_maxY(0), m_minZ(0), m_maxZ(0) {
-}
+CCrystal::CCrystal() :	m_minX(0), m_maxX(0), m_minY(0), m_maxY(0), m_minZ(0), m_maxZ(0) {}
 
-CCrystal::CCrystal(const ConfigReaderPtr &configReader) {
+CCrystal::CCrystal(const Config &c) {
 	CCrystal();
-	boost::filesystem::path fileName;
-	// Read a few things from the master config file
-	configReader->ReadStructureFileName(fileName);
-	configReader->ReadNCells(m_nCellX, m_nCellY, m_nCellZ);
-	configReader->ReadTemperatureData(m_tds, m_tds_temp, m_phononFile,
-			m_Einstein);
+	m_nCellX = c.Structure.nCellX;
+	m_nCellY = c.Structure.nCellY;
+	m_nCellZ = c.Structure.nCellZ;
+	m_Einstein = true;
+	m_phononFile = boost::filesystem::path();
+	m_tds = c.Model.UseTDS;
+	m_tds_temp = c.Structure.temperatureK;
 
 	m_wobble_temp_scale = sqrt(m_tds_temp / 300.0);
 	// Get the object that we'll use to read in the array of atoms
-	m_structureReader = CStructureReaderFactory::Get()->GetReader(fileName);
-	m_structureWriter = CStructureWriterFactory::Get()->GetWriter(fileName,
-			m_ax, m_by, m_cz);
+	m_structureReader = CStructureReaderFactory::Get()->GetReader(c.Structure.structureFilename);
+	m_structureWriter = CStructureWriterFactory::Get()->GetWriter(c.Structure.structureFilename,m_ax, m_by, m_cz);
 	m_Mm = float2D(3, 3, "");
 	m_structureReader->ReadCellParams(m_Mm);
 
@@ -72,14 +70,10 @@ CCrystal::CCrystal(const ConfigReaderPtr &configReader) {
 
 }
 
-CCrystal::CCrystal(unsigned ncx, unsigned ncy, unsigned ncz, float_tt tx,
-		float_tt ty, float_tt tz) :
-		m_nCellX(ncx), m_nCellY(ncy), m_nCellZ(ncz), m_ctiltx(tx), m_ctilty(ty), m_ctiltz(
-				tz) {
-}
+CCrystal::CCrystal(unsigned ncx, unsigned ncy, unsigned ncz, float_tt tx,	float_tt ty, float_tt tz) :
+		m_nCellX(ncx), m_nCellY(ncy), m_nCellZ(ncz), m_ctiltx(tx), m_ctilty(ty), m_ctiltz(tz) {}
 
-CCrystal::~CCrystal() {
-}
+CCrystal::~CCrystal() {}
 
 void CCrystal::CalculateCrystalBoundaries() {
 	for (unsigned i = 0; i < m_atoms.size(); i++) {
