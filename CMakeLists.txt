@@ -14,6 +14,7 @@ set (VERSION_MINOR 0)
 
 # Define the version number for use in projects
 add_definitions( -DVERSION="${VERSION_MAJOR}.${VERSION_MINOR}" )
+add_definitions( -DPROFINY_CALL_GRAPH_PROFILER )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -86,3 +87,6 @@ if (BUILD_TESTS)
       --force-new-ctest-process --output-on-failure)
   endif(WIN32)
 endif(BUILD_TESTS)
+
+
+

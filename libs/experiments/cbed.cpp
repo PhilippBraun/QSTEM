@@ -50,6 +50,8 @@ void CExperimentCBED::DisplayParams()
 
 void CExperimentCBED::Run()
 {
+
+
 	int ix,iy,i,pCount,result;
 	FILE *avgFp,*fp,*fpPos=0;
 	double timer,timerTot;

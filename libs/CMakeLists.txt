@@ -18,7 +18,7 @@ if (WIN32)
   set(Boost_USE_STATIC_LIBS ON)
 endif(WIN32)
 
-find_package(Boost COMPONENTS system filesystem REQUIRED)
+find_package(Boost COMPONENTS system filesystem chrono timer REQUIRED)
 find_package(HDF5 "1.8.5" REQUIRED)
 
 

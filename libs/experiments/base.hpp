@@ -26,6 +26,8 @@
 #include "crystal.hpp"
 #include "imagelib_fftw3.hpp"
 
+//#include "profiny.hpp"
+
 static std::string avgFilePrefix="diffAvg";
 
 namespace QSTEM

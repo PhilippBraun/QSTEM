@@ -90,6 +90,8 @@ bin/test_config_qsc: /usr/lib/x86_64-linux-gnu/libfftw3f.so
 bin/test_config_qsc: /usr/local/lib/libboost_unit_test_framework.so
 bin/test_config_qsc: /usr/local/lib/libboost_system.so
 bin/test_config_qsc: /usr/local/lib/libboost_filesystem.so
+bin/test_config_qsc: /usr/local/lib/libboost_chrono.so
+bin/test_config_qsc: /usr/local/lib/libboost_timer.so
 bin/test_config_qsc: /usr/local/lib/libhdf5.so
 bin/test_config_qsc: /usr/lib/x86_64-linux-gnu/libpthread.so
 bin/test_config_qsc: /usr/lib/x86_64-linux-gnu/libdl.so

@@ -25,7 +25,10 @@
 #include <boost/filesystem.hpp>
 #include <string>
 #include <vector>
-
+#include <glog/logging.h>
+#include <boost/property_tree/ptree.hpp>
+using namespace std;
+using boost::property_tree::ptree;
 namespace QSTEM
 {
 
@@ -33,11 +36,170 @@ class IConfigReader;
 typedef boost::shared_ptr<IConfigReader> ConfigReaderPtr;
 typedef ConfigReaderPtr (*CreateReaderFn)(boost::filesystem::path &filename);
 
-//enum class ExperimentType {STEM, CBED, TEM, NBED};
-//enum class PrintLevel {Level1,Level2,Level3};
+enum class ExperimentType {STEM = 3, CBED = 1, TEM = 4, NBED = 2};
+enum class SliceThicknessCalculation {Auto = 1, Thickness = 2, NumberOfSlices = 3};
+enum class StructureFactorType {WeickKohl = 1, Rez=2};
+enum class SaveLevel{Everything = 1, Something = 2, Results=3};
 
-class IConfig{
+class IPropertyTreeReader{
 public:
+	virtual void Read(ptree& t) = 0;
+protected:
+	virtual ~IPropertyTreeReader(){};
+};
+
+class StructureConfig : IPropertyTreeReader{
+public:
+	string structureFilename;
+	int nCellX;
+	int nCellY;
+	int nCellZ;
+	float_tt temperatureK;
+
+	virtual void Read(ptree& t);
+};
+class BeamConfig : IPropertyTreeReader{
+public:
+	float_tt EnergykeV, SourceDiameterAngstrom, BeamCurrentpA, DwellTimeMsec;
+
+	virtual void Read(ptree& t);
+};
+class ModelConfig : IPropertyTreeReader{
+public:
+	bool UseTDS, TiltBack;
+	int TDSRuns,nPixels;
+	QSTEM::SliceThicknessCalculation SliceThicknessCalculation;
+	float_tt sliceThicknessAngstrom,xOffset,yOffset,zOffset,resolutionXAngstrom,resolutionYAngstrom,crystalTiltX,
+				crystalTiltY,crystalTiltZ,beamTiltX,beamTiltY;
+
+	virtual void Read(ptree& t);
+};
+class PotentialConfig : IPropertyTreeReader{
+public:
+	bool Use3D, UseFFT, BandlimitTransmissionFunction,SavePotential,SaveProjectedPotential,OneTimeIntegration, PlotVrr;
+	QSTEM::StructureFactorType StructureFactorType;
+	float_tt AtomRadiusAngstrom;
+
+	virtual void Read(ptree& t);
+};
+class WaveConfig : IPropertyTreeReader{
+public:
+	float_tt Cs,C5,Cc,dV_V,alpha,Defocus,Astigmatism,AstigmatismAngle;
+	bool Smooth,Gaussian;
+
+	virtual void Read(ptree& t);
+};
+class OutputConfig : IPropertyTreeReader{
+public:
+	int LogLevel,SaveSliceAfterIterations,PropagationProgressInterval,PotentialProgressInterval;
+	string SaveFolder;
+	QSTEM::SaveLevel SaveLevel;
+	bool ShowProbe,PendelloesungPlot;
+
+	virtual void Read(ptree& t);
+};
+
+class Config{
+public:
+	Config(ptree& t);
+	int nThreads;
+	QSTEM::ExperimentType ExperimentType;
+	StructureConfig Structure;
+	ModelConfig Model;
+	PotentialConfig Potential;
+	OutputConfig Output;
+	WaveConfig Wave;
+	BeamConfig Beam;
+//	mode 					cbed
+//
+//	structure
+//	{
+//		structure_filename		/home/philipp/QSTEM/bin/Al.cfg
+//		ncellx 					10
+//		ncelly 					10
+//		ncellz 					1
+//		temperatureK			300.000000
+//	}
+//
+//	beam
+//	{
+//		energy_keV				200.000000
+//		sourceDiameterAngstrom	0
+//		beamCurrentpA         	1
+//		dwellTimeMsec			1.6021773e-4
+//	}
+//
+//	model
+//	{
+//		tds							false
+//		{
+//			tdsRuns						1
+//		}
+//		sliceThicknessCalculation	1			; 1=auto , 2=thickness, 3=number of slices
+//		sliceThicknessAngstrom		1.012375
+//		slices						80
+//		centerSlices				false
+//		xOffset						0.000000   ;%  x-position offset in cartesian coords
+//		yOffset						0.000000   ;%  y-position offset in cartesian coords
+//		zOffset						0.976000   ;%  slize z-position offset in cartesian coords
+//		resolutionXAngstrom			0.050000
+//		resolutionYAngstrom			0.050000
+//		crystalTiltX				0.000000	;% tilt in rad
+//		crystalTiltY				0.000000
+//		crystalTiltZ				0.000000
+//		beamTiltX					0.000000 ;deg	% beam tilt deg
+//		beamTiltY					0.000000 ;deg
+//		tiltBack					false
+//		nPixels						1024
+//		potential
+//		{
+//			3D								true
+//			FFT								true
+//			atomRadiusAngstrom				5.0
+//			plotVr_r         				false		;% will create a plot for V_proj(r)*r vs. r  for all slices and 1st atom
+//			bandlimitTransmissionFunction	false	;% indicate whether to band limit transmission function or not
+//			savePotential					false	;% whether we want to save the projected potential in files
+//			saveProjectedPotential        	false		;% whether we want to save the total projected potential
+//			oneTimeIntegration 				true  	;% calculate V_proj once and then copy (much faster)
+//			structureFactors				1		; 1=WK 2= ...
+//		}
+//	}
+//	wave
+//	{
+//		Cs							0.000000	; Spherical abberation in mm
+//		C5							0.000000	; C_5 abberation in mm
+//		Cc							1.000000	; Chromatic abberation in mm
+//		dV/V						0.000003	;energy spread in eV (FWHM)
+//		alpha						0.00000	 	;Illumination angle in mrad
+//		defocus						1.000000
+//		astigmatism					0.000000
+//		astigmatismAngle: 			0.000000
+//		smooth						true		;smoothen edge in rec. space
+//		gaussian					false
+//	}
+//
+//	output
+//	{
+//		loglevel					1;  1=info 			2=warning 	3=error
+//		savelevel  					3;  1=everything	2=			3=s
+//		saveSliceAfter				1
+//		folder						CBED
+//		showProbe					false		;% displays a graph of the crosssection of the inc. e-beam
+//		propagationProgressInterval	10 			;% show progress every N_prop_prog beam positions
+//		potentialProgressInterval	1000 		;% show progress every N_pot_prog atoms
+//		pendelloesungPlot			false		;% flag indicates whether to store Pendeloesung plot
+//	}
+//
+//	stem
+//	{
+//		scan_x_start				10.570000  % X position of top left corner of scan window
+//		scan_x_stop					10.570000	% X position of bottom right corner of scan window
+//		scan_x_pixels				1	% number of pixels in X-direction
+//		scan_y_start				11.300000
+//		scan_y_stop					11.300000
+//		scan_y_pixels				1
+//	}
+// from old c code
 	//virtual ExperimentType ExperimentType() = 0;
 	//virtual PrintLevel PrintLevel() = 0;
 	//virtual int SaveLevel() = 0;

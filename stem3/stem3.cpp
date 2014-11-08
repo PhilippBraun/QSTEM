@@ -40,6 +40,20 @@ QSTEM - image simulation for TEM/STEM/CBED
 
 #include "experiments.hpp"
 
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/info_parser.hpp>
+
+#include <boost/units/systems/si/energy.hpp>
+#include <boost/units/systems/si/force.hpp>
+#include <boost/units/systems/si/length.hpp>
+#include <boost/units/systems/si/electric_potential.hpp>
+#include <boost/units/systems/si/current.hpp>
+#include <boost/units/systems/si/resistance.hpp>
+#include <boost/units/systems/si/io.hpp>
+
+using namespace boost::units;
+using namespace boost::units::si;
+
 void usage() {
   printf("usage: stem [input file='stem.dat']\n\n");
 }
@@ -54,7 +68,14 @@ void usage() {
 
 int main(int argc, char *argv[]) 
 {
-  int nThreads = 4;
+  int nThreads = 1;
+
+
+
+  using boost::property_tree::ptree;
+  ptree pt;
+  boost::property_tree::info_parser::read_info("/home/philipp/QSTEM/bin/1.xml",pt);
+  std::string mode = pt.get<std::string>("mode");
 
   std::string fileName;
   /*************************************************************
@@ -64,17 +85,18 @@ int main(int argc, char *argv[])
     fileName = "stem.dat";
   else
     fileName=argv[1];
+  QSTEM::Config c(pt);
   // Initialize the config file reader
   QSTEM::ConfigReaderPtr configReader = QSTEM::CConfigReaderFactory::Get()->GetReader(fileName);
   fftw_init_threads();
   fftw_plan_with_nthreads(nThreads);
   omp_set_num_threads(nThreads);
-  if (!configReader->IsValid())
-    {
-      printf("could not open input file %s!\n",fileName.c_str());
-      exit(0);
-      usage();
-    }
+//  if (!configReader->IsValid())
+//    {
+//      printf("could not open input file %s!\n",fileName.c_str());
+//      exit(0);
+//      usage();
+//    }
   
   QSTEM::ExperimentPtr expt = QSTEM::GetExperiment(configReader);
   expt->Run();
