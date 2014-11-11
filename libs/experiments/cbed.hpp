@@ -28,7 +28,7 @@ namespace QSTEM
 class CExperimentCBED : public CExperimentBase
 {
 public:
-    CExperimentCBED(const Config &configReader);
+    CExperimentCBED(ConfigPtr configReader);
 
     void Run();
     void DisplayParams();
@@ -42,18 +42,13 @@ protected:
     void CollectIntensity(unsigned absoluteSlice);
     void SaveImages();
 
-    unsigned m_nbout;				/* number of recorded beams */
-    float_tt **m_pendelloesung;
-    bool m_lbeams;				/* flag indicating whether to record beams */
-
-    float_tt m_scanXStart, m_scanYStart;     /* The beam position on the sample */
-
-    bool m_showProbe;            /* if true, saves a plot of the probe */
-
-    float_tt m_sourceRadius;                 /* The source radius in angstroms */
-
+    unsigned _nbout;				/* number of recorded beams */
+    float_tt **_pendelloesung;
+    bool _lbeams;			/* flag indicating whether to record beams */
+    float_tt _scanXStart, _scanYStart;     /* The beam position on the sample */
+    bool _showProbe;            /* if true, saves a plot of the probe */
     bool m_storeSeries;
-    unsigned int m_nslices;
+    ConfigPtr _config;
 };
 
 }

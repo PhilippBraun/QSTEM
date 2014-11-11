@@ -42,7 +42,7 @@ void CWaveFactory::Register(const std::string &type, CreateWaveFn pfnCreate)
 	m_FactoryMap[type] = pfnCreate;
 }
 
-WavePtr CWaveFactory::GetWave(const std::string &type, const Config &c)
+WavePtr CWaveFactory::GetWave(const std::string &type, const ConfigPtr c)
 {
   std::string lower_type = type;
   boost::algorithm::to_lower(lower_type);

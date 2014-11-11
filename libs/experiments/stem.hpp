@@ -28,7 +28,7 @@ namespace QSTEM
 class QSTEM_HELPER_DLL_EXPORT CExperimentSTEM : public CExperimentBase
 {
 public:
-  CExperimentSTEM(const Config &configReader);
+  CExperimentSTEM( ConfigPtr configReader);
   void Run();
   void DisplayParams();
   void CheckParams(){};

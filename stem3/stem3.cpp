@@ -43,17 +43,10 @@ QSTEM - image simulation for TEM/STEM/CBED
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/info_parser.hpp>
 
-#include <boost/units/systems/si/energy.hpp>
-#include <boost/units/systems/si/force.hpp>
-#include <boost/units/systems/si/length.hpp>
-#include <boost/units/systems/si/electric_potential.hpp>
-#include <boost/units/systems/si/current.hpp>
-#include <boost/units/systems/si/resistance.hpp>
-#include <boost/units/systems/si/io.hpp>
+#include <gflags/gflags.h>
 
-using namespace boost::units;
-using namespace boost::units::si;
 using boost::property_tree::ptree;
+using namespace QSTEM;
 
 void usage() {
 	printf("usage: stem [input file='stem.dat']\n\n");
@@ -67,13 +60,13 @@ int main(int argc, char *argv[])
 
 	ptree pt;
 	boost::property_tree::info_parser::read_info(fileName,pt);
-	QSTEM::Config c(pt);
+	ConfigPtr c = ConfigPtr(new Config(pt));
 
 	fftw_init_threads();
-	fftw_plan_with_nthreads(c.nThreads);
-	omp_set_num_threads(c.nThreads);
-
-	QSTEM::ExperimentPtr expt = QSTEM::GetExperiment(c);
+	fftw_plan_with_nthreads(c->nThreads);
+	omp_set_num_threads(c->nThreads);
+//	google::InitGoogleLogging(argv[0]);
+	QSTEM::ExperimentPtr expt = GetExperiment(c);
 	expt->Run();
 
 #if _DEBUG

@@ -62,13 +62,13 @@ int CCfgReader::ReadCellParams(float_tt **Mm) {
   if (readparam(m_fp, "H0(1,2) =",m_buf,1)) Mm[0][1] = atof(m_buf.c_str());
   if (readparam(m_fp, "H0(1,3) =",m_buf,1)) Mm[0][2] = atof(m_buf.c_str());
 
-  if (readparam(m_fp, "H0(2,1) =",m_buf,1)) Mm[0][3] = atof(m_buf.c_str());
-  if (readparam(m_fp, "H0(2,2) =",m_buf,1)) Mm[0][4] = atof(m_buf.c_str());
-  if (readparam(m_fp, "H0(2,3) =",m_buf,1)) Mm[0][5] = atof(m_buf.c_str());
+  if (readparam(m_fp, "H0(2,1) =",m_buf,1)) Mm[1][0] = atof(m_buf.c_str());
+  if (readparam(m_fp, "H0(2,2) =",m_buf,1)) Mm[1][1] = atof(m_buf.c_str());
+  if (readparam(m_fp, "H0(2,3) =",m_buf,1)) Mm[1][2] = atof(m_buf.c_str());
 
-  if (readparam(m_fp, "H0(3,1) =",m_buf,1)) Mm[0][6] = atof(m_buf.c_str());
-  if (readparam(m_fp, "H0(3,2) =",m_buf,1)) Mm[0][7] = atof(m_buf.c_str());
-  if (readparam(m_fp, "H0(3,3) =",m_buf,1)) Mm[0][8] = atof(m_buf.c_str());
+  if (readparam(m_fp, "H0(3,1) =",m_buf,1)) Mm[2][0] = atof(m_buf.c_str());
+  if (readparam(m_fp, "H0(3,2) =",m_buf,1)) Mm[2][1] = atof(m_buf.c_str());
+  if (readparam(m_fp, "H0(3,3) =",m_buf,1)) Mm[2][2] = atof(m_buf.c_str());
 
   setComment('%');
   

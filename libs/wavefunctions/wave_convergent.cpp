@@ -22,11 +22,11 @@
 namespace QSTEM
 {
 
-CConvergentWave::CConvergentWave(const Config &c) : CBaseWave(c)
+CConvergentWave::CConvergentWave(const ConfigPtr c) : CBaseWave(c)
 {
 	// TODO: where does beam current belong?
 	//configReader->ReadDoseParameters(m_beamCurrent, m_dwellTime);
-	const WaveConfig& w = c.Wave;
+	const WaveConfig& w = c->Wave;
 	m_Cs = w.Cs;
 	m_C5= w.C5;
 	m_Cc= w.Cc;
@@ -62,6 +62,7 @@ CConvergentWave::CConvergentWave(const Config &c) : CBaseWave(c)
 	m_dV_V= w.dV_V;
 	m_alpha= w.alpha;
 	m_aAIS= w.AISaperture;
+	m_printLevel = c->Output.LogLevel;
 }
 
 /** Copy constructor - used to copy wave just before dispatching multiple threads for STEM simulations */

@@ -22,7 +22,7 @@
 namespace QSTEM
 {
 
-CExperimentTEM::CExperimentTEM(const Config &configReader) : CExperimentBase(configReader)
+CExperimentTEM::CExperimentTEM( ConfigPtr configReader) : CExperimentBase(configReader)
 {
   m_mode=ExperimentType::TEM;
 }

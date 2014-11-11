@@ -196,6 +196,8 @@ typedef ComplexArray3D::array_view<2>::type ComplexArray2DView;
 typedef boost::multi_array_ref<std::complex<float_tt>,3> ComplexArray3DPtr;
 typedef boost::multi_array_ref<std::complex<float_tt>,2> ComplexArray2DPtr;
 
+
+
 // Generic helper definitions for shared library support
 #if defined _WIN32 || defined __CYGWIN__
   #define QSTEM_HELPER_DLL_IMPORT __declspec(dllimport)

@@ -33,7 +33,9 @@ namespace QSTEM
 {
 
 class IConfigReader;
+class Config;
 typedef boost::shared_ptr<IConfigReader> ConfigReaderPtr;
+typedef boost::shared_ptr<Config> ConfigPtr;
 typedef ConfigReaderPtr (*CreateReaderFn)(boost::filesystem::path &filename);
 
 enum class ExperimentType {STEM = 3, CBED = 1, TEM = 4, NBED = 2};

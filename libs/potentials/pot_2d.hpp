@@ -8,9 +8,9 @@ namespace QSTEM {
 class C2DPotential: public CPotential {
 public:
 	C2DPotential();
-	C2DPotential(const Config &configReader);
+	C2DPotential(const ConfigPtr configReader);
 	virtual void Initialize();
-	virtual void Initialize(const Config &configReader);
+	virtual void Initialize(const ConfigPtr configReader);
 	virtual void DisplayParams();
 	virtual void AtomBoxLookUp(complex_tt &val, int Znum, float_tt x,
 			float_tt y, float_tt z, float_tt B);
@@ -30,7 +30,7 @@ protected:
 	static PotPtr Create() {
 		return PotPtr(new C2DPotential());
 	}
-	static PotPtr Create(const Config &configReader) {
+	static PotPtr Create(const ConfigPtr configReader) {
 		return PotPtr(new C2DPotential(configReader));
 	}
 };

@@ -28,7 +28,7 @@ namespace QSTEM {
 CPotential::CPotential() :	IPotential() {
 }
 
-CPotential::CPotential(const Config &c) :						IPotential() {
+CPotential::CPotential(const ConfigPtr c) :						IPotential() {
 	Initialize(c);
 }
 
@@ -40,25 +40,25 @@ void CPotential::SetStructure(StructurePtr structure) {
 	m_crystal = structure;
 	m_atoms = &(m_crystal->m_atoms);
 }
-void CPotential::Initialize(const Config &c) {
-	m_nx = m_ny = c.Model.nPixels;
-	m_dx = c.Model.resolutionXAngstrom;
-	m_dy = c.Model.resolutionYAngstrom;
-	m_v0 = c.Beam.EnergykeV;
-	m_atomRadius = c.Potential.AtomRadiusAngstrom;
-	m_offsetX = c.Model.xOffset;
-	m_offsetY = c.Model.yOffset;
-	m_savePotential = c.Potential.SavePotential;
-	m_saveProjectedPotential = c.Potential.SaveProjectedPotential;
-	m_plotPotential= c.Potential.PlotVrr;
-	m_centerSlices = c.Model.CenterSlices;
-	m_sliceThickness = c.Model.sliceThicknessAngstrom;
-	m_nslices =c.Model.nSlices;
-	m_outputInterval=c.Output.PotentialProgressInterval;
-	m_zOffset = c.Model.zOffset;
-	m_offsetX =c.Model.xOffset;
-	m_offsetY=c.Model.yOffset;
-
+void CPotential::Initialize(const ConfigPtr c) {
+	m_nx = m_ny = c->Model.nPixels;
+	m_dx = c->Model.resolutionXAngstrom;
+	m_dy = c->Model.resolutionYAngstrom;
+	m_v0 = c->Beam.EnergykeV;
+	m_atomRadius = c->Potential.AtomRadiusAngstrom;
+	m_offsetX = c->Model.xOffset;
+	m_offsetY = c->Model.yOffset;
+	m_savePotential = c->Potential.SavePotential;
+	m_saveProjectedPotential = c->Potential.SaveProjectedPotential;
+	m_plotPotential= c->Potential.PlotVrr;
+	m_centerSlices = c->Model.CenterSlices;
+	m_sliceThickness = c->Model.sliceThicknessAngstrom;
+	m_nslices =c->Model.nSlices;
+	m_outputInterval=c->Output.PotentialProgressInterval;
+	m_zOffset = c->Model.zOffset;
+	m_offsetX =c->Model.xOffset;
+	m_offsetY=c->Model.yOffset;
+	m_sliceThicknesses = std::vector<float_tt>();
 	// TODO: Read if we should load the pot from a file
 //	configReader->ReadLoadPotential(m_readPotential, m_potFileBase);
 	Initialize();
@@ -309,8 +309,8 @@ void CPotential::SliceSetup() {
 	// If we are going to calculate the potential, then we need to size the slices according to the size of the
 	//    structure and the corresponding resolution.
 	else {
-		float_tt max_x, min_x, max_y, min_y;
-		m_crystal->GetCrystalBoundaries(min_x, max_x, min_y, max_y);
+		float_tt max_x, min_x, max_y, min_y, max_z, min_z;
+		m_crystal->GetCrystalBoundaries(min_x, max_x, min_y, max_y, min_z, max_z);
 		m_nx = ceil((max_x - min_x) / m_dx);
 		m_ny = ceil((max_y - min_y) / m_dy);
 	}
@@ -364,7 +364,6 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 	//if (m_divCount == m_cellDiv-1) {
 	//ReadAtoms();
 	//} /* end of if divCount==cellDiv-1 ... */
-	m_nslices = nlayer;
 	SliceSetup();
 
 	// reset the potential to zero:

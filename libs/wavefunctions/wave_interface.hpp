@@ -33,7 +33,7 @@ namespace QSTEM
 
 class IWave;
 typedef boost::shared_ptr<IWave> WavePtr;
-typedef WavePtr (*CreateWaveFn)(const Config &reader);
+typedef WavePtr (*CreateWaveFn)(const ConfigPtr reader);
 
 // a structure for a probe/parallel beam wavefunction.
 // Separate from mulsliceStruct for parallelization.

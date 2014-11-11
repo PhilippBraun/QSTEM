@@ -36,7 +36,7 @@ namespace QSTEM
 class QSTEM_HELPER_DLL_EXPORT CExperimentBase : public IExperiment
 {
 public:
-    CExperimentBase(const Config &configReader);
+    CExperimentBase(ConfigPtr configReader);
     virtual void DisplayProgress(int flag);
     virtual void DisplayParams();
     virtual void Run()=0;

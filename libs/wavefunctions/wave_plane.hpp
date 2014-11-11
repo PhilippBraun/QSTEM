@@ -28,7 +28,7 @@ namespace QSTEM
 class QSTEM_HELPER_DLL_EXPORT CPlaneWave : public CBaseWave
 {
 public:
-  CPlaneWave(const Config &configReader);
+  CPlaneWave(const ConfigPtr configReader);
   CPlaneWave(const CPlaneWave& other);
   CPlaneWave();
   virtual void FormProbe();
@@ -48,7 +48,7 @@ private:
   friend class CWaveFactory;
   // Create an instance of this class, wrapped in a shared ptr
   //     This should not be inherited - any subclass needs its own implementation.
-  static WavePtr Create(const Config &reader){
+  static WavePtr Create(const ConfigPtr reader){
     return WavePtr(new CPlaneWave(reader));
   }  
 };

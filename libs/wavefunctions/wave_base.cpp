@@ -47,12 +47,12 @@ CBaseWave::CBaseWave(unsigned x, unsigned y, float_tt resX, float_tt resY,
 	Initialize(".img", ".img");
 }
 
-CBaseWave::CBaseWave(const Config &c): m_fftPlanWaveForw(NULL), m_fftPlanWaveInv(NULL)
+CBaseWave::CBaseWave(const ConfigPtr c): m_fftPlanWaveForw(NULL), m_fftPlanWaveInv(NULL)
 {
-	m_nx = m_ny = c.Model.nPixels;
-	m_dx = c.Model.resolutionXAngstrom;
-	m_dy = c.Model.resolutionYAngstrom;
-	m_v0 = c.Beam.EnergykeV;
+	m_nx = m_ny = c->Model.nPixels;
+	m_dx = c->Model.resolutionXAngstrom;
+	m_dy = c->Model.resolutionYAngstrom;
+	m_v0 = c->Beam.EnergykeV;
 	// TODO: where does this belong?
 	//m_electronScale = m_beamCurrent*m_dwellTime*MILLISEC_PICOAMP;
 

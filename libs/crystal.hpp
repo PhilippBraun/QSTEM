@@ -34,14 +34,14 @@ class QSTEM_HELPER_DLL_EXPORT CCrystal
 {
 public:
   CCrystal();  // default constructor: does nothing, so you have to add stuff to it after constructing.
-  CCrystal(const Config &configReader);
+  CCrystal(const ConfigPtr configReader);
   CCrystal(unsigned ncx, unsigned ncy, unsigned ncz,    // ncells in any given direction
 	  float_tt tx, float_tt ty, float_tt tz				// Tilts in any given direction
 	  );
   ~CCrystal();
   
   void Init(unsigned run_number);
-  void ReadUnitCell(bool handleVacancies);
+  void MakeCrystal(bool handleVacancies);
   void TiltBoxed(int ncoord,bool handleVacancies);
   void EinsteinDisplacement(std::vector<float_tt> &u, atom &_atom);
   void PhononDisplacement(std::vector<float_tt> &u,int id,int icx,int icy,
@@ -73,7 +73,7 @@ public:
   inline unsigned GetNumberOfAtoms(){return m_atoms.size();}
 
   void CalculateCrystalBoundaries();
-  void GetCrystalBoundaries(float_tt &min_x, float_tt &max_x, float_tt &min_y, float_tt &max_y);
+  void GetCrystalBoundaries(float_tt &min_x, float_tt &max_x, float_tt &min_y, float_tt &max_y, float_tt &min_z, float_tt &max_z);
 
   std::vector<atom> m_atoms; // The atoms after duplication, tilt, and phonon shaking
   std::vector<atom> m_uniqueAtoms;
@@ -114,7 +114,7 @@ protected:
   bool m_Einstein; /* if set (default=set), the Einstein model will be used */
   float_tt m_tds_temp;  // The temperature for TDS calculations
   float_tt m_wobble_temp_scale;
-
+  ConfigPtr _config;
   int m_printLevel;
 
   void CalculateCellDimensions();

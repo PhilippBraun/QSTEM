@@ -100,7 +100,7 @@ bin/test_detectors: /usr/local/lib/libfftw3.so
 bin/test_detectors: /usr/lib/x86_64-linux-gnu/libfftw3f.so
 bin/test_detectors: /usr/local/lib/libfftw3_omp.a
 bin/test_detectors: /usr/local/lib/libcvmlcpp.so
-bin/test_detectors: /usr/local/lib/libblitz.a
+bin/test_detectors: /usr/local/lib/libglog.so
 bin/test_detectors: tests/libs/CMakeFiles/test_detectors.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../../bin/test_detectors"
 	cd /home/philipp/QSTEM/tests/libs && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_detectors.dir/link.txt --verbose=$(VERBOSE)

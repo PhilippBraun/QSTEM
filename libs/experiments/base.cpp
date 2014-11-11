@@ -2,20 +2,20 @@
   QSTEM - image simulation for TEM/STEM/CBED
   Copyright (C) 2000-2010  Christoph Koch
   Copyright (C) 2010-2013  Christoph Koch, Michael Sarahan
-  
+
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
-  
+
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
-  
+
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 #include "base.hpp"
 
@@ -23,50 +23,65 @@
 namespace QSTEM
 {
 
-CExperimentBase::CExperimentBase(const Config &c) : IExperiment()
+CExperimentBase::CExperimentBase(ConfigPtr c) : IExperiment()
 {
-  m_equalDivs = true;
-  m_outputInterval = c.Output.PotentialProgressInterval;
-  m_outputLocation = c.Output.SaveFolder;
-  m_cellDiv = c.Potential.NSubSlabs;
-  m_avgRuns = c.Model.TDSRuns;
-  m_saveLevel = static_cast<unsigned>(c.Output.SaveLevel);
-  m_printLevel = c.Output.LogLevel;
-  m_tds = c.Model.UseTDS;
-  m_mode = c.ExperimentType;
-  float_tt tds;
-  DisplayParams();
-  m_avgArray = RealVector();
+	m_sample = StructurePtr(new CCrystal(c));
 
-  // need to load structure before
-//  configReader->ReadSliceParameters(centerSlices,m_dz,m_nslices,outputInterval,zOffset);
-//
-//  switch (SliceThicknessCalculation) {
-//	case SliceThicknessCalculation::Auto:
-//
-//		break;
-//	case SliceThicknessCalculation::NumberOfSlices:
-//
-//		break;
-//	case SliceThicknessCalculation::Thickness:
-//
-//		break;
-//	default:
-//		break;
-//}
+	float_tt max_x, min_x, max_y, min_y, max_z, min_z, zTotal;
+	m_sample->GetCrystalBoundaries(min_x, max_x, min_y, max_y, min_z, max_z);
+	zTotal = max_z - min_z;
+	switch (c->Model.SliceThicknessCalculation) {
+	case SliceThicknessCalculation::Auto:
+		m_dz = c->Model.sliceThicknessAngstrom = zTotal/((int)zTotal);
+		c->Model.nSlices = (int)zTotal;
+		break;
+	case SliceThicknessCalculation::NumberOfSlices:
+		m_dz = c->Model.sliceThicknessAngstrom = zTotal/c->Model.nSlices;
+		break;
+	case SliceThicknessCalculation::Thickness:
+		m_dz = c->Model.sliceThicknessAngstrom;
+		c->Model.nSlices = (int)(zTotal / c->Model.sliceThicknessAngstrom);
+		break;
+	default:
+		break;
+	}
+
+	m_wave = CWaveFactory::Get()->GetWave("Convergent", c);
+	m_wave->FormProbe();
+
+	m_potential = CPotFactory::Get()->GetPotential(c);
+	m_potential->SetStructure(m_sample);
+
+	m_equalDivs = true;
+	m_outputInterval = c->Output.PotentialProgressInterval;
+	m_outputLocation = c->Output.SaveFolder;
+	m_cellDiv = c->Potential.NSubSlabs;
+	m_avgRuns = c->Model.TDSRuns;
+	m_saveLevel = static_cast<unsigned>(c->Output.SaveLevel);
+	m_printLevel = c->Output.LogLevel;
+	m_tds = c->Model.UseTDS;
+	m_mode = c->ExperimentType;
+	float_tt tds;
+	DisplayParams();
+	m_avgArray = RealVector();
+
+	// need to load structure before
+	//  configReader->ReadSliceParameters(centerSlices,m_dz,m_nslices,outputInterval,zOffset);
+	//
+
 }
 
 void CExperimentBase::DisplayParams() {
-  FILE *fpDir;
-  char systStr[64];
-  double k2max,temp;
-  int i,j;
-  static char Date[16],Time[16];
-  time_t caltime;
-  struct tm *mytime;
-  const double pi=3.1415926535897;
+	FILE *fpDir;
+	char systStr[64];
+	double k2max,temp;
+	int i,j;
+	static char Date[16],Time[16];
+	time_t caltime;
+	struct tm *mytime;
+	const double pi=3.1415926535897;
 
-  /*
+	/*
   if (wave->printLevel < 1) {
     if ((fpDir = fopen(muls.folder.c_str(),"r"))) {
       fclose(fpDir);
@@ -79,103 +94,103 @@ void CExperimentBase::DisplayParams() {
     }	  
     return;
   }
-  */
-  caltime = time( NULL );
-  mytime = localtime( &caltime );
-  strftime( Date, 12, "%Y:%m:%d", mytime );
-  strftime( Time, 9, "%H:%M:%S", mytime );
-  
-  printf("\n*****************************************************************************************\n");
-  printf("* Running program STEM3 (version %s) in %d mode\n",VERSION, static_cast<int>(m_mode));
-  printf("* Date: %s, Time: %s\n",Date,Time);
-  
-  // create the data folder ... 
-  printf("* Output file/folder:          ./%s/ ",m_outputLocation.c_str()); 
-	
-  printf("* Super cell divisions: %d (in z direction) %s\n",m_cellDiv, m_equalDivs ? "equal" : "non-equal");
-  printf("* Output every:         %d slices\n",m_outputInterval);
-  
+	 */
+	caltime = time( NULL );
+	mytime = localtime( &caltime );
+	strftime( Date, 12, "%Y:%m:%d", mytime );
+	strftime( Time, 9, "%H:%M:%S", mytime );
 
-  /* 
+	printf("\n*****************************************************************************************\n");
+	printf("* Running program STEM3 (version %s) in %d mode\n",VERSION, static_cast<int>(m_mode));
+	printf("* Date: %s, Time: %s\n",Date,Time);
+
+	// create the data folder ...
+	printf("* Output file/folder:          ./%s/ ",m_outputLocation.c_str());
+
+	printf("* Super cell divisions: %d (in z direction) %s\n",m_cellDiv, m_equalDivs ? "equal" : "non-equal");
+	printf("* Output every:         %d slices\n",m_outputInterval);
+
+
+	/*
      if (muls.ismoth) printf("Type 1 (=smooth aperture), ");
      if (muls.gaussFlag) printf("will apply gaussian smoothing"); 
      printf("\n");
-  */
+	 */
 
-  /***************************************************/
-  /*  printf("Optimizing fftw plans according to probe array (%d x %dpixels = %g x %gA) ...\n",
+	/***************************************************/
+	/*  printf("Optimizing fftw plans according to probe array (%d x %dpixels = %g x %gA) ...\n",
       muls.nx,muls.ny,muls.nx*muls.resolutionX,muls.ny*muls.resolutionY);
-  */
-  
-  printf("* TDS:                  %d runs)\n",m_avgRuns);
+	 */
 
-  printf("*\n*****************************************************************************************\n");
+	printf("* TDS:                  %d runs)\n",m_avgRuns);
+
+	printf("*\n*****************************************************************************************\n");
 }
 
 void CExperimentBase::DisplayProgress(int flag)
 {
-  // static double timer;
-  static double timeAvg = 0;
-  static double intensityAvg = 0;
-  static time_t time0,time1;
-  double curTime;
-  int jz;
+	// static double timer;
+	static double timeAvg = 0;
+	static double intensityAvg = 0;
+	static time_t time0,time1;
+	double curTime;
+	int jz;
 
-  if (flag < 0) {
-    time(&time0);
-    // timer = cputim();
-    return;
-  }
-  time(&time1);  
-  curTime = difftime(time1,time0);
-  /*   curTime = cputim()-timer;
+	if (flag < 0) {
+		time(&time0);
+		// timer = cputim();
+		return;
+	}
+	time(&time1);
+	curTime = difftime(time1,time0);
+	/*   curTime = cputim()-timer;
        if (curTime < 0) {
        printf("timer: %g, curr. time: %g, diff: %g\n",timer,cputim(),curTime);
        }
-  */
-  if (m_printLevel > 0) {
-    if (m_sample->GetTDS()) {
-      timeAvg = ((m_avgCount)*timeAvg+curTime)/(m_avgCount+1);
-      intensityAvg = ((m_avgCount)*intensityAvg+m_intIntensity)/(m_avgCount+1);
-      printf("\n********************** run %3d ************************\n",m_avgCount+1);
-      // if (muls.avgCount < 1) {
+	 */
+	if (m_printLevel > 0) {
+		if (m_sample->GetTDS()) {
+			timeAvg = ((m_avgCount)*timeAvg+curTime)/(m_avgCount+1);
+			intensityAvg = ((m_avgCount)*intensityAvg+m_intIntensity)/(m_avgCount+1);
+			printf("\n********************** run %3d ************************\n",m_avgCount+1);
+			// if (muls.avgCount < 1) {
 
-      std::map<unsigned, float_tt> displacements(m_sample->GetU2());
-      std::map<unsigned, float_tt>::iterator disp=displacements.begin(), end=displacements.end();
+			std::map<unsigned, float_tt> displacements(m_sample->GetU2());
+			std::map<unsigned, float_tt>::iterator disp=displacements.begin(), end=displacements.end();
 
-      printf("* <u>: %3d |",(*disp++).first);
-	  while(disp!=end) printf(" %8d |",(*disp++).first);  
+			printf("* <u>: %3d |",(*disp++).first);
+			while(disp!=end) printf(" %8d |",(*disp++).first);
 
-      printf(" intensity | time(sec) |    chi^2  |\n");
-      // }
-      /*
+			printf(" intensity | time(sec) |    chi^2  |\n");
+			// }
+			/*
         printf("* %9g | %9g | %9g \n",muls.u2,muls.intIntensity,curTime);  
         }
         else {
-      */
-      printf("*");
+			 */
+			printf("*");
 
-      //ComputeAverageU2();
+			//ComputeAverageU2();
 
-      disp = displacements.begin();
-      while (disp!=end) printf(" %8f |",(*disp++).second);  
-      printf(" %9f | %9f | %9f |\n",m_intIntensity,curTime,m_avgCount > 0 ? m_chisq[m_avgCount-1] : 0);
-      printf("*");
+			disp = displacements.begin();
+			while (disp!=end) printf(" %8f |",(*disp++).second);
+			printf(" %9f | %9f | %9f |\n",m_intIntensity,curTime,m_avgCount > 0 ? m_chisq[m_avgCount-1] : 0);
+			printf("*");
 
-      /*
+			/*
         // TODO: averaging should be handled on this class, not on lower level crystal class.
       atom = atomTypes.begin();
       while (atom!=end) printf(" %8f |",(float)(m_crystal->GetU2avg((*atom++))));  
-      */
-      printf(" %9f | %9f \n",intensityAvg,timeAvg);
-    }
-    else {
-      printf("\n**************** finished after %.1f sec ******************\n",curTime);
-    }
-  }  // end of printLevel check.
+			 */
+			printf(" %9f | %9f \n",intensityAvg,timeAvg);
+		}
+		else {
+			printf("\n**************** finished after %.1f sec ******************\n",curTime);
+		}
+	}  // end of printLevel check.
 
-  time(&time0);
-  //  timer = cputim();
+	time(&time0);
+	//  timer = cputim();
 }
 
 /*
@@ -183,31 +198,31 @@ void CExperimentBase::DisplayProgress(int flag)
 //     lower level classes.
 void CExperimentBase::ComputeAverageU2()
 {
-  
+
   (*z)->second /= u2Count[(*z)->first];
   if (runCount > 0) 
     m_u2avg[(*z)] = sqrt(((runCount-1)*(m_u2avg[(*z)]*m_u2avg[(*z)])+u2[(*z)])/runCount);
   else
     m_u2avg[(*z)] = sqrt(m_u2[(*z)]);
 }
-*/
+ */
 
 ////////////////////////////////////////////////////////////////
 // save the current wave function at this intermediate thickness:
 void CExperimentBase::InterimWave(int slice) {
-  int t;
-  char fileName[256]; 
-  std::map<std::string, double> params;
+	int t;
+	char fileName[256];
+	std::map<std::string, double> params;
 
-  if ((slice < m_potential->GetNSlices()*m_cellDiv-1) && ((slice+1) % m_outputInterval != 0)) return;
-  
-  t = (int)((slice)/m_outputInterval);
-	
-  // produce the following filename:
-  // wave_avgCount_thicknessIndex.img or
-  // wave_thicknessIndex.img if tds is turned off
-  if (m_tds) m_wave->WriteWave(m_avgCount, t, "Wave Function", params);
-  else m_wave->WriteWave(t, "Wave Function", params);
+	if ((slice < m_potential->GetNSlices()*m_cellDiv-1) && ((slice+1) % m_outputInterval != 0)) return;
+
+	t = (int)((slice)/m_outputInterval);
+
+	// produce the following filename:
+	// wave_avgCount_thicknessIndex.img or
+	// wave_thicknessIndex.img if tds is turned off
+	if (m_tds) m_wave->WriteWave(m_avgCount, t, "Wave Function", params);
+	else m_wave->WriteWave(t, "Wave Function", params);
 }
 
 void CExperimentBase::InitializePropagators(WavePtr wave){
@@ -236,118 +251,118 @@ void CExperimentBase::InitializePropagators(WavePtr wave){
 }
 
 /******************************************************************
-* runMulsSTEM() - do the multislice propagation in STEM/CBED mode
-* 
-*    Each probe position is running this function.  Each CPU is thus
-*      running a separate instance of the function.  It is nested in
-*      the main OpenMP parallel region - specifying critical, single, and
-*      barrier OpenMP pragmas should be OK.
+ * runMulsSTEM() - do the multislice propagation in STEM/CBED mode
+ *
+ *    Each probe position is running this function.  Each CPU is thus
+ *      running a separate instance of the function.  It is nested in
+ *      the main OpenMP parallel region - specifying critical, single, and
+ *      barrier OpenMP pragmas should be OK.
 
-*****************************************************************/
+ *****************************************************************/
 int CExperimentBase::RunMultislice(WavePtr wave) 
 {
-  int printFlag = 0; 
-  int showEverySlice=1;
-  int islice,i,ix,iy,mRepeat;
-  float_tt cztot=0.0;
-  float_tt wavlen,sum=0.0; //,zsum=0.0
-  // static int *layer=NULL;
-  float_tt x,y;
-  int absolute_slice;
+	int printFlag = 0;
+	int showEverySlice=1;
+	int islice,i,ix,iy,mRepeat;
+	float_tt cztot=0.0;
+	float_tt wavlen,sum=0.0; //,zsum=0.0
+	// static int *layer=NULL;
+	float_tt x,y;
+	int absolute_slice;
 
-  char outStr[64];
-  double fftScale;
+	char outStr[64];
+	double fftScale;
 
-  unsigned nx, ny;
+	unsigned nx, ny;
 
-  wave->GetSizePixels(nx, ny);
+	wave->GetSizePixels(nx, ny);
 
-  printFlag = (m_printLevel > 3);
-  fftScale = 1.0/(nx*ny);
+	printFlag = (m_printLevel > 3);
+	fftScale = 1.0/(nx*ny);
 
-  wavlen = wave->GetWavelength();
+	wavlen = wave->GetWavelength();
 
-  m_avgArray.resize(wave->GetTotalPixels());
-  m_imageIO = ImageIOPtr(new CImageIO(nx,ny));
+	m_avgArray.resize(wave->GetTotalPixels());
+	m_imageIO = ImageIOPtr(new CImageIO(nx,ny));
 
-  /*  calculate the total specimen thickness and echo */
-  cztot=0.0;
+	/*  calculate the total specimen thickness and echo */
+	cztot=0.0;
 
-  if (printFlag){
-	  for( islice=0; islice<m_potential->GetNSlices(); islice++) {
-		  cztot += m_potential->GetSliceThickness(islice);
-	  }
-	  printf("Specimen thickness: %g Angstroms\n", cztot);
-  }
+	if (printFlag){
+		for( islice=0; islice<m_potential->GetNSlices(); islice++) {
+			cztot += m_potential->GetSliceThickness(islice);
+		}
+		printf("Specimen thickness: %g Angstroms\n", cztot);
+	}
 
-  InitializePropagators(wave);
+	InitializePropagators(wave);
 
-  for( islice=0; islice < m_potential->GetNSlices(); islice++ ) 
-  {
-	  absolute_slice = (m_totalSliceCount+islice);
-	  Transmit(wave, islice);
-	  //remember: prop must be here to anti-alias propagate is a simple multiplication of wave with prop but it also takes care of the bandwidth limiting
-	  wave->ToFourierSpace();
-	  Propagate(wave, islice);
-	  CollectIntensity(absolute_slice);
-	  wave->ToRealSpace();
-	  fft_normalize(wave);
-	  // Call any additional saving/post-processing that should occur on a per-slice basis
-	  PostSliceProcess(absolute_slice);
-	  printf("Slice %d of %d finished.\n",islice,m_potential->GetNSlices());
-  } /* end for(islice...) */
-  // collect intensity at the final slice
-  //collectIntensity(muls, wave, m_totalSliceCount+m_slices*(1+mRepeat));
-  if (printFlag) printf("\n***************************************\n");
-  if ((m_saveLevel > 1) || (m_cellDiv > 1)) {
-    wave->WriteWave();
-  }
-  return 0;
+	for( islice=0; islice < m_potential->GetNSlices(); islice++ )
+	{
+		absolute_slice = (m_totalSliceCount+islice);
+		Transmit(wave, islice);
+		//remember: prop must be here to anti-alias propagate is a simple multiplication of wave with prop but it also takes care of the bandwidth limiting
+		wave->ToFourierSpace();
+		Propagate(wave, islice);
+		CollectIntensity(absolute_slice);
+		wave->ToRealSpace();
+		fft_normalize(wave);
+		// Call any additional saving/post-processing that should occur on a per-slice basis
+		PostSliceProcess(absolute_slice);
+		printf("Slice %d of %d finished.\n",islice+1,m_potential->GetNSlices());
+	} /* end for(islice...) */
+	// collect intensity at the final slice
+	//collectIntensity(muls, wave, m_totalSliceCount+m_slices*(1+mRepeat));
+	if (printFlag) printf("\n***************************************\n");
+	if ((m_saveLevel > 1) || (m_cellDiv > 1)) {
+		wave->WriteWave();
+	}
+	return 0;
 }  // end of runMulsSTEM
 
 /******************************************************************
-* propagate_slow() 
-* Propagates a wave
-*****************************************************************/
+ * propagate_slow()
+ * Propagates a wave
+ *****************************************************************/
 void CExperimentBase::Propagate(WavePtr wave, float_tt dz)
 {
-  int ixa, iya;
-  float_tt wr, wi, tr, ti;
-  float_tt scale,t; 
-  float_tt dzs=0;
+	int ixa, iya;
+	float_tt wr, wi, tr, ti;
+	float_tt scale,t;
+	float_tt dzs=0;
 
-  float_tt dx, dy;
-  unsigned nx, ny, px;
-  
-  wave->GetResolution(dx, dy);
-  wave->GetSizePixels(nx, ny);
+	float_tt dx, dy;
+	unsigned nx, ny, px;
 
-  complex_tt *w=wave->GetWavePointer();
+	wave->GetResolution(dx, dy);
+	wave->GetSizePixels(nx, ny);
 
-  px=nx*ny;
+	complex_tt *w=wave->GetWavePointer();
+
+	px=nx*ny;
 #pragma omp parallel for private(wr, wi, tr, ti)
-  for (unsigned i=0; i<px; i++)
-  {
-	  try {
-		  ixa=i%nx;
-		  iya=i/nx;
-		  if( wave->GetKX2(ixa) < wave->GetK2Max() ) {
-			  if( (wave->GetKX2(ixa) + wave->GetKY2(iya)) < wave->GetK2Max() ) {
-				  wr = w[i].real();
-				  wi = w[i].imag();
-				  tr = wr*m_propyr[iya] - wi*m_propyi[iya];
-				  ti = wr*m_propyi[iya] + wi*m_propyr[iya];
-				  w[i] = complex_tt( tr*m_propxr[ixa] - ti*m_propxi[ixa], tr*m_propxi[ixa] + ti*m_propxr[ixa]);
+	for (unsigned i=0; i<px; i++)
+	{
+		try {
+			ixa=i%nx;
+			iya=i/nx;
+			if( wave->GetKX2(ixa) < wave->GetK2Max() ) {
+				if( (wave->GetKX2(ixa) + wave->GetKY2(iya)) < wave->GetK2Max() ) {
+					wr = w[i].real();
+					wi = w[i].imag();
+					tr = wr*m_propyr[iya] - wi*m_propyi[iya];
+					ti = wr*m_propyi[iya] + wi*m_propyr[iya];
+					w[i] = complex_tt( tr*m_propxr[ixa] - ti*m_propxi[ixa], tr*m_propxi[ixa] + ti*m_propxr[ixa]);
 
-			  } else
-				  w[i] = 0.0F;
-		  } /* end for(iy..) */
+				} else
+					w[i] = 0.0F;
+			} /* end for(iy..) */
 
-		  else w[i] = 0.0F;
-	  } catch (const std::exception &e) {
-		  std::cerr << e.what();
-	  }
-  } /* end for(ix..) */
+			else w[i] = 0.0F;
+		} catch (const std::exception &e) {
+			std::cerr << e.what();
+		}
+	} /* end for(ix..) */
 } /* end propagate */
 
 /*------------------------ transmit() ------------------------*/
@@ -363,89 +378,89 @@ nx, ny = size of array
 on entrance waver,i and transr,i are in real space
 
 only waver,i will be changed by this routine
-*/
+ */
 void CExperimentBase::Transmit(WavePtr wave, unsigned sliceIdx) {
-  double wr, wi, tr, ti;
-  
-  complex_tt *w;
-  unsigned nx, ny;
-  
-  w = wave->GetWavePointer();
-  wave->GetSizePixels(nx, ny);
+	double wr, wi, tr, ti;
 
-  /*  trans += posx; */
-  for(unsigned ix=0; ix<nx; ix++) for(unsigned iy=0; iy<ny; iy++) {
-      unsigned offset=ix+nx*iy;
-      complex_tt t = m_potential->GetSlicePixel(sliceIdx, ix+m_iPosX, iy+m_iPosY);
+	complex_tt *w;
+	unsigned nx, ny;
 
-      wr = w[offset].real();
-      wi = w[offset].imag();
-      tr = t.real();
-      ti = t.imag();
-      w[offset] = complex_tt(wr*tr - wi*ti,wr*ti + wi*tr);
+	w = wave->GetWavePointer();
+	wave->GetSizePixels(nx, ny);
 
-    } /* end for(iy.. ix .) */
+	/*  trans += posx; */
+	for(unsigned ix=0; ix<nx; ix++) for(unsigned iy=0; iy<ny; iy++) {
+		unsigned offset=ix+nx*iy;
+		complex_tt t = m_potential->GetSlicePixel(sliceIdx, ix+m_iPosX, iy+m_iPosY);
+
+		wr = w[offset].real();
+		wi = w[offset].imag();
+		tr = t.real();
+		ti = t.imag();
+		w[offset] = complex_tt(wr*tr - wi*ti,wr*ti + wi*tr);
+
+	} /* end for(iy.. ix .) */
 } /* end transmit() */
 
 void CExperimentBase::AddDPToAvgArray(const WavePtr &wave)
 {
-  unsigned px=wave->GetTotalPixels();
-  // get the pointer to the first data element, and do 1D addressing (it's faster)
-  float_tt chisq;
+	unsigned px=wave->GetTotalPixels();
+	// get the pointer to the first data element, and do 1D addressing (it's faster)
+	float_tt chisq;
 
-  const float_tt *dp = wave->GetDPPointer();
+	const float_tt *dp = wave->GetDPPointer();
 
-  for (unsigned i=0; i<px; i++)
-    {
-      float_tt t=m_avgArray[i]*m_avgCount+dp[i]/(m_avgCount+1);
-      chisq+=(m_avgArray[i]-t)*(m_avgArray[i]-t);
-      m_avgArray[i]=t;
-    }
-  #pragma omp atomic
-  m_chisq[m_avgCount]+=chisq/px;
+	for (unsigned i=0; i<px; i++)
+	{
+		float_tt t=m_avgArray[i]*m_avgCount+dp[i]/(m_avgCount+1);
+		chisq+=(m_avgArray[i]-t)*(m_avgArray[i]-t);
+		m_avgArray[i]=t;
+	}
+#pragma omp atomic
+	m_chisq[m_avgCount]+=chisq/px;
 }
 
 void CExperimentBase::_WriteAvgArray(std::string &fileName, std::string &comment, 
-                                      std::map<std::string, double> &params,
-                                      std::vector<unsigned> &position)
+		std::map<std::string, double> &params,
+		std::vector<unsigned> &position)
 {
-  //params["dx"]=1.0/(m_nx*m_dx);
-  //params["dy"]=1.0/(m_ny*m_dy);
-  params["Thickness"]=m_thickness;
-  m_imageIO->WriteImage(m_avgArray, fileName, params, comment, position);
+	//params["dx"]=1.0/(m_nx*m_dx);
+	//params["dy"]=1.0/(m_ny*m_dy);
+	params["Thickness"]=m_thickness;
+	m_imageIO->WriteImage(m_avgArray, fileName, params, comment, position);
 }
 
 void CExperimentBase::ReadAvgArray()
 {
-  std::vector<unsigned> position;
-  m_imageIO->ReadImage(m_avgArray, avgFilePrefix, position);
+	std::vector<unsigned> position;
+	m_imageIO->ReadImage(m_avgArray, avgFilePrefix, position);
 }
 
 void CExperimentBase::ReadAvgArray(unsigned navg)
 {
-  std::vector<unsigned> position(1);
-  position[0]=navg;
-  m_imageIO->ReadImage(m_avgArray, avgFilePrefix, position);
+	std::vector<unsigned> position(1);
+	position[0]=navg;
+	m_imageIO->ReadImage(m_avgArray, avgFilePrefix, position);
 }
 
 void CExperimentBase::ReadAvgArray(unsigned positionx, unsigned positiony)
 {
-  std::vector<unsigned>position(2);
-  position[0]=positionx;
-  position[1]=positiony;
-  m_imageIO->ReadImage(m_avgArray, avgFilePrefix, position);
+	std::vector<unsigned>position(2);
+	position[0]=positionx;
+	position[1]=positiony;
+	m_imageIO->ReadImage(m_avgArray, avgFilePrefix, position);
 }
 
 void CExperimentBase::fft_normalize(WavePtr wave) 
 {
-  complex_tt *w = wave->GetWavePointer();
-  unsigned px = wave->GetTotalPixels();
+	complex_tt *w = wave->GetWavePointer();
+	unsigned px = wave->GetTotalPixels();
 
-  float_tt fftScale = 1.0/px;
-  for (unsigned i=0; i<px; i++)
-    {
-      w[i] = complex_tt(w[i].real()*fftScale,w[i].imag() * fftScale);
-    }
+	float_tt fftScale = 1.0/px;
+	for (unsigned i=0; i<px; i++)
+	{
+		w[i] = complex_tt(w[i].real()*fftScale,w[i].imag() * fftScale);
+	}
 }
 
 } // end namespace QSTEM

@@ -24,18 +24,11 @@
 namespace QSTEM
 {
 
-CExperimentCBED::CExperimentCBED(const Config &c) : CExperimentBase(c)
+CExperimentCBED::CExperimentCBED(ConfigPtr c) : CExperimentBase(c)
 {
 	m_mode=ExperimentType::CBED;
-	m_sourceRadius = c.Beam.SourceDiameterAngstrom/2;
-	m_wave = CWaveFactory::Get()->GetWave("Convergent", c);
-	m_wave->FormProbe();
-	m_potential = CPotFactory::Get()->GetPotential(c);
-	m_sample = StructurePtr(new CCrystal(c));
-	unsigned int nslices,outputInterval;
-	bool centerSlices;
-	float_tt sliceThickness, zOffset;
-	//  if(sliceThickness != 0) nslices =
+	_lbeams = false;
+	_config = c;
 }
 
 void CExperimentCBED::DisplayParams()
@@ -44,8 +37,6 @@ void CExperimentCBED::DisplayParams()
 
 void CExperimentCBED::Run()
 {
-
-
 	int ix,iy,i,pCount,result;
 	FILE *avgFp,*fp,*fpPos=0;
 	double timer,timerTot;
@@ -59,21 +50,20 @@ void CExperimentCBED::Run()
 
 	m_chisq.resize(m_avgRuns);
 
-	if (m_lbeams) {
-		m_pendelloesung = NULL;
+	if (_lbeams) {
+		_pendelloesung = NULL;
 		if (avgPendelloesung == NULL) {
-			avgPendelloesung = float2D(m_nbout,	m_potential->GetNSlices()*m_cellDiv,"pendelloesung");
+			avgPendelloesung = float2D(_nbout,	m_potential->GetNSlices()*m_cellDiv,"pendelloesung");
 		}
 	}
-	probeCenterX = m_scanXStart;
-	probeCenterY = m_scanYStart;
+	probeCenterX = _scanXStart;
+	probeCenterY = _scanYStart;
 
 	timerTot = 0; /* cputim();*/
 	DisplayProgress(-1);
 
-	m_sample->ReadUnitCell(true);
-	m_potential->SetStructure(m_sample);
-	m_potential->MakeSlices(m_nslices,m_sample);
+
+	m_potential->MakeSlices(_config->Model.nSlices,m_sample);
 
 	for (m_avgCount = 0;m_avgCount < m_avgRuns;m_avgCount++) {
 		m_totalSliceCount = 0;
@@ -85,33 +75,22 @@ void CExperimentCBED::Run()
 		 * then also be adjusted, so that it is off-center
 		 */
 
-		probeOffsetX = m_sourceRadius*gasdev()*SQRT_2;
-		probeOffsetY = m_sourceRadius*gasdev()*SQRT_2;
-		m_scanXStart = probeCenterX+probeOffsetX;
-		m_scanYStart = probeCenterY+probeOffsetY;
+		probeOffsetX = _config->Beam.SourceDiameterAngstrom/2*gasdev()*SQRT_2;
+		probeOffsetY = _config->Beam.SourceDiameterAngstrom/2*gasdev()*SQRT_2;
+		_scanXStart = probeCenterX+probeOffsetX;
+		_scanYStart = probeCenterY+probeOffsetY;
 		m_wave->FormProbe();
 
+		if (m_saveLevel > 2) m_wave->WriteProbe();
 
-		//probe(&muls, wave,m_scanXStart-m_potOffsetX,m_scanYStart-m_potOffsetY);
-		if (m_saveLevel > 2) {
-			m_wave->WriteProbe();
-		}
-		// printf("Probe: (%g, %g)\n",m_scanXStart,m_scanYStart);
-		/*****************************************************************
-		 * For debugging only!!!
-		 *
-		muls->WriteWave("probe.img")
-		 *****************************************************************/
-
-
-		if (m_sourceRadius > 0) {
+		if (_config->Beam.SourceDiameterAngstrom/2 > 0) {
 			if (m_avgCount == 0) fpPos = fopen("probepos.dat","w");
 			else fpPos = fopen("probepos.dat","a");
 			if (fpPos == NULL) {
 				printf("Was unable to open file probepos.dat for writing\n");
 			}
 			else {
-				fprintf(fpPos,"%g %g\n",m_scanXStart,m_scanYStart);
+				fprintf(fpPos,"%g %g\n",_scanXStart,_scanYStart);
 				fclose(fpPos);
 			}
 		}
@@ -119,12 +98,12 @@ void CExperimentCBED::Run()
 		/***********************************************************
 		 * make sure we have enough memory for the pendelloesung plot
 		 */
-		if (m_lbeams){
-			if (m_pendelloesung != NULL)
-				free(m_pendelloesung[0]);
+		if (_lbeams){
+			if (_pendelloesung != NULL)
+				free(_pendelloesung[0]);
 			free(avgPendelloesung[0]);
-			m_pendelloesung = NULL;
-			avgPendelloesung = float2D(m_nbout,m_potential->GetNSlices()*m_cellDiv,"pendelloesung");
+			_pendelloesung = NULL;
+			avgPendelloesung = float2D(_nbout,m_potential->GetNSlices()*m_cellDiv,"pendelloesung");
 		}
 		/*********************************************************/
 
@@ -148,7 +127,7 @@ void CExperimentCBED::Run()
 #ifdef VIB_IMAGE_TEST_CBED
 			m_wave->WriteWave()
 #endif 
-        				  m_totalSliceCount += m_potential->GetNSlices();
+		  m_totalSliceCount += m_potential->GetNSlices();
 
 		} // end of for pCount = 0...
 
@@ -166,10 +145,10 @@ void CExperimentCBED::Run()
 			//sprintf(avgName,"%s/diffAvg_%d.img",m_folder.c_str(),m_avgCount+1);
 			//sprintf(systStr,"mv %s/diff.img %s",m_folder.c_str(),avgName);
 			//system(systStr);
-			if (m_lbeams) {
+			if (_lbeams) {
 				for (iy=0;iy<m_potential->GetNSlices()*m_cellDiv;iy++) {
-					for (ix=0;ix<m_nbout;ix++) {
-						avgPendelloesung[ix][iy] = m_pendelloesung[ix][iy];
+					for (ix=0;ix<_nbout;ix++) {
+						avgPendelloesung[ix][iy] = _pendelloesung[ix][iy];
 					}
 				}
 			}
@@ -191,18 +170,16 @@ void CExperimentCBED::Run()
 			/***********************************************************
 			 * Average over the pendelloesung plot as well
 			 */
-			if (m_lbeams) {
+			if (_lbeams) {
 				for (iy=0;iy<m_potential->GetNSlices()*m_cellDiv;iy++) {
-					for (ix=0;ix<m_nbout;ix++) {
-						avgPendelloesung[ix][iy] =
-								((float_tt)m_avgCount*avgPendelloesung[ix][iy]+
-										m_pendelloesung[ix][iy])/(float_tt)(m_avgCount+1);
+					for (ix=0;ix<_nbout;ix++) {
+						avgPendelloesung[ix][iy] =((float_tt)m_avgCount*avgPendelloesung[ix][iy]+_pendelloesung[ix][iy])/(float_tt)(m_avgCount+1);
 					}
 				}
 			}
 		} /* else ... if avgCount was greater than 0 */
 
-		if (m_lbeams) {
+		if (_lbeams) {
 			/**************************************************************
 			 * The diffraction spot intensities of the selected
 			 * diffraction spots are now stored in the 2 dimensional array
@@ -218,7 +195,7 @@ void CExperimentCBED::Run()
 					/* write the thicknes in the first column of the file */
 					fprintf(fp,"%g",iy*m_potential->GetSliceThickness());//((float)(m_potential->GetNSlices()*m_cellDiv)));
 					/* write the beam intensities in the following columns */
-					for (ix=0;ix<m_nbout;ix++) {
+					for (ix=0;ix<_nbout;ix++) {
 						fprintf(fp,"\t%g",avgPendelloesung[ix][iy]);
 					}
 					/* close the line, and start a new one for the next set of

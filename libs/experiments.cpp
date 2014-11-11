@@ -25,9 +25,9 @@
 namespace QSTEM
 {
 
-ExperimentPtr GetExperiment(QSTEM::Config &config)
+ExperimentPtr GetExperiment(QSTEM::ConfigPtr config)
 {
-	switch (config.ExperimentType) {
+	switch (config->ExperimentType) {
 	case ExperimentType::CBED:
 		return ExperimentPtr(new CExperimentCBED(config));
 		break;
