@@ -48,7 +48,7 @@ void CExperimentCBED::Run()
 	std::map<std::string, double> params;
 	std::vector<unsigned> position(1);         // Used to indicate the number of averages
 
-	m_chisq.resize(m_avgRuns);
+	m_chisq.resize(_config->Model.TDSRuns);
 
 	if (_lbeams) {
 		_pendelloesung = NULL;
@@ -65,7 +65,7 @@ void CExperimentCBED::Run()
 
 	m_potential->MakeSlices(_config->Model.nSlices,m_sample);
 
-	for (m_avgCount = 0;m_avgCount < m_avgRuns;m_avgCount++) {
+	for (m_avgCount = 0;m_avgCount < _config->Model.TDSRuns;m_avgCount++) {
 		m_totalSliceCount = 0;
 		pCount = 0;
 
@@ -105,17 +105,8 @@ void CExperimentCBED::Run()
 			_pendelloesung = NULL;
 			avgPendelloesung = float2D(_nbout,m_potential->GetNSlices()*m_cellDiv,"pendelloesung");
 		}
-		/*********************************************************/
-
-		// printf("Stacking sequence: %s\n",buf);
-
 		m_iPosX = 0;
 		m_iPosY = 0;
-
-		//m_saveFlag = 0;
-		/****************************************
-		 * do the (small) loop
-		 *****************************************/
 		for (pCount = 0;pCount<m_cellDiv;pCount++) {
 
 			m_potential->Refresh();

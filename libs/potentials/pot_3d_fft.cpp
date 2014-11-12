@@ -46,20 +46,20 @@ void C3DFFTPotential::AddAtomNonPeriodic(std::vector<atom>::iterator &atom,	floa
 	unsigned nzSub, nRadius, Nz_lut;
 	ComplexVector atPotPtr = m_atPot[atom->Znum];
 
-	nRadius = 2 * OVERSAMPLING * (int) ceil(m_atomRadius / m_dx) /2;
-	nzSub = (int) floor(OVERSAMPLING * m_sliceThickness / m_dx);
+	nRadius = 2 * OVERSAMPLING * (int) ceil(m_atomRadius / _config->Model.dx) /2;
+	nzSub = (int) floor(OVERSAMPLING * m_sliceThickness / _config->Model.dx);
 	if (2.0 * (nzSub >> 1) == nzSub)	nzSub += 1;
 	Nz_lut = (2 * (int) ceil(m_atomRadius / m_sliceThickness)) * nzSub / 2;
 
 	int xstart = (int) iAtomX - (int) m_iRadX < 0 ? 0 : iAtomX - m_iRadX;
-	int xend =(int) iAtomX + (int) m_iRadX >= m_nx ? m_nx - 1 : iAtomX + m_iRadX;
+	int xend =(int) iAtomX + (int) m_iRadX >= _config->Model.nx ? _config->Model.nx - 1 : iAtomX + m_iRadX;
 	int ystart = (int) iAtomY - (int) m_iRadY < 0 ? 0 : iAtomY - m_iRadY;
-	int yend =	(int) iAtomY + (int) m_iRadY >= m_ny ? m_ny - 1 : iAtomY + m_iRadY;
+	int yend =	(int) iAtomY + (int) m_iRadY >= _config->Model.ny ? _config->Model.ny - 1 : iAtomY + m_iRadY;
 	int zstart =  (int)iAtomZ -  (int)m_iRadZ < 0 ? -iAtomZ : -m_iRadZ;
 	int zend =	 (int)iAtomZ +  (int)m_iRadZ >= m_nslices ?	m_nslices - iAtomZ - 1 : m_iRadZ;
 
 	// if within the potential map range:
-	if ((xstart < m_nx) && (xend >= 0) && (ystart < m_ny) && (yend >= 0)) {
+	if ((xstart < _config->Model.nx) && (xend >= 0) && (ystart < _config->Model.ny) && (yend >= 0)) {
 		// define range of sampling from atomZ-/+atomRadius
 		if (((int) iAtomZ + (int) zstart < (int) m_nslices)	&& ((int) iAtomZ + (int) zend >= 0)) {
 			// retrieve the pointer for this atom
@@ -85,11 +85,11 @@ void C3DFFTPotential::AddAtomNonPeriodic(std::vector<atom>::iterator &atom,	floa
 				// Computation of Radius must be made faster by using pre-calculated ddx
 				// and LUT for sqrt:
 				// use of sqrt slows down from 120sec to 180 sec.
-				float_tt x2 = iax * m_dx - atomBoxX;
+				float_tt x2 = iax * _config->Model.dx - atomBoxX;
 				x2 *= x2;
 				for (iay = ystart; iay <= yend; iay++) {
 					// printf("iax=%d, iay=%d\n",iax,iay);
-					float_tt y2 = iay * m_dy - atomBoxY;
+					float_tt y2 = iay * _config->Model.dy - atomBoxY;
 					y2 *= y2;
 					float_tt r = sqrt(x2 + y2);
 					// r = (x2+y2);
@@ -179,8 +179,8 @@ void C3DFFTPotential::AddAtomNonPeriodic(std::vector<atom>::iterator &atom,	floa
 
 void C3DFFTPotential::AddAtomToSlices(std::vector<atom>::iterator &atom,
 		float_tt atomX, float_tt atomY, float_tt atomZ) {
-	unsigned iAtomX = (int) floor(atomX / m_dx);
-	unsigned iAtomY = (int) floor(atomY / m_dy);
+	unsigned iAtomX = (int) floor(atomX / _config->Model.dx);
+	unsigned iAtomY = (int) floor(atomY / _config->Model.dy);
 
 	if (m_periodicXY) {
 		AddAtomPeriodic(atom, atomX, iAtomX, atomY, iAtomY, atomZ);
@@ -198,8 +198,8 @@ void C3DFFTPotential::AddAtomPeriodic(std::vector<atom>::iterator &atom,float_tt
 
 	unsigned nzSub, Nr, Nz_lut;
 
-	Nr = 2 * OVERSAMPLING * (int) ceil(m_atomRadius / m_dx) /2;
-	nzSub = (int) floor(OVERSAMPLING * m_sliceThickness / m_dx);
+	Nr = 2 * OVERSAMPLING * (int) ceil(m_atomRadius / _config->Model.dx) /2;
+	nzSub = (int) floor(OVERSAMPLING * m_sliceThickness / _config->Model.dx);
 	if (2.0 * (nzSub >> 1) == nzSub)	nzSub += 1;
 	Nz_lut = (2 * (int) ceil(m_atomRadius / m_sliceThickness)) * nzSub / 2;
 
@@ -231,12 +231,12 @@ void C3DFFTPotential::AddAtomPeriodic(std::vector<atom>::iterator &atom,float_tt
 		for (unsigned iax = iax0; iax < iax1; iax++) {
 			//			unsigned idx = ((iax + 2 * m_nx) % m_nx) * m_ny	+ (iay0 + 2 * m_ny) % m_ny;
 			//			complex_tt *potPtr = &(m_trans[iAtomZ + iaz0][idx]);
-			float_tt x2 = iax * m_dx - atomBoxX;
+			float_tt x2 = iax * _config->Model.dx - atomBoxX;
 			x2 *= x2;
 
 			for (unsigned iay = iay0; iay < iay1; iay++) {
 				// printf("iax=%d, iay=%d\n",iax,iay);
-				float_tt y2 = iay * m_dy - atomBoxY;
+				float_tt y2 = iay * _config->Model.dy - atomBoxY;
 				y2 *= y2;
 				float_tt r = sqrt(x2 + y2);
 				float_tt ddr = r / m_dr;
@@ -309,7 +309,7 @@ void C3DFFTPotential::AddAtomPeriodic(std::vector<atom>::iterator &atom,float_tt
 							}
 						}
 
-						m_trans1[iAtomZ + iaz][(iay+m_ny) % m_ny][(iax+m_nx) % m_nx]+= potVal;
+						m_trans1[iAtomZ + iaz][(iay+_config->Model.ny) % _config->Model.ny][(iax+_config->Model.nx) % _config->Model.ny]+= potVal;
 						//						*ptr += potVal;
 
 						//						ptr += m_sliceStep; // advance to the next slice
@@ -340,15 +340,15 @@ void C3DFFTPotential::SliceSetup(){
 	float_tt kmax2;
 
 	if (m_atPot.size() == 0) {
-		m_nx = 2 * OVERSAMPLING * (int) ceil(m_atomRadius / m_dx);
-		m_ny = 2 * OVERSAMPLING * (int) ceil(m_atomRadius / m_dy);
+		float_tt m_nx = 2 * OVERSAMPLING * (int) ceil(m_atomRadius / _config->Model.dx);
+		float_tt m_ny = 2 * OVERSAMPLING * (int) ceil(m_atomRadius / _config->Model.dy);
 
 		// The FFT-resolution in the z-direction must be high enough to avoid
 		// artifacts due to premature cutoff of the rec. space scattering factor
 		// we will therefore make it roughly the same as the x-resolution
 		// However, we will make sure that a single slice contains an integer number
 		// of sampling points.
-		m_nzPerSlice = (int) floor(OVERSAMPLING * m_sliceThickness / m_dx);
+		m_nzPerSlice = (int) floor(OVERSAMPLING * m_sliceThickness / _config->Model.dx);
 
 		// make nzPerSlice odd:
 		if (2.0 * (m_nzPerSlice >> 1) == m_nzPerSlice)	m_nzPerSlice += 1;
@@ -358,7 +358,7 @@ void C3DFFTPotential::SliceSetup(){
 
 
 
-		m_dkx = 0.5 * OVERSAMPLING / (m_nx * m_dx); // nx*m_dx is roughly 2*m_atomRadius
+		m_dkx = 0.5 * OVERSAMPLING / (m_nx * _config->Model.dx); // nx*m_dx is roughly 2*m_atomRadius
 		m_dkz = m_nzPerSlice / (m_nz * m_sliceThickness);
 		kmax2 = 0.5 * m_nx * m_dkx / OVERSAMPLING;
 		// Don't square kmax2 yet!
@@ -414,7 +414,7 @@ void C3DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 	float_tt kmax2;
 	//  ComplexVector temp;
 	ComplexArray2D tmp;
-	tmp.resize(boost::extents[m_nx][m_nz]);
+	tmp.resize(boost::extents[_config->Model.nx][_config->Model.nSlices]);
 	int Znum = atom->Znum;
 
 
@@ -430,14 +430,14 @@ void C3DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 	// initialize this atom, if it has not been done yet:
 
 	if (m_atPot.count(Znum) == 0) {
-		kmax2 = 0.5 * m_nx * m_dkx / OVERSAMPLING;
+		kmax2 = 0.5 * _config->Model.nx * m_dkx / OVERSAMPLING;
 		kmax2 *= kmax2;
 
 		// setup cubic spline interpolation:
 		splinh((scatPar[0]), (scatPar[Znum]), splinb, splinc, splind, N_SF);
 
 		// allocate a 3D array:
-		m_atPot[Znum] = ComplexVector(m_nx * m_nz / 4);
+		m_atPot[Znum] = ComplexVector(_config->Model.nx * m_nz / 4);
 
 		float_tt kzmax = m_dkz * m_nz / 2.0;
 		// define x-and z-position of atom center:
@@ -462,8 +462,8 @@ void C3DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 			// in order to avoid cutoff artifacts.
 			// zScale = fabs(kz) <= kzborder ? 1.0 : 0.5+0.5*cos(M_PI*(fabs(kz)-kzborder)/(kzmax-kzborder));
 			// printf("iz=%d, kz=%g, zScale=%g ",iz,kz,zScale);
-			for (ix = 0; ix < m_nx; ix++) {
-				float_tt kx = m_dkx * (ix < m_nx / 2 ? ix : ix - m_nx);
+			for (ix = 0; ix < _config->Model.nx; ix++) {
+				float_tt kx = m_dkx * (ix < _config->Model.nx / 2 ? ix : ix - _config->Model.nx);
 				float_tt s2 = (kx * kx + kz * kz);
 				// if this is within the allowed circle:
 				if (s2 < kmax2) {
@@ -473,7 +473,7 @@ void C3DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 					// printf("k2=%g,B=%g, exp(-k2B)=%g\n",k2,B,exp(-k2*B));
 					f= seval(scatPar[0], scatPar[Znum], splinb, splinc, splind, N_SF, sqrt(s2))*exp(-s2 * B * 0.25);
 					// perform the qy-integration for qy <> 0:
-					for (iy = 1; iy < m_ny; iy++) {
+					for (iy = 1; iy < _config->Model.ny; iy++) {
 						float_tt s3 = m_dkx * iy;
 						s3 = s3 * s3 + s2;
 						if (s3 < kmax2) {
@@ -511,7 +511,7 @@ void C3DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 #if FLOAT_PRECISION ==1
 		ComplexArray2D out;
 
-		out.resize(boost::extents[m_nx][m_nz]);
+		out.resize(boost::extents[_config->Model.nx][_config->Model.nSlices]);
 		auto dft = cvmlcpp::DFT<float_tt, 2>(tmp,out,false, FFTW_ESTIMATE,1);
 		time(&time0);
 		dft.execute();
@@ -537,17 +537,17 @@ void C3DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 		// It is certainly debatable whether this is a good apprach, or not.
 		// printf("Setting up %d x %d potential for Znum=%d, (atom kind %d), Omega=%g\n",nx,nz,Znum,iKind,dkx*dky*dkz);
 		// min = atPot[Znum][ny/2+nx/2*ny+nz/2*nx*ny][0];
-		for (unsigned ix = 0; ix < m_nx / 2; ix++)
+		for (unsigned ix = 0; ix < _config->Model.nx / 2; ix++)
 			for (unsigned iz = 0; iz < m_nz / 2; iz++) {
 				float_tt zScale = 0;
-				unsigned ind3d = ix + iz * m_nx / 2;
+				unsigned ind3d = ix + iz * _config->Model.nx / 2;
 				// Integrate over nzPerSlice neighboring layers here:::::::::
 				for (int iiz = -izOffset; iiz <= izOffset; iiz++) {
 					if (iz + izOffset + iiz < m_nz / 2){
 
 						float_tt out1 = out[ix][(iz + izOffset + iiz)].real();
 //						printf("out[%d][%d] = %f\n",ix,iz + izOffset + iiz,out[ix][(iz + izOffset + iiz)].real());
-						zScale += out1*(m_nx*m_nz);
+						zScale += out1*(_config->Model.nx*_config->Model.nSlices);
 					}
 				}
 				if (zScale < 0)
@@ -566,7 +566,7 @@ void C3DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 			}
 		// make sure we don't produce negative potential:
 		if (m_printLevel > 1)
-			printf("Created 3D (r-z) %d x %d potential array for Z=%d (B=%g, dkx=%g, dky=%g. dkz=%g,sps=%d)\n",m_nx / 2, m_nz / 2, Znum, B, m_dkx, m_dkx, m_dkz, izOffset);
+			printf("Created 3D (r-z) %d x %d potential array for Z=%d (B=%g, dkx=%g, dky=%g. dkz=%g,sps=%d)\n",_config->Model.nx / 2, m_nz / 2, Znum, B, m_dkx, m_dkx, m_dkz, izOffset);
 	}
 }
 
@@ -613,8 +613,8 @@ void C3DFFTPotential::GetAtomPotentialOffset3D(unsigned Znum, float_tt B,
 	// float scatPar[4][30]
 	if (m_offsetPot.size() == 0) {
 
-		nx = 2 * OVERSAMPLING * (int) ceil(m_atomRadius / m_dx);
-		ny = 2 * OVERSAMPLING * (int) ceil(m_atomRadius / m_dy);
+		nx = 2 * OVERSAMPLING * (int) ceil(m_atomRadius / _config->Model.dx);
+		ny = 2 * OVERSAMPLING * (int) ceil(m_atomRadius / _config->Model.dy);
 		temp.resize(nx * nz);
 
 		// The FFT-resolution in the z-direction must be high enough to avoid
@@ -622,7 +622,7 @@ void C3DFFTPotential::GetAtomPotentialOffset3D(unsigned Znum, float_tt B,
 		// we will therefore make it roughly the same as the x-resolution
 		// However, we will make sure that a single slice contains an integer number
 		// of sampling points.
-		nzPerSlice = (int) floor(OVERSAMPLING * m_sliceThickness / m_dx);
+		nzPerSlice = (int) floor(OVERSAMPLING * m_sliceThickness / _config->Model.dx);
 		// make nzPerSlice odd:
 		if (2.0 * floor((double) (nzPerSlice >> 1)) == nzPerSlice)
 			nzPerSlice += 1;
@@ -632,8 +632,8 @@ void C3DFFTPotential::GetAtomPotentialOffset3D(unsigned Znum, float_tt B,
 		if (m_printLevel > 1)
 			printf("Potential offset: will use %d sampling points per slice, total nz=%d (%d)\n",nzPerSlice, nz, nzPerSlice >> 1);
 
-		dkx = 0.5 * OVERSAMPLING / (nx * m_dx);
-		dky = 0.5 * OVERSAMPLING / (ny * m_dy);
+		dkx = 0.5 * OVERSAMPLING / (nx * _config->Model.dx);
+		dky = 0.5 * OVERSAMPLING / (ny * _config->Model.dy);
 		dkz = nzPerSlice / (double) (nz * m_sliceThickness);
 		kmax2 = 0.5 * nx * dkx / (double) OVERSAMPLING; // largest k that we'll admit
 

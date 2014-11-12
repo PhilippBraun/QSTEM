@@ -969,6 +969,8 @@ tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: /usr
 tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: /usr/local/include/boost/version.hpp
 tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: /usr/local/include/boost/visit_each.hpp
 tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: /usr/local/include/fftw3.h
+tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: /usr/local/include/gflags/gflags.h
+tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: /usr/local/include/gflags/gflags_declare.h
 tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: /usr/local/include/glog/log_severity.h
 tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: /usr/local/include/glog/logging.h
 tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: /usr/local/include/glog/vlog_is_on.h

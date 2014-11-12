@@ -19,6 +19,8 @@
 
 #include "wave_convergent.hpp"
 
+using boost::format;
+
 namespace QSTEM
 {
 
@@ -96,34 +98,22 @@ void CConvergentWave::DisplayParams()
 	printf("* Astigmatism:          %g nm, %g deg\n",0.1*m_astigMag,RAD2DEG*m_astigAngle);
 
 	// more aberrations:
-	if (m_a33 > 0)
-		printf("* a_3,3:                %g nm, phi=%g deg\n",m_a33*1e-1,m_phi33*RAD2DEG);
-	if (m_a31 > 0)
-		printf("* a_3,1:                %g nm, phi=%g deg\n",m_a31*1e-1,m_phi31*RAD2DEG);
+	if (m_a33 > 0)printf("* a_3,3:                %g nm, phi=%g deg\n",m_a33*1e-1,m_phi33*RAD2DEG);
+	if (m_a31 > 0)printf("* a_3,1:                %g nm, phi=%g deg\n",m_a31*1e-1,m_phi31*RAD2DEG);
 
-	if (m_a44 > 0)
-		printf("* a_4,4:                %g um, phi=%g deg\n",m_a44*1e-4,m_phi44*RAD2DEG);
-	if (m_a42 > 0)
-		printf("* a_4,2:                %g um, phi=%g deg\n",m_a42*1e-4,m_phi42*RAD2DEG);
+	if (m_a44 > 0)printf("* a_4,4:                %g um, phi=%g deg\n",m_a44*1e-4,m_phi44*RAD2DEG);
+	if (m_a42 > 0)printf("* a_4,2:                %g um, phi=%g deg\n",m_a42*1e-4,m_phi42*RAD2DEG);
 
-	if (m_a55 > 0)
-		printf("* a_5,5:                %g um, phi=%g deg\n",m_a55*1e-4,m_phi55*RAD2DEG);
-	if (m_a53 > 0)
-		printf("* a_5,3:                %g um, phi=%g deg\n",m_a53*1e-4,m_phi53*RAD2DEG);
-	if (m_a51 > 0)
-		printf("* a_5,1:                %g um, phi=%g deg\n",m_a51*1e-4,m_phi51*RAD2DEG);
+	if (m_a55 > 0)printf("* a_5,5:                %g um, phi=%g deg\n",m_a55*1e-4,m_phi55*RAD2DEG);
+	if (m_a53 > 0)printf("* a_5,3:                %g um, phi=%g deg\n",m_a53*1e-4,m_phi53*RAD2DEG);
+	if (m_a51 > 0)printf("* a_5,1:                %g um, phi=%g deg\n",m_a51*1e-4,m_phi51*RAD2DEG);
 
-	if (m_a66 > 0)
-		printf("* a_6,6:                %g um, phi=%g deg\n",m_a66*1e-7,m_phi66*RAD2DEG);
-	if (m_a64 > 0)
-		printf("* a_6,4:                %g um, phi=%g deg\n",m_a64*1e-7,m_phi64*RAD2DEG);
-	if (m_a62 > 0)
-		printf("* a_6,2:                %g um, phi=%g deg\n",m_a62*1e-7,m_phi62*RAD2DEG);
-	if (m_C5 != 0)
-		printf("* C_5:                  %g mm\n",m_C5*1e-7);
+	if (m_a66 > 0)printf("* a_6,6:                %g um, phi=%g deg\n",m_a66*1e-7,m_phi66*RAD2DEG);
+	if (m_a64 > 0)printf("* a_6,4:                %g um, phi=%g deg\n",m_a64*1e-7,m_phi64*RAD2DEG);
+	if (m_a62 > 0)printf("* a_6,2:                %g um, phi=%g deg\n",m_a62*1e-7,m_phi62*RAD2DEG);
+	if (m_C5 != 0)printf("* C_5:                  %g mm\n",m_C5*1e-7);
 
 	printf("* C_c:                  %g mm\n",m_Cc*1e-7);
-
 	printf("* Damping dE/E: %g / %g \n",sqrt(m_dE_E*m_dE_E+m_dV_V*m_dV_V+m_dI_I*m_dI_I)*m_v0*1e3,m_v0*1e3);
 
 	/*
@@ -166,29 +156,17 @@ void CConvergentWave::DisplayParams()
 #define SMOOTH_EDGE 5 // make a smooth edge on AIS aperture over +/-SMOOTH_EDGE pixels
 void CConvergentWave::FormProbe()
 {
-	// static char *plotFile = "probePlot.dat",systStr[32];
 	unsigned iy, ixmid, iymid;
-	///int CsDefAstOnly = 0;
 	float_tt rmin, rmax, aimin, aimax;
-	// float **pixr, **pixi;
 	float_tt k2max, x, y, scale, pixel,alpha;
-	//double envelope;
-
-	// FILE *fp=NULL;
-
-	/* temporary fix, necessary, because fftw has rec. space zero
-     in center of image:
-	 */
 	float_tt ax = m_nx*m_dx;
 	float_tt by = m_ny*m_dy;
-	// these are offsets of some kind:
-
 	float_tt dx = ax-m_nx/2*m_dx;
 	float_tt dy = by-m_ny/2*m_dy;
-
-	// average resolution:
 	float_tt avgRes = sqrt(0.5*(m_dx*m_dx+m_dy*m_dy));
 	float_tt edge = SMOOTH_EDGE*avgRes;
+
+	float_tt sum = 0.0;
 
 	/********************************************************
 	 * formulas from:
@@ -234,7 +212,7 @@ void CConvergentWave::FormProbe()
 	pixel = ( rx2 + ry2 );
 	scale = 1.0/sqrt((double)m_nx*(double)m_ny);
 
-#pragma omp parallel for
+	//#pragma omp parallel for
 	for(int iy=0; iy<m_ny; iy++) {
 		float_tt ky = (float_tt) iy;
 		if( iy > iymid ) ky = (double) (iy-m_ny);
@@ -251,45 +229,55 @@ void CConvergentWave::FormProbe()
 			float_tt chi = ktheta2*(m_df0+delta + m_astigMag*cos(2.0*(phi-m_astigAngle)))/2.0;
 			ktheta2 *= ktheta;  // ktheta^3
 			if ((m_a33 > 0) || (m_a31 > 0)) {
-#pragma omp atomic
+				//#pragma omp atomic
 				chi += ktheta2*(m_a33*cos(3.0*(phi-m_phi33))+m_a31*cos(phi-m_phi31))/3.0;
 			}
 			ktheta2 *= ktheta;   // ktheta^4
 			if ((m_a44 > 0) || (m_a42 > 0) || (m_Cs != 0)) {
-#pragma omp atomic
+				//#pragma omp atomic
 				chi += ktheta2*(m_a44*cos(4.0*(phi-m_phi44))+m_a42*cos(2.0*(phi-m_phi42))+m_Cs)/4.0;
 			}
 			ktheta2 *= ktheta;    // ktheta^5
 			if ((m_a55 > 0) || (m_a53 > 0) || (m_a51 > 0)) {
-#pragma omp atomic
+				//#pragma omp atomic
 				chi += ktheta2*(m_a55*cos(5.0*(phi-m_phi55))+m_a53*cos(3.0*(phi-m_phi53))+m_a51*cos(phi-m_phi51))/5.0;
 			}
 			ktheta2 *= ktheta;    // ktheta^6
 			if ((m_a66 > 0) || (m_a64 > 0) || (m_a62 = 0) || (m_C5 != 0)) {
-#pragma omp atomic
+				//#pragma omp atomic
 				chi += ktheta2*(m_a66*cos(6.0*(phi-m_phi66))+m_a64*cos(4.0*(phi-m_phi64))+m_a62*cos(2.0*(phi-m_phi62))+m_C5)/6.0;
 			}
-#pragma omp atomic
+			//#pragma omp atomic
 			chi *= 2*M_PI/m_wavlen;
-#pragma omp atomic
+			//#pragma omp atomic
 			chi -= 2.0*M_PI*( (dx*kx/ax) + (dy*ky/by) );
 
 			if ( ( m_ismoth != 0) && ( fabs(k2-k2max) <= pixel)) {
-#pragma omp critical
-				m_wave[ix+m_nx*iy] = complex_tt((float) ( 0.5*scale * cos(chi)),(float) (-0.5*scale* sin(chi)));
+				//#pragma omp critical
+				//				{
+				float x = (float) ( 0.5*scale * cos(chi));
+				float y = (float) (-0.5*scale* sin(chi));
+				m_wave[ix+m_nx*iy] = complex_tt(x,y);
 				//        m_wave[ix+m_nx*iy][0]= (float) ( 0.5*scale * cos(chi));
 				//        m_wave[ix+m_nx*iy][1]= (float) (-0.5*scale* sin(chi));
+				//				}
 			}
 			else if ( k2 <= k2max ) {
-#pragma omp critical
-				m_wave[ix+m_nx*iy] = complex_tt((float) ( scale * cos(chi)),(float) (scale* sin(chi)));
+				//#pragma omp critical
+				//				{
+				float x = (float) ( scale * cos(chi));
+				float y = (float) ( scale* sin(chi));
+				m_wave[ix+m_nx*iy] = complex_tt(x,y);
+
+				//				}
 				//        m_wave[ix+m_nx*iy][0]= (float)  scale * cos(chi);
 				//        m_wave[ix+m_nx*iy][1]= (float) -scale * sin(chi);
 			}
 			else {
-#pragma omp critical
+				//#pragma omp critical
 				m_wave[ix+m_nx*iy] =complex_tt(0,0);
 			}
+
 		}
 	}
 	/* Fourier transform into real space */
@@ -306,6 +294,7 @@ void CConvergentWave::FormProbe()
 				float_tt r = exp(-((ix-m_nx/2)*(ix-m_nx/2)+(iy-m_ny/2)*(iy-m_ny/2))/(m_nx*m_nx*m_gaussScale));
 #pragma omp critical
 				m_wave[ix+m_nx*iy] = complex_tt(m_wave[ix+m_nx*iy].real()*r,m_wave[ix+m_nx*iy].imag()*r);
+
 				//        m_wave[ix+m_nx*iy][0] *= (float)r;
 				//        m_wave[ix+m_nx*iy][1] *= (float)r;
 			}
@@ -338,25 +327,26 @@ void CConvergentWave::FormProbe()
 	}
 
 	/*  Normalize probe intensity to unity  */
+	for(int ix=0; ix<m_nx; ix++)
+		for(int iy=0; iy<m_ny; iy++)
+			sum +=  m_wave[ix+m_nx*iy].real()*m_wave[ix+m_nx*iy].real()+ m_wave[ix+m_nx*iy].imag()*m_wave[ix+m_nx*iy].imag();
 
-	/*
-  float_tt sum = 0.0;
-  for( ix=0; ix<m_nx; ix++) 
-    for( iy=0; iy<m_ny; iy++) 
-      sum +=  m_wave[ix+m_nx*iy][0]*m_wave[ix+m_nx*iy][0]
-        + m_wave[ix+m_nx*iy][1]*m_wave[ix+m_nx*iy][1];
+	scale = 1.0 / sum;
+//	scale = scale * ((double)m_nx) * ((double)m_ny);
+	scale = (double) sqrt( scale );
 
-  scale = 1.0 / sum;
-  scale = scale * ((double)m_nx) * ((double)m_ny);
-  scale = (double) sqrt( scale );
+	for(int ix=0; ix<m_nx; ix++)
+		for(int iy=0; iy<m_ny; iy++) {
+			m_wave[ix+m_nx*iy] = complex_tt((float) scale*m_wave[ix+m_nx*iy].real(),(float) scale*m_wave[ix+m_nx*iy].imag());
 
-  for( ix=0; ix<m_nx; ix++) 
-    for( iy=0; iy<m_ny; iy++) {
-      m_wave[ix+m_nx*iy][0] *= (float) scale;
-      m_wave[ix+m_nx*iy][1] *= (float) scale;
-    }
-	 */
-
+//			if(m_wave[ix+m_nx*iy].real()>1e-5)
+//				DLOG(INFO) << format("m_wave[%d+m_nx*%d] = %2.3f + i %2.3f") % ix % iy % m_wave[ix+m_nx*iy].real() % m_wave[ix+m_nx*iy].imag();
+		}
+	sum = 0;
+	for(int ix=0; ix<m_nx; ix++)
+		for(int iy=0; iy<m_ny; iy++) {
+			sum += m_wave[ix+m_nx*iy].real()*m_wave[ix+m_nx*iy].real() + m_wave[ix+m_nx*iy].imag()*m_wave[ix+m_nx*iy].imag();
+		}
 	/*  Output results and find min and max to echo
       remember that complex pix are stored in the file in FORTRAN
       order for compatability
@@ -395,6 +385,8 @@ void CConvergentWave::FormProbe()
 	m_rmax = rmax;
 	m_aimin = aimin;
 	m_aimax = aimax;
+
+	DLOG(INFO) << format("wave value range (%f .. %f,i %f ... %f)") % rmin % rmax % aimin % aimax;
 
 	/**********************************************************/
 

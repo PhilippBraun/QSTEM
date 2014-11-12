@@ -128,7 +128,7 @@ def plot_imgs(path):
     for f in files:
         if 'wave' in f:
             plot_img(f)
-            plot_diff(f)
+        #plot_diff(f)
 #        elif 'diff' in f:
 #            plot_diff(f)   
             

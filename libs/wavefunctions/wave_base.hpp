@@ -27,13 +27,14 @@
 
 #include "wave_interface.hpp"
 #include "omp.h"
+#include "boost/format.hpp"
 
 void CreateWaveFunctionDataSets(unsigned x, unsigned y, std::vector<unsigned> positions, std::string output_ext);
 
-static std::string waveFilePrefix="mulswav";
+static std::string waveFilePrefix="wave";
 static std::string dpFilePrefix="diff";
 static std::string probeFilePrefix="probe_wave";
-static std::string waveIntensityFilePrefix="waveIntensity";
+static std::string waveIntensityFilePrefix="wave_int";
 
 namespace QSTEM
 {
@@ -45,7 +46,7 @@ class QSTEM_HELPER_DLL_EXPORT CBaseWave : public IWave
 public:
   // initializing constructor:
   CBaseWave(unsigned nx, unsigned ny, float_tt resX, float_tt resY, std::string input_ext, std::string output_ext);
-  CBaseWave(const ConfigPtr configReader);
+  CBaseWave(const ConfigPtr c);
   // define a copy constructor to create new arrays
   CBaseWave( const CBaseWave& other );
   CBaseWave();
@@ -163,6 +164,7 @@ public:
 
 protected:
   ImageIOPtr m_imageIO;
+  ConfigPtr _config;
 
   bool m_realSpace;  // If true, the m_wave is in real space.  Else, it's in Fourier space.
 
@@ -184,13 +186,9 @@ protected:
 
   // defocus mode: 1 = Scherzer, 2 = ???
   int m_Scherzer;
-
   int m_printLevel;
-
   float_tt m_dx, m_dy;  // physical pixel size of wavefunction array
-
   ComplexVector m_wave; /* complex wave function */
-
   RealVector m_kx2,m_ky2,m_kx,m_ky;
   float_tt m_k2max;
 

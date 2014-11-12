@@ -144,7 +144,7 @@ void C2DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
   AtomBoxLookUp(dPot,atom->Znum,atomBoxX,atomBoxY,0, m_tds ? 0 : atom->dw);
   float_tt atomBoxZ = (double)(iAtomZ+1)*m_sliceThicknesses[0]-atomZ;
 
-  unsigned idx=ix*m_ny+iy;
+  unsigned idx=ix*_config->Model.ny+iy;
 
   /* split the atom if it is close to the top edge of the slice */
   if ((atomBoxZ<0.15*m_sliceThicknesses[0]) && (iz >0)) {

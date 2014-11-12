@@ -69,9 +69,9 @@ public:
 class ModelConfig : IPropertyTreeReader{
 public:
 	bool UseTDS, TiltBack,CenterSlices;
-	int TDSRuns,nPixels,nSlices;
+	int TDSRuns,nx,ny,nSlices;
 	QSTEM::SliceThicknessCalculation SliceThicknessCalculation;
-	float_tt sliceThicknessAngstrom,xOffset,yOffset,zOffset,resolutionXAngstrom,resolutionYAngstrom,crystalTiltX,
+	float_tt sliceThicknessAngstrom,xOffset,yOffset,zOffset,dx,dy,crystalTiltX,
 				crystalTiltY,crystalTiltZ,beamTiltX,beamTiltY;
 
 	virtual void Read(ptree& t);

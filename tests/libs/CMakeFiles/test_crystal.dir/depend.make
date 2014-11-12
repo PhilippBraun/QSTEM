@@ -969,6 +969,8 @@ tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o: /usr/local/include/bo
 tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o: /usr/local/include/boost/version.hpp
 tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o: /usr/local/include/boost/visit_each.hpp
 tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o: /usr/local/include/fftw3.h
+tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o: /usr/local/include/gflags/gflags.h
+tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o: /usr/local/include/gflags/gflags_declare.h
 tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o: /usr/local/include/glog/log_severity.h
 tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o: /usr/local/include/glog/logging.h
 tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o: /usr/local/include/glog/vlog_is_on.h

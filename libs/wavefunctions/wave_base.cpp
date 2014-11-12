@@ -33,14 +33,14 @@ void CreateWaveFunctionDataSets(unsigned x, unsigned y, std::vector<unsigned> po
 
 CBaseWave::CBaseWave(unsigned x, unsigned y, float_tt resX, float_tt resY, 
 		std::string input_ext, std::string output_ext) :
-						  //m_position(std::vector<unsigned>()),
-						  m_detPosX(0),
-						  m_detPosY(0),
-						  m_nx(x),
-						  m_ny(y),
-						  m_dx(resX),
-						  m_dy(resY),
-						  m_params(std::map<std::string, double>())
+								  //m_position(std::vector<unsigned>()),
+								  m_detPosX(0),
+								  m_detPosY(0),
+								  m_nx(x),
+								  m_ny(y),
+								  m_dx(resX),
+								  m_dy(resY),
+								  m_params(std::map<std::string, double>())
 , m_fftPlanWaveForw(NULL)
 , m_fftPlanWaveInv(NULL)
 {
@@ -49,9 +49,11 @@ CBaseWave::CBaseWave(unsigned x, unsigned y, float_tt resX, float_tt resY,
 
 CBaseWave::CBaseWave(const ConfigPtr c): m_fftPlanWaveForw(NULL), m_fftPlanWaveInv(NULL)
 {
-	m_nx = m_ny = c->Model.nPixels;
-	m_dx = c->Model.resolutionXAngstrom;
-	m_dy = c->Model.resolutionYAngstrom;
+	_config = c;
+	m_nx = c->Model.nx;
+	m_ny = c->Model.ny;
+	m_dx = c->Model.dx;
+	m_dy = c->Model.dy;
 	m_v0 = c->Beam.EnergykeV;
 	// TODO: where does this belong?
 	//m_electronScale = m_beamCurrent*m_dwellTime*MILLISEC_PICOAMP;

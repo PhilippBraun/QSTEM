@@ -19,6 +19,7 @@
 
 #include "pot_base.hpp"
 #include <omp.h>
+#include <algorithm>
 
 const std::string kPotFileName = "potslice";
 const int BUF_LEN = 256;
@@ -41,9 +42,7 @@ void CPotential::SetStructure(StructurePtr structure) {
 	m_atoms = &(m_crystal->m_atoms);
 }
 void CPotential::Initialize(const ConfigPtr c) {
-	m_nx = m_ny = c->Model.nPixels;
-	m_dx = c->Model.resolutionXAngstrom;
-	m_dy = c->Model.resolutionYAngstrom;
+	_config = c;
 	m_v0 = c->Beam.EnergykeV;
 	m_atomRadius = c->Potential.AtomRadiusAngstrom;
 	m_offsetX = c->Model.xOffset;
@@ -64,8 +63,8 @@ void CPotential::Initialize(const ConfigPtr c) {
 	Initialize();
 }
 void CPotential::Initialize() {
-	m_ddx = m_dx / (double) OVERSAMPLING;
-	m_ddy = m_dy / (double) OVERSAMPLING;
+	m_ddx = _config->Model.dx / (double) OVERSAMPLING;
+	m_ddy = _config->Model.dy / (double) OVERSAMPLING;
 	m_ddz = m_dz / (double) OVERSAMPLINGZ;
 
 	/* For now we don't care, if the box has only small
@@ -76,9 +75,9 @@ void CPotential::Initialize() {
 	m_boxNy = (int) (m_atomRadius / m_ddy + 2.0);
 
 	m_c = m_sliceThickness * m_nslices;
-	m_dr = m_dx / OVERSAMPLING; // define step width in which radial V(r,z) is defined
-	m_iRadX = (int) ceil(m_atomRadius / m_dx);
-	m_iRadY = (int) ceil(m_atomRadius / m_dy);
+	m_dr = _config->Model.dx / OVERSAMPLING; // define step width in which radial V(r,z) is defined
+	m_iRadX = (int) ceil(m_atomRadius / _config->Model.dx);
+	m_iRadY = (int) ceil(m_atomRadius / _config->Model.dy);
 	m_iRadZ = (int) ceil(m_atomRadius / m_sliceThickness);
 	m_iRad2 = m_iRadX * m_iRadX + m_iRadY * m_iRadY;
 	m_atomRadius2 = m_atomRadius * m_atomRadius;
@@ -104,17 +103,17 @@ void CPotential::DisplayParams() {
 	printf("* Save level:           %d\n", m_saveLevel);
 	if (m_savePotential)
 		printf("* Potential file name:  %s\n", m_fileBase.c_str());
-	printf("* Model Sampling:  %g x %g x %g A\n", m_dx, m_dy, m_sliceThickness);
+	printf("* Model Sampling:  %g x %g x %g A\n", _config->Model.dx, _config->Model.dy, m_sliceThickness);
 
 	printf("* Pot. array offset:    (%g,%g,%g)A\n", m_offsetX, m_offsetY,
 			m_zOffset);
 	printf("* Potential periodic:   (x,y): %s, z: %s\n",
 			(m_periodicXY) ? "yes" : "no", (m_periodicZ) ? "yes" : "no");
 	if (k_fftMeasureFlag == FFTW_MEASURE)
-		printf("* Potential array:      %d x %d (optimized)\n", m_nx, m_ny);
+		printf("* Potential array:      %d x %d (optimized)\n", _config->Model.nx, _config->Model.ny);
 	else
-		printf("* Potential array:      %d x %d (estimated)\n", m_nx, m_ny);
-	printf("*                       %g x %gA\n", m_nx * m_dx, m_ny * m_dy);
+		printf("* Potential array:      %d x %d (estimated)\n", _config->Model.nx, _config->Model.ny);
+	printf("*                       %g x %gA\n", _config->Model.nx * _config->Model.dx, _config->Model.ny * _config->Model.dy);
 	printf("* Scattering factors:   %d\n", m_scatFactor);
 
 	printf("* Slices per division:  %d (%gA thick slices [%scentered])\n",
@@ -265,13 +264,13 @@ void CPotential::ReadPotential(std::string &fileName, unsigned subSlabIdx) {
 	DataReaderPtr reader = CDataReaderFactory::Get()->GetReader(
 			path.extension().string());
 
-	reader->ReadSize(path.stem().string(), slice_idx, m_nx, m_ny);
+//	TODO: FIX THIS reader->ReadSize(path.stem().string(), slice_idx, _config->Model.nx, _config->Model.ny);
 	ResizeSlices();
 	for (unsigned i = (subSlabIdx + 1) * m_nslices - 1;
 			i >= (subSlabIdx) * m_nslices; i--, slice_idx++) {
 		ReadSlice(path.stem().string(),
-				m_trans1[boost::indices[slice_idx][range(0, m_nx)][range(0,
-						m_ny)]], i);
+				m_trans1[boost::indices[slice_idx][range(0, _config->Model.nx)][range(0,
+						_config->Model.ny)]], i);
 	}
 	return;
 }
@@ -302,7 +301,7 @@ void CPotential::SliceSetup() {
 		m_slicePos[i] = m_slicePos[i - 1] + m_sliceThicknesses[i - 1] / 2.0
 				+ m_sliceThicknesses[i] / 2.0;
 	}
-	//	m_trans1.resize(boost::extents[m_nslices][m_ny][m_nx]);
+	//	m_trans1.resize(boost::extents[m_nslices][_config->Model.ny][_config->Model.nx]);
 	// If we are going to read the potential, then we need to size the slices according to the first read pot slice
 	if (m_readPotential) {
 	}
@@ -311,15 +310,13 @@ void CPotential::SliceSetup() {
 	else {
 		float_tt max_x, min_x, max_y, min_y, max_z, min_z;
 		m_crystal->GetCrystalBoundaries(min_x, max_x, min_y, max_y, min_z, max_z);
-		m_nx = ceil((max_x - min_x) / m_dx);
-		m_ny = ceil((max_y - min_y) / m_dy);
+		_config->Model.nx = ceil((max_x - min_x) / _config->Model.dx);
+		_config->Model.ny = ceil((max_y - min_y) / _config->Model.dy);
 	}
 	ResizeSlices();
 }
 
 complex_tt CPotential::GetSlicePixel(unsigned iz, unsigned ix, unsigned iy) {
-	unsigned idx = iy * m_nx + ix;
-	//	return m_trans[iz][idx];
 	return m_trans1[iz][iy][ix];
 }
 
@@ -367,8 +364,8 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 	SliceSetup();
 
 	// reset the potential to zero:
-	memset((void *) m_trans1.data(), 0,	m_nslices * m_nx * m_ny * sizeof(complex_tt));
-
+//	memset((void *) m_trans1.data(), 0,	m_nslices * _config->Model.nx * _config->Model.ny * sizeof(complex_tt));
+	std::fill( m_trans1.origin(), m_trans1.origin() + m_trans1.size(), complex_tt(0,0) );
 
 #pragma omp parallel for
 	for (std::vector<atom>::iterator atom = m_crystal->m_uniqueAtoms.begin();	atom < m_crystal->m_uniqueAtoms.end(); atom++) {
@@ -425,8 +422,8 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 			if (m_printLevel >= 3) {
 				float_tt ddx = potVal;
 				float_tt ddy = potVal;
-				for (unsigned ix = 0; ix <  m_nx; ix++)
-					for (unsigned iy = 0; iy < m_ny ; iy++){
+				for (unsigned ix = 0; ix <  _config->Model.nx; ix++)
+					for (unsigned iy = 0; iy < _config->Model.ny ; iy++){
 						potVal = m_trans1[iz][iy][ix].real();
 						if (ddy < potVal)
 							ddy = potVal;
@@ -454,8 +451,8 @@ void CPotential::AddAtomRealSpace(std::vector<atom>::iterator &atom,
 
 	/* Warning: will assume constant slice thickness ! */
 	/* do not round here: atomX=0..dx -> iAtomX=0 */
-	unsigned iAtomX = (int) floor(atomX / m_dx);
-	unsigned iAtomY = (int) floor(atomY / m_dy);
+	unsigned iAtomX = (int) floor(atomX / _config->Model.dx);
+	unsigned iAtomY = (int) floor(atomY / _config->Model.dy);
 	unsigned iAtomZ = (int) floor(atomZ / m_sliceThicknesses[0]);
 
 	if (m_displayPotCalcInterval > 0) {
@@ -474,11 +471,11 @@ void CPotential::AddAtomRealSpace(std::vector<atom>::iterator &atom,
 				if (abs(iax) > m_iRadX)
 					break;
 			}
-			if (iax + iAtomX >= m_nx)
+			if (iax + iAtomX >= _config->Model.nx)
 				break;
 		}
-		float_tt x = (iAtomX + iax) * m_dx - atomX;
-		unsigned ix = (iax + iAtomX + 16 * m_nx) % m_nx; /* shift into the positive range */
+		float_tt x = (iAtomX + iax) * _config->Model.dx - atomX;
+		unsigned ix = (iax + iAtomX + 16 * _config->Model.nx) % _config->Model.nx; /* shift into the positive range */
 		for (int iay = -m_iRadY; iay <= m_iRadY; iay++) {
 			if (!m_periodicXY) {
 				if (iay + iAtomY < 0) {
@@ -486,11 +483,11 @@ void CPotential::AddAtomRealSpace(std::vector<atom>::iterator &atom,
 					if (abs(iay) > m_iRadY)
 						break;
 				}
-				if (iay + iAtomY >= m_ny)
+				if (iay + iAtomY >= _config->Model.ny)
 					break;
 			}
-			float_tt y = (iAtomY + iay) * m_dy - atomY;
-			unsigned iy = (iay + iAtomY + 16 * m_ny) % m_ny; /* shift into the positive range */
+			float_tt y = (iAtomY + iay) * _config->Model.dy - atomY;
+			unsigned iy = (iay + iAtomY + 16 * _config->Model.ny) % _config->Model.ny; /* shift into the positive range */
 			float_tt r2sqr = x * x + y * y;
 			if (r2sqr <= m_atomRadius2) {
 				// This (virtual) method is meant to be implemented by subclasses,
@@ -508,25 +505,25 @@ void CPotential::WriteSlice(unsigned idx) {
 	sprintf(buf, "Projected Potential (slice %d)", idx);
 	std::string comment = buf;
 	// TODO: modify image writer
-	//m_imageIO->WriteImage(m_trans1[boost::indices[idx][range(0,m_nx)][range(0,m_ny)]], kPotFileName, params, comment);
+	//m_imageIO->WriteImage(m_trans1[boost::indices[idx][range(0,_config->Model.nx)][range(0,_config->Model.ny)]], kPotFileName, params, comment);
 }
 
 void CPotential::WriteProjectedPotential() {
 	std::map<std::string, double> params;
 	char buf[255];
-	//float_tt **tempPot = float2D(m_nx,m_ny,"total projected potential");
-	RealVector tempPot(m_ny*m_nx);
+	//float_tt **tempPot = float2D(_config->Model.nx,_config->Model.ny,"total projected potential");
+	RealVector tempPot(_config->Model.ny*_config->Model.nx);
 	float_tt potVal = 0;
 
-	for (unsigned idy = 0; idy < m_ny; idy++)
-		for (unsigned idx = 0; idx < m_nx ; idx++){
+	for (unsigned idy = 0; idy < _config->Model.ny; idy++)
+		for (unsigned idx = 0; idx < _config->Model.nx ; idx++){
 			tempPot[idx] = 0;
 			for (unsigned iz = 0; iz < m_nslices; iz++)
 				tempPot[idx] += m_trans1[iz][idy][idx].real();
 		}
 
 	float_tt ddx = tempPot[0], ddy = potVal;
-	for (unsigned ix = 0; ix < m_ny * m_nx; potVal = tempPot[++ix]) {
+	for (unsigned ix = 0; ix < _config->Model.ny * _config->Model.nx; potVal = tempPot[++ix]) {
 		if (ddy < potVal)
 			ddy = potVal;
 		if (ddx > potVal)
@@ -743,17 +740,17 @@ float_tt CPotential::seval(float_tt *x, float_tt *y,std::vector<float_tt>& b,std
 } /* end seval() */
 
 void CPotential::GetSizePixels(unsigned int &nx, unsigned int &ny) const {
-	nx = m_nx;
-	ny = m_ny;
+	nx = _config->Model.nx;
+	ny = _config->Model.ny;
 }
 
 void CPotential::ResizeSlices() {
 	//	std::vector<ComplexVector>::iterator slice = m_trans.begin(), end =
 	//			m_trans.end();
 	//	for (slice; slice != end; ++slice) {
-	//		(*slice).resize(m_nx * m_ny);
+	//		(*slice).resize(_config->Model.nx * _config->Model.ny);
 	//	}
-	m_trans1.resize(boost::extents[m_nslices][m_ny][m_nx]);
+	m_trans1.resize(boost::extents[m_nslices][_config->Model.ny][_config->Model.nx]);
 }
 
 } // end namespace QSTEM

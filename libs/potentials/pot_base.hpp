@@ -67,7 +67,7 @@ public:
   void GetSizePixels(unsigned &nx, unsigned &ny) const;
   void WriteSlice(unsigned idx);
   void WriteProjectedPotential();
-  ComplexArray2DView GetSlice(unsigned idx){return m_trans1[boost::indices[idx][range(0,m_nx)][range(0,m_ny)]];}
+  ComplexArray2DView GetSlice(unsigned idx){return m_trans1[boost::indices[idx][range(0,_config->Model.nx)][range(0,_config->Model.nx)]];}
   complex_tt GetSlicePixel(unsigned iz, unsigned ix, unsigned iy);
 
 
@@ -103,13 +103,14 @@ protected:
 
   ImageIOPtr m_imageIO;
   StructurePtr m_crystal;
+  ConfigPtr _config;
+
   std::vector<ComplexVector> m_trans; //  The 3D specimen potential array as a vector of 1D vectors
   ComplexArray3D m_trans1;
   //complex_tt ***m_trans;    //  The 3D specimen potential array
   bool m_currentPotential;  // Indicates whether computed potential matches current parameters.  
                             //    Set to true after computing potential.  Reset to false when parameters change.
-  unsigned m_nx, m_ny;    /* size of projected potential in pixels, possibly larger than wavefunc's nx/ny */
-  float_tt m_dx, m_dy, m_dz;   // resolutions
+  float_tt m_dz;   // resolutions
   float_tt m_ddx, m_ddy, m_ddz;   // oversampled resolutions
   //
   int m_boxNx, m_boxNy, m_boxNz;

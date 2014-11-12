@@ -25,6 +25,7 @@ namespace QSTEM
 
 CExperimentBase::CExperimentBase(ConfigPtr c) : IExperiment()
 {
+	_config = c;
 	m_sample = StructurePtr(new CCrystal(c));
 
 	float_tt max_x, min_x, max_y, min_y, max_z, min_z, zTotal;
@@ -47,21 +48,12 @@ CExperimentBase::CExperimentBase(ConfigPtr c) : IExperiment()
 	}
 
 	m_wave = CWaveFactory::Get()->GetWave("Convergent", c);
-	m_wave->FormProbe();
 
 	m_potential = CPotFactory::Get()->GetPotential(c);
 	m_potential->SetStructure(m_sample);
 
 	m_equalDivs = true;
-	m_outputInterval = c->Output.PotentialProgressInterval;
-	m_outputLocation = c->Output.SaveFolder;
-	m_cellDiv = c->Potential.NSubSlabs;
-	m_avgRuns = c->Model.TDSRuns;
 	m_saveLevel = static_cast<unsigned>(c->Output.SaveLevel);
-	m_printLevel = c->Output.LogLevel;
-	m_tds = c->Model.UseTDS;
-	m_mode = c->ExperimentType;
-	float_tt tds;
 	DisplayParams();
 	m_avgArray = RealVector();
 
@@ -100,15 +92,15 @@ void CExperimentBase::DisplayParams() {
 	strftime( Date, 12, "%Y:%m:%d", mytime );
 	strftime( Time, 9, "%H:%M:%S", mytime );
 
-	printf("\n*****************************************************************************************\n");
-	printf("* Running program STEM3 (version %s) in %d mode\n",VERSION, static_cast<int>(m_mode));
+	printf("\n**************************************************************************************************\n");
+	printf("* Running program STEM3 (version %s) in %d mode\n",VERSION, static_cast<int>(_config->ExperimentType));
 	printf("* Date: %s, Time: %s\n",Date,Time);
 
 	// create the data folder ...
-	printf("* Output file/folder:          ./%s/ ",m_outputLocation.c_str());
+	printf("* Output file/folder:          ./%s/ ",_config->Output.SaveFolder.c_str());
 
-	printf("* Super cell divisions: %d (in z direction) %s\n",m_cellDiv, m_equalDivs ? "equal" : "non-equal");
-	printf("* Output every:         %d slices\n",m_outputInterval);
+	printf("* Super cell divisions: %d (in z direction) %s\n",_config->Potential.NSubSlabs, m_equalDivs ? "equal" : "non-equal");
+	printf("* Output every:         %d slices\n",_config->Output.PropagationProgressInterval);
 
 
 	/*
@@ -122,7 +114,7 @@ void CExperimentBase::DisplayParams() {
       muls.nx,muls.ny,muls.nx*muls.resolutionX,muls.ny*muls.resolutionY);
 	 */
 
-	printf("* TDS:                  %d runs)\n",m_avgRuns);
+	printf("* TDS:                  %d runs)\n",_config->Model.TDSRuns);
 
 	printf("*\n*****************************************************************************************\n");
 }
@@ -148,7 +140,7 @@ void CExperimentBase::DisplayProgress(int flag)
        printf("timer: %g, curr. time: %g, diff: %g\n",timer,cputim(),curTime);
        }
 	 */
-	if (m_printLevel > 0) {
+	if (_config->Output.LogLevel > 0) {
 		if (m_sample->GetTDS()) {
 			timeAvg = ((m_avgCount)*timeAvg+curTime)/(m_avgCount+1);
 			intensityAvg = ((m_avgCount)*intensityAvg+m_intIntensity)/(m_avgCount+1);
@@ -214,14 +206,14 @@ void CExperimentBase::InterimWave(int slice) {
 	char fileName[256];
 	std::map<std::string, double> params;
 
-	if ((slice < m_potential->GetNSlices()*m_cellDiv-1) && ((slice+1) % m_outputInterval != 0)) return;
+	if ((slice < m_potential->GetNSlices()*_config->Potential.NSubSlabs-1) && ((slice+1) % _config->Output.PropagationProgressInterval != 0)) return;
 
-	t = (int)((slice)/m_outputInterval);
+	t = (int)((slice)/_config->Output.PropagationProgressInterval);
 
 	// produce the following filename:
 	// wave_avgCount_thicknessIndex.img or
 	// wave_thicknessIndex.img if tds is turned off
-	if (m_tds) m_wave->WriteWave(m_avgCount, t, "Wave Function", params);
+	if (_config->Model.UseTDS) m_wave->WriteWave(m_avgCount, t, "Wave Function", params);
 	else m_wave->WriteWave(t, "Wave Function", params);
 }
 
@@ -250,15 +242,6 @@ void CExperimentBase::InitializePropagators(WavePtr wave){
 	}
 }
 
-/******************************************************************
- * runMulsSTEM() - do the multislice propagation in STEM/CBED mode
- *
- *    Each probe position is running this function.  Each CPU is thus
- *      running a separate instance of the function.  It is nested in
- *      the main OpenMP parallel region - specifying critical, single, and
- *      barrier OpenMP pragmas should be OK.
-
- *****************************************************************/
 int CExperimentBase::RunMultislice(WavePtr wave) 
 {
 	int printFlag = 0;
@@ -277,7 +260,7 @@ int CExperimentBase::RunMultislice(WavePtr wave)
 
 	wave->GetSizePixels(nx, ny);
 
-	printFlag = (m_printLevel > 3);
+	printFlag = (_config->Output.LogLevel > 3);
 	fftScale = 1.0/(nx*ny);
 
 	wavlen = wave->GetWavelength();
@@ -314,7 +297,7 @@ int CExperimentBase::RunMultislice(WavePtr wave)
 	// collect intensity at the final slice
 	//collectIntensity(muls, wave, m_totalSliceCount+m_slices*(1+mRepeat));
 	if (printFlag) printf("\n***************************************\n");
-	if ((m_saveLevel > 1) || (m_cellDiv > 1)) {
+	if ((m_saveLevel > 1) || (_config->Potential.NSubSlabs > 1)) {
 		wave->WriteWave();
 	}
 	return 0;
@@ -329,7 +312,7 @@ void CExperimentBase::Propagate(WavePtr wave, float_tt dz)
 	int ixa, iya;
 	float_tt wr, wi, tr, ti;
 	float_tt scale,t;
-	float_tt dzs=0;
+  	float_tt dzs=0;
 
 	float_tt dx, dy;
 	unsigned nx, ny, px;

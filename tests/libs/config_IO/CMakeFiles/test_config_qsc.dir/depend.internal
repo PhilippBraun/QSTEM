@@ -970,6 +970,8 @@ tests/libs/config_IO/CMakeFiles/test_config_qsc.dir/test_config_qsc.cpp.o
  /usr/local/include/boost/version.hpp
  /usr/local/include/boost/visit_each.hpp
  /usr/local/include/fftw3.h
+ /usr/local/include/gflags/gflags.h
+ /usr/local/include/gflags/gflags_declare.h
  /usr/local/include/glog/log_severity.h
  /usr/local/include/glog/logging.h
  /usr/local/include/glog/vlog_is_on.h
