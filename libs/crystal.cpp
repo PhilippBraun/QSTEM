@@ -28,9 +28,8 @@
 #include "structure_factories.hpp"
 
 #include <string>
-#include <glog/logging.h>
 #include <boost/format.hpp>
-
+#include <boost/log/trivial.hpp>
 using boost::format;
 
 #define PI180 1.7453292519943e-2
@@ -280,7 +279,7 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 		// but we will probably just do Einstein vibrations anyway:
 		ReplicateUnitCell(handleVacancies);
 		natom = ncoord * ncx * ncy * ncz;
-		LOG(INFO) << "Atoms after replication of unit cells";
+		BOOST_LOG_TRIVIAL(trace) << "Atoms after replication of unit cells";
 		for (int j = 0; j < natom; j++) {
 			//			LOG(INFO) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
 			// This converts also to cartesian coordinates
@@ -291,7 +290,7 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 			m_atoms[j].x = x;
 			m_atoms[j].y = y;
 			m_atoms[j].z = z;
-			LOG(INFO) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
+			BOOST_LOG_TRIVIAL(trace) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
 		}
 
 		/***************************************************************
@@ -335,7 +334,7 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 						boxZmin = boxZmin > z ? z : boxZmin;
 						boxZmax = boxZmax < z ? z : boxZmax;
 					}
-					LOG(INFO) << format("u=(%2.3f,%2.3f,%2.3f) x-(%2.3f,%2.3f) y-(%2.3f,%2.3f) z-(%2.3f,%2.3f)") % u[0] % u[1] % u[2] % boxXmin % boxXmax % boxYmin % boxYmax % boxZmin % boxZmax;
+					BOOST_LOG_TRIVIAL(trace) << format("u=(%2.3f,%2.3f,%2.3f) x-(%2.3f,%2.3f) y-(%2.3f,%2.3f) z-(%2.3f,%2.3f)") % u[0] % u[1] % u[2] % boxXmin % boxXmax % boxYmin % boxYmax % boxZmin % boxZmax;
 				}
 
 //		printf("(%f, %f, %f): %f .. %f, %f .. %f, %f .. %f\n",m_ax,m_by,m_cz,boxXmin,boxXmax,boxYmin,boxYmax,boxZmin,boxZmax);
@@ -355,21 +354,21 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 		} /* if tilts != 0 ... */
 
 		// rebase to some atom at (0,0,0)
-//		LOG(INFO) << "Atoms after tilting and going to cartesian";
+		BOOST_LOG_TRIVIAL(trace) << "Atoms after tilting and going to cartesian";
 		for (int j = 0; j < natom; j++) {
-//			LOG(INFO) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
+//			BOOST_LOG_TRIVIAL(trace) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
 			m_atoms[j].x -= boxXmin;
 			m_atoms[j].y -= boxYmin;
 			m_atoms[j].z -= boxZmin;
-//			LOG(INFO) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
+			BOOST_LOG_TRIVIAL(trace) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
 		}
 
 		// Offset the atoms in x- and y-directions:
 		// Do this after the rotation!
-		if ((m_offsetX != 0) || (m_offsetY != 0)) {
+		if ((_config->Model.xOffset != 0) || (_config->Model.yOffset != 0)) {
 			for (int j = 0 ; j < natom; j++) {
-				m_atoms[j].x += m_offsetX;
-				m_atoms[j].y += m_offsetY;
+				m_atoms[j].x += _config->Model.xOffset;
+				m_atoms[j].y += _config->Model.yOffset;
 			}
 		}
 	} // end of Ncell mode conversion to cartesian coords and tilting.
@@ -718,7 +717,7 @@ void CCrystal::ReplicateUnitCell(int handleVacancies) {
 		 * to the original unit cell (icx=icy=icz=0), we cannot use those positions
 		 * as unit cell coordinates for the other atoms anymore
 		 */
-
+		BOOST_LOG_TRIVIAL(trace) << "in RepliceteUnitCell";
 		for (icx = ncx - 1; icx >= 0; icx--) {
 			for (icy = ncy - 1; icy >= 0; icy--) {
 				for (icz = ncz - 1; icz >= 0; icz--) {
@@ -772,8 +771,8 @@ void CCrystal::ReplicateUnitCell(int handleVacancies) {
 						m_atoms[jCell + i2].x = m_baseAtoms[i2].x + icx + u[0];
 						m_atoms[jCell + i2].y = m_baseAtoms[i2].y + icy + u[1];
 						m_atoms[jCell + i2].z = m_baseAtoms[i2].z + icz + u[2];
-						if(m_atoms[jCell + i2].z > 15)
-							printf("x: %-2.3f	y: %-2.3f	z: %-2.3f\n",m_atoms[jCell + i2].x,m_atoms[jCell + i2].y,m_atoms[jCell + i2].z);
+						BOOST_LOG_TRIVIAL(trace) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n")
+								% (jCell + i2) % m_atoms[jCell + i2].x % m_atoms[jCell + i2].y % m_atoms[jCell + i2].z;
 					}
 				}  // for (icz=ncz-1;icz>=0;icz--)
 			} // for (icy=ncy-1;icy>=0;icy--)
@@ -781,8 +780,7 @@ void CCrystal::ReplicateUnitCell(int handleVacancies) {
 		i = jequal;
 	} // for (i=ncoord-1;i>=0;)
 	if ((jVac > 0) && (m_printLevel))
-		printf(
-				"Removed %d atoms because of occupancies < 1 or multiple atoms in the same place\n",
+		printf("Removed %d atoms because of occupancies < 1 or multiple atoms in the same place\n",
 				jVac);
 }
 

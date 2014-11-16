@@ -386,7 +386,7 @@ void CConvergentWave::FormProbe()
 	m_aimin = aimin;
 	m_aimax = aimax;
 
-	DLOG(INFO) << format("wave value range (%f .. %f,i %f ... %f)") % rmin % rmax % aimin % aimax;
+	BOOST_LOG_TRIVIAL(trace) << format("wave value range (%f .. %f,i %f ... %f)") % rmin % rmax % aimin % aimax;
 
 	/**********************************************************/
 

@@ -85,6 +85,7 @@ tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o
  /usr/local/include/boost/config/no_tr1/memory.hpp
  /usr/local/include/boost/config/no_tr1/utility.hpp
  /usr/local/include/boost/config/posix_features.hpp
+ /usr/local/include/boost/config/requires_threads.hpp
  /usr/local/include/boost/config/select_compiler_config.hpp
  /usr/local/include/boost/config/select_platform_config.hpp
  /usr/local/include/boost/config/select_stdlib_config.hpp
@@ -92,6 +93,7 @@ tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o
  /usr/local/include/boost/cstdint.hpp
  /usr/local/include/boost/current_function.hpp
  /usr/local/include/boost/detail/allocator_utilities.hpp
+ /usr/local/include/boost/detail/atomic_count.hpp
  /usr/local/include/boost/detail/bitmask.hpp
  /usr/local/include/boost/detail/call_traits.hpp
  /usr/local/include/boost/detail/indirect_traits.hpp
@@ -157,6 +159,52 @@ tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o
  /usr/local/include/boost/iterator/reverse_iterator.hpp
  /usr/local/include/boost/iterator/transform_iterator.hpp
  /usr/local/include/boost/limits.hpp
+ /usr/local/include/boost/log/attributes/attribute.hpp
+ /usr/local/include/boost/log/attributes/attribute_cast.hpp
+ /usr/local/include/boost/log/attributes/attribute_name.hpp
+ /usr/local/include/boost/log/attributes/attribute_set.hpp
+ /usr/local/include/boost/log/attributes/attribute_value.hpp
+ /usr/local/include/boost/log/attributes/attribute_value_impl.hpp
+ /usr/local/include/boost/log/attributes/attribute_value_set.hpp
+ /usr/local/include/boost/log/attributes/fallback_policy_fwd.hpp
+ /usr/local/include/boost/log/attributes/value_extraction_fwd.hpp
+ /usr/local/include/boost/log/attributes/value_visitation_fwd.hpp
+ /usr/local/include/boost/log/core/core.hpp
+ /usr/local/include/boost/log/core/record.hpp
+ /usr/local/include/boost/log/core/record_view.hpp
+ /usr/local/include/boost/log/detail/attachable_sstream_buf.hpp
+ /usr/local/include/boost/log/detail/attribute_get_value_impl.hpp
+ /usr/local/include/boost/log/detail/code_conversion.hpp
+ /usr/local/include/boost/log/detail/config.hpp
+ /usr/local/include/boost/log/detail/default_attribute_names.hpp
+ /usr/local/include/boost/log/detail/footer.hpp
+ /usr/local/include/boost/log/detail/header.hpp
+ /usr/local/include/boost/log/detail/light_function.hpp
+ /usr/local/include/boost/log/detail/light_rw_mutex.hpp
+ /usr/local/include/boost/log/detail/locks.hpp
+ /usr/local/include/boost/log/detail/native_typeof.hpp
+ /usr/local/include/boost/log/detail/parameter_tools.hpp
+ /usr/local/include/boost/log/detail/pp_identity.hpp
+ /usr/local/include/boost/log/detail/trivial_keyword.hpp
+ /usr/local/include/boost/log/detail/unhandled_exception_count.hpp
+ /usr/local/include/boost/log/detail/visible_type.hpp
+ /usr/local/include/boost/log/expressions/filter.hpp
+ /usr/local/include/boost/log/expressions/keyword_fwd.hpp
+ /usr/local/include/boost/log/keywords/severity.hpp
+ /usr/local/include/boost/log/sources/basic_logger.hpp
+ /usr/local/include/boost/log/sources/features.hpp
+ /usr/local/include/boost/log/sources/record_ostream.hpp
+ /usr/local/include/boost/log/sources/severity_feature.hpp
+ /usr/local/include/boost/log/sources/severity_logger.hpp
+ /usr/local/include/boost/log/sources/threading_models.hpp
+ /usr/local/include/boost/log/trivial.hpp
+ /usr/local/include/boost/log/utility/formatting_ostream.hpp
+ /usr/local/include/boost/log/utility/formatting_ostream_fwd.hpp
+ /usr/local/include/boost/log/utility/strictest_lock.hpp
+ /usr/local/include/boost/log/utility/string_literal_fwd.hpp
+ /usr/local/include/boost/log/utility/type_dispatch/type_dispatcher.hpp
+ /usr/local/include/boost/log/utility/type_info_wrapper.hpp
+ /usr/local/include/boost/log/utility/unique_identifier_name.hpp
  /usr/local/include/boost/mem_fn.hpp
  /usr/local/include/boost/memory_order.hpp
  /usr/local/include/boost/move/core.hpp
@@ -291,6 +339,7 @@ tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o
  /usr/local/include/boost/mpl/back_fwd.hpp
  /usr/local/include/boost/mpl/back_inserter.hpp
  /usr/local/include/boost/mpl/base.hpp
+ /usr/local/include/boost/mpl/begin.hpp
  /usr/local/include/boost/mpl/begin_end.hpp
  /usr/local/include/boost/mpl/begin_end_fwd.hpp
  /usr/local/include/boost/mpl/bind.hpp
@@ -308,6 +357,7 @@ tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o
  /usr/local/include/boost/mpl/distance_fwd.hpp
  /usr/local/include/boost/mpl/empty.hpp
  /usr/local/include/boost/mpl/empty_fwd.hpp
+ /usr/local/include/boost/mpl/end.hpp
  /usr/local/include/boost/mpl/equal_to.hpp
  /usr/local/include/boost/mpl/erase_fwd.hpp
  /usr/local/include/boost/mpl/erase_key_fwd.hpp
@@ -510,6 +560,18 @@ tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o
  /usr/local/include/boost/optional/optional.hpp
  /usr/local/include/boost/optional/optional_fwd.hpp
  /usr/local/include/boost/optional/optional_io.hpp
+ /usr/local/include/boost/parameter/aux_/arg_list.hpp
+ /usr/local/include/boost/parameter/aux_/default.hpp
+ /usr/local/include/boost/parameter/aux_/is_maybe.hpp
+ /usr/local/include/boost/parameter/aux_/parameter_requirements.hpp
+ /usr/local/include/boost/parameter/aux_/result_of0.hpp
+ /usr/local/include/boost/parameter/aux_/tag.hpp
+ /usr/local/include/boost/parameter/aux_/tagged_argument.hpp
+ /usr/local/include/boost/parameter/aux_/unwrap_cv_reference.hpp
+ /usr/local/include/boost/parameter/aux_/void.hpp
+ /usr/local/include/boost/parameter/aux_/yesno.hpp
+ /usr/local/include/boost/parameter/config.hpp
+ /usr/local/include/boost/parameter/keyword.hpp
  /usr/local/include/boost/preprocessor/arithmetic/add.hpp
  /usr/local/include/boost/preprocessor/arithmetic/dec.hpp
  /usr/local/include/boost/preprocessor/arithmetic/detail/div_base.hpp
@@ -589,8 +651,10 @@ tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o
  /usr/local/include/boost/preprocessor/repetition/enum_binary_params.hpp
  /usr/local/include/boost/preprocessor/repetition/enum_params.hpp
  /usr/local/include/boost/preprocessor/repetition/enum_params_with_a_default.hpp
+ /usr/local/include/boost/preprocessor/repetition/enum_shifted_binary_params.hpp
  /usr/local/include/boost/preprocessor/repetition/enum_shifted_params.hpp
  /usr/local/include/boost/preprocessor/repetition/enum_trailing.hpp
+ /usr/local/include/boost/preprocessor/repetition/enum_trailing_binary_params.hpp
  /usr/local/include/boost/preprocessor/repetition/enum_trailing_params.hpp
  /usr/local/include/boost/preprocessor/repetition/for.hpp
  /usr/local/include/boost/preprocessor/repetition/repeat.hpp
@@ -731,6 +795,8 @@ tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o
  /usr/local/include/boost/smart_ptr/detail/spinlock_sync.hpp
  /usr/local/include/boost/smart_ptr/detail/spinlock_w32.hpp
  /usr/local/include/boost/smart_ptr/detail/yield_k.hpp
+ /usr/local/include/boost/smart_ptr/intrusive_ptr.hpp
+ /usr/local/include/boost/smart_ptr/intrusive_ref_counter.hpp
  /usr/local/include/boost/smart_ptr/shared_ptr.hpp
  /usr/local/include/boost/static_assert.hpp
  /usr/local/include/boost/swap.hpp
@@ -763,6 +829,8 @@ tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o
  /usr/local/include/boost/test/utils/lazy_ostream.hpp
  /usr/local/include/boost/test/utils/trivial_singleton.hpp
  /usr/local/include/boost/test/utils/wrap_stringstream.hpp
+ /usr/local/include/boost/thread/detail/config.hpp
+ /usr/local/include/boost/thread/detail/platform.hpp
  /usr/local/include/boost/throw_exception.hpp
  /usr/local/include/boost/tuple/detail/tuple_basic.hpp
  /usr/local/include/boost/tuple/detail/tuple_basic_no_partial_spec.hpp
@@ -962,19 +1030,16 @@ tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o
  /usr/local/include/boost/utility/detail/in_place_factory_prefix.hpp
  /usr/local/include/boost/utility/detail/in_place_factory_suffix.hpp
  /usr/local/include/boost/utility/enable_if.hpp
+ /usr/local/include/boost/utility/explicit_operator_bool.hpp
  /usr/local/include/boost/utility/identity_type.hpp
  /usr/local/include/boost/utility/in_place_factory.hpp
  /usr/local/include/boost/utility/result_of.hpp
+ /usr/local/include/boost/utility/string_ref_fwd.hpp
  /usr/local/include/boost/utility/swap.hpp
  /usr/local/include/boost/utility/value_init.hpp
  /usr/local/include/boost/version.hpp
  /usr/local/include/boost/visit_each.hpp
  /usr/local/include/fftw3.h
- /usr/local/include/gflags/gflags.h
- /usr/local/include/gflags/gflags_declare.h
- /usr/local/include/glog/log_severity.h
- /usr/local/include/glog/logging.h
- /usr/local/include/glog/vlog_is_on.h
  libs/config_IO/config_reader_factory.hpp
  libs/config_IO/read_interface.hpp
  libs/crystal.hpp

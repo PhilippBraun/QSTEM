@@ -99,8 +99,8 @@ void CPotential::DisplayParams() {
 	printf("*****************************************************\n");
 	printf("********* Potential Parameters **********************\n");
 	printf("*****************************************************\n");
-	printf("* Print level:          %d\n", m_printLevel);
-	printf("* Save level:           %d\n", m_saveLevel);
+	printf("* Print level:          %d\n", _config->Output.LogLevel);
+	printf("* Save level:           %d\n", _config->Output.SaveLevel);
 	if (m_savePotential)
 		printf("* Potential file name:  %s\n", m_fileBase.c_str());
 	printf("* Model Sampling:  %g x %g x %g A\n", _config->Model.dx, _config->Model.dy, m_sliceThickness);
@@ -308,10 +308,7 @@ void CPotential::SliceSetup() {
 	// If we are going to calculate the potential, then we need to size the slices according to the size of the
 	//    structure and the corresponding resolution.
 	else {
-		float_tt max_x, min_x, max_y, min_y, max_z, min_z;
-		m_crystal->GetCrystalBoundaries(min_x, max_x, min_y, max_y, min_z, max_z);
-		_config->Model.nx = ceil((max_x - min_x) / _config->Model.dx);
-		_config->Model.ny = ceil((max_y - min_y) / _config->Model.dy);
+
 	}
 	ResizeSlices();
 }
@@ -375,7 +372,7 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 
 	time(&time0);
 	int atomsAdded = 0;
-#pragma omp parallel for shared(atomsAdded)
+//#pragma omp parallel for shared(atomsAdded)
 	for (std::vector<atom>::iterator atom = m_crystal->m_atoms.begin();	atom < m_crystal->m_atoms.end(); atom++) {
 
 		// make sure we skip vacancies:
@@ -750,7 +747,7 @@ void CPotential::ResizeSlices() {
 	//	for (slice; slice != end; ++slice) {
 	//		(*slice).resize(_config->Model.nx * _config->Model.ny);
 	//	}
-	m_trans1.resize(boost::extents[m_nslices][_config->Model.ny][_config->Model.nx]);
+	m_trans1.resize(boost::extents[_config->Model.nSlices][_config->Model.ny][_config->Model.nx]);
 }
 
 } // end namespace QSTEM

@@ -59,6 +59,8 @@ void PotentialConfig::Read(ptree& t){
 	PlotVrr=t.get<bool>("model.potential.plotVr_r");
 	Use3D=t.get<bool>("model.potential.3D");
 	UseFFT=t.get<bool>("model.potential.FFT");
+	periodicXY=t.get<bool>("model.potential.periodicXY");
+	periodicZ=t.get<bool>("model.potential.periodicZ");
 	BandlimitTransmissionFunction=t.get<bool>("model.potential.bandlimitTransmissionFunction");
 	SavePotential=t.get<bool>("model.potential.savePotential");
 	SaveProjectedPotential=t.get<bool>("model.potential.saveProjectedPotential");

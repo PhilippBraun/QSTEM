@@ -20,7 +20,8 @@
 
 #include "img_output.hpp"
 #include "img_VERSION.hpp"
-
+#include <glog/logging.h>
+#include <boost/log/trivial.hpp>
 namespace QSTEM
 {
 
@@ -67,6 +68,8 @@ void CImgWriter::WriteData(void *pix, bool is_complex, unsigned dataSize, const 
       filename<<"_"<<position[idx];
     }
   filename<<".img";
+
+  BOOST_LOG_TRIVIAL(info) << "Writing file " << filename.str();
 
   std::ofstream file(filename.str().c_str(), std::ios::out|std::ios::binary);
 

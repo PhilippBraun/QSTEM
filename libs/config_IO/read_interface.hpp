@@ -25,8 +25,8 @@
 #include <boost/filesystem.hpp>
 #include <string>
 #include <vector>
-#include <glog/logging.h>
 #include <boost/property_tree/ptree.hpp>
+#include <boost/log/trivial.hpp>
 using namespace std;
 using boost::property_tree::ptree;
 namespace QSTEM
@@ -78,7 +78,8 @@ public:
 };
 class PotentialConfig : IPropertyTreeReader{
 public:
-	bool Use3D, UseFFT, BandlimitTransmissionFunction,SavePotential,SaveProjectedPotential,OneTimeIntegration, PlotVrr;
+	bool Use3D, UseFFT, BandlimitTransmissionFunction,SavePotential,SaveProjectedPotential,OneTimeIntegration, PlotVrr,
+	periodicXY,periodicZ;
 	QSTEM::StructureFactorType StructureFactorType;
 	float_tt AtomRadiusAngstrom;
 	int NSubSlabs;

@@ -135,7 +135,7 @@ def plot_imgs(path):
 if __name__=="__main__":
     import sys
     import glob
-    plot_img(sys.argv[1])
+    plot_imgs(sys.argv[1])
     
      
         

@@ -53,7 +53,7 @@ void CExperimentCBED::Run()
 	if (_lbeams) {
 		_pendelloesung = NULL;
 		if (avgPendelloesung == NULL) {
-			avgPendelloesung = float2D(_nbout,	m_potential->GetNSlices()*m_cellDiv,"pendelloesung");
+			avgPendelloesung = float2D(_nbout,	m_potential->GetNSlices()*_config->Potential.NSubSlabs,"pendelloesung");
 		}
 	}
 	probeCenterX = _scanXStart;
@@ -103,11 +103,11 @@ void CExperimentCBED::Run()
 				free(_pendelloesung[0]);
 			free(avgPendelloesung[0]);
 			_pendelloesung = NULL;
-			avgPendelloesung = float2D(_nbout,m_potential->GetNSlices()*m_cellDiv,"pendelloesung");
+			avgPendelloesung = float2D(_nbout,m_potential->GetNSlices()*_config->Potential.NSubSlabs,"pendelloesung");
 		}
 		m_iPosX = 0;
 		m_iPosY = 0;
-		for (pCount = 0;pCount<m_cellDiv;pCount++) {
+		for (pCount = 0;pCount<_config->Potential.NSubSlabs;pCount++) {
 
 			m_potential->Refresh();
 
@@ -137,7 +137,7 @@ void CExperimentCBED::Run()
 			//sprintf(systStr,"mv %s/diff.img %s",m_folder.c_str(),avgName);
 			//system(systStr);
 			if (_lbeams) {
-				for (iy=0;iy<m_potential->GetNSlices()*m_cellDiv;iy++) {
+				for (iy=0;iy<m_potential->GetNSlices()*_config->Potential.NSubSlabs;iy++) {
 					for (ix=0;ix<_nbout;ix++) {
 						avgPendelloesung[ix][iy] = _pendelloesung[ix][iy];
 					}
@@ -162,7 +162,7 @@ void CExperimentCBED::Run()
 			 * Average over the pendelloesung plot as well
 			 */
 			if (_lbeams) {
-				for (iy=0;iy<m_potential->GetNSlices()*m_cellDiv;iy++) {
+				for (iy=0;iy<m_potential->GetNSlices()*_config->Potential.NSubSlabs;iy++) {
 					for (ix=0;ix<_nbout;ix++) {
 						avgPendelloesung[ix][iy] =((float_tt)m_avgCount*avgPendelloesung[ix][iy]+_pendelloesung[ix][iy])/(float_tt)(m_avgCount+1);
 					}
@@ -182,9 +182,9 @@ void CExperimentCBED::Run()
 			sprintf(systStr,"%s/pendelloesung.dat",m_outputLocation.c_str());
 			if ((fp=fopen(systStr,"w")) !=NULL) {
 				printf("Writing Pendelloesung data\n");
-				for (iy=0;iy<m_potential->GetNSlices()*m_cellDiv;iy++) {
+				for (iy=0;iy<m_potential->GetNSlices()*_config->Potential.NSubSlabs;iy++) {
 					/* write the thicknes in the first column of the file */
-					fprintf(fp,"%g",iy*m_potential->GetSliceThickness());//((float)(m_potential->GetNSlices()*m_cellDiv)));
+					fprintf(fp,"%g",iy*m_potential->GetSliceThickness());//((float)(m_potential->GetNSlices()*_config->Potential.NSubSlabs)));
 					/* write the beam intensities in the following columns */
 					for (ix=0;ix<_nbout;ix++) {
 						fprintf(fp,"\t%g",avgPendelloesung[ix][iy]);
@@ -203,6 +203,9 @@ void CExperimentCBED::Run()
 		DisplayProgress(1);
 	} /* end of for m_avgCount=0.. */
 	//delete(wave);
+
+
+
 }
 
 void CExperimentCBED::CollectIntensity(unsigned absoluteSlice)

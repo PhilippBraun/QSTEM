@@ -28,7 +28,7 @@
 #include "wave_interface.hpp"
 #include "omp.h"
 #include "boost/format.hpp"
-
+#include <boost/log/trivial.hpp>
 void CreateWaveFunctionDataSets(unsigned x, unsigned y, std::vector<unsigned> positions, std::string output_ext);
 
 static std::string waveFilePrefix="wave";
@@ -89,6 +89,10 @@ public:
   void ApplyTransferFunction(boost::shared_array<complex_tt> &wave);
 
   void WriteBeams(unsigned absoluteSlice);
+
+  inline void Save(std::string filename){
+	  _WriteWave(filename);
+  }
 
   inline void WriteProbe()
   {

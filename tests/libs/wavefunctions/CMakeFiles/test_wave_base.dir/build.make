@@ -90,8 +90,8 @@ bin/test_wave_base: /usr/lib/x86_64-linux-gnu/libfftw3f.so
 bin/test_wave_base: /usr/local/lib/libboost_unit_test_framework.so
 bin/test_wave_base: /usr/local/lib/libboost_system.so
 bin/test_wave_base: /usr/local/lib/libboost_filesystem.so
-bin/test_wave_base: /usr/local/lib/libboost_chrono.so
-bin/test_wave_base: /usr/local/lib/libboost_timer.so
+bin/test_wave_base: /usr/local/lib/libboost_log.so
+bin/test_wave_base: /usr/local/lib/libboost_log_setup.so
 bin/test_wave_base: /usr/local/lib/libhdf5.so
 bin/test_wave_base: /usr/lib/x86_64-linux-gnu/libpthread.so
 bin/test_wave_base: /usr/lib/x86_64-linux-gnu/libdl.so
@@ -100,7 +100,6 @@ bin/test_wave_base: /usr/local/lib/libfftw3.so
 bin/test_wave_base: /usr/lib/x86_64-linux-gnu/libfftw3f.so
 bin/test_wave_base: /usr/local/lib/libfftw3_omp.a
 bin/test_wave_base: /usr/local/lib/libcvmlcpp.so
-bin/test_wave_base: /usr/local/lib/libglog.so
 bin/test_wave_base: tests/libs/wavefunctions/CMakeFiles/test_wave_base.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../../../bin/test_wave_base"
 	cd /home/philipp/QSTEM/tests/libs/wavefunctions && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_wave_base.dir/link.txt --verbose=$(VERBOSE)
