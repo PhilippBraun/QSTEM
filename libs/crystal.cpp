@@ -62,8 +62,8 @@ CCrystal::CCrystal(const ConfigPtr c) {
 
 	// Read in the initial atomic positions from the file (do duplication, tilt, and shaking later)
 	m_structureReader->ReadAtoms(m_baseAtoms,m_uniqueAtoms);
-	if (m_printLevel >= 3)
-		printf("Read %d atoms, tds: %d\n", m_baseAtoms.size(), _config->Model.UseTDS);
+	BOOST_LOG_TRIVIAL(info)<<format("Read %d atoms, tds: %d")
+													% m_baseAtoms.size()% _config->Model.UseTDS;
 	m_minX = m_maxX = m_minY = m_maxY = m_minZ = m_maxZ = 0;
 	CalculateCellDimensions();
 	MakeCrystal(true);
@@ -111,29 +111,16 @@ void CCrystal::CalculateCrystalBoundaries() {
 			}
 		}
 	}
-	printf("largest Z at index %d : (%f,%f,%f)",largestZindex,m_atoms[largestZindex].x,m_atoms[largestZindex].y,m_atoms[largestZindex].z);
+	BOOST_LOG_TRIVIAL(trace)<<format("largest Z at index %d : (%f,%f,%f)")
+												%largestZindex%m_atoms[largestZindex].x%m_atoms[largestZindex].y%m_atoms[largestZindex].z;
 }
 
 void CCrystal::Init(unsigned run_number) {
-	/*
-	 printf("Root of mean square TDS displacement: %f A (wobble=%g at %gK) %g %g %g\n",
-	 sqrt(u2/natom),wobble,_config->Structure.temperatureK,ux,uy,uz);
-	 */
-	if (m_printLevel >= 2) {
-		printf("range of thermally displaced atoms (%d atoms): \n",
-				m_atoms.size());
-		printf("X: %g .. %g\n", m_minX, m_maxX);
-		printf("Y: %g .. %g\n", m_minY, m_maxY);
-		printf("Z: %g .. %g\n", m_minZ, m_maxZ);
-	}
+	BOOST_LOG_TRIVIAL(trace)<<format("range of thermally displaced atoms (%d atoms): ") %m_atoms.size();
+	BOOST_LOG_TRIVIAL(trace)<<format("X: %g .. %g")% m_minX% m_maxX;
+	BOOST_LOG_TRIVIAL(trace)<<format("Y: %g .. %g")% m_minY% m_maxY;
+	BOOST_LOG_TRIVIAL(trace)<<format("Z: %g .. %g")% m_minZ% m_maxZ;
 
-	// 20131218 - MCS - center is not actually used in old code.  Ignore it here.
-	//OffsetCenter(center);
-
-	/**********************************************************
-	 * Sort the atoms in z.
-	 *********************************************************/
-	//std::sort(m_atoms.begin(), m_atoms.end(), &CCrystal::AtomCompareZnum);
 	qsort(&m_atoms[0], m_atoms.size(), sizeof(atom),&CCrystal::AtomCompareZnum);
 	WriteStructure(run_number);
 }
@@ -239,20 +226,14 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 	ncy = _config->Structure.nCellY;
 	ncz = _config->Structure.nCellZ;
 
-	if (printFlag) {
-		printf("Lattice parameters: ax=%g by=%g cz=%g (%d atoms)\n", m_ax, m_by,m_cz, ncoord);
-		if ((m_cubex == 0) || (m_cubey == 0) || (m_cubez == 0))
-			printf("Size of Super-lattice: ax=%g by=%g cz=%g (%d x %d x %d)\n",	m_ax * ncx, m_by * ncy, m_cz * ncz, ncx, ncy, ncz);
-		else
-			printf("Size of Cube: ax=%g by=%g cz=%g\n", m_cubex, m_cubey,
-					m_cubez);
-	}
-	/************************************************************
-	 * now that we know how many coordinates there are
-	 * allocate the arrays
-	 ************************************************************/
+	BOOST_LOG_TRIVIAL(trace)<<format("Lattice parameters: ax=%g by=%g cz=%g (%d atoms)")
+							% m_ax % m_by % m_cz % ncoord;
+	if ((m_cubex == 0) || (m_cubey == 0) || (m_cubez == 0))
+		BOOST_LOG_TRIVIAL(trace)<<format("Size of Super-lattice: ax=%g by=%g cz=%g (%d x %d x %d)")
+		% (m_ax * ncx)% (m_by * ncy)%( m_cz * ncz)% ncx% ncy% ncz;
+	else
+		BOOST_LOG_TRIVIAL(trace)<<format("Size of Cube: ax=%g by=%g cz=%g") % m_cubex% m_cubey%	m_cubez;
 
-	//m_reader->Initialize(m_baseAtoms);
 	unsigned natom = m_baseAtoms.size() * ncx * ncy * ncz;
 	m_atoms.resize(natom);
 
@@ -269,7 +250,7 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 	}
 	if ((m_cubex > 0) && (m_cubey > 0) && (m_cubez > 0)) {
 		/* at this point the atoms should have fractional coordinates */
-		// printf("Entering tiltBoxed\n");
+		// printf("Entering tiltBoxed");
 		TiltBoxed(ncoord, handleVacancies);
 		// printf("ncoord: %d, natom: %d\n",ncoord,*natom);
 	} else {  // work in NCell mode
@@ -337,7 +318,7 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 					BOOST_LOG_TRIVIAL(trace) << format("u=(%2.3f,%2.3f,%2.3f) x-(%2.3f,%2.3f) y-(%2.3f,%2.3f) z-(%2.3f,%2.3f)") % u[0] % u[1] % u[2] % boxXmin % boxXmax % boxYmin % boxYmax % boxZmin % boxZmax;
 				}
 
-//		printf("(%f, %f, %f): %f .. %f, %f .. %f, %f .. %f\n",m_ax,m_by,m_cz,boxXmin,boxXmax,boxYmin,boxYmax,boxZmin,boxZmax);
+		//		printf("(%f, %f, %f): %f .. %f, %f .. %f, %f .. %f\n",m_ax,m_by,m_cz,boxXmin,boxXmax,boxYmin,boxYmax,boxZmin,boxZmax);
 		if ((_config->Model.crystalTiltX != 0) || (_config->Model.crystalTiltY != 0) || (_config->Model.crystalTiltZ != 0)) {
 			for (int j =  0; j < (natom); j++) {
 				u[0] = m_atoms[j].x - boxCenterX;
@@ -356,7 +337,7 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 		// rebase to some atom at (0,0,0)
 		BOOST_LOG_TRIVIAL(trace) << "Atoms after tilting and going to cartesian";
 		for (int j = 0; j < natom; j++) {
-//			BOOST_LOG_TRIVIAL(trace) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
+			//			BOOST_LOG_TRIVIAL(trace) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
 			m_atoms[j].x -= boxXmin;
 			m_atoms[j].y -= boxYmin;
 			m_atoms[j].z -= boxZmin;
@@ -612,8 +593,7 @@ void CCrystal::TiltBoxed(int ncoord, bool handleVacancies) {
 							a[2] = aOrig[2];
 						}
 					} else {
-						printf(
-								"Cannot handle phonon-distribution mode for boxed sample yet - sorry!!\n");
+						BOOST_LOG_TRIVIAL(fatal)<<format("Cannot handle phonon-distribution mode for boxed sample yet. Exiting...");
 						exit(0);
 					}
 					// matrixProduct(aOrig,1,3,Mm,3,3,b);
@@ -651,10 +631,7 @@ void CCrystal::TiltBoxed(int ncoord, bool handleVacancies) {
 		} /* ix ... */
 		iatom = jequal;
 	} /* iatom ... */
-	if (m_printLevel > 2)
-		printf(
-				"Removed %d atoms because of multiple occupancy or occupancy < 1\n",
-				jVac);
+	BOOST_LOG_TRIVIAL(trace)<<format("Removed %d atoms because of multiple occupancy or occupancy < 1") % jVac;
 	m_ax = m_cubex;
 	m_by = m_cubey;
 	m_cz = m_cubez;
@@ -722,7 +699,7 @@ void CCrystal::ReplicateUnitCell(int handleVacancies) {
 			for (icy = ncy - 1; icy >= 0; icy--) {
 				for (icz = ncz - 1; icz >= 0; icz--) {
 					jCell = (icz + icy * ncz + icx * ncy * ncz)
-																									* m_baseAtoms.size();
+																																			* m_baseAtoms.size();
 					j = jCell + i;
 					/* We will also add the phonon displacement to the atomic positions now: */
 					m_atoms[j].dw = m_baseAtoms[i].dw;
@@ -772,16 +749,15 @@ void CCrystal::ReplicateUnitCell(int handleVacancies) {
 						m_atoms[jCell + i2].y = m_baseAtoms[i2].y + icy + u[1];
 						m_atoms[jCell + i2].z = m_baseAtoms[i2].z + icz + u[2];
 						BOOST_LOG_TRIVIAL(trace) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n")
-								% (jCell + i2) % m_atoms[jCell + i2].x % m_atoms[jCell + i2].y % m_atoms[jCell + i2].z;
+																		% (jCell + i2) % m_atoms[jCell + i2].x % m_atoms[jCell + i2].y % m_atoms[jCell + i2].z;
 					}
 				}  // for (icz=ncz-1;icz>=0;icz--)
 			} // for (icy=ncy-1;icy>=0;icy--)
 		} // for (icx=ncx-1;icx>=0;icx--)
 		i = jequal;
 	} // for (i=ncoord-1;i>=0;)
-	if ((jVac > 0) && (m_printLevel))
-		printf("Removed %d atoms because of occupancies < 1 or multiple atoms in the same place\n",
-				jVac);
+	if ((jVac > 0) )
+		BOOST_LOG_TRIVIAL(trace)<<format("Removed %d atoms because of occupancies < 1 or multiple atoms in the same place") %jVac;
 }
 
 void CCrystal::DisplaceAtoms() {

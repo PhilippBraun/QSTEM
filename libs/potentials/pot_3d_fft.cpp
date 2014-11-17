@@ -23,7 +23,7 @@
 #include <cstring>
 #include <cvmlcpp/signal/Fourier>
 #include <boost/format.hpp>
-
+using boost::format;
 namespace QSTEM {
 
 C3DFFTPotential::C3DFFTPotential() :C3DPotential() {}
@@ -31,14 +31,14 @@ C3DFFTPotential::C3DFFTPotential() :C3DPotential() {}
 C3DFFTPotential::C3DFFTPotential(const ConfigPtr configReader) :	C3DPotential(configReader), m_dkz(0), m_dkx(0){
 	for (unsigned i = 0; i < _config->Model.nSlices; i++) {
 		if (m_sliceThicknesses[0] != m_sliceThicknesses[i]) {
-			printf("Warning: slice thickness not constant, will give wrong results (iz=%d)!\n",i);
+			BOOST_LOG_TRIVIAL(warning) << format("Warning: slice thickness not constant, will give wrong results (iz=%d)!") % i;
 		}
 	}
 }
 
 void C3DFFTPotential::DisplayParams() {
 	CPotential::DisplayParams();
-	printf("* Potential calculation: 3D (FFT method)");
+	BOOST_LOG_TRIVIAL(info) << "* Potential calculation: 3D (FFT method)";
 }
 
 void C3DFFTPotential::AddAtomNonPeriodic(std::vector<atom>::iterator &atom,	float_tt atomBoxX, unsigned int iAtomX, float_tt atomBoxY, unsigned int iAtomY, float_tt atomZ) {
@@ -388,12 +388,13 @@ void C3DFFTPotential::SliceSetup(){
 
 		}        // end of if (scatPar[0][N_SF-4] > scatPar[0][N_SF-3])
 
-		if (m_printLevel > 1){
-			printf("Will use %d sampling points per slice, total nz=%d (%d)\n",	m_nzPerSlice, _config->Model.nSlices, m_nzPerSlice >> 1);
-			printf("dkx = %g, nx = %d, kmax2 = %g\n", m_dkx, m_nx, kmax2);
-			printf("Cutoff scattering angle: kmax=%g (1/A), dk=(%g,%g %g)\n", kmax2, m_dkx, m_dkx, m_dkz);
-			printf("getAtomPotential3D: set resolution of scattering factor to %g/A!\n",scatPar[0][N_SF - 4 - ix]);
-		}
+		BOOST_LOG_TRIVIAL(info) << format("Will use %d sampling points per slice, total nz=%d (%d)")
+				%	m_nzPerSlice % _config->Model.nSlices % (m_nzPerSlice >> 1);
+		BOOST_LOG_TRIVIAL(info) << format("dkx = %g, nx = %d, kmax2 = %g") % m_dkx % m_nx % kmax2;
+		BOOST_LOG_TRIVIAL(info)<< format("Cutoff scattering angle: kmax=%g (1/A), dk=(%g,%g %g)")
+				% kmax2 % m_dkx % m_dkx % m_dkz;
+		BOOST_LOG_TRIVIAL(info)<< format("getAtomPotential3D: set resolution of scattering factor to %g/A!")
+				% scatPar[0][N_SF - 4 - ix];
 
 		// Now kmax2 is actually kmax**2.
 		kmax2 *= kmax2;
@@ -553,8 +554,8 @@ void C3DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 //				printf("m_atPot[%d][%d] = 47.8658 * %f * %f / (%d) * %f = %f\n",Znum,ind3d,dkx,dkz,nz,zScale,m_atPot[Znum][ind3d]);
 			}
 		// make sure we don't produce negative potential:
-		if (m_printLevel > 1)
-			printf("Created 3D (r-z) %d x %d potential array for Z=%d (B=%g, dkx=%g, dky=%g. dkz=%g,sps=%d)\n",_config->Model.nx / 2, _config->Model.nSlices / 2, Znum, B, m_dkx, m_dkx, m_dkz, izOffset);
+		BOOST_LOG_TRIVIAL(info)<< format("Created 3D (r-z) %d x %d potential array for Z=%d (B=%g, dkx=%g, dky=%g. dkz=%g,sps=%d)")
+				% (_config->Model.nx / 2) % (_config->Model.nSlices / 2) % Znum % B % m_dkx %  m_dkx % m_dkz % izOffset;
 	}
 }
 
@@ -586,7 +587,7 @@ void C3DFFTPotential::GetAtomPotentialOffset3D(unsigned Znum, float_tt B,
 	if (q == 0)
 		return;
 #if !USE_REZ_SFACTS
-	printf(	"Using charged atoms only works with scattering factors by Rez et al!\n",Znum);
+	BOOST_LOG_TRIVIAL(info)<< format("Using charged atoms only works with scattering factors by Rez et al!") % Znum;
 	exit(0);
 #endif
 
@@ -617,8 +618,8 @@ void C3DFFTPotential::GetAtomPotentialOffset3D(unsigned Znum, float_tt B,
 		// Total number of z-positions should be twice that of atomRadius/sliceThickness
 		nz = (2 * (int) ceil(m_atomRadius / _config->Model.sliceThicknessAngstrom)) * nzPerSlice;
 
-		if (m_printLevel > 1)
-			printf("Potential offset: will use %d sampling points per slice, total nz=%d (%d)\n",nzPerSlice, nz, nzPerSlice >> 1);
+		BOOST_LOG_TRIVIAL(info)<< format("Potential offset: will use %d sampling points per slice, total nz=%d (%d)")
+				% nzPerSlice % nz % (nzPerSlice >> 1);
 
 		dkx = 0.5 * OVERSAMPLING / (nx * _config->Model.dx);
 		dky = 0.5 * OVERSAMPLING / (ny * _config->Model.dy);
@@ -653,13 +654,10 @@ void C3DFFTPotential::GetAtomPotentialOffset3D(unsigned Znum, float_tt B,
 						                                                 - 3];
 				}
 			}
-			if (m_printLevel > 1)
-				printf("getAtomPotentialOffset3D: reduced angular range of scattering factor to %g/A!\n",scatParOffs[0][N_SF - 4 - ix]);
+			BOOST_LOG_TRIVIAL(info)<< format("getAtomPotentialOffset3D: reduced angular range of scattering factor to %g/A!")
+					% scatParOffs[0][N_SF - 4 - ix];
 		} // end of if (scatParOffs[0][N_SF-4] > scatParOffs[0][N_SF-3])
 		kmax2 *= kmax2;
-
-		//atPot = (fftwf_complex **)malloc((N_ELEM+1)*sizeof(fftwf_complex *));
-		//for (unsigned ix=0;ix<=N_ELEM;ix++) atPot[ix] = NULL;
 	}
 	// initialize this atom, if it has not been done yet:
 	if (m_offsetPot.count(Znum) == 0) {

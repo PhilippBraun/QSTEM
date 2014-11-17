@@ -45,8 +45,11 @@ QSTEM - image simulation for TEM/STEM/CBED
 
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
+#include <boost/log/expressions.hpp>
+
 using boost::property_tree::ptree;
 using namespace QSTEM;
+namespace logging = boost::log;
 
 void usage() {
 	printf("usage: stem [input file='stem.dat']\n\n");
@@ -67,6 +70,11 @@ int main(int argc, char *argv[])
 	std::string fileName;
 	if (argc < 2)   fileName = "config.info";
 	else    fileName=argv[1];
+
+    logging::core::get()->set_filter
+    (
+        logging::trivial::severity >= logging::trivial::info
+    );
 
 	ptree pt;
 	boost::property_tree::info_parser::read_info(fileName,pt);

@@ -20,6 +20,8 @@
 #include "base.hpp"
 #include <boost/format.hpp>
 #include <boost/log/trivial.hpp>
+using boost::format;
+
 namespace QSTEM
 {
 
@@ -100,31 +102,16 @@ void CExperimentBase::DisplayParams() {
 	strftime( Date, 12, "%Y:%m:%d", mytime );
 	strftime( Time, 9, "%H:%M:%S", mytime );
 
-	printf("\n**************************************************************************************************\n");
-	printf("* Running program STEM3 (version %s) in %d mode\n",VERSION, static_cast<int>(_config->ExperimentType));
-	printf("* Date: %s, Time: %s\n",Date,Time);
-
-	// create the data folder ...
-	printf("* Output file/folder:          ./%s/ ",_config->Output.SaveFolder.c_str());
-
-	printf("* Super cell divisions: %d (in z direction) %s\n",_config->Potential.NSubSlabs, m_equalDivs ? "equal" : "non-equal");
-	printf("* Output every:         %d slices\n",_config->Output.PropagationProgressInterval);
-
-
-	/*
-     if (muls.ismoth) printf("Type 1 (=smooth aperture), ");
-     if (muls.gaussFlag) printf("will apply gaussian smoothing"); 
-     printf("\n");
-	 */
-
-	/***************************************************/
-	/*  printf("Optimizing fftw plans according to probe array (%d x %dpixels = %g x %gA) ...\n",
-      muls.nx,muls.ny,muls.nx*muls.resolutionX,muls.ny*muls.resolutionY);
-	 */
-
-	printf("* TDS:                  %d runs)\n",_config->Model.TDSRuns);
-
-	printf("*\n*****************************************************************************************\n");
+	BOOST_LOG_TRIVIAL(info) << "**************************************************************************************************";
+	BOOST_LOG_TRIVIAL(info) << format("* Running program STEM3 (version %s) in %d mode") % VERSION % static_cast<int>(_config->ExperimentType);
+	BOOST_LOG_TRIVIAL(info) << format("* Date: %s, Time: %s") % Date%Time;
+	BOOST_LOG_TRIVIAL(info) << format("* Output file/folder:          ./%s/ ") % _config->Output.SaveFolder.c_str();
+	BOOST_LOG_TRIVIAL(info) << format("* Super cell divisions: %d (in z direction) %s") % _config->Potential.NSubSlabs%
+			(m_equalDivs ? "equal" : "non-equal");
+	BOOST_LOG_TRIVIAL(info) << format("* Output every:         %d slices") %
+			_config->Output.PropagationProgressInterval;
+	BOOST_LOG_TRIVIAL(info) << format("* TDS:                  %d runs)") % _config->Model.TDSRuns;
+	BOOST_LOG_TRIVIAL(info) << "******************************************************************************************";
 }
 
 void CExperimentBase::DisplayProgress(int flag)
@@ -152,8 +139,7 @@ void CExperimentBase::DisplayProgress(int flag)
 		if (m_sample->GetTDS()) {
 			timeAvg = ((m_avgCount)*timeAvg+curTime)/(m_avgCount+1);
 			intensityAvg = ((m_avgCount)*intensityAvg+m_intIntensity)/(m_avgCount+1);
-			printf("\n********************** run %3d ************************\n",m_avgCount+1);
-			// if (muls.avgCount < 1) {
+			BOOST_LOG_TRIVIAL(info) << format("********************** run %3d ************************") % (m_avgCount+1);
 
 			std::map<unsigned, float_tt> displacements(m_sample->GetU2());
 			std::map<unsigned, float_tt>::iterator disp=displacements.begin(), end=displacements.end();
@@ -161,14 +147,14 @@ void CExperimentBase::DisplayProgress(int flag)
 			printf("* <u>: %3d |",(*disp++).first);
 			while(disp!=end) printf(" %8d |",(*disp++).first);
 
-			printf(" intensity | time(sec) |    chi^2  |\n");
+			BOOST_LOG_TRIVIAL(info) << " intensity | time(sec) |    chi^2  |";
 			// }
 			/*
         printf("* %9g | %9g | %9g \n",muls.u2,muls.intIntensity,curTime);  
         }
         else {
 			 */
-			printf("*");
+			BOOST_LOG_TRIVIAL(info) << "*";
 
 			//ComputeAverageU2();
 
@@ -185,7 +171,7 @@ void CExperimentBase::DisplayProgress(int flag)
 			printf(" %9f | %9f \n",intensityAvg,timeAvg);
 		}
 		else {
-			printf("\n**************** finished after %.1f sec ******************\n",curTime);
+			BOOST_LOG_TRIVIAL(info) << format("**************** finished after %.1f sec ******************") % curTime;
 		}
 	}  // end of printLevel check.
 
@@ -283,7 +269,7 @@ int CExperimentBase::RunMultislice(WavePtr wave)
 		for( islice=0; islice<m_potential->GetNSlices(); islice++) {
 			cztot += m_potential->GetSliceThickness(islice);
 		}
-		printf("Specimen thickness: %g Angstroms\n", cztot);
+		BOOST_LOG_TRIVIAL(info) << format("Specimen thickness: %g Angstroms\n") % cztot;
 	}
 
 	InitializePropagators(wave);
@@ -309,11 +295,12 @@ int CExperimentBase::RunMultislice(WavePtr wave)
 
 		// Call any additional saving/post-processing that should occur on a per-slice basis
 		PostSliceProcess(absolute_slice);
-		printf("Slice %d of %d finished.\n",islice+1,m_potential->GetNSlices());
+		BOOST_LOG_TRIVIAL(info) << format("Slice %d of %d finished.")
+				% (islice+1) % m_potential->GetNSlices();
 	} /* end for(islice...) */
 	// collect intensity at the final slice
 	//collectIntensity(muls, wave, m_totalSliceCount+m_slices*(1+mRepeat));
-	if (printFlag) printf("\n***************************************\n");
+	BOOST_LOG_TRIVIAL(info) << "***************************************";
 	if ((m_saveLevel > 1) || (_config->Potential.NSubSlabs > 1)) {
 		wave->WriteWave();
 	}

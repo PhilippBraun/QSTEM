@@ -87,7 +87,7 @@ void CExperimentCBED::Run()
 			if (m_avgCount == 0) fpPos = fopen("probepos.dat","w");
 			else fpPos = fopen("probepos.dat","a");
 			if (fpPos == NULL) {
-				printf("Was unable to open file probepos.dat for writing\n");
+				BOOST_LOG_TRIVIAL(error) << "Was unable to open file probepos.dat for writing";
 			}
 			else {
 				fprintf(fpPos,"%g %g\n",_scanXStart,_scanYStart);
@@ -181,7 +181,7 @@ void CExperimentCBED::Run()
 			char systStr[255];
 			sprintf(systStr,"%s/pendelloesung.dat",m_outputLocation.c_str());
 			if ((fp=fopen(systStr,"w")) !=NULL) {
-				printf("Writing Pendelloesung data\n");
+				BOOST_LOG_TRIVIAL(info) << "Writing Pendelloesung data";
 				for (iy=0;iy<m_potential->GetNSlices()*_config->Potential.NSubSlabs;iy++) {
 					/* write the thicknes in the first column of the file */
 					fprintf(fp,"%g",iy*m_potential->GetSliceThickness());//((float)(m_potential->GetNSlices()*_config->Potential.NSubSlabs)));
@@ -197,7 +197,7 @@ void CExperimentCBED::Run()
 				fclose(fp);
 			}
 			else {
-				printf("Could not open file for pendelloesung plot\n");
+				BOOST_LOG_TRIVIAL(error) << "Could not open file for pendelloesung plot";
 			}
 		} /* end of if lbeams ... */
 		DisplayProgress(1);
