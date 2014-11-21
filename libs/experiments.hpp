@@ -24,7 +24,7 @@
 #include "experiments/experiment_interface.hpp"
 // Include this because we use ConfigReaderPtr below.
 #include "config_IO/config_reader_factory.hpp"
-
+#include "config_IO\read_qsc.hpp"
 namespace QSTEM
 {
 
