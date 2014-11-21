@@ -24,6 +24,8 @@
 // used for splitting strings where necessary
 #include <boost/tokenizer.hpp>
 #include <boost/algorithm/string.hpp>
+#include <boost/format.hpp>
+using boost::format;
 
 namespace QSTEM
 {
@@ -59,6 +61,8 @@ void PotentialConfig::Read(ptree& t){
 	PlotVrr=t.get<bool>("model.potential.plotVr_r");
 	Use3D=t.get<bool>("model.potential.3D");
 	UseFFT=t.get<bool>("model.potential.FFT");
+	periodicXY=t.get<bool>("model.potential.periodicXY");
+	periodicZ=t.get<bool>("model.potential.periodicZ");
 	BandlimitTransmissionFunction=t.get<bool>("model.potential.bandlimitTransmissionFunction");
 	SavePotential=t.get<bool>("model.potential.savePotential");
 	SaveProjectedPotential=t.get<bool>("model.potential.saveProjectedPotential");
@@ -144,7 +148,7 @@ CQscReader::CQscReader(boost::filesystem::path &filename) : IConfigReader()
 {
 	m_fp = fopen(filename.string().c_str(), "r" );
 	if( m_fp == NULL ) {
-		printf("Cannot open file %s\n",filename.string().c_str());
+		BOOST_LOG_TRIVIAL(error) << format("Cannot open file %s\n") % filename.string().c_str();
 		m_isValid=false;
 	}
 	else

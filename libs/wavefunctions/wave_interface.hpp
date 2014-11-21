@@ -77,7 +77,7 @@ public:
   void WriteBeams(unsigned absoluteSlice);
 
   virtual void WriteProbe()=0;
-
+  virtual void Save(std::string filename)=0;
   // Methods for writing wavefunction
   // Method 1: no position reference
   virtual void WriteWave(std::string comment="Wavefunction")=0;

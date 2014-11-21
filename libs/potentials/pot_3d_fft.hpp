@@ -48,7 +48,7 @@ protected:
   // collection of atom potentials
   std::map<unsigned, ComplexVector> m_atPot;
   std::map<unsigned, ComplexVector> m_offsetPot;
-  unsigned m_nzPerSlice, m_nz;
+  unsigned m_nzPerSlice;
   float_tt m_dkx, m_dkz;
 
   friend class CPotFactory;

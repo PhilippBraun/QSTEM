@@ -2,16 +2,20 @@ cmake_minimum_required(VERSION 2.8)
 
 project(qstem)
 
+
 #set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--export-all-symbols")
 #set(CMAKE_SHARED_LINKER_FLAGS "-Wl")
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC" )
 SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS}" )
 
+
 if (WIN32)
   set(Boost_USE_STATIC_LIBS ON)
 endif(WIN32)
 
+
 find_package(Boost COMPONENTS system filesystem chrono timer log log_setup thread date_time REQUIRED)
+
 find_package(HDF5 "1.8.5" REQUIRED)
 
 
@@ -53,6 +57,7 @@ include_directories(
   ${Boost_INCLUDE_DIRS} 
   ${FFTW3_INCLUDE_DIRS} 
   ${HDF5_INCLUDE_DIR})
+
 
 add_library(${PROJECT_NAME} SHARED ${LIBS_FILES})
 target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${HDF5_LIBRARIES} ${FFTW3_LIBS} ${FFTW3F_LIBS} ${FFTW3_OMP_LIBS} )

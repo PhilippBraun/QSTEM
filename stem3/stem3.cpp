@@ -16,7 +16,7 @@ QSTEM - image simulation for TEM/STEM/CBED
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+#define BOOST_LOG_DYN_LINK 1
 #define VIB_IMAGE_TEST
 
 #ifndef _WIN32
@@ -45,19 +45,39 @@ QSTEM - image simulation for TEM/STEM/CBED
 #include "config_IO/read_qsc.hpp"
 
 
+#include <boost/log/core.hpp>
+#include <boost/log/trivial.hpp>
+#include <boost/log/expressions.hpp>
+
 
 using boost::property_tree::ptree;
 using namespace QSTEM;
+namespace logging = boost::log;
 
 void usage() {
 	printf("usage: stem [input file='stem.dat']\n\n");
 }
+
+//enum severity_level
+//{
+//    trace,
+//    debug,
+//    info,
+//    warning,
+//    error,
+//    fatal
+//};
 
 int main(int argc, char *argv[]) 
 {
 	std::string fileName;
 	if (argc < 2)   fileName = "config.info";
 	else    fileName=argv[1];
+
+    logging::core::get()->set_filter
+    (
+        logging::trivial::severity >= logging::trivial::info
+    );
 
 	ptree pt;
 	boost::property_tree::info_parser::read_info(fileName,pt);
@@ -73,7 +93,6 @@ int main(int argc, char *argv[])
 #if _DEBUG
 	_CrtDumpMemoryLeaks();
 #endif
-
 	return 0;
 }
 

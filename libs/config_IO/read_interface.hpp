@@ -27,6 +27,7 @@
 #include <vector>
 
 #include <boost/property_tree/ptree.hpp>
+#include <boost/log/trivial.hpp>
 using namespace std;
 using boost::property_tree::ptree;
 namespace QSTEM
@@ -45,7 +46,6 @@ public:
 protected:
 	virtual ~IPropertyTreeReader(){};
 };
-
 
 
 class IConfigReader

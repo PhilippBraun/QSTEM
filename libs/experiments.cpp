@@ -32,7 +32,7 @@ ExperimentPtr GetExperiment(QSTEM::ConfigPtr config)
 		return ExperimentPtr(new CExperimentCBED(config));
 		break;
 	case ExperimentType::NBED:
-		printf("Unrecognized experiment type: NBED.  Exiting.");
+		BOOST_LOG_TRIVIAL(fatal)<<boost::format("Unrecognized experiment type: NBED.  Exiting.");
 		exit(-1);
 		return nullptr;
 		break;
@@ -43,7 +43,7 @@ ExperimentPtr GetExperiment(QSTEM::ConfigPtr config)
 		return ExperimentPtr(new CExperimentTEM(config));
 		break;
 	default:
-		printf("Unrecognized experiment type: NONE.  Exiting.");
+		BOOST_LOG_TRIVIAL(fatal)<<boost::format("Unrecognized experiment type: NONE.  Exiting.");
 		exit(-1);
 		break;
 	}
