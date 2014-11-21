@@ -42,8 +42,9 @@ QSTEM - image simulation for TEM/STEM/CBED
 
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/info_parser.hpp>
+#include "config_IO/read_qsc.hpp"
 
-#include <gflags/gflags.h>
+
 
 using boost::property_tree::ptree;
 using namespace QSTEM;
@@ -65,7 +66,7 @@ int main(int argc, char *argv[])
 	fftw_init_threads();
 	fftw_plan_with_nthreads(c->nThreads);
 	omp_set_num_threads(c->nThreads);
-//	google::InitGoogleLogging(argv[0]);
+
 	QSTEM::ExperimentPtr expt = GetExperiment(c);
 	expt->Run();
 

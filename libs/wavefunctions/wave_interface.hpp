@@ -25,7 +25,7 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/shared_array.hpp>
 
-#include "config_IO/config_reader_factory.hpp"
+#include "config_IO/read_qsc.hpp"
 #include "stemtypes_fftw3.hpp"
 
 namespace QSTEM

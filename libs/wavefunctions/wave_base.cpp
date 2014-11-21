@@ -144,7 +144,7 @@ void CBaseWave::InitializeKVectors()
 	float_tt by = m_dy*m_ny;
 
 #pragma omp parallel for
-	for(unsigned ixa=0; ixa<m_nx; ixa++)
+	for(int ixa=0; ixa<m_nx; ixa++)
 	{
 #pragma omp critical
 		{
@@ -153,7 +153,7 @@ void CBaseWave::InitializeKVectors()
 		}
 	}
 #pragma omp parallel for
-	for(unsigned iya=0; iya<m_ny; iya++) {
+	for(int iya=0; iya<m_ny; iya++) {
 #pragma omp critical
 		{
 			m_ky[iya] = (iya>m_ny/2) ?	(float_tt)(iya-m_ny)/by :(float_tt)iya/by;
@@ -221,7 +221,7 @@ float_tt CBaseWave::GetIntegratedIntensity() const
 	unsigned px=m_nx*m_ny;
 	float_tt intIntensity=0;
 #pragma omp parallel for
-	for (unsigned i=0; i<px; i++)
+	for (int i=0; i<px; i++)
 	{
 #pragma omp atomic
 		intIntensity+=m_wave[i].real()*m_wave[i].real() + m_wave[i].imag()*m_wave[i].imag();

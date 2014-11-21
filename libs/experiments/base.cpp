@@ -324,7 +324,7 @@ void CExperimentBase::Propagate(WavePtr wave, float_tt dz)
 
 	px=nx*ny;
 #pragma omp parallel for private(wr, wi, tr, ti)
-	for (unsigned i=0; i<px; i++)
+	for (int i=0; i<px; i++)
 	{
 		try {
 			ixa=i%nx;

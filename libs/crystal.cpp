@@ -28,8 +28,9 @@
 #include "structure_factories.hpp"
 
 #include <string>
-#include <glog/logging.h>
+
 #include <boost/format.hpp>
+#include <boost\log\trivial.hpp>
 
 using boost::format;
 
@@ -78,7 +79,7 @@ CCrystal::~CCrystal() {}
 void CCrystal::CalculateCrystalBoundaries() {
 	int largestZindex = -1;
 #pragma omp parallel for
-	for (unsigned i = 0; i < m_atoms.size(); i++) {
+	for (int i = 0; i < m_atoms.size(); i++) {
 #pragma omp critical
 		{
 			if (m_atoms[i].x < m_minX)
@@ -280,7 +281,7 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 		// but we will probably just do Einstein vibrations anyway:
 		ReplicateUnitCell(handleVacancies);
 		natom = ncoord * ncx * ncy * ncz;
-		LOG(INFO) << "Atoms after replication of unit cells";
+		BOOST_LOG_TRIVIAL(info) << "Atoms after replication of unit cells";
 		for (int j = 0; j < natom; j++) {
 			//			LOG(INFO) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
 			// This converts also to cartesian coordinates
@@ -291,7 +292,7 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 			m_atoms[j].x = x;
 			m_atoms[j].y = y;
 			m_atoms[j].z = z;
-			LOG(INFO) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
+			BOOST_LOG_TRIVIAL(info) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
 		}
 
 		/***************************************************************
@@ -335,7 +336,7 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 						boxZmin = boxZmin > z ? z : boxZmin;
 						boxZmax = boxZmax < z ? z : boxZmax;
 					}
-					LOG(INFO) << format("u=(%2.3f,%2.3f,%2.3f) x-(%2.3f,%2.3f) y-(%2.3f,%2.3f) z-(%2.3f,%2.3f)") % u[0] % u[1] % u[2] % boxXmin % boxXmax % boxYmin % boxYmax % boxZmin % boxZmax;
+					BOOST_LOG_TRIVIAL(info) << format("u=(%2.3f,%2.3f,%2.3f) x-(%2.3f,%2.3f) y-(%2.3f,%2.3f) z-(%2.3f,%2.3f)") % u[0] % u[1] % u[2] % boxXmin % boxXmax % boxYmin % boxYmax % boxZmin % boxZmax;
 				}
 
 //		printf("(%f, %f, %f): %f .. %f, %f .. %f, %f .. %f\n",m_ax,m_by,m_cz,boxXmin,boxXmax,boxYmin,boxYmax,boxZmin,boxZmax);

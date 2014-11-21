@@ -2,28 +2,19 @@ cmake_minimum_required(VERSION 2.8)
 
 project(qstem)
 
-
-SET(ICL_INCLUDE_DIR "/usr/local/include/icl-9.1")
-SET(ICL_LINK_FLAGS    "-lICLUtils")
-set(GLOG_INCLUDE_DIR "/usr/local/include/glog/")
-set(BLITZ_INCLUDE_DIR "/usr/local/include/blitz/")
-set(CVML_LIB "/usr/local/lib/libcvmlcpp.so")
-set(BLITZ_LIB "/usr/local/lib/libblitz.a")
-set(GLOG "/usr/local/lib/libglog.so")
-
 #set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--export-all-symbols")
 #set(CMAKE_SHARED_LINKER_FLAGS "-Wl")
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC" )
-SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${ICL_LINK_FLAGS}" )
+SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS}" )
 
 if (WIN32)
   set(Boost_USE_STATIC_LIBS ON)
 endif(WIN32)
 
-find_package(Boost COMPONENTS system filesystem chrono timer REQUIRED)
+find_package(Boost COMPONENTS system filesystem chrono timer log log_setup thread date_time REQUIRED)
 find_package(HDF5 "1.8.5" REQUIRED)
-find_package (gflags REQUIRED)
-include_directories (${gflags_INCLUDE_DIR})
+
+
 
 file(GLOB LIBS_FILES "*.?pp")
 
@@ -58,14 +49,13 @@ include_directories(
   wavefunctions
   potentials
   experiments
+  cvmlcpp
   ${Boost_INCLUDE_DIRS} 
   ${FFTW3_INCLUDE_DIRS} 
-  ${HDF5_INCLUDE_DIR}
-  ${GLOG_INCLUDE_DIR}
-  ${ICL_INCLUDE_DIR}  )
+  ${HDF5_INCLUDE_DIR})
 
 add_library(${PROJECT_NAME} SHARED ${LIBS_FILES})
-target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${HDF5_LIBRARIES} ${FFTW3_LIBS} ${FFTW3F_LIBS} ${FFTW3_OMP_LIBS} ${CVML_LIB} ${GLOG} gflags)
+target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${HDF5_LIBRARIES} ${FFTW3_LIBS} ${FFTW3F_LIBS} ${FFTW3_OMP_LIBS} )
 
 if(OPENMP)
   SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "${OpenMP_C_FLAGS}" LINK_FLAGS  "${OpenMP_C_FLAGS}")      

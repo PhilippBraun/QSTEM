@@ -366,17 +366,18 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 	// reset the potential to zero:
 //	memset((void *) m_trans1.data(), 0,	m_nslices * _config->Model.nx * _config->Model.ny * sizeof(complex_tt));
 	std::fill( m_trans1.origin(), m_trans1.origin() + m_trans1.size(), complex_tt(0,0) );
-
+	/*
 #pragma omp parallel for
-	for (std::vector<atom>::iterator atom = m_crystal->m_uniqueAtoms.begin();	atom < m_crystal->m_uniqueAtoms.end(); atom++) {
+	for (std::vector<atom>::iterator atom = m_crystal->m_uniqueAtoms.begin();	atom < m_crystal->m_uniqueAtoms.end(); atom=atom+1) {
 		//		printf("uniqueatoms size %d\n",m_crystal->m_uniqueAtoms.size());
 		ComputeAtomPotential(atom);
 	}
-
+	*/
 	time(&time0);
 	int atomsAdded = 0;
+	/*
 #pragma omp parallel for shared(atomsAdded)
-	for (std::vector<atom>::iterator atom = m_crystal->m_atoms.begin();	atom < m_crystal->m_atoms.end(); atom++) {
+	for (std::vector<atom>::iterator atom = m_crystal->m_atoms.begin(); atom < m_crystal->m_atoms.end(); atom = atom + 1) {
 
 		// make sure we skip vacancies:
 		while (atom->Znum == 0)	atom++;
@@ -386,8 +387,8 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 			printf("Adding potential for atom %d (Z=%u, pos=[%.1f, %.1f, %.1f])\n",	iatom + 1, atom->Znum, atom->x, atom->y, atom->z);
 		}
 
-		/* atom coordinates in cartesian coords.  The x- and y-position will be offset by the starting point
-		 * of the actually needed array of projected potential */
+		// atom coordinates in cartesian coords.  The x- and y-position will be offset by the starting point
+		// of the actually needed array of projected potential
 
 		float_tt atomX = atom->x - m_offsetX;
 		float_tt atomY = atom->y - m_offsetY;
@@ -404,8 +405,8 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 
 		if(atomsAdded % 100 == 0) printf("%2.1f percent of atoms added\n",(float)atomsAdded/m_atoms->size()*100);
 
-	} /* for iatom =0 ... */
-
+	} // for iatom =0 ... 
+*/
 	time(&time1);
 	if (m_printLevel)
 		printf(	"%g sec used for real space potential calculation (%g sec per atom)\n",	difftime(time1, time0),	difftime(time1, time0) / m_crystal->m_atoms.size());
