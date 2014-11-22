@@ -21,6 +21,9 @@
 #include "wavefunctions/wave_factory.hpp"
 
 #include <omp.h>
+#include <boost/format.hpp>
+#include <boost/log/trivial.hpp>
+using boost::format;
 
 namespace QSTEM
 {
@@ -179,9 +182,8 @@ void CExperimentSTEM::Run()
                {
                  //#pragma omp atomic
                  //total_time += cputim()-timer;
-                 printf("Pixels complete: (%d/%d), int.=%.3f, avg time per pixel: %.2fsec\n",
-                        m_completePixels, m_scanXN*m_scanYN, m_intIntensity,
-                        (total_time)/m_completePixels);
+            	BOOST_LOG_TRIVIAL(info) << format("Pixels complete: (%d/%d), int.=%.3f, avg time per pixel: %.2fsec")
+            			% m_completePixels%( m_scanXN*m_scanYN)% m_intIntensity%( (total_time)/m_completePixels);
                  //timer=cputim();
                }
           } /* end of looping through STEM image pixels */
@@ -201,10 +203,10 @@ void CExperimentSTEM::DisplayParams()
 {
   float_tt dx;
   m_wave->GetResolution(dx, dx);
-  printf("*\n"
-         "* STEM parameters:\n");
-  printf("* Maximum scattering angle:  %.0f mrad\n",
-         0.5*2.0/3.0*m_wave->GetWavelength()/dx*1000);    
+  BOOST_LOG_TRIVIAL(info) << format("*");
+		  BOOST_LOG_TRIVIAL(info) << format("* STEM parameters:");
+		  BOOST_LOG_TRIVIAL(info) << format("* Maximum scattering angle:  %.0f mrad")
+				  %(  0.5*2.0/3.0*m_wave->GetWavelength()/dx*1000);
   m_detectors->PrintDetectors();
     
   printf("* Scan window:          (%g,%g) to (%g,%g)A, %d x %d = %d pixels\n",

@@ -106,22 +106,22 @@ void CPotential::DisplayParams() {
 	if (m_savePotential)
 		BOOST_LOG_TRIVIAL(info)<<format("* Potential file name:  %s") % m_fileBase.c_str();
 	BOOST_LOG_TRIVIAL(info)<<format("* Model Sampling:  %g x %g x %g A")
-					% _config->Model.dx% _config->Model.dy% m_sliceThickness;
+									% _config->Model.dx% _config->Model.dy% m_sliceThickness;
 
 	BOOST_LOG_TRIVIAL(info)<<format("* Pot. array offset:    (%g,%g,%g)A")
-					% m_offsetX%m_offsetY%	m_zOffset;
+									% m_offsetX%m_offsetY%	m_zOffset;
 	BOOST_LOG_TRIVIAL(info)<<format("* Potential periodic:   (x,y): %s, z: %s")
-					%((m_periodicXY) ? "yes" : "no") % ((m_periodicZ) ? "yes" : "no");
+									%((m_periodicXY) ? "yes" : "no") % ((m_periodicZ) ? "yes" : "no");
 	if (k_fftMeasureFlag == FFTW_MEASURE)
 		BOOST_LOG_TRIVIAL(info)<<format("* Potential array:      %d x %d (optimized)"), _config->Model.nx, _config->Model.ny;
 	else
 		BOOST_LOG_TRIVIAL(info)<<format("* Potential array:      %d x %d (estimated)")% _config->Model.nx% _config->Model.ny;
 	BOOST_LOG_TRIVIAL(info)<<format("*                       %g x %gA")
-			% (_config->Model.nx * _config->Model.dx)%	(_config->Model.ny * _config->Model.dy);
+							% (_config->Model.nx * _config->Model.dx)%	(_config->Model.ny * _config->Model.dy);
 	BOOST_LOG_TRIVIAL(info)<<format("* Scattering factors:   %d")% m_scatFactor;
 
 	BOOST_LOG_TRIVIAL(info)<<format("* Slices per division:  %d (%gA thick slices [%scentered])")
-					% m_nslices% m_sliceThickness% ((m_centerSlices) ? "" : "not ");
+									% m_nslices% m_sliceThickness% ((m_centerSlices) ? "" : "not ");
 }
 
 /****************************************************************************
@@ -150,7 +150,7 @@ void CPotential::AtomBoxLookUp(complex_tt &val, int Znum, float_tt x,
 		m_atomBoxes[Znum]->B = -1.0;
 
 		BOOST_LOG_TRIVIAL(info)<<format("Atombox has real space resolution of %g x %g x %gA (%d x %d x %d pixels)")
-							%ddx% ddy% ddz% boxNx% boxNy% boxNz;
+											%ddx% ddy% ddz% boxNx% boxNy% boxNz;
 	}
 	// printf("Debugging: %d %g %g: %g",Znum,m_atomBoxes[Znum]->B,B,fabs(m_atomBoxes[Znum]->B - B));
 
@@ -187,16 +187,14 @@ void CPotential::AtomBoxLookUp(complex_tt &val, int Znum, float_tt x,
 				|| (tny != boxNy) || (tnz != boxNz) || (fabs(tdx - ddx) > 1e-5)
 				|| (fabs(tdy - ddy) > 1e-5) || (fabs(tdz - ddz) > 1e-5)
 				|| (tzOversample != OVERSAMPLINGZ) || (tv0 != m_v0)) {
-			if (m_printLevel > 2) {
-				BOOST_LOG_TRIVIAL(info)<<format("Potential input file %s has the wrong parameters") %fileName;
-				printf(	"Parameters:\n"
-						"file:    Z=%d, B=%.3f A^2 (%d, %d, %d) (%.7f, %.7f %.7f) nsz=%d V=%g\n"
-						"program: Z=%d, B=%.3f A^2 (%d, %d, %d) (%.7f, %.7f %.7f) nsz=%d V=%g\n"
-						"will create new potential file, please wait ...\n",
-						tZ, tB, tnx, tny, tnz, tdx, tdy, tdz, tzOversample, tv0,
-						Znum, B, boxNx, boxNy, boxNz, ddx, ddy, ddz,
-						OVERSAMPLINGZ, m_v0);
-			}
+			BOOST_LOG_TRIVIAL(info)<<format("Potential input file %s has the wrong parameters") %fileName;
+			BOOST_LOG_TRIVIAL(info) << format(	"Parameters:");
+			BOOST_LOG_TRIVIAL(info) << format("file:    Z=%d, B=%.3f A^2 (%d, %d, %d) (%.7f, %.7f %.7f) nsz=%d V=%g")
+								%tZ% tB% tnx% tny% tnz% tdx% tdy% tdz% tzOversample% tv0;
+			BOOST_LOG_TRIVIAL(info) << format("program: Z=%d, B=%.3f A^2 (%d, %d, %d) (%.7f, %.7f %.7f) nsz=%d V=%g")
+								%Znum% B% boxNx% boxNy% boxNz% ddx% ddy% ddz%OVERSAMPLINGZ% m_v0;
+			BOOST_LOG_TRIVIAL(info) << format("will create new potential file, please wait ...");
+
 			/* Close the old file, Create a new potential file now
 			 */
 			fclose(fp);
@@ -234,7 +232,7 @@ void CPotential::AtomBoxLookUp(complex_tt &val, int Znum, float_tt x,
 			BOOST_LOG_TRIVIAL(info)<<format("Sucessfully read in the projected potential");
 		} else {
 			BOOST_LOG_TRIVIAL(error)<<format("error while reading potential file %s: read %d of %d values")
-					%fileName% numRead%( boxNx * boxNy * boxNz);
+									%fileName% numRead%( boxNx * boxNy * boxNz);
 			exit(0);
 		}
 	}
@@ -356,19 +354,18 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 	// reset the potential to zero:
 	//	memset((void *) m_trans1.data(), 0,	m_nslices * _config->Model.nx * _config->Model.ny * sizeof(complex_tt));
 	std::fill( m_trans1.origin(), m_trans1.origin() + m_trans1.size(), complex_tt(0,0) );
-	/*
-#pragma omp parallel for
 
+#pragma omp parallel for
 	for (std::vector<atom>::iterator atom = m_crystal->m_uniqueAtoms.begin();	atom < m_crystal->m_uniqueAtoms.end(); atom=atom+1) {
 		//		printf("uniqueatoms size %d\n",m_crystal->m_uniqueAtoms.size());
 
 		ComputeAtomPotential(atom);
 	}
-	*/
+
 	time(&time0);
 	int atomsAdded = 0;
 
-	/*
+
 #pragma omp parallel for shared(atomsAdded)
 	for (std::vector<atom>::iterator atom = m_crystal->m_atoms.begin(); atom < m_crystal->m_atoms.end(); atom = atom + 1) {
 
@@ -401,10 +398,10 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 		if(atomsAdded % 100 == 0) BOOST_LOG_TRIVIAL(info)<<format("%2.1f percent of atoms added") % ((float)atomsAdded/m_atoms->size()*100);
 
 	} // for iatom =0 ... 
-*/
+
 	time(&time1);
-	if (m_printLevel)
-		printf(	"%g sec used for real space potential calculation (%g sec per atom)",	difftime(time1, time0),	difftime(time1, time0) / m_crystal->m_atoms.size());
+	BOOST_LOG_TRIVIAL(info) << format(	"%g sec used for real space potential calculation (%g sec per atom)")
+			%	difftime(time1, time0)%(	difftime(time1, time0) / m_crystal->m_atoms.size());
 
 
 	/*************************************************/
@@ -526,7 +523,7 @@ void CPotential::WriteProjectedPotential() {
 			ddx = potVal;
 	}
 	BOOST_LOG_TRIVIAL(info)<<format("Saving total projected potential to file (r: %g..%g)")
-			%ddx%ddy;
+							%ddx%ddy;
 	params["Thickness"] = m_sliceThickness;
 	sprintf(buf, "Projected Potential (sum of %d slices)", m_nslices);
 	std::string comment = buf;

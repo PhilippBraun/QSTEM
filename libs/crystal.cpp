@@ -30,7 +30,7 @@
 #include <string>
 
 #include <boost/format.hpp>
-#include <boost\log\trivial.hpp>
+#include <boost/log/trivial.hpp>
 
 using boost::format;
 

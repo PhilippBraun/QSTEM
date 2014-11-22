@@ -22,7 +22,7 @@
 
 #include "stemtypes_fftw3.hpp"
 #include "config_IO/config_reader_factory.hpp"
-#include "config_IO\read_qsc.hpp"
+#include "config_IO/read_qsc.hpp"
 #include "structure_readers.hpp"
 #include <string>
 #include <map>

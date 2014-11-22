@@ -131,7 +131,8 @@ public:
 };
 class QSTEM_HELPER_DLL_EXPORT PotentialConfig : IPropertyTreeReader{
 public:
-	bool Use3D, UseFFT, BandlimitTransmissionFunction, SavePotential, SaveProjectedPotential, OneTimeIntegration, PlotVrr;
+	bool Use3D, UseFFT, BandlimitTransmissionFunction, SavePotential,
+	SaveProjectedPotential, OneTimeIntegration, PlotVrr,periodicXY,periodicZ;
 	QSTEM::StructureFactorType StructureFactorType;
 	float_tt AtomRadiusAngstrom;
 	int NSubSlabs;

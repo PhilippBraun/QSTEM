@@ -90,10 +90,16 @@ bin/test_pot_3d_fft: /usr/lib/x86_64-linux-gnu/libfftw3f.so
 bin/test_pot_3d_fft: /usr/local/lib/libboost_unit_test_framework.so
 bin/test_pot_3d_fft: /usr/local/lib/libboost_system.so
 bin/test_pot_3d_fft: /usr/local/lib/libboost_filesystem.so
+bin/test_pot_3d_fft: /usr/local/lib/libboost_chrono.so
+bin/test_pot_3d_fft: /usr/local/lib/libboost_timer.so
 bin/test_pot_3d_fft: /usr/local/lib/libboost_log.so
 bin/test_pot_3d_fft: /usr/local/lib/libboost_log_setup.so
+bin/test_pot_3d_fft: /usr/local/lib/libboost_thread.so
+bin/test_pot_3d_fft: /usr/local/lib/libboost_date_time.so
+bin/test_pot_3d_fft: /usr/lib/x86_64-linux-gnu/libpthread.so
 bin/test_pot_3d_fft: /usr/local/lib/libhdf5.so
 bin/test_pot_3d_fft: /usr/lib/x86_64-linux-gnu/libpthread.so
+bin/test_pot_3d_fft: /usr/local/lib/libhdf5.so
 bin/test_pot_3d_fft: /usr/lib/x86_64-linux-gnu/libdl.so
 bin/test_pot_3d_fft: /usr/lib/x86_64-linux-gnu/libm.so
 bin/test_pot_3d_fft: /usr/local/lib/libfftw3.so

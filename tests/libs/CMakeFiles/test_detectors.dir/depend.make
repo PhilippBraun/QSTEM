@@ -1044,6 +1044,7 @@ tests/libs/CMakeFiles/test_detectors.dir/test_detectors.cpp.o: /usr/local/includ
 tests/libs/CMakeFiles/test_detectors.dir/test_detectors.cpp.o: /usr/local/include/fftw3.h
 tests/libs/CMakeFiles/test_detectors.dir/test_detectors.cpp.o: libs/config_IO/config_reader_factory.hpp
 tests/libs/CMakeFiles/test_detectors.dir/test_detectors.cpp.o: libs/config_IO/read_interface.hpp
+tests/libs/CMakeFiles/test_detectors.dir/test_detectors.cpp.o: libs/config_IO/read_qsc.hpp
 tests/libs/CMakeFiles/test_detectors.dir/test_detectors.cpp.o: libs/crystal.hpp
 tests/libs/CMakeFiles/test_detectors.dir/test_detectors.cpp.o: libs/data_IO/data_io_factories.hpp
 tests/libs/CMakeFiles/test_detectors.dir/test_detectors.cpp.o: libs/data_IO/input_interface.hpp

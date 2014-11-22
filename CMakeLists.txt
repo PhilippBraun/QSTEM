@@ -14,6 +14,7 @@ set (VERSION_MINOR 0)
 
 # Define the version number for use in projects
 add_definitions( -DVERSION="${VERSION_MAJOR}.${VERSION_MINOR}" )
+add_definitions( -DBOOST_LOG_DYN_LINK )
 
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

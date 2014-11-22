@@ -1042,6 +1042,7 @@ tests/libs/CMakeFiles/test_crystal.dir/test_crystal.cpp.o
  /usr/local/include/fftw3.h
  libs/config_IO/config_reader_factory.hpp
  libs/config_IO/read_interface.hpp
+ libs/config_IO/read_qsc.hpp
  libs/crystal.hpp
  libs/elTable.hpp
  libs/fftw_allocator.hpp

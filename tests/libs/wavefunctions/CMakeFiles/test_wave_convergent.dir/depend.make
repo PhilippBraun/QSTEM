@@ -1044,6 +1044,7 @@ tests/libs/wavefunctions/CMakeFiles/test_wave_convergent.dir/test_wave_convergen
 tests/libs/wavefunctions/CMakeFiles/test_wave_convergent.dir/test_wave_convergent.cpp.o: /usr/local/include/fftw3.h
 tests/libs/wavefunctions/CMakeFiles/test_wave_convergent.dir/test_wave_convergent.cpp.o: libs/config_IO/config_reader_factory.hpp
 tests/libs/wavefunctions/CMakeFiles/test_wave_convergent.dir/test_wave_convergent.cpp.o: libs/config_IO/read_interface.hpp
+tests/libs/wavefunctions/CMakeFiles/test_wave_convergent.dir/test_wave_convergent.cpp.o: libs/config_IO/read_qsc.hpp
 tests/libs/wavefunctions/CMakeFiles/test_wave_convergent.dir/test_wave_convergent.cpp.o: libs/elTable.hpp
 tests/libs/wavefunctions/CMakeFiles/test_wave_convergent.dir/test_wave_convergent.cpp.o: libs/fftw_allocator.hpp
 tests/libs/wavefunctions/CMakeFiles/test_wave_convergent.dir/test_wave_convergent.cpp.o: libs/stemtypes_fftw3.hpp

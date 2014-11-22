@@ -12570,11 +12570,19 @@ boost/property_tree/ptree.hpp
 boost/log/trivial.hpp
 -
 
+libs/config_IO/read_qsc.hpp
+read_interface.hpp
+libs/config_IO/read_interface.hpp
+boost/filesystem.hpp
+-
+
 libs/crystal.hpp
 stemtypes_fftw3.hpp
 libs/stemtypes_fftw3.hpp
 config_IO/config_reader_factory.hpp
 libs/config_IO/config_reader_factory.hpp
+config_IO/read_qsc.hpp
+libs/config_IO/read_qsc.hpp
 structure_readers.hpp
 libs/structure_readers.hpp
 string
@@ -12727,8 +12735,8 @@ boost/shared_ptr.hpp
 -
 boost/shared_array.hpp
 -
-config_IO/config_reader_factory.hpp
-libs/wavefunctions/config_IO/config_reader_factory.hpp
+config_IO/read_qsc.hpp
+libs/wavefunctions/config_IO/read_qsc.hpp
 stemtypes_fftw3.hpp
 libs/wavefunctions/stemtypes_fftw3.hpp
 

@@ -144,8 +144,8 @@ void CExperimentBase::DisplayProgress(int flag)
 			std::map<unsigned, float_tt> displacements(m_sample->GetU2());
 			std::map<unsigned, float_tt>::iterator disp=displacements.begin(), end=displacements.end();
 
-			printf("* <u>: %3d |",(*disp++).first);
-			while(disp!=end) printf(" %8d |",(*disp++).first);
+			BOOST_LOG_TRIVIAL(info) << format("* <u>: %3d |") % (*disp++).first;
+			while(disp!=end) BOOST_LOG_TRIVIAL(info) << format(" %8d |") % (*disp++).first;
 
 			BOOST_LOG_TRIVIAL(info) << " intensity | time(sec) |    chi^2  |";
 			// }
@@ -159,16 +159,16 @@ void CExperimentBase::DisplayProgress(int flag)
 			//ComputeAverageU2();
 
 			disp = displacements.begin();
-			while (disp!=end) printf(" %8f |",(*disp++).second);
-			printf(" %9f | %9f | %9f |\n",m_intIntensity,curTime,m_avgCount > 0 ? m_chisq[m_avgCount-1] : 0);
-			printf("*");
+			while (disp!=end) BOOST_LOG_TRIVIAL(info) << format(" %8f |") % (*disp++).second;
+			BOOST_LOG_TRIVIAL(info) << format(" %9f | %9f | %9f |") % m_intIntensity%curTime%(m_avgCount > 0 ? m_chisq[m_avgCount-1] : 0);
+			BOOST_LOG_TRIVIAL(info) << format("*");
 
 			/*
         // TODO: averaging should be handled on this class, not on lower level crystal class.
       atom = atomTypes.begin();
       while (atom!=end) printf(" %8f |",(float)(m_crystal->GetU2avg((*atom++))));  
 			 */
-			printf(" %9f | %9f \n",intensityAvg,timeAvg);
+			BOOST_LOG_TRIVIAL(info) << format(" %9f | %9f ") %intensityAvg%timeAvg;
 		}
 		else {
 			BOOST_LOG_TRIVIAL(info) << format("**************** finished after %.1f sec ******************") % curTime;

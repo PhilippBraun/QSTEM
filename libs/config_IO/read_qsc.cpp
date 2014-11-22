@@ -490,7 +490,7 @@ void CQscReader::ReadPendelloesungParameters(std::vector<int> &hbeams, std::vect
 		std::vector<std::string> values;
 
 		while (readparam(m_fp, "beam:",m_buf,0)) nbout++;
-		printf("will record %d beams\n",nbout);
+		BOOST_LOG_TRIVIAL(trace) << format("will record %d beams") % nbout;
 		hbeams.resize(nbout);
 		kbeams.resize(nbout);
 		/* now read in the list of detectors: */

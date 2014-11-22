@@ -1045,6 +1045,7 @@ tests/libs/wavefunctions/CMakeFiles/test_wave_convergent.dir/test_wave_convergen
  /usr/local/include/fftw3.h
  libs/config_IO/config_reader_factory.hpp
  libs/config_IO/read_interface.hpp
+ libs/config_IO/read_qsc.hpp
  libs/elTable.hpp
  libs/fftw_allocator.hpp
  libs/stemtypes_fftw3.hpp

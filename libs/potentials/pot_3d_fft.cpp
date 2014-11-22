@@ -770,7 +770,9 @@ void C3DFFTPotential::GetAtomPotentialOffset3D(unsigned Znum, float_tt B,
 		imageio->WriteImage((void**)ptr, fileName);
 #endif        
 		if (m_printLevel > 1)
-			printf("Created 3D (r-z) %d x %d potential offset array for Z=%d (B=%g, dkx=%g, dky=%g. dkz=%g,sps=%d)\n",nx / 2, nz / 2, Znum, B, dkx, dky, dkz, izOffset);
+			BOOST_LOG_TRIVIAL(info) <<
+			format("Created 3D (r-z) %d x %d potential offset array for Z=%d (B=%g, dkx=%g, dky=%g. dkz=%g,sps=%d)")
+			 %(nx / 2)%( nz / 2)% Znum% B% dkx% dky% dkz% izOffset;
 	} // end of creating atom if not exist...
 	Nz_lut = nz / 2;
 	nzSub = nzPerSlice;

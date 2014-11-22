@@ -1063,6 +1063,7 @@ tests/libs/wavefunctions/CMakeFiles/test_wave_base.dir/test_wave_base.cpp.o: /us
 tests/libs/wavefunctions/CMakeFiles/test_wave_base.dir/test_wave_base.cpp.o: /usr/local/include/fftw3.h
 tests/libs/wavefunctions/CMakeFiles/test_wave_base.dir/test_wave_base.cpp.o: libs/config_IO/config_reader_factory.hpp
 tests/libs/wavefunctions/CMakeFiles/test_wave_base.dir/test_wave_base.cpp.o: libs/config_IO/read_interface.hpp
+tests/libs/wavefunctions/CMakeFiles/test_wave_base.dir/test_wave_base.cpp.o: libs/config_IO/read_qsc.hpp
 tests/libs/wavefunctions/CMakeFiles/test_wave_base.dir/test_wave_base.cpp.o: libs/crystal.hpp
 tests/libs/wavefunctions/CMakeFiles/test_wave_base.dir/test_wave_base.cpp.o: libs/data_IO/data_io_factories.hpp
 tests/libs/wavefunctions/CMakeFiles/test_wave_base.dir/test_wave_base.cpp.o: libs/data_IO/input_interface.hpp

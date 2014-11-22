@@ -1064,6 +1064,7 @@ tests/libs/wavefunctions/CMakeFiles/test_wave_base.dir/test_wave_base.cpp.o
  /usr/local/include/fftw3.h
  libs/config_IO/config_reader_factory.hpp
  libs/config_IO/read_interface.hpp
+ libs/config_IO/read_qsc.hpp
  libs/crystal.hpp
  libs/data_IO/data_io_factories.hpp
  libs/data_IO/input_interface.hpp

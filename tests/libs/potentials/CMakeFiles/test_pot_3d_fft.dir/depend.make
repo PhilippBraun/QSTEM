@@ -1041,6 +1041,7 @@ tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: /usr
 tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: /usr/local/include/fftw3.h
 tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: libs/config_IO/config_reader_factory.hpp
 tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: libs/config_IO/read_interface.hpp
+tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: libs/config_IO/read_qsc.hpp
 tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: libs/crystal.hpp
 tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: libs/elTable.hpp
 tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/test_pot_3d_fft.cpp.o: libs/fftw_allocator.hpp

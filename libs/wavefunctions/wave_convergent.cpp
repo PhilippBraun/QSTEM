@@ -18,7 +18,7 @@
  */
 
 #include "wave_convergent.hpp"
-#include "boost\log\trivial.hpp"
+#include "boost/log/trivial.hpp"
 using boost::format;
 
 namespace QSTEM

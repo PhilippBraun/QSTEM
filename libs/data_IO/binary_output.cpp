@@ -2,6 +2,10 @@
 
 #include "boost/filesystem.hpp"   
 
+#include <boost/log/trivial.hpp>
+#include <boost/format.hpp>
+using boost::format;
+
 namespace QSTEM
 {
 
@@ -18,12 +22,12 @@ void CBinaryOutput::Initialize(std::string dirname, std::string run_id)
 {
   char systStr[255];
   if (boost::filesystem::exists(dirname.c_str())) {
-    printf(" (already exists)\n");
+    BOOST_LOG_TRIVIAL(error) << format("%s already exists") % dirname.c_str();
   }
   else {
     sprintf(systStr,"mkdir %s",dirname.c_str());
     system(systStr);
-    printf(" (created)\n");
+    BOOST_LOG_TRIVIAL(info) << format("%s created") % dirname.c_str();
   }
 }
 

@@ -29,6 +29,10 @@
 #include "img_VERSION.hpp"
 #include "filename_utilities.hpp"
 
+#include <boost/log/trivial.hpp>
+#include <boost/format.hpp>
+using boost::format;
+
 namespace QSTEM
 {
 
@@ -179,7 +183,7 @@ void CImgReader::_ReadImageData(const std::string &filebase, const std::vector<u
 	  inputfile.read(reinterpret_cast <char*> (pix), m_nx*m_ny*m_dataSize);
     }
 	else {
-      printf("Could not open file %s for reading\n",filename.c_str());
+		BOOST_LOG_TRIVIAL(info) << format("Could not open file %s for reading") % filename.c_str();
       /* wait a short while */
       //while (nRead < 1e5) nRead++;
     }

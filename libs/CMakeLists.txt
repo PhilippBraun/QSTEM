@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(qstem)
 
+set(CVML_LIB "/usr/local/lib/libcvmlcpp.so")
 
 #set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--export-all-symbols")
 #set(CMAKE_SHARED_LINKER_FLAGS "-Wl")
@@ -53,14 +54,13 @@ include_directories(
   wavefunctions
   potentials
   experiments
-  cvmlcpp
   ${Boost_INCLUDE_DIRS} 
   ${FFTW3_INCLUDE_DIRS} 
   ${HDF5_INCLUDE_DIR})
 
 
 add_library(${PROJECT_NAME} SHARED ${LIBS_FILES})
-target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${HDF5_LIBRARIES} ${FFTW3_LIBS} ${FFTW3F_LIBS} ${FFTW3_OMP_LIBS} )
+target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${HDF5_LIBRARIES} ${FFTW3_LIBS} ${FFTW3F_LIBS} ${FFTW3_OMP_LIBS} ${CVML_LIB} )
 
 if(OPENMP)
   SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "${OpenMP_C_FLAGS}" LINK_FLAGS  "${OpenMP_C_FLAGS}")      
