@@ -1,7 +1,0 @@
-<map id="QSTEM::CBaseWave::Wavelength" name="QSTEM::CBaseWave::Wavelength">
-<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a212673ef34f962fc714f117c50f01006" title="QSTEM::CBaseWave::Initialize" alt="" coords="283,5,490,32"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_base_wave.html#aff9612fc5a55a7aadcfda9ee9845a4f0" title="QSTEM::CBaseWave::Display\lParams" alt="" coords="285,57,488,98"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a469e2678ee924d7f374be81118489b7a" title="QSTEM::CBaseWave::CBaseWave" alt="" coords="539,5,773,32"/>
-<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_convergent_wave.html#acff347f02f2a0405efa296cf5621fdcd" title="QSTEM::CConvergentWave\l::DisplayParams" alt="" coords="562,57,750,98"/>
-<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c_plane_wave.html#a914eeba909b3c90bb18da53844eec01e" title="QSTEM::CPlaneWave::\lDisplayParams" alt="" coords="575,122,737,163"/>
-</map>

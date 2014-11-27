@@ -25,15 +25,20 @@ namespace QSTEM
 
 C3DPotential::C3DPotential() : CPotential()
 {
+	m_sliceStep = 2*_config->Model.nx*_config->Model.ny;
+	m_boxNz = (int)(_config->Potential.AtomRadiusAngstrom/m_ddz+2.0);
+	m_c += 2*_config->Potential.AtomRadiusAngstrom;
 }
 
 C3DPotential::C3DPotential(const ConfigPtr configReader) : CPotential(configReader)
 {
-	m_boxNz = (int)(m_atomRadius/m_ddz+2.0);
-	m_sliceStep = 2*_config->Model.nx*_config->Model.ny;
+	C3DPotential();
 }
 void C3DPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 
+}
+void C3DPotential::SliceSetup(){
+	CPotential::SliceSetup();
 }
 void C3DPotential::DisplayParams()
 {
@@ -112,7 +117,7 @@ bool C3DPotential::CheckAtomZInBounds(float_tt atomZ)
 	 * if the z-position of this atom is outside the potential slab
 	 * we won't consider it and skip to the next
 	 */
-	return ((atomZ - m_atomRadius > m_c) && (atomZ + m_atomRadius + m_sliceThickness >= 0));
+	return ((atomZ + _config->Potential.AtomRadiusAngstrom < m_c) && (atomZ - _config->Potential.AtomRadiusAngstrom + m_sliceThickness >= 0));
 }
 
 void C3DPotential::AddAtomToSlices(std::vector<atom>::iterator &atom, 
@@ -145,13 +150,13 @@ void C3DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
 			if (iaz+iAtomZ < 0) {
 				if (-iAtomZ <= m_iRadZ) iaz = -iAtomZ;
 				else break;
-				if (abs(iaz)>m_nslices) break;
+				if (abs(iaz)>_config->Model.nSlices) break;
 			}
-			if (iaz+iAtomZ >= m_nslices)        break;
+			if (iaz+iAtomZ >= _config->Model.nSlices)        break;
 		}
 		atomBoxZ = (double)(iAtomZ+iaz+0.5)*m_sliceThicknesses[0]-atomBoxZ;
 		/* shift into the positive range */
-		iz = (iaz+iAtomZ+32*m_nslices) % m_nslices;
+		iz = (iaz+iAtomZ+32*_config->Model.nSlices) % _config->Model.nSlices;
 		/* x,y,z is the true vector from the atom center
 		 * We can look up the proj potential at that spot
 		 * using trilinear extrapolation.

@@ -1,9 +1,0 @@
-<map id="QSTEM::C2DFFTPotential::AddAtomToSlices" name="QSTEM::C2DFFTPotential::AddAtomToSlices">
-<area shape="rect" id="node2" href="$advanced_settings_8m.html#a05ceb1cc3b74082a4c5ce7f459a483d4" title="floor" alt="" coords="525,31,571,58"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c2_d_f_f_t_potential.html#a3fd01ed86cb82807babaa04fd9db43ba" title="QSTEM::C2DFFTPotential\l::AddAtomPeriodic" alt="" coords="232,89,411,130"/>
-<area shape="rect" id="node8" href="$class_q_s_t_e_m_1_1_c2_d_f_f_t_potential.html#aaa278bbe85dfb6d890232ee71460b32f" title="QSTEM::C2DFFTPotential\l::AddAtomNonPeriodic" alt="" coords="232,24,411,65"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c2_d_f_f_t_potential.html#afd5fedb78c24996ff212ea271827610c" title="QSTEM::C2DFFTPotential\l::GetAtomPotential2D" alt="" coords="459,86,637,128"/>
-<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_potential.html#a53acdbafdf8087fdf93fdd634973b382" title="QSTEM::CPotential::\lsplinh" alt="" coords="685,21,832,62"/>
-<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c_potential.html#ad0486594c21c994c47392dbc1f9aa8e7" title="QSTEM::CPotential::\lseval" alt="" coords="685,86,832,128"/>
-<area shape="rect" id="node7" href="$aberrations_8m.html#a9d64efc26f20183fa57b389757578c0c" title="sprintf" alt="" coords="729,152,788,179"/>
-</map>

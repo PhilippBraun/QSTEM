@@ -1,6 +1,0 @@
-<map id="QSTEM::CCrystal::PhononDisplacement" name="QSTEM::CCrystal::PhononDisplacement">
-<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_crystal.html#a0eac3616a65e156a9441dabbbca74e1f" title="QSTEM::CCrystal::TiltBoxed" alt="" coords="315,5,507,32"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_crystal.html#ad637f22339aae80af2ce0641e490fac3" title="QSTEM::CCrystal::Replicate\lUnitCell" alt="" coords="315,57,507,98"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_crystal.html#af3dc7d45f2b35479658afb83c74d9912" title="QSTEM::CCrystal::ReadUnitCell" alt="" coords="555,9,770,36"/>
-<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_crystal.html#a49d427c85d3c5b0c955d0301852f60b9" title="QSTEM::CCrystal::SetNCells" alt="" coords="564,64,761,91"/>
-</map>

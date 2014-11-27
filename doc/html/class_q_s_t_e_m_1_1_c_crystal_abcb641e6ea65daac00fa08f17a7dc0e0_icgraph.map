@@ -1,6 +1,0 @@
-<map id="QSTEM::CCrystal::MatrixProduct" name="QSTEM::CCrystal::MatrixProduct">
-<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_crystal.html#a0eac3616a65e156a9441dabbbca74e1f" title="QSTEM::CCrystal::TiltBoxed" alt="" coords="272,5,464,32"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_crystal.html#a7d347f1c86516e720e0e41823dafd62b" title="QSTEM::CCrystal::Einstein\lDisplacement" alt="" coords="276,57,460,98"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_crystal.html#af3dc7d45f2b35479658afb83c74d9912" title="QSTEM::CCrystal::ReadUnitCell" alt="" coords="513,5,727,32"/>
-<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_crystal.html#a8ded7f3a36b7a4e8ab37a2a70cd22834" title="QSTEM::CCrystal::Displace\lAtoms" alt="" coords="526,57,714,98"/>
-</map>

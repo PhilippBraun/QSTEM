@@ -1,8 +1,0 @@
-<map id="QSTEM::CImgReader::ReadElementByteSize" name="QSTEM::CImgReader::ReadElementByteSize">
-<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_img_reader.html#a58988cb3ab5d0545d2e561592b31ccbf" title="QSTEM::CImgReader::\lReadHeader" alt="" coords="215,63,374,105"/>
-<area shape="rect" id="node7" href="$class_q_s_t_e_m_1_1_c_img_reader.html#ad2c452a94fc4be93440a57a1c71b5fe4" title="QSTEM::CImgReader::\l_ReadElementByteSize" alt="" coords="214,129,375,170"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_img_reader.html#a7cace40ef620bdc3c016d7368c688a02" title="QSTEM::CImgReader::\lBuildFilenameString" alt="" coords="425,5,583,46"/>
-<area shape="rect" id="node5" href="$aberrations_8m.html#a9d64efc26f20183fa57b389757578c0c" title="sprintf" alt="" coords="475,71,533,97"/>
-<area shape="rect" id="node6" href="$convert2cfg_8m.html#a5f84f51058cdb4f43c29d2c875659f42" title="fclose" alt="" coords="475,121,533,148"/>
-<area shape="rect" id="node4" href="$filename__utilities_8hpp.html#a0d9b602b4b0ace48d82b512617431741" title="AddPositionToFilename" alt="" coords="632,12,792,39"/>
-</map>

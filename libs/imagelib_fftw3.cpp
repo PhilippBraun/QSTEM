@@ -44,7 +44,6 @@ void CImageIO::CreateComplexDataSet(const std::string &name, const std::vector<u
 {
   m_imageWriter->CreateComplexDataSet(name, m_nx, m_ny, positions);
 }
-
 void CImageIO::WriteImage(const RealVector &pix, const std::string &fileName, std::map<std::string, double> &params,
                               const std::string &comment, const std::vector<unsigned> &position) {
   std::vector<unsigned> shape=GetShapeVector();

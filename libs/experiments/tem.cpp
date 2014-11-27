@@ -64,7 +64,7 @@ void CExperimentTEM::Run()
     m_pendelloesung = NULL;
     if (avgPendelloesung == NULL) {
       avgPendelloesung = float2D(m_nbout,
-                                 m_potential->GetNSlices()*oldMulsRepeat1*oldMulsRepeat2*m_cellDiv,
+    		  _config->Model.nSlices*oldMulsRepeat1*oldMulsRepeat2*m_cellDiv,
                                  "pendelloesung");
     }	  
   }
@@ -97,7 +97,7 @@ void CExperimentTEM::Run()
         if (m_pendelloesung != NULL)  free(m_pendelloesung[0]);
         free(avgPendelloesung[0]);
         m_pendelloesung = NULL;
-        avgPendelloesung = float2D(m_nbout, m_potential->GetNSlices()*m_cellDiv,
+        avgPendelloesung = float2D(m_nbout, _config->Model.nSlices*m_cellDiv,
                                    "pendelloesung");
       }
       /*********************************************************/
@@ -123,7 +123,7 @@ void CExperimentTEM::Run()
         }
 
         RunMultislice(m_wave); 
-        m_totalSliceCount += m_potential->GetNSlices();
+        m_totalSliceCount += _config->Model.nSlices;
 
         if (m_printLevel > 0) {
           printf("t=%gA, int.=%g (avgCount=%d)\n",
@@ -175,7 +175,7 @@ void CExperimentTEM::Run()
        * Save the Pendelloesung Plot
        **********************************************************/	
       if (m_lbeams) {
-        for (iy=0;iy<m_potential->GetNSlices()*m_cellDiv;iy++) {
+        for (iy=0;iy<_config->Model.nSlices*m_cellDiv;iy++) {
           for (ix=0;ix<m_nbout;ix++) {
             avgPendelloesung[ix][iy] = m_pendelloesung[ix][iy];
           }
@@ -206,7 +206,7 @@ void CExperimentTEM::Run()
        * Average over the pendelloesung plot as well
        */
       if (m_lbeams) {
-      for (iy=0;iy<m_potential->GetNSlices()*m_cellDiv;iy++) {
+      for (iy=0;iy<_config->Model.nSlices*m_cellDiv;iy++) {
       for (ix=0;ix<m_nbout;ix++) {
         avgPendelloesung[ix][iy] = 
           ((float_tt)m_avgCount*avgPendelloesung[ix][iy]+
@@ -252,9 +252,9 @@ void CExperimentTEM::Run()
       sprintf(avgName,"%s/pendelloesung.dat",m_outputLocation.c_str());
       if ((fp=fopen(avgName,"w")) !=NULL) {
         printf("Writing Pendelloesung data\n");
-        for (iy=0;iy<m_potential->GetNSlices()*m_cellDiv;iy++) {
+        for (iy=0;iy<_config->Model.nSlices*m_cellDiv;iy++) {
           /* write the thicknes in the first column of the file */
-          fprintf(fp,"%g",iy*m_potential->GetSliceThickness()/((float)(m_potential->GetNSlices()*m_cellDiv)));
+          fprintf(fp,"%g",iy*_config->Model.sliceThicknessAngstrom/((float)(_config->Model.nSlices*m_cellDiv)));
           /* write the beam intensities in the following columns */
           for (ix=0;ix<m_nbout;ix++) {
             // store the AMPLITUDE:
@@ -288,10 +288,10 @@ void CExperimentTEM::WriteBeams(unsigned int absoluteSlice)
 
   if (m_pendelloesung == NULL) 
     {
-      m_pendelloesung = float2D(m_nbout, m_potential->GetNSlices()*m_cellDiv,
+      m_pendelloesung = float2D(m_nbout, _config->Model.nSlices*m_cellDiv,
                               "pendelloesung");
       printf("Allocated memory for pendelloesung plot (%d x %d)\n",
-             m_nbout,m_potential->GetNSlices());
+             m_nbout,_config->Model.nSlices);
     }
     for(unsigned ib=0; ib<m_nbout; ib++) {
       m_pendelloesung[ib][absoluteSlice] = scale*m_wave->GetPixelIntensity(m_hbeams[ib],m_kbeams[ib]);

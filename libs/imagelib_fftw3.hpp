@@ -45,10 +45,21 @@ public:
   void CreateRealDataSet(const std::string &name, const std::vector<unsigned int> &positions);
   void CreateComplexDataSet(const std::string &name, const std::vector<unsigned int> &positions);
   
-  void WriteImage(const RealVector &pix, const std::string &fileName, 
-                      std::map<std::string, double> &params,
-                      const std::string &comment, 
-                      const std::vector<unsigned> &position);
+  void WriteImage(const RealVector &pix,
+		  const std::string &fileName,
+		  std::map<std::string, double> &params,
+		  const std::string &comment,
+		  const std::vector<unsigned> &position);
+
+  template <typename T>
+  inline void WriteImage(const T &data, const std::vector<unsigned> &shape, const std::string &label,
+  								const std::string &comment, const std::map<std::string, double> &parameters){
+		std::vector<unsigned> position;
+		m_imageWriter->WriteImage(data, shape, label,  comment, parameters);
+	//	(const T &data, const std::vector<unsigned> &shape, const std::string &label,
+	//									const std::string &comment, const std::map<std::string, double> &parameters);
+  }
+
   // If you want a comment and parameters, but no position
   inline void WriteImage(const RealVector &pix, const std::string &fileName, std::map<std::string, double> &parameters, 
                              const std::string &comment)
@@ -64,15 +75,18 @@ public:
     WriteImage(pix, fileName, params, comment, position);
   }
   // If you want to add parameters, but no comment
-  inline void WriteImage(const RealVector &pix, const std::string &fileName, std::map<std::string, double> &params,
-                               const std::vector<unsigned> position=std::vector<unsigned>())
+  inline void WriteImage(const RealVector &pix,
+		  const std::string &fileName,
+		  std::map<std::string, double> &params,
+		  const std::vector<unsigned> position=std::vector<unsigned>())
   {
     std::string comment=std::string();
     WriteImage(pix, fileName, params, comment, position);
   }  
   // If you don't care about parameters or comment, use this simplified overload:
-  inline void WriteImage(const RealVector &pix, const std::string &fileName, 
-                        const std::vector<unsigned> position=std::vector<unsigned>())
+  inline void WriteImage(const RealVector &pix,
+		  const std::string &fileName,
+		  const std::vector<unsigned> position=std::vector<unsigned>())
   {
     std::map<std::string, double> params;
     std::string comment=std::string();
@@ -85,6 +99,7 @@ public:
                          std::map<std::string, double> &params,
                          const std::string &comment,
                          const std::vector<unsigned> &position);
+
   // If you want a comment and parameters, but no position
   inline void WriteImage(const ComplexVector &pix, const std::string &fileName, std::map<std::string, double> &parameters, 
                              const std::string &comment)
@@ -100,6 +115,18 @@ public:
     std::map<std::string, double> params;
     WriteImage(pix, fileName, params, comment, position);
   }
+
+  inline void WriteImage(const boost::multi_array_ref<std::complex<float_tt>, 3ul>::array_view<2ul>::type& pix,
+		  const std::string &fileName,
+		  std::map<std::string, double> &params,
+		  const std::string &comment)
+  {
+    ComplexArray2D a(pix);
+    WriteImage(a.data(),GetShapeVector(), fileName,  comment,params);
+//    (const T &data, const std::vector<unsigned> &shape, const std::string &label,
+//    								const std::string &comment, const std::map<std::string, double> &parameters)
+  }
+
   // If you want to add parameters, but no comment
   inline void WriteImage(const ComplexVector &pix, const std::string &fileName, std::map<std::string, double> &params,
                                const std::vector<unsigned> position=std::vector<unsigned>())

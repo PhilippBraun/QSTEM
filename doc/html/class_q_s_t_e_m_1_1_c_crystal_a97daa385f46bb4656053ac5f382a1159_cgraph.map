@@ -1,9 +1,0 @@
-<map id="QSTEM::CCrystal::CCrystal" name="QSTEM::CCrystal::CCrystal">
-<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_crystal.html#ac9068f4a3798963697e9f804477f0486" title="QSTEM::CCrystal::CCrystal" alt="" coords="276,5,465,32"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_structure_reader_factory.html#a2f391855e6cf92c64da7ee7815bc556c" title="QSTEM::CStructureReaderFactory::Get" alt="" coords="243,56,498,83"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_structure_reader_factory.html#a3cf9c0d4971976bdd8e1702c0a8b0917" title="QSTEM::CStructureReaderFactory\l::GetReader" alt="" coords="257,107,484,149"/>
-<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_structure_writer_factory.html#ab56450896d627ce0d1bded59e6430eba" title="QSTEM::CStructureWriterFactory::Get" alt="" coords="247,173,495,200"/>
-<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c_structure_writer_factory.html#a02068c5cbaa9e7a48f614d42d5da4803" title="QSTEM::CStructureWriterFactory\l::GetWriter" alt="" coords="261,225,480,266"/>
-<area shape="rect" id="node7" href="$namespace_q_s_t_e_m.html#ad4ae9d6a3f69596b4581f09f0756faaa" title="QSTEM::float2D" alt="" coords="311,291,430,317"/>
-<area shape="rect" id="node8" href="$class_q_s_t_e_m_1_1_c_crystal.html#a60f0a88329c4f7914baa0d14dbcb138a" title="QSTEM::CCrystal::Calculate\lCellDimensions" alt="" coords="275,342,467,383"/>
-</map>

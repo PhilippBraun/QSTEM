@@ -42,14 +42,13 @@ protected:
   void GetAtomPotentialOffset3D(unsigned Znum, float_tt B,unsigned &nzSub,unsigned &Nr,unsigned &Nz_lut,float_tt q,
                                 ComplexVector &output);
   virtual void ComputeAtomPotential(std::vector<atom>::iterator &atom);
-
-protected:
   virtual void SliceSetup();
+
   // collection of atom potentials
-  std::map<unsigned, ComplexVector> m_atPot;
+  std::map<unsigned, ComplexArray2D> m_atPot;
   std::map<unsigned, ComplexVector> m_offsetPot;
-  unsigned m_nzPerSlice;
-  float_tt m_dkx, m_dkz;
+  unsigned _nzPerSlice, _nz;
+
 
   friend class CPotFactory;
   // Create an instance of this class, wrapped in a shared ptr

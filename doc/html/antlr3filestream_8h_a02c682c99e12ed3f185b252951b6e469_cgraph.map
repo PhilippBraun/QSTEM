@@ -1,7 +1,0 @@
-<map id="antlr3read8Bit" name="antlr3read8Bit">
-<area shape="rect" id="node2" href="$antlr3filestream_8c.html#a2bd0116a11ccc7a0d5badc301d34cb70" title="Open an operating system file and return the descriptor We just use the common open() and related fun..." alt="" coords="159,5,249,32"/>
-<area shape="rect" id="node3" href="$antlr3filestream_8c.html#a2b59652a7427bad64918a79a01ca8245" title="antlr3Fsize" alt="" coords="161,56,247,83"/>
-<area shape="rect" id="node4" href="$antlr3filestream_8c.html#a2d7d39a2ac3aa6cd29e1864ef650296d" title="antlr3Fread" alt="" coords="161,107,247,133"/>
-<area shape="rect" id="node5" href="$antlr3filestream_8c.html#a1e94b56e2eb94d1868f171fac82506e3" title="Close an operating system file and free any handles etc. " alt="" coords="157,157,251,184"/>
-<area shape="rect" id="node6" href="$convert2cfg_8m.html#a5f84f51058cdb4f43c29d2c875659f42" title="fclose" alt="" coords="299,157,357,184"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="resetParamFile" name="resetParamFile">
-<area shape="rect" id="node2" href="$gbmaker_8cpp.html#a421f15f042315ea955de5e40b2991196" title="readParams" alt="" coords="222,5,314,32"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#a31d8169148e61ae506648149527036ae" title="QSTEM::CQscReader::\lReadPendelloesungParameters" alt="" coords="165,57,371,98"/>
-<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#a2f15b6f5f0b40a3e68d4bf10e0ebbc22" title="QSTEM::CQscReader::\lReadNumberOfDetectors" alt="" coords="183,122,353,163"/>
-<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c_qsc_reader.html#ab66425a8d6d08c5c1fca652112a9d930" title="QSTEM::CQscReader::\lReadDetectorParameters" alt="" coords="183,187,353,229"/>
-<area shape="rect" id="node7" href="$class_q_s_t_e_m_1_1_c_cfg_reader.html#a4acbc1290112e7784d5e5867771b8348" title="QSTEM::CCfgReader::\lReadCellParams" alt="" coords="189,253,347,294"/>
-<area shape="rect" id="node8" href="$class_q_s_t_e_m_1_1_c_cfg_reader.html#abe37375764899c2f0bda75740198e9fd" title="QSTEM::CCfgReader::\lReadAtoms" alt="" coords="189,318,347,359"/>
-<area shape="rect" id="node3" href="$gbmaker_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="419,5,469,32"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_q_s_t_e_m_1_1_i_wave.html" title="QSTEM::IWave" alt="" coords="5,31,120,57"/>
-<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_base_wave.html" title="QSTEM::CBaseWave" alt="" coords="169,31,319,57"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_convergent_wave.html" title="QSTEM::CConvergentWave" alt="" coords="369,5,557,32"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_plane_wave.html" title="QSTEM::CPlaneWave" alt="" coords="385,56,540,83"/>
-</map>

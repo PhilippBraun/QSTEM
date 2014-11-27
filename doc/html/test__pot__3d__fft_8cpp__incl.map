@@ -1,9 +1,0 @@
-<map id="tests/libs/potentials/test_pot_3d_fft.cpp" name="tests/libs/potentials/test_pot_3d_fft.cpp">
-<area shape="rect" id="node5" href="$pot__factory_8hpp.html" title="potentials/pot_factory.hpp" alt="" coords="461,96,632,123"/>
-<area shape="rect" id="node7" href="$pot__interface_8hpp.html" title="pot_interface.hpp" alt="" coords="403,179,525,205"/>
-<area shape="rect" id="node21" href="$config__reader__factory_8hpp.html" title="config_IO/config_reader\l_factory.hpp" alt="" coords="549,171,708,213"/>
-<area shape="rect" id="node8" href="$stemtypes__fftw3_8hpp.html" title="stemtypes_fftw3.hpp" alt="" coords="407,336,551,363"/>
-<area shape="rect" id="node20" href="$read__interface_8hpp.html" title="config_IO/read_interface.hpp" alt="" coords="504,261,693,288"/>
-<area shape="rect" id="node10" href="$fftw__allocator_8hpp.html" title="fftw_allocator.hpp" alt="" coords="244,411,369,437"/>
-<area shape="rect" id="node16" href="$el_table_8hpp.html" title="elTable.hpp" alt="" coords="746,411,835,437"/>
-</map>

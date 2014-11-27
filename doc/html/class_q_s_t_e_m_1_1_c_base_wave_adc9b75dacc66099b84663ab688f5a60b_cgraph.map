@@ -1,7 +1,0 @@
-<map id="QSTEM::CBaseWave::ApplyTransferFunction" name="QSTEM::CBaseWave::ApplyTransferFunction">
-<area shape="rect" id="node2" href="$namespace_q_s_t_e_m.html#ae60a12e720b60af00feeaa668441bfaf" title="QSTEM::complex1D" alt="" coords="330,5,473,32"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a7d80e4324e707fc61c35764adafd0387" title="QSTEM::CBaseWave::GetTotal\lPixels" alt="" coords="297,57,506,98"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_base_wave.html#ab90ff6292a9cc06d869c6e0f4c0ecb0c" title="QSTEM::CBaseWave::ToFourier\lSpace" alt="" coords="294,122,509,163"/>
-<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a910defcca0f4b4dd702153d23289a4fc" title="QSTEM::CBaseWave::ToReal\lSpace" alt="" coords="301,187,502,229"/>
-<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a0b33381f13f25f8dc0c73d904ee878be" title="QSTEM::CBaseWave::IsReal\lSpace" alt="" coords="557,155,755,197"/>
-</map>

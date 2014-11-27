@@ -24,6 +24,7 @@ public:
 			unsigned int iatomZ);
 protected:
 	virtual void ComputeAtomPotential(std::vector<atom>::iterator &atom);
+	virtual void SliceSetup();
 	friend class CPotFactory;
 	// Create an instance of this class, wrapped in a shared ptr
 	//     This should not be inherited - any subclass needs its own implementation.

@@ -1,6 +1,0 @@
-<map id="QSTEM::CImageIO::CImageIO" name="QSTEM::CImageIO::CImageIO">
-<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_data_reader_factory.html#a82a7cfabc38ce162874e908c26ab90f9" title="QSTEM::CDataReaderFactory::Get" alt="" coords="259,5,490,32"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_data_reader_factory.html#a76c7dd3521506b9c6f2ed868d1eb4f90" title="QSTEM::CDataReaderFactory\l::GetReader" alt="" coords="274,57,475,98"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_data_writer_factory.html#ad59ce70633c095bc9c73de8db18f98f2" title="QSTEM::CDataWriterFactory::Get" alt="" coords="263,123,486,149"/>
-<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_data_writer_factory.html#a8645941ba6a917d20b4b9c3ecd29c1c9" title="QSTEM::CDataWriterFactory\l::GetWriter" alt="" coords="277,174,472,215"/>
-</map>

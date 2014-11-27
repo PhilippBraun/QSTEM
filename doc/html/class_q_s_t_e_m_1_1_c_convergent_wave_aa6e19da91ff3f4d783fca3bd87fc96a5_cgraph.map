@@ -1,5 +1,0 @@
-<map id="QSTEM::CConvergentWave::FormProbe" name="QSTEM::CConvergentWave::FormProbe">
-<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_base_wave.html#ab90ff6292a9cc06d869c6e0f4c0ecb0c" title="QSTEM::CBaseWave::ToFourier\lSpace" alt="" coords="243,5,458,46"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a910defcca0f4b4dd702153d23289a4fc" title="QSTEM::CBaseWave::ToReal\lSpace" alt="" coords="250,70,451,111"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_base_wave.html#a0b33381f13f25f8dc0c73d904ee878be" title="QSTEM::CBaseWave::IsReal\lSpace" alt="" coords="507,38,704,79"/>
-</map>

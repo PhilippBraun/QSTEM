@@ -1,8 +1,0 @@
-<map id="libs/experiments.hpp" name="libs/experiments.hpp">
-<area shape="rect" id="node2" href="$experiment__interface_8hpp.html" title="experiments/experiment\l_interface.hpp" alt="" coords="330,81,491,122"/>
-<area shape="rect" id="node16" href="$config__reader__factory_8hpp.html" title="config_IO/config_reader\l_factory.hpp" alt="" coords="524,81,683,122"/>
-<area shape="rect" id="node3" href="$stemtypes__fftw3_8hpp.html" title="stemtypes_fftw3.hpp" alt="" coords="319,245,463,272"/>
-<area shape="rect" id="node5" href="$fftw__allocator_8hpp.html" title="fftw_allocator.hpp" alt="" coords="232,320,357,347"/>
-<area shape="rect" id="node12" href="$el_table_8hpp.html" title="elTable.hpp" alt="" coords="538,320,627,347"/>
-<area shape="rect" id="node18" href="$read__interface_8hpp.html" title="read_interface.hpp" alt="" coords="539,171,668,197"/>
-</map>

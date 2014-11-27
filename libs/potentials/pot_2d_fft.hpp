@@ -45,10 +45,12 @@ protected:
                          float_tt atomBoxY, unsigned int iy, 
                          float_tt atomZ);
   complex_tt *GetAtomPotential2D(int Znum, double B);
-private:
+  virtual void SliceSetup();
+  virtual void ComputeAtomPotential(std::vector<atom>::iterator &atom) ;
+
   unsigned m_nyAtBox, m_nxyAtBox, m_nyAtBox2, m_nxyAtBox2; //Size of atom box in pixels
   std::map<unsigned, ComplexVector> m_atPot;
-private:
+
   friend class CPotFactory;
   // Create an instance of this class, wrapped in a shared ptr
   //     This should not be inherited - any subclass needs its own implementation.

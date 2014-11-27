@@ -1,0 +1,6 @@
+File comment:
+Projected Potential (slice 1)File dimensions:
+0, 1, 
+Data element size:
+8
+Thickness: 1.01237

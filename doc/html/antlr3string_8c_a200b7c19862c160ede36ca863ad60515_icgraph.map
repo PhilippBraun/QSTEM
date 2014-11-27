@@ -1,7 +1,0 @@
-<map id="antlr3StringFactoryNew" name="antlr3StringFactoryNew">
-<area shape="rect" id="node2" href="$antlr3inputstream_8c.html#a5242ac4de37caa0abe292ad0bd542d68" title="Common function to setup function interface for an 8 bit input stream. " alt="" coords="229,5,382,32"/>
-<area shape="rect" id="node3" href="$antlr3inputstream_8c.html#acafc8ebb856269e54d4ac5819d6456d7" title="Common function to setup function interface for a UTF16 or UCS2 input stream. " alt="" coords="220,56,391,83"/>
-<area shape="rect" id="node4" href="$antlr3inputstream_8c.html#abc45456235e1307ca5246886580bc2fd" title="Common function to setup function interface for a UTF3 input stream. " alt="" coords="220,107,391,133"/>
-<area shape="rect" id="node5" href="$antlr3inputstream_8c.html#a2dad091fd85b499275fa56b02fea050f" title="Common function to setup function interface for a UTF8 input stream. " alt="" coords="224,157,387,184"/>
-<area shape="rect" id="node6" href="$antlr3inputstream_8c.html#aaf870afb95b0a59fe6bfd4395df9efc7" title="Common function to setup function interface for a EBCDIC input stream. " alt="" coords="214,208,397,235"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="libs/structure_IO/ucif/antlr3/include/antlr3intstream.h" name="libs/structure_IO/ucif/antlr3/include/antlr3intstream.h">
-<area shape="rect" id="node2" href="$antlr3defs_8h.html" title="antlr3defs.h" alt="" coords="296,171,387,197"/>
-<area shape="rect" id="node8" href="$antlr3commontoken_8h.html" title="Defines the interface for a common token. " alt="" coords="324,96,471,123"/>
-<area shape="rect" id="node3" href="$antlr3errors_8h.html" title="antlr3errors.h" alt="" coords="5,245,104,272"/>
-<area shape="rect" id="node4" href="$antlr3config_8h.html" title="antlr3config.h" alt="" coords="129,245,228,272"/>
-<area shape="rect" id="node6" href="$antlr3interfaces_8h.html" title="antlr3interfaces.h" alt="" coords="339,245,461,272"/>
-<area shape="rect" id="node7" href="$antlr3convertutf_8h.html" title="antlr3convertutf.h" alt="" coords="485,245,608,272"/>
-</map>

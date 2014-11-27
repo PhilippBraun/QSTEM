@@ -1,7 +1,0 @@
-<map id="QSTEM::CCrystal::Inverse_3x3" name="QSTEM::CCrystal::Inverse_3x3">
-<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_crystal.html#a0eac3616a65e156a9441dabbbca74e1f" title="QSTEM::CCrystal::TiltBoxed" alt="" coords="571,5,763,32"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_crystal.html#a62c1eac3fe7735169ab5e4ed4e3d1aab" title="QSTEM::CCrystal::PhononDisplacement" alt="" coords="261,56,523,83"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_crystal.html#af3dc7d45f2b35479658afb83c74d9912" title="QSTEM::CCrystal::ReadUnitCell" alt="" coords="811,9,1026,36"/>
-<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_crystal.html#ad637f22339aae80af2ce0641e490fac3" title="QSTEM::CCrystal::Replicate\lUnitCell" alt="" coords="571,57,763,98"/>
-<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c_crystal.html#a49d427c85d3c5b0c955d0301852f60b9" title="QSTEM::CCrystal::SetNCells" alt="" coords="820,64,1017,91"/>
-</map>

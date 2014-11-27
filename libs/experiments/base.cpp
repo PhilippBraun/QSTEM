@@ -33,6 +33,7 @@ CExperimentBase::CExperimentBase(ConfigPtr c) : IExperiment()
 	float_tt max_x, min_x, max_y, min_y, max_z, min_z, zTotal;
 	m_sample->GetCrystalBoundaries(min_x, max_x, min_y, max_y, min_z, max_z);
 	zTotal = max_z - min_z;
+
 	switch (c->Model.SliceThicknessCalculation) {
 	case SliceThicknessCalculation::Auto:
 		m_dz = c->Model.sliceThicknessAngstrom = zTotal/((int)zTotal);
@@ -49,8 +50,18 @@ CExperimentBase::CExperimentBase(ConfigPtr c) : IExperiment()
 		break;
 	}
 
-	_config->Model.nx = ceil((max_x - min_x) / _config->Model.dx);
-	_config->Model.ny = ceil((max_y - min_y) / _config->Model.dy);
+	int atomRadiusSlices = ceil(_config->Potential.AtomRadiusAngstrom / c->Model.sliceThicknessAngstrom);
+	if(_config->Potential.Use3D) c->Model.nSlices += 2*atomRadiusSlices;
+
+
+	atomRadiusSlices = ceil(_config->Potential.AtomRadiusAngstrom / _config->Model.dx);
+	_config->Model.nx = ceil((max_x - min_x) / _config->Model.dx) ;
+	if(_config->Potential.periodicXY == false)  _config->Model.nx += atomRadiusSlices;
+
+
+	atomRadiusSlices = ceil(_config->Potential.AtomRadiusAngstrom / _config->Model.dy);
+	_config->Model.ny = ceil((max_y - min_y) / _config->Model.dy) ;
+	if(_config->Potential.periodicXY == false)  _config->Model.ny += atomRadiusSlices;
 
 	m_wave = CWaveFactory::Get()->GetWave("Convergent", c);
 
@@ -66,11 +77,6 @@ CExperimentBase::CExperimentBase(ConfigPtr c) : IExperiment()
 	m_wave->DisplayParams();
 
 	m_avgArray = RealVector();
-
-	// need to load structure before
-	//  configReader->ReadSliceParameters(centerSlices,m_dz,m_nslices,outputInterval,zOffset);
-	//
-
 }
 
 void CExperimentBase::DisplayParams() {
@@ -200,7 +206,7 @@ void CExperimentBase::InterimWave(int slice) {
 	char fileName[256];
 	std::map<std::string, double> params;
 
-	if ((slice < m_potential->GetNSlices()*_config->Potential.NSubSlabs-1) && ((slice+1) % _config->Output.PropagationProgressInterval != 0)) return;
+	if ((slice < _config->Model.nSlices*_config->Potential.NSubSlabs-1) && ((slice+1) % _config->Output.PropagationProgressInterval != 0)) return;
 
 	t = (int)((slice)/_config->Output.PropagationProgressInterval);
 
@@ -266,15 +272,15 @@ int CExperimentBase::RunMultislice(WavePtr wave)
 	cztot=0.0;
 
 	if (printFlag){
-		for( islice=0; islice<m_potential->GetNSlices(); islice++) {
-			cztot += m_potential->GetSliceThickness(islice);
+		for( islice=0; islice<_config->Model.nSlices; islice++) {
+			cztot += _config->Model.sliceThicknessAngstrom;
 		}
 		BOOST_LOG_TRIVIAL(info) << format("Specimen thickness: %g Angstroms\n") % cztot;
 	}
 
 	InitializePropagators(wave);
 
-	for( islice=0; islice < m_potential->GetNSlices(); islice++ )
+	for( islice=0; islice < _config->Model.nSlices; islice++ )
 	{
 		absolute_slice = (m_totalSliceCount+islice);
 		Transmit(wave, islice);
@@ -296,7 +302,7 @@ int CExperimentBase::RunMultislice(WavePtr wave)
 		// Call any additional saving/post-processing that should occur on a per-slice basis
 		PostSliceProcess(absolute_slice);
 		BOOST_LOG_TRIVIAL(info) << format("Slice %d of %d finished.")
-				% (islice+1) % m_potential->GetNSlices();
+				% (islice+1) % _config->Model.nSlices;
 	} /* end for(islice...) */
 	// collect intensity at the final slice
 	//collectIntensity(muls, wave, m_totalSliceCount+m_slices*(1+mRepeat));

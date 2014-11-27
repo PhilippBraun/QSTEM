@@ -44,7 +44,6 @@ public:
   // Same as Initialize, but before running Initialize(), it loads appropriate parameters from configReader
   virtual void Initialize(const ConfigPtr configReader)=0;
 
-
   virtual void DisplayParams(){};
   //virtual void initSTEMSlices();
   // encapsulates make slices and initSTEMslices - used to refresh the potential with a new structure (after a random
@@ -57,9 +56,6 @@ public:
   // ReadPotential is used when you want to load the potential slices from some data files
   virtual void ReadPotential(std::string &fileName, unsigned subSlabIdx){};
   
-  virtual unsigned GetNSlices() const =0;
-  virtual float_tt GetSliceThickness() const =0;
-  virtual float_tt GetSliceThickness(unsigned idx) const =0;
   virtual void GetSizePixels(unsigned &nx, unsigned &ny) const =0;
 
   virtual void WriteSlice(unsigned idx)=0;

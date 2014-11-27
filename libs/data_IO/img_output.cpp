@@ -53,7 +53,13 @@ void CImgWriter::WriteImage(const RealVector &data, const std::vector<unsigned> 
   bool is_complex=false;
   WriteData((void *)&data[0], is_complex, dataSize, shape, label, position, comment, parameters);
 }
-
+void CImgWriter::WriteImage(const complex_tt* data, const std::vector<unsigned> &shape, const std::string &label,
+                                  const std::vector<unsigned> &position, const std::string &comment,
+								  const std::map<std::string, double> &parameters){
+	  unsigned dataSize = sizeof(complex_tt);
+	  bool is_complex=true;
+	  WriteData((void *)&data[0], is_complex, dataSize, shape, label, position, comment, parameters);
+}
 void CImgWriter::WriteData(void *pix, bool is_complex, unsigned dataSize, const std::vector<unsigned> &shape, 
                              const std::string &filebase, const std::vector<unsigned> &position, 
 							 const std::string &comment, const std::map<std::string, double> &parameters)

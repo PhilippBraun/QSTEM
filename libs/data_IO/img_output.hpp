@@ -21,6 +21,9 @@ public:
   virtual void WriteImage(const ComplexVector &data, const std::vector<unsigned> &shape, const std::string &label, 
                                   const std::vector<unsigned> &position, const std::string &comment, 
 								  const std::map<std::string, double> &parameters);
+  virtual void WriteImage(const complex_tt* data, const std::vector<unsigned> &shape, const std::string &label,
+                                      const std::vector<unsigned> &position, const std::string &comment,
+    								  const std::map<std::string, double> &parameters);
 private:
   void WriteData(void *pix, bool is_complex, unsigned dataSize, const std::vector<unsigned> &shape, 
             const std::string &filebase, const std::vector<unsigned> &position, const std::string &comment,

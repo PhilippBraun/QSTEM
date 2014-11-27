@@ -131,8 +131,7 @@ public:
 };
 class QSTEM_HELPER_DLL_EXPORT PotentialConfig : IPropertyTreeReader{
 public:
-	bool Use3D, UseFFT, BandlimitTransmissionFunction, SavePotential,
-	SaveProjectedPotential, OneTimeIntegration, PlotVrr,periodicXY,periodicZ;
+	bool Use3D, UseFFT, BandlimitTransmissionFunction,  OneTimeIntegration, PlotVrr,periodicXY,periodicZ;
 	QSTEM::StructureFactorType StructureFactorType;
 	float_tt AtomRadiusAngstrom;
 	int NSubSlabs;
@@ -150,7 +149,8 @@ public:
 };
 class QSTEM_HELPER_DLL_EXPORT OutputConfig : IPropertyTreeReader{
 public:
-	int LogLevel, SaveSliceAfterIterations, PropagationProgressInterval, PotentialProgressInterval;
+	int LogLevel, SaveSliceAfterIterations, PropagationProgressInterval, PotentialProgressInterval,SavePotential,
+	SaveProjectedPotential;
 	string SaveFolder;
 	QSTEM::SaveLevel SaveLevel;
 	bool ShowProbe, PendelloesungPlot;

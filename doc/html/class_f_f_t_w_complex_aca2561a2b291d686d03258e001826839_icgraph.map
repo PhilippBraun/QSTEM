@@ -1,7 +1,0 @@
-<map id="FFTWComplex::squaredMagnitude" name="FFTWComplex::squaredMagnitude">
-<area shape="rect" id="node2" href="$class_f_f_t_w_complex.html#a03a17d923f2f8d9b9c4ad82d73e5fc97" title="FFTWComplex::magnitude" alt="" coords="280,31,459,57"/>
-<area shape="rect" id="node5" href="$fftw__allocator_8hpp.html#a7bb4124dbc45adf2c5269fac3ae5fa63" title="divide&#45;assignment " alt="" coords="329,81,410,108"/>
-<area shape="rect" id="node6" href="$fftw__allocator_8hpp.html#acf58889d9da8f13b56ababc0d234dd45" title="squared norm (= squared magnitude) " alt="" coords="319,132,419,159"/>
-<area shape="rect" id="node3" href="$fftw__allocator_8hpp.html#a3265f53b67af1612bd5c314cdce95c32" title="absolute value (= magnitude) " alt="" coords="511,5,553,32"/>
-<area shape="rect" id="node4" href="$fftw__allocator_8hpp.html#a9f64935b584aa39ab6bb07d38307d371" title="norm (= magnitude) " alt="" coords="507,56,557,83"/>
-</map>

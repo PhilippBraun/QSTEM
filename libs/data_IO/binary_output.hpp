@@ -38,6 +38,8 @@ public:
                                   const std::vector<unsigned> &position, const std::string &comment, 
 								  const std::map<std::string, double> &parameters);
 
+
+
   /*
   virtual void WriteImage(QSfMat data, std::string label, std::vector<unsigned> position=std::vector<unsigned>(), 
                       std::map<std::string, double> parameters=std::map<std::string, double>());

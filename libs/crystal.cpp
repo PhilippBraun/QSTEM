@@ -276,7 +276,7 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 			m_atoms[j].y = y;
 			m_atoms[j].z = z;
 
-			BOOST_LOG_TRIVIAL(trace) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
+			BOOST_LOG_TRIVIAL(trace) << format("atom %d: (%3.3f, %3.3f, %3.3f)") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
 		}
 
 		/***************************************************************
@@ -348,7 +348,7 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 			m_atoms[j].x -= boxXmin;
 			m_atoms[j].y -= boxYmin;
 			m_atoms[j].z -= boxZmin;
-			BOOST_LOG_TRIVIAL(trace) << format("atom %d: (%3.3f, %3.3f, %3.3f)\n") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
+			BOOST_LOG_TRIVIAL(trace) << format("atom %d: (%3.3f, %3.3f, %3.3f)") % j % m_atoms[j].x % m_atoms[j].y % m_atoms[j].z;
 		}
 
 		// Offset the atoms in x- and y-directions:

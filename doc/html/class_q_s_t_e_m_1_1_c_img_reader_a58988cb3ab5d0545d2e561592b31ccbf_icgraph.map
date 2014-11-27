@@ -1,9 +1,0 @@
-<map id="QSTEM::CImgReader::ReadHeader" name="QSTEM::CImgReader::ReadHeader">
-<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_img_reader.html#a54833e5ad9fcb632f8938eeaf321da0e" title="QSTEM::CImgReader::\lReadParameters" alt="" coords="214,5,373,46"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_img_reader.html#aaf06d11f6d9c3100afeb1bc6ed7a9b6f" title="QSTEM::CImgReader::\lReadComment" alt="" coords="214,70,373,111"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_img_reader.html#a22293ffbcaf75170f08e8e29160cc25f" title="QSTEM::CImgReader::\lReadSize" alt="" coords="214,135,373,177"/>
-<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c_img_reader.html#af0d00a9f363702a834bfe7fed526be50" title="QSTEM::CImgReader::\lReadComplex" alt="" coords="214,201,373,242"/>
-<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c_img_reader.html#ac2fb47aaa943a508038a6538f67c5c26" title="QSTEM::CImgReader::\lReadElementByteSize" alt="" coords="214,266,373,307"/>
-<area shape="rect" id="node7" href="$class_q_s_t_e_m_1_1_c_img_reader.html#af14ac98a7a3eaeb8830879ee82d51f29" title="QSTEM::CImgReader::\lReadImageData" alt="" coords="214,331,373,373"/>
-<area shape="rect" id="node8" href="$class_q_s_t_e_m_1_1_c_img_reader.html#aef0794d71af2a84341d511468dda85e2" title="QSTEM::CImgReader::\lReadImage" alt="" coords="214,397,373,438"/>
-</map>

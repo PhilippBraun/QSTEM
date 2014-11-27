@@ -27,6 +27,7 @@
 
 #include <boost/format.hpp>
 #include <boost/log/trivial.hpp>
+using boost::format;
 namespace QSTEM
 {
 
@@ -123,7 +124,7 @@ int CCfgReader::ReadNextAtom(atom *newAtom) {
 	char buf[NCMAX];
 
 	if (m_fp == NULL) {
-		printf("Invalid CFG file!\n");
+		BOOST_LOG_TRIVIAL(error) << format("Invalid CFG file!");
 		return -1;
 	}
 	//resetParamFile(m_fp);
@@ -144,7 +145,7 @@ int CCfgReader::ReadNextAtom(atom *newAtom) {
 	while (strchr(" \t",*str) != NULL) str++;
 	for (unsigned j=0;j<m_entryCount;j++) {
 		if (str==NULL) {
-			printf("readNextCFGatom: Error: incomplete data line: >%s<\n",buf);
+			BOOST_LOG_TRIVIAL(error) << format("readNextCFGatom: Error: incomplete data line: >%s<") % buf;
 			return -1;
 		}
 		m_atomData[j] = atof(str); str=strnext(str," \t");
@@ -192,7 +193,7 @@ int CCfgWriter::Write(std::vector<atom> &atoms, std::string run_id) {
 	char elem[16];
 
 	if (atoms.size() < 1) {
-		printf("Atom array empty - no file written\n");
+		BOOST_LOG_TRIVIAL(error) << format("Atom array empty - no file written");
 		return 1;
 	}
 
@@ -205,7 +206,7 @@ int CCfgWriter::Write(std::vector<atom> &atoms, std::string run_id) {
 	outputFile+=m_basePath.extension().string();
 	FILE *fp = fopen(outputFile.c_str(), "w" );
 	if( fp == NULL ) {
-		printf("Cannot open file %s\n",outputFile.c_str());
+		BOOST_LOG_TRIVIAL(error) << format("Cannot open file %s") % outputFile.c_str();
 	}
 
 	fprintf(fp,"Number of particles = %d\n",atoms.size());

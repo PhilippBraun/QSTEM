@@ -64,15 +64,13 @@ void PotentialConfig::Read(ptree& t){
 	periodicXY=t.get<bool>("model.potential.periodicXY");
 	periodicZ=t.get<bool>("model.potential.periodicZ");
 	BandlimitTransmissionFunction=t.get<bool>("model.potential.bandlimitTransmissionFunction");
-	SavePotential=t.get<bool>("model.potential.savePotential");
-	SaveProjectedPotential=t.get<bool>("model.potential.saveProjectedPotential");
 	OneTimeIntegration=t.get<bool>("model.potential.oneTimeIntegration");
 	StructureFactorType  = static_cast<QSTEM::StructureFactorType>(t.get<int>("model.potential.structureFactors"));
 	AtomRadiusAngstrom=t.get<float_tt>("model.potential.atomRadiusAngstrom");
 	NSubSlabs=t.get<int>("model.potential.NSubSlabs");
 }
 void OutputConfig::Read(ptree& t){
-	int LogLevel=t.get<int>("output.loglevel");
+	LogLevel=t.get<int>("output.loglevel");
 	SaveSliceAfterIterations=t.get<int>("output.saveSliceAfter");
 	PropagationProgressInterval=t.get<int>("output.propagationProgressInterval");
 	PotentialProgressInterval=t.get<int>("output.potentialProgressInterval");
@@ -80,6 +78,8 @@ void OutputConfig::Read(ptree& t){
 	SaveLevel= static_cast<QSTEM::SaveLevel>(t.get<int>("output.savelevel"));
 	ShowProbe=t.get<bool>("output.showProbe");
 	PendelloesungPlot=t.get<bool>("output.pendelloesungPlot");
+	SavePotential=t.get<bool>("output.savePotential");
+	SaveProjectedPotential=t.get<bool>("output.saveProjectedPotential");
 }
 void WaveConfig::Read(ptree& t){
 	Cs=t.get<float_tt>("wave.Cs");

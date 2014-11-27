@@ -51,6 +51,10 @@ public:
   virtual void WriteImage(const ComplexVector &data, const std::vector<unsigned> &shape, const std::string &label, 
                                   const std::vector<unsigned> &position, const std::string &comment, 
 								  const std::map<std::string, double> &parameters)=0;
+  virtual void WriteImage(const complex_tt* data, const std::vector<unsigned> &shape, const std::string &label,
+                                    const std::vector<unsigned> &position, const std::string &comment,
+  								  const std::map<std::string, double> &parameters)=0;
+
   // Alternate signatures to not require creation of passed in arguments when not necessary
   // Barebones call
   template <typename T>

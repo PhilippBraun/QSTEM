@@ -1,7 +1,0 @@
-<map id="QSTEM::float3D" name="QSTEM::float3D">
-<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c_potential.html#a0bac8970d10240f529d4609ed36c03aa" title="QSTEM::CPotential::\lAtomBoxLookUp" alt="" coords="173,38,320,79"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c2_d_potential.html#a056a6d429a229fd07f9fc9eb3b6c0a3a" title="QSTEM::C2DPotential\l::AtomBoxLookUp" alt="" coords="368,5,523,46"/>
-<area shape="rect" id="node5" href="$class_q_s_t_e_m_1_1_c3_d_potential.html#aa4d56b3b4f91f30efb263b11a5886e69" title="QSTEM::C3DPotential\l::AtomBoxLookUp" alt="" coords="368,70,523,111"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c2_d_potential.html#a6e01a70ac1a5864bd67b4b0560c3a00a" title="QSTEM::C2DPotential\l::_AddAtomRealSpace" alt="" coords="571,5,725,46"/>
-<area shape="rect" id="node6" href="$class_q_s_t_e_m_1_1_c3_d_potential.html#a06e96554ed03efe24c610f778696cd85" title="QSTEM::C3DPotential\l::_AddAtomRealSpace" alt="" coords="571,70,725,111"/>
-</map>

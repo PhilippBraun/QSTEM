@@ -1,7 +1,0 @@
-<map id="antlr3ParserNew" name="antlr3ParserNew">
-<area shape="rect" id="node2" href="$antlr3parser_8c.html#abede6d25edd8b3e67f8aa6a5094b6f9c" title="antlr3ParserNewStream" alt="" coords="174,31,335,57"/>
-<area shape="rect" id="node3" href="$antlr3parser_8c.html#aba8e0e27ff9976bb757191bf45b7d49f" title="antlr3ParserNewStreamDbg" alt="" coords="385,5,570,32"/>
-<area shape="rect" id="node4" href="$cif_parser_8h.html#ac5cc07e01ff3c44244770c3a4974e6da" title="Create a new cifParser parser and return a context for it. " alt="" coords="413,56,542,83"/>
-<area shape="rect" id="node5" href="$cif_parser_8h.html#a2bb3fa49c82e4a00be07b61fb601c34c" title="Create a new cifParser parser and return a context for it. " alt="" coords="619,56,720,83"/>
-<area shape="rect" id="node6" href="$classucif_1_1parser.html#ac292e778a980fb0979d8d47e388fe1a7" title="ucif::parser::parser" alt="" coords="768,56,899,83"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="QSTEM::C3DPotential::AddAtomToSlices" name="QSTEM::C3DPotential::AddAtomToSlices">
-<area shape="rect" id="node2" href="$class_q_s_t_e_m_1_1_c3_d_potential.html#afb109dabf235d48cc7c87e7cafe174fd" title="QSTEM::C3DPotential\l::CheckAtomZInBounds" alt="" coords="208,23,371,65"/>
-<area shape="rect" id="node3" href="$class_q_s_t_e_m_1_1_c_potential.html#ac3aa2b1121cc9b6e6d43793db8ea58d8" title="QSTEM::CPotential::\lAddAtomRealSpace" alt="" coords="216,89,363,130"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_potential.html#a207db8cc69e2d4837c61507cdf59241c" title="QSTEM::CPotential::\lCenterAtomZ" alt="" coords="419,5,565,46"/>
-<area shape="rect" id="node5" href="$advanced_settings_8m.html#a05ceb1cc3b74082a4c5ce7f459a483d4" title="floor" alt="" coords="469,71,515,97"/>
-<area shape="rect" id="node6" href="$image_sim_8m.html#a1c1d709803182885f995cc060aceb008" title="abs" alt="" coords="471,121,513,148"/>
-<area shape="rect" id="node7" href="$class_q_s_t_e_m_1_1_c_potential.html#acfcb1793302bdd08e5bd362a7eb6f1dd" title="QSTEM::CPotential::\l_AddAtomRealSpace" alt="" coords="419,173,565,214"/>
-</map>

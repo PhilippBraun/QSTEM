@@ -1,9 +1,0 @@
-<map id="libs/structure_IO/ucif/builder.h" name="libs/structure_IO/ucif/builder.h">
-<area shape="rect" id="node2" href="$cif_lexer_8h.html" title="libs/structure_IO/ucif\l/cifLexer.h" alt="" coords="46,97,188,138"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="libs/structure_IO/ucif\l/examples/main.cpp" alt="" coords="21,369,163,410"/>
-<area shape="rect" id="node6" href="$cif_parser_8h.html" title="libs/structure_IO/ucif\l/cifParser.h" alt="" coords="264,97,406,138"/>
-<area shape="rect" id="node3" href="$cif_lexer_8cpp.html" title="libs/structure_IO/ucif\l/cifLexer.cpp" alt="" coords="21,187,163,229"/>
-<area shape="rect" id="node4" href="$parser_8h.html" title="libs/structure_IO/ucif\l/parser.h" alt="" coords="156,278,298,319"/>
-<area shape="rect" id="node7" href="$cif_parser_8cpp.html" title="libs/structure_IO/ucif\l/cifParser.cpp" alt="" coords="290,187,432,229"/>
-<area shape="rect" id="node8" href="$utils_8h.html" title="libs/structure_IO/ucif\l/utils.h" alt="" coords="457,187,599,229"/>
-</map>

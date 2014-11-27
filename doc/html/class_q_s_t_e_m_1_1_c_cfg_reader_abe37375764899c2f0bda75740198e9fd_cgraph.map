@@ -1,7 +1,0 @@
-<map id="QSTEM::CCfgReader::ReadAtoms" name="QSTEM::CCfgReader::ReadAtoms">
-<area shape="rect" id="node2" href="$readparams_8cpp.html#a051b029d2504155914957592805d8350" title="resetParamFile" alt="" coords="238,5,349,32"/>
-<area shape="rect" id="node3" href="$readparams_8cpp.html#ac7dc68cb434a719b026b67c8600e4c6f" title="readparam" alt="" coords="252,56,335,83"/>
-<area shape="rect" id="node4" href="$class_q_s_t_e_m_1_1_c_cfg_reader.html#ab3fddeae25408380d09ff5aff044eaa9" title="QSTEM::CCfgReader::\lReadNextAtom" alt="" coords="214,107,373,149"/>
-<area shape="rect" id="node5" href="$readparams_8cpp.html#ac6708dd943a4864c9a5bf0bfc5ec5b44" title="strnext" alt="" coords="465,89,527,116"/>
-<area shape="rect" id="node6" href="$namespace_q_s_t_e_m.html#a3558bc3153acae75fb497d58b3081c55" title="QSTEM::getZNumber" alt="" coords="421,140,571,167"/>
-</map>

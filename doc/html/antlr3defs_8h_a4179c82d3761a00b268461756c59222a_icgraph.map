@@ -1,5 +1,0 @@
-<map id="antlr3BitsetNew" name="antlr3BitsetNew">
-<area shape="rect" id="node2" href="$antlr3bitset_8c.html#a4952080b270043b249ba24ebfb5dd531" title="antlr3BitsetList" alt="" coords="172,5,281,32"/>
-<area shape="rect" id="node3" href="$antlr3bitset_8c.html#adee17893182cf3d0c91bfce5e6ba12a9" title="Creates a new bitset with at least one 64 bit bset of bits, but as many 64 bit sets as are required..." alt="" coords="169,56,285,83"/>
-<area shape="rect" id="node4" href="$antlr3bitset_8c.html#a7e3066d027077cf306b765c5bff590bc" title="Creates a new bitset with at least one element, but as many elements are required. " alt="" coords="175,107,278,133"/>
-</map>
