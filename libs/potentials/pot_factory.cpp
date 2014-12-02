@@ -41,30 +41,29 @@ void CPotFactory::Register(const std::string &potName, CreatePotentialFn pfnCrea
 	m_FactoryMap[potName] = pfnCreate;
 }
 
-PotPtr CPotFactory::GetPotential(const std::string &name)
+PotPtr CPotFactory::GetPotential(const std::string &name,const ConfigPtr c)
 {
 //	std::cout << name << std::endl;
 	FactoryMap::iterator it = m_FactoryMap.find(name);
 	if( it != m_FactoryMap.end() )
-		return it->second();
+		return it->second(c);
 	return PotPtr();
 }
 
-PotPtr CPotFactory::GetPotential(bool _3D, bool fft)
+PotPtr CPotFactory::GetPotential(bool _3D, bool fft,const ConfigPtr c)
 {
 	std::stringstream str;
 	str << (_3D ? "3D" : "2D");
 	str << (fft ? "FFT" : "");
 //	str << std::ends;
-	return GetPotential(str.str());
+	return GetPotential(str.str(),c);
 }
 
 
 PotPtr CPotFactory::GetPotential(const ConfigPtr c)
 {
   bool _3D = c->Potential.Use3D, fft = c->Potential.UseFFT;
-  PotPtr pot=GetPotential(_3D, fft);
-  pot->Initialize(c);
+  PotPtr pot=GetPotential(_3D, fft,c);
 
   return pot;
 }

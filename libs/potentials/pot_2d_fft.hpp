@@ -22,13 +22,11 @@
 namespace QSTEM
 {
 
-class C2DFFTPotential : public C2DPotential
+class C2DFFTPotential : public CPotential
 {
 public:
   C2DFFTPotential();
   C2DFFTPotential(const ConfigPtr configReader);
-  virtual void Initialize();
-  virtual void Initialize(const ConfigPtr configReader);
   virtual void DisplayParams();
 
 
@@ -37,24 +35,22 @@ public:
                                float_tt atomX, float_tt atomY, float_tt atomZ);
 protected:
   virtual void AddAtomPeriodic(std::vector<atom>::iterator &atom, 
-                         float_tt atomBoxX, unsigned int ix, 
-                         float_tt atomBoxY, unsigned int iy, 
+                         float_tt atomBoxX, int ix,
+                         float_tt atomBoxY, int iy,
                          float_tt atomZ);
   virtual void AddAtomNonPeriodic(std::vector<atom>::iterator &atom, 
-                         float_tt atomBoxX, unsigned int ix, 
-                         float_tt atomBoxY, unsigned int iy, 
+                         float_tt atomBoxX, int ix,
+                         float_tt atomBoxY, int iy,
                          float_tt atomZ);
   complex_tt *GetAtomPotential2D(int Znum, double B);
   virtual void SliceSetup();
   virtual void ComputeAtomPotential(std::vector<atom>::iterator &atom) ;
-
-  unsigned m_nyAtBox, m_nxyAtBox, m_nyAtBox2, m_nxyAtBox2; //Size of atom box in pixels
-  std::map<unsigned, ComplexVector> m_atPot;
+  virtual void CenterAtomZ(std::vector<atom>::iterator &atom, float_tt &z);
+  std::map<unsigned, ComplexArray2D> m_atPot;
 
   friend class CPotFactory;
   // Create an instance of this class, wrapped in a shared ptr
   //     This should not be inherited - any subclass needs its own implementation.
-  static PotPtr Create() {return PotPtr(new C2DFFTPotential());}
   static PotPtr Create(const ConfigPtr configReader){return PotPtr(new C2DFFTPotential(configReader));}
 };
 

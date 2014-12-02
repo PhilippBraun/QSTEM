@@ -23,16 +23,11 @@
 namespace QSTEM
 {
 
-C3DPotential::C3DPotential() : CPotential()
+C3DPotential::C3DPotential(const ConfigPtr configReader) : RealSpacePotential(configReader)
 {
 	m_sliceStep = 2*_config->Model.nx*_config->Model.ny;
 	m_boxNz = (int)(_config->Potential.AtomRadiusAngstrom/m_ddz+2.0);
 	m_c += 2*_config->Potential.AtomRadiusAngstrom;
-}
-
-C3DPotential::C3DPotential(const ConfigPtr configReader) : CPotential(configReader)
-{
-	C3DPotential();
 }
 void C3DPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 

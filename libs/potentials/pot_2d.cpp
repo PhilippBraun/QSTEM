@@ -22,23 +22,9 @@ QSTEM - image simulation for TEM/STEM/CBED
 namespace QSTEM
 {
 
-C2DPotential::C2DPotential() : CPotential()
-{
-}
-
-C2DPotential::C2DPotential(const ConfigPtr configReader) : CPotential(configReader)
+C2DPotential::C2DPotential(const ConfigPtr configReader) : RealSpacePotential(configReader)
 {
 	m_boxNz = 1;
-}
-
-void C2DPotential::Initialize()
-{
-  CPotential::Initialize();
-}
-
-void C2DPotential::Initialize(const ConfigPtr configReader)
-{
-  CPotential::Initialize(configReader);
 }
 
 void C2DPotential::SliceSetup() {
@@ -49,7 +35,7 @@ void  C2DPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 }
 void C2DPotential::DisplayParams()
 {
-  CPotential::DisplayParams();
+	CPotential::DisplayParams();
   printf("* Potential calculation: 2D (real space method)");
 }
 
@@ -151,17 +137,17 @@ void C2DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
 
   /* split the atom if it is close to the top edge of the slice */
   if ((atomBoxZ<0.15*m_sliceThicknesses[0]) && (iz >0)) {
-    m_trans[iz][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
-    m_trans[iz-1][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
+//TODO use trans1    m_trans[iz][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
+//TODO use trans1    m_trans[iz-1][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
   }
   /* split the atom if it is close to the bottom edge of the slice */
   else {
     if ((atomBoxZ>0.85*m_sliceThicknesses[0]) && (iz < m_nslices-1)) {
-      m_trans[iz][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
-      m_trans[iz+1][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
+// TODO use trans1     m_trans[iz][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
+// TODO use trans1     m_trans[iz+1][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
     }
     else {
-      m_trans[iz][idx] += dPot;
+// TODO use trans1      m_trans[iz][idx] += dPot;
     }
   }
 }

@@ -37,16 +37,16 @@ public:
 
   static CWaveFactory *Get();
 
-  void Register(const std::string &type, CreateWaveFn pfnCreate);
+  void Register(const int type, CreateWaveFn pfnCreate);
   // Looks up which reader to get based on string mapping of registered readers
-  WavePtr GetWave(const std::string &type, const ConfigPtr reader);
+  WavePtr GetWave(const int type, const ConfigPtr reader);
 
 private:
   CWaveFactory();
   CWaveFactory(const CWaveFactory &) { }
   CWaveFactory &operator=(const CWaveFactory &) { return *this; }
 
-  typedef std::map<std::string, CreateWaveFn> FactoryMap;
+  typedef std::map<int, CreateWaveFn> FactoryMap;
   FactoryMap m_FactoryMap;
 };
 

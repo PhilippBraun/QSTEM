@@ -21,6 +21,10 @@
 #include "random.hpp"
 #include "memory_fftw3.hpp"
 
+#include <boost/format.hpp>
+#include <boost/log/trivial.hpp>
+using boost::format;
+
 namespace QSTEM
 {
 
@@ -306,11 +310,21 @@ void CExperimentCBED::WriteBeams(unsigned int absoluteSlice)
 
 void CExperimentCBED::PostSliceProcess(unsigned absoluteSlice)
 {
-	if (m_saveLevel>1)
-	{
-		InterimWave(absoluteSlice);
-		// TODO: does CBED actually have detectors?
-		//m_detectors->CollectIntensity(m_wave, absoluteSlice);
+	InterimWave(absoluteSlice);
+	if (_config->Output.LogLevel < 2) {
+		ComplexArray2D w = m_wave->GetWave();
+		float_tt potVal = w[0][0].real();
+		float_tt ddx = potVal;
+		float_tt ddy = potVal;
+		for (unsigned ix = 0; ix <  _config->Model.nx; ix++)
+			for (unsigned iy = 0; iy < _config->Model.ny ; iy++){
+				potVal = w[iy][ix].real();
+				if (ddy < potVal)
+					ddy = potVal;
+				if (ddx > potVal)
+					ddx = potVal;
+			}
+		BOOST_LOG_TRIVIAL(debug)<<format("Saving (complex) wave layer %d to file (r: %g..%g)")%absoluteSlice% ddx% ddy;
 	}
 }
 

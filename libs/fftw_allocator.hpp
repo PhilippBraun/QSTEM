@@ -604,14 +604,14 @@ inline typename FFTWComplex<R>::SquaredNormType squaredNorm(const FFTWComplex<R>
 }
 
 
-namespace std {
-  template <class Real>
-  ostream & operator<<(ostream & s, FFTWComplex<Real> const & v)
-  {
-    s << std::complex<Real>(v.re(), v.im());
-    return s;
-  }
-}
+//namespace std {
+//  template <class Real>
+//  ostream & operator<<(ostream & s, FFTWComplex<Real> const & v)
+//  {
+//    s << std::complex<Real>(v.re(), v.im());
+//    return s;
+//  }
+//}
 
 template<class Ty>
 class FFTWAllocator

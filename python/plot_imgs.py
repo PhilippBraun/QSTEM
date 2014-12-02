@@ -126,8 +126,8 @@ def plot_imgs(path):
     print path+'*.img'
     files = glob.glob(path+'/*.img')
     for f in files:
-        if 'wave' in f:
-            plot_img(f)
+        #if 'wave' in f:
+        plot_img(f)
         #plot_diff(f)
 #        elif 'diff' in f:
 #            plot_diff(f)   

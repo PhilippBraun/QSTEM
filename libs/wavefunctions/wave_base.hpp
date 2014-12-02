@@ -78,8 +78,9 @@ public:
 
   inline float_tt GetVoltage()  const {return m_v0;}
   inline float_tt GetWavelength()  const {return m_wavlen;}
+  inline ComplexArray2DPtr GetWave() const {return m_wave;}
 
-  inline float_tt GetPixelIntensity(unsigned i) const {return m_wave[i].real()*m_wave[i].real() + m_wave[i].imag()*m_wave[i].imag();}
+  inline float_tt GetPixelIntensity(unsigned i) const {return (m_wave.data())[i].real()*(m_wave.data())[i].real() + (m_wave.data())[i].imag()*(m_wave.data())[i].imag();}
   inline float_tt GetPixelIntensity(unsigned x, unsigned y) const  {return GetPixelIntensity(x+m_nx*y);}
   inline float_tt GetDiffPatPixel(unsigned i)  const {return m_diffpat[i];}
   inline float_tt GetDiffPatPixel(unsigned x, unsigned y) const  { return m_diffpat[x+m_nx*y];}
@@ -123,7 +124,11 @@ public:
     SetWavePosition(posX, posY, posZ);
     _WriteWave(waveFilePrefix, comment, params);
   }
-
+  inline void WriteWave(string filename, std::string comment,
+                 std::map<std::string, double>params = std::map<std::string, double>())
+  {
+    _WriteWave(filename, comment, params);
+  }
   inline void WriteDiffPat(std::string comment="Diffraction Pattern", 
                  std::map<std::string, double>params = std::map<std::string, double>())
   {
@@ -151,7 +156,7 @@ public:
 
   // People can change the wavefunction - for example, that's what we have to do when we
   //    transmit the wave through the sample's potential.
-  complex_tt *GetWavePointer(){return &m_wave[0];}
+  complex_tt *GetWavePointer(){return m_wave.data();}
   // People should not directly change the diffraction pattern, since we'll re-calculate it when 
   //   the wavefunction changes.
   //   They can, however, access it.
@@ -192,7 +197,7 @@ protected:
   int m_Scherzer;
   int m_printLevel;
   float_tt m_dx, m_dy;  // physical pixel size of wavefunction array
-  ComplexVector m_wave; /* complex wave function */
+  ComplexArray2D m_wave; /* complex wave function */
   RealVector m_kx2,m_ky2,m_kx,m_ky;
   float_tt m_k2max;
 

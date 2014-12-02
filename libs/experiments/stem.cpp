@@ -31,8 +31,7 @@ namespace QSTEM
 CExperimentSTEM::CExperimentSTEM( ConfigPtr configReader) : CExperimentBase(configReader)
 {
 	m_mode=ExperimentType::STEM;
-	m_wave = CWaveFactory::Get()->GetWave("Convergent", configReader);
-	m_wave->FormProbe();
+
 }
 
 void CExperimentSTEM::Run()

@@ -128,27 +128,26 @@ void CCrystal::Init(unsigned run_number) {
 }
 
 void CCrystal::DisplayParams() {
-	printf("* Input file:           %s\n", m_structureFile.c_str());
+	BOOST_LOG_TRIVIAL(info)<<format("* Input file:           %s") %  m_structureFile.c_str();
 
 	if ((m_cubex == 0) || (m_cubey == 0) || (m_cubez == 0))
-		printf("* Unit cell:            ax=%g by=%g cz=%g\n", m_ax, m_by, m_cz);
+		BOOST_LOG_TRIVIAL(info)<<format("* Unit cell:            ax=%g by=%g cz=%g")% m_ax% m_by% m_cz;
 	else {
-		printf("* Size of Cube:         ax=%g by=%g cz=%g\n", m_cubex, m_cubey,
-				m_cubez);
-		printf("* Cube size adjusted:   %s\n", m_adjustCubeSize ? "yes" : "no");
+		BOOST_LOG_TRIVIAL(info)<<format("* Size of Cube:         ax=%g by=%g cz=%g")% m_cubex% m_cubey%	m_cubez;
+		BOOST_LOG_TRIVIAL(info)<<format("* Cube size adjusted:   %s")%( m_adjustCubeSize ? "yes" : "no");
 	}
-	printf("* Super cell:           %d x %d x %d unit cells\n", _config->Structure.nCellX,
-			_config->Structure.nCellY, _config->Structure.nCellZ);
-	printf("* Number of atoms:      %d (super cell)\n", m_atoms.size());
-	printf("* Crystal tilt:         x=%g deg, y=%g deg, z=%g deg\n",
-			_config->Model.crystalTiltX* RAD2DEG, _config->Model.crystalTiltY * RAD2DEG, _config->Model.crystalTiltZ * RAD2DEG);
-	printf("* Model dimensions:     ax=%gA, by=%gA, cz=%gA (after tilt)\n",
-			m_ax, m_by, m_cz);
-	printf("* Temperature:          %gK\n", _config->Structure.temperatureK);
+	BOOST_LOG_TRIVIAL(info)<<format("* Super cell:           %d x %d x %d unit cells")
+			%_config->Structure.nCellX%		_config->Structure.nCellY% _config->Structure.nCellZ;
+	BOOST_LOG_TRIVIAL(info)<<format("* Number of atoms:      %d (super cell)")% m_atoms.size();
+	BOOST_LOG_TRIVIAL(info)<<format("* Crystal tilt:         x=%g deg, y=%g deg, z=%g deg")
+			%(_config->Model.crystalTiltX* RAD2DEG)% (_config->Model.crystalTiltY * RAD2DEG)%( _config->Model.crystalTiltZ * RAD2DEG);
+	BOOST_LOG_TRIVIAL(info)<<format("* Model dimensions:     ax=%gA, by=%gA, cz=%gA (after tilt)")
+			%m_ax% m_by% m_cz;
+	BOOST_LOG_TRIVIAL(info)<<format("* Temperature:          %gK") %_config->Structure.temperatureK;
 	if (_config->Model.UseTDS)
-		printf("* TDS:                  yes\n");
+		BOOST_LOG_TRIVIAL(info)<<format("* TDS:                  yes");
 	else
-		printf("* TDS:                  no\n");
+		BOOST_LOG_TRIVIAL(info)<<format("* TDS:                  no");
 }
 
 void CCrystal::SetCellParameters(float_tt ax, float_tt by, float_tt cz) {
@@ -209,7 +208,6 @@ void CCrystal::OffsetCenter(atom &center) {
 // This function reads the atomic positions from fileName and also adds 
 // Thermal displacements to their positions, if _config->Model.UseTDS is turned on.
 void CCrystal::MakeCrystal(bool handleVacancies) {
-	int printFlag = m_printLevel;
 	int ncoord = m_baseAtoms.size(), ncx, ncy, ncz, icx, icy, icz, jz;
 	// float_t dw,occ,dx,dy,dz,r;
 	int i2, j, ix, iy, iz = 0;

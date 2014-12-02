@@ -25,11 +25,8 @@
 #include "scatfactsRez.hpp"
 #include <map>
 
-
-
-
-
 #include "pot_interface.hpp"
+
 
 #ifndef POTENTIAL_BASE_H
 #define POTENTIAL_BASE_H
@@ -40,87 +37,52 @@
 namespace QSTEM
 {
 
-
 class CPotential : public IPotential
 {
 public:
 	CPotential();
 	CPotential(unsigned nx, unsigned ny, unsigned nz, float_tt dx, float_tt dy, float_tt dz, float_tt atomRadius, float_tt v0);
 	CPotential(const ConfigPtr c);
+
+	void GetSizePixels(unsigned &nx, unsigned &ny) const;
+	void WriteSlice(unsigned idx);
+	void WriteProjectedPotential();
+	inline ComplexArray2DView GetSlice(unsigned idx){return m_trans1[boost::indices[idx][range(0,_config->Model.ny)][range(0,_config->Model.nx)]];}
+	complex_tt GetSlicePixel(unsigned iz, unsigned ix, unsigned iy);
+
 	virtual ~CPotential();
-
 	void AtomBoxLookUp(complex_tt &val, int Znum, float_tt x, float_tt y, float_tt z, float_tt B);
-	void AddAtomRealSpace(std::vector<atom>::iterator &atom, float_tt atomX, float_tt atomY, float_tt atomZ);
 	virtual void CenterAtomZ(std::vector<atom>::iterator &atom, float_tt &z);
-	virtual void AddAtomToSlices(std::vector<atom>::iterator &atom, float_tt atomX, float_tt atomY, float_tt atomZ)=0;
-
-	// *************************  IPotential  implementation **********************
 	virtual void DisplayParams();
 	virtual void MakeSlices(int nlayer,StructurePtr crystal);
 	virtual void Refresh();
 	virtual void ReadPotential(std::string &fileName, unsigned subSlabIdx);
 	virtual void SetStructure(StructurePtr structure);
-	virtual void ComputeAtomPotential(std::vector<atom>::iterator &atom)=0;
-	void GetSizePixels(unsigned &nx, unsigned &ny) const;
-	void WriteSlice(unsigned idx);
-	void WriteProjectedPotential();
-	ComplexArray2DView GetSlice(unsigned idx){return m_trans1[boost::indices[idx][range(0,_config->Model.nx)][range(0,_config->Model.nx)]];}
-	complex_tt GetSlicePixel(unsigned iz, unsigned ix, unsigned iy);
 
 
-	// *************************** Setters **********************
-	//  For all of these, the potential needs to be recalculated after calling them.
-	//  Each of them set a flag on this class indicating that, such that getting a slice will
-	//  either recompute the potential for you, or raise an error (TODO!)
 
-	// Set m_thickness, the uniform slice thickness.  Overrides m_cz.  Implicitly sets number of slices.
 	void SetSliceThickness(float_tt thickness_Angstroms);
 	void SetSliceThickness(std::vector<float_tt> thickness_Angstroms);
-	// Set number of slices.  Implicitly sets m_thickness to the sub-slab height divided by nslices, and empties m_cz.
 	void SetNSlices(unsigned slices);
-
-
 	atom GetAtom(unsigned idx){return m_crystal->m_atoms[idx];}
 
 	// public members (should be moved to protected, and given getters/setters...
 	bool m_potential3D;
 
 protected:
-	void Initialize();
-	void Initialize(const ConfigPtr configReader);
 	virtual void SliceSetup();
 	void ResizeSlices();
+	void MakePhaseGratings();
+	void BandlimitTransmissionFunction();
 	void ReadSlice(const std::string &fileName, ComplexArray2DView slice, unsigned idx);
-	virtual void _AddAtomRealSpace(std::vector<atom>::iterator &atom,
-			float_tt atomX, unsigned int ix,
-			float_tt atomY, unsigned int iy,
-			float_tt atomZ, unsigned int iatomZ)=0;
 
+	virtual void AddAtomToSlices(std::vector<atom>::iterator &atom, float_tt atomX, float_tt atomY, float_tt atomZ)=0;
+	virtual void ComputeAtomPotential(std::vector<atom>::iterator &atom)=0;
 
 	ImageIOPtr m_imageIO;
 	StructurePtr m_crystal;
 	ConfigPtr _config;
-
-	std::vector<ComplexVector> m_trans; //  The 3D specimen potential array as a vector of 1D vectors
 	ComplexArray3D m_trans1;
-	//complex_tt ***m_trans;    //  The 3D specimen potential array
-	bool m_currentPotential;  // Indicates whether computed potential matches current parameters.
-	//    Set to true after computing potential.  Reset to false when parameters change.
-	float_tt m_dz;   // resolutions
-	float_tt m_ddx, m_ddy, m_ddz;   // oversampled resolutions
-	float_tt m_dkx,m_dky, m_dkz,m_kmax2, _nx,_ny;
-	float_tt m_sliceThickness;
-	float_tt m_zOffset; /* defines the offset for the first slice in fractional coordinates        */
-	float_tt m_c; // the thickness of the current sub-slab (in A)
-	float_tt m_dr, m_atomRadius2;
-	float_tt m_offsetX, m_offsetY;
-
-	int m_boxNx, m_boxNy, m_boxNz;
-	int m_nslices;   // nslices is the number of slices PER SUB-SLAB!  Not the total.
-	int m_outputInterval;
-	// ********* multi-slab parameters ********
-	int m_cellDiv; // How many sub-slabs the model is divided into
-	int m_divCount; // How many sub-slabs we've already processed
 
 	bool m_tds;
 	bool m_periodicXY, m_periodicZ;
@@ -128,7 +90,24 @@ protected:
 	bool m_equalDivs;
 	bool m_savePotential, m_saveProjectedPotential, m_plotPotential;
 	bool m_readPotential;
+	bool m_currentPotential;  // Indicates whether computed potential matches current parameters.
+	//    Set to true after computing potential.  Reset to false when parameters change.
+	float_tt m_dz;   // resolutions
+	float_tt m_ddx, m_ddy, m_ddz;   // oversampled resolutions
+	float_tt m_dkx,m_dky, m_dkz,m_kmax2;
+	float_tt m_sliceThickness;
+	float_tt m_zOffset; /* defines the offset for the first slice in fractional coordinates        */
+	float_tt m_c; // the thickness of the current sub-slab (in A)
+	float_tt m_dr, m_atomRadius2;
+	float_tt m_offsetX, m_offsetY;
 
+	int _nx,_ny;
+	int m_boxNx, m_boxNy, m_boxNz;
+	int m_nslices;   // nslices is the number of slices PER SUB-SLAB!  Not the total.
+	int m_outputInterval;
+	// ********* multi-slab parameters ********
+	int m_cellDiv; // How many sub-slabs the model is divided into
+	int m_divCount; // How many sub-slabs we've already processed
 	int m_printLevel;
 	int m_displayPotCalcInterval;  /* show progress every .. atoms when computing potential */
 	int m_saveLevel;
@@ -137,8 +116,6 @@ protected:
 
 	std::map<int, atomBoxPtr> m_atomBoxes;
 	std::vector<atom> *m_atoms;
-
-	// vector of slice thicknesses.  Only really relevant when slice thickness is not uniform.
 	std::vector<float_tt> m_sliceThicknesses;
 	std::vector<float_tt> m_slicePos;
 

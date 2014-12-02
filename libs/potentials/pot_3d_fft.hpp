@@ -25,7 +25,6 @@ namespace QSTEM
 class C3DFFTPotential : public C3DPotential
 {
 public:
-  C3DFFTPotential();
   C3DFFTPotential(const ConfigPtr configReader);
   virtual void DisplayParams();
   //virtual void makeSlices(int nlayer, char *fileName, atom *center);
@@ -53,8 +52,7 @@ protected:
   friend class CPotFactory;
   // Create an instance of this class, wrapped in a shared ptr
   //     This should not be inherited - any subclass needs its own implementation.
-  static PotPtr Create() {return PotPtr(new C3DFFTPotential());}
-  static PotPtr Create(const ConfigPtr configReader){return PotPtr(new C3DFFTPotential(configReader));}
+  static PotPtr Create(const ConfigPtr configReader){return PotPtr(new C3DFFTPotential(configReader));};
 };
 
 }

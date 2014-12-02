@@ -257,9 +257,9 @@ void CConvergentWave::FormProbe()
 				//				{
 				float x = (float) ( 0.5*scale * cos(chi));
 				float y = (float) (-0.5*scale* sin(chi));
-				m_wave[ix+m_nx*iy] = complex_tt(x,y);
-				//        m_wave[ix+m_nx*iy][0]= (float) ( 0.5*scale * cos(chi));
-				//        m_wave[ix+m_nx*iy][1]= (float) (-0.5*scale* sin(chi));
+				m_wave[ix][iy] = complex_tt(x,y);
+				//        m_wave[ix][iy][0]= (float) ( 0.5*scale * cos(chi));
+				//        m_wave[ix][iy][1]= (float) (-0.5*scale* sin(chi));
 				//				}
 			}
 			else if ( k2 <= k2max ) {
@@ -267,15 +267,15 @@ void CConvergentWave::FormProbe()
 				//				{
 				float x = (float) ( scale * cos(chi));
 				float y = (float) ( scale* sin(chi));
-				m_wave[ix+m_nx*iy] = complex_tt(x,y);
+				m_wave[ix][iy] = complex_tt(x,y);
 
 				//				}
-				//        m_wave[ix+m_nx*iy][0]= (float)  scale * cos(chi);
-				//        m_wave[ix+m_nx*iy][1]= (float) -scale * sin(chi);
+				//        m_wave[ix][iy][0]= (float)  scale * cos(chi);
+				//        m_wave[ix][iy][1]= (float) -scale * sin(chi);
 			}
 			else {
 				//#pragma omp critical
-				m_wave[ix+m_nx*iy] =complex_tt(0,0);
+				m_wave[ix][iy] =complex_tt(0,0);
 			}
 
 		}
@@ -293,10 +293,10 @@ void CConvergentWave::FormProbe()
 			for(int iy=0; iy<m_ny; iy++) {
 				float_tt r = exp(-((ix-m_nx/2)*(ix-m_nx/2)+(iy-m_ny/2)*(iy-m_ny/2))/(m_nx*m_nx*m_gaussScale));
 #pragma omp critical
-				m_wave[ix+m_nx*iy] = complex_tt(m_wave[ix+m_nx*iy].real()*r,m_wave[ix+m_nx*iy].imag()*r);
+				m_wave[ix][iy] = complex_tt(m_wave[ix][iy].real()*r,m_wave[ix][iy].imag()*r);
 
-				//        m_wave[ix+m_nx*iy][0] *= (float)r;
-				//        m_wave[ix+m_nx*iy][1] *= (float)r;
+				//        m_wave[ix][iy][0] *= (float)r;
+				//        m_wave[ix][iy][1] *= (float)r;
 			}
 		}
 	}
@@ -313,14 +313,14 @@ void CConvergentWave::FormProbe()
 				delta = r-0.5*m_aAIS+edge;
 				if (delta > 0) {
 #pragma omp critical
-					m_wave[ix+m_nx*iy] = 0;
+					m_wave[ix][iy] = 0;
 				}
 				else if (delta >= -edge) {
 					scale = 0.5*(1-cos(M_PI*delta/edge));
 #pragma omp critical
-					m_wave[ix+m_nx*iy] = complex_tt(scale*m_wave[ix+m_nx*iy].real(),scale*m_wave[ix+m_nx*iy].imag());
-					//          m_wave[ix+m_nx*iy][0] = scale*m_wave[ix+m_nx*iy][0];
-					//          m_wave[ix+m_nx*iy][1] = scale*m_wave[ix+m_nx*iy][1];
+					m_wave[ix][iy] = complex_tt(scale*m_wave[ix][iy].real(),scale*m_wave[ix][iy].imag());
+					//          m_wave[ix][iy][0] = scale*m_wave[ix][iy][0];
+					//          m_wave[ix][iy][1] = scale*m_wave[ix][iy][1];
 				}
 			}
 		}
@@ -329,7 +329,7 @@ void CConvergentWave::FormProbe()
 	/*  Normalize probe intensity to unity  */
 	for(int ix=0; ix<m_nx; ix++)
 		for(int iy=0; iy<m_ny; iy++)
-			sum +=  m_wave[ix+m_nx*iy].real()*m_wave[ix+m_nx*iy].real()+ m_wave[ix+m_nx*iy].imag()*m_wave[ix+m_nx*iy].imag();
+			sum +=  m_wave[ix][iy].real()*m_wave[ix][iy].real()+ m_wave[ix][iy].imag()*m_wave[ix][iy].imag();
 
 	scale = 1.0 / sum;
 //	scale = scale * ((double)m_nx) * ((double)m_ny);
@@ -337,47 +337,47 @@ void CConvergentWave::FormProbe()
 
 	for(int ix=0; ix<m_nx; ix++)
 		for(int iy=0; iy<m_ny; iy++) {
-			m_wave[ix+m_nx*iy] = complex_tt((float) scale*m_wave[ix+m_nx*iy].real(),(float) scale*m_wave[ix+m_nx*iy].imag());
+			m_wave[ix][iy] = complex_tt((float) scale*m_wave[ix][iy].real(),(float) scale*m_wave[ix][iy].imag());
 
-//			if(m_wave[ix+m_nx*iy].real()>1e-5)
-//				DLOG(INFO) << format("m_wave[%d+m_nx*%d] = %2.3f + i %2.3f") % ix % iy % m_wave[ix+m_nx*iy].real() % m_wave[ix+m_nx*iy].imag();
+//			if(m_wave[ix][iy].real()>1e-5)
+//				DLOG(INFO) << format("m_wave[%d][%d] = %2.3f + i %2.3f") % ix % iy % m_wave[ix][iy].real() % m_wave[ix][iy].imag();
 		}
 	sum = 0;
 	for(int ix=0; ix<m_nx; ix++)
 		for(int iy=0; iy<m_ny; iy++) {
-			sum += m_wave[ix+m_nx*iy].real()*m_wave[ix+m_nx*iy].real() + m_wave[ix+m_nx*iy].imag()*m_wave[ix+m_nx*iy].imag();
+			sum += m_wave[ix][iy].real()*m_wave[ix][iy].real() + m_wave[ix][iy].imag()*m_wave[ix][iy].imag();
 		}
 	/*  Output results and find min and max to echo
       remember that complex pix are stored in the file in FORTRAN
       order for compatability
 	 */
 
-	rmin = m_wave[0].real();
+	rmin = m_wave[0][0].real();
 	rmax = rmin;
-	aimin = m_wave[0].imag();
+	aimin = m_wave[0][0].imag();
 	aimax = aimin;
 #pragma omp parallel for
 	for(int iy=0; iy<m_ny; iy++) {
 		for(int ix=0; ix<m_nx; ix++) {
 #pragma omp critical
 			{
-				if( m_wave[ix+m_nx*iy].real() < rmin )
-					rmin = m_wave[ix+m_nx*iy].real();
+				if( m_wave[ix][iy].real() < rmin )
+					rmin = m_wave[ix][iy].real();
 			}
 #pragma omp critical
 			{
-				if( m_wave[ix+m_nx*iy].real() > rmax )
-					rmax = m_wave[ix+m_nx*iy].real();
+				if( m_wave[ix][iy].real() > rmax )
+					rmax = m_wave[ix][iy].real();
 			}
 #pragma omp critical
 			{
-				if( m_wave[ix+m_nx*iy].imag() < aimin )
-					aimin = m_wave[ix+m_nx*iy].imag();
+				if( m_wave[ix][iy].imag() < aimin )
+					aimin = m_wave[ix][iy].imag();
 			}
 #pragma omp critical
 			{
-				if( m_wave[ix+m_nx*iy].imag() > aimax )
-					aimax = m_wave[ix+m_nx*iy].imag();
+				if( m_wave[ix][iy].imag() > aimax )
+					aimax = m_wave[ix][iy].imag();
 			}
 		}
 	}

@@ -52,14 +52,12 @@ public:
 
   void DisplayParams();
 
-  void SetTDS(bool state){m_tds=state;}
   void SetCellParameters(float_tt ax, float_tt by, float_tt cz);
   void SetNCells(unsigned nx, unsigned ny, unsigned nz);
 
   void DisplaceAtoms();
 
   float_tt GetCZ(){return m_cz;}
-  bool GetTDS(){return m_tds;}
   void GetCellAngles(float_tt &alpha, float_tt &beta, float_tt &gamma);
   void GetCellParameters(float_tt &ax, float_tt &by, float_tt &cz);
 
@@ -111,12 +109,9 @@ protected:
   StructureReaderPtr m_structureReader;
   StructureWriterPtr m_structureWriter;
   
-  bool m_tds; // if set, TDS will be applied to atom positions
   bool m_Einstein; /* if set (default=set), the Einstein model will be used */
-  float_tt m_tds_temp;  // The temperature for TDS calculations
   float_tt m_wobble_temp_scale;
   ConfigPtr _config;
-  int m_printLevel;
 
   void CalculateCellDimensions();
 

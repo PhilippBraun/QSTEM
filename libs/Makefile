@@ -533,6 +533,30 @@ memory_fftw3.cpp.s:
 	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/memory_fftw3.cpp.s
 .PHONY : memory_fftw3.cpp.s
 
+potentials/RealSpacePotential.o: potentials/RealSpacePotential.cpp.o
+.PHONY : potentials/RealSpacePotential.o
+
+# target to build an object file
+potentials/RealSpacePotential.cpp.o:
+	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/RealSpacePotential.cpp.o
+.PHONY : potentials/RealSpacePotential.cpp.o
+
+potentials/RealSpacePotential.i: potentials/RealSpacePotential.cpp.i
+.PHONY : potentials/RealSpacePotential.i
+
+# target to preprocess a source file
+potentials/RealSpacePotential.cpp.i:
+	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/RealSpacePotential.cpp.i
+.PHONY : potentials/RealSpacePotential.cpp.i
+
+potentials/RealSpacePotential.s: potentials/RealSpacePotential.cpp.s
+.PHONY : potentials/RealSpacePotential.s
+
+# target to generate assembly for a file
+potentials/RealSpacePotential.cpp.s:
+	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/RealSpacePotential.cpp.s
+.PHONY : potentials/RealSpacePotential.cpp.s
+
 potentials/pot_2d.o: potentials/pot_2d.cpp.o
 .PHONY : potentials/pot_2d.o
 
@@ -906,6 +930,9 @@ help:
 	@echo "... memory_fftw3.o"
 	@echo "... memory_fftw3.i"
 	@echo "... memory_fftw3.s"
+	@echo "... potentials/RealSpacePotential.o"
+	@echo "... potentials/RealSpacePotential.i"
+	@echo "... potentials/RealSpacePotential.s"
 	@echo "... potentials/pot_2d.o"
 	@echo "... potentials/pot_2d.i"
 	@echo "... potentials/pot_2d.s"

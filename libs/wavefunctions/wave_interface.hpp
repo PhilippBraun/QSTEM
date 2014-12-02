@@ -50,7 +50,7 @@ public:
   virtual bool IsRealSpace()=0;
 
   virtual WavePtr Clone()=0;
-
+  virtual ComplexArray2DPtr GetWave() const = 0;
   virtual void GetSizePixels(unsigned &x, unsigned &y) const =0;
   virtual unsigned GetTotalPixels() const =0;
   virtual void GetResolution(float_tt &x, float_tt &y) const =0;
@@ -89,6 +89,8 @@ public:
                  std::map<std::string, double>params = std::map<std::string, double>())=0;
   // Method 4: pass three unsigned integers.  Use for output at varying STEM probe position, and at navg/thickness
   virtual void WriteWave(unsigned posX, unsigned posY, unsigned posZ, std::string comment="Wavefunction", 
+                 std::map<std::string, double>params = std::map<std::string, double>())=0;
+  virtual void WriteWave(string filename, std::string comment="Wavefunction",
                  std::map<std::string, double>params = std::map<std::string, double>())=0;
 
   // Methods for writing diffraction pattern

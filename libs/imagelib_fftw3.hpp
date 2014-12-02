@@ -126,6 +126,15 @@ public:
 //    (const T &data, const std::vector<unsigned> &shape, const std::string &label,
 //    								const std::string &comment, const std::map<std::string, double> &parameters)
   }
+  inline void WriteImage(const ComplexArray2D& pix,
+		  const std::string &fileName,
+		  std::map<std::string, double> &params,
+		  const std::string &comment)
+  {
+    WriteImage(pix.data(),GetShapeVector(), fileName,  comment,params);
+//    (const T &data, const std::vector<unsigned> &shape, const std::string &label,
+//    								const std::string &comment, const std::map<std::string, double> &parameters)
+  }
 
   // If you want to add parameters, but no comment
   inline void WriteImage(const ComplexVector &pix, const std::string &fileName, std::map<std::string, double> &params,

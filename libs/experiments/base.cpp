@@ -36,11 +36,11 @@ CExperimentBase::CExperimentBase(ConfigPtr c) : IExperiment()
 
 	switch (c->Model.SliceThicknessCalculation) {
 	case SliceThicknessCalculation::Auto:
-		m_dz = c->Model.sliceThicknessAngstrom = zTotal/((int)zTotal);
+		m_dz = c->Model.sliceThicknessAngstrom = (zTotal/((int)zTotal))+0.01*(zTotal/((int)zTotal));
 		c->Model.nSlices = (int)zTotal;
 		break;
 	case SliceThicknessCalculation::NumberOfSlices:
-		m_dz = c->Model.sliceThicknessAngstrom = zTotal/c->Model.nSlices;
+		m_dz = c->Model.sliceThicknessAngstrom = (zTotal/c->Model.nSlices)+0.01*(zTotal/c->Model.nSlices);
 		break;
 	case SliceThicknessCalculation::Thickness:
 		m_dz = c->Model.sliceThicknessAngstrom;
@@ -63,7 +63,7 @@ CExperimentBase::CExperimentBase(ConfigPtr c) : IExperiment()
 	_config->Model.ny = ceil((max_y - min_y) / _config->Model.dy) ;
 	if(_config->Potential.periodicXY == false)  _config->Model.ny += atomRadiusSlices;
 
-	m_wave = CWaveFactory::Get()->GetWave("Convergent", c);
+	m_wave = CWaveFactory::Get()->GetWave(_config->Wave.type, c);
 
 	m_potential = CPotFactory::Get()->GetPotential(c);
 	m_potential->SetStructure(m_sample);
@@ -142,7 +142,7 @@ void CExperimentBase::DisplayProgress(int flag)
        }
 	 */
 	if (_config->Output.LogLevel > 0) {
-		if (m_sample->GetTDS()) {
+		if (_config->Model.UseTDS) {
 			timeAvg = ((m_avgCount)*timeAvg+curTime)/(m_avgCount+1);
 			intensityAvg = ((m_avgCount)*intensityAvg+m_intIntensity)/(m_avgCount+1);
 			BOOST_LOG_TRIVIAL(info) << format("********************** run %3d ************************") % (m_avgCount+1);
@@ -154,12 +154,6 @@ void CExperimentBase::DisplayProgress(int flag)
 			while(disp!=end) BOOST_LOG_TRIVIAL(info) << format(" %8d |") % (*disp++).first;
 
 			BOOST_LOG_TRIVIAL(info) << " intensity | time(sec) |    chi^2  |";
-			// }
-			/*
-        printf("* %9g | %9g | %9g \n",muls.u2,muls.intIntensity,curTime);  
-        }
-        else {
-			 */
 			BOOST_LOG_TRIVIAL(info) << "*";
 
 			//ComputeAverageU2();
@@ -206,15 +200,20 @@ void CExperimentBase::InterimWave(int slice) {
 	char fileName[256];
 	std::map<std::string, double> params;
 
-	if ((slice < _config->Model.nSlices*_config->Potential.NSubSlabs-1) && ((slice+1) % _config->Output.PropagationProgressInterval != 0)) return;
+	if ((slice < _config->Model.nSlices*_config->Potential.NSubSlabs-1)
+			&& ((slice+1) % _config->Output.PropagationProgressInterval != 0)) return;
 
 	t = (int)((slice)/_config->Output.PropagationProgressInterval);
+
+	stringstream s,s1;
+	s << "wave_" << slice;
+	s1 << "Wave Function after slice " << slice;
 
 	// produce the following filename:
 	// wave_avgCount_thicknessIndex.img or
 	// wave_thicknessIndex.img if tds is turned off
 	if (_config->Model.UseTDS) m_wave->WriteWave(m_avgCount, t, "Wave Function", params);
-	else m_wave->WriteWave(t, "Wave Function", params);
+	else m_wave->WriteWave(s.str().c_str(), s1.str().c_str(), params);
 }
 
 void CExperimentBase::InitializePropagators(WavePtr wave){
@@ -301,8 +300,7 @@ int CExperimentBase::RunMultislice(WavePtr wave)
 
 		// Call any additional saving/post-processing that should occur on a per-slice basis
 		PostSliceProcess(absolute_slice);
-		BOOST_LOG_TRIVIAL(info) << format("Slice %d of %d finished.")
-				% (islice+1) % _config->Model.nSlices;
+		BOOST_LOG_TRIVIAL(info) << format("Slice %d of %d finished.") % (islice+1) % _config->Model.nSlices;
 	} /* end for(islice...) */
 	// collect intensity at the final slice
 	//collectIntensity(muls, wave, m_totalSliceCount+m_slices*(1+mRepeat));
@@ -319,43 +317,36 @@ int CExperimentBase::RunMultislice(WavePtr wave)
  *****************************************************************/
 void CExperimentBase::Propagate(WavePtr wave, float_tt dz)
 {
-	int ixa, iya;
 	float_tt wr, wi, tr, ti;
 	float_tt scale,t;
 	float_tt dzs=0;
 
 	float_tt dx, dy;
-	unsigned nx, ny, px;
+	unsigned nx, ny;
 
 	wave->GetResolution(dx, dy);
 	wave->GetSizePixels(nx, ny);
 
-	complex_tt *w=wave->GetWavePointer();
+	ComplexArray2DPtr w=wave->GetWave();
 
-	px=nx*ny;
 #pragma omp parallel for private(wr, wi, tr, ti)
-	for (int i=0; i<px; i++)
-	{
-		try {
-			ixa=i%nx;
-			iya=i/nx;
-			if( wave->GetKX2(ixa) < wave->GetK2Max() ) {
-				if( (wave->GetKX2(ixa) + wave->GetKY2(iya)) < wave->GetK2Max() ) {
-					wr = w[i].real();
-					wi = w[i].imag();
-					tr = wr*m_propyr[iya] - wi*m_propyi[iya];
-					ti = wr*m_propyi[iya] + wi*m_propyr[iya];
-					w[i] = complex_tt( tr*m_propxr[ixa] - ti*m_propxi[ixa], tr*m_propxi[ixa] + ti*m_propxr[ixa]);
-
-				} else
-					w[i] = 0.0F;
-			} /* end for(iy..) */
-
-			else w[i] = 0.0F;
-		} catch (const std::exception &e) {
-			std::cerr << e.what();
-		}
-	} /* end for(ix..) */
+	for (int i=0; i<nx; i++)
+		for (int j=0; i<ny; i++)
+		{
+			try {
+				if( (wave->GetKX2(i) + wave->GetKY2(j)) < wave->GetK2Max() ) {
+					wr = w[i][j].real();
+					wi = w[i][j].imag();
+					tr = wr*m_propyr[j] - wi*m_propyi[j];
+					ti = wr*m_propyi[j] + wi*m_propyr[j];
+					w[i][j] = complex_tt( tr*m_propxr[i] - ti*m_propxi[i], tr*m_propxi[i] + ti*m_propxr[i]);
+				} else {
+					w[i][j] = 0.0F;
+				}
+			} catch (const std::exception &e) {
+				std::cerr << e.what();
+			}
+		} /* end for(ix..) */
 } /* end propagate */
 
 /*------------------------ transmit() ------------------------*/
@@ -374,27 +365,22 @@ only waver,i will be changed by this routine
  */
 void CExperimentBase::Transmit(WavePtr wave, unsigned sliceIdx) {
 	double wr, wi, tr, ti;
-
-	complex_tt *w;
 	unsigned nx, ny;
-
-	w = wave->GetWavePointer();
+	ComplexArray2DPtr w = wave->GetWave();
 	wave->GetSizePixels(nx, ny);
 
 	/*  trans += posx; */
 	for(unsigned ix=0; ix<nx; ix++)
 		for(unsigned iy=0; iy<ny; iy++) {
-			unsigned offset=ix+nx*iy;
 			complex_tt t = m_potential->GetSlicePixel(sliceIdx, ix+m_iPosX, iy+m_iPosY);
-
-			wr = w[offset].real();
-			wi = w[offset].imag();
+			wr = w[ix][iy].real();
+			wi = w[ix][iy].imag();
 			tr = t.real();
 			ti = t.imag();
-			w[offset] = complex_tt(wr*tr - wi*ti,wr*ti + wi*tr);
-
-			if(tr != 0 || ti != 0)
-				BOOST_LOG_TRIVIAL(trace) << boost::format("w=(%2.3f,%2.3f) t=(%2.3f,%2.3f)") % wr % wi % tr % ti;
+			w[ix][iy] *= t;
+			if(t.real() != 0 || t.imag() != 0)
+				BOOST_LOG_TRIVIAL(debug) << boost::format("w=(%g,%g) t=(%2.3f,%2.3f) w*t=(%g,%g)")
+			% wr % wi % tr % ti %w[ix][iy].real() %w[ix][iy].imag();
 		} /* end for(iy.. ix .) */
 } /* end transmit() */
 

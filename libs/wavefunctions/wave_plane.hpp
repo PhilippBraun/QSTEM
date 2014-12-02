@@ -42,7 +42,6 @@ public:
   void ReadImage();
   void WriteImage();
 protected:
-  float_tt m_btiltx, m_btilty;     /* beam tilt, mrad */
   RealVector m_image;               /* Real-space image output */
 private:
   friend class CWaveFactory;

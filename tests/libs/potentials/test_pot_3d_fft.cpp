@@ -28,7 +28,7 @@ using namespace QSTEM;
 struct PotFixture {
   PotFixture()
   {
-    pot = CPotFactory::Get()->GetPotential(true, true);
+//    pot = CPotFactory::Get()->GetPotential(true, true);
     //std::cout << "setup qsc config reader fixture" << std::endl; 
   }
   ~PotFixture()

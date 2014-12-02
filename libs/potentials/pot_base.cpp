@@ -28,21 +28,10 @@ const int BUF_LEN = 256;
 namespace QSTEM {
 
 CPotential::CPotential() :	IPotential(), m_dkz(0), m_dkx(0) {
+
 }
 
 CPotential::CPotential(const ConfigPtr c) :	CPotential() {
-	Initialize(c);
-}
-
-CPotential::~CPotential() {
-
-}
-
-void CPotential::SetStructure(StructurePtr structure) {
-	m_crystal = structure;
-	m_atoms = &(m_crystal->m_atoms);
-}
-void CPotential::Initialize(const ConfigPtr c) {
 	_config = c;
 	m_saveProjectedPotential = c->Output.SaveProjectedPotential;
 	m_plotPotential= c->Potential.PlotVrr;
@@ -54,9 +43,6 @@ void CPotential::Initialize(const ConfigPtr c) {
 	m_sliceThicknesses = std::vector<float_tt>();
 	// TODO: Read if we should load the pot from a file
 	//	configReader->ReadLoadPotential(m_readPotential, m_potFileBase);
-	Initialize();
-}
-void CPotential::Initialize() {
 	m_ddx = _config->Model.dx / (double) OVERSAMPLING;
 	m_ddy = _config->Model.dy / (double) OVERSAMPLING;
 	m_ddz = m_dz / (double) OVERSAMPLINGZ;
@@ -90,6 +76,15 @@ void CPotential::Initialize() {
 	m_imageIO = ImageIOPtr(new CImageIO(_config->Model.nx,_config->Model.ny,".img",".img"));
 }
 
+CPotential::~CPotential() {
+
+}
+
+void CPotential::SetStructure(StructurePtr structure) {
+	m_crystal = structure;
+	m_atoms = &(m_crystal->m_atoms);
+}
+
 void CPotential::DisplayParams() {
 	BOOST_LOG_TRIVIAL(info)<< "*****************************************************";
 	BOOST_LOG_TRIVIAL(info)<<"********* Potential Parameters **********************";
@@ -99,22 +94,22 @@ void CPotential::DisplayParams() {
 	if (_config->Output.SavePotential)
 		BOOST_LOG_TRIVIAL(info)<<format("* Potential file name:  %s") % m_fileBase.c_str();
 	BOOST_LOG_TRIVIAL(info)<<format("* Model Sampling:  %g x %g x %g A")
-											% _config->Model.dx% _config->Model.dy% m_sliceThickness;
+													% _config->Model.dx% _config->Model.dy% m_sliceThickness;
 
 	BOOST_LOG_TRIVIAL(info)<<format("* Pot. array offset:    (%g,%g,%g)A")
-											% _config->Model.xOffset%m_offsetY%	m_zOffset;
+													% _config->Model.xOffset%m_offsetY%	m_zOffset;
 	BOOST_LOG_TRIVIAL(info)<<format("* Potential periodic:   (x,y): %s, z: %s")
-											%((m_periodicXY) ? "yes" : "no") % ((m_periodicZ) ? "yes" : "no");
+													%((m_periodicXY) ? "yes" : "no") % ((m_periodicZ) ? "yes" : "no");
 	if (k_fftMeasureFlag == FFTW_MEASURE)
 		BOOST_LOG_TRIVIAL(info)<<format("* Potential array:      %d x %d (optimized)"), _config->Model.nx, _config->Model.ny;
 	else
 		BOOST_LOG_TRIVIAL(info)<<format("* Potential array:      %d x %d (estimated)")% _config->Model.nx% _config->Model.ny;
 	BOOST_LOG_TRIVIAL(info)<<format("*                       %g x %gA")
-									% (_config->Model.nx * _config->Model.dx)%	(_config->Model.ny * _config->Model.dy);
+											% (_config->Model.nx * _config->Model.dx)%	(_config->Model.ny * _config->Model.dy);
 	BOOST_LOG_TRIVIAL(info)<<format("* Scattering factors:   %d")% m_scatFactor;
 
 	BOOST_LOG_TRIVIAL(info)<<format("* Slices per division:  %d (%gA thick slices [%scentered])")
-											% _config->Model.nSlices% m_sliceThickness% ((m_centerSlices) ? "" : "not ");
+													% _config->Model.nSlices% m_sliceThickness% ((m_centerSlices) ? "" : "not ");
 }
 
 /****************************************************************************
@@ -143,7 +138,7 @@ void CPotential::AtomBoxLookUp(complex_tt &val, int Znum, float_tt x,
 		m_atomBoxes[Znum]->B = -1.0;
 
 		BOOST_LOG_TRIVIAL(trace)<<format("Atombox has real space resolution of %g x %g x %gA (%d x %d x %d pixels)")
-													%ddx% ddy% ddz% boxNx% boxNy% boxNz;
+															%ddx% ddy% ddz% boxNx% boxNy% boxNz;
 	}
 	// printf("Debugging: %d %g %g: %g",Znum,m_atomBoxes[Znum]->B,B,fabs(m_atomBoxes[Znum]->B - B));
 
@@ -183,9 +178,9 @@ void CPotential::AtomBoxLookUp(complex_tt &val, int Znum, float_tt x,
 			BOOST_LOG_TRIVIAL(info)<<format("Potential input file %s has the wrong parameters") %fileName;
 			BOOST_LOG_TRIVIAL(info) << format(	"Parameters:");
 			BOOST_LOG_TRIVIAL(info) << format("file:    Z=%d, B=%.3f A^2 (%d, %d, %d) (%.7f, %.7f %.7f) nsz=%d V=%g")
-										%tZ% tB% tnx% tny% tnz% tdx% tdy% tdz% tzOversample% tv0;
+												%tZ% tB% tnx% tny% tnz% tdx% tdy% tdz% tzOversample% tv0;
 			BOOST_LOG_TRIVIAL(info) << format("program: Z=%d, B=%.3f A^2 (%d, %d, %d) (%.7f, %.7f %.7f) nsz=%d V=%g")
-										%Znum% B% boxNx% boxNy% boxNz% ddx% ddy% ddz%(OVERSAMPLINGZ)% _config->Beam.EnergykeV;
+												%Znum% B% boxNx% boxNy% boxNz% ddx% ddy% ddz%(OVERSAMPLINGZ)% _config->Beam.EnergykeV;
 			BOOST_LOG_TRIVIAL(info) << format("will create new potential file, please wait ...");
 
 			/* Close the old file, Create a new potential file now
@@ -225,7 +220,7 @@ void CPotential::AtomBoxLookUp(complex_tt &val, int Znum, float_tt x,
 			BOOST_LOG_TRIVIAL(info)<<format("Sucessfully read in the projected potential");
 		} else {
 			BOOST_LOG_TRIVIAL(error)<<format("error while reading potential file %s: read %d of %d values")
-											%fileName% numRead%( boxNx * boxNy * boxNz);
+													%fileName% numRead%( boxNx * boxNy * boxNz);
 			exit(0);
 		}
 	}
@@ -253,8 +248,8 @@ void CPotential::ReadPotential(std::string &fileName, unsigned subSlabIdx) {
 	for (unsigned i = (subSlabIdx + 1) * _config->Model.nSlices - 1;
 			i >= (subSlabIdx) * _config->Model.nSlices; i--, slice_idx++) {
 		ReadSlice(path.stem().string(),
-				m_trans1[boost::indices[slice_idx][range(0, _config->Model.nx)][range(0,
-						_config->Model.ny)]], i);
+				m_trans1[boost::indices[slice_idx][range(0, _config->Model.ny)][range(0,
+						_config->Model.nx)]], i);
 	}
 	return;
 }
@@ -293,6 +288,7 @@ void CPotential::SliceSetup() {
 
 	}
 	m_trans1.resize(boost::extents[_config->Model.nSlices][_config->Model.ny][_config->Model.nx]);
+	//	m_trans.resize(_config->Model.nSlices * _config->Model.nx * _config->Model.ny);
 }
 
 complex_tt CPotential::GetSlicePixel(unsigned iz, unsigned ix, unsigned iy) {
@@ -342,10 +338,7 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 	//} /* end of if divCount==cellDiv-1 ... */
 	SliceSetup();
 
-	// reset the potential to zero:
-	memset((void *) &m_trans[0], 0,	_config->Model.nSlices * _config->Model.nx * _config->Model.ny * sizeof(complex_tt));
 	std::fill( m_trans1.origin(), m_trans1.origin() + m_trans1.size(), complex_tt(0,0) );
-	//	std::fill( m_trans.begin(), m_trans.end(), complex_tt(0,0) );
 
 #pragma omp parallel for
 	for (std::vector<atom>::iterator atom = m_crystal->m_uniqueAtoms.begin();	atom < m_crystal->m_uniqueAtoms.end(); atom=atom+1) {
@@ -376,21 +369,27 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 
 		float_tt atomX = atom->x - _config->Model.xOffset;
 		float_tt atomY = atom->y - m_offsetY;
-		float_tt atomZ;
+		float_tt atomZ = atom->z;
 
-		//		CenterAtomZ(atom, atomZ);
+		CenterAtomZ(atom, atomZ);
 		AddAtomToSlices(atom, atomX, atomY, atomZ);
 
 #pragma omp critical
 		atomsAdded++;
+		if(atomsAdded % 50 == 0)
+			atomZ = 1;
 
 		if(atomsAdded % 100 == 0) BOOST_LOG_TRIVIAL(info)<<format("%2.1f percent of atoms added") % ((float)atomsAdded/m_atoms->size()*100);
 
 	} // for iatom =0 ... 
 
+	MakePhaseGratings();
+
+	if(_config->Potential.BandlimitTransmissionFunction) BandlimitTransmissionFunction();
+
 	time(&time1);
 	BOOST_LOG_TRIVIAL(info) << format(	"%g sec used for real space potential calculation (%g sec per atom)")
-					%	difftime(time1, time0)%(	difftime(time1, time0) / m_crystal->m_atoms.size());
+							%	difftime(time1, time0)%(	difftime(time1, time0) / m_crystal->m_atoms.size());
 
 
 	/*************************************************/
@@ -401,7 +400,7 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 			// find the maximum value of each layer:
 			float_tt potVal = m_trans1[iz][0][0].real();
 
-			if (m_printLevel >= 3) {
+			if (_config->Output.LogLevel < 2) {
 				float_tt ddx = potVal;
 				float_tt ddy = potVal;
 				for (unsigned ix = 0; ix <  _config->Model.nx; ix++)
@@ -411,6 +410,7 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 							ddy = potVal;
 						if (ddx > potVal)
 							ddx = potVal;
+						BOOST_LOG_TRIVIAL(trace)<<format("m_trans1[%d][%d][%d] = %g")%iz%iy%ix%potVal;
 					}
 				BOOST_LOG_TRIVIAL(info)<<format("Saving (complex) potential layer %d to file (r: %g..%g)")%iz% ddx% ddy;
 			}
@@ -424,59 +424,28 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 		WriteProjectedPotential();
 	}
 } // end of make3DSlices
+void CPotential::BandlimitTransmissionFunction(){
 
-void CPotential::AddAtomRealSpace(std::vector<atom>::iterator &atom,
-		float_tt atomX, float_tt atomY, float_tt atomZ) {
-	unsigned iatom = atom - m_crystal->m_atoms.begin();
+}
+void CPotential::MakePhaseGratings(){
+	float_tt mm0 = 1.0F + _config->Beam.EnergykeV/511.0F;
+	float_tt scale = mm0*_config->Beam.wavelength;
 
-	//	CenterAtomZ(atom, atomZ);
+	BOOST_LOG_TRIVIAL(info)<<format("Making phase gratings for %d layers (scale=%g rad/VA, gamma=%g, sigma=%g) ... ")
+			%m_trans1.shape()[0]%scale%mm0%_config->Beam.sigma;
 
-	/* Warning: will assume constant slice thickness ! */
-	/* do not round here: atomX=0..dx -> iAtomX=0 */
-	unsigned iAtomX = (int) floor(atomX / _config->Model.dx);
-	unsigned iAtomY = (int) floor(atomY / _config->Model.dy);
-	unsigned iAtomZ = (int) floor(atomZ / m_sliceThicknesses[0]);
-
-	if (m_displayPotCalcInterval > 0) {
-		if ( ((iatom + 1) % m_displayPotCalcInterval == 0)) {
-			BOOST_LOG_TRIVIAL(trace) << format("adding atom %d [%.3f %.3f %.3f (%.3f)], Z=%d")
-							% (iatom + 1) % (atomX + _config->Model.xOffset)%( atomY + m_offsetY)% atom->z% atomZ%atom->Znum;
-		}
-	}
-
-	for (int iax = -m_iRadX; iax <= m_iRadX; iax++) {
-		if (!m_periodicXY) {
-			if (iax + iAtomX < 0) {
-				iax = -iAtomX;
-				if (abs(iax) > m_iRadX)
-					break;
-			}
-			if (iax + iAtomX >= _config->Model.nx)
-				break;
-		}
-		float_tt x = (iAtomX + iax) * _config->Model.dx - atomX;
-		unsigned ix = (iax + iAtomX + 16 * _config->Model.nx) % _config->Model.nx; /* shift into the positive range */
-		for (int iay = -m_iRadY; iay <= m_iRadY; iay++) {
-			if (!m_periodicXY) {
-				if (iay + iAtomY < 0) {
-					iay = -iAtomY;
-					if (abs(iay) > m_iRadY)
-						break;
-				}
-				if (iay + iAtomY >= _config->Model.ny)
-					break;
-			}
-			float_tt y = (iAtomY + iay) * _config->Model.dy - atomY;
-			unsigned iy = (iay + iAtomY + 16 * _config->Model.ny) % _config->Model.ny; /* shift into the positive range */
-			float_tt r2sqr = x * x + y * y;
-			if (r2sqr <= m_atomRadius2) {
-				// This (virtual) method is meant to be implemented by subclasses,
-				//    for specific functionality varying by dimensionality.
-				_AddAtomRealSpace(atom, x, ix, y, iy, atomZ, iAtomZ);
+#pragma omp parallel for
+	for(int iz =0; iz < m_trans1.shape()[0];iz++){
+		for(int iy =0; iy < m_trans1.shape()[1];iy++){
+			for(int ix=0; ix < m_trans1.shape()[2];ix++){
+				complex_tt t = m_trans1[iz][iy][ix];
+				m_trans1[iz][iy][ix] = complex_tt(cos(scale*t.real()),sin(scale*t.imag()));
 			}
 		}
 	}
 }
+
+
 
 void CPotential::WriteSlice(unsigned idx) {
 	char buf[255];
@@ -502,7 +471,7 @@ void CPotential::WriteProjectedPotential() {
 			tempPot[idx+_config->Model.nx*idy] = 0;
 			for (unsigned iz = 0; iz < _config->Model.nSlices; iz++)
 				tempPot[idx+_config->Model.nx*idy] += m_trans1[iz][idy][idx].real();
-			BOOST_LOG_TRIVIAL(trace)<<format("temppot = %g") % tempPot[idx+_config->Model.nx*idy];
+			//			BOOST_LOG_TRIVIAL(trace)<<format("temppot = %g") % tempPot[idx+_config->Model.nx*idy];
 		}
 
 	float_tt ddx = tempPot[0], ddy = potVal;

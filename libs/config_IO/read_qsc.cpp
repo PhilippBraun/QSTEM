@@ -82,6 +82,7 @@ void OutputConfig::Read(ptree& t){
 	SaveProjectedPotential=t.get<bool>("output.saveProjectedPotential");
 }
 void WaveConfig::Read(ptree& t){
+	type=t.get<int>("wave.type");
 	Cs=t.get<float_tt>("wave.Cs");
 	C5=t.get<float_tt>("wave.C5");
 	Cc=t.get<float_tt>("wave.Cc");
@@ -116,12 +117,27 @@ void WaveConfig::Read(ptree& t){
 	dI_I=t.get<float_tt>("wave.dI/I");
 	dE_E=t.get<float_tt>("wave.dE/E");
 	AISaperture=t.get<float_tt>("wave.AISaperture");
+	tiltX=t.get<float_tt>("wave.tiltX");
+	tiltY=t.get<float_tt>("wave.tiltY");
 }
 void BeamConfig::Read(ptree& t){
 	EnergykeV =t.get<float_tt>("beam.energy_keV");
 	SourceDiameterAngstrom=t.get<float_tt>("beam.sourceDiameterAngstrom");
 	BeamCurrentpA=t.get<float_tt>("beam.beamCurrentpA");
 	DwellTimeMsec=t.get<float_tt>("beam.dwellTimeMsec");
+
+	double w;
+	const double emass=510.99906; /* electron rest mass in keV */
+	const double hc=12.3984244; /* Planck's const x speed of light*/
+
+	/* electron wavelength in Angstroms */
+	wavelength = hc/sqrt( EnergykeV * ( 2*emass + EnergykeV ) );
+
+	double s, pi, x;
+	x = ( emass + EnergykeV ) / ( 2.0*emass + EnergykeV);
+	pi = 4.0 * atan( 1.0 );
+	sigma = 2.0 * pi * x / (wavelength*EnergykeV);  // 2*pi*kz*(1+kev/emaxx)/(2*emass+kev)
+
 }
 
 Config::Config(ptree& t){

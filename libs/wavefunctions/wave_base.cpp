@@ -18,6 +18,7 @@
  */
 
 #include "wave_base.hpp"
+using boost::format;
 
 namespace QSTEM
 {
@@ -33,14 +34,14 @@ void CreateWaveFunctionDataSets(unsigned x, unsigned y, std::vector<unsigned> po
 
 CBaseWave::CBaseWave(unsigned x, unsigned y, float_tt resX, float_tt resY, 
 		std::string input_ext, std::string output_ext) :
-								  //m_position(std::vector<unsigned>()),
-								  m_detPosX(0),
-								  m_detPosY(0),
-								  m_nx(x),
-								  m_ny(y),
-								  m_dx(resX),
-								  m_dy(resY),
-								  m_params(std::map<std::string, double>())
+										  //m_position(std::vector<unsigned>()),
+										  m_detPosX(0),
+										  m_detPosY(0),
+										  m_nx(x),
+										  m_ny(y),
+										  m_dx(resX),
+										  m_dy(resY),
+										  m_params(std::map<std::string, double>())
 , m_fftPlanWaveForw(NULL)
 , m_fftPlanWaveInv(NULL)
 {
@@ -57,11 +58,7 @@ CBaseWave::CBaseWave(const ConfigPtr c): m_fftPlanWaveForw(NULL), m_fftPlanWaveI
 	m_v0 = c->Beam.EnergykeV;
 	// TODO: where does this belong?
 	//m_electronScale = m_beamCurrent*m_dwellTime*MILLISEC_PICOAMP;
-
-	// TODO: need to figure out how user is going to specify input/output formats
-	//CBaseWave(m_nx, m_ny, m_dx, m_dy, ".img", ".img");
 	Initialize(".img", ".img");
-	//printf("Initialized from cfg file");
 }
 
 /** Copy constructor - make sure arrays are deep-copied */
@@ -109,7 +106,7 @@ void CBaseWave::Resize(unsigned x, unsigned y)
 void CBaseWave::CreateDataSets()
 {
 	m_diffpat.resize(m_nx*m_ny);
-	m_wave.resize(m_nx*m_ny);
+	m_wave.resize(boost::extents[m_nx][m_ny]);
 }
 
 void CBaseWave::Initialize(std::string input_ext, std::string output_ext)
@@ -122,7 +119,7 @@ void CBaseWave::Initialize(std::string input_ext, std::string output_ext)
 	CreateDataSets();
 
 #if FLOAT_PRECISION == 1
-	fftwf_complex *ptr = (fftwf_complex *)&m_wave[0];
+	fftwf_complex *ptr = (fftwf_complex *)m_wave.data();
 	m_fftPlanWaveForw = fftwf_plan_dft_2d(m_nx,m_ny,ptr,ptr,FFTW_FORWARD, k_fftMeasureFlag);
 	m_fftPlanWaveInv = fftwf_plan_dft_2d(m_nx,m_ny,ptr,ptr,FFTW_BACKWARD, k_fftMeasureFlag);
 #else
@@ -168,21 +165,18 @@ void CBaseWave::InitializeKVectors()
 
 void CBaseWave::DisplayParams()
 {
-	printf("* Real space res.:      %gA (=%gmrad)\n",
-			1.0/m_k2max,GetWavelength()*m_k2max*1000.0);
-	printf("* Reciprocal space res: dkx=%g, dky=%g\n",
-			1.0/(m_nx*m_dx),1.0/(m_ny*m_dy));
+	BOOST_LOG_TRIVIAL(info)<<format("* Real space res.:      %gA (=%gmrad)")%	(1.0/m_k2max)%(GetWavelength()*m_k2max*1000.0);
+	BOOST_LOG_TRIVIAL(info)<<format("* Reciprocal space res: dkx=%g, dky=%g")%	(1.0/(m_nx*m_dx))%(1.0/(m_ny*m_dy));
 
-	printf("* Beams:                %d x %d \n",m_nx,m_ny);
+	BOOST_LOG_TRIVIAL(info)<<format("* Beams:                %d x %d ")%m_nx%m_ny;
 
-	printf("* Acc. voltage:         %g (lambda=%gA)\n",m_v0,Wavelength(m_v0));
+	BOOST_LOG_TRIVIAL(info)<<format("* Acc. voltage:         %g (lambda=%gA)")%m_v0%(Wavelength(m_v0));
 
 	if (k_fftMeasureFlag == FFTW_MEASURE)
-		printf("* Probe array:          %d x %d pixels (optimized)\n",m_nx,m_ny);
+		BOOST_LOG_TRIVIAL(info)<<format("* Probe array:          %d x %d pixels (optimized)")%m_nx%m_ny;
 	else
-		printf("* Probe array:          %d x %d pixels (estimated)\n",m_nx,m_ny);
-	printf("*                       %g x %gA\n",
-			m_nx*m_dx,m_ny*m_dy);
+		BOOST_LOG_TRIVIAL(info)<<format("* Probe array:          %d x %d pixels (estimated)")%m_nx%m_ny;
+	BOOST_LOG_TRIVIAL(info)<<format("*                       %g x %gA")%(m_nx*m_dx)%(m_ny*m_dy);
 }
 
 /*
@@ -218,16 +212,16 @@ float_tt CBaseWave::GetK2(unsigned ix, unsigned iy) const
 
 float_tt CBaseWave::GetIntegratedIntensity() const 
 {
-	unsigned px=m_nx*m_ny;
 	float_tt intIntensity=0;
 #pragma omp parallel for
-	for (int i=0; i<px; i++)
-	{
+	for (int i=0; i<m_nx; i++)
+		for(int j=0;j<m_ny;j++)
+		{
 #pragma omp atomic
-		intIntensity+=m_wave[i].real()*m_wave[i].real() + m_wave[i].imag()*m_wave[i].imag();
-	}
+			intIntensity+=m_wave[i][j].real()*m_wave[i][j].real() + m_wave[i][j].imag()*m_wave[i][j].imag();
+		}
 	// TODO: divide by px or not?
-	return intIntensity/px;
+	return intIntensity/(m_nx*m_ny);
 }
 
 void CBaseWave::ApplyTransferFunction(boost::shared_array<complex_tt> &wave)
@@ -241,7 +235,8 @@ void CBaseWave::ApplyTransferFunction(boost::shared_array<complex_tt> &wave)
 
 	// multiply wave (in rec. space) with transfer function and write result to imagewave
 	ToFourierSpace();
-	for (unsigned i=0;i<px;i++)
+	for (unsigned i=0;i<m_nx;i++)
+		for (unsigned j=0;j<m_ny;j++)
 	{
 		// here, we apply the CTF:
 		// 20140110 - MCS - I think this is where Christoph wanted to apply the CTF - nothing is done ATM.
@@ -250,7 +245,7 @@ void CBaseWave::ApplyTransferFunction(boost::shared_array<complex_tt> &wave)
 		//ix=i%m_nx;
 		//iy=i/m_ny;
 
-		wave[i] = m_wave[i];
+//		wave[i][j] = m_wave[i][j];
 	}
 	ToRealSpace();
 }
@@ -271,7 +266,7 @@ void CBaseWave::_WriteWave(std::string &fileName, std::string comment,
 	//params["Convergence Angle"] = m_alpha;
 	//params["Beam Tilt X"] = m_btiltx;
 	//params["Beam Tilt Y"] = m_btilty;
-	m_imageIO->WriteImage(m_wave, fileName, params, comment, m_position);
+	m_imageIO->WriteImage(m_wave, fileName, params, comment);
 }
 
 void CBaseWave::_WriteDiffPat(std::string &fileName, std::string comment,
@@ -312,20 +307,21 @@ void CBaseWave::SetWavePosition(unsigned posX, unsigned posY, unsigned posZ)
 void CBaseWave::ReadWave()
 {
 	m_position.clear();
-	m_imageIO->ReadImage(m_wave, waveFilePrefix, m_position);
+//	m_imageIO->ReadImage(m_wave, waveFilePrefix, m_position);
 }
 
 void CBaseWave::ReadWave(unsigned navg)
 {
 	SetWavePosition(navg);
-	m_imageIO->ReadImage(m_wave, waveFilePrefix, m_position);
+//	m_imageIO->ReadImage(m_wave, waveFilePrefix, m_position);
 
 }
 
 void CBaseWave::ReadWave(unsigned positionx, unsigned positiony)
 {
 	SetWavePosition(positionx, positiony);
-	m_imageIO->ReadImage(m_wave, waveFilePrefix, m_position);
+// TODO write Readwave
+//	m_imageIO->ReadImage(m_wave, waveFilePrefix, m_position);
 }
 
 void CBaseWave::ReadDiffPat()
