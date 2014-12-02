@@ -51,7 +51,7 @@ void C2DFFTPotential::AddAtomToSlices(std::vector<atom>::iterator &atom,
 	unsigned iAtomX = (int) floor(atomX / _config->Model.dx);
 	unsigned iAtomY = (int) floor(atomY / _config->Model.dy);
 
-	if (m_periodicXY) {
+	if (_config->Potential.periodicXY) {
 		AddAtomPeriodic(atom, atomX, iAtomX, atomY, iAtomY, atomZ);
 	} else {
 		AddAtomNonPeriodic(atom, atomX, iAtomX, atomY, iAtomY, atomZ);
@@ -61,7 +61,7 @@ void C2DFFTPotential::CenterAtomZ(std::vector<atom>::iterator &atom, float_tt &z
 
 }
 void C2DFFTPotential::AddAtomNonPeriodic(std::vector<atom>::iterator &atom,float_tt atomBoxX, int iAtomX, float_tt atomBoxY,int iAtomY, float_tt atomZ) {
-	int iAtomZ = (int) floor(atomZ / m_sliceThickness);
+	int iAtomZ = (int) floor(atomZ / _config->Model.sliceThicknessAngstrom);
 	int iax0, iay0, potentialOffsetX =0, potentialOffsetY=0;
 	if(iAtomX - m_iRadX < 0 ){
 		iax0 = 0;
@@ -116,7 +116,7 @@ void C2DFFTPotential::AddAtomNonPeriodic(std::vector<atom>::iterator &atom,float
 void C2DFFTPotential::AddAtomPeriodic(std::vector<atom>::iterator &atom,
 		float_tt atomBoxX, int iAtomX, float_tt atomBoxY,
 		int iAtomY, float_tt atomZ) {
-	unsigned iAtomZ = (int) floor(atomZ / m_sliceThickness);
+	unsigned iAtomZ = (int) floor(atomZ / _config->Model.sliceThicknessAngstrom);
 	unsigned iax0 = iAtomX - m_iRadX +  _nx;
 	unsigned iax1 = iAtomX + m_iRadX +  _nx;
 	unsigned iay0 = iAtomY - m_iRadY +  _ny;
@@ -175,7 +175,7 @@ void C2DFFTPotential::SliceSetup() {
 				}
 			}
 
-			if (m_printLevel > 1)
+			if (_config->Output.LogLevel < 2)
 				printf(
 						"getAtomPotential2D: reduced angular range of scattering factor to %g/A!\n",
 						scatPar[0][N_SF - 4 - ix]);
@@ -185,7 +185,7 @@ void C2DFFTPotential::SliceSetup() {
 }
 void  C2DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 	std::vector<float_tt> splinb(N_SF, 0), splinc(N_SF, 0), splind(N_SF, 0);
-	float_tt B = m_tds ? 0 : atom->dw;
+	float_tt B = _config->Model.UseTDS ? 0 : atom->dw;
 	int Znum = atom->Znum;
 	if (m_atPot.count(Znum) == 0) {
 		// setup cubic spline interpolation:

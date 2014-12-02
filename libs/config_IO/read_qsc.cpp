@@ -80,6 +80,7 @@ void OutputConfig::Read(ptree& t){
 	PendelloesungPlot=t.get<bool>("output.pendelloesungPlot");
 	SavePotential=t.get<bool>("output.savePotential");
 	SaveProjectedPotential=t.get<bool>("output.saveProjectedPotential");
+	readPotential=t.get<bool>("output.readPotential");
 }
 void WaveConfig::Read(ptree& t){
 	type=t.get<int>("wave.type");

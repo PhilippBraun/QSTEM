@@ -84,35 +84,21 @@ protected:
 	ConfigPtr _config;
 	ComplexArray3D m_trans1;
 
-	bool m_tds;
-	bool m_periodicXY, m_periodicZ;
-	bool m_centerSlices;
-	bool m_equalDivs;
-	bool m_savePotential, m_saveProjectedPotential, m_plotPotential;
-	bool m_readPotential;
-	bool m_currentPotential;  // Indicates whether computed potential matches current parameters.
-	//    Set to true after computing potential.  Reset to false when parameters change.
 	float_tt m_dz;   // resolutions
 	float_tt m_ddx, m_ddy, m_ddz;   // oversampled resolutions
 	float_tt m_dkx,m_dky, m_dkz,m_kmax2;
-	float_tt m_sliceThickness;
-	float_tt m_zOffset; /* defines the offset for the first slice in fractional coordinates        */
 	float_tt m_c; // the thickness of the current sub-slab (in A)
 	float_tt m_dr, m_atomRadius2;
 	float_tt m_offsetX, m_offsetY;
+	int m_iRadX, m_iRadY, m_iRadZ, m_iRad2;
 
 	int _nx,_ny;
 	int m_boxNx, m_boxNy, m_boxNz;
-	int m_nslices;   // nslices is the number of slices PER SUB-SLAB!  Not the total.
-	int m_outputInterval;
 	// ********* multi-slab parameters ********
 	int m_cellDiv; // How many sub-slabs the model is divided into
 	int m_divCount; // How many sub-slabs we've already processed
-	int m_printLevel;
-	int m_displayPotCalcInterval;  /* show progress every .. atoms when computing potential */
-	int m_saveLevel;
-	int m_iRadX, m_iRadY, m_iRadZ, m_iRad2;
-	int m_scatFactor;  // The scattering factor type.  One of: 0 (Doyle-Turner); 1 (Wieck-Kohl); 2 (Custom)
+
+	int m_scatFactor;  // TODO: NOT USED YET The scattering factor type.  One of: 0 (Doyle-Turner); 1 (Wieck-Kohl); 2 (Custom)
 
 	std::map<int, atomBoxPtr> m_atomBoxes;
 	std::vector<atom> *m_atoms;

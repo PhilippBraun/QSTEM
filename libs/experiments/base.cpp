@@ -370,7 +370,7 @@ void CExperimentBase::Transmit(WavePtr wave, unsigned sliceIdx) {
 	wave->GetSizePixels(nx, ny);
 
 	/*  trans += posx; */
-	for(unsigned ix=0; ix<nx; ix++)
+	for(unsigned ix=0; ix<nx; ix++){
 		for(unsigned iy=0; iy<ny; iy++) {
 			complex_tt t = m_potential->GetSlicePixel(sliceIdx, ix+m_iPosX, iy+m_iPosY);
 			wr = w[ix][iy].real();
@@ -378,10 +378,10 @@ void CExperimentBase::Transmit(WavePtr wave, unsigned sliceIdx) {
 			tr = t.real();
 			ti = t.imag();
 			w[ix][iy] *= t;
-			if(t.real() != 0 || t.imag() != 0)
-				BOOST_LOG_TRIVIAL(debug) << boost::format("w=(%g,%g) t=(%2.3f,%2.3f) w*t=(%g,%g)")
+			BOOST_LOG_TRIVIAL(debug) << boost::format("w=(%g,%g) t=(%2.3f,%2.3f) w*t=(%g,%g)")
 			% wr % wi % tr % ti %w[ix][iy].real() %w[ix][iy].imag();
 		} /* end for(iy.. ix .) */
+	}
 } /* end transmit() */
 
 void CExperimentBase::AddDPToAvgArray(const WavePtr &wave)

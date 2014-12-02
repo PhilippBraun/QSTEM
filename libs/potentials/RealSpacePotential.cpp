@@ -21,15 +21,15 @@ void RealSpacePotential::AddAtomRealSpace(std::vector<atom>::iterator &atom,
 	unsigned iAtomY = (int) floor(atomY / _config->Model.dy);
 	unsigned iAtomZ = (int) floor(atomZ / m_sliceThicknesses[0]);
 
-	if (m_displayPotCalcInterval > 0) {
-		if ( ((iatom + 1) % m_displayPotCalcInterval == 0)) {
+	if (_config->Output.PotentialProgressInterval > 0) {
+		if ( ((iatom + 1) % _config->Output.PotentialProgressInterval == 0)) {
 			BOOST_LOG_TRIVIAL(trace) << format("adding atom %d [%.3f %.3f %.3f (%.3f)], Z=%d")
 									% (iatom + 1) % (atomX + _config->Model.xOffset)%( atomY + m_offsetY)% atom->z% atomZ%atom->Znum;
 		}
 	}
 
 	for (int iax = -m_iRadX; iax <= m_iRadX; iax++) {
-		if (!m_periodicXY) {
+		if (!_config->Potential.periodicXY) {
 			if (iax + iAtomX < 0) {
 				iax = -iAtomX;
 				if (abs(iax) > m_iRadX)
@@ -41,7 +41,7 @@ void RealSpacePotential::AddAtomRealSpace(std::vector<atom>::iterator &atom,
 		float_tt x = (iAtomX + iax) * _config->Model.dx - atomX;
 		unsigned ix = (iax + iAtomX + 16 * _config->Model.nx) % _config->Model.nx; /* shift into the positive range */
 		for (int iay = -m_iRadY; iay <= m_iRadY; iay++) {
-			if (!m_periodicXY) {
+			if (!_config->Potential.periodicXY) {
 				if (iay + iAtomY < 0) {
 					iay = -iAtomY;
 					if (abs(iay) > m_iRadY)

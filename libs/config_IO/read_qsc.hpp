@@ -150,11 +150,11 @@ public:
 };
 class QSTEM_HELPER_DLL_EXPORT OutputConfig : IPropertyTreeReader{
 public:
-	int LogLevel, SaveSliceAfterIterations, PropagationProgressInterval, PotentialProgressInterval,SavePotential,
-	SaveProjectedPotential;
+	int LogLevel, SaveSliceAfterIterations, PropagationProgressInterval, PotentialProgressInterval;
+	bool SavePotential,	SaveProjectedPotential;
 	string SaveFolder;
 	QSTEM::SaveLevel SaveLevel;
-	bool ShowProbe, PendelloesungPlot;
+	bool ShowProbe, PendelloesungPlot, readPotential;
 
 	virtual void Read(ptree& t);
 };

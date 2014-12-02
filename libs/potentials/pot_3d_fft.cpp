@@ -407,7 +407,7 @@ void C3DFFTPotential::SliceSetup(){
  ********************************************************************************/
 #define PHI_SCALE 47.87658
 void C3DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
-	float_tt B = m_tds ? 0 : atom->dw;
+	float_tt B = _config->Model.UseTDS ? 0 : atom->dw;
 	float_tt kmax2;
 	ComplexArray2D tmp;
 	tmp.resize(boost::extents[_nx][_nz]);
@@ -757,7 +757,7 @@ void C3DFFTPotential::GetAtomPotentialOffset3D(unsigned Znum, float_tt B,
 		ptr = atPot[Znum];
 		imageio->WriteImage((void**)ptr, fileName);
 #endif        
-		if (m_printLevel > 1)
+		if (_config->Output.LogLevel < 2)
 			BOOST_LOG_TRIVIAL(info) <<
 			format("Created 3D (r-z) %d x %d potential offset array for Z=%d (B=%g, dkx=%g, dky=%g. dkz=%g,sps=%d)")
 			%(nx / 2)%( nz / 2)% Znum% B% dkx% dky% dkz% izOffset;

@@ -33,12 +33,7 @@ CPotential::CPotential() :	IPotential(), m_dkz(0), m_dkx(0) {
 
 CPotential::CPotential(const ConfigPtr c) :	CPotential() {
 	_config = c;
-	m_saveProjectedPotential = c->Output.SaveProjectedPotential;
-	m_plotPotential= c->Potential.PlotVrr;
-	m_centerSlices = c->Model.CenterSlices;
-	m_sliceThickness = c->Model.sliceThicknessAngstrom;
-	m_outputInterval=c->Output.PotentialProgressInterval;
-	m_zOffset = c->Model.zOffset;
+	_config->Model.sliceThicknessAngstrom = c->Model.sliceThicknessAngstrom;
 	m_offsetY=c->Model.yOffset;
 	m_sliceThicknesses = std::vector<float_tt>();
 	// TODO: Read if we should load the pot from a file
@@ -47,30 +42,27 @@ CPotential::CPotential(const ConfigPtr c) :	CPotential() {
 	m_ddy = _config->Model.dy / (double) OVERSAMPLING;
 	m_ddz = m_dz / (double) OVERSAMPLINGZ;
 
-	/* For now we don't care, if the box has only small
-	 * prime factors, because we will not fourier transform it
-	 * especially not very often.
-	 */
+	/* For now we don't care, if the box has only small prime factors, because we will not fourier transform it  especially not very often. */
 	m_boxNx = (int) (_config->Potential.AtomRadiusAngstrom / m_ddx + 2.0);
 	m_boxNy = (int) (_config->Potential.AtomRadiusAngstrom / m_ddy + 2.0);
 
-	m_c = m_sliceThickness * _config->Model.nSlices;
+	m_c = _config->Model.sliceThicknessAngstrom * _config->Model.nSlices;
 	m_dr = _config->Model.dx / OVERSAMPLING; // define step width in which radial V(r,z) is defined
 	m_iRadX = (int) ceil(_config->Potential.AtomRadiusAngstrom / _config->Model.dx);
 	m_iRadY = (int) ceil(_config->Potential.AtomRadiusAngstrom / _config->Model.dy);
-	m_iRadZ = (int) ceil(_config->Potential.AtomRadiusAngstrom / m_sliceThickness);
+	m_iRadZ = (int) ceil(_config->Potential.AtomRadiusAngstrom / _config->Model.sliceThicknessAngstrom);
 	m_iRad2 = m_iRadX * m_iRadX + m_iRadY * m_iRadY;
 	m_atomRadius2 = _config->Potential.AtomRadiusAngstrom * _config->Potential.AtomRadiusAngstrom;
 
 	m_sliceThicknesses.resize(_config->Model.nSlices);
 	m_slicePos.resize(_config->Model.nSlices);
 
-	if (m_sliceThickness == 0)
+	if (_config->Model.sliceThicknessAngstrom == 0)
 		m_sliceThicknesses[0] = m_c / (float_tt) _config->Model.nSlices;
 	else
-		m_sliceThicknesses[0] = m_sliceThickness;
+		m_sliceThicknesses[0] = _config->Model.sliceThicknessAngstrom;
 
-	m_slicePos[0] = m_zOffset;
+	m_slicePos[0] = _config->Model.zOffset;
 	m_divCount = -1;
 
 	m_imageIO = ImageIOPtr(new CImageIO(_config->Model.nx,_config->Model.ny,".img",".img"));
@@ -94,12 +86,12 @@ void CPotential::DisplayParams() {
 	if (_config->Output.SavePotential)
 		BOOST_LOG_TRIVIAL(info)<<format("* Potential file name:  %s") % m_fileBase.c_str();
 	BOOST_LOG_TRIVIAL(info)<<format("* Model Sampling:  %g x %g x %g A")
-													% _config->Model.dx% _config->Model.dy% m_sliceThickness;
+													% _config->Model.dx% _config->Model.dy% _config->Model.sliceThicknessAngstrom;
 
 	BOOST_LOG_TRIVIAL(info)<<format("* Pot. array offset:    (%g,%g,%g)A")
-													% _config->Model.xOffset%m_offsetY%	m_zOffset;
+													% _config->Model.xOffset%m_offsetY%	_config->Model.zOffset;
 	BOOST_LOG_TRIVIAL(info)<<format("* Potential periodic:   (x,y): %s, z: %s")
-													%((m_periodicXY) ? "yes" : "no") % ((m_periodicZ) ? "yes" : "no");
+													%((_config->Potential.periodicXY) ? "yes" : "no") % ((_config->Potential.periodicZ) ? "yes" : "no");
 	if (k_fftMeasureFlag == FFTW_MEASURE)
 		BOOST_LOG_TRIVIAL(info)<<format("* Potential array:      %d x %d (optimized)"), _config->Model.nx, _config->Model.ny;
 	else
@@ -109,7 +101,7 @@ void CPotential::DisplayParams() {
 	BOOST_LOG_TRIVIAL(info)<<format("* Scattering factors:   %d")% m_scatFactor;
 
 	BOOST_LOG_TRIVIAL(info)<<format("* Slices per division:  %d (%gA thick slices [%scentered])")
-													% _config->Model.nSlices% m_sliceThickness% ((m_centerSlices) ? "" : "not ");
+													% _config->Model.nSlices% _config->Model.sliceThicknessAngstrom% ((_config->Model.CenterSlices) ? "" : "not ");
 }
 
 /****************************************************************************
@@ -280,7 +272,7 @@ void CPotential::SliceSetup() {
 	}
 	//	m_trans1.resize(boost::extents[_config->Model.nSlices][_config->Model.ny][_config->Model.nx]);
 	// If we are going to read the potential, then we need to size the slices according to the first read pot slice
-	if (m_readPotential) {
+	if (_config->Output.readPotential) {
 	}
 	// TODO If we are going to calculate the potential, then we need to size the slices according to the size of the
 	//    structure and the corresponding resolution.
@@ -308,8 +300,8 @@ void CPotential::CenterAtomZ(std::vector<atom>::iterator &atom, float_tt &z) {
 	 */
 	z = atom->z;
 	z -= m_c * (float_tt) ((int) m_cellDiv - (int) m_divCount - 1);
-	z += m_zOffset;
-	z -= (0.5 * m_sliceThickness * (1 - (int) m_centerSlices));
+	z += _config->Model.zOffset;
+	z -= (0.5 * _config->Model.sliceThicknessAngstrom * (1 - (int) _config->Model.CenterSlices));
 }
 
 /*****************************************************
@@ -351,21 +343,13 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 
 #pragma omp parallel for shared(atomsAdded)
 	for (std::vector<atom>::iterator atom = m_crystal->m_atoms.begin(); atom < m_crystal->m_atoms.end(); atom = atom + 1) {
-
-
-		// make sure we skip vacancies:
 		while (atom->Znum == 0)	atom++;
 		size_t iatom = atom - m_crystal->m_atoms.begin();
 
-		if ((m_printLevel >= 4) &&
-				(m_displayPotCalcInterval > 0)&&
-				((iatom + 1) % (m_displayPotCalcInterval)) == 0) {
-			BOOST_LOG_TRIVIAL(info)<<format("Adding potential for atom %d (Z=%u, pos=[%.1f, %.1f, %.1f])")%
+		if ((_config->Output.PotentialProgressInterval > 0)&&((iatom + 1) % (_config->Output.PotentialProgressInterval)) == 0) {
+			BOOST_LOG_TRIVIAL(trace)<<format("Adding potential for atom %d (Z=%u, pos=[%.1f, %.1f, %.1f])")%
 					(iatom + 1)% atom->Znum% atom->x% atom->y% atom->z;
 		}
-
-		// atom coordinates in cartesian coords.  The x- and y-position will be offset by the starting point
-		// of the actually needed array of projected potential
 
 		float_tt atomX = atom->x - _config->Model.xOffset;
 		float_tt atomY = atom->y - m_offsetY;
@@ -391,15 +375,9 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 	BOOST_LOG_TRIVIAL(info) << format(	"%g sec used for real space potential calculation (%g sec per atom)")
 							%	difftime(time1, time0)%(	difftime(time1, time0) / m_crystal->m_atoms.size());
 
-
-	/*************************************************/
-	/* Save the potential slices                                         */
-
 	if (_config->Output.SavePotential) {
 		for (unsigned iz = 0; iz < nlayer; iz++) {
-			// find the maximum value of each layer:
 			float_tt potVal = m_trans1[iz][0][0].real();
-
 			if (_config->Output.LogLevel < 2) {
 				float_tt ddx = potVal;
 				float_tt ddy = potVal;
@@ -414,13 +392,10 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 					}
 				BOOST_LOG_TRIVIAL(info)<<format("Saving (complex) potential layer %d to file (r: %g..%g)")%iz% ddx% ddy;
 			}
-
 			WriteSlice(iz);
-
-			//imageIO->WriteImage((void **)m_trans[iz], params, std::string(buf));
 		} // loop through all slices
 	} /* end of if savePotential ... */
-	if (m_saveProjectedPotential) {
+	if (_config->Output.SaveProjectedPotential) {
 		WriteProjectedPotential();
 	}
 } // end of make3DSlices
@@ -434,12 +409,12 @@ void CPotential::MakePhaseGratings(){
 	BOOST_LOG_TRIVIAL(info)<<format("Making phase gratings for %d layers (scale=%g rad/VA, gamma=%g, sigma=%g) ... ")
 			%m_trans1.shape()[0]%scale%mm0%_config->Beam.sigma;
 
-#pragma omp parallel for
+//#pragma omp parallel for
 	for(int iz =0; iz < m_trans1.shape()[0];iz++){
 		for(int iy =0; iy < m_trans1.shape()[1];iy++){
 			for(int ix=0; ix < m_trans1.shape()[2];ix++){
 				complex_tt t = m_trans1[iz][iy][ix];
-				m_trans1[iz][iy][ix] = complex_tt(cos(scale*t.real()),sin(scale*t.imag()));
+				m_trans1[iz][iy][ix] = complex_tt(cos(scale*t.real()),sin(scale*t.real()));
 			}
 		}
 	}
@@ -450,7 +425,7 @@ void CPotential::MakePhaseGratings(){
 void CPotential::WriteSlice(unsigned idx) {
 	char buf[255];
 	std::map<std::string, double> params;
-	params["Thickness"] = m_sliceThickness;
+	params["Thickness"] = _config->Model.sliceThicknessAngstrom;
 	params["dx"] = _config->Model.dx;
 	params["dy"] = _config->Model.dy;
 	sprintf(buf, "Projected Potential (slice %d)", idx);
@@ -482,7 +457,7 @@ void CPotential::WriteProjectedPotential() {
 			ddx = potVal;
 	}
 	BOOST_LOG_TRIVIAL(info)<<format("Saving total projected potential to file (r: %g..%g)")%ddx%ddy;
-	params["Thickness"] = m_sliceThickness;
+	params["Thickness"] = _config->Model.sliceThicknessAngstrom;
 	params["dx"] = _config->Model.dx;
 	params["dy"] = _config->Model.dy;
 	sprintf(buf, "Projected Potential (sum of %d slices)", _config->Model.nSlices);

@@ -105,7 +105,7 @@ void C2DPotential::AddAtomToSlices(std::vector<atom>::iterator &atom, float_tt a
 {
   // Note that if you override this method, you should do the following check to make sure the atom is in bounds.
   // skip atoms that are beyond the cell's boundaries
-  if (!m_periodicZ)
+  if (!_config->Potential.periodicZ)
     {
       if (atomZ > m_crystal->GetCZ() || atomZ<0) return;
     }
@@ -124,13 +124,13 @@ void C2DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
   unsigned iz;
   
 
-  if (!m_periodicZ) {
+  if (!_config->Potential.periodicZ) {
     if (iAtomZ < 0) return;
-    if (iAtomZ >= m_nslices) return;        
+    if (iAtomZ >= _config->Model.nSlices) return;
   }                
-  iz = (iAtomZ+32*m_nslices) % m_nslices;         /* shift into the positive range */
+  iz = (iAtomZ+32*_config->Model.nSlices) % _config->Model.nSlices;         /* shift into the positive range */
   // x, y are the coordinates in the space of the atom box
-  AtomBoxLookUp(dPot,atom->Znum,atomBoxX,atomBoxY,0, m_tds ? 0 : atom->dw);
+  AtomBoxLookUp(dPot,atom->Znum,atomBoxX,atomBoxY,0, _config->Model.UseTDS ? 0 : atom->dw);
   float_tt atomBoxZ = (double)(iAtomZ+1)*m_sliceThicknesses[0]-atomZ;
 
   unsigned idx=ix*_config->Model.ny+iy;
@@ -142,7 +142,7 @@ void C2DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
   }
   /* split the atom if it is close to the bottom edge of the slice */
   else {
-    if ((atomBoxZ>0.85*m_sliceThicknesses[0]) && (iz < m_nslices-1)) {
+    if ((atomBoxZ>0.85*m_sliceThicknesses[0]) && (iz < _config->Model.nSlices-1)) {
 // TODO use trans1     m_trans[iz][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
 // TODO use trans1     m_trans[iz+1][idx] += complex_tt(0.5*dPot.real(),0.5*dPot.imag());
     }
@@ -155,7 +155,7 @@ void C2DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
 void C2DPotential::CenterAtomZ(std::vector<atom>::iterator &atom, float_tt &z)
 {
   CPotential::CenterAtomZ(atom, z);
-  z += 0.5*m_sliceThickness;
+  z += 0.5*_config->Model.sliceThicknessAngstrom;
 }
 
 } // end namespace QSTEM

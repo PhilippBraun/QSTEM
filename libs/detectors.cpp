@@ -307,10 +307,10 @@ void DetectorManager::SaveDetectors(std::map<std::string, double> &params)
 
 void DetectorManager::PrintDetectors()
 {
-  printf("* Number of detectors:  %d\n",m_detectors.size());
+  printf("* Number of detectors:  %d\n",(int)m_detectors.size());
                 
   for (size_t i=0;i<m_detectors.size();i++) {
-    printf("* %d (\"%s\"):",i+1,m_detectors[0][i]->m_name.c_str());
+    printf("* %d (\"%s\"):",(int)(i+1),m_detectors[0][i]->m_name.c_str());
     for (size_t j=0;j<14-m_detectors[0][i]->m_name.size();j++) printf(" ");
     printf(" %g .. %g mrad = (%.2g .. %.2g 1/A)\n",
            m_detectors[0][i]->m_rInside,

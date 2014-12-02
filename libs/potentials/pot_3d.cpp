@@ -112,13 +112,13 @@ bool C3DPotential::CheckAtomZInBounds(float_tt atomZ)
 	 * if the z-position of this atom is outside the potential slab
 	 * we won't consider it and skip to the next
 	 */
-	return ((atomZ + _config->Potential.AtomRadiusAngstrom < m_c) && (atomZ - _config->Potential.AtomRadiusAngstrom + m_sliceThickness >= 0));
+	return ((atomZ + _config->Potential.AtomRadiusAngstrom < m_c) && (atomZ - _config->Potential.AtomRadiusAngstrom + _config->Model.sliceThicknessAngstrom >= 0));
 }
 
 void C3DPotential::AddAtomToSlices(std::vector<atom>::iterator &atom, 
 		float_tt atomX, float_tt atomY, float_tt atomZ)
 {
-	if (!m_periodicZ && CheckAtomZInBounds(atomZ))
+	if (!_config->Potential.periodicZ && CheckAtomZInBounds(atomZ))
 	{
 		AddAtomRealSpace(atom, atomX, atomY, atomZ);
 	}
@@ -141,7 +141,7 @@ void C3DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
 	unsigned iRadZ = (unsigned)(sqrt(m_atomRadius2-r2sqr)/m_sliceThicknesses[0]+1.0);
 	/* loop through the slices that this atoms contributes to */
 	for (int iaz=-m_iRadZ;iaz <=m_iRadZ;iaz++) {
-		if (!m_periodicZ) {
+		if (!_config->Potential.periodicZ) {
 			if (iaz+iAtomZ < 0) {
 				if (-iAtomZ <= m_iRadZ) iaz = -iAtomZ;
 				else break;
@@ -157,7 +157,7 @@ void C3DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
 		 * using trilinear extrapolation.
 		 */
 		AtomBoxLookUp(dPot,atom->Znum,atomBoxX,atomBoxY,atomBoxZ,
-				m_tds ? 0 : atom->dw);
+				_config->Model.UseTDS ? 0 : atom->dw);
 		// printf("access: %d %d %d\n",iz,ix,iy);
 		//    unsigned idx=ix*m_ny+iy;
 		m_trans1[iz][iy][ix] += dPot;
@@ -170,7 +170,7 @@ void C3DPotential::_AddAtomRealSpace(std::vector<atom>::iterator &atom,
 
 void C3DPotential::CenterAtomZ(std::vector<atom>::iterator &atom, float_tt &z)
 {
-	z = atom->z + m_zOffset;
+	z = atom->z + _config->Model.zOffset;
 }
 
 
