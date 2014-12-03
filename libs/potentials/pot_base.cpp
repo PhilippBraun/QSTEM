@@ -345,14 +345,8 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 	for (std::vector<atom>::iterator atom = m_crystal->m_atoms.begin(); atom < m_crystal->m_atoms.end(); atom = atom + 1) {
 		while (atom->Znum == 0)	atom++;
 		size_t iatom = atom - m_crystal->m_atoms.begin();
-
-		if ((_config->Output.PotentialProgressInterval > 0)&&((iatom + 1) % (_config->Output.PotentialProgressInterval)) == 0) {
-			BOOST_LOG_TRIVIAL(trace)<<format("Adding potential for atom %d (Z=%u, pos=[%.1f, %.1f, %.1f])")%
-					(iatom + 1)% atom->Znum% atom->x% atom->y% atom->z;
-		}
-
-		float_tt atomX = atom->x - _config->Model.xOffset;
-		float_tt atomY = atom->y - m_offsetY;
+		float_tt atomX = atom->x;
+		float_tt atomY = atom->y;
 		float_tt atomZ = atom->z;
 
 		CenterAtomZ(atom, atomZ);

@@ -1,13 +1,15 @@
 qscRg12, written by Ray Hu (GXH115@bham.ac.uk)
 
-Purpose: a simple C program to help users to get the edge of scanning windows X and Y after rotation, so that we won't need the graphical user interface when we conduct the simulation under Linux OS remotely.
+Purpose: a simple C program to help users to get the edge of scanning windows X and Y after rotation, so that we won't need the graphical user 
+interface when we conduct the simulation under Linux OS remotely.
 
 Example usage:
 
 qscRg12 ABC.cfg X.tilting Y.tilting Z.tilting Spaced
 for example.
 qscRg12 ABC.cfg 10 20 0 0.5
-would mean that outputting the X_start/end Y_start/end for X rotation 10 deg, Y rotation 20 deg. And also push the edges out for 0.5 Angstrom, because we don't want the scanning window cut right on the atoms on the rim.
+would mean that outputting the X_start/end Y_start/end for X rotation 10 deg, Y rotation 20 deg. And also push the edges out for 0.5 Angstrom, 
+because we don't want the scanning window cut right on the atoms on the rim.
 
 The program would return information on screen like this.
 Xmax-> 14.524338 Xmin-> 5.093791

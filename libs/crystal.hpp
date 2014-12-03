@@ -88,8 +88,7 @@ protected:
                                           back to fractional coordinates. */
   float_tt m_ax, m_by, m_cz;           /* lattice parameters */
   float_tt m_cAlpha, m_cBeta, m_cGamma;
-  float_tt m_cubex, m_cubey, m_cubez;  /* dimension of crystal cube, if zero, then nx,ny,nz *
-  //					 * will be used */
+  float_tt m_cubex, m_cubey, m_cubez;
   float_tt m_maxX, m_minX;
   float_tt m_maxY, m_minY;
   float_tt m_maxZ, m_minZ;
@@ -101,8 +100,7 @@ protected:
   StructureReaderPtr m_reader;
 
   std::map<unsigned, float_tt> m_u2;  /* (current) rms displacement of atoms */
-  std::map<unsigned, unsigned> m_u2Count; /* count of atoms that have been displaced.  Used for computing
-                                             m_u2avg. */
+  std::map<unsigned, unsigned> m_u2Count; /* count of atoms that have been displaced.  Used for computing m_u2avg. */
 
   boost::filesystem::path m_phononFile;
 

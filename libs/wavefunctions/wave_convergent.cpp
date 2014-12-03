@@ -73,9 +73,6 @@ CConvergentWave::CConvergentWave(const CConvergentWave& other) : CBaseWave(other
 	// TODO: need to copy arrays and anything pointed to - anything that needs to be thread-local
 }
 
-CConvergentWave::CConvergentWave() : CBaseWave()
-{
-}
 
 WavePtr CConvergentWave::Clone()
 {

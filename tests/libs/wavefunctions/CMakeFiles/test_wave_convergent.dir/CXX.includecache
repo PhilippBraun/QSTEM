@@ -12427,10 +12427,12 @@ boost/multi_array.hpp
 libs/boost/multi_array.hpp
 complex
 -
-fftw3.h
-libs/fftw3.h
 cmath
 -
+fftw3f.h
+libs/fftw3f.h
+fftw3.h
+libs/fftw3.h
 
 libs/wavefunctions/wave_factory.hpp
 map

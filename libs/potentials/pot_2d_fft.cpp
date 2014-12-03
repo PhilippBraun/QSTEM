@@ -63,20 +63,22 @@ void C2DFFTPotential::CenterAtomZ(std::vector<atom>::iterator &atom, float_tt &z
 void C2DFFTPotential::AddAtomNonPeriodic(std::vector<atom>::iterator &atom,float_tt atomBoxX, int iAtomX, float_tt atomBoxY,int iAtomY, float_tt atomZ) {
 	int iAtomZ = (int) floor(atomZ / _config->Model.sliceThicknessAngstrom);
 	int iax0, iay0, potentialOffsetX =0, potentialOffsetY=0;
-	if(iAtomX - m_iRadX < 0 ){
+	int iOffsetX = rint(_config->Model.xOffset/_config->Model.dx);
+	int iOffsetY = rint(_config->Model.yOffset/_config->Model.dy);
+	if(iAtomX - m_iRadX + iOffsetX < 0 ){
 		iax0 = 0;
-		potentialOffsetX = abs(iAtomX - m_iRadX) * OVERSAMPLING;
+		potentialOffsetX = abs(iAtomX - m_iRadX + iOffsetX) * OVERSAMPLING;
 	} else {
-		iax0 = iAtomX - m_iRadX;
+		iax0 = iAtomX - m_iRadX + iOffsetX;
 	}
-	if(iAtomY - m_iRadY < 0 ){
+	if(iAtomY - m_iRadY + iOffsetY < 0 ){
 		iay0 =0;
-		potentialOffsetY = abs(iAtomY - m_iRadY) * OVERSAMPLING;
+		potentialOffsetY = abs(iAtomY - m_iRadY + iOffsetY) * OVERSAMPLING;
 	} else {
-		iay0 = iAtomY - m_iRadY;
+		iay0 = iAtomY - m_iRadY + iOffsetY;
 	}
-	int iax1 = iAtomX + m_iRadX >= _config->Model.nx ? _config->Model.nx - 1 : iAtomX + m_iRadX;
-	int iay1 = iAtomY + m_iRadY >= _config->Model.ny ? _config->Model.ny - 1 : iAtomY + m_iRadY;
+	int iax1 = iAtomX + m_iRadX +iOffsetX >= _config->Model.nx ? _config->Model.nx - 1 : iAtomX + m_iRadX+iOffsetX;
+	int iay1 = iAtomY + m_iRadY +iOffsetY >= _config->Model.ny ? _config->Model.ny - 1 : iAtomY + m_iRadY+iOffsetY;
 	float_tt ddx = (atomBoxX/_config->Model.dx - iAtomX);
 	float_tt ddy = (atomBoxY/_config->Model.dy - iAtomY);
 	int iOffsX = (int) floor(ddx);
@@ -222,7 +224,7 @@ void  C2DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 		fftwf_destroy_plan(plan);
 #else
 		fftw_complex *ptr=(fftw_complex *)(m_atPot[Znum].data());
-		fftw_plan plan = fftw_plan_dft_2d(nx,ny,ptr,ptr,FFTW_BACKWARD,FFTW_ESTIMATE);
+		fftw_plan plan = fftw_plan_dft_2d(_nx,_ny,ptr,ptr,FFTW_BACKWARD,FFTW_ESTIMATE);
 		fftw_execute(plan);
 		fftw_destroy_plan(plan);
 #endif

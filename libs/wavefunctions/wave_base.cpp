@@ -31,26 +31,15 @@ void CreateWaveFunctionDataSets(unsigned x, unsigned y, std::vector<unsigned> po
 	imageIO.CreateComplexDataSet(potDataSetLabel, positions);
 	imageIO.CreateComplexDataSet(mulswavDataSetLabel, positions);
 }
-
-CBaseWave::CBaseWave(unsigned x, unsigned y, float_tt resX, float_tt resY, 
-		std::string input_ext, std::string output_ext) :
-										  //m_position(std::vector<unsigned>()),
-										  m_detPosX(0),
-										  m_detPosY(0),
-										  m_nx(x),
-										  m_ny(y),
-										  m_dx(resX),
-										  m_dy(resY),
-										  m_params(std::map<std::string, double>())
-, m_fftPlanWaveForw(NULL)
-, m_fftPlanWaveInv(NULL)
+CBaseWave::CBaseWave(const ConfigPtr c) :
+		_fft(cvmlcpp::DFT<float_tt, 2>(m_wave,m_wave,true, FFTW_ESTIMATE,1)),
+		_ifft(cvmlcpp::DFT<float_tt, 2>(m_wave,m_wave,false, FFTW_ESTIMATE,1))
 {
-	Initialize(".img", ".img");
-}
-
-CBaseWave::CBaseWave(const ConfigPtr c): m_fftPlanWaveForw(NULL), m_fftPlanWaveInv(NULL)
-{
+	m_fftPlanWaveForw = NULL;
+	m_fftPlanWaveInv = NULL;
 	_config = c;
+	_fft=cvmlcpp::DFT<float_tt, 2>(m_wave,m_wave,true, FFTW_ESTIMATE,_config->nThreads);
+	_ifft=cvmlcpp::DFT<float_tt, 2>(m_wave,m_wave,false, FFTW_ESTIMATE,_config->nThreads);
 	m_nx = c->Model.nx;
 	m_ny = c->Model.ny;
 	m_dx = c->Model.dx;
@@ -62,23 +51,15 @@ CBaseWave::CBaseWave(const ConfigPtr c): m_fftPlanWaveForw(NULL), m_fftPlanWaveI
 }
 
 /** Copy constructor - make sure arrays are deep-copied */
-CBaseWave::CBaseWave(const CBaseWave &other)
-: m_fftPlanWaveForw(NULL)
-, m_fftPlanWaveInv(NULL)
+CBaseWave::CBaseWave(const CBaseWave &other): CBaseWave(other._config)
 {
 	// TODO: make sure arrays are deep copied
 	other.GetSizePixels(m_nx, m_ny);
 	other.GetResolution(m_dx, m_dy);
 	m_v0=other.GetVoltage();
-
 	Initialize(".img", ".img");
 }
 
-CBaseWave::CBaseWave()
-: m_fftPlanWaveForw(NULL)
-, m_fftPlanWaveInv(NULL)
-{
-}
 
 CBaseWave::~CBaseWave()
 {
@@ -118,15 +99,18 @@ void CBaseWave::Initialize(std::string input_ext, std::string output_ext)
 
 	CreateDataSets();
 
-#if FLOAT_PRECISION == 1
-	fftwf_complex *ptr = (fftwf_complex *)m_wave.data();
-	m_fftPlanWaveForw = fftwf_plan_dft_2d(m_nx,m_ny,ptr,ptr,FFTW_FORWARD, k_fftMeasureFlag);
-	m_fftPlanWaveInv = fftwf_plan_dft_2d(m_nx,m_ny,ptr,ptr,FFTW_BACKWARD, k_fftMeasureFlag);
-#else
-	fftw_complex *ptr = (fftw_complex *)&m_wave[0];
-	m_fftPlanWaveForw = fftw_plan_dft_2d(m_nx,m_ny,&m_wave[0],&m_wave[0],FFTW_FORWARD, k_fftMeasureFlag);
-	m_fftPlanWaveInv = fftw_plan_dft_2d(m_nx,m_ny,&m_wave[0],&m_wave[0],FFTW_BACKWARD, k_fftMeasureFlag);
-#endif
+	_fft = cvmlcpp::DFT<float_tt, 2>(m_wave,m_wave,true, FFTW_ESTIMATE,_config->nThreads);
+	_ifft = cvmlcpp::DFT<float_tt, 2>(m_wave,m_wave,false, FFTW_ESTIMATE,_config->nThreads);
+
+//#if FLOAT_PRECISION == 1
+//	fftwf_complex *ptr = (fftwf_complex *)m_wave.data();
+//	m_fftPlanWaveForw = fftwf_plan_dft_2d(m_nx,m_ny,ptr,ptr,FFTW_FORWARD, k_fftMeasureFlag);
+//	m_fftPlanWaveInv = fftwf_plan_dft_2d(m_nx,m_ny,ptr,ptr,FFTW_BACKWARD, k_fftMeasureFlag);
+//#else
+//	fftw_complex *ptr = (fftw_complex *)&m_wave[0];
+//	m_fftPlanWaveForw = fftw_plan_dft_2d(m_nx,m_ny,&m_wave[0],&m_wave[0],FFTW_FORWARD, k_fftMeasureFlag);
+//	m_fftPlanWaveInv = fftw_plan_dft_2d(m_nx,m_ny,&m_wave[0],&m_wave[0],FFTW_BACKWARD, k_fftMeasureFlag);
+//#endif
 	InitializeKVectors();
 }
 
@@ -389,11 +373,13 @@ void CBaseWave::ToFourierSpace()
 {
 	if (IsRealSpace())
 	{
-#if FLOAT_PRECISION == 1
-		fftwf_execute(m_fftPlanWaveForw);
-#elif FLOAT_PRECISION == 2
-		fftw_execute(m_fftPlanWaveForw);
-#endif
+		_fft.execute();
+		m_realSpace = false;
+//#if FLOAT_PRECISION == 1
+//		fftwf_execute(m_fftPlanWaveForw);
+//#elif FLOAT_PRECISION == 2
+//		fftw_execute(m_fftPlanWaveForw);
+//#endif
 	}
 }
 
@@ -402,11 +388,13 @@ void CBaseWave::ToRealSpace()
 {
 	if (!IsRealSpace())
 	{
-#if FLOAT_PRECISION == 1
-		fftwf_execute(m_fftPlanWaveInv);
-#elif FLOAT_PRECISION == 2
-		fftw_execute(m_fftPlanWaveInv);
-#endif
+		_ifft.execute();
+		m_realSpace = true;
+//#if FLOAT_PRECISION == 1
+//		fftwf_execute(m_fftPlanWaveInv);
+//#elif FLOAT_PRECISION == 2
+//		fftw_execute(m_fftPlanWaveInv);
+//#endif
 	}
 }
 

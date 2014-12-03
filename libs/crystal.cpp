@@ -47,13 +47,24 @@ static const float_tt k_sq3 = 1.0 / sqrt(3.0); /* sq3 is an additional needed fa
  * introduced in order to match the wobble factor with <u^2>
  */
 
-CCrystal::CCrystal() :	m_minX(0), m_maxX(0), m_minY(0), m_maxY(0), m_minZ(0), m_maxZ(0) {}
+CCrystal::CCrystal() :
+		m_minX(0),
+		m_maxX(0),
+		m_minY(0),
+		m_maxY(0),
+		m_minZ(0),
+		m_maxZ(0),
+		m_Einstein(true),
+		m_phononFile(boost::filesystem::path()),
+		m_cubex(0),
+		m_cubey(0),
+		m_cubez(0),
+		m_ax(0)
+		{}
 
-CCrystal::CCrystal(const ConfigPtr c) {
+CCrystal::CCrystal(const ConfigPtr c): CCrystal()  {
 	CCrystal();
 	_config = c;
-	m_Einstein = true;
-	m_phononFile = boost::filesystem::path();
 
 	m_wobble_temp_scale = sqrt(_config->Structure.temperatureK / 300.0);
 	// Get the object that we'll use to read in the array of atoms
@@ -61,12 +72,9 @@ CCrystal::CCrystal(const ConfigPtr c) {
 	m_structureWriter = CStructureWriterFactory::Get()->GetWriter(c->Structure.structureFilename,m_ax, m_by, m_cz);
 	m_Mm = float2D(3, 3, "");
 	m_structureReader->ReadCellParams(m_Mm);
-
-	// Read in the initial atomic positions from the file (do duplication, tilt, and shaking later)
 	m_structureReader->ReadAtoms(m_baseAtoms,m_uniqueAtoms);
-	BOOST_LOG_TRIVIAL(info)<<format("Read %d atoms, tds: %d")
-													% m_baseAtoms.size()% _config->Model.UseTDS;
-	m_minX = m_maxX = m_minY = m_maxY = m_minZ = m_maxZ = 0;
+	BOOST_LOG_TRIVIAL(info)<<format("Read %d atoms, tds: %d") % m_baseAtoms.size()% _config->Model.UseTDS;
+
 	CalculateCellDimensions();
 	MakeCrystal(true);
 	CalculateCrystalBoundaries();
@@ -386,8 +394,7 @@ void CCrystal::TiltBoxed(int ncoord, bool handleVacancies) {
 	static float_tt **MbPrim = NULL, **MbPrimInv = NULL, **MmOrig = NULL,
 			**MmOrigInv = NULL;
 	//static float_tt **a = NULL,**aOrig = NULL,**b= NULL,**bfloor=NULL,**blat=NULL;
-	std::vector<float_tt> a(3, 0), aOrig(3, 0), b(3, 0), bfloor(3, 0), blat(3,
-			0);
+	std::vector<float_tt> a(3, 0), aOrig(3, 0), b(3, 0), bfloor(3, 0), blat(3, 0);
 	//static float_tt *uf;
 	static int oldAtomSize = 0;
 	double x, y, z, dx, dy, dz;

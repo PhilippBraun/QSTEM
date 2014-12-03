@@ -121,11 +121,12 @@ public:
 };
 class QSTEM_HELPER_DLL_EXPORT ModelConfig : IPropertyTreeReader{
 public:
-	bool UseTDS, TiltBack, CenterSlices;
+	bool UseTDS, TiltBack, CenterSlices,CenterSample;
 	int TDSRuns, nx, ny, nSlices;
 	QSTEM::SliceThicknessCalculation SliceThicknessCalculation;
+	QSTEM::ResolutionCalculation ResolutionCalculation;
 	float_tt sliceThicknessAngstrom, xOffset, yOffset, zOffset, dx, dy, crystalTiltX,
-		crystalTiltY, crystalTiltZ, beamTiltX, beamTiltY;
+		crystalTiltY, crystalTiltZ, beamTiltX, beamTiltY,areaX,areaY;
 
 	virtual void Read(ptree& t);
 };

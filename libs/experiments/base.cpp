@@ -50,18 +50,39 @@ CExperimentBase::CExperimentBase(ConfigPtr c) : IExperiment()
 		break;
 	}
 
+	switch(c->Model.ResolutionCalculation){
+	case ResolutionCalculation::FILLN:
+		_config->Model.dx = (max_x - min_x)/_config->Model.nx;
+		_config->Model.dy = (max_y - min_y)/_config->Model.ny;
+		_config->Model.xOffset = 0;
+		_config->Model.yOffset = 0;
+		break;
+	case ResolutionCalculation::FILLRES:
+		_config->Model.nx = ceil((max_x - min_x) / _config->Model.dx) ;
+		_config->Model.ny = ceil((max_y - min_y) / _config->Model.dy) ;
+		_config->Model.xOffset = 0;
+		_config->Model.yOffset = 0;
+		break;
+	case ResolutionCalculation::SIZERES:
+		_config->Model.nx = _config->Model.areaX / _config->Model.dx;
+		_config->Model.ny = _config->Model.areaY / _config->Model.dy;
+		if(_config->Model.CenterSample) {
+			_config->Model.xOffset = _config->Model.areaX/2 - (max_x-min_x)/2;
+			_config->Model.yOffset = _config->Model.areaY/2 - (max_y-min_y)/2;
+		}
+		break;
+	case ResolutionCalculation::SIZEN:
+		_config->Model.dx = _config->Model.areaX /(float_tt)_config->Model.nx;
+		_config->Model.dy = _config->Model.areaY/(float_tt)_config->Model.ny;
+		if(_config->Model.CenterSample) {
+			_config->Model.xOffset = _config->Model.areaX/2 - (max_x-min_x)/2;
+			_config->Model.yOffset = _config->Model.areaY/2 - (max_y-min_y)/2;
+		}
+		break;
+	}
+
 	int atomRadiusSlices = ceil(_config->Potential.AtomRadiusAngstrom / c->Model.sliceThicknessAngstrom);
 	if(_config->Potential.Use3D) c->Model.nSlices += 2*atomRadiusSlices;
-
-
-	atomRadiusSlices = ceil(_config->Potential.AtomRadiusAngstrom / _config->Model.dx);
-	_config->Model.nx = ceil((max_x - min_x) / _config->Model.dx) ;
-	if(_config->Potential.periodicXY == false)  _config->Model.nx += atomRadiusSlices;
-
-
-	atomRadiusSlices = ceil(_config->Potential.AtomRadiusAngstrom / _config->Model.dy);
-	_config->Model.ny = ceil((max_y - min_y) / _config->Model.dy) ;
-	if(_config->Potential.periodicXY == false)  _config->Model.ny += atomRadiusSlices;
 
 	m_wave = CWaveFactory::Get()->GetWave(_config->Wave.type, c);
 
@@ -117,7 +138,7 @@ void CExperimentBase::DisplayParams() {
 	BOOST_LOG_TRIVIAL(info) << format("* Output every:         %d slices") %
 			_config->Output.PropagationProgressInterval;
 	BOOST_LOG_TRIVIAL(info) << format("* TDS:                  %d runs)") % _config->Model.TDSRuns;
-	BOOST_LOG_TRIVIAL(info) << "******************************************************************************************";
+	BOOST_LOG_TRIVIAL(info) << "**************************************************************************************************";
 }
 
 void CExperimentBase::DisplayProgress(int flag)
@@ -291,7 +312,16 @@ int CExperimentBase::RunMultislice(WavePtr wave)
 		//remember: prop must be here to anti-alias propagate is a simple multiplication of wave with prop but it also takes care of the bandwidth limiting
 		wave->ToFourierSpace();
 
+		std::stringstream s1;
+		s1 << boost::format("after_ft_%d") % islice;
+		wave->Save(s1.str());
+
 		Propagate(wave, islice);
+
+		std::stringstream s2;
+		s2 << boost::format("after_prop_%d") % islice;
+		wave->Save(s2.str());
+
 		CollectIntensity(absolute_slice);
 
 		wave->ToRealSpace();

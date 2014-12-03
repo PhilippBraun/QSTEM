@@ -30,7 +30,6 @@ class QSTEM_HELPER_DLL_EXPORT CPlaneWave : public CBaseWave
 public:
   CPlaneWave(const ConfigPtr configReader);
   CPlaneWave(const CPlaneWave& other);
-  CPlaneWave();
   virtual void FormProbe();
   void TiltBeam(bool tiltBack=false);
   void TiltBack();

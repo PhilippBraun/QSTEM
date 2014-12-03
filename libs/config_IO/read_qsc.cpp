@@ -40,11 +40,13 @@ void ModelConfig::Read(ptree& t){
 	UseTDS=t.get<bool>("model.tds");
 	TiltBack=t.get<bool>("model.tiltBack");
 	CenterSlices=t.get<bool>("model.centerSlices");
+	CenterSample=t.get<bool>("model.centerSample");
 	TDSRuns=t.get<int>("model.tds.tdsRuns");
 	nx=t.get<int>("model.nx");
 	ny=t.get<int>("model.ny");
 	nSlices =t.get<int>("model.slices");
 	SliceThicknessCalculation = static_cast<QSTEM::SliceThicknessCalculation>(t.get<int>("model.sliceThicknessCalculation"));
+	ResolutionCalculation = static_cast<QSTEM::ResolutionCalculation>(t.get<int>("model.resolutionCalculation"));
 	sliceThicknessAngstrom=t.get<float_tt>("model.sliceThicknessAngstrom");
 	xOffset=t.get<float_tt>("model.xOffset");
 	yOffset=t.get<float_tt>("model.yOffset");
@@ -56,6 +58,8 @@ void ModelConfig::Read(ptree& t){
 	crystalTiltZ=t.get<float_tt>("model.crystalTiltZ");
 	beamTiltX=t.get<float_tt>("model.beamTiltX");
 	beamTiltY=t.get<float_tt>("model.beamTiltY");
+	areaX=t.get<float_tt>("model.areaX");
+	areaY=t.get<float_tt>("model.areaY");
 }
 void PotentialConfig::Read(ptree& t){
 	PlotVrr=t.get<bool>("model.potential.plotVr_r");

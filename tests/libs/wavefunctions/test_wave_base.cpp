@@ -36,7 +36,7 @@ using namespace QSTEM;
 struct PlaneWaveFixture {
   PlaneWaveFixture()
   {
-    wave = WavePtr(new CPlaneWave());
+//    wave = WavePtr(new CPlaneWave());
 //   configReader = CConfigReaderFactory::Get()->GetReader("tem_STO.qsc");
     //std::cout << "setup plane wave fixture" << std::endl; 
   }

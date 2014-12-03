@@ -29,7 +29,6 @@ class QSTEM_HELPER_DLL_EXPORT CConvergentWave : public CBaseWave
 public:
   CConvergentWave(const ConfigPtr c);
   CConvergentWave( const CConvergentWave& other );
-  CConvergentWave();
   virtual void FormProbe();
   virtual void DisplayParams();
   WavePtr Clone();

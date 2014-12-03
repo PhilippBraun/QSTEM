@@ -31,9 +31,6 @@ CPlaneWave::CPlaneWave(const ConfigPtr c) : CBaseWave(c)
 	m_ny = c->Model.ny;
 }
 
-CPlaneWave::CPlaneWave() : CBaseWave()
-{
-}
 
 /** Copy constructor - used to copy wave just before dispatching multiple threads for STEM simulations */
 CPlaneWave::CPlaneWave(const CPlaneWave& other) : CBaseWave(other)

@@ -500,7 +500,7 @@ void C3DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 		//    fftwf_destroy_plan(plan);
 #else
 		ComplexArray2D out;
-		out.resize(boost::extents[m_nx][_nz]);
+		out.resize(boost::extents[_nx][_nz]);
 		auto dft = cvmlcpp::DFT<float_tt, 2>(tmp,out,false, FFTW_ESTIMATE,1);
 		dft.execute();
 

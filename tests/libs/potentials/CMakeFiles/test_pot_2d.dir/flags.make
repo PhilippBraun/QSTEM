@@ -4,5 +4,5 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS =  -fopenmp -g -I/usr/local/include -I/home/philipp/QSTEM/libs -I/home/philipp/QSTEM/tests    -std=c++0x
 
-CXX_DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_LOG_DYN_LINK -DBOOST_TEST_DYN_LINK -DVERSION=\"3.0\"
+CXX_DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_LOG_DYN_LINK -DBOOST_TEST_DYN_LINK -DUSE_THREADS -DVERSION=\"3.0\"
 

@@ -21,23 +21,23 @@ QSTEM - image simulation for TEM/STEM/CBED
 #define STEMTYPES_H
 
 #include <boost/shared_ptr.hpp>
-
 #include "fftw_allocator.hpp"
-
 #include "elTable.hpp"
-
 #include "boost/multi_array.hpp"
 #include <complex>
+#include <cmath>
+
 namespace QSTEM
 {
 
-
-
-////////////////////////////////////////////////////////////////////////
-// define whether to use single or double precision
-///////////////////////////////////////////////////////////////////////
-#define FLOAT_PRECISION 1
-
+#define FLOAT_PRECISION 0
+#if FLOAT_PRECISION == 1
+#include "fftw3f.h"
+typedef float float_tt;
+#else  // FLOAT_PRECISION
+#include "fftw3.h"
+typedef double float_tt;
+#endif  // FLOAT_PRECISION
 
 #define BW (2.0F/3.0F)	/* bandwidth limit */
 
@@ -67,19 +67,6 @@ namespace QSTEM
 #define ELECTRON_CHARGE (1.6021773e-19)
 #define PICO_AMPERE (1e-12/ELECTRON_CHARGE)
 #define MILLISEC_PICOAMP (1e-3*PICO_AMPERE)
-
-// #include "floatdef.hpp"
-#include "fftw3.h"
-#include <cmath>
-
-////////////////////////////////////////////////////////////////
-#if FLOAT_PRECISION == 1
-typedef float float_tt;
-
-#else  // FLOAT_PRECISION
-typedef float float_tt;
-
-#endif  // FLOAT_PRECISION
 
 typedef std::complex<float_tt> complex_tt;
 typedef std::vector<float_tt, FFTWAllocator<float_tt> > RealVector;
