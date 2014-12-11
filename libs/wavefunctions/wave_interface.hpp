@@ -52,7 +52,7 @@ public:
   virtual WavePtr Clone()=0;
   virtual ComplexArray2DPtr GetWave() const = 0;
   virtual void GetSizePixels(unsigned &x, unsigned &y) const =0;
-  virtual unsigned GetTotalPixels() const =0;
+  virtual void GetExtents(int& nx, int& ny) const =0;
   virtual void GetResolution(float_tt &x, float_tt &y) const =0;
   virtual void GetPositionOffset(unsigned &x, unsigned &y) const =0;
   virtual float_tt GetK2(unsigned ix, unsigned iy) const =0;
@@ -107,12 +107,6 @@ public:
   virtual void WriteDiffPat(unsigned posX, unsigned posY, unsigned posZ, std::string comment="Diffraction Pattern", 
                  std::map<std::string, double>params = std::map<std::string, double>())=0;
 
-  // People can change the wavefunction - for example, that's what we have to do when we
-  //    transmit the wave through the sample's potential.
-  virtual complex_tt *GetWavePointer()=0;
-  // People should not directly change the diffraction pattern, since we'll re-calculate it when 
-  //   the wavefunction changes.
-  //   They can, however, access it.
   virtual const float_tt *GetDPPointer()=0;
 
   virtual float_tt GetIntegratedIntensity() const =0;

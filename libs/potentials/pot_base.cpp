@@ -299,7 +299,7 @@ void CPotential::CenterAtomZ(std::vector<atom>::iterator &atom, float_tt &z) {
 	 * slice.
 	 */
 	z = atom->z;
-	z -= m_c * (float_tt) ((int) m_cellDiv - (int) m_divCount - 1);
+//	z -= m_c * (float_tt) ((int) m_cellDiv - (int) m_divCount - 1);
 	z += _config->Model.zOffset;
 	z -= (0.5 * _config->Model.sliceThicknessAngstrom * (1 - (int) _config->Model.CenterSlices));
 }
@@ -361,6 +361,10 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 
 	} // for iatom =0 ... 
 
+	for (unsigned iz = 0; iz < nlayer; iz++) {
+		WriteSlice(iz,"pot_before_phase_grating_");
+	}
+
 	MakePhaseGratings();
 
 	if(_config->Potential.BandlimitTransmissionFunction) BandlimitTransmissionFunction();
@@ -386,7 +390,7 @@ void CPotential::MakeSlices(int nlayer, StructurePtr crystal) {
 					}
 				BOOST_LOG_TRIVIAL(info)<<format("Saving (complex) potential layer %d to file (r: %g..%g)")%iz% ddx% ddy;
 			}
-			WriteSlice(iz);
+			WriteSlice(iz,"pot_slice_");
 		} // loop through all slices
 	} /* end of if savePotential ... */
 	if (_config->Output.SaveProjectedPotential) {
@@ -416,7 +420,7 @@ void CPotential::MakePhaseGratings(){
 
 
 
-void CPotential::WriteSlice(unsigned idx) {
+void CPotential::WriteSlice(unsigned idx, std::string prefix) {
 	char buf[255];
 	std::map<std::string, double> params;
 	params["Thickness"] = _config->Model.sliceThicknessAngstrom;
@@ -425,7 +429,7 @@ void CPotential::WriteSlice(unsigned idx) {
 	sprintf(buf, "Projected Potential (slice %d)", idx);
 	std::string comment = buf;
 	std::stringstream filename;
-	filename << "pot_slice_" << idx;
+	filename << prefix << idx;
 	m_imageIO->WriteImage(m_trans1[boost::indices[idx][range(0,_config->Model.nx)][range(0,_config->Model.ny)]], filename.str().c_str(), params, comment);
 }
 

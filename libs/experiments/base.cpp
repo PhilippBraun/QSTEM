@@ -63,6 +63,18 @@ CExperimentBase::CExperimentBase(ConfigPtr c) : IExperiment()
 		_config->Model.xOffset = 0;
 		_config->Model.yOffset = 0;
 		break;
+	case ResolutionCalculation::CELLRES:
+		_config->Model.nx = m_sample->_sizeX / _config->Model.dx ;
+		_config->Model.ny = m_sample->_sizeY / _config->Model.dy ;
+		_config->Model.xOffset = 0;
+		_config->Model.yOffset = 0;
+		break;
+	case ResolutionCalculation::CELLN:
+		_config->Model.dx = m_sample->_sizeX / _config->Model.nx ;
+		_config->Model.dy = m_sample->_sizeY / _config->Model.ny ;
+		_config->Model.xOffset = 0;
+		_config->Model.yOffset = 0;
+		break;
 	case ResolutionCalculation::SIZERES:
 		_config->Model.nx = _config->Model.areaX / _config->Model.dx;
 		_config->Model.ny = _config->Model.areaY / _config->Model.dy;
@@ -248,11 +260,14 @@ void CExperimentBase::InitializePropagators(WavePtr wave){
 
 	float_tt scale = m_dz*PI;
 
+	BOOST_LOG_TRIVIAL(debug) << format("* InitializePropagators") ;
+
 #pragma omp parallel for
 	for(int ixa=0; ixa<nx; ixa++) {
 		float_tt t = scale * (wave->GetKX2(ixa)*wave->GetWavelength());
 		m_propxr[ixa] = (float_tt)  cos(t);
 		m_propxi[ixa] = (float_tt) -sin(t);
+		BOOST_LOG_TRIVIAL(debug) << format("* m_propx[%d] = (%g,%g)") % ixa % m_propxr[ixa] % m_propxi[ixa];
 	}
 #pragma omp parallel for
 	for(int iya=0; iya<ny; iya++) {
@@ -269,13 +284,10 @@ int CExperimentBase::RunMultislice(WavePtr wave)
 	int islice,i,ix,iy,mRepeat;
 	float_tt cztot=0.0;
 	float_tt wavlen,sum=0.0; //,zsum=0.0
-	// static int *layer=NULL;
 	float_tt x,y;
 	int absolute_slice;
-
 	char outStr[64];
 	double fftScale;
-
 	unsigned nx, ny;
 
 	wave->GetSizePixels(nx, ny);
@@ -285,7 +297,9 @@ int CExperimentBase::RunMultislice(WavePtr wave)
 
 	wavlen = wave->GetWavelength();
 
-	m_avgArray.resize(wave->GetTotalPixels());
+	int nx1,ny1;
+	wave->GetExtents(nx1,ny1);
+	m_avgArray.resize(nx1*ny1);
 	m_imageIO = ImageIOPtr(new CImageIO(nx,ny));
 
 	/*  calculate the total specimen thickness and echo */
@@ -408,7 +422,7 @@ void CExperimentBase::Transmit(WavePtr wave, unsigned sliceIdx) {
 			tr = t.real();
 			ti = t.imag();
 			w[ix][iy] *= t;
-			BOOST_LOG_TRIVIAL(debug) << boost::format("w=(%g,%g) t=(%2.3f,%2.3f) w*t=(%g,%g)")
+			BOOST_LOG_TRIVIAL(trace) << boost::format("w=(%g,%g) t=(%2.3f,%2.3f) w*t=(%g,%g)")
 			% wr % wi % tr % ti %w[ix][iy].real() %w[ix][iy].imag();
 		} /* end for(iy.. ix .) */
 	}
@@ -416,7 +430,9 @@ void CExperimentBase::Transmit(WavePtr wave, unsigned sliceIdx) {
 
 void CExperimentBase::AddDPToAvgArray(const WavePtr &wave)
 {
-	unsigned px=wave->GetTotalPixels();
+	int nx,ny;
+	wave->GetExtents(nx,ny);
+	unsigned px=nx*ny;
 	// get the pointer to the first data element, and do 1D addressing (it's faster)
 	float_tt chisq;
 
@@ -465,14 +481,16 @@ void CExperimentBase::ReadAvgArray(unsigned positionx, unsigned positiony)
 
 void CExperimentBase::fft_normalize(WavePtr wave) 
 {
-	complex_tt *w = wave->GetWavePointer();
-	unsigned px = wave->GetTotalPixels();
+	ComplexArray2DPtr w = wave->GetWave();
+	int nx, ny;
+	wave->GetExtents(nx,ny);
 
-	float_tt fftScale = 1.0/px;
-	for (unsigned i=0; i<px; i++)
-	{
-		w[i] = complex_tt(w[i].real()*fftScale,w[i].imag() * fftScale);
-	}
+	float_tt fftScale = 1.0/(nx*ny);
+	for (unsigned i=0; i<nx; i++)
+		for (unsigned j=0; j<ny; j++)
+		{
+			w[i][j] = complex_tt(w[i][j].real()*fftScale,w[i][j].imag() * fftScale);
+		}
 }
 
 } // end namespace QSTEM

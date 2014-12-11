@@ -324,7 +324,7 @@ void CExperimentCBED::PostSliceProcess(unsigned absoluteSlice)
 				if (ddx > potVal)
 					ddx = potVal;
 			}
-		BOOST_LOG_TRIVIAL(debug)<<format("Saving (complex) wave layer %d to file (r: %g..%g)")%absoluteSlice% ddx% ddy;
+		BOOST_LOG_TRIVIAL(info)<<format("Saving (complex) wave layer %d to file (r: %g..%g)")%absoluteSlice% ddx% ddy;
 	}
 }
 

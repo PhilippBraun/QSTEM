@@ -39,6 +39,8 @@ typedef float float_tt;
 typedef double float_tt;
 #endif  // FLOAT_PRECISION
 
+#define SHOW_SINGLE_POTENTIAL 0
+
 #define BW (2.0F/3.0F)	/* bandwidth limit */
 
 // Mode definitions

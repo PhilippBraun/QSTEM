@@ -45,7 +45,7 @@ public:
 	CPotential(const ConfigPtr c);
 
 	void GetSizePixels(unsigned &nx, unsigned &ny) const;
-	void WriteSlice(unsigned idx);
+	void WriteSlice(unsigned idx, std::string prefix);
 	void WriteProjectedPotential();
 	inline ComplexArray2DView GetSlice(unsigned idx){return m_trans1[boost::indices[idx][range(0,_config->Model.ny)][range(0,_config->Model.nx)]];}
 	complex_tt GetSlicePixel(unsigned iz, unsigned ix, unsigned iy);

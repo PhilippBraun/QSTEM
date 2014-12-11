@@ -32,19 +32,18 @@ void CreateWaveFunctionDataSets(unsigned x, unsigned y, std::vector<unsigned> po
 	imageIO.CreateComplexDataSet(mulswavDataSetLabel, positions);
 }
 CBaseWave::CBaseWave(const ConfigPtr c) :
-		_fft(cvmlcpp::DFT<float_tt, 2>(m_wave,m_wave,true, FFTW_ESTIMATE,1)),
-		_ifft(cvmlcpp::DFT<float_tt, 2>(m_wave,m_wave,false, FFTW_ESTIMATE,1))
+						_fft(cvmlcpp::DFT<float_tt, 2>(m_wave,m_waveF,true, FFTW_ESTIMATE,1)),
+						_ifft(cvmlcpp::DFT<float_tt, 2>(m_waveF,m_wave,false, FFTW_ESTIMATE,1))
 {
 	m_fftPlanWaveForw = NULL;
 	m_fftPlanWaveInv = NULL;
 	_config = c;
-	_fft=cvmlcpp::DFT<float_tt, 2>(m_wave,m_wave,true, FFTW_ESTIMATE,_config->nThreads);
-	_ifft=cvmlcpp::DFT<float_tt, 2>(m_wave,m_wave,false, FFTW_ESTIMATE,_config->nThreads);
 	m_nx = c->Model.nx;
 	m_ny = c->Model.ny;
 	m_dx = c->Model.dx;
 	m_dy = c->Model.dy;
 	m_v0 = c->Beam.EnergykeV;
+	m_realSpace = true;
 	// TODO: where does this belong?
 	//m_electronScale = m_beamCurrent*m_dwellTime*MILLISEC_PICOAMP;
 	Initialize(".img", ".img");
@@ -88,6 +87,7 @@ void CBaseWave::CreateDataSets()
 {
 	m_diffpat.resize(m_nx*m_ny);
 	m_wave.resize(boost::extents[m_nx][m_ny]);
+	m_waveF.resize(boost::extents[m_nx][m_ny]);
 }
 
 void CBaseWave::Initialize(std::string input_ext, std::string output_ext)
@@ -99,18 +99,20 @@ void CBaseWave::Initialize(std::string input_ext, std::string output_ext)
 
 	CreateDataSets();
 
-	_fft = cvmlcpp::DFT<float_tt, 2>(m_wave,m_wave,true, FFTW_ESTIMATE,_config->nThreads);
-	_ifft = cvmlcpp::DFT<float_tt, 2>(m_wave,m_wave,false, FFTW_ESTIMATE,_config->nThreads);
+	_fft = cvmlcpp::DFT<float_tt, 2>(m_wave,m_waveF,true, FFTW_ESTIMATE,_config->nThreads);
+	_ifft = cvmlcpp::DFT<float_tt, 2>(m_waveF,m_wave,false, FFTW_ESTIMATE,_config->nThreads);
 
-//#if FLOAT_PRECISION == 1
-//	fftwf_complex *ptr = (fftwf_complex *)m_wave.data();
-//	m_fftPlanWaveForw = fftwf_plan_dft_2d(m_nx,m_ny,ptr,ptr,FFTW_FORWARD, k_fftMeasureFlag);
-//	m_fftPlanWaveInv = fftwf_plan_dft_2d(m_nx,m_ny,ptr,ptr,FFTW_BACKWARD, k_fftMeasureFlag);
-//#else
-//	fftw_complex *ptr = (fftw_complex *)&m_wave[0];
-//	m_fftPlanWaveForw = fftw_plan_dft_2d(m_nx,m_ny,&m_wave[0],&m_wave[0],FFTW_FORWARD, k_fftMeasureFlag);
-//	m_fftPlanWaveInv = fftw_plan_dft_2d(m_nx,m_ny,&m_wave[0],&m_wave[0],FFTW_BACKWARD, k_fftMeasureFlag);
-//#endif
+#if FLOAT_PRECISION == 1
+	fftwf_complex *ptr = (fftwf_complex *)m_wave.data();
+	fftwf_complex *ptr1 = (fftwf_complex *)m_waveF.data();
+	m_fftPlanWaveForw = fftwf_plan_dft_2d(m_nx,m_ny,ptr,ptr1,FFTW_FORWARD, k_fftMeasureFlag);
+	m_fftPlanWaveInv = fftwf_plan_dft_2d(m_nx,m_ny,ptr1,ptr,FFTW_BACKWARD, k_fftMeasureFlag);
+#else
+	fftw_complex *ptr = (fftw_complex *)m_wave.data();
+	fftw_complex *ptr1 = (fftw_complex *)m_waveF.data();
+	m_fftPlanWaveForw = fftw_plan_dft_2d(m_nx,m_ny,ptr,ptr1,FFTW_FORWARD, k_fftMeasureFlag);
+	m_fftPlanWaveInv = fftw_plan_dft_2d(m_nx,m_ny,ptr1,ptr,FFTW_BACKWARD, k_fftMeasureFlag);
+#endif
 	InitializeKVectors();
 }
 
@@ -146,7 +148,10 @@ void CBaseWave::InitializeKVectors()
 	m_k2max = 2.0/3.0 * m_k2max;
 	m_k2max = m_k2max*m_k2max;
 }
-
+void  CBaseWave::GetExtents(int& nx, int& ny) const{
+	nx = m_nx;
+	ny=m_ny;
+}
 void CBaseWave::DisplayParams()
 {
 	BOOST_LOG_TRIVIAL(info)<<format("* Real space res.:      %gA (=%gmrad)")%	(1.0/m_k2max)%(GetWavelength()*m_k2max*1000.0);
@@ -221,16 +226,16 @@ void CBaseWave::ApplyTransferFunction(boost::shared_array<complex_tt> &wave)
 	ToFourierSpace();
 	for (unsigned i=0;i<m_nx;i++)
 		for (unsigned j=0;j<m_ny;j++)
-	{
-		// here, we apply the CTF:
-		// 20140110 - MCS - I think this is where Christoph wanted to apply the CTF - nothing is done ATM.
+		{
+			// here, we apply the CTF:
+			// 20140110 - MCS - I think this is where Christoph wanted to apply the CTF - nothing is done ATM.
 
-		// TODO: use these for calculating a radius (to get the CTF value from)
-		//ix=i%m_nx;
-		//iy=i/m_ny;
+			// TODO: use these for calculating a radius (to get the CTF value from)
+			//ix=i%m_nx;
+			//iy=i/m_ny;
 
-//		wave[i][j] = m_wave[i][j];
-	}
+			//		wave[i][j] = m_wave[i][j];
+		}
 	ToRealSpace();
 }
 
@@ -250,7 +255,8 @@ void CBaseWave::_WriteWave(std::string &fileName, std::string comment,
 	//params["Convergence Angle"] = m_alpha;
 	//params["Beam Tilt X"] = m_btiltx;
 	//params["Beam Tilt Y"] = m_btilty;
-	m_imageIO->WriteImage(m_wave, fileName, params, comment);
+
+	m_imageIO->WriteImage(m_realSpace ? m_wave : m_waveF, fileName, params, comment);
 }
 
 void CBaseWave::_WriteDiffPat(std::string &fileName, std::string comment,
@@ -291,21 +297,21 @@ void CBaseWave::SetWavePosition(unsigned posX, unsigned posY, unsigned posZ)
 void CBaseWave::ReadWave()
 {
 	m_position.clear();
-//	m_imageIO->ReadImage(m_wave, waveFilePrefix, m_position);
+	//	m_imageIO->ReadImage(m_wave, waveFilePrefix, m_position);
 }
 
 void CBaseWave::ReadWave(unsigned navg)
 {
 	SetWavePosition(navg);
-//	m_imageIO->ReadImage(m_wave, waveFilePrefix, m_position);
+	//	m_imageIO->ReadImage(m_wave, waveFilePrefix, m_position);
 
 }
 
 void CBaseWave::ReadWave(unsigned positionx, unsigned positiony)
 {
 	SetWavePosition(positionx, positiony);
-// TODO write Readwave
-//	m_imageIO->ReadImage(m_wave, waveFilePrefix, m_position);
+	// TODO write Readwave
+	//	m_imageIO->ReadImage(m_wave, waveFilePrefix, m_position);
 }
 
 void CBaseWave::ReadDiffPat()
@@ -373,13 +379,13 @@ void CBaseWave::ToFourierSpace()
 {
 	if (IsRealSpace())
 	{
-		_fft.execute();
+//		_fft.execute();
 		m_realSpace = false;
-//#if FLOAT_PRECISION == 1
-//		fftwf_execute(m_fftPlanWaveForw);
-//#elif FLOAT_PRECISION == 2
-//		fftw_execute(m_fftPlanWaveForw);
-//#endif
+#if FLOAT_PRECISION == 1
+		fftwf_execute(m_fftPlanWaveForw);
+#else
+		fftw_execute(m_fftPlanWaveForw);
+#endif
 	}
 }
 
@@ -388,13 +394,13 @@ void CBaseWave::ToRealSpace()
 {
 	if (!IsRealSpace())
 	{
-		_ifft.execute();
+//		_ifft.execute();
 		m_realSpace = true;
-//#if FLOAT_PRECISION == 1
-//		fftwf_execute(m_fftPlanWaveInv);
-//#elif FLOAT_PRECISION == 2
-//		fftw_execute(m_fftPlanWaveInv);
-//#endif
+#if FLOAT_PRECISION == 1
+		fftwf_execute(m_fftPlanWaveInv);
+#else
+		fftw_execute(m_fftPlanWaveInv);
+#endif
 	}
 }
 

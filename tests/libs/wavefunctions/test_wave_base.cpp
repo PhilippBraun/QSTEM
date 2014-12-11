@@ -55,7 +55,7 @@ BOOST_AUTO_TEST_CASE (testArrayAllocation)
 //  wave->Resize(512, 512);
   // Check array allocation
   BOOST_CHECK(wave->GetDPPointer() != NULL);
-  BOOST_CHECK(wave->GetWavePointer() != NULL);
+//  BOOST_CHECK(wave->GetWavePointer() != NULL);
 }
 
 BOOST_AUTO_TEST_CASE(testReadCfgFromFile)

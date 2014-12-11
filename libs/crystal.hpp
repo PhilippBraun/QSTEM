@@ -76,6 +76,8 @@ public:
 
   std::vector<atom> m_atoms; // The atoms after duplication, tilt, and phonon shaking
   std::vector<atom> m_uniqueAtoms;
+  float_tt _sizeX,_sizeY,_sizeZ;
+
 protected:
   boost::filesystem::path m_structureFile;
 

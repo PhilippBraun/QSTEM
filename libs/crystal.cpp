@@ -367,6 +367,11 @@ void CCrystal::MakeCrystal(bool handleVacancies) {
 		}
 	} // end of Ncell mode conversion to cartesian coords and tilting.
 	// end of loop over atoms
+
+	_sizeX = boxXmax - boxXmin;
+	_sizeY = boxYmax - boxYmin;
+	_sizeZ = boxZmax - boxZmin;
+
 	free(u);
 }
 

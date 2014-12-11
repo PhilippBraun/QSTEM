@@ -44,11 +44,7 @@ protected:
   RealVector m_image;               /* Real-space image output */
 private:
   friend class CWaveFactory;
-  // Create an instance of this class, wrapped in a shared ptr
-  //     This should not be inherited - any subclass needs its own implementation.
-  static WavePtr Create(const ConfigPtr reader){
-    return WavePtr(new CPlaneWave(reader));
-  }  
+  static WavePtr Create(const ConfigPtr reader){  return WavePtr(new CPlaneWave(reader));  }
 };
 
 typedef boost::shared_ptr<CPlaneWave> PlaneWavePtr;

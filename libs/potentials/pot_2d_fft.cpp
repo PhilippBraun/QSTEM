@@ -105,7 +105,7 @@ void C2DFFTPotential::AddAtomNonPeriodic(std::vector<atom>::iterator &atom,float
 						+ s12 * pot[xindex+1][yindex]
 						+ s21 * pot[xindex][yindex+1]
 						+ s22 * pot[xindex+1][yindex+1]).real();
-			m_trans1[iAtomZ][iax][iay] += vz;
+			m_trans1[iAtomZ][iax][iay] += complex_tt(vz,0);
 
 			added += vz;
 		}
@@ -124,12 +124,12 @@ void C2DFFTPotential::AddAtomPeriodic(std::vector<atom>::iterator &atom,
 	unsigned iay0 = iAtomY - m_iRadY +  _ny;
 	unsigned iay1 = iAtomY + m_iRadY +  _ny;
 
-	float_tt ddx = (-(double) iax0- _nx+ atomBoxX / _config->Model.dx - (double) m_iRadX )* (double) OVERSAMPLING;
-	float_tt ddy = (-(double) iay0- _ny+ atomBoxY / _config->Model.dx - (double) m_iRadY )* (double) OVERSAMPLING;
+	float_tt ddx = (atomBoxX/_config->Model.dx - iAtomX);
+	float_tt ddy = (atomBoxY/_config->Model.dy - iAtomY);
 	unsigned iOffsX = (int) floor(ddx);
 	unsigned iOffsY = (int) floor(ddy);
-	ddx -= (double) iOffsX;
-	ddy -= (double) iOffsY;
+	ddx -= (float_tt) iOffsX;
+	ddy -= (float_tt) iOffsY;
 
 	float_tt s22 = (1 - ddx) * (1 - ddy);
 	float_tt s21 = (1 - ddx) * ddy;
@@ -140,14 +140,13 @@ void C2DFFTPotential::AddAtomPeriodic(std::vector<atom>::iterator &atom,
 
 	for (int iax = iax0; iax < iax1; iax++) { // TODO: should use ix += OVERSAMPLING
 		for (int iay = iay0; iay < iay1; iay++) {
-			int idx = (iax % _nx) * _ny + (iay % _ny);
 			int xindex = (iOffsX + OVERSAMPLING * (iax - iax0));
 			int yindex = iOffsY + OVERSAMPLING * (iay-iay0);
-			m_trans1[iAtomZ][((iAtomX + iax) % _nx)][((iAtomY+iay) % _ny)] +=
-					s11 * pot[xindex][yindex]
-					                  + s12 * pot[xindex+1][yindex]
-					                                        + s21 * pot[xindex][yindex+1]
-					                                                            + s22 * pot[xindex+1][yindex+1];
+			float_tt vz = (s11 * pot[xindex][yindex]
+						+ s12 * pot[xindex+1][yindex]
+						+ s21 * pot[xindex][yindex+1]
+						+ s22 * pot[xindex+1][yindex+1]).real();
+			m_trans1[iAtomZ][iax % _nx][iay %_ny] += complex_tt(vz,0);
 		}
 	}
 }
@@ -215,7 +214,7 @@ void  C2DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 				"potential"));
 		// This scattering factor agrees with Kirkland's scattering factor fe(q)
 		m_imageIO->SetThickness(m_sliceThickness);
-		m_imageIO->WriteImage((void**)atPot[Znum], fileName);
+		m_imageIO->WriteImage((void**)m_atPot[Znum], fileName);
 #endif
 #if FLOAT_PRECISION == 1
 		fftwf_complex *ptr = (fftwf_complex *) (m_atPot[Znum].data());
@@ -240,7 +239,7 @@ void  C2DFFTPotential::ComputeAtomPotential(std::vector<atom>::iterator &atom){
 		// This scattering factor agrees with Kirkland's scattering factor fe(q)
 		//imageio->SetThickness(nz*m_sliceThickness/nzPerSlice);
 		sprintf(fileName,"potential_%d.img",Znum);
-		imageio->WriteImage((void**)atPot[Znum], fileName);
+		imageio->WriteImage((void**)m_atPot[Znum], fileName);
 #endif
 		BOOST_LOG_TRIVIAL(info)<< format("Created 2D %d x %d potential array for Z=%d (B=%g A^2)")
 										% _nx % _ny% Znum% B;

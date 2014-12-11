@@ -36,7 +36,7 @@ namespace QSTEM
 	enum class SliceThicknessCalculation { Auto = 1, Thickness = 2, NumberOfSlices = 3 };
 	enum class StructureFactorType { WeickKohl = 1, Rez = 2 };
 	enum class SaveLevel{ Everything = 1, Something = 2, Results = 3 };
-	enum class ResolutionCalculation{ FILLRES = 1, FILLN = 2, SIZERES = 3, SIZEN=4 };
+	enum class ResolutionCalculation{ FILLRES = 1, FILLN = 2, CELLRES=3,CELLN=4, SIZERES = 5, SIZEN=6 };
 class IConfigReader;
 
 

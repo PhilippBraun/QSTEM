@@ -61,8 +61,7 @@ public:
 	void ToFourierSpace();
 	bool IsRealSpace(){return m_realSpace;}
 
-	//void CopyDPToAvgArray(float_tt *avgArray);
-	//void AddDPToAvgArray(unsigned avgCount);
+	virtual void GetExtents(int& nx, int& ny) const;
 
 	void GetSizePixels(unsigned &x, unsigned &y) const ;
 	unsigned GetTotalPixels() const {return m_nx*m_ny;}
@@ -75,9 +74,12 @@ public:
 
 	inline float_tt GetVoltage()  const {return m_v0;}
 	inline float_tt GetWavelength()  const {return m_wavlen;}
-	inline ComplexArray2DPtr GetWave() const {return m_wave;}
+	inline ComplexArray2DPtr GetWave() const {return m_realSpace ? m_wave : m_waveF;}
 
-	inline float_tt GetPixelIntensity(unsigned i) const {return (m_wave.data())[i].real()*(m_wave.data())[i].real() + (m_wave.data())[i].imag()*(m_wave.data())[i].imag();}
+	inline float_tt GetPixelIntensity(unsigned i) const {
+		return m_realSpace ? (m_wave.data())[i].real()*(m_wave.data())[i].real() + (m_wave.data())[i].imag()*(m_wave.data())[i].imag()
+				: (m_waveF.data())[i].real()*(m_waveF.data())[i].real() + (m_waveF.data())[i].imag()*(m_waveF.data())[i].imag();
+	}
 	inline float_tt GetPixelIntensity(unsigned x, unsigned y) const  {return GetPixelIntensity(x+m_nx*y);}
 	inline float_tt GetDiffPatPixel(unsigned i)  const {return m_diffpat[i];}
 	inline float_tt GetDiffPatPixel(unsigned x, unsigned y) const  { return m_diffpat[x+m_nx*y];}
@@ -151,12 +153,6 @@ public:
 		_WriteDiffPat(dpFilePrefix, comment, params);
 	}
 
-	// People can change the wavefunction - for example, that's what we have to do when we
-	//    transmit the wave through the sample's potential.
-	complex_tt *GetWavePointer(){return m_wave.data();}
-	// People should not directly change the diffraction pattern, since we'll re-calculate it when
-	//   the wavefunction changes.
-	//   They can, however, access it.
 	const float_tt *GetDPPointer(){return &m_diffpat[0];}
 
 	float_tt GetIntegratedIntensity() const ;
@@ -195,6 +191,7 @@ protected:
 	int m_printLevel;
 	float_tt m_dx, m_dy;  // physical pixel size of wavefunction array
 	ComplexArray2D m_wave; /* complex wave function */
+	ComplexArray2D m_waveF;
 	RealVector m_kx2,m_ky2,m_kx,m_ky;
 	float_tt m_k2max;
 

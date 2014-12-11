@@ -254,7 +254,7 @@ void CConvergentWave::FormProbe()
 				//				{
 				float x = (float) ( 0.5*scale * cos(chi));
 				float y = (float) (-0.5*scale* sin(chi));
-				m_wave[ix][iy] = complex_tt(x,y);
+				GetWave()[ix][iy] = complex_tt(x,y);
 				//        m_wave[ix][iy][0]= (float) ( 0.5*scale * cos(chi));
 				//        m_wave[ix][iy][1]= (float) (-0.5*scale* sin(chi));
 				//				}
@@ -264,7 +264,7 @@ void CConvergentWave::FormProbe()
 				//				{
 				float x = (float) ( scale * cos(chi));
 				float y = (float) ( scale* sin(chi));
-				m_wave[ix][iy] = complex_tt(x,y);
+				GetWave()[ix][iy] = complex_tt(x,y);
 
 				//				}
 				//        m_wave[ix][iy][0]= (float)  scale * cos(chi);
@@ -272,7 +272,7 @@ void CConvergentWave::FormProbe()
 			}
 			else {
 				//#pragma omp critical
-				m_wave[ix][iy] =complex_tt(0,0);
+				GetWave()[ix][iy] =complex_tt(0,0);
 			}
 
 		}
