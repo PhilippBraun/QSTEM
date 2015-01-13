@@ -1,0 +1,39 @@
+% Input file for gbmaker
+% It defines both (or possibly more) crystals, along with their position
+% rotational angle, and bounding planes.
+% Rotational angle and position will only specify the orientation of the unit cell.
+% The bounding planes will actually specify where each grain and therefore 
+% the interface is at.
+% In addition a general rectangular cartesian bounding box wil be defined, which 
+% will set the outer limits of the whole model and also defines the origin at (0,0,0).
+% Planes will be defined by 2 3D-vectors: the surface normal and a point in 3D
+% space through which the plane lies.  The surface normals have to point outwards.
+
+% The specimen thicknes will be 16 unit cells (62.48 A)
+% The boundary shall be at x=30.3074 A (that's exactly 8 rotated unit cells)
+
+box: 54.31 54.31 54.31  % 2 x 2 unit cells of the S5 CSL lattice
+
+% First we will define the crystal unit cell input data.  
+% This can be done in either .cssr, or in .pdb format
+% pdb files: Make sure that the true unit cell vectors are given, not the
+% ones that have been adjusted to make AtomEye work
+
+crystal: Si_bottom Si.cfg % name (arbitrary) and .cfg file of first cystal
+
+tilt: 0 0 0 degree % no tilt in any of the x, y, or z-axes for the first grain
+		   % The word 'degree' or 'rad' specifies the unit used.
+		   % the default is rad.
+translation: 0.1 0.1 0.1 % translation of unit cell origin
+
+plane: 0 0 27.3 1 0 0 0 1 0
+
+crystal: Si_top Si.cfg % name (arbitrary) and .cfg file of first cystal
+
+tilt: 0 0 36.87 degree % no tilt in any of the x, y, or z-axes for the first grain
+		   % The word 'degree' or 'rad' specifies the unit used.
+		   % the default is rad.
+translation: 0.1 0.1 0.1 % translation of unit cell origin
+
+
+plane: 0 0 27.3 0 1 0 1 0 0

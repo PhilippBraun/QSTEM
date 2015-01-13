@@ -1,0 +1,101 @@
+% Input file for gbmaker
+% It defines both (or possibly more) crystals, along with their position
+% rotational angle, and bounding planes.
+% Rotational angle and position will only specify the orientation of the unit cell.
+% The bounding planes will actually specify where each grain and therefore 
+% the interface is at.
+% In addition a general rectangular cartesian bounding box wil be defined, which 
+% will set the outer limits of the whole model and also defines the origin at (0,0,0).
+% Planes will be defined by 2 3D-vectors: the surface normal and a point in 3D
+% space through which the plane lies.  
+% The surface normals have to point outwards (right hand rule).
+% The point of intersection can be anywhere on the cutting plane, so pick a corner of a segment.
+% All units are in A = 0.1nm
+
+box: 103.189 103.189 48.879  % Size of rectangular bounding box in A
+
+% First we will define the crystal unit cell input data.  
+% This can be done in either .cssr, or in .pdb format
+% pdb files: Make sure that the true unit cell vectors are given, not the
+% ones that have been adjusted to make AtomEye work
+
+crystal: left Si.cfg % name of first cystal
+
+tilt: 0 0 0 degree % no tilt in any of the x, y, or z-axes for the first grain
+		   % The word 'degree' or 'rad' specifies the unit used.
+		   % the default is rad.
+translation: 0 0 0 % translation of unit cell origin
+
+plane: 20 0 0   0 1 0   0 0 1     % right: point [x y z] vector1 [x y z]  vector2 [x y z]
+plane: 0 30 0   0 0 -1  1 0 0     % bottom
+plane: 0 70 0   0 0 1   1 0 0     % top
+
+
+
+crystal: topleft Si.cfg % name of 2nd cystal
+
+tilt: 0 0 0 degree 
+translation: 0 0 0 
+
+plane: 30 0 0   0 1 0   0 0 1     % right
+plane: 0 70 0   0 0 -1  1 0 0     % bottom
+plane: 20 70 0  0 0 -1  1 1 0     % diagonal - surface normal = bottom right
+
+
+crystal: top Si.cfg % name of 3rd cystal
+
+tilt: 0 0 0 degree 
+translation: 0 0 0 
+
+plane: 70 0 0   0 1 0   0 0 1     % right
+plane: 30 0 0   0 -1 0  0 0 1     % left
+plane: 0 80 0   0 0 -1  1 0 0     % bottom
+
+
+crystal: topright Si.cfg 
+tilt: 0 0 0 degree 
+translation: 0 0 0 
+
+plane: 0 70  0   0 0 -1  1 0 0     % bottom
+plane: 70 0  0   0 -1 0  0 0 1     % left
+plane: 70 80 0   0 0 -1  1 -1 0    % diagonal -  surface normal = bottom left
+
+crystal: right Si.cfg 
+tilt: 0 0 0 degree 
+translation: 0 0 0 
+
+
+plane: 80 0 0   0 -1 0  0 0 1     % left
+plane: 0 70 0   0 0 1   1 0 0     % top
+plane: 0 30  0   0 0 -1  1 0 0     % bottom
+
+
+crystal: bottomright Si.cfg 
+tilt: 0 0 0 degree 
+translation: 0 0 0 
+
+plane: 0 30 0   0 0 1   1 0 0     % top
+plane: 70 0 0   0 -1 0  0 0 1     % left
+plane: 70 20 0   0 0 -1  -1 -1 0    % diagonal -  surface normal = top left
+
+
+
+crystal: bottom Si.cfg % name of 3rd cystal
+
+tilt: 0 0 0 degree 
+translation: 0 0 0 
+
+plane: 70 0 0   0 1 0   0 0 1     % right
+plane: 30 0 0   0 -1 0  0 0 1     % left
+plane: 0 20 0   0 0 1  1 0 0     % top
+
+
+
+crystal: bottomleft Si.cfg 
+tilt: 0 0 0 degree 
+translation: 0 0 0 
+
+plane: 0 30 0   0 0 1   1 0 0     % top
+plane: 30 0 0   0 1 0   0 0 1     % right
+plane: 30 20 0   0 0 -1  -1 1 0    % diagonal -  surface normal = top right
+
