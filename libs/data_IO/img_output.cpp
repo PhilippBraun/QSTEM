@@ -20,7 +20,6 @@
 
 #include "img_output.hpp"
 #include "img_VERSION.hpp"
-#include <glog/logging.h>
 #include <boost/log/trivial.hpp>
 namespace QSTEM
 {

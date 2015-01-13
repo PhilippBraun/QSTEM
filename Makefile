@@ -35,17 +35,14 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# Escaping for special characters.
-EQUALS = =
-
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/philipp/QSTEM
+CMAKE_SOURCE_DIR = /space/projects/QSTEM
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/philipp/QSTEM
+CMAKE_BINARY_DIR = /space/projects/QSTEM
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -53,7 +50,7 @@ CMAKE_BINARY_DIR = /home/philipp/QSTEM
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,21 +67,11 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/philipp/QSTEM/CMakeFiles /home/philipp/QSTEM/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /space/projects/QSTEM/CMakeFiles /space/projects/QSTEM/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/philipp/QSTEM/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /space/projects/QSTEM/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -137,149 +124,6 @@ stem3/fast:
 	$(MAKE) -f stem3/CMakeFiles/stem3.dir/build.make stem3/CMakeFiles/stem3.dir/build
 .PHONY : stem3/fast
 
-#=============================================================================
-# Target rules for targets named test_crystal
-
-# Build rule for target.
-test_crystal: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_crystal
-.PHONY : test_crystal
-
-# fast build rule for target.
-test_crystal/fast:
-	$(MAKE) -f tests/libs/CMakeFiles/test_crystal.dir/build.make tests/libs/CMakeFiles/test_crystal.dir/build
-.PHONY : test_crystal/fast
-
-#=============================================================================
-# Target rules for targets named test_detectors
-
-# Build rule for target.
-test_detectors: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_detectors
-.PHONY : test_detectors
-
-# fast build rule for target.
-test_detectors/fast:
-	$(MAKE) -f tests/libs/CMakeFiles/test_detectors.dir/build.make tests/libs/CMakeFiles/test_detectors.dir/build
-.PHONY : test_detectors/fast
-
-#=============================================================================
-# Target rules for targets named test_config_qsc
-
-# Build rule for target.
-test_config_qsc: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_config_qsc
-.PHONY : test_config_qsc
-
-# fast build rule for target.
-test_config_qsc/fast:
-	$(MAKE) -f tests/libs/config_IO/CMakeFiles/test_config_qsc.dir/build.make tests/libs/config_IO/CMakeFiles/test_config_qsc.dir/build
-.PHONY : test_config_qsc/fast
-
-#=============================================================================
-# Target rules for targets named test_wave_base
-
-# Build rule for target.
-test_wave_base: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_wave_base
-.PHONY : test_wave_base
-
-# fast build rule for target.
-test_wave_base/fast:
-	$(MAKE) -f tests/libs/wavefunctions/CMakeFiles/test_wave_base.dir/build.make tests/libs/wavefunctions/CMakeFiles/test_wave_base.dir/build
-.PHONY : test_wave_base/fast
-
-#=============================================================================
-# Target rules for targets named test_wave_convergent
-
-# Build rule for target.
-test_wave_convergent: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_wave_convergent
-.PHONY : test_wave_convergent
-
-# fast build rule for target.
-test_wave_convergent/fast:
-	$(MAKE) -f tests/libs/wavefunctions/CMakeFiles/test_wave_convergent.dir/build.make tests/libs/wavefunctions/CMakeFiles/test_wave_convergent.dir/build
-.PHONY : test_wave_convergent/fast
-
-#=============================================================================
-# Target rules for targets named test_wave_plane
-
-# Build rule for target.
-test_wave_plane: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_wave_plane
-.PHONY : test_wave_plane
-
-# fast build rule for target.
-test_wave_plane/fast:
-	$(MAKE) -f tests/libs/wavefunctions/CMakeFiles/test_wave_plane.dir/build.make tests/libs/wavefunctions/CMakeFiles/test_wave_plane.dir/build
-.PHONY : test_wave_plane/fast
-
-#=============================================================================
-# Target rules for targets named test_data_img
-
-# Build rule for target.
-test_data_img: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_data_img
-.PHONY : test_data_img
-
-# fast build rule for target.
-test_data_img/fast:
-	$(MAKE) -f tests/libs/data_IO/CMakeFiles/test_data_img.dir/build.make tests/libs/data_IO/CMakeFiles/test_data_img.dir/build
-.PHONY : test_data_img/fast
-
-#=============================================================================
-# Target rules for targets named test_pot_2d
-
-# Build rule for target.
-test_pot_2d: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_pot_2d
-.PHONY : test_pot_2d
-
-# fast build rule for target.
-test_pot_2d/fast:
-	$(MAKE) -f tests/libs/potentials/CMakeFiles/test_pot_2d.dir/build.make tests/libs/potentials/CMakeFiles/test_pot_2d.dir/build
-.PHONY : test_pot_2d/fast
-
-#=============================================================================
-# Target rules for targets named test_pot_3d_fft
-
-# Build rule for target.
-test_pot_3d_fft: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_pot_3d_fft
-.PHONY : test_pot_3d_fft
-
-# fast build rule for target.
-test_pot_3d_fft/fast:
-	$(MAKE) -f tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/build.make tests/libs/potentials/CMakeFiles/test_pot_3d_fft.dir/build
-.PHONY : test_pot_3d_fft/fast
-
-#=============================================================================
-# Target rules for targets named test_expt_stem
-
-# Build rule for target.
-test_expt_stem: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_expt_stem
-.PHONY : test_expt_stem
-
-# fast build rule for target.
-test_expt_stem/fast:
-	$(MAKE) -f tests/libs/experiments/CMakeFiles/test_expt_stem.dir/build.make tests/libs/experiments/CMakeFiles/test_expt_stem.dir/build
-.PHONY : test_expt_stem/fast
-
-#=============================================================================
-# Target rules for targets named test_structure_cfg
-
-# Build rule for target.
-test_structure_cfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_structure_cfg
-.PHONY : test_structure_cfg
-
-# fast build rule for target.
-test_structure_cfg/fast:
-	$(MAKE) -f tests/libs/structure_IO/CMakeFiles/test_structure_cfg.dir/build.make tests/libs/structure_IO/CMakeFiles/test_structure_cfg.dir/build
-.PHONY : test_structure_cfg/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -288,20 +132,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... qstem"
 	@echo "... stem3"
-	@echo "... test_crystal"
-	@echo "... test_detectors"
-	@echo "... test_config_qsc"
-	@echo "... test_wave_base"
-	@echo "... test_wave_convergent"
-	@echo "... test_wave_plane"
-	@echo "... test_data_img"
-	@echo "... test_pot_2d"
-	@echo "... test_pot_3d_fft"
-	@echo "... test_expt_stem"
-	@echo "... test_structure_cfg"
 .PHONY : help
 
 

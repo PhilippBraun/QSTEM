@@ -19,7 +19,7 @@ QSTEM - image simulation for TEM/STEM/CBED
 #define VIB_IMAGE_TEST
 
 #ifndef _WIN32
-#define UNIX 
+#define UNIX
 #endif
 /* #define USE_FFT_POT */
 // for memory leak checking in windows.  Should not affect speed of release builds.
@@ -52,13 +52,14 @@ using namespace QSTEM;
 namespace logging = boost::log;
 using boost::property_tree::info_parser::read_info;
 
-void usage() {
+void usage()
+{
 	printf("usage: stem [input file='stem.dat']\n\n");
 }
 
 
 
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
 	std::string fileName;
 	if (argc < 2)   fileName = "config.info";
@@ -68,10 +69,10 @@ int main(int argc, char *argv[])
 	read_info(fileName,pt);
 	ConfigPtr c = ConfigPtr(new Config(pt));
 
-    logging::core::get()->set_filter
-    (
-        logging::trivial::severity >= static_cast<logging::trivial::severity_level>(c->Output.LogLevel)
-    );
+	logging::core::get()->set_filter
+	(
+	    logging::trivial::severity >= static_cast<logging::trivial::severity_level>(c->Output.LogLevel)
+	);
 
 	fftw_init_threads();
 	fftw_plan_with_nthreads(c->nThreads);
@@ -85,5 +86,3 @@ int main(int argc, char *argv[])
 #endif
 	return 0;
 }
-
-

@@ -99,8 +99,8 @@ void CBaseWave::Initialize(std::string input_ext, std::string output_ext)
 
 	CreateDataSets();
 
-	_fft = cvmlcpp::DFT<float_tt, 2>(m_wave,m_waveF,true, FFTW_ESTIMATE,_config->nThreads);
-	_ifft = cvmlcpp::DFT<float_tt, 2>(m_waveF,m_wave,false, FFTW_ESTIMATE,_config->nThreads);
+//	_fft = cvmlcpp::DFT<float_tt, 2>(m_wave,m_waveF,true, FFTW_ESTIMATE,_config->nThreads);
+//	_ifft = cvmlcpp::DFT<float_tt, 2>(m_waveF,m_wave,false, FFTW_ESTIMATE,_config->nThreads);
 
 #if FLOAT_PRECISION == 1
 	fftwf_complex *ptr = (fftwf_complex *)m_wave.data();

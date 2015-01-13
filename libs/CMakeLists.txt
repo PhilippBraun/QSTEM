@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(qstem)
 
-set(CVML_LIB "/usr/local/lib/libcvmlcpp.so")
+set(CVML_LIB "/usr/lib/libcvmlcpp.so")
 
 #set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--export-all-symbols")
 #set(CMAKE_SHARED_LINKER_FLAGS "-Wl")

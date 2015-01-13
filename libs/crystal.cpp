@@ -17,28 +17,25 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <boost/array.hpp>
+
 #include <stdlib.h>
-
 #include "crystal.hpp"
-
 #include "memory_fftw3.hpp"
 #include "random.hpp"
-
 #include "structure_factories.hpp"
-
 #include <string>
 
 #include <boost/format.hpp>
 #include <boost/log/trivial.hpp>
-
+#include <boost/array.hpp>
 using boost::format;
 
 #define PI180 1.7453292519943e-2
-
 #define THZ_AMU_HBAR 0.15745702964189 /* A°^2*THz*amu/(hbar) */
 // 4.46677327584453 /* 1e10/sqrt(THz*amu/(pi*hbar)) */
 #define THZ_HBAR_KB 1.90963567802059 /* THz*hbar/kB */
+
+
 namespace QSTEM {
 
 static const float_tt k_wobScale = 1.0 / (8 * M_PI * M_PI);
@@ -62,8 +59,7 @@ CCrystal::CCrystal() :
 		m_ax(0)
 		{}
 
-CCrystal::CCrystal(const ConfigPtr c): CCrystal()  {
-	CCrystal();
+CCrystal::CCrystal(const ConfigPtr c) : CCrystal()  {
 	_config = c;
 
 	m_wobble_temp_scale = sqrt(_config->Structure.temperatureK / 300.0);
@@ -636,6 +632,7 @@ void CCrystal::TiltBoxed(int ncoord, bool handleVacancies) {
 						m_atoms[atomCount].occ = m_baseAtoms[jChoice].occ;
 						m_atoms[atomCount].q = m_baseAtoms[jChoice].q;
 						m_atoms[atomCount].Znum = m_baseAtoms[jChoice].Znum;
+
 
 						atomCount++;
 						/*

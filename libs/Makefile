@@ -35,17 +35,14 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# Escaping for special characters.
-EQUALS = =
-
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/philipp/QSTEM
+CMAKE_SOURCE_DIR = /space/projects/QSTEM
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/philipp/QSTEM
+CMAKE_BINARY_DIR = /space/projects/QSTEM
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -53,7 +50,7 @@ CMAKE_BINARY_DIR = /home/philipp/QSTEM
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,26 +67,16 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /home/philipp/QSTEM && $(CMAKE_COMMAND) -E cmake_progress_start /home/philipp/QSTEM/CMakeFiles /home/philipp/QSTEM/libs/CMakeFiles/progress.marks
-	cd /home/philipp/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 libs/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/philipp/QSTEM/CMakeFiles 0
+	cd /space/projects/QSTEM && $(CMAKE_COMMAND) -E cmake_progress_start /space/projects/QSTEM/CMakeFiles /space/projects/QSTEM/libs/CMakeFiles/progress.marks
+	cd /space/projects/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 libs/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /space/projects/QSTEM/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/philipp/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 libs/clean
+	cd /space/projects/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 libs/clean
 .PHONY : clean
 
 # The main clean target
@@ -98,22 +85,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/philipp/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 libs/preinstall
+	cd /space/projects/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 libs/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/philipp/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 libs/preinstall
+	cd /space/projects/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 libs/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/philipp/QSTEM && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /space/projects/QSTEM && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libs/CMakeFiles/qstem.dir/rule:
-	cd /home/philipp/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 libs/CMakeFiles/qstem.dir/rule
+	cd /space/projects/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 libs/CMakeFiles/qstem.dir/rule
 .PHONY : libs/CMakeFiles/qstem.dir/rule
 
 # Convenience name for target.
@@ -122,7 +109,7 @@ qstem: libs/CMakeFiles/qstem.dir/rule
 
 # fast build rule for target.
 qstem/fast:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/build
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/build
 .PHONY : qstem/fast
 
 config_IO/config_reader_factory.o: config_IO/config_reader_factory.cpp.o
@@ -130,7 +117,7 @@ config_IO/config_reader_factory.o: config_IO/config_reader_factory.cpp.o
 
 # target to build an object file
 config_IO/config_reader_factory.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/config_IO/config_reader_factory.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/config_IO/config_reader_factory.cpp.o
 .PHONY : config_IO/config_reader_factory.cpp.o
 
 config_IO/config_reader_factory.i: config_IO/config_reader_factory.cpp.i
@@ -138,7 +125,7 @@ config_IO/config_reader_factory.i: config_IO/config_reader_factory.cpp.i
 
 # target to preprocess a source file
 config_IO/config_reader_factory.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/config_IO/config_reader_factory.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/config_IO/config_reader_factory.cpp.i
 .PHONY : config_IO/config_reader_factory.cpp.i
 
 config_IO/config_reader_factory.s: config_IO/config_reader_factory.cpp.s
@@ -146,7 +133,7 @@ config_IO/config_reader_factory.s: config_IO/config_reader_factory.cpp.s
 
 # target to generate assembly for a file
 config_IO/config_reader_factory.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/config_IO/config_reader_factory.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/config_IO/config_reader_factory.cpp.s
 .PHONY : config_IO/config_reader_factory.cpp.s
 
 config_IO/read_qsc.o: config_IO/read_qsc.cpp.o
@@ -154,7 +141,7 @@ config_IO/read_qsc.o: config_IO/read_qsc.cpp.o
 
 # target to build an object file
 config_IO/read_qsc.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/config_IO/read_qsc.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/config_IO/read_qsc.cpp.o
 .PHONY : config_IO/read_qsc.cpp.o
 
 config_IO/read_qsc.i: config_IO/read_qsc.cpp.i
@@ -162,7 +149,7 @@ config_IO/read_qsc.i: config_IO/read_qsc.cpp.i
 
 # target to preprocess a source file
 config_IO/read_qsc.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/config_IO/read_qsc.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/config_IO/read_qsc.cpp.i
 .PHONY : config_IO/read_qsc.cpp.i
 
 config_IO/read_qsc.s: config_IO/read_qsc.cpp.s
@@ -170,7 +157,7 @@ config_IO/read_qsc.s: config_IO/read_qsc.cpp.s
 
 # target to generate assembly for a file
 config_IO/read_qsc.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/config_IO/read_qsc.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/config_IO/read_qsc.cpp.s
 .PHONY : config_IO/read_qsc.cpp.s
 
 crystal.o: crystal.cpp.o
@@ -178,7 +165,7 @@ crystal.o: crystal.cpp.o
 
 # target to build an object file
 crystal.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/crystal.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/crystal.cpp.o
 .PHONY : crystal.cpp.o
 
 crystal.i: crystal.cpp.i
@@ -186,7 +173,7 @@ crystal.i: crystal.cpp.i
 
 # target to preprocess a source file
 crystal.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/crystal.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/crystal.cpp.i
 .PHONY : crystal.cpp.i
 
 crystal.s: crystal.cpp.s
@@ -194,7 +181,7 @@ crystal.s: crystal.cpp.s
 
 # target to generate assembly for a file
 crystal.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/crystal.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/crystal.cpp.s
 .PHONY : crystal.cpp.s
 
 data_IO/binary_output.o: data_IO/binary_output.cpp.o
@@ -202,7 +189,7 @@ data_IO/binary_output.o: data_IO/binary_output.cpp.o
 
 # target to build an object file
 data_IO/binary_output.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/binary_output.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/binary_output.cpp.o
 .PHONY : data_IO/binary_output.cpp.o
 
 data_IO/binary_output.i: data_IO/binary_output.cpp.i
@@ -210,7 +197,7 @@ data_IO/binary_output.i: data_IO/binary_output.cpp.i
 
 # target to preprocess a source file
 data_IO/binary_output.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/binary_output.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/binary_output.cpp.i
 .PHONY : data_IO/binary_output.cpp.i
 
 data_IO/binary_output.s: data_IO/binary_output.cpp.s
@@ -218,7 +205,7 @@ data_IO/binary_output.s: data_IO/binary_output.cpp.s
 
 # target to generate assembly for a file
 data_IO/binary_output.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/binary_output.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/binary_output.cpp.s
 .PHONY : data_IO/binary_output.cpp.s
 
 data_IO/data_io_factories.o: data_IO/data_io_factories.cpp.o
@@ -226,7 +213,7 @@ data_IO/data_io_factories.o: data_IO/data_io_factories.cpp.o
 
 # target to build an object file
 data_IO/data_io_factories.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/data_io_factories.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/data_io_factories.cpp.o
 .PHONY : data_IO/data_io_factories.cpp.o
 
 data_IO/data_io_factories.i: data_IO/data_io_factories.cpp.i
@@ -234,7 +221,7 @@ data_IO/data_io_factories.i: data_IO/data_io_factories.cpp.i
 
 # target to preprocess a source file
 data_IO/data_io_factories.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/data_io_factories.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/data_io_factories.cpp.i
 .PHONY : data_IO/data_io_factories.cpp.i
 
 data_IO/data_io_factories.s: data_IO/data_io_factories.cpp.s
@@ -242,7 +229,7 @@ data_IO/data_io_factories.s: data_IO/data_io_factories.cpp.s
 
 # target to generate assembly for a file
 data_IO/data_io_factories.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/data_io_factories.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/data_io_factories.cpp.s
 .PHONY : data_IO/data_io_factories.cpp.s
 
 data_IO/img_input.o: data_IO/img_input.cpp.o
@@ -250,7 +237,7 @@ data_IO/img_input.o: data_IO/img_input.cpp.o
 
 # target to build an object file
 data_IO/img_input.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/img_input.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/img_input.cpp.o
 .PHONY : data_IO/img_input.cpp.o
 
 data_IO/img_input.i: data_IO/img_input.cpp.i
@@ -258,7 +245,7 @@ data_IO/img_input.i: data_IO/img_input.cpp.i
 
 # target to preprocess a source file
 data_IO/img_input.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/img_input.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/img_input.cpp.i
 .PHONY : data_IO/img_input.cpp.i
 
 data_IO/img_input.s: data_IO/img_input.cpp.s
@@ -266,7 +253,7 @@ data_IO/img_input.s: data_IO/img_input.cpp.s
 
 # target to generate assembly for a file
 data_IO/img_input.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/img_input.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/img_input.cpp.s
 .PHONY : data_IO/img_input.cpp.s
 
 data_IO/img_output.o: data_IO/img_output.cpp.o
@@ -274,7 +261,7 @@ data_IO/img_output.o: data_IO/img_output.cpp.o
 
 # target to build an object file
 data_IO/img_output.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/img_output.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/img_output.cpp.o
 .PHONY : data_IO/img_output.cpp.o
 
 data_IO/img_output.i: data_IO/img_output.cpp.i
@@ -282,7 +269,7 @@ data_IO/img_output.i: data_IO/img_output.cpp.i
 
 # target to preprocess a source file
 data_IO/img_output.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/img_output.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/img_output.cpp.i
 .PHONY : data_IO/img_output.cpp.i
 
 data_IO/img_output.s: data_IO/img_output.cpp.s
@@ -290,7 +277,7 @@ data_IO/img_output.s: data_IO/img_output.cpp.s
 
 # target to generate assembly for a file
 data_IO/img_output.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/img_output.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/data_IO/img_output.cpp.s
 .PHONY : data_IO/img_output.cpp.s
 
 detectors.o: detectors.cpp.o
@@ -298,7 +285,7 @@ detectors.o: detectors.cpp.o
 
 # target to build an object file
 detectors.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/detectors.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/detectors.cpp.o
 .PHONY : detectors.cpp.o
 
 detectors.i: detectors.cpp.i
@@ -306,7 +293,7 @@ detectors.i: detectors.cpp.i
 
 # target to preprocess a source file
 detectors.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/detectors.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/detectors.cpp.i
 .PHONY : detectors.cpp.i
 
 detectors.s: detectors.cpp.s
@@ -314,7 +301,7 @@ detectors.s: detectors.cpp.s
 
 # target to generate assembly for a file
 detectors.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/detectors.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/detectors.cpp.s
 .PHONY : detectors.cpp.s
 
 experiments.o: experiments.cpp.o
@@ -322,7 +309,7 @@ experiments.o: experiments.cpp.o
 
 # target to build an object file
 experiments.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments.cpp.o
 .PHONY : experiments.cpp.o
 
 experiments.i: experiments.cpp.i
@@ -330,7 +317,7 @@ experiments.i: experiments.cpp.i
 
 # target to preprocess a source file
 experiments.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments.cpp.i
 .PHONY : experiments.cpp.i
 
 experiments.s: experiments.cpp.s
@@ -338,7 +325,7 @@ experiments.s: experiments.cpp.s
 
 # target to generate assembly for a file
 experiments.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments.cpp.s
 .PHONY : experiments.cpp.s
 
 experiments/base.o: experiments/base.cpp.o
@@ -346,7 +333,7 @@ experiments/base.o: experiments/base.cpp.o
 
 # target to build an object file
 experiments/base.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/base.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/base.cpp.o
 .PHONY : experiments/base.cpp.o
 
 experiments/base.i: experiments/base.cpp.i
@@ -354,7 +341,7 @@ experiments/base.i: experiments/base.cpp.i
 
 # target to preprocess a source file
 experiments/base.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/base.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/base.cpp.i
 .PHONY : experiments/base.cpp.i
 
 experiments/base.s: experiments/base.cpp.s
@@ -362,7 +349,7 @@ experiments/base.s: experiments/base.cpp.s
 
 # target to generate assembly for a file
 experiments/base.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/base.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/base.cpp.s
 .PHONY : experiments/base.cpp.s
 
 experiments/cbed.o: experiments/cbed.cpp.o
@@ -370,7 +357,7 @@ experiments/cbed.o: experiments/cbed.cpp.o
 
 # target to build an object file
 experiments/cbed.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/cbed.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/cbed.cpp.o
 .PHONY : experiments/cbed.cpp.o
 
 experiments/cbed.i: experiments/cbed.cpp.i
@@ -378,7 +365,7 @@ experiments/cbed.i: experiments/cbed.cpp.i
 
 # target to preprocess a source file
 experiments/cbed.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/cbed.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/cbed.cpp.i
 .PHONY : experiments/cbed.cpp.i
 
 experiments/cbed.s: experiments/cbed.cpp.s
@@ -386,7 +373,7 @@ experiments/cbed.s: experiments/cbed.cpp.s
 
 # target to generate assembly for a file
 experiments/cbed.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/cbed.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/cbed.cpp.s
 .PHONY : experiments/cbed.cpp.s
 
 experiments/stem.o: experiments/stem.cpp.o
@@ -394,7 +381,7 @@ experiments/stem.o: experiments/stem.cpp.o
 
 # target to build an object file
 experiments/stem.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/stem.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/stem.cpp.o
 .PHONY : experiments/stem.cpp.o
 
 experiments/stem.i: experiments/stem.cpp.i
@@ -402,7 +389,7 @@ experiments/stem.i: experiments/stem.cpp.i
 
 # target to preprocess a source file
 experiments/stem.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/stem.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/stem.cpp.i
 .PHONY : experiments/stem.cpp.i
 
 experiments/stem.s: experiments/stem.cpp.s
@@ -410,7 +397,7 @@ experiments/stem.s: experiments/stem.cpp.s
 
 # target to generate assembly for a file
 experiments/stem.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/stem.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/stem.cpp.s
 .PHONY : experiments/stem.cpp.s
 
 experiments/tem.o: experiments/tem.cpp.o
@@ -418,7 +405,7 @@ experiments/tem.o: experiments/tem.cpp.o
 
 # target to build an object file
 experiments/tem.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/tem.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/tem.cpp.o
 .PHONY : experiments/tem.cpp.o
 
 experiments/tem.i: experiments/tem.cpp.i
@@ -426,7 +413,7 @@ experiments/tem.i: experiments/tem.cpp.i
 
 # target to preprocess a source file
 experiments/tem.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/tem.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/tem.cpp.i
 .PHONY : experiments/tem.cpp.i
 
 experiments/tem.s: experiments/tem.cpp.s
@@ -434,7 +421,7 @@ experiments/tem.s: experiments/tem.cpp.s
 
 # target to generate assembly for a file
 experiments/tem.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/tem.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/experiments/tem.cpp.s
 .PHONY : experiments/tem.cpp.s
 
 fileio_fftw3.o: fileio_fftw3.cpp.o
@@ -442,7 +429,7 @@ fileio_fftw3.o: fileio_fftw3.cpp.o
 
 # target to build an object file
 fileio_fftw3.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/fileio_fftw3.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/fileio_fftw3.cpp.o
 .PHONY : fileio_fftw3.cpp.o
 
 fileio_fftw3.i: fileio_fftw3.cpp.i
@@ -450,7 +437,7 @@ fileio_fftw3.i: fileio_fftw3.cpp.i
 
 # target to preprocess a source file
 fileio_fftw3.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/fileio_fftw3.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/fileio_fftw3.cpp.i
 .PHONY : fileio_fftw3.cpp.i
 
 fileio_fftw3.s: fileio_fftw3.cpp.s
@@ -458,7 +445,7 @@ fileio_fftw3.s: fileio_fftw3.cpp.s
 
 # target to generate assembly for a file
 fileio_fftw3.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/fileio_fftw3.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/fileio_fftw3.cpp.s
 .PHONY : fileio_fftw3.cpp.s
 
 imagelib_fftw3.o: imagelib_fftw3.cpp.o
@@ -466,7 +453,7 @@ imagelib_fftw3.o: imagelib_fftw3.cpp.o
 
 # target to build an object file
 imagelib_fftw3.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/imagelib_fftw3.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/imagelib_fftw3.cpp.o
 .PHONY : imagelib_fftw3.cpp.o
 
 imagelib_fftw3.i: imagelib_fftw3.cpp.i
@@ -474,7 +461,7 @@ imagelib_fftw3.i: imagelib_fftw3.cpp.i
 
 # target to preprocess a source file
 imagelib_fftw3.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/imagelib_fftw3.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/imagelib_fftw3.cpp.i
 .PHONY : imagelib_fftw3.cpp.i
 
 imagelib_fftw3.s: imagelib_fftw3.cpp.s
@@ -482,7 +469,7 @@ imagelib_fftw3.s: imagelib_fftw3.cpp.s
 
 # target to generate assembly for a file
 imagelib_fftw3.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/imagelib_fftw3.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/imagelib_fftw3.cpp.s
 .PHONY : imagelib_fftw3.cpp.s
 
 matrixlib.o: matrixlib.cpp.o
@@ -490,7 +477,7 @@ matrixlib.o: matrixlib.cpp.o
 
 # target to build an object file
 matrixlib.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/matrixlib.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/matrixlib.cpp.o
 .PHONY : matrixlib.cpp.o
 
 matrixlib.i: matrixlib.cpp.i
@@ -498,7 +485,7 @@ matrixlib.i: matrixlib.cpp.i
 
 # target to preprocess a source file
 matrixlib.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/matrixlib.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/matrixlib.cpp.i
 .PHONY : matrixlib.cpp.i
 
 matrixlib.s: matrixlib.cpp.s
@@ -506,7 +493,7 @@ matrixlib.s: matrixlib.cpp.s
 
 # target to generate assembly for a file
 matrixlib.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/matrixlib.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/matrixlib.cpp.s
 .PHONY : matrixlib.cpp.s
 
 memory_fftw3.o: memory_fftw3.cpp.o
@@ -514,7 +501,7 @@ memory_fftw3.o: memory_fftw3.cpp.o
 
 # target to build an object file
 memory_fftw3.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/memory_fftw3.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/memory_fftw3.cpp.o
 .PHONY : memory_fftw3.cpp.o
 
 memory_fftw3.i: memory_fftw3.cpp.i
@@ -522,7 +509,7 @@ memory_fftw3.i: memory_fftw3.cpp.i
 
 # target to preprocess a source file
 memory_fftw3.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/memory_fftw3.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/memory_fftw3.cpp.i
 .PHONY : memory_fftw3.cpp.i
 
 memory_fftw3.s: memory_fftw3.cpp.s
@@ -530,7 +517,7 @@ memory_fftw3.s: memory_fftw3.cpp.s
 
 # target to generate assembly for a file
 memory_fftw3.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/memory_fftw3.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/memory_fftw3.cpp.s
 .PHONY : memory_fftw3.cpp.s
 
 potentials/RealSpacePotential.o: potentials/RealSpacePotential.cpp.o
@@ -538,7 +525,7 @@ potentials/RealSpacePotential.o: potentials/RealSpacePotential.cpp.o
 
 # target to build an object file
 potentials/RealSpacePotential.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/RealSpacePotential.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/RealSpacePotential.cpp.o
 .PHONY : potentials/RealSpacePotential.cpp.o
 
 potentials/RealSpacePotential.i: potentials/RealSpacePotential.cpp.i
@@ -546,7 +533,7 @@ potentials/RealSpacePotential.i: potentials/RealSpacePotential.cpp.i
 
 # target to preprocess a source file
 potentials/RealSpacePotential.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/RealSpacePotential.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/RealSpacePotential.cpp.i
 .PHONY : potentials/RealSpacePotential.cpp.i
 
 potentials/RealSpacePotential.s: potentials/RealSpacePotential.cpp.s
@@ -554,7 +541,7 @@ potentials/RealSpacePotential.s: potentials/RealSpacePotential.cpp.s
 
 # target to generate assembly for a file
 potentials/RealSpacePotential.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/RealSpacePotential.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/RealSpacePotential.cpp.s
 .PHONY : potentials/RealSpacePotential.cpp.s
 
 potentials/pot_2d.o: potentials/pot_2d.cpp.o
@@ -562,7 +549,7 @@ potentials/pot_2d.o: potentials/pot_2d.cpp.o
 
 # target to build an object file
 potentials/pot_2d.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_2d.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_2d.cpp.o
 .PHONY : potentials/pot_2d.cpp.o
 
 potentials/pot_2d.i: potentials/pot_2d.cpp.i
@@ -570,7 +557,7 @@ potentials/pot_2d.i: potentials/pot_2d.cpp.i
 
 # target to preprocess a source file
 potentials/pot_2d.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_2d.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_2d.cpp.i
 .PHONY : potentials/pot_2d.cpp.i
 
 potentials/pot_2d.s: potentials/pot_2d.cpp.s
@@ -578,7 +565,7 @@ potentials/pot_2d.s: potentials/pot_2d.cpp.s
 
 # target to generate assembly for a file
 potentials/pot_2d.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_2d.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_2d.cpp.s
 .PHONY : potentials/pot_2d.cpp.s
 
 potentials/pot_2d_fft.o: potentials/pot_2d_fft.cpp.o
@@ -586,7 +573,7 @@ potentials/pot_2d_fft.o: potentials/pot_2d_fft.cpp.o
 
 # target to build an object file
 potentials/pot_2d_fft.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_2d_fft.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_2d_fft.cpp.o
 .PHONY : potentials/pot_2d_fft.cpp.o
 
 potentials/pot_2d_fft.i: potentials/pot_2d_fft.cpp.i
@@ -594,7 +581,7 @@ potentials/pot_2d_fft.i: potentials/pot_2d_fft.cpp.i
 
 # target to preprocess a source file
 potentials/pot_2d_fft.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_2d_fft.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_2d_fft.cpp.i
 .PHONY : potentials/pot_2d_fft.cpp.i
 
 potentials/pot_2d_fft.s: potentials/pot_2d_fft.cpp.s
@@ -602,7 +589,7 @@ potentials/pot_2d_fft.s: potentials/pot_2d_fft.cpp.s
 
 # target to generate assembly for a file
 potentials/pot_2d_fft.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_2d_fft.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_2d_fft.cpp.s
 .PHONY : potentials/pot_2d_fft.cpp.s
 
 potentials/pot_3d.o: potentials/pot_3d.cpp.o
@@ -610,7 +597,7 @@ potentials/pot_3d.o: potentials/pot_3d.cpp.o
 
 # target to build an object file
 potentials/pot_3d.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_3d.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_3d.cpp.o
 .PHONY : potentials/pot_3d.cpp.o
 
 potentials/pot_3d.i: potentials/pot_3d.cpp.i
@@ -618,7 +605,7 @@ potentials/pot_3d.i: potentials/pot_3d.cpp.i
 
 # target to preprocess a source file
 potentials/pot_3d.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_3d.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_3d.cpp.i
 .PHONY : potentials/pot_3d.cpp.i
 
 potentials/pot_3d.s: potentials/pot_3d.cpp.s
@@ -626,7 +613,7 @@ potentials/pot_3d.s: potentials/pot_3d.cpp.s
 
 # target to generate assembly for a file
 potentials/pot_3d.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_3d.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_3d.cpp.s
 .PHONY : potentials/pot_3d.cpp.s
 
 potentials/pot_3d_fft.o: potentials/pot_3d_fft.cpp.o
@@ -634,7 +621,7 @@ potentials/pot_3d_fft.o: potentials/pot_3d_fft.cpp.o
 
 # target to build an object file
 potentials/pot_3d_fft.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_3d_fft.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_3d_fft.cpp.o
 .PHONY : potentials/pot_3d_fft.cpp.o
 
 potentials/pot_3d_fft.i: potentials/pot_3d_fft.cpp.i
@@ -642,7 +629,7 @@ potentials/pot_3d_fft.i: potentials/pot_3d_fft.cpp.i
 
 # target to preprocess a source file
 potentials/pot_3d_fft.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_3d_fft.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_3d_fft.cpp.i
 .PHONY : potentials/pot_3d_fft.cpp.i
 
 potentials/pot_3d_fft.s: potentials/pot_3d_fft.cpp.s
@@ -650,7 +637,7 @@ potentials/pot_3d_fft.s: potentials/pot_3d_fft.cpp.s
 
 # target to generate assembly for a file
 potentials/pot_3d_fft.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_3d_fft.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_3d_fft.cpp.s
 .PHONY : potentials/pot_3d_fft.cpp.s
 
 potentials/pot_base.o: potentials/pot_base.cpp.o
@@ -658,7 +645,7 @@ potentials/pot_base.o: potentials/pot_base.cpp.o
 
 # target to build an object file
 potentials/pot_base.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_base.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_base.cpp.o
 .PHONY : potentials/pot_base.cpp.o
 
 potentials/pot_base.i: potentials/pot_base.cpp.i
@@ -666,7 +653,7 @@ potentials/pot_base.i: potentials/pot_base.cpp.i
 
 # target to preprocess a source file
 potentials/pot_base.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_base.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_base.cpp.i
 .PHONY : potentials/pot_base.cpp.i
 
 potentials/pot_base.s: potentials/pot_base.cpp.s
@@ -674,7 +661,7 @@ potentials/pot_base.s: potentials/pot_base.cpp.s
 
 # target to generate assembly for a file
 potentials/pot_base.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_base.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_base.cpp.s
 .PHONY : potentials/pot_base.cpp.s
 
 potentials/pot_factory.o: potentials/pot_factory.cpp.o
@@ -682,7 +669,7 @@ potentials/pot_factory.o: potentials/pot_factory.cpp.o
 
 # target to build an object file
 potentials/pot_factory.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_factory.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_factory.cpp.o
 .PHONY : potentials/pot_factory.cpp.o
 
 potentials/pot_factory.i: potentials/pot_factory.cpp.i
@@ -690,7 +677,7 @@ potentials/pot_factory.i: potentials/pot_factory.cpp.i
 
 # target to preprocess a source file
 potentials/pot_factory.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_factory.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_factory.cpp.i
 .PHONY : potentials/pot_factory.cpp.i
 
 potentials/pot_factory.s: potentials/pot_factory.cpp.s
@@ -698,7 +685,7 @@ potentials/pot_factory.s: potentials/pot_factory.cpp.s
 
 # target to generate assembly for a file
 potentials/pot_factory.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_factory.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/potentials/pot_factory.cpp.s
 .PHONY : potentials/pot_factory.cpp.s
 
 readparams.o: readparams.cpp.o
@@ -706,7 +693,7 @@ readparams.o: readparams.cpp.o
 
 # target to build an object file
 readparams.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/readparams.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/readparams.cpp.o
 .PHONY : readparams.cpp.o
 
 readparams.i: readparams.cpp.i
@@ -714,7 +701,7 @@ readparams.i: readparams.cpp.i
 
 # target to preprocess a source file
 readparams.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/readparams.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/readparams.cpp.i
 .PHONY : readparams.cpp.i
 
 readparams.s: readparams.cpp.s
@@ -722,7 +709,7 @@ readparams.s: readparams.cpp.s
 
 # target to generate assembly for a file
 readparams.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/readparams.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/readparams.cpp.s
 .PHONY : readparams.cpp.s
 
 structure_IO/cfg.o: structure_IO/cfg.cpp.o
@@ -730,7 +717,7 @@ structure_IO/cfg.o: structure_IO/cfg.cpp.o
 
 # target to build an object file
 structure_IO/cfg.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/structure_IO/cfg.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/structure_IO/cfg.cpp.o
 .PHONY : structure_IO/cfg.cpp.o
 
 structure_IO/cfg.i: structure_IO/cfg.cpp.i
@@ -738,7 +725,7 @@ structure_IO/cfg.i: structure_IO/cfg.cpp.i
 
 # target to preprocess a source file
 structure_IO/cfg.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/structure_IO/cfg.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/structure_IO/cfg.cpp.i
 .PHONY : structure_IO/cfg.cpp.i
 
 structure_IO/cfg.s: structure_IO/cfg.cpp.s
@@ -746,7 +733,7 @@ structure_IO/cfg.s: structure_IO/cfg.cpp.s
 
 # target to generate assembly for a file
 structure_IO/cfg.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/structure_IO/cfg.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/structure_IO/cfg.cpp.s
 .PHONY : structure_IO/cfg.cpp.s
 
 structure_IO/structure_factories.o: structure_IO/structure_factories.cpp.o
@@ -754,7 +741,7 @@ structure_IO/structure_factories.o: structure_IO/structure_factories.cpp.o
 
 # target to build an object file
 structure_IO/structure_factories.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/structure_IO/structure_factories.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/structure_IO/structure_factories.cpp.o
 .PHONY : structure_IO/structure_factories.cpp.o
 
 structure_IO/structure_factories.i: structure_IO/structure_factories.cpp.i
@@ -762,7 +749,7 @@ structure_IO/structure_factories.i: structure_IO/structure_factories.cpp.i
 
 # target to preprocess a source file
 structure_IO/structure_factories.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/structure_IO/structure_factories.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/structure_IO/structure_factories.cpp.i
 .PHONY : structure_IO/structure_factories.cpp.i
 
 structure_IO/structure_factories.s: structure_IO/structure_factories.cpp.s
@@ -770,7 +757,7 @@ structure_IO/structure_factories.s: structure_IO/structure_factories.cpp.s
 
 # target to generate assembly for a file
 structure_IO/structure_factories.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/structure_IO/structure_factories.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/structure_IO/structure_factories.cpp.s
 .PHONY : structure_IO/structure_factories.cpp.s
 
 wavefunctions/wave_base.o: wavefunctions/wave_base.cpp.o
@@ -778,7 +765,7 @@ wavefunctions/wave_base.o: wavefunctions/wave_base.cpp.o
 
 # target to build an object file
 wavefunctions/wave_base.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_base.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_base.cpp.o
 .PHONY : wavefunctions/wave_base.cpp.o
 
 wavefunctions/wave_base.i: wavefunctions/wave_base.cpp.i
@@ -786,7 +773,7 @@ wavefunctions/wave_base.i: wavefunctions/wave_base.cpp.i
 
 # target to preprocess a source file
 wavefunctions/wave_base.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_base.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_base.cpp.i
 .PHONY : wavefunctions/wave_base.cpp.i
 
 wavefunctions/wave_base.s: wavefunctions/wave_base.cpp.s
@@ -794,7 +781,7 @@ wavefunctions/wave_base.s: wavefunctions/wave_base.cpp.s
 
 # target to generate assembly for a file
 wavefunctions/wave_base.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_base.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_base.cpp.s
 .PHONY : wavefunctions/wave_base.cpp.s
 
 wavefunctions/wave_convergent.o: wavefunctions/wave_convergent.cpp.o
@@ -802,7 +789,7 @@ wavefunctions/wave_convergent.o: wavefunctions/wave_convergent.cpp.o
 
 # target to build an object file
 wavefunctions/wave_convergent.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_convergent.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_convergent.cpp.o
 .PHONY : wavefunctions/wave_convergent.cpp.o
 
 wavefunctions/wave_convergent.i: wavefunctions/wave_convergent.cpp.i
@@ -810,7 +797,7 @@ wavefunctions/wave_convergent.i: wavefunctions/wave_convergent.cpp.i
 
 # target to preprocess a source file
 wavefunctions/wave_convergent.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_convergent.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_convergent.cpp.i
 .PHONY : wavefunctions/wave_convergent.cpp.i
 
 wavefunctions/wave_convergent.s: wavefunctions/wave_convergent.cpp.s
@@ -818,7 +805,7 @@ wavefunctions/wave_convergent.s: wavefunctions/wave_convergent.cpp.s
 
 # target to generate assembly for a file
 wavefunctions/wave_convergent.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_convergent.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_convergent.cpp.s
 .PHONY : wavefunctions/wave_convergent.cpp.s
 
 wavefunctions/wave_factory.o: wavefunctions/wave_factory.cpp.o
@@ -826,7 +813,7 @@ wavefunctions/wave_factory.o: wavefunctions/wave_factory.cpp.o
 
 # target to build an object file
 wavefunctions/wave_factory.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_factory.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_factory.cpp.o
 .PHONY : wavefunctions/wave_factory.cpp.o
 
 wavefunctions/wave_factory.i: wavefunctions/wave_factory.cpp.i
@@ -834,7 +821,7 @@ wavefunctions/wave_factory.i: wavefunctions/wave_factory.cpp.i
 
 # target to preprocess a source file
 wavefunctions/wave_factory.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_factory.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_factory.cpp.i
 .PHONY : wavefunctions/wave_factory.cpp.i
 
 wavefunctions/wave_factory.s: wavefunctions/wave_factory.cpp.s
@@ -842,7 +829,7 @@ wavefunctions/wave_factory.s: wavefunctions/wave_factory.cpp.s
 
 # target to generate assembly for a file
 wavefunctions/wave_factory.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_factory.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_factory.cpp.s
 .PHONY : wavefunctions/wave_factory.cpp.s
 
 wavefunctions/wave_plane.o: wavefunctions/wave_plane.cpp.o
@@ -850,7 +837,7 @@ wavefunctions/wave_plane.o: wavefunctions/wave_plane.cpp.o
 
 # target to build an object file
 wavefunctions/wave_plane.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_plane.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_plane.cpp.o
 .PHONY : wavefunctions/wave_plane.cpp.o
 
 wavefunctions/wave_plane.i: wavefunctions/wave_plane.cpp.i
@@ -858,7 +845,7 @@ wavefunctions/wave_plane.i: wavefunctions/wave_plane.cpp.i
 
 # target to preprocess a source file
 wavefunctions/wave_plane.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_plane.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_plane.cpp.i
 .PHONY : wavefunctions/wave_plane.cpp.i
 
 wavefunctions/wave_plane.s: wavefunctions/wave_plane.cpp.s
@@ -866,7 +853,7 @@ wavefunctions/wave_plane.s: wavefunctions/wave_plane.cpp.s
 
 # target to generate assembly for a file
 wavefunctions/wave_plane.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_plane.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f libs/CMakeFiles/qstem.dir/build.make libs/CMakeFiles/qstem.dir/wavefunctions/wave_plane.cpp.s
 .PHONY : wavefunctions/wave_plane.cpp.s
 
 # Help Target
@@ -878,7 +865,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... qstem"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... config_IO/config_reader_factory.o"
 	@echo "... config_IO/config_reader_factory.i"
 	@echo "... config_IO/config_reader_factory.s"
@@ -983,6 +969,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/philipp/QSTEM && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /space/projects/QSTEM && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

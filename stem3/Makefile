@@ -35,17 +35,14 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# Escaping for special characters.
-EQUALS = =
-
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/philipp/QSTEM
+CMAKE_SOURCE_DIR = /space/projects/QSTEM
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/philipp/QSTEM
+CMAKE_BINARY_DIR = /space/projects/QSTEM
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -53,7 +50,7 @@ CMAKE_BINARY_DIR = /home/philipp/QSTEM
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,26 +67,16 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /home/philipp/QSTEM && $(CMAKE_COMMAND) -E cmake_progress_start /home/philipp/QSTEM/CMakeFiles /home/philipp/QSTEM/stem3/CMakeFiles/progress.marks
-	cd /home/philipp/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 stem3/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/philipp/QSTEM/CMakeFiles 0
+	cd /space/projects/QSTEM && $(CMAKE_COMMAND) -E cmake_progress_start /space/projects/QSTEM/CMakeFiles /space/projects/QSTEM/stem3/CMakeFiles/progress.marks
+	cd /space/projects/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 stem3/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /space/projects/QSTEM/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/philipp/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 stem3/clean
+	cd /space/projects/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 stem3/clean
 .PHONY : clean
 
 # The main clean target
@@ -98,22 +85,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/philipp/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 stem3/preinstall
+	cd /space/projects/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 stem3/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/philipp/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 stem3/preinstall
+	cd /space/projects/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 stem3/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/philipp/QSTEM && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /space/projects/QSTEM && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 stem3/CMakeFiles/stem3.dir/rule:
-	cd /home/philipp/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 stem3/CMakeFiles/stem3.dir/rule
+	cd /space/projects/QSTEM && $(MAKE) -f CMakeFiles/Makefile2 stem3/CMakeFiles/stem3.dir/rule
 .PHONY : stem3/CMakeFiles/stem3.dir/rule
 
 # Convenience name for target.
@@ -122,7 +109,7 @@ stem3: stem3/CMakeFiles/stem3.dir/rule
 
 # fast build rule for target.
 stem3/fast:
-	cd /home/philipp/QSTEM && $(MAKE) -f stem3/CMakeFiles/stem3.dir/build.make stem3/CMakeFiles/stem3.dir/build
+	cd /space/projects/QSTEM && $(MAKE) -f stem3/CMakeFiles/stem3.dir/build.make stem3/CMakeFiles/stem3.dir/build
 .PHONY : stem3/fast
 
 stem3.o: stem3.cpp.o
@@ -130,7 +117,7 @@ stem3.o: stem3.cpp.o
 
 # target to build an object file
 stem3.cpp.o:
-	cd /home/philipp/QSTEM && $(MAKE) -f stem3/CMakeFiles/stem3.dir/build.make stem3/CMakeFiles/stem3.dir/stem3.cpp.o
+	cd /space/projects/QSTEM && $(MAKE) -f stem3/CMakeFiles/stem3.dir/build.make stem3/CMakeFiles/stem3.dir/stem3.cpp.o
 .PHONY : stem3.cpp.o
 
 stem3.i: stem3.cpp.i
@@ -138,7 +125,7 @@ stem3.i: stem3.cpp.i
 
 # target to preprocess a source file
 stem3.cpp.i:
-	cd /home/philipp/QSTEM && $(MAKE) -f stem3/CMakeFiles/stem3.dir/build.make stem3/CMakeFiles/stem3.dir/stem3.cpp.i
+	cd /space/projects/QSTEM && $(MAKE) -f stem3/CMakeFiles/stem3.dir/build.make stem3/CMakeFiles/stem3.dir/stem3.cpp.i
 .PHONY : stem3.cpp.i
 
 stem3.s: stem3.cpp.s
@@ -146,7 +133,7 @@ stem3.s: stem3.cpp.s
 
 # target to generate assembly for a file
 stem3.cpp.s:
-	cd /home/philipp/QSTEM && $(MAKE) -f stem3/CMakeFiles/stem3.dir/build.make stem3/CMakeFiles/stem3.dir/stem3.cpp.s
+	cd /space/projects/QSTEM && $(MAKE) -f stem3/CMakeFiles/stem3.dir/build.make stem3/CMakeFiles/stem3.dir/stem3.cpp.s
 .PHONY : stem3.cpp.s
 
 # Help Target
@@ -158,7 +145,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... stem3"
-	@echo "... test"
 	@echo "... stem3.o"
 	@echo "... stem3.i"
 	@echo "... stem3.s"
@@ -173,6 +159,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/philipp/QSTEM && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /space/projects/QSTEM && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

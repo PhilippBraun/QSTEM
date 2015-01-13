@@ -6,7 +6,7 @@ nthreads				1
 
 structure
 {
-	structure_filename		/home/philipp/QSTEM/bin/Al.cfg 
+	structure_filename		/space/projects/QSTEM/build-release/bin/Al.cfg 
 	ncellx 					10
 	ncelly 					10
 	ncellz 					1
@@ -30,21 +30,35 @@ model
 	sliceThicknessCalculation	1			; 1 = auto (make sliceThickness close to 1Angstrom) ;
 											; 2 = thickness (give slicethickness)
 											; 3 = give number of slices
+	resolutionCalculation		1			; 1 = FILLN
+											; 2 = FILLRES 
+											; 3 = CELLRES
+											; 4 = CELLN
+											; 5 = SIZERES
+											; 6	= SIZEN
+	areaX						400
+	areaY						400		
 	sliceThicknessAngstrom		1.012375
 	centerSlices				false	
+	centerSample				false
+	
+	resolutionXAngstrom			0.050000 
+	resolutionYAngstrom			0.050000 
+	
+	nx							1024
+	ny							1024
+	
 	xOffset						0.000000   ;%  x-position offset in cartesian coords 
 	yOffset						0.000000   ;%  y-position offset in cartesian coords 
 	zOffset						0.976000   ;%  slize z-position offset in cartesian coords 
-	resolutionXAngstrom			0.050000 
-	resolutionYAngstrom			0.050000 
+
 	crystalTiltX				0.000000	;% tilt in rad 
 	crystalTiltY				0.000000  
 	crystalTiltZ				0.000000  
 	beamTiltX					0.000000 ;deg	% beam tilt deg 
 	beamTiltY					0.000000 ;deg 
 	tiltBack					false 
-	nx							1024
-	ny							1024
+
 	slices						80
 	potential
 	{
@@ -64,6 +78,8 @@ model
 }
 wave
 {
+	type						2			; 2 = plane
+											; 1 = convergent
 	Cs							1.000000	; Spherical abberation in mm
 	C5							0.000000	; C_5 abberation in mm
 	Cc							1.000000	; Chromatic abberation in mm
@@ -98,12 +114,17 @@ wave
 	smooth						true		;smoothen edge in rec. space
 	gaussian					false
 	gaussScale					1.0
+	tiltX						0
+	tiltY						0
 }
 
 output
 {
 	loglevel					1;  1=info 			2=warning 	3=error
 	savelevel  					3;  1=everything	2=			3=s
+	savePotential				true
+	saveProjectedPotential		false
+	readPotential				false
 	saveSliceAfter				1
 	folder						CBED
 	showProbe					false		;% displays a graph of the crosssection of the inc. e-beam
